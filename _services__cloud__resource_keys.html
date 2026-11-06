@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -83,7 +81,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <p><code>Property "country" not found in data for element "location". This is because your Resource Key does not include access to any properties under "location".</code></p>
 <p><code>Property "state" not found in data for element "location". This is because your Resource Key does not include access to this property. Properties that are included for this key under "location" are javascript, town, country.</code></p>
 <p>As mentioned, all properties that a key is authorized to access must be chosen at key creation time. If you create a key with access to the <code>javascript</code>, <code>town</code>, and <code>country</code> properties under <code>location</code>, for example, and then try to access the <code>state</code> property of a geolocation retrieved from the cloud APIs, you will see the second error, above. (If the key in question has access to <em>no</em> properties under <code>location</code>, you may see the first error instead.)</p>
-<p>A Resource Key cannot have its list of properties changed, but you can follow the <a class="el" href="_services__configurator.html" title="Creating a Resource Key">Resource Key guide</a> to create a new different Resource Key which does have access to the properties you need.</p>
+<p>To request different properties, follow the <a class="el" href="_services__configurator.html" title="Creating a Resource Key">Resource Key guide</a> to create a new Resource Key with the properties you need.</p>
 <h2 class="doxsection" id="failed-to-load-aspect-properties">Failed to load aspect properties<a class="headerlink" href="#failed-to-load-aspect-properties" aria-label="Permalink to this section">🔗</a></h2>
 <p>If you attempt to create a cloud pipeline with properties for which your Resource Key is not authorized, you may see errors similar to these:</p>
 <ul>
@@ -91,8 +89,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <li>Failed to load aspect properties for element 'hardware'. This is because your Resource Key does not include access to any properties under 'hardware'. For more details on Resource Keys, see our <a href="/documentation/4.5/_services__cloud__resource_keys.html">explainer</a>.</li>
 </ul>
 <p>This occurs when creating a Cloud Engine or Element and the Resource Key you provided is not authorized to access any properties associated with the Engine.</p>
-<p>First, check that you have selected properties that are supported by the Engine. The Cloud Service can be queried for all the <a href="https://cloud.51degrees.com/api/metadata/properties">available properties</a>. In the JSON response, the <code>Id</code> of each property is prefixed with the Engine or Element data key, the relevant key is shown in the error above. This will show you what property names can be selected. Next, check the <a class="el" href="#Seeing_existing_key_authorized_properties" title="Seeing existing key authorized properties">existing properties in your Resource Key</a>. If you find that the required properties are missing from your configuration then you will need to create a new Resource Key and include them.</p>
-<p>A Resource Key cannot have its list of properties changed, but you can follow the <a class="el" href="_services__configurator.html" title="Creating a Resource Key">Resource Key guide</a> to create a new different Resource Key which does have access to the properties you need.</p>
+<p>First, check that you have selected properties that are supported by the Engine. The Cloud Service can be queried for all the <a href="https://cloud.51degrees.com/api/metadata/properties">available properties</a>. In the JSON response, the <code>Id</code> of each property is prefixed with the Engine or Element data key, the relevant key is shown in the error above. This will show you what property names can be selected. Next, check the <a class="el" href="#Seeing_existing_key_authorized_properties" title="View properties authorized for an existing key">existing properties in your Resource Key</a>. If you find that the required properties are missing from your configuration then you will need to create a new Resource Key and include them.</p>
+<p>To request different properties, follow the <a class="el" href="_services__configurator.html" title="Creating a Resource Key">Resource Key guide</a> to create a new Resource Key with the properties you need.</p>
 <p>Second, if the above does not solve the issue then make sure that you are authorized to use the properties selected when creating the Resource Key. To do this, browse to Cloud service using your Resource Key: <code>https://cloud.51degrees.com/api/v4/&lt;resource_key&gt;.json</code> (delete <code>&lt;</code> and <code>&gt;</code> when providing your Resource Key). You will see a response containing values for your configure properties like the following:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div>
 <div class="c-code__line">  &quot;device&quot;: {</div>
@@ -107,15 +105,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <div class="c-code__line">  ...</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --><p>If you see any null reasons like <code>priceband is a paid feature. You need a licence key to retrieve data. Visit <a href="https://51degrees.com/pricing">https://51degrees.com/pricing</a> for details</code> then you do not have the required subscription to access the property. You can check the 51Degrees <a href="https://51degrees.com/developers/property-dictionary">Property Dictionary</a> to see what subscription is required.</p>
-<h2 class="doxsection" id="Seeing_existing_key_authorized_properties">Seeing existing key authorized properties<a class="headerlink" href="#Seeing_existing_key_authorized_properties" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="Seeing_existing_key_authorized_properties">View properties authorized for an existing key<a class="headerlink" href="#Seeing_existing_key_authorized_properties" aria-label="Permalink to this section">🔗</a></h2>
 <p>Some of the error messages above will list the properties for which the used key is authorized, but you can also see the properties for a key you already have by constructing and visiting the URL <a href="https://configure.51degrees.com/YOUR_RESOURCE_KEY">https://configure.51degrees.com/YOUR_RESOURCE_KEY</a>. This will show Step 1 with the properties for this specific key already selected.</p>
-<p>Beware: continuing to steps 2 or 3 will not edit the properties attached to your Resource Key, since Resource Keys are immutable; instead, it will create a new Resource Key.</p>
+<p>Continuing to steps 2 or 3 creates a new Resource Key. It does not change the existing key's properties.</p>
 <h2 class="doxsection" id="Resource_keys_and_license_keys">Resource Keys and License Keys<a class="headerlink" href="#Resource_keys_and_license_keys" aria-label="Permalink to this section">🔗</a></h2>
 <p>A request can carry a Resource Key, a License Key, or both.</p>
 <ul>
 <li><b>A Resource Key</b> authenticates the request and brings the properties and products set up on it. It is public, because it sits in the script tag of every page that uses it, and it can be restricted to named domains, which <a class="el" href="#Resource_key_domains" title="The domains a Resource Key accepts">the domains a Resource Key accepts</a> describes.</li>
 <li><b>A License Key</b> is a server's credential and never goes in a page. It suits server-to-server and verifier callers that do not want to create and manage Resource Keys.</li>
-<li><b>A License Key on its own</b> works on the routes a server calls, being json, js, accessible properties, the 51Did key, verify, verify context, verify full and redeem routes, and the OWID public-key route. On json and js it must name the properties wanted with <code>values</code>, because only a Resource Key carries a property list, and a request without <code>values</code> returns <code>400</code>. The other routes need no <code>values</code>, because they return the same fields every time.</li>
+<li><b>A License Key on its own</b> works on the routes a server calls, being json, js, accessible properties, the 51Did key, verify, verify context, verify full and redeem routes, the attestation route, and the OWID public-key route. On json and js it must name the properties wanted with <code>values</code>, because only a Resource Key carries a property list, and a request without <code>values</code> returns <code>400</code>. The other routes need no <code>values</code>, because they return the same fields every time.</li>
 <li><b>Both together</b> are treated as the Resource Key's request, including any domain restriction, and the License Key adds its products on top. A server whose Resource Key is restricted to named domains sends no <code>Origin</code>, so it is refused even when it also sends a valid License Key. Such a server should send its License Key alone.</li>
 </ul>
 <p>The service looks for each key in these places, in this order, and uses the first one it finds.</p>
@@ -131,7 +129,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <li>Query string: <code>?values=device.ismobile,fodid.idprobglobal</code></li>
 <li>Form body: <code>values=device.ismobile,fodid.idprobglobal</code></li>
 </ul>
-<p>With a Resource Key, <code>values</code> adds the named properties to the ones the key already carries, and a property the license does not entitle is still withheld. Omit it to get the key's own set. See the <a href="https://51degrees.com/developers/property-dictionary">Property Dictionary</a> for the properties available on your license.</p>
+<p>With a Resource Key, <code>values</code> adds the named properties to the key's own set for that request, without changing the key, and a property the license does not entitle is still withheld. Omit it to get the key's own set. See the <a href="https://51degrees.com/developers/property-dictionary">Property Dictionary</a> for the properties available on your license.</p>
 <p>A page on another domain may send the <code>X-51D-Resource-Key</code> and <code>X-51D-Values</code> headers, because the service answers the browser's CORS preflight for them. It refuses a preflight for <code>X-51D-License-Key</code>, because a License Key is never placed in a page.</p>
 <p>The 51Did redeem route needs the account's License Key where the account holds one, sent alone or beside the Resource Key, because the sealed result being redeemed is bound to that account.</p>
 <h2 class="doxsection" id="Resource_key_domains">The domains a Resource Key accepts<a class="headerlink" href="#Resource_key_domains" aria-label="Permalink to this section">🔗</a></h2>
@@ -140,7 +138,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <li><b>A key that names no domains</b> is accepted from any page and any server. Anyone who reads the key out of your page can use it, and every request they make counts against your monthly requests, so name the domains on a key that goes in a page, and keep a key that names no domains for a server.</li>
 <li><b>A key that names domains</b> is accepted only from a request that says it came from one of them. The service reads the <code>Referer</code> header and, where there is none, the <code>Origin</code> header, and refuses any other request with <code>401</code> and a message naming the domain it rejected, which is <a class="el" href="_services__cloud__error_messages.html#Resource_key_not_authorized_on_domain" title="Resource Key not authorized on domain">Resource Key not authorized on domain</a>. A page that suppresses the <code>Referer</code> header, with <code>&lt;meta name="referrer" content="no-referrer"&gt;</code> or an equivalent policy, sends neither header, so it is refused. A server sends neither header unless you add one, so a server uses a key that names no domains, sends an <code>Origin</code> header naming one of the key's domains, or sends its License Key alone as described above.</li>
 </ul>
-<p>The check is the same on every endpoint that takes a Resource Key. </p>
+<p>The check is the same on every endpoint that takes a Resource Key, except the PMP and ADI loaders, which carry the key in their address without checking it. The bundle request each loader then makes is checked. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->

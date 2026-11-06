@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Combined Device Detection + IP Intelligence - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Combined Device Detection + IP Intelligence</title>
+<meta name="description" content="Combine Device Detection and IP Intelligence - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Combine Device Detection and IP Intelligence</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -64,15 +62,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__index.html">IP Intelligence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__combined__index.html">Combined Device Detection + IP Intelligence</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__index.html">IP Intelligence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__combined__index.html">Combine Device Detection and IP Intelligence</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Combined Device Detection + IP Intelligence </h1></div><!--header-->
+<h1 class="g-docs__page-title">Combine Device Detection and IP Intelligence </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-35">Introduction<a class="headerlink" href="#introduction-35" aria-label="Permalink to this section">🔗</a></h2>
-<p>Examples demonstrating how to combine Device Detection and IP Intelligence engines in a single pipeline for parallel processing.</p>
-<p><a class="el" href="_ip_intelligence__combined__console__index.html" title="Console Examples">Console Examples</a></p>
-<p><a class="el" href="_ip_intelligence__combined__web__index.html" title="Web Examples">Web Examples</a> </p>
+<p>Examples that combine the Device Detection and IP Intelligence engines in a single pipeline. The examples add the engines one after the other, so they run in sequence. <a class="el" href="_pipeline_api__features__parallel_execution.html" title="Parallel execution">Parallel execution</a> describes how to run engines at the same time.</p>
+<p><a class="el" href="_ip_intelligence__combined__console__index.html" title="Console examples">Console examples</a></p>
+<p><a class="el" href="_ip_intelligence__combined__web__index.html" title="Web examples">Web examples</a> </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->

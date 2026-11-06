@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Simple Custom Flow Element - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Simple Custom Flow Element</title>
+<meta name="description" content="Simple custom flow element - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Simple custom flow element</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,13 +64,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__examples__index.html">Pipeline API Examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__examples__custom_element__index.html">Examples with a custom flow element</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__examples__custom_element__flow_element.html">Simple Custom Flow Element</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__examples__index.html">Pipeline API examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__examples__custom_element__index.html">Examples with a custom flow element</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__examples__custom_element__flow_element.html">Simple custom flow element</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Simple Custom Flow Element </h1></div><!--header-->
+<h1 class="g-docs__page-title">Simple custom flow element </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-64">Introduction<a class="headerlink" href="#introduction-64" aria-label="Permalink to this section">🔗</a></h2>
-<p>This example shows a very simple <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> which takes a date of birth and returns a star sign. Although a basic (and not all that useful) <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a>, the example demonstrates how you can start to implement your own <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a>.</p>
+<p>Build a <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a> that takes a date of birth and returns a star sign. Use this example as a starting point for your own <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow elements</a>.</p>
 <h2 class="doxsection" id="download-example-2">Download example<a class="headerlink" href="#download-example-2" aria-label="Permalink to this section">🔗</a></h2>
 <p>The source code used in this example is available here:</p><ul>
 <li><a href="https://github.com/51Degrees/51degrees-dotnet/tree/main/pipeline">C# Visual Studio project</a></li>
@@ -81,16 +79,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <li><a href="https://github.com/51Degrees/51degrees-node/tree/main/pipeline">Node.js project</a></li>
 </ul>
 <h2 class="doxsection" id="dependencies-2">Dependencies<a class="headerlink" href="#dependencies-2" aria-label="Permalink to this section">🔗</a></h2>
-<p>The <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> will need a reference to the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> core package</p>
+<p>The <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a> will need a reference to the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> core package</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific dependencies.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  Create a new console project (.NET Core or Framework) and add a reference to the <code>FiftyOne.Pipeline.Core</code> NuGet package.  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  The only dependency needed for Java is the <code>pipeline.core</code> Maven package from <code>com.51degrees</code>. To include this, add the following to the <code>&lt;dependencies&gt;</code> section of the project's <code>pom.xml</code>: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;<span class="c-code__keywordtype">dependency</span>&gt;</div>
 <div class="c-code__line">    &lt;<span class="c-code__keywordtype">groupId</span>&gt;<span class="c-code__keyword">com.51degrees</span>&lt;/<span class="c-code__keywordtype">groupId</span>&gt;</div>
 <div class="c-code__line">    &lt;<span class="c-code__keywordtype">artifactId</span>&gt;<span class="c-code__keyword">pipeline.core</span>&lt;/<span class="c-code__keywordtype">artifactId</span>&gt;</div>
-<div class="c-code__line">    &lt;<span class="c-code__keywordtype">version</span>&gt;4.2.0&lt;/<span class="c-code__keywordtype">version</span>&gt;</div>
+<div class="c-code__line">    &lt;<span class="c-code__keywordtype">version</span>&gt;4.5.128&lt;/<span class="c-code__keywordtype">version</span>&gt;</div>
 <div class="c-code__line">&lt;/<span class="c-code__keywordtype">dependency</span>&gt;</div>
-</div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  Add a dependency to the <code>fiftyone.pipeline.core</code> composer package to the composer.json, and required it in the source with <code>include("../vendor/autoload.php");</code>  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  Add a dependency to the <code>fiftyone.pipeline.core</code> NPM package to the package.json, and required it in the source with <code>require("fiftyone.pipeline.core")</code>.  </div>   </div> </p>
+</div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  Add the <code>fiftyone.pipeline.core</code> Composer package as a dependency in composer.json, then load it with <code>include("../vendor/autoload.php");</code> in your source.  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  Add the <code>fiftyone.pipeline.core</code> npm package as a dependency in package.json, then load it in your source with <code>require("fiftyone.pipeline.core")</code>.  </div>   </div> </p>
 <h2 class="doxsection" id="data-2">Data<a class="headerlink" href="#data-2" aria-label="Permalink to this section">🔗</a></h2>
-<p>The <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> being added to the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a> by this <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> is a star sign. So this should have its own 'getter' in its <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a>.</p>
-<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> implementation.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  .NET supports interfaces, so the <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> should have a public interface and an internal concrete implementation with easy 'setters'.</p>
+<p>The <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element data">element data</a> being added to the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow data">flow data</a> by this <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a> is a star sign. So this should have its own 'getter' in its <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element data">element data</a>.</p>
+<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element data">element data</a> implementation.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  .NET supports interfaces, so the <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element data">element data</a> should have a public interface and an internal concrete implementation with easy 'setters'.</p>
 <p>In this example, only one value is populated. So an interface <code>IStarSign</code> will extend <code>IElementData</code> to add a 'getter' for it.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keyword">namespace </span>Examples.CustomFlowElement.Data</div>
 <div class="c-code__line">{</div>
@@ -99,7 +97,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">        <span class="c-code__keywordtype">string</span> StarSign { <span class="c-code__keyword">get</span>; }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
-</div><!-- fragment --><p>Now the internal implementation of it will implement this 'getter' and add a 'setter' for the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> to use.</p>
+</div><!-- fragment --><p>Now the internal implementation of it will implement this 'getter' and add a 'setter' for the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a> to use.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">    <span class="c-code__keyword">internal</span> <span class="c-code__keyword">class </span>StarSignData : ElementDataBase, IStarSignData</div>
 <div class="c-code__line">    {</div>
 <div class="c-code__line">        <span class="c-code__keyword">public</span> StarSignData(</div>
@@ -118,12 +116,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 </div><!-- fragment --><p> </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;"> </p>
-<p>Java supports interfaces, so the <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> should have a public interface and a package private concrete implementation with easy 'setters'.</p>
+<p>Java supports interfaces, so the <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element data">element data</a> should have a public interface and a package private concrete implementation with easy 'setters'.</p>
 <p>In this example, only one value is populated. So an interface <code>StarSignData</code> will extend <code>ElementData</code> to add a 'getter' for it.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keyword">public</span> <span class="c-code__keyword">interface </span>StarSignData <span class="c-code__keyword">extends</span> ElementData {</div>
 <div class="c-code__line">    String getStarSign();</div>
 <div class="c-code__line">}</div>
-</div><!-- fragment --><p>Now the internal implementation of it will implement this 'getter' and add a 'setter' for the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> to use.</p>
+</div><!-- fragment --><p>Now the internal implementation of it will implement this 'getter' and add a 'setter' for the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a> to use.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keyword">class </span>StarSignDataInternal <span class="c-code__keyword">extends</span> ElementDataBase implements StarSignData {</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> StarSignDataInternal(Logger logger, FlowData flowData) {</div>
@@ -139,11 +137,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">        put(<span class="c-code__stringliteral">&quot;starsign&quot;</span>, starSign);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
-</div><!-- fragment --><p>Note that this concrete implementation of <code>StarSignData</code> sits in the same package as the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a>, not the <code>StarSignData</code> interface, as it only needs to be accessible by the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a>.  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  PHP's implementation of <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> does not require concrete getters for IDE autocompletion, so <code>elementDataDictionary</code> can be used.  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  Node's implementation of <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> does not require concrete getters for IDE autocompletion, so <code>elementDataDictionary</code> can be used.  </div>   </div> </p>
+</div><!-- fragment --><p>Note that this concrete implementation of <code>StarSignData</code> sits in the same package as the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a>, not the <code>StarSignData</code> interface, as it only needs to be accessible by the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a>.  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  PHP's implementation of <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element data">element data</a> does not require concrete getters for IDE autocompletion, so <code>elementDataDictionary</code> can be used.  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  Node's implementation of <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element data">element data</a> does not require concrete getters for IDE autocompletion, so <code>elementDataDictionary</code> can be used.  </div>   </div> </p>
 <h2 class="doxsection" id="flow-element-1">Flow element<a class="headerlink" href="#flow-element-1" aria-label="Permalink to this section">🔗</a></h2>
-<p>Now the actual <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> needs to be implemented. For this, the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a>'s base class can be used which deals with most of the logic. The <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element Properties">element properties</a>, <a class="el" href="_pipeline_api__concepts__data__evidence_key_filter.html" title="Evidence Key Filter">evidence keys</a> and the processing are all that need implementing.</p>
-<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> implementation.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  First let's define a class which extends <code>FlowElementBase</code> (and partially implements <code>IFlowElement</code>). This has the type arguments of <code>IStarSignData</code> - the interface extending <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> which will be added to the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a>, and <code>IElementPropertyMetaData</code> - as we only need the standard metadata for <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element Properties">element properties</a>.</p>
-<p>This needs a constructor matching the <code>FlowElementBase</code> class. So it takes a logger, and an <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> factory which will be used to construct an <code>IStarSignData</code>:</p>
+<p>Now the actual <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a> needs to be implemented. For this, the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a>'s base class can be used which deals with most of the logic. The <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element properties">element properties</a>, <a class="el" href="_pipeline_api__concepts__data__evidence_key_filter.html" title="Evidence key filter">evidence keys</a> and the processing are all that need implementing.</p>
+<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a> implementation.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  First let's define a class which extends <code>FlowElementBase</code> (and partially implements <code>IFlowElement</code>). This has the type arguments of <code>IStarSignData</code> - the interface extending <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element data">element data</a> which will be added to the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow data">flow data</a>, and <code>IElementPropertyMetaData</code> - as we only need the standard metadata for <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element properties">element properties</a>.</p>
+<p>This needs a constructor matching the <code>FlowElementBase</code> class. So it takes a logger, and an <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element data">element data</a> factory which will be used to construct an <code>IStarSignData</code>:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>SimpleFlowElement : FlowElementBase&lt;IStarSignData, IElementPropertyMetaData&gt;</div>
 <div class="c-code__line">    {</div>
 <div class="c-code__line">        <span class="c-code__keyword">public</span> SimpleFlowElement(</div>
@@ -183,7 +181,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">            }</div>
 <div class="c-code__line">            _starSigns = starSigns;</div>
 <div class="c-code__line">        }</div>
-</div><!-- fragment --><p>Now the abstract methods can be implemented to create a functional <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a>.</p>
+</div><!-- fragment --><p>Now the abstract methods can be implemented to create a functional <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a>.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>SimpleFlowElement : FlowElementBase&lt;IStarSignData, IElementPropertyMetaData&gt;</div>
 <div class="c-code__line">    {</div>
 <div class="c-code__line">        <span class="c-code__keyword">public</span> SimpleFlowElement(</div>
@@ -279,8 +277,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --><p> </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;"> </p>
-<p>First let's define a class which extends <code>FlowElementBase</code> (which partially implements <code>FlowElement</code>). This has the type arguments of <code>StarSignData</code> - the interface extending <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> which will be added to the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a>, and <code>ElementPropertyMetaData</code> - as we only need the standard metadata for <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element Properties">element properties</a>.</p>
-<p>This needs a constructor matching the <code>FlowElementBase</code> class. So it takes a logger, and an <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> factory which will be used to construct a <code>StarSignData</code>:</p>
+<p>First let's define a class which extends <code>FlowElementBase</code> (which partially implements <code>FlowElement</code>). This has the type arguments of <code>StarSignData</code> - the interface extending <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element data">element data</a> which will be added to the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow data">flow data</a>, and <code>ElementPropertyMetaData</code> - as we only need the standard metadata for <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element properties">element properties</a>.</p>
+<p>This needs a constructor matching the <code>FlowElementBase</code> class. So it takes a logger, and an <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element data">element data</a> factory which will be used to construct a <code>StarSignData</code>:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>SimpleFlowElement <span class="c-code__keyword">extends</span> FlowElementBase&lt;StarSignData, ElementPropertyMetaData&gt; {</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> SimpleFlowElement(</div>
@@ -335,7 +333,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">        }</div>
 <div class="c-code__line">        this.starSigns = starSigns;</div>
 <div class="c-code__line">    }</div>
-</div><!-- fragment --><p>Now the abstract methods can be implemented to create a functional <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a>.</p>
+</div><!-- fragment --><p>Now the abstract methods can be implemented to create a functional <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a>.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>SimpleFlowElement <span class="c-code__keyword">extends</span> FlowElementBase&lt;StarSignData, ElementPropertyMetaData&gt; {</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> SimpleFlowElement(</div>
@@ -442,7 +440,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">}</div>
 </div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  First let's define a class which extends <code>flowElement</code>:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keyword">class </span>AstrologyFlowElement <span class="c-code__keyword">extends</span> FlowElement</div>
-</div><!-- fragment --><p>Now the abstract methods can be implemented to create a functional <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a>.</p>
+</div><!-- fragment --><p>Now the abstract methods can be implemented to create a functional <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a>.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keyword">class </span>AstrologyFlowElement <span class="c-code__keyword">extends</span> FlowElement</div>
 <div class="c-code__line">{</div>
 <div class="c-code__line">    <span class="c-code__comment">// datakey used to categorise data coming back from this</span></div>
@@ -535,7 +533,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">      }</div>
 <div class="c-code__line">    };</div>
 <div class="c-code__line">  }</div>
-</div><!-- fragment --><p>Now the abstract methods can be implemented to create a functional <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a>.</p>
+</div><!-- fragment --><p>Now the abstract methods can be implemented to create a functional <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a>.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">//! [constructor]</div>
 <div class="c-code__line">// Astrology flowElement</div>
 <div class="c-code__line">class Astrology extends FiftyOnePipelineCore.FlowElement {</div>
@@ -591,9 +589,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">}</div>
 </div><!-- fragment --><p>  </div>   </div> </p>
 <h2 class="doxsection" id="builder-2">Builder<a class="headerlink" href="#builder-2" aria-label="Permalink to this section">🔗</a></h2>
-<p>Now the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> needs one final thing, an <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a> to construct it. This only needs to provide the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> with a logger and an <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> factory - as this example has no extra configuration options.</p>
-<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a> implementation.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  The <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a> has one important method, and that is <code>Build</code>. This returns a new <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> which the <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a> provides with a logger and an <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> factory.</p>
-<p>The <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> factory is implemented in the <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a> class to make use of the same logger factory.</p>
+<p>Create an <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element builder">element builder</a> that constructs the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a> with a logger and an <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element data">element data</a> factory. This example has no additional configuration options.</p>
+<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element builder">element builder</a> implementation.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  The <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element builder">element builder</a> has one important method, and that is <code>Build</code>. This returns a new <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a> which the <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element builder">element builder</a> provides with a logger and an <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element data">element data</a> factory.</p>
+<p>The <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element data">element data</a> factory is implemented in the <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element builder">element builder</a> class to make use of the same logger factory.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>SimpleFlowElementBuilder</div>
 <div class="c-code__line">    {</div>
 <div class="c-code__line">        <span class="c-code__keyword">private</span> ILoggerFactory _loggerFactory;</div>
@@ -619,8 +617,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">            <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">new</span> StarSignData(_dataLogger, pipeline);</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
-</div><!-- fragment --><p> </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  The <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a> has one important method, and that is <code>build</code>. This returns a new <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> which the <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a> provides with a logger and an <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> factory.</p>
-<p>The <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> factory is implemented in the <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element Builder">element builder</a> class to make use of the same logger factory.</p>
+</div><!-- fragment --><p> </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  The <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element builder">element builder</a> has one important method, and that is <code>build</code>. This returns a new <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a> which the <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element builder">element builder</a> provides with a logger and an <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element data">element data</a> factory.</p>
+<p>The <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element data">element data</a> factory is implemented in the <a class="el" href="_pipeline_api__concepts__configuration__builders__element_builder.html" title="Element builder">element builder</a> class to make use of the same logger factory.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>SimpleFlowElementBuilder {</div>
 <div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">final</span> ILoggerFactory loggerFactory;</div>
 <div class="c-code__line"> </div>
@@ -645,7 +643,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">}</div>
 </div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  The PHP implementation does not use separate builder classes. Instead the options are provided by optional constructor parameters.  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  The Node implementation does not use separate builder classes. Instead the options are provided by optional constructor parameters.  </div>   </div> </p>
 <h2 class="doxsection" id="usage-8">Usage<a class="headerlink" href="#usage-8" aria-label="Permalink to this section">🔗</a></h2>
-<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific usage.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  This new <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> can now be added to a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> and used like:</p>
+<p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a tab to view language specific usage.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  This new <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a> can now be added to a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> and used like:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">            <span class="c-code__comment">// Construct the engine.</span></div>
 <div class="c-code__line">            var starSignElement = <span class="c-code__keyword">new</span> SimpleFlowElementBuilder(_loggerFactory)</div>
 <div class="c-code__line">                .Build();</div>
@@ -670,7 +668,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;{flowData.Get&lt;IStarSignData&gt;().StarSign}.&quot;</span>);</div>
 <div class="c-code__line">            }</div>
 </div><!-- fragment --><p>to give an output of: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">With a date of birth of 18/12/1992, your star sign is Sagittarius.</div>
-</div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  This new <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> can now be added to a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> and used like:</p>
+</div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  This new <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a> can now be added to a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> and used like:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">            SimpleFlowElement starSignElement =</div>
 <div class="c-code__line">                <span class="c-code__keyword">new</span> SimpleFlowElementBuilder(loggerFactory)</div>
 <div class="c-code__line">                    .build();</div>
@@ -696,7 +694,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">                }</div>
 <div class="c-code__line">            }</div>
 </div><!-- fragment --><p>to give an output of: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">With a date of birth of 18/12/1992, your star sign is Sagittarius.</div>
-</div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  This new <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> can now be added to a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> and used like:</p>
+</div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  This new <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a> can now be added to a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> and used like:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">// Make the Pipeline and add the element we want to it</span></div>
 <div class="c-code__line">$Pipeline = (<span class="c-code__keyword">new</span> PipelineBuilder([<span class="c-code__stringliteral">&#39;javascriptBuilderSettings&#39;</span> =&gt; $javascriptBuilderSettings]))</div>
 <div class="c-code__line">    -&gt;add(<span class="c-code__keyword">new</span> AstrologyFlowElement())</div>
@@ -772,7 +770,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Return the full output to the page</span></div>
 <div class="c-code__line">echo $output;</div>
-</div><!-- fragment --><p>To print the star sign of the user.  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  This new <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> can now be added to a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> and used like:</p>
+</div><!-- fragment --><p>To print the star sign of the user.  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  This new <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a> can now be added to a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> and used like:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"> </div>
 <div class="c-code__line">const element = new Astrology();</div>
 <div class="c-code__line"> </div>
@@ -794,37 +792,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">  console.log(flowData.astrology.starSign);</div>
 <div class="c-code__line">});</div>
 <div class="c-code__line"> </div>
-</div><!-- fragment --><p>To print the star sign of the user.  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  This new <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> can now be added to a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> and used like:</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">            SimpleFlowElement starSignElement =</div>
-<div class="c-code__line">                <span class="c-code__keyword">new</span> SimpleFlowElementBuilder(loggerFactory)</div>
-<div class="c-code__line">                    .build();</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__comment">// The pipeline closes the element when it is closed.</span></div>
-<div class="c-code__line">            <span class="c-code__keywordflow">try</span> (Pipeline pipeline = <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
-<div class="c-code__line">                .addFlowElement(starSignElement)</div>
-<div class="c-code__line">                .setAutoCloseElements(<span class="c-code__keyword">true</span>)</div>
-<div class="c-code__line">                .build()) {</div>
-<div class="c-code__line">                Calendar dob = Calendar.getInstance();</div>
-<div class="c-code__line">                dob.set(1992, Calendar.DECEMBER, 18);</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">                <span class="c-code__keywordflow">try</span> (FlowData flowData = pipeline.createFlowData()) {</div>
-<div class="c-code__line">                    flowData</div>
-<div class="c-code__line">                        .addEvidence(<span class="c-code__stringliteral">&quot;date-of-birth&quot;</span>, dob.getTime())</div>
-<div class="c-code__line">                        .process();</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">                    System.out.println(<span class="c-code__stringliteral">&quot;With a date of birth of &quot;</span> +</div>
-<div class="c-code__line">                        <span class="c-code__keyword">new</span> SimpleDateFormat(<span class="c-code__stringliteral">&quot;yyyy/MM/dd&quot;</span>).format(dob.getTime()) +</div>
-<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;, your star sign is &quot;</span> +</div>
-<div class="c-code__line">                        flowData.getFromElement(starSignElement).getStarSign() +</div>
-<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;.&quot;</span>);</div>
-<div class="c-code__line">                }</div>
-<div class="c-code__line">            }</div>
-</div><!-- fragment --><p>to give an output of: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">With a date of birth of 18/12/1992, your star sign is Sagittarius.</div>
-</div><!-- fragment --><p>  </div>   </div> </p>
+</div><!-- fragment --><p>To print the star sign of the user.  </div>   </div> </p>
 <h2 class="doxsection" id="next-steps-2">Next steps<a class="headerlink" href="#next-steps-2" aria-label="Permalink to this section">🔗</a></h2>
-<p>The example for <a class="el" href="_pipeline_api__examples__custom_element__on_premise.html" title="Custom On-premise Engine">Custom On-premise Engine</a> shows how you can extend the functionality of this <b>flow element</b> to use a <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html#PipelineApi_Concepts_Configuration_DataFiles" title="Data files">data file</a>.</p>
-<p>The <b>flow element</b> can also be upgraded to use evidence supplied by the client, as shown in the <a class="el" href="_pipeline_api__examples__custom_element__client_side_evidence.html" title="Custom Engine Using Client-Side Evidence">Custom Client-Side Evidence</a> example.</p>
-<p>To delegate the processing and logic to a cloud service, refer to the <a class="el" href="_pipeline_api__examples__custom_element__cloud.html" title="Custom Cloud Engine">Custom Cloud Engine</a> example. </p>
+<p>The example for <a class="el" href="_pipeline_api__examples__custom_element__on_premise.html" title="Custom on-premise engine">Custom On-premise Engine</a> shows how you can extend the functionality of this <b>flow element</b> to use a <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html#PipelineApi_Concepts_Configuration_DataFiles" title="Data files">data file</a>.</p>
+<p>The <b>flow element</b> can also be upgraded to use evidence supplied by the client, as shown in the <a class="el" href="_pipeline_api__examples__custom_element__client_side_evidence.html" title="Custom engine using client-side evidence">Custom Client-Side Evidence</a> example.</p>
+<p>To delegate the processing and logic to a cloud service, refer to the <a class="el" href="_pipeline_api__examples__custom_element__cloud.html" title="Custom cloud engine">Custom Cloud Engine</a> example. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->

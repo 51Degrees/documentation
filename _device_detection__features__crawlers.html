@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,13 +64,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__index.html">Device Detection Features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__crawlers.html">Crawlers</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__index.html">Device Detection features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__crawlers.html">Crawlers</a></li>  </ul>
 </div>
 <h1 class="g-docs__page-title">Crawlers </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="overview">Overview<a class="headerlink" href="#overview" aria-label="Permalink to this section">🔗</a></h2>
-<p>Key crawler properties include <code>CrawlerUsage</code> and <code>CrawlerProductTokens</code>. <code>CrawlerUsage</code> contains a list of the uses of the crawler data. Crawlers are categorised into one or more of the below crawler usage values based on our judgement of publicly available information from the crawler controller and any research.</p>
+<p>Key crawler properties include <code>CrawlerUsage</code> and <code>CrawlerProductTokens</code>. <code>CrawlerUsage</code> lists how the crawler uses collected data. We assign one or more usage values based on information published by the crawler operator and our research.</p>
 <h2 class="doxsection" id="values">Values<a class="headerlink" href="#values" aria-label="Permalink to this section">🔗</a></h2>
 <p>Control what your content can be used for by checking the <code>CrawlerUsage</code> property. These values are based on the <a href="https://rslstandard.org/rsl#_3-4-1-1-usage-vocabulary">RSL 1.0 Specification - 3.4.1.1 Usage Vocabulary</a> and we have expanded to include non-AI related crawler usages.</p>
 <ul>
@@ -86,20 +84,20 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <li><b>Security</b> Indicates that the crawler is a security-focused web crawler that scans domains for vulnerabilities.</li>
 <li><b>Analytics</b> Indicates that the crawler is used to gather data for marketing analytics.</li>
 <li><b>Feed</b> Indicates that the crawler is used for aggregating news, information, or data.</li>
-<li><b>Discovery</b> Indicates that the crawler is used to gain an understanding of the discoverability or search ranking of the crawled website or web page. Primarily relating to Search Engine Optimisation (SEO).</li>
+<li><b>Discovery</b> Indicates that the crawler gathers information about a website's discoverability or search ranking, primarily for search engine optimization (SEO).</li>
 </ul>
 <h2 class="doxsection" id="isartificialintelligence">IsArtificialIntelligence<a class="headerlink" href="#isartificialintelligence" aria-label="Permalink to this section">🔗</a></h2>
 <p><code>IsArtificialIntelligence</code> is a property designed to give you easy answers about AI crawling. If the crawler has a <code>CrawlerUsage</code> related to AI this will be True.</p>
 <ul>
-<li><b>True</b> The crawler is confirmed by the controller to be used to train artificial intelligence.</li>
-<li><b>False</b> The crawler is not used to train artificial intelligence. This may be based on the controller documentation or on the capabilities and purpose of the crawler. For crawlers which do not read website content it is assumed they cannot be used to train artificial intelligence.</li>
-<li><b>Unknown</b> It is not possible to determine whether the crawler is being used to train artificial intelligence.</li>
+<li><b>True</b> The crawler operates for an AI related purpose, such as the Index, Train, or Input uses in <code>CrawlerUsage</code>.</li>
+<li><b>False</b> The crawler does not operate for an AI related purpose. This may be based on the controller documentation or on the capabilities and purpose of the crawler. For crawlers which do not read website content it is assumed they cannot be used for an AI related purpose.</li>
+<li><b>Unknown</b> It is not possible to determine whether the crawler operates for an AI related purpose.</li>
 <li><b>N/A</b> Not a crawler.</li>
 </ul>
-<h2 class="doxsection" id="signed-agents">Signed Agents<a class="headerlink" href="#signed-agents" aria-label="Permalink to this section">🔗</a></h2>
-<p><code>IsCrawler</code> and the other crawler properties tell you what an agent declares about itself. An <a class="el" href="_pipeline_api__features__agent_signature.html" title="Agent Signatures">agent signature</a> tells you what an agent has proved. The two are used together.</p>
+<h2 class="doxsection" id="signed-agents">Signed agents<a class="headerlink" href="#signed-agents" aria-label="Permalink to this section">🔗</a></h2>
+<p><code>IsCrawler</code> and the other crawler properties tell you what a crawler declares about itself. A verified <a class="el" href="_pipeline_api__features__agent_signature.html" title="Agent signatures">agent signature</a> proves that the request was signed with a key that the crawler or agent publishes. The two are used together.</p>
 <p>A crawler declares itself through its User-Agent header, and any other program can send the same header, so a declaration is a claim. Under the IETF Web Bot Auth protocol an agent instead signs its request with a private key and publishes the matching public key on its own site. That signature either checks out or it does not, and it cannot be produced without the private key, so <code>AgentSignature</code> is proof where <code>IsCrawler</code> is a claim.</p>
-<p>Only a handful of agents sign today, so most requests report the <code>Absent</code> status and an absent signature is never evidence against a request. See <a class="el" href="_pipeline_api__features__agent_signature.html" title="Agent Signatures">Agent Signatures</a> for the properties, the statuses and how to add the feature to your <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>.</p>
+<p>Only a handful of agents sign today, so most requests report the <code>Absent</code> status and an absent signature is never evidence against a request. See <a class="el" href="_pipeline_api__features__agent_signature.html" title="Agent signatures">Agent signatures</a> for the properties, the statuses and how to add the feature to your <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>.</p>
 <h2 class="doxsection" id="robotstxt">Robots.txt<a class="headerlink" href="#robotstxt" aria-label="Permalink to this section">🔗</a></h2>
 <p>We use these properties for our <a href="https://51degrees.com/robots-txt">Robots.txt generator</a> so that you can allow or disallow crawlers by <code>CrawlerUsage</code>. </p>
 </div></div><!-- primary -->

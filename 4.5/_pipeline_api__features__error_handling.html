@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Error Handling - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Error Handling</title>
+<meta name="description" content="Error handling - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Error handling</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -64,22 +62,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__features__index.html">API Features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__features__error_handling.html">Error Handling</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__features__index.html">API features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__features__error_handling.html">Error handling</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Error Handling </h1></div><!--header-->
+<h1 class="g-docs__page-title">Error handling </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-73">Introduction<a class="headerlink" href="#introduction-73" aria-label="Permalink to this section">🔗</a></h2>
-<p>The <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> can contain and number or configuration of <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a>, including custom third-party ones. As such, it must have a robust and consistent error handling solution.</p>
+<p>A <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> can contain any number or combination of <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow elements</a>, including custom elements. Errors from these elements are handled consistently.</p>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/exception-handling.md#">Specification</a> for more technical details.</p>
 <h2 class="doxsection" id="approach">Approach<a class="headerlink" href="#approach" aria-label="Permalink to this section">🔗</a></h2>
 <p>Almost all languages have <code>try/catch</code> constructs, so these are used by the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> code when calling functions on flow elements.</p>
 <p>If the flow element code raises an error, it will be handled by the catch statement.</p>
-<p>Any error that occurs will be logged in the <code>Errors</code> section of the current <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a>. The pipeline then proceeds to execution of the next <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a>.</p>
-<p>After all <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> have completed, there are two possible scenarios, depending on <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> configuration:</p>
+<p>Any error that occurs will be logged in the <code>Errors</code> section of the current <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow data">flow data</a>. The pipeline then proceeds to execution of the next <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a>.</p>
+<p>After all <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow elements</a> have completed, there are two possible scenarios, depending on <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> configuration:</p>
 <ol type="1">
-<li>If the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a> contains any errors then an error will be raised using the standard language features.</li>
-<li>Execution will return to the caller of the <code>Process</code> function. Any errors will effectively be hidden/suppressed unless <a class="el" href="_pipeline_api__features__logging.html" title="Logging">logging</a> is configured or the <code>Errors</code> section of the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a> is checked by the caller.</li>
+<li>If the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow data">flow data</a> contains any errors then an error will be raised using the standard language features.</li>
+<li>Execution will return to the caller of the <code>Process</code> function. Any errors will effectively be hidden/suppressed unless <a class="el" href="_pipeline_api__features__logging.html" title="Logging">logging</a> is configured or the <code>Errors</code> section of the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow data">flow data</a> is checked by the caller.</li>
 </ol>
 <h2 class="doxsection" id="configuration-3">Configuration<a class="headerlink" href="#configuration-3" aria-label="Permalink to this section">🔗</a></h2>
 <p>Error handling is configured using the 'SuppressProcessExceptions' setting. If set to <code>true</code>, errors are hidden/suppressed. If <code>false</code>, an error will be raised at the end of <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> execution.</p>
@@ -87,11 +85,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <p>When running the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> in production, we recommend setting this to <code>true</code> in order to prevent unexpected errors from crashing the application.</p>
 <p>As with all configuration settings, this can be set in code or via a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> configuration file (see <a href="https://github.com/51Degrees/51degrees-dotnet/blob/main/examples/device-detection/Cloud/Framework-Web/App_Data/51Degrees.json#L41">.NET example</a>).</p>
 <p>The setting name follows each language's conventions: <code>SuppressProcessExceptions</code> in .NET, <code>setSuppressProcessException</code> / <code>&lt;SuppressProcessException&gt;</code> (singular) in Java, <code>suppressProcessExceptions</code> in Node.js, and <code>suppress_process_exceptions</code> in Python. In Node.js and Python it is read from the pipeline-level <code>PipelineOptions.BuildParameters</code> section of a configuration file. See <a class="el" href="_pipeline_api__concepts__configuration__builders__pipeline_builder.html#PipelineApi_Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions" title="Suppress process exceptions">Pipeline Builder</a> for per-language code and configuration examples.</p>
-<h2 class="doxsection" id="testing-the-unhappy-path-scenarios">Testing the unhappy path scenarios<a class="headerlink" href="#testing-the-unhappy-path-scenarios" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="testing-failure-scenarios">Testing failure scenarios<a class="headerlink" href="#testing-failure-scenarios" aria-label="Permalink to this section">🔗</a></h2>
 <p>In each integration there are dependencies that can fail, such as network connectivity, DNS, load balancers, web servers etc. <br  />
  This is especially true for scenarios relying on 51Degrees Cloud Service. There are several steps you need to take to ensure your integration is safe against such failures and won't crash in production.</p>
 <h2 class="doxsection" id="simulating-the-failure">Simulating the failure<a class="headerlink" href="#simulating-the-failure" aria-label="Permalink to this section">🔗</a></h2>
-<p>For Cloud integration there two ways to simulate a 51Degrees Cloud Service dependency failure:</p>
+<p>For a cloud integration, there are two ways to simulate a 51Degrees Cloud Service dependency failure:</p>
 <ol type="1">
 <li>Specify a non-existent <code>EndPoint</code> in the <code>CloudRequestEngine</code> configuration in the configuration file. For example, set it to "http://nonexistent.domain/".</li>
 <li>Specify <code>127.0.0.1   cloud.51degrees.com</code> in the <code>/etc/hosts</code> file (<code>C:\Windows\System32\drivers\etc\hosts</code> on Windows).</li>
@@ -101,12 +99,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <h2 class="doxsection" id="testing-1">Testing<a class="headerlink" href="#testing-1" aria-label="Permalink to this section">🔗</a></h2>
 <ol type="1">
 <li>Simulate the failure using one of the methods above.</li>
-<li>By default <code>SuppressProcessExceptions</code> is <code>false</code>, thus demanding you to first test the behaviors under this setting. Verify that you receive an exception originating in the 51D <code>Pipeline</code> code – it should state that <code>cloud.51degrees.com</code> is not reachable or similar.</li>
-<li>Next set <code>SuppressProcessExceptions</code> to <code>true</code> in the configuration and rerun the service. Verify that you don't get an exception from the 51D <code>Pipeline</code> code, but instead it now returns <code>FlowData</code> object with <code>Errors</code>. If you still get some exceptions, check the next step.</li>
+<li>First test with <code>SuppressProcessExceptions</code> set to its default, <code>false</code>. Verify that the 51Degrees <code>Pipeline</code> raises an exception stating that <code>cloud.51degrees.com</code> cannot be reached.</li>
+<li>Set <code>SuppressProcessExceptions</code> to <code>true</code> in the configuration and rerun the service. Verify that the 51Degrees <code>Pipeline</code> returns a <code>FlowData</code> object with <code>Errors</code> instead of raising an exception. If an exception still occurs, follow the next step.</li>
 <li>Make sure you properly wrap getting the device data in your code from FlowData (<code>FlowData.Get&lt;IDeviceData&gt;()</code> in .NET) as this call may throw an exception (see <a href="https://github.com/51Degrees/51degrees-dotnet/blob/main/examples/device-detection/Cloud/Framework-Web/Default.aspx#L97">.NET example</a>). Also make sure that you wrap retrieving properties from device data, such as using a function that try-catch-wraps and null-checks the device data and its properties (see <a href="https://github.com/51Degrees/51degrees-dotnet/blob/main/examples/device-detection/Cloud/Framework-Web/Default.aspx#L111">.NET example</a>).</li>
 <li>Finally, undo the failure simulation (either remove the non-existent endpoint from the configuration or comment out the record in the <code>hosts</code> file), and observe the happy path scenario. All should work as expected.</li>
 </ol>
-<p>Leave the <code>SuppressProcessExceptions</code> configuration set to <code>true</code> for the production setup, as it will protect the users from interruptions in case any of the dependencies fail. </p>
+<p>Leave the <code>SuppressProcessExceptions</code> configuration set to <code>true</code> for the production setup. With that setting and the error handling from step 4 in place, a failed dependency does not interrupt your users. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->

@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Reverse Geocoding Overview - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Reverse Geocoding Overview</title>
+<meta name="description" content="Reverse Geocoding overview - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Reverse Geocoding overview</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,19 +64,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_reverse_geoco
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_reverse_geocoding__index.html">Reverse Geocoding</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_reverse_geocoding__overview.html">Reverse Geocoding Overview</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_reverse_geocoding__index.html">Reverse Geocoding</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_reverse_geocoding__overview.html">Reverse Geocoding overview</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Reverse Geocoding Overview </h1></div><!--header-->
+<h1 class="g-docs__page-title">Reverse Geocoding overview </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-85">Introduction<a class="headerlink" href="#introduction-85" aria-label="Permalink to this section">🔗</a></h2>
 <p>Reverse geocoding turns GPS coordinates into real places. Give us a latitude and longitude, and we'll tell you the country, city, street address, or other location details.</p>
-<p><a class="el" href="_reverse_geocoding__quickstart.html" title="Reverse Geocoding Quick Start">Quick Start Guide</a> - Get running in minutes.</p>
+<p><a class="el" href="_reverse_geocoding__quickstart.html" title="Reverse Geocoding quick start">Quick Start Guide</a> - Get running in minutes.</p>
 <hr  />
-<h2 class="doxsection" id="how-it-works-6">How It Works<a class="headerlink" href="#how-it-works-6" aria-label="Permalink to this section">🔗</a></h2>
-<p>You provide coordinates, we return location details like:</p>
+<h2 class="doxsection" id="how-it-works-6">How it works<a class="headerlink" href="#how-it-works-6" aria-label="Permalink to this section">🔗</a></h2>
+<p>Provide coordinates to receive location details such as:</p>
 <ul>
-<li><b>Country and region</b> - Know exactly where your users are</li>
+<li><b>Country and region</b> - Identify the country and region associated with the supplied coordinates</li>
 <li><b>Cities and neighborhoods</b> - Get local context for personalization</li>
 <li><b>Street addresses</b> - Turn coordinates into human-readable locations</li>
 <li><b>Points of interest</b> - Identify nearby landmarks and businesses</li>
@@ -87,24 +85,24 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_reverse_geoco
 <h2 class="doxsection" id="cloud-service-2">Cloud Service<a class="headerlink" href="#cloud-service-2" aria-label="Permalink to this section">🔗</a></h2>
 <p>Reverse geocoding runs as a Cloud Service, so there's no local setup needed. We use high-quality location data from <a href="https://www.openstreetmap.org/">OpenStreetMap</a> through our <a href="https://wiki.openstreetmap.org/wiki/Nominatim">Nominatim</a>-based solution.</p>
 <hr  />
-<h2 class="doxsection" id="common-use-cases-3">Common Use Cases<a class="headerlink" href="#common-use-cases-3" aria-label="Permalink to this section">🔗</a></h2>
-<h3 class="doxsection" id="autotoc_md-content-personalization-1">🌍 Content Personalization<a class="headerlink" href="#autotoc_md-content-personalization-1" aria-label="Permalink to this section">🔗</a></h3>
+<h2 class="doxsection" id="common-use-cases-3">Common use cases<a class="headerlink" href="#common-use-cases-3" aria-label="Permalink to this section">🔗</a></h2>
+<h3 class="doxsection" id="autotoc_md-content-personalization-1">🌍 Content personalization<a class="headerlink" href="#autotoc_md-content-personalization-1" aria-label="Permalink to this section">🔗</a></h3>
 <p>Turn user coordinates into local content. Show nearby stores, local weather, or region-specific offers.</p>
-<h3 class="doxsection" id="autotoc_md-address-completion">📝 Address Completion<a class="headerlink" href="#autotoc_md-address-completion" aria-label="Permalink to this section">🔗</a></h3>
+<h3 class="doxsection" id="autotoc_md-address-completion">📝 Address completion<a class="headerlink" href="#autotoc_md-address-completion" aria-label="Permalink to this section">🔗</a></h3>
 <p>Help users fill out forms by converting their GPS location into a full address automatically.</p>
-<h3 class="doxsection" id="autotoc_md-analytics-and-insights">📊 Analytics and Insights<a class="headerlink" href="#autotoc_md-analytics-and-insights" aria-label="Permalink to this section">🔗</a></h3>
+<h3 class="doxsection" id="autotoc_md-analytics-and-insights">📊 Analytics and insights<a class="headerlink" href="#autotoc_md-analytics-and-insights" aria-label="Permalink to this section">🔗</a></h3>
 <p>Understand where your traffic comes from. Map user behavior to specific cities, regions, or countries.</p>
-<h3 class="doxsection" id="autotoc_md-compliance-and-geo-fencing">🚫 Compliance and Geo-fencing<a class="headerlink" href="#autotoc_md-compliance-and-geo-fencing" aria-label="Permalink to this section">🔗</a></h3>
-<p>Enforce geographic restrictions for content licensing, gambling regulations, or data protection laws.</p>
-<h3 class="doxsection" id="autotoc_md-emergency-services">🆘 Emergency Services<a class="headerlink" href="#autotoc_md-emergency-services" aria-label="Permalink to this section">🔗</a></h3>
-<p>Convert GPS coordinates into actionable addresses for emergency response or delivery services.</p>
+<h3 class="doxsection" id="autotoc_md-geographical-restrictions-1">🚫 Geographical restrictions<a class="headerlink" href="#autotoc_md-geographical-restrictions-1" aria-label="Permalink to this section">🔗</a></h3>
+<p>Find the country or region of a location the visitor shares, and apply the rules of that place, such as for content licensing, gambling, or data protection law.</p>
+<h3 class="doxsection" id="autotoc_md-delivery-services">🚚 Delivery services<a class="headerlink" href="#autotoc_md-delivery-services" aria-label="Permalink to this section">🔗</a></h3>
+<p>Convert GPS coordinates into addresses for delivery services.</p>
 <hr  />
-<h2 class="doxsection" id="getting-started">Getting Started<a class="headerlink" href="#getting-started" aria-label="Permalink to this section">🔗</a></h2>
-<p>Ready to start? Check out our examples:</p>
+<h2 class="doxsection" id="getting-started">Getting started<a class="headerlink" href="#getting-started" aria-label="Permalink to this section">🔗</a></h2>
+<p>Choose a quick start or example:</p>
 <ul>
-<li><a class="el" href="_reverse_geocoding__quickstart.html" title="Reverse Geocoding Quick Start">Quick Start Guide</a> - Set up in minutes</li>
-<li><a class="el" href="_reverse_geocoding__examples__index.html" title="Reverse Geocoding Examples">Complete Examples</a> - Dive deeper with code samples</li>
-<li><a class="el" href="_reverse_geocoding__examples__configure_from_file_51_degrees_cloud.html" title="Reverse Geocoding Configuration File">Configuration Guide</a> - Advanced setup options </li>
+<li><a class="el" href="_reverse_geocoding__quickstart.html" title="Reverse Geocoding quick start">Quick Start Guide</a> - Set up in minutes</li>
+<li><a class="el" href="_reverse_geocoding__examples__index.html" title="Reverse Geocoding examples">Complete Examples</a> - Dive deeper with code samples</li>
+<li><a class="el" href="_reverse_geocoding__examples__configure_from_file_51_degrees_cloud.html" title="Reverse Geocoding configuration file">Configuration Guide</a> - Advanced setup options </li>
 </ul>
 </div></div><!-- primary -->
 </div><!-- inner -->

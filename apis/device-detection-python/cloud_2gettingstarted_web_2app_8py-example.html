@@ -36,18 +36,16 @@
    <div id="projectbrief">Device Detection services for 51Degrees Pipeline</div>
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -72,9 +70,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-python/blob/main/device-detection/fiftyone_devicedetection_examples/src/fiftyone_devicedetection_examples/cloud/gettingstarted_web/app.py">GitHub</a>.    
 <p>
 To run this example, you will need to create a <strong>Resource Key</strong>.
-The Resource Key is used as shorthand to store the particular set of
-properties you are interested in as well as any associated License Keys
-that entitle you to increased request limits and/or paid-for properties.
+The Resource Key stores your selected properties and any associated License Keys that allow more requests or access to paid properties.
 </p>
 <p>
 You can create a Resource Key at

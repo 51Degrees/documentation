@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -71,9 +69,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_human_confide
 <h1 class="g-docs__page-title">Google Analytics 4 (Moved) </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="doxsection" id="location-changed-2">Location Changed<a class="headerlink" href="#location-changed-2" aria-label="Permalink to this section">🔗</a></h2>
+<div class="textblock"><h2 class="doxsection" id="google-analytics-4-documentation">Google Analytics 4 documentation<a class="headerlink" href="#google-analytics-4-documentation" aria-label="Permalink to this section">🔗</a></h2>
 <p>The Google Analytics 4 page now covers every 51Degrees property, such as the device, its price band and age, the browser, the operating system, the country and region of the IP address, and crawlers, as well as Human Confidence.</p>
-<p>This page has been moved to <a class="el" href="_integrations__google_analytics.html" title="Google Analytics 4 (GA4)">Google Analytics 4 (GA4)</a>. </p>
+<p>See the integration guide at <a class="el" href="_integrations__google_analytics.html" title="Google Analytics 4 (GA4)">Google Analytics 4 (GA4)</a>. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->

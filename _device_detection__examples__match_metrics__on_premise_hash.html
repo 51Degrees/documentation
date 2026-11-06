@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Match Metrics On-premise Hash - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Match Metrics On-premise Hash</title>
+<meta name="description" content="On-premise Hash match metrics - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: On-premise Hash match metrics</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,13 +64,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__examples__index.html">Device Detection Examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__examples__match_metrics__index.html">Match Metrics</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__examples__match_metrics__on_premise_hash.html">Match Metrics On-premise Hash</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__examples__index.html">Device Detection examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__examples__match_metrics__index.html">Match metrics</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__examples__match_metrics__on_premise_hash.html">On-premise Hash match metrics</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Match Metrics On-premise Hash </h1></div><!--header-->
+<h1 class="g-docs__page-title">On-premise Hash match metrics </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-7">Introduction<a class="headerlink" href="#introduction-7" aria-label="Permalink to this section">🔗</a></h2>
-<p>This example shows how to view metrics associated with the results of processing with a Device Detection <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> using the Hash algorithm.</p>
+<p>This example shows how to read match metrics from a Device Detection <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect engine">Aspect Engine</a> that uses the Hash algorithm.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-cxx', '_hash_2_match_metrics_8c')">C</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-cxx', '_hash_2_match_metrics_8cpp')">C++</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-dotnet', '_on_premise_2_match_metrics-_console_2_program_8cs')">C#</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-java', 'console_2_match_metrics_8java')">Java</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-php-onpremise', 'onpremise_2match_metrics_8php')">PHP</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-node', 'onpremise_2matchmetrics-console_2match_metrics_8js')">Node.js</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-nginx', 'hash_2match_metrics_8conf')">Nginx</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-python', 'onpremise_2match_metrics_8py')">Python</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'rust', 'dd-onprem-match-metrics')">Rust</button>   <div class="c-tabgroup__main" id="grabbed-example"></div>   </div>  </p>
 </div></div><!-- primary -->
 </div><!-- inner -->

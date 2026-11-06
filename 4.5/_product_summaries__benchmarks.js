@@ -1,10 +1,10 @@
 var _product_summaries__benchmarks =
 [
     [ "Running your own tests", "_product_summaries__benchmarks.html#running-your-own-tests", null ],
-    [ "Nightly Benchmarks", "_product_summaries__benchmarks__nightly.html", [
+    [ "Nightly benchmarks", "_product_summaries__benchmarks__nightly.html", [
       [ "How we test", "_product_summaries__benchmarks__nightly.html#how-we-test", null ]
     ] ],
-    [ "Hardware Benchmarks", "_product_summaries__benchmarks__hardware.html", [
+    [ "Hardware benchmarks", "_product_summaries__benchmarks__hardware.html", [
       [ "Device Detection", "_product_summaries__benchmarks__hardware.html#device-detection-1", [
         [ "InMemory, detections per second", "_product_summaries__benchmarks__hardware.html#inmemory-detections-per-second", null ],
         [ "Balanced, detections per second", "_product_summaries__benchmarks__hardware.html#balanced-detections-per-second", null ],

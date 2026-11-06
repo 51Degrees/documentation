@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Apple Model Detection - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Apple Model Detection</title>
+<meta name="description" content="Apple model detection - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Apple model detection</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -64,16 +62,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__index.html">Device Detection Features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__apple_detection.html">Apple Model Detection</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__index.html">Device Detection features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__apple_detection.html">Apple model detection</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Apple Model Detection </h1></div><!--header-->
+<h1 class="g-docs__page-title">Apple model detection </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="doxsection" id="apple-model-detection">Apple Model Detection<a class="headerlink" href="#apple-model-detection" aria-label="Permalink to this section">🔗</a></h2>
+<div class="textblock"><h2 class="doxsection" id="apple-model-detection">Apple model detection<a class="headerlink" href="#apple-model-detection" aria-label="Permalink to this section">🔗</a></h2>
 <p>Apple devices are unique in that their User-Agent strings do not include hardware model identifiers - unlike most Android devices. This means it's not possible to identify the exact iPhone/iPad model using only the HTTP request headers.</p>
-<p>To solve this, 51Degrees uses <b>client-side JavaScript</b> to gather additional evidence from the device, such as screen resolution and GPU model. This allows us to identify the precise Apple hardware model - including the specific iPhone/iPad generation. Even when the User-Agent string is generic.</p>
-<p>This feature is built into the <a class="el" href="_pipeline_api__features__client_side_evidence.html" title="Client-side Evidence">client-side evidence</a> functionality, and is automatically enabled when the relevant property is included in your Resource Key.</p>
-<p>To see this feature in action, check out the <a class="el" href="_device_detection__examples__getting_started__web__index.html" title="Getting Started - Web">Getting Started - Web</a> example, or jump directly to the <a class="el" href="#detection-results" title="Detection Results for Apple Devices">detection results tables</a>detection results tables to see which Apple devices can be identified.</p>
+<p>To solve this, 51Degrees uses <b>client-side JavaScript</b> to gather additional evidence from the device, such as screen resolution and GPU model. This evidence can identify a model or narrow the result to a group of models, even when the User-Agent string is generic.</p>
+<p>This feature is built into the <a class="el" href="_pipeline_api__features__client_side_evidence.html" title="Client-side evidence">client-side evidence</a> functionality, and is automatically enabled when the relevant property is included in your Resource Key.</p>
+<p>To see this feature in action, check out the <a class="el" href="_device_detection__examples__getting_started__web__index.html" title="Getting started with web applications">Getting Started - Web</a> example, or jump directly to the <a class="el" href="#detection-results" title="Detection results for Apple devices">detection results tables</a>detection results tables to see which Apple devices can be identified.</p>
 <h2 class="doxsection" id="how-it-works">How it works<a class="headerlink" href="#how-it-works" aria-label="Permalink to this section">🔗</a></h2>
 <p>When a request from an Apple device is received:</p>
 <ol type="1">
@@ -81,7 +79,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <li>Based on this, the server sends JavaScript to the client that gathers device-specific information.</li>
 <li>The JavaScript runs on the client and returns a <b>hardware profile ID</b>.</li>
 <li>This ID is sent back to the server.</li>
-<li>The server updates the detection result with the exact Apple model.</li>
+<li>The server updates the detection result with the detected Apple model or group of models.</li>
 </ol>
 <p>This works even in edge cases such as:</p>
 <ul>
@@ -118,16 +116,16 @@ Mac Example</div></div>
 <p>When the hardware profile ID is returned from the client, we swap it into the final device ID on the server - replacing the generic Apple group profile with a more accurate one.</p>
 <h2 class="doxsection" id="more-information">More information<a class="headerlink" href="#more-information" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
-<li><a class="el" href="_device_detection__examples__getting_started__web__index.html" title="Getting Started - Web">Web Integration Example</a>: See how to implement it with code samples</li>
+<li><a class="el" href="_device_detection__examples__getting_started__web__index.html" title="Getting started with web applications">Web Integration Example</a>: See how to implement it with code samples</li>
 <li><a href="https://51degrees.com/resources/blogs/tag/Apple">51Degrees Blog - Apple</a>: Technical deep dives, case studies, and news we've produced relating to Apple</li>
 </ul>
-<h2 class="doxsection" id="detection-results">Detection Results for Apple Devices<a class="headerlink" href="#detection-results" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="detection-results">Detection results for Apple devices<a class="headerlink" href="#detection-results" aria-label="Permalink to this section">🔗</a></h2>
 <p>Apple has continually worked to homogenize any information that a website can get about a device, through JavaScript or any other means. For more information, take a look at our <a href="https://51degrees.com/blog/upgrade-apple-device-detection">Upgrade Apple Device</a> blog.</p>
 <p>Below we cover the detection results that are experienced for each iPhone, starting from the iPhone 3GS, when using Safari.</p>
-<p>The 'percentage' column refers to the percentage of the data submissions we have received that would return that detection result for that particular display mode. For example, '100.00' in Standard mode indicates that 100% of our submissions for that device would receive that result if the data from the submission were passed to our detection script. '1.50' in indicates that 1.5% of our submissions would receive that detection result.</p>
-<p>As we receive more data on Apple devices, this table will change. We will update this table following each update to the JavaScript. The tables currently match the released JavaScript created on 22 September 2026.</p>
-<p>For optimized viewing of the table, it is recommended you zoom out within your browser.</p>
-<h3 class="doxsection" id="iphones_mobile_standard_mode">iPhones using browser in Mobile mode and in standard display mode<a class="headerlink" href="#iphones_mobile_standard_mode" aria-label="Permalink to this section">🔗</a></h3>
+<p>The 'percentage' column shows the share of data submissions that would return each detection result for the given display mode. For example, '100.00' in Standard mode means all submissions for that device would return that result when passed to our detection script. '1.50' means 1.5% of submissions would return that result. Results returned for fewer than 1% of submissions are not listed, so the percentages for a device can add up to less than 100%.</p>
+<p>As we receive more data on Apple devices, this table will change. We will update this table following each update to the JavaScript. The tables currently match the released JavaScript created on 3 November 2026.</p>
+<p>Zoom out in your browser to see more of the table.</p>
+<h3 class="doxsection" id="iphones_mobile_standard_mode">iPhones in mobile browser mode and standard display mode<a class="headerlink" href="#iphones_mobile_standard_mode" aria-label="Permalink to this section">🔗</a></h3>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Device  </td><td class="c-table__cell">Results  </td><td class="c-table__cell">Percentage  </td></tr>
@@ -141,192 +139,192 @@ Mac Example</div></div>
 <td class="c-table__cell">iPhone Air  </td><td class="c-table__cell">iPhone Air  </td><td class="c-table__cell">100.00%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 17 Pro Max  </td><td class="c-table__cell">iPhone 16 Pro Max, iPhone 17 Pro Max<br  />
- iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max  </td><td class="c-table__cell">93.33%<br  />
- 6.67%  </td></tr>
+ iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max  </td><td class="c-table__cell">82.35%<br  />
+ 17.65%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 17 Pro  </td><td class="c-table__cell">iPhone 16 Pro, iPhone 17, iPhone 17 Pro<br  />
- iPhone 16 Pro, iPhone 17, iPhone 17 Pro, iPhone 18 Pro  </td><td class="c-table__cell">93.33%<br  />
- 6.67%  </td></tr>
+ iPhone 16 Pro, iPhone 17, iPhone 17 Pro, iPhone 18 Pro  </td><td class="c-table__cell">82.35%<br  />
+ 17.65%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 17  </td><td class="c-table__cell">iPhone 16 Pro, iPhone 17, iPhone 17 Pro<br  />
- iPhone 16 Pro, iPhone 17, iPhone 17 Pro, iPhone 18 Pro  </td><td class="c-table__cell">93.33%<br  />
- 6.67%  </td></tr>
+ iPhone 16 Pro, iPhone 17, iPhone 17 Pro, iPhone 18 Pro  </td><td class="c-table__cell">82.35%<br  />
+ 17.65%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 16e  </td><td class="c-table__cell">iPhone 16e, iPhone 17e<br  />
- iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 16e<br  />
- iPhone 16e  </td><td class="c-table__cell">63.64%<br  />
- 20.78%<br  />
- 15.58%  </td></tr>
+ iPhone 16e<br  />
+ iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 16e  </td><td class="c-table__cell">57.65%<br  />
+ 23.53%<br  />
+ 18.82%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 16 Pro Max  </td><td class="c-table__cell">iPhone 16 Pro Max, iPhone 17 Pro Max<br  />
  iPhone 16 Pro Max<br  />
- iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max  </td><td class="c-table__cell">58.14%<br  />
- 39.39%<br  />
- 2.47%  </td></tr>
+ iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max  </td><td class="c-table__cell">55.40%<br  />
+ 37.54%<br  />
+ 7.06%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 16 Pro  </td><td class="c-table__cell">iPhone 16 Pro, iPhone 17, iPhone 17 Pro<br  />
  iPhone 16 Pro<br  />
- iPhone 16 Pro, iPhone 17, iPhone 17 Pro, iPhone 18 Pro  </td><td class="c-table__cell">58.88%<br  />
- 38.70%<br  />
- 2.42%  </td></tr>
+ iPhone 16 Pro, iPhone 17, iPhone 17 Pro, iPhone 18 Pro  </td><td class="c-table__cell">56.16%<br  />
+ 36.92%<br  />
+ 6.92%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 16 Plus  </td><td class="c-table__cell">iPhone 15 Pro Max, iPhone 16 Plus<br  />
  iPhone 16 Plus<br  />
- iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus  </td><td class="c-table__cell">66.63%<br  />
- 20.03%<br  />
- 13.33%  </td></tr>
+ iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus  </td><td class="c-table__cell">68.72%<br  />
+ 18.78%<br  />
+ 12.50%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 16  </td><td class="c-table__cell">iPhone 15 Pro, iPhone 16<br  />
  iPhone 16<br  />
- iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16  </td><td class="c-table__cell">66.53%<br  />
- 20.13%<br  />
- 13.33%  </td></tr>
+ iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16  </td><td class="c-table__cell">68.62%<br  />
+ 18.87%<br  />
+ 12.50%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 15 Pro Max  </td><td class="c-table__cell">iPhone 15 Pro Max, iPhone 16 Plus<br  />
  iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus<br  />
  iPhone 15 Pro Max<br  />
- iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max  </td><td class="c-table__cell">56.27%<br  />
- 20.82%<br  />
- 13.54%<br  />
- 9.37%  </td></tr>
+ iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max  </td><td class="c-table__cell">58.02%<br  />
+ 19.99%<br  />
+ 12.99%<br  />
+ 9.00%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 15 Pro  </td><td class="c-table__cell">iPhone 15 Pro, iPhone 16<br  />
  iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16<br  />
  iPhone 15 Pro<br  />
- iPhone 14 Pro, iPhone 15, iPhone 15 Pro  </td><td class="c-table__cell">53.78%<br  />
- 19.83%<br  />
- 13.54%<br  />
- 12.85%  </td></tr>
+ iPhone 14 Pro, iPhone 15, iPhone 15 Pro  </td><td class="c-table__cell">55.55%<br  />
+ 19.07%<br  />
+ 13.03%<br  />
+ 12.36%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 15 Plus  </td><td class="c-table__cell">iPhone 14 Pro Max, iPhone 15 Plus<br  />
  iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max<br  />
- iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus  </td><td class="c-table__cell">85.34%<br  />
- 7.32%<br  />
- 7.32%  </td></tr>
+ iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus  </td><td class="c-table__cell">85.86%<br  />
+ 7.06%<br  />
+ 7.06%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 15  </td><td class="c-table__cell">iPhone 14 Pro, iPhone 15<br  />
  iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16<br  />
- iPhone 14 Pro, iPhone 15, iPhone 15 Pro  </td><td class="c-table__cell">79.79%<br  />
- 10.13%<br  />
- 9.49%  </td></tr>
+ iPhone 14 Pro, iPhone 15, iPhone 15 Pro  </td><td class="c-table__cell">80.45%<br  />
+ 9.80%<br  />
+ 9.18%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 14 Pro Max  </td><td class="c-table__cell">iPhone 14 Pro Max, iPhone 15 Plus<br  />
  iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus<br  />
  iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max<br  />
- iPhone 14 Pro Max  </td><td class="c-table__cell">72.79%<br  />
- 13.36%<br  />
- 9.98%<br  />
- 3.87%  </td></tr>
+ iPhone 14 Pro Max  </td><td class="c-table__cell">73.72%<br  />
+ 12.90%<br  />
+ 9.64%<br  />
+ 3.73%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 14 Pro  </td><td class="c-table__cell">iPhone 14 Pro, iPhone 15<br  />
  iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16<br  />
  iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br  />
- iPhone 14 Pro  </td><td class="c-table__cell">74.21%<br  />
- 13.76%<br  />
- 8.28%<br  />
- 3.76%  </td></tr>
+ iPhone 14 Pro  </td><td class="c-table__cell">74.69%<br  />
+ 13.50%<br  />
+ 8.13%<br  />
+ 3.69%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 14 Plus  </td><td class="c-table__cell">iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus  </td><td class="c-table__cell">99.91%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 14  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro Max<br  />
- iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 16e  </td><td class="c-table__cell">70.84%<br  />
- 16.07%<br  />
- 12.37%  </td></tr>
+ iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 16e  </td><td class="c-table__cell">71.55%<br  />
+ 15.69%<br  />
+ 12.07%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone SE (3rd Gen.)  </td><td class="c-table__cell">iPhone SE (3rd Gen.)  </td><td class="c-table__cell">100.00%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 13 Pro Max  </td><td class="c-table__cell">iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus<br  />
  iPhone 12 Pro Max, iPhone 13 Pro Max<br  />
- iPhone 13 Pro Max  </td><td class="c-table__cell">91.61%<br  />
- 6.56%<br  />
- 1.83%  </td></tr>
+ iPhone 13 Pro Max  </td><td class="c-table__cell">91.82%<br  />
+ 6.39%<br  />
+ 1.79%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 13 Pro  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 16e<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro Max<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro<br  />
- iPhone 13, iPhone 13 Pro, iPhone 14  </td><td class="c-table__cell">64.72%<br  />
- 12.20%<br  />
- 10.98%<br  />
- 7.20%<br  />
- 4.88%  </td></tr>
+ iPhone 13, iPhone 13 Pro, iPhone 14  </td><td class="c-table__cell">65.56%<br  />
+ 11.91%<br  />
+ 10.72%<br  />
+ 7.03%<br  />
+ 4.76%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 13 mini  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br  />
- iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max  </td><td class="c-table__cell">70.15%<br  />
- 12.74%<br  />
- 6.37%<br  />
- 5.10%<br  />
- 5.10%  </td></tr>
+ iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max  </td><td class="c-table__cell">70.89%<br  />
+ 12.43%<br  />
+ 6.21%<br  />
+ 4.97%<br  />
+ 4.97%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 13  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 16e<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro Max<br  />
- iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro  </td><td class="c-table__cell">71.39%<br  />
- 13.11%<br  />
- 7.87%<br  />
- 7.08%  </td></tr>
+ iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro  </td><td class="c-table__cell">72.12%<br  />
+ 12.78%<br  />
+ 7.67%<br  />
+ 6.90%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 12 Pro Max  </td><td class="c-table__cell">iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus<br  />
  iPhone 12 Pro Max<br  />
- iPhone 12 Pro Max, iPhone 13 Pro Max  </td><td class="c-table__cell">84.97%<br  />
- 10.63%<br  />
- 4.41%  </td></tr>
+ iPhone 12 Pro Max, iPhone 13 Pro Max  </td><td class="c-table__cell">85.29%<br  />
+ 10.40%<br  />
+ 4.31%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 12 Pro  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 16e<br  />
  iPhone 12, iPhone 12 Pro<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro Max<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro<br  />
- iPhone 12 Pro  </td><td class="c-table__cell">66.41%<br  />
- 11.60%<br  />
- 10.59%<br  />
- 6.87%<br  />
- 3.33%<br  />
- 1.20%  </td></tr>
+ iPhone 12 Pro  </td><td class="c-table__cell">67.17%<br  />
+ 11.34%<br  />
+ 10.35%<br  />
+ 6.71%<br  />
+ 3.25%<br  />
+ 1.17%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 12 mini  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max<br  />
- iPhone 12 mini, iPhone 12 Pro Max  </td><td class="c-table__cell">66.74%<br  />
- 12.14%<br  />
- 7.29%<br  />
- 5.64%<br  />
- 4.85%<br  />
- 2.36%  </td></tr>
+ iPhone 12 mini, iPhone 12 Pro Max  </td><td class="c-table__cell">67.53%<br  />
+ 11.85%<br  />
+ 7.11%<br  />
+ 5.50%<br  />
+ 4.74%<br  />
+ 2.31%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 12  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14<br  />
  iPhone 12, iPhone 12 Pro<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 16e<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro Max<br  />
- iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro  </td><td class="c-table__cell">48.76%<br  />
- 33.71%<br  />
- 8.75%<br  />
- 5.25%<br  />
- 3.48%  </td></tr>
+ iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro  </td><td class="c-table__cell">49.64%<br  />
+ 33.13%<br  />
+ 8.60%<br  />
+ 5.16%<br  />
+ 3.42%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone SE (2nd Gen.)  </td><td class="c-table__cell">iPhone SE (2nd Gen.)  </td><td class="c-table__cell">100.00%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 11 Pro Max  </td><td class="c-table__cell">iPhone 11 Pro Max, iPhone XS Max<br  />
- iPhone 11 Pro Max  </td><td class="c-table__cell">62.38%<br  />
- 37.62%  </td></tr>
+ iPhone 11 Pro Max  </td><td class="c-table__cell">60.82%<br  />
+ 39.18%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 11 Pro  </td><td class="c-table__cell">iPhone 11 Pro, iPhone 11 Pro Max, iPhone XS, iPhone XS Max<br  />
  iPhone 11 Pro, iPhone 11 Pro Max<br  />
  iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max<br  />
- iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone X, iPhone XS, iPhone XS Max  </td><td class="c-table__cell">49.14%<br  />
- 28.80%<br  />
- 14.40%<br  />
- 7.65%  </td></tr>
+ iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone X, iPhone XS, iPhone XS Max  </td><td class="c-table__cell">48.15%<br  />
+ 30.24%<br  />
+ 14.11%<br  />
+ 7.50%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 11  </td><td class="c-table__cell">iPhone 11<br  />
- iPhone 11, iPhone XR  </td><td class="c-table__cell">60.54%<br  />
- 39.46%  </td></tr>
+ iPhone 11, iPhone XR  </td><td class="c-table__cell">61.15%<br  />
+ 38.85%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone XS Max  </td><td class="c-table__cell">iPhone XS Max<br  />
  iPhone 11 Pro Max, iPhone XS Max  </td><td class="c-table__cell">60.06%<br  />
@@ -382,7 +380,7 @@ Mac Example</div></div>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 3GS  </td><td class="c-table__cell">iPhone 3GS  </td><td class="c-table__cell">100.00%  </td></tr>
 </table>
-<h3 class="doxsection" id="iphones_mobile_zoom_mode">iPhones using browser in Mobile mode and in zoomed display mode<a class="headerlink" href="#iphones_mobile_zoom_mode" aria-label="Permalink to this section">🔗</a></h3>
+<h3 class="doxsection" id="iphones_mobile_zoom_mode">iPhones in mobile browser mode and zoomed display mode<a class="headerlink" href="#iphones_mobile_zoom_mode" aria-label="Permalink to this section">🔗</a></h3>
 <p>This table is for display zoom, an iPhone accessibility feature. It is not the normal zoom operation in browsers. It is enabled in Settings &gt; Display &amp; Brightness &gt; Display Zoom &gt; Zoomed.</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
@@ -393,150 +391,150 @@ Mac Example</div></div>
 <td class="c-table__cell">iPhone 18 Pro  </td><td class="c-table__cell">iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">100.00%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 17e  </td><td class="c-table__cell">iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e<br  />
- iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">89.62%<br  />
- 10.38%  </td></tr>
+ iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">72.83%<br  />
+ 27.17%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone Air  </td><td class="c-table__cell">iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone Air<br  />
- iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone Air  </td><td class="c-table__cell">93.34%<br  />
- 6.66%  </td></tr>
+ iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone Air  </td><td class="c-table__cell">82.36%<br  />
+ 17.64%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 17 Pro Max  </td><td class="c-table__cell">iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone Air<br  />
- iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone Air  </td><td class="c-table__cell">93.80%<br  />
- 6.20%  </td></tr>
+ iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone Air  </td><td class="c-table__cell">83.44%<br  />
+ 16.56%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 17 Pro  </td><td class="c-table__cell">iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e<br  />
- iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">93.56%<br  />
- 6.44%  </td></tr>
+ iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">82.88%<br  />
+ 17.12%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 17  </td><td class="c-table__cell">iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e<br  />
- iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">93.39%<br  />
- 6.61%  </td></tr>
+ iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">82.25%<br  />
+ 17.75%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 16e  </td><td class="c-table__cell">iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
+ iPhone 16e<br  />
  iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
- iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro<br  />
- iPhone 16e  </td><td class="c-table__cell">54.68%<br  />
- 21.33%<br  />
- 14.07%<br  />
- 4.77%<br  />
- 4.77%  </td></tr>
+ iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">49.72%<br  />
+ 19.39%<br  />
+ 13.41%<br  />
+ 12.80%<br  />
+ 4.34%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 16 Pro Max  </td><td class="c-table__cell">iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone Air<br  />
  iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
- iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone Air  </td><td class="c-table__cell">56.24%<br  />
- 14.59%<br  />
- 14.56%<br  />
- 9.73%<br  />
- 4.86%  </td></tr>
+ iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone Air  </td><td class="c-table__cell">53.63%<br  />
+ 13.91%<br  />
+ 13.89%<br  />
+ 9.27%<br  />
+ 9.27%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 16 Pro  </td><td class="c-table__cell">iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e<br  />
  iPhone 15 Pro, iPhone 16, iPhone 16 Pro<br  />
  iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
- iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">58.04%<br  />
- 14.43%<br  />
- 14.43%<br  />
- 10.68%<br  />
- 2.40%  </td></tr>
+ iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">55.38%<br  />
+ 13.76%<br  />
+ 13.76%<br  />
+ 10.19%<br  />
+ 6.88%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 16 Plus  </td><td class="c-table__cell">iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone Air<br  />
  iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
- iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone Air  </td><td class="c-table__cell">45.21%<br  />
- 20.55%<br  />
- 17.05%<br  />
- 13.70%<br  />
- 3.42%  </td></tr>
+ iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone Air  </td><td class="c-table__cell">42.31%<br  />
+ 19.23%<br  />
+ 15.96%<br  />
+ 12.82%<br  />
+ 9.62%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 16  </td><td class="c-table__cell">iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e<br  />
  iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
  iPhone 15 Pro, iPhone 16, iPhone 16 Pro<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
- iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">44.05%<br  />
- 20.37%<br  />
- 16.91%<br  />
- 15.25%<br  />
- 3.39%  </td></tr>
+ iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">41.26%<br  />
+ 19.07%<br  />
+ 15.84%<br  />
+ 14.28%<br  />
+ 9.52%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 15 Pro Max  </td><td class="c-table__cell">iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone Air<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 15 Pro Max<br  />
+ iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone Air<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max<br  />
- iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
- iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone Air  </td><td class="c-table__cell">51.09%<br  />
- 21.74%<br  />
- 10.87%<br  />
- 5.43%<br  />
- 4.35%<br  />
- 4.35%<br  />
- 2.17%  </td></tr>
+ iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max  </td><td class="c-table__cell">48.96%<br  />
+ 20.83%<br  />
+ 10.42%<br  />
+ 6.25%<br  />
+ 5.21%<br  />
+ 4.17%<br  />
+ 4.17%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 15 Pro  </td><td class="c-table__cell">iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br  />
  iPhone 15 Pro<br  />
- iPhone 15 Pro, iPhone 16, iPhone 16 Pro<br  />
- iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">50.99%<br  />
- 19.89%<br  />
- 12.99%<br  />
- 9.99%<br  />
- 4.00%<br  />
- 2.00%  </td></tr>
+ iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro<br  />
+ iPhone 15 Pro, iPhone 16, iPhone 16 Pro  </td><td class="c-table__cell">49.03%<br  />
+ 19.12%<br  />
+ 12.49%<br  />
+ 9.61%<br  />
+ 5.77%<br  />
+ 3.84%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 15 Plus  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br  />
- iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max  </td><td class="c-table__cell">84.31%<br  />
- 7.85%<br  />
- 3.92%<br  />
- 3.92%  </td></tr>
+ iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max  </td><td class="c-table__cell">84.90%<br  />
+ 7.55%<br  />
+ 3.78%<br  />
+ 3.78%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 15  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
- iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro  </td><td class="c-table__cell">80.01%<br  />
- 11.04%<br  />
- 8.13%  </td></tr>
+ iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro  </td><td class="c-table__cell">80.72%<br  />
+ 10.65%<br  />
+ 7.85%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 14 Pro Max  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br  />
- iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max  </td><td class="c-table__cell">70.83%<br  />
- 13.59%<br  />
- 5.55%<br  />
- 5.53%<br  />
- 4.39%  </td></tr>
+ iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max  </td><td class="c-table__cell">71.62%<br  />
+ 13.22%<br  />
+ 5.40%<br  />
+ 5.39%<br  />
+ 4.27%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 14 Pro  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br  />
- iPhone 12 mini, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro  </td><td class="c-table__cell">76.81%<br  />
- 13.49%<br  />
- 8.09%<br  />
- 1.44%  </td></tr>
+ iPhone 12 mini, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro  </td><td class="c-table__cell">77.42%<br  />
+ 13.14%<br  />
+ 7.88%<br  />
+ 1.41%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 14 Plus  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max<br  />
- iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max  </td><td class="c-table__cell">72.36%<br  />
- 12.72%<br  />
- 6.35%<br  />
- 5.11%<br  />
- 3.34%  </td></tr>
+ iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max  </td><td class="c-table__cell">73.21%<br  />
+ 12.33%<br  />
+ 6.16%<br  />
+ 4.95%<br  />
+ 3.24%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 14  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
- iPhone 12 mini, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro  </td><td class="c-table__cell">72.64%<br  />
- 13.36%<br  />
- 12.13%<br  />
- 1.71%  </td></tr>
+ iPhone 12 mini, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro  </td><td class="c-table__cell">73.29%<br  />
+ 13.04%<br  />
+ 11.85%<br  />
+ 1.67%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone SE (3rd Gen.)  </td><td class="c-table__cell">iPhone SE (3rd Gen.)  </td><td class="c-table__cell">100.00%  </td></tr>
 <tr class="c-table__row">
@@ -544,37 +542,37 @@ Mac Example</div></div>
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br  />
- iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max  </td><td class="c-table__cell">71.00%<br  />
- 13.44%<br  />
- 5.38%<br  />
- 4.70%<br  />
- 4.04%  </td></tr>
+ iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max  </td><td class="c-table__cell">71.75%<br  />
+ 13.09%<br  />
+ 5.24%<br  />
+ 4.58%<br  />
+ 3.94%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 13 Pro  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
  iPhone 12 mini, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro<br  />
- iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro  </td><td class="c-table__cell">65.61%<br  />
- 12.46%<br  />
- 12.43%<br  />
- 4.97%<br  />
- 4.25%  </td></tr>
+ iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro  </td><td class="c-table__cell">66.45%<br  />
+ 12.16%<br  />
+ 12.13%<br  />
+ 4.85%<br  />
+ 4.15%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 13 mini  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
- iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro  </td><td class="c-table__cell">62.68%<br  />
- 14.45%<br  />
- 12.04%<br  />
- 10.83%  </td></tr>
+ iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro  </td><td class="c-table__cell">63.56%<br  />
+ 14.11%<br  />
+ 11.76%<br  />
+ 10.57%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 13  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br  />
- iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro  </td><td class="c-table__cell">71.23%<br  />
- 13.19%<br  />
- 10.55%<br  />
- 4.50%  </td></tr>
+ iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro  </td><td class="c-table__cell">71.79%<br  />
+ 12.93%<br  />
+ 10.35%<br  />
+ 4.41%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 12 Pro Max  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
@@ -582,61 +580,61 @@ Mac Example</div></div>
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max<br  />
- iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max  </td><td class="c-table__cell">64.39%<br  />
- 12.15%<br  />
- 7.33%<br  />
- 5.21%<br  />
- 4.82%<br  />
- 3.63%<br  />
- 2.37%  </td></tr>
+ iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max  </td><td class="c-table__cell">65.24%<br  />
+ 11.86%<br  />
+ 7.15%<br  />
+ 5.09%<br  />
+ 4.71%<br  />
+ 3.55%<br  />
+ 2.31%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 12 Pro  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br  />
- iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro  </td><td class="c-table__cell">60.14%<br  />
- 12.00%<br  />
- 10.73%<br  />
- 9.43%<br  />
- 7.59%  </td></tr>
+ iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro  </td><td class="c-table__cell">61.02%<br  />
+ 11.74%<br  />
+ 10.49%<br  />
+ 9.23%<br  />
+ 7.42%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 12 mini  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro<br  />
- iPhone 12, iPhone 12 mini, iPhone 12 Pro  </td><td class="c-table__cell">68.01%<br  />
- 12.59%<br  />
- 10.71%<br  />
- 5.59%<br  />
- 2.53%  </td></tr>
+ iPhone 12, iPhone 12 mini, iPhone 12 Pro  </td><td class="c-table__cell">68.79%<br  />
+ 12.28%<br  />
+ 10.45%<br  />
+ 5.45%<br  />
+ 2.47%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 12  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro<br  />
- iPhone 12, iPhone 12 mini, iPhone 12 Pro  </td><td class="c-table__cell">68.02%<br  />
- 12.60%<br  />
- 10.08%<br  />
- 5.53%<br  />
- 3.72%  </td></tr>
+ iPhone 12, iPhone 12 mini, iPhone 12 Pro  </td><td class="c-table__cell">68.80%<br  />
+ 12.29%<br  />
+ 9.83%<br  />
+ 5.40%<br  />
+ 3.63%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone SE (2nd Gen.)  </td><td class="c-table__cell">iPhone SE (2nd Gen.)  </td><td class="c-table__cell">100.00%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 11 Pro Max  </td><td class="c-table__cell">iPhone 11 Pro, iPhone 11 Pro Max, iPhone XS, iPhone XS Max<br  />
  iPhone 11 Pro, iPhone 11 Pro Max<br  />
  iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max<br  />
- iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone X, iPhone XS, iPhone XS Max  </td><td class="c-table__cell">52.10%<br  />
- 17.68%<br  />
- 17.00%<br  />
- 13.21%  </td></tr>
+ iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone X, iPhone XS, iPhone XS Max  </td><td class="c-table__cell">50.90%<br  />
+ 19.58%<br  />
+ 16.61%<br  />
+ 12.90%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 11 Pro  </td><td class="c-table__cell">iPhone 11 Pro, iPhone XS<br  />
- iPhone 11 Pro  </td><td class="c-table__cell">54.02%<br  />
- 45.98%  </td></tr>
+ iPhone 11 Pro  </td><td class="c-table__cell">52.82%<br  />
+ 47.18%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 11  </td><td class="c-table__cell">iPhone 11<br  />
- iPhone 11, iPhone XR  </td><td class="c-table__cell">87.24%<br  />
- 12.76%  </td></tr>
+ iPhone 11, iPhone XR  </td><td class="c-table__cell">87.49%<br  />
+ 12.51%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone XS Max  </td><td class="c-table__cell">iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone X, iPhone XS, iPhone XS Max<br  />
  iPhone X, iPhone XS, iPhone XS Max<br  />
@@ -672,10 +670,19 @@ Mac Example</div></div>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 6  </td><td class="c-table__cell">iPhone 6  </td><td class="c-table__cell">100.00%  </td></tr>
 </table>
-<h3 class="doxsection" id="iphones_desktop_mode">iPhones using browser in Desktop mode<a class="headerlink" href="#iphones_desktop_mode" aria-label="Permalink to this section">🔗</a></h3>
+<h3 class="doxsection" id="iphones_mobile_cover_display_mode">iPhones in mobile browser mode and cover display mode<a class="headerlink" href="#iphones_mobile_cover_display_mode" aria-label="Permalink to this section">🔗</a></h3>
+<table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">Device  </td><td class="c-table__cell">Results  </td><td class="c-table__cell">Percentage  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone Duo  </td><td class="c-table__cell">iPhone Duo  </td><td class="c-table__cell">100.00%  </td></tr>
+</table>
+<h3 class="doxsection" id="iphones_desktop_mode">iPhones in desktop browser mode<a class="headerlink" href="#iphones_desktop_mode" aria-label="Permalink to this section">🔗</a></h3>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Device  </td><td class="c-table__cell">Display Mode  </td><td class="c-table__cell">Results  </td><td class="c-table__cell">Percentage  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">iPhone Duo  </td><td class="c-table__cell">Cover display  </td><td class="c-table__cell">iPhone Duo  </td><td class="c-table__cell">100.00%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 18 Pro Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max  </td><td class="c-table__cell">100.00%  </td></tr>
 <tr class="c-table__row">
@@ -688,220 +695,220 @@ Mac Example</div></div>
 <td class="c-table__cell">iPhone 17e  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 16e, iPhone 17e  </td><td class="c-table__cell">100.00%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 17e  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e<br  />
- iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">89.62%<br  />
- 10.38%  </td></tr>
+ iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">72.83%<br  />
+ 27.17%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone Air  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone Air  </td><td class="c-table__cell">100.00%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone Air  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone Air<br  />
- iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone Air  </td><td class="c-table__cell">93.34%<br  />
- 6.66%  </td></tr>
+ iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone Air  </td><td class="c-table__cell">82.36%<br  />
+ 17.64%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 17 Pro Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 16 Pro Max, iPhone 17 Pro Max<br  />
- iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max  </td><td class="c-table__cell">93.33%<br  />
- 6.67%  </td></tr>
+ iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max  </td><td class="c-table__cell">82.35%<br  />
+ 17.65%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 17 Pro Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone Air<br  />
- iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone Air  </td><td class="c-table__cell">93.80%<br  />
- 6.20%  </td></tr>
+ iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone Air  </td><td class="c-table__cell">83.44%<br  />
+ 16.56%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 17 Pro  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 16 Pro, iPhone 17, iPhone 17 Pro<br  />
- iPhone 16 Pro, iPhone 17, iPhone 17 Pro, iPhone 18 Pro  </td><td class="c-table__cell">93.33%<br  />
- 6.67%  </td></tr>
+ iPhone 16 Pro, iPhone 17, iPhone 17 Pro, iPhone 18 Pro  </td><td class="c-table__cell">82.35%<br  />
+ 17.65%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 17 Pro  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e<br  />
- iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">93.56%<br  />
- 6.44%  </td></tr>
+ iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">82.88%<br  />
+ 17.12%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 17  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 16 Pro, iPhone 17, iPhone 17 Pro<br  />
- iPhone 16 Pro, iPhone 17, iPhone 17 Pro, iPhone 18 Pro  </td><td class="c-table__cell">93.33%<br  />
- 6.67%  </td></tr>
+ iPhone 16 Pro, iPhone 17, iPhone 17 Pro, iPhone 18 Pro  </td><td class="c-table__cell">82.35%<br  />
+ 17.65%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 17  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e<br  />
- iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">93.39%<br  />
- 6.61%  </td></tr>
+ iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">82.25%<br  />
+ 17.75%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 16e  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 16e, iPhone 17e<br  />
- iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 16e<br  />
- iPhone 16e  </td><td class="c-table__cell">63.64%<br  />
- 20.78%<br  />
- 15.58%  </td></tr>
+ iPhone 16e<br  />
+ iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 16e  </td><td class="c-table__cell">57.65%<br  />
+ 23.53%<br  />
+ 18.82%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 16e  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
+ iPhone 16e<br  />
  iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
- iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro<br  />
- iPhone 16e  </td><td class="c-table__cell">54.68%<br  />
- 21.33%<br  />
- 14.07%<br  />
- 4.77%<br  />
- 4.77%  </td></tr>
+ iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">49.72%<br  />
+ 19.39%<br  />
+ 13.41%<br  />
+ 12.80%<br  />
+ 4.34%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 16 Pro Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 16 Pro Max, iPhone 17 Pro Max<br  />
  iPhone 16 Pro Max<br  />
- iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max  </td><td class="c-table__cell">58.14%<br  />
- 39.39%<br  />
- 2.47%  </td></tr>
+ iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max  </td><td class="c-table__cell">55.40%<br  />
+ 37.54%<br  />
+ 7.06%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 16 Pro Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone Air<br  />
  iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
- iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone Air  </td><td class="c-table__cell">56.24%<br  />
- 14.59%<br  />
- 14.56%<br  />
- 9.73%<br  />
- 4.86%  </td></tr>
+ iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone Air  </td><td class="c-table__cell">53.63%<br  />
+ 13.91%<br  />
+ 13.89%<br  />
+ 9.27%<br  />
+ 9.27%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 16 Pro  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 16 Pro, iPhone 17, iPhone 17 Pro<br  />
  iPhone 16 Pro<br  />
- iPhone 16 Pro, iPhone 17, iPhone 17 Pro, iPhone 18 Pro  </td><td class="c-table__cell">58.88%<br  />
- 38.70%<br  />
- 2.42%  </td></tr>
+ iPhone 16 Pro, iPhone 17, iPhone 17 Pro, iPhone 18 Pro  </td><td class="c-table__cell">56.16%<br  />
+ 36.92%<br  />
+ 6.92%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 16 Pro  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e<br  />
  iPhone 15 Pro, iPhone 16, iPhone 16 Pro<br  />
  iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
- iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">58.04%<br  />
- 14.43%<br  />
- 14.43%<br  />
- 10.68%<br  />
- 2.40%  </td></tr>
+ iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">55.38%<br  />
+ 13.76%<br  />
+ 13.76%<br  />
+ 10.19%<br  />
+ 6.88%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 16 Plus  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 15 Pro Max, iPhone 16 Plus<br  />
  iPhone 16 Plus<br  />
- iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus  </td><td class="c-table__cell">66.63%<br  />
- 20.03%<br  />
- 13.33%  </td></tr>
+ iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus  </td><td class="c-table__cell">68.72%<br  />
+ 18.78%<br  />
+ 12.50%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 16 Plus  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone Air<br  />
  iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
- iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone Air  </td><td class="c-table__cell">45.21%<br  />
- 20.55%<br  />
- 17.05%<br  />
- 13.70%<br  />
- 3.42%  </td></tr>
+ iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone Air  </td><td class="c-table__cell">42.31%<br  />
+ 19.23%<br  />
+ 15.96%<br  />
+ 12.82%<br  />
+ 9.62%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 16  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 15 Pro, iPhone 16<br  />
  iPhone 16<br  />
- iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16  </td><td class="c-table__cell">66.53%<br  />
- 20.13%<br  />
- 13.33%  </td></tr>
+ iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16  </td><td class="c-table__cell">68.62%<br  />
+ 18.87%<br  />
+ 12.50%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 16  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e<br  />
  iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
  iPhone 15 Pro, iPhone 16, iPhone 16 Pro<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
- iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">44.05%<br  />
- 20.37%<br  />
- 16.91%<br  />
- 15.25%<br  />
- 3.39%  </td></tr>
+ iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">41.26%<br  />
+ 19.07%<br  />
+ 15.84%<br  />
+ 14.28%<br  />
+ 9.52%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 15 Pro Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 15 Pro Max, iPhone 16 Plus<br  />
  iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus<br  />
  iPhone 15 Pro Max<br  />
- iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max  </td><td class="c-table__cell">56.27%<br  />
- 20.82%<br  />
- 13.54%<br  />
- 9.37%  </td></tr>
+ iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max  </td><td class="c-table__cell">58.02%<br  />
+ 19.99%<br  />
+ 12.99%<br  />
+ 9.00%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 15 Pro Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone Air<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 15 Pro Max<br  />
+ iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone Air<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max<br  />
- iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
- iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max, iPhone 17 Pro Max, iPhone 18 Pro Max, iPhone Air  </td><td class="c-table__cell">51.09%<br  />
- 21.74%<br  />
- 10.87%<br  />
- 5.43%<br  />
- 4.35%<br  />
- 4.35%<br  />
- 2.17%  </td></tr>
+ iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max  </td><td class="c-table__cell">48.96%<br  />
+ 20.83%<br  />
+ 10.42%<br  />
+ 6.25%<br  />
+ 5.21%<br  />
+ 4.17%<br  />
+ 4.17%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 15 Pro  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 15 Pro, iPhone 16<br  />
  iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16<br  />
  iPhone 15 Pro<br  />
- iPhone 14 Pro, iPhone 15, iPhone 15 Pro  </td><td class="c-table__cell">53.78%<br  />
- 19.83%<br  />
- 13.54%<br  />
- 12.85%  </td></tr>
+ iPhone 14 Pro, iPhone 15, iPhone 15 Pro  </td><td class="c-table__cell">55.55%<br  />
+ 19.07%<br  />
+ 13.03%<br  />
+ 12.36%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 15 Pro  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br  />
  iPhone 15 Pro<br  />
- iPhone 15 Pro, iPhone 16, iPhone 16 Pro<br  />
- iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro  </td><td class="c-table__cell">50.99%<br  />
- 19.89%<br  />
- 12.99%<br  />
- 9.99%<br  />
- 4.00%<br  />
- 2.00%  </td></tr>
+ iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e, iPhone 17, iPhone 17 Pro, iPhone 17e, iPhone 18 Pro<br  />
+ iPhone 15 Pro, iPhone 16, iPhone 16 Pro  </td><td class="c-table__cell">49.03%<br  />
+ 19.12%<br  />
+ 12.49%<br  />
+ 9.61%<br  />
+ 5.77%<br  />
+ 3.84%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 15 Plus  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 14 Pro Max, iPhone 15 Plus<br  />
  iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max<br  />
- iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus  </td><td class="c-table__cell">85.34%<br  />
- 7.32%<br  />
- 7.32%  </td></tr>
+ iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus  </td><td class="c-table__cell">85.86%<br  />
+ 7.06%<br  />
+ 7.06%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 15 Plus  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br  />
- iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max  </td><td class="c-table__cell">84.31%<br  />
- 7.85%<br  />
- 3.92%<br  />
- 3.92%  </td></tr>
+ iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max  </td><td class="c-table__cell">84.90%<br  />
+ 7.55%<br  />
+ 3.78%<br  />
+ 3.78%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 15  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 14 Pro, iPhone 15<br  />
  iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16<br  />
- iPhone 14 Pro, iPhone 15, iPhone 15 Pro  </td><td class="c-table__cell">79.79%<br  />
- 10.13%<br  />
- 9.49%  </td></tr>
+ iPhone 14 Pro, iPhone 15, iPhone 15 Pro  </td><td class="c-table__cell">80.45%<br  />
+ 9.80%<br  />
+ 9.18%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 15  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
- iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro  </td><td class="c-table__cell">80.01%<br  />
- 11.04%<br  />
- 8.13%  </td></tr>
+ iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro  </td><td class="c-table__cell">80.72%<br  />
+ 10.65%<br  />
+ 7.85%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 14 Pro Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 14 Pro Max, iPhone 15 Plus<br  />
  iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus<br  />
  iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max<br  />
- iPhone 14 Pro Max  </td><td class="c-table__cell">72.79%<br  />
- 13.36%<br  />
- 9.98%<br  />
- 3.87%  </td></tr>
+ iPhone 14 Pro Max  </td><td class="c-table__cell">73.72%<br  />
+ 12.90%<br  />
+ 9.64%<br  />
+ 3.73%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 14 Pro Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br  />
- iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max  </td><td class="c-table__cell">70.83%<br  />
- 13.59%<br  />
- 5.55%<br  />
- 5.53%<br  />
- 4.39%  </td></tr>
+ iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max  </td><td class="c-table__cell">71.62%<br  />
+ 13.22%<br  />
+ 5.40%<br  />
+ 5.39%<br  />
+ 4.27%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 14 Pro  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 14 Pro, iPhone 15<br  />
  iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16<br  />
  iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br  />
- iPhone 14 Pro  </td><td class="c-table__cell">74.21%<br  />
- 13.76%<br  />
- 8.28%<br  />
- 3.76%  </td></tr>
+ iPhone 14 Pro  </td><td class="c-table__cell">74.69%<br  />
+ 13.50%<br  />
+ 8.13%<br  />
+ 3.69%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 14 Pro  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br  />
- iPhone 12 mini, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro  </td><td class="c-table__cell">76.81%<br  />
- 13.49%<br  />
- 8.09%<br  />
- 1.44%  </td></tr>
+ iPhone 12 mini, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro  </td><td class="c-table__cell">77.42%<br  />
+ 13.14%<br  />
+ 7.88%<br  />
+ 1.41%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 14 Plus  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus  </td><td class="c-table__cell">99.91%  </td></tr>
 <tr class="c-table__row">
@@ -909,25 +916,25 @@ Mac Example</div></div>
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max<br  />
- iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max  </td><td class="c-table__cell">72.36%<br  />
- 12.72%<br  />
- 6.35%<br  />
- 5.11%<br  />
- 3.34%  </td></tr>
+ iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max  </td><td class="c-table__cell">73.21%<br  />
+ 12.33%<br  />
+ 6.16%<br  />
+ 4.95%<br  />
+ 3.24%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 14  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro Max<br  />
- iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 16e  </td><td class="c-table__cell">70.84%<br  />
- 16.07%<br  />
- 12.37%  </td></tr>
+ iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 16e  </td><td class="c-table__cell">71.55%<br  />
+ 15.69%<br  />
+ 12.07%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 14  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
- iPhone 12 mini, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro  </td><td class="c-table__cell">72.64%<br  />
- 13.36%<br  />
- 12.13%<br  />
- 1.71%  </td></tr>
+ iPhone 12 mini, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro  </td><td class="c-table__cell">73.29%<br  />
+ 13.04%<br  />
+ 11.85%<br  />
+ 1.67%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone SE (3rd Gen.)  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone SE (3rd Gen.)  </td><td class="c-table__cell">100.00%  </td></tr>
 <tr class="c-table__row">
@@ -935,79 +942,79 @@ Mac Example</div></div>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 13 Pro Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus<br  />
  iPhone 12 Pro Max, iPhone 13 Pro Max<br  />
- iPhone 13 Pro Max  </td><td class="c-table__cell">91.61%<br  />
- 6.56%<br  />
- 1.83%  </td></tr>
+ iPhone 13 Pro Max  </td><td class="c-table__cell">91.82%<br  />
+ 6.39%<br  />
+ 1.79%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 13 Pro Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br  />
- iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max  </td><td class="c-table__cell">71.00%<br  />
- 13.44%<br  />
- 5.38%<br  />
- 4.70%<br  />
- 4.04%  </td></tr>
+ iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max  </td><td class="c-table__cell">71.75%<br  />
+ 13.09%<br  />
+ 5.24%<br  />
+ 4.58%<br  />
+ 3.94%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 13 Pro  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 16e<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro Max<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro<br  />
- iPhone 13, iPhone 13 Pro, iPhone 14  </td><td class="c-table__cell">64.72%<br  />
- 12.20%<br  />
- 10.98%<br  />
- 7.20%<br  />
- 4.88%  </td></tr>
+ iPhone 13, iPhone 13 Pro, iPhone 14  </td><td class="c-table__cell">65.56%<br  />
+ 11.91%<br  />
+ 10.72%<br  />
+ 7.03%<br  />
+ 4.76%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 13 Pro  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
  iPhone 12 mini, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro<br  />
- iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro  </td><td class="c-table__cell">65.61%<br  />
- 12.46%<br  />
- 12.43%<br  />
- 4.97%<br  />
- 4.25%  </td></tr>
+ iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro  </td><td class="c-table__cell">66.45%<br  />
+ 12.16%<br  />
+ 12.13%<br  />
+ 4.85%<br  />
+ 4.15%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 13 mini  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br  />
- iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max  </td><td class="c-table__cell">70.15%<br  />
- 12.74%<br  />
- 6.37%<br  />
- 5.10%<br  />
- 5.10%  </td></tr>
+ iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max  </td><td class="c-table__cell">70.89%<br  />
+ 12.43%<br  />
+ 6.21%<br  />
+ 4.97%<br  />
+ 4.97%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 13 mini  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
- iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro  </td><td class="c-table__cell">62.68%<br  />
- 14.45%<br  />
- 12.04%<br  />
- 10.83%  </td></tr>
+ iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro  </td><td class="c-table__cell">63.56%<br  />
+ 14.11%<br  />
+ 11.76%<br  />
+ 10.57%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 13  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 16e<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro Max<br  />
- iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro  </td><td class="c-table__cell">71.39%<br  />
- 13.11%<br  />
- 7.87%<br  />
- 7.08%  </td></tr>
+ iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro  </td><td class="c-table__cell">72.12%<br  />
+ 12.78%<br  />
+ 7.67%<br  />
+ 6.90%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 13  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br  />
- iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro  </td><td class="c-table__cell">71.23%<br  />
- 13.19%<br  />
- 10.55%<br  />
- 4.50%  </td></tr>
+ iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro  </td><td class="c-table__cell">71.79%<br  />
+ 12.93%<br  />
+ 10.35%<br  />
+ 4.41%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 12 Pro Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus<br  />
  iPhone 12 Pro Max<br  />
- iPhone 12 Pro Max, iPhone 13 Pro Max  </td><td class="c-table__cell">84.97%<br  />
- 10.63%<br  />
- 4.41%  </td></tr>
+ iPhone 12 Pro Max, iPhone 13 Pro Max  </td><td class="c-table__cell">85.29%<br  />
+ 10.40%<br  />
+ 4.31%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 12 Pro Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
@@ -1015,113 +1022,113 @@ Mac Example</div></div>
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max<br  />
- iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max  </td><td class="c-table__cell">64.39%<br  />
- 12.15%<br  />
- 7.33%<br  />
- 5.21%<br  />
- 4.82%<br  />
- 3.63%<br  />
- 2.37%  </td></tr>
+ iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max  </td><td class="c-table__cell">65.24%<br  />
+ 11.86%<br  />
+ 7.15%<br  />
+ 5.09%<br  />
+ 4.71%<br  />
+ 3.55%<br  />
+ 2.31%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 12 Pro  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 16e<br  />
  iPhone 12, iPhone 12 Pro<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro Max<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro<br  />
- iPhone 12 Pro  </td><td class="c-table__cell">66.41%<br  />
- 11.60%<br  />
- 10.59%<br  />
- 6.87%<br  />
- 3.33%<br  />
- 1.20%  </td></tr>
+ iPhone 12 Pro  </td><td class="c-table__cell">67.17%<br  />
+ 11.34%<br  />
+ 10.35%<br  />
+ 6.71%<br  />
+ 3.25%<br  />
+ 1.17%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 12 Pro  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br  />
- iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro  </td><td class="c-table__cell">60.14%<br  />
- 12.00%<br  />
- 10.73%<br  />
- 9.43%<br  />
- 7.59%  </td></tr>
+ iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro  </td><td class="c-table__cell">61.02%<br  />
+ 11.74%<br  />
+ 10.49%<br  />
+ 9.23%<br  />
+ 7.42%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 12 mini  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone 16 Plus, iPhone 16 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max, iPhone SE (2nd Gen.)<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max<br  />
  iPhone 12 mini, iPhone 12 Pro Max, iPhone 13 mini, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 14 Pro Max, iPhone 15 Plus, iPhone 15 Pro Max<br  />
- iPhone 12 mini, iPhone 12 Pro Max  </td><td class="c-table__cell">66.74%<br  />
- 12.14%<br  />
- 7.29%<br  />
- 5.64%<br  />
- 4.85%<br  />
- 2.36%  </td></tr>
+ iPhone 12 mini, iPhone 12 Pro Max  </td><td class="c-table__cell">67.53%<br  />
+ 11.85%<br  />
+ 7.11%<br  />
+ 5.50%<br  />
+ 4.74%<br  />
+ 2.31%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 12 mini  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro<br  />
- iPhone 12, iPhone 12 mini, iPhone 12 Pro  </td><td class="c-table__cell">68.01%<br  />
- 12.59%<br  />
- 10.71%<br  />
- 5.59%<br  />
- 2.53%  </td></tr>
+ iPhone 12, iPhone 12 mini, iPhone 12 Pro  </td><td class="c-table__cell">68.79%<br  />
+ 12.28%<br  />
+ 10.45%<br  />
+ 5.45%<br  />
+ 2.47%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 12  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14<br  />
  iPhone 12, iPhone 12 Pro<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 16e<br  />
  iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro, iPhone 14, iPhone 14 Pro Max<br  />
- iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro  </td><td class="c-table__cell">48.76%<br  />
- 33.71%<br  />
- 8.75%<br  />
- 5.25%<br  />
- 3.48%  </td></tr>
+ iPhone 12, iPhone 12 Pro, iPhone 13, iPhone 13 Pro  </td><td class="c-table__cell">49.64%<br  />
+ 33.13%<br  />
+ 8.60%<br  />
+ 5.16%<br  />
+ 3.42%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 12  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro, iPhone 16, iPhone 16 Pro, iPhone 16e<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro, iPhone 14, iPhone 14 Pro, iPhone 15, iPhone 15 Pro<br  />
  iPhone 12, iPhone 12 mini, iPhone 12 Pro, iPhone 13, iPhone 13 mini, iPhone 13 Pro<br  />
- iPhone 12, iPhone 12 mini, iPhone 12 Pro  </td><td class="c-table__cell">68.02%<br  />
- 12.60%<br  />
- 10.08%<br  />
- 5.53%<br  />
- 3.72%  </td></tr>
+ iPhone 12, iPhone 12 mini, iPhone 12 Pro  </td><td class="c-table__cell">68.80%<br  />
+ 12.29%<br  />
+ 9.83%<br  />
+ 5.40%<br  />
+ 3.63%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone SE (2nd Gen.)  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone SE (2nd Gen.)  </td><td class="c-table__cell">100.00%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone SE (2nd Gen.)  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone SE (2nd Gen.)  </td><td class="c-table__cell">100.00%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 11 Pro Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 11 Pro Max, iPhone XS Max<br  />
- iPhone 11 Pro Max  </td><td class="c-table__cell">62.38%<br  />
- 37.62%  </td></tr>
+ iPhone 11 Pro Max  </td><td class="c-table__cell">60.82%<br  />
+ 39.18%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 11 Pro Max  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 11 Pro, iPhone 11 Pro Max, iPhone XS, iPhone XS Max<br  />
  iPhone 11 Pro, iPhone 11 Pro Max<br  />
  iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max<br  />
- iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone X, iPhone XS, iPhone XS Max  </td><td class="c-table__cell">52.10%<br  />
- 17.68%<br  />
- 17.00%<br  />
- 13.21%  </td></tr>
+ iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone X, iPhone XS, iPhone XS Max  </td><td class="c-table__cell">50.90%<br  />
+ 19.58%<br  />
+ 16.61%<br  />
+ 12.90%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 11 Pro  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 11 Pro, iPhone 11 Pro Max, iPhone XS, iPhone XS Max<br  />
  iPhone 11 Pro, iPhone 11 Pro Max<br  />
  iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max<br  />
- iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone X, iPhone XS, iPhone XS Max  </td><td class="c-table__cell">49.14%<br  />
- 28.80%<br  />
- 14.40%<br  />
- 7.65%  </td></tr>
+ iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12 mini, iPhone 12 Pro Max, iPhone X, iPhone XS, iPhone XS Max  </td><td class="c-table__cell">48.15%<br  />
+ 30.24%<br  />
+ 14.11%<br  />
+ 7.50%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 11 Pro  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 11 Pro, iPhone XS<br  />
- iPhone 11 Pro  </td><td class="c-table__cell">54.02%<br  />
- 45.98%  </td></tr>
+ iPhone 11 Pro  </td><td class="c-table__cell">52.82%<br  />
+ 47.18%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 11  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone 11<br  />
- iPhone 11, iPhone XR  </td><td class="c-table__cell">60.54%<br  />
- 39.46%  </td></tr>
+ iPhone 11, iPhone XR  </td><td class="c-table__cell">61.15%<br  />
+ 38.85%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone 11  </td><td class="c-table__cell">Zoom  </td><td class="c-table__cell">iPhone 11<br  />
- iPhone 11, iPhone XR  </td><td class="c-table__cell">87.24%<br  />
- 12.76%  </td></tr>
+ iPhone 11, iPhone XR  </td><td class="c-table__cell">87.49%<br  />
+ 12.51%  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">iPhone XS Max  </td><td class="c-table__cell">Standard  </td><td class="c-table__cell">iPhone XS Max<br  />
  iPhone 11 Pro Max, iPhone XS Max  </td><td class="c-table__cell">60.06%<br  />

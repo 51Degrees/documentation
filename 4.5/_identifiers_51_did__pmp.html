@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -69,7 +67,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers_5
 <h1 class="g-docs__page-title">The PMP answer </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><p>PMP asks the visitor the Model Terms for Marketing question and keeps the answer. That answer reaches the cloud as a stated <code>id.usage</code>, so the cloud works nothing out and the <a class="el" href="_identifiers_51_did.html" title="51Did (51Degrees Identifier)">51Did (51Degrees Identifier)</a> records that the usage was stated.</p>
+<div class="textblock"><p>The Preference Management Platform (PMP) asks the visitor the Model Terms for Marketing question and keeps the answer. The 51Degrees client script sends that answer to the cloud as a stated <code>id.usage</code>, so the cloud works nothing out and the <a class="el" href="_identifiers_51_did.html" title="51Did (51Degrees Identifier)">51Did (51Degrees Identifier)</a> records that the usage was stated.</p>
 <p>PMP itself, being the tag, the dialog and the shared answer, is <a class="el" href="_identifiers__p_m_p.html" title="PMP (Preference Management Platform)">PMP (Preference Management Platform)</a>. This page is the part between the answer and the identifier.</p>
 <h2 class="doxsection" id="the-three-answers-and-the-usage-each-creates">The three answers and the usage each creates<a class="headerlink" href="#the-three-answers-and-the-usage-each-creates" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
@@ -82,7 +80,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers_5
 <tr class="c-table__row">
 <td class="c-table__cell">The alternative button  </td><td class="c-table__cell"><code>id.usage=non-marketing</code>  </td><td class="c-table__cell">Analytics, fraud prevention and security only.  </td></tr>
 </table>
-<p>All three are answers, and each one creates a 51Did with that usage. The alternative button is not a refusal and not a failure path, so an identifier follows it like the other two. What the two marketing usages permit is set out in the Model Terms for Marketing, version 2, at <a href="https://m4ow.uk/mtm/2.txt">https://m4ow.uk/mtm/2.txt</a>, and the scheme behind them is explained at <a href="https://m4ow.uk/mtm">https://m4ow.uk/mtm</a>. A <code>non-marketing</code> identifier is covered by your agreement with 51Degrees under the published <a href="https://51degrees.com/terms/general-terms-and-conditions/20261019">General Terms and Conditions</a> and <a href="https://51degrees.com/terms/cloud-services-terms/20260323">Cloud Services Terms</a>.</p>
+<p>All three are answers, and each one creates a 51Did with that usage, provided the key carries what <em>The License Key the marketing answers need</em> below describes. The alternative button is not a refusal and not a failure path, so an identifier follows it like the other two. What the two marketing usages permit is set out in the Model Terms for Marketing, version 2, at <a href="https://m4ow.uk/mtm/2.txt">https://m4ow.uk/mtm/2.txt</a>, and the scheme behind them is explained at <a href="https://m4ow.uk/mtm">https://m4ow.uk/mtm</a>. A <code>non-marketing</code> identifier is covered by your agreement with 51Degrees under the published <a href="https://51degrees.com/terms/general-terms-and-conditions/20261019">General Terms and Conditions</a> and <a href="https://51degrees.com/terms/cloud-services-terms/20260323">Cloud Services Terms</a>.</p>
 <h2 class="doxsection" id="how-the-answer-reaches-the-cloud">How the answer reaches the cloud<a class="headerlink" href="#how-the-answer-reaches-the-cloud" aria-label="Permalink to this section">🔗</a></h2>
 <p>You write no code for this.</p>
 <ol type="1">

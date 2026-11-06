@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -67,7 +65,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_integrations_
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><p><a class="el" href="_integrations__google_analytics.html" title="Google Analytics 4 (GA4)">Google Analytics 4 (GA4)</a></p>
 <p><a class="el" href="_integrations__prebid.html" title="Prebid">Prebid</a></p>
-<p><a class="el" href="_integrations__open_r_t_b_mappings.html" title="OpenRTB Mappings">OpenRTB Mappings</a> </p>
+<p><a class="el" href="_integrations__open_r_t_b_mappings.html" title="OpenRTB mappings">OpenRTB mappings</a> </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->

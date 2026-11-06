@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -65,7 +63,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers__
 <h1 class="g-docs__page-title">Identifiers </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><p><a class="el" href="_identifiers__overview.html" title="Overview">Overview</a></p>
+<div class="textblock"><p><a class="el" href="_identifiers__overview.html" title="Identifiers overview">Identifiers overview</a></p>
 <p><a class="el" href="_identifiers_51_did.html" title="51Did (51Degrees Identifier)">51Did (51Degrees Identifier)</a></p>
 <p><a class="el" href="_identifiers__p_m_p.html" title="PMP (Preference Management Platform)">PMP (Preference Management Platform)</a></p>
 <p><a class="el" href="_identifiers__a_d_i.html" title="ADI (Ad Inspector)">ADI (Ad Inspector)</a> </p>

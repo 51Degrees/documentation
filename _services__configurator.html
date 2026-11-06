@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -72,7 +70,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__con
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><p>Access to the cloud service is controlled by a Resource Key, which you create for free at <a href="https://configure.51degrees.com/">configure.51degrees.com</a>. Paid properties and higher request limits come from a License Key, which comes with a subscription and is attached to the Resource Key when you create it, so the License Key itself never goes on a page. The difference between the two keys is set out on <a class="el" href="_services__cloud__resource_keys.html" title="Resource Keys">Resource Keys</a>.</p>
-<p>When a Resource Key is created, you choose the properties that it will return from queries, and once these are set they cannot be changed. However, it is possible to create more keys, each tied to whichever properties you choose.</p>
+<p>Choose the properties when you create a Resource Key. Its property list cannot be changed later. Create a new key if you need a different list.</p>
 <p>For a comprehensive list of all available properties and their descriptions, see the <a href="https://51degrees.com/developers/property-dictionary">Property Dictionary</a>.</p>
 <p> 
 <iframe src="https://player.vimeo.com/video/769426655" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
@@ -83,11 +81,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__con
 <div class="image">
 <img src="configurator-location-country.png" alt=""/>
 </div>
-    <p>You should choose as many properties as you need here; once the Resource Key is generated, its list of permitted properties cannot be changed.</p>
-<h2 class="doxsection" id="step-2-review-configuration">Step 2: Review Configuration<a class="headerlink" href="#step-2-review-configuration" aria-label="Permalink to this section">🔗</a></h2>
+    <p>Choose the properties you need before generating the Resource Key. You cannot change its property list later.</p>
+<h2 class="doxsection" id="step-2-review-configuration">Step 2: Review configuration<a class="headerlink" href="#step-2-review-configuration" aria-label="Permalink to this section">🔗</a></h2>
 <p>Some properties require a subscription to appear in query results, or for queries over a certain quota. The Review Configuration screen will inform you if a subscription License Key is required and allow you to secure your properties to specific domains, register for product updates, attach your new Resource Key to a subscription, and read and agree to the terms and conditions.</p>
 <h2 class="doxsection" id="step-3-implement">Step 3: Implement<a class="headerlink" href="#step-3-implement" aria-label="Permalink to this section">🔗</a></h2>
-<p>Finally your newly created Resource Key is available. The Implement screen shows code examples much like this documentation but with your new Resource Key in place, and allows you to copy the Resource Key itself from the Resource Key section. It is important that you record the Resource Key somewhere at this point; it is not possible to see a list of Resource Keys attached to an account, so once you have left Step 3 you cannot return to it.</p>
+<p>The Implement screen shows code examples with your new Resource Key already inserted. Copy and save the key from the Resource Key section before leaving Step 3. You cannot list the Resource Keys attached to an account or return to this step later.</p>
 <div class="image">
 <img src="configurator-implement-key.png" alt=""/>
 </div>
@@ -95,7 +93,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__con
 <p>Make a note of that Resource Key and then continue following the <a class="el" href="index.html" title="Introduction">introduction</a>.</p>
 <h2 class="doxsection" id="displaying-details-for-an-existing-resource-key">Displaying details for an existing Resource Key<a class="headerlink" href="#displaying-details-for-an-existing-resource-key" aria-label="Permalink to this section">🔗</a></h2>
 <p>If you have a Resource Key and need to establish which properties it has access to, you can construct a URL <a href="https://configure.51degrees.com/YOUR_RESOURCE_KEY">https://configure.51degrees.com/YOUR_RESOURCE_KEY</a>. This will show Step 1 with the properties for this specific key already selected.</p>
-<p>Beware: do not continue to Steps 2 or 3. Doing this will not edit the properties attached to your Resource Key, since Resource Keys are immutable; instead, it will create a new Resource Key. </p>
+<p>Continuing to Steps 2 or 3 creates a new Resource Key. It does not edit the existing key, because Resource Keys cannot be changed. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->

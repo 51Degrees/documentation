@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -121,7 +119,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_human_confide
 <ul>
 <li>Filter conversions to High to get a conversion rate for the visits most likely to be people, and compare it with your overall rate.</li>
 <li>Chart Medium and Low by month and by page, alongside High.</li>
-<li>Use CrawlerName, CrawlerUsage and IsArtificialIntelligence to see which crawlers read which pages, and whether they index, train or answer questions with them. Then set your robots.txt rules from what you see.</li>
+<li>Use CrawlerName, CrawlerUsage, and IsArtificialIntelligence to see which crawlers read which pages, and whether they index, train, or answer questions with them. Then set your robots.txt rules from what you see.</li>
 </ul>
 <div class="image">
 <object type="image/svg+xml" data="human-confidence-analytics.svg" style="pointer-events: none;"></object>
@@ -129,12 +127,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_human_confide
 Monthly visits by Human Confidence on a demonstration site, May to September, with known crawlers removed</div></div>
     <p>This chart comes from a demonstration site, with known crawlers removed. From July, Low and Medium grew and High fell.</p>
 <h2 class="doxsection" id="crawlers-that-never-run-the-page">Crawlers that never run the page<a class="headerlink" href="#crawlers-that-never-run-the-page" aria-label="Permalink to this section">🔗</a></h2>
-<p>Plenty of crawlers don't run JavaScript. They never reach your tag, so your analytics never counts them. IsCrawler picks up the ones that do run it. You can keep them in, to see which AI crawlers read your pages, or send the values only when <code>device.iscrawler</code> is false. Either way, an agent that hides what it is still gets counted. Filter on Human Confidence to separate those visits from people.</p>
+<p>Plenty of crawlers don't run JavaScript. They never reach your tag, so your analytics never counts them. IsCrawler picks up the ones that do run it. You can keep them in, to see which AI crawlers read your pages, or send the values only when <code>device.iscrawler</code> is false. Either way, an agent that hides what it is still gets counted. Filter on Human Confidence to separate the visits most likely to be people from the rest.</p>
 <h2 class="doxsection" id="find-out-more">Find out more<a class="headerlink" href="#find-out-more" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
 <li><a class="el" href="_integrations__google_analytics.html" title="Google Analytics 4 (GA4)">Google Analytics 4 (GA4)</a>, to send Human Confidence and the other 51Degrees properties to your GA4 reports</li>
 <li><a class="el" href="_services__cloud__human_confidence.html" title="Deploy Human Confidence with the cloud">Deploy Human Confidence with the cloud</a>, to act on the value on your server</li>
-<li><a class="el" href="_pipeline_api__features__client_side_evidence.html" title="Client-side Evidence">Client-side Evidence</a>, for how the 51Degrees script works in the browser</li>
+<li><a class="el" href="_pipeline_api__features__client_side_evidence.html" title="Client-side evidence">Client-side evidence</a>, for how the 51Degrees script works in the browser</li>
 <li><a href="https://51degrees.com/developers/property-dictionary?item=Derived%7CHuman%20Detection">Human Confidence in the property dictionary</a></li>
 </ul>
 <p>Human Confidence needs the Pro plan, which you can <a href="https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&amp;conversion=SignUp">buy online</a>, or the Bespoke plan for your own servers. Ask us about Bespoke through the <a href="https://51degrees.com/contact-us">contact page</a>. </p>

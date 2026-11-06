@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -70,7 +68,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers__
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><p>The consent surface reports <code>gdprApplies</code>, which says whether the General Data Protection Regulation (GDPR) applies to the visit, and PMP takes the answer from <code>IsGdpr</code> on the client script's object. That property is worked out from the visitor's country, true for the European Economic Area, the United Kingdom and the French outermost regions and false everywhere else, an address that cannot be placed included. It is a good default and not a determination, because GDPR also reaches a publisher by where the publisher is established, so a publisher established in the European Union is within scope while serving a visitor in the United States and this answers false for that request. A publisher who knows their own position should say so rather than take this.</p>
-<p>PMP depends on three properties from the client script, so ask for all three when you create the resource key. Where the key does not carry one of them PMP says so in the console once per page view, and everything else carries on working, so the console is the only place the gap shows.</p>
+<p>PMP depends on three properties from the client script, so ask for all three when you create the Resource Key. Where the key does not carry one of them PMP says so in the console once per page view, and everything else carries on working, so the console is the only place the gap shows.</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Property  </td><td class="c-table__cell">What is lost without it  </td></tr>

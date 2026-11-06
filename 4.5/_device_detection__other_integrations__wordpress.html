@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -64,14 +62,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__other_integrations__index.html">Other Integrations</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__other_integrations__wordpress.html">WordPress</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__other_integrations__index.html">Other integrations</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__other_integrations__wordpress.html">WordPress</a></li>  </ul>
 </div>
 <h1 class="g-docs__page-title">WordPress </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="doxsection" id="autotoc_md51degrees---optimize-by-device--location">51Degrees - Optimize by Device &amp; Location<a class="headerlink" href="#autotoc_md51degrees---optimize-by-device--location" aria-label="Permalink to this section">🔗</a></h2>
+<div class="textblock"><h2 class="doxsection" id="optimize-by-device-and-location">Optimize by device and location<a class="headerlink" href="#optimize-by-device-and-location" aria-label="Permalink to this section">🔗</a></h2>
 <p>Optimize your website for a range of devices and personalize your content based on your user’s location.</p>
-<p>Using real-time data, our plugin can optimize your website for users, based on device type and location. Upgrade your analytic reporting with a click of a button. Install from the WordPress plugin manager by searching for “51Degrees”.</p>
+<p>Our plugin uses device and location data to help you adapt your website and analytics reports. Install it from the WordPress plugin manager by searching for “51Degrees”.</p>
 <p> 
 <iframe src="https://player.vimeo.com/video/631017900?h=8e8c844804" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </p>
@@ -82,26 +80,26 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 </ol>
 <h2 class="doxsection" id="integration-with-google-analytics">Integration with Google Analytics<a class="headerlink" href="#integration-with-google-analytics" aria-label="Permalink to this section">🔗</a></h2>
 <ol type="1">
-<li>To integrate with Google Analytics, go to the <code>Google Analytics</code> tab and click <code>Connect Google Analytics</code>. Authorize the 51Degrees plugin on the Google consent screen. You are returned to the tab, which confirms the connection.</li>
-<li>Once connected, select your preferred properties for which you want to enable Custom Dimensions Tracking via the <code>Google Analytics Property</code> dropdown.</li>
+<li>The plugin works with Google Analytics 4 (GA4). Your Resource Key must have your site's domain added to it, or the connection is refused. If your key does not, create a new key with the domain at <a href="https://configure.51degrees.com/">configure.51degrees.com</a>. Then go to the <code>Google Analytics</code> tab and click <code>Connect Google Analytics</code>. Authorize the 51Degrees plugin on the Google consent screen. You are returned to the tab, which confirms the connection.</li>
+<li>Once connected, select the GA4 property that receives the Custom Dimensions from the <code>Analytics Account/Property</code> dropdown.</li>
 <li>Check <code>Send Page View</code> if you want to send Default Page View hits along with Custom Dimensions. It is only recommended if you have not already integrated with any other Google Analytics plugin to avoid data duplication.</li>
-<li>Click <code>Save Changes</code>. This will prompt to the new Custom Dimensions screen where you can find all the Custom Dimensions available with the Resource Key.</li>
+<li>Click <code>Save Changes</code> to open the Custom Dimensions screen, which lists the dimensions available with your Resource Key.</li>
 <li>Click on <code>Enable Google Analytics Tracking</code> to enable tracking of all the Device Data Properties as Custom Dimensions.</li>
 </ol>
 <h2 class="doxsection" id="robotstxt-and-crawler-control">Robots.txt and crawler control<a class="headerlink" href="#robotstxt-and-crawler-control" aria-label="Permalink to this section">🔗</a></h2>
-<p>The <code>Robots.txt</code> tab lets you host a virtual <code>/robots.txt</code> file and, optionally, enforce crawler access in real time using 51Degrees crawler detection. Hosting the file is advisory only and does not consume cloud requests; enforcement uses live device detection and consumes one cloud request per page load, so enable it only when you want active bot blocking.</p>
+<p>The <code>Robots.txt</code> tab lets you host a virtual <code>/robots.txt</code> file and, optionally, enforce crawler access in real time using 51Degrees crawler detection. Hosting the file is advisory only. The plugin fetches the file from the cloud when you save the tab and once a day after that, and serves the stored copy in between, so serving the file uses no cloud requests. Enforcement uses live device detection and consumes one cloud request per page load, so enable it only when you want active bot blocking.</p>
 <ol type="1">
 <li><b>Enable Robots.txt Hosting</b> generates a virtual <code>/robots.txt</code> from your configured rules and the selected crawler categories. If a physical <code>robots.txt</code> file exists in your WordPress root, WordPress serves that file instead, so delete or rename it to use the virtual one.</li>
 <li><b>Enable Crawler Enforcement</b> turns on real-time detection and 302-redirects detected bots to your configured <code>Redirect URL</code> (leave it empty to deny access without redirecting). The <code>/robots.txt</code> file itself always stays reachable to crawlers regardless of the enforcement policy.</li>
-<li><b>Allowed Crawler Categories</b> lets crawlers in the selected categories through. Category-based enforcement requires the <code>CrawlerUsage</code> property in your Resource Key; without it, only path-based rules apply.</li>
-<li><b>Terms Document Locators (TDL)</b> add <code>TDL:</code> lines to the generated file, emitted at the end between the final wildcard <code>User-agent: *</code> line and its <code>Allow: /</code>. Each TDL points to an immutable legal document that defines the terms under which crawlers may access your site, following the proposed robots.txt extension described in the <a href="https://github.com/jwrosewell/data-labels/blob/main/IETF-Robots.md">data-labels IETF Robots proposal</a>. You can select standard TDLs (for example the MOW Standard Terms), which are maintained externally and checked daily for updated versions, or supply your own custom TDL URLs, one per line.</li>
+<li><b>Allowed Crawler Categories</b> lets crawlers in the selected categories through. Category-based enforcement requires the <code>CrawlerUsage</code> property in your Resource Key. Without <code>CrawlerUsage</code>, the plugin neither blocks nor redirects any crawler, and only the rules in the hosted <code>robots.txt</code> file apply.</li>
+<li><b>Terms Document Locators (TDL)</b> add <code>TDL:</code> lines to the generated file, emitted at the end between the final wildcard <code>User-agent: *</code> line and its <code>Allow: /</code>. Each TDL points to an immutable legal document that defines the terms under which crawlers may access your site, following the proposed robots.txt extension described in the <a href="https://github.com/jwrosewell/data-labels/blob/main/IETF-Robots.md">data-labels IETF Robots proposal</a>. You can select standard TDLs (currently the MOW Search Only Terms Web, SOCW), which are maintained externally and checked daily for updated versions, or supply your own custom TDL URLs, one per line.</li>
 <li><b>Custom Top Entries</b> and <b>Custom Bottom Entries</b> let you prepend or append your own lines around the generated 51Degrees section.</li>
 </ol>
-<p>Crawler detection needs the <code>IsCrawler</code> and <code>CrawlerUsage</code> properties, and file generation from the cloud needs the <code>RobotsTxt</code> <code>PlainText</code> property. Create a key with these at <a href="https://configure.51degrees.com/">configure.51degrees.com</a> if your key does not already include them.</p>
+<p>Crawler detection needs the <code>IsCrawler</code> and <code>CrawlerUsage</code> properties, and file generation from the cloud needs the <code>robotstxt.plaintext</code> property. Create a key with these at <a href="https://configure.51degrees.com/">configure.51degrees.com</a> if your key does not already include them.</p>
 <h2 class="doxsection" id="suspicious-activity-detection">Suspicious activity detection<a class="headerlink" href="#suspicious-activity-detection" aria-label="Permalink to this section">🔗</a></h2>
 <p>The <code>Suspicious</code> tab detects and blocks visitors who make too many requests in a short window. From the tab you can set the request threshold (<code>Number of requests</code>), the time window (<code>Within seconds</code>), and the <code>Redirect URL</code> that blocked visitors are sent to.</p>
-<p>When your Resource Key is working, detection runs in advanced mode and identifies visitors individually, even when they share a network. If the key is missing or invalid, it falls back to basic mode, where visitors that look identical to the site are grouped and blocked together.</p>
-<p>Advanced mode relies on a probabilistic identifier from your Resource Key - <code>IdProbLic</code> if present, otherwise <code>IdProbGlobal</code> (see <a class="el" href="_identifiers_51_did.html" title="51Did (51Degrees Identifier)">51Did (51Degrees Identifier)</a>). These are generated with <code>id.usage=non-marketing</code>, so they do not require a license key or a specific product, but they do need to be present on the key. If your existing key does not include either property, create a new Resource Key that adds it at <a href="https://configure.51degrees.com/">configure.51degrees.com</a>. Without these properties the plugin falls back to a hash of the visitor's IP address and User-Agent, which groups visitors that share a network.</p>
+<p>When your Resource Key is working, detection runs in advanced mode and counts requests by each visitor's 51Did, which can tell apart visitors who share a network. If the key is missing or invalid, it falls back to basic mode, where visitors with the same IP address and User-Agent are grouped and blocked together.</p>
+<p>Advanced mode relies on a probabilistic identifier from your Resource Key, which is <code>IdProbLic</code> if present, otherwise <code>IdProbGlobal</code> (see <a class="el" href="_identifiers_51_did.html" title="51Did (51Degrees Identifier)">51Did (51Degrees Identifier)</a>). These are generated with <code>id.usage=non-marketing</code>, so they do not require a License Key or a specific product, but they do need to be present on the key. If your existing key does not include either property, create a new Resource Key that adds it at <a href="https://configure.51degrees.com/">configure.51degrees.com</a>. Without these properties the plugin falls back to a hash of the visitor's IP address and User-Agent, which groups visitors who share both the IP address and the User-Agent.</p>
 <h2 class="doxsection" id="preference-management-platform-pmp">Preference Management Platform (PMP)<a class="headerlink" href="#preference-management-platform-pmp" aria-label="Permalink to this section">🔗</a></h2>
 <p>The <code>PMP</code> tab adds the 51Degrees marketing preference popup to your public pages. Visitors choose <code>Standard</code>, <code>Personalized</code>, or a publisher-defined alternative (for example "Remove ads" or "Subscribe"). The choice is kept in a first party cookie on your own domain, <code>__mtm_pref</code>, holding one of <code>standard</code>, <code>personalized</code> or <code>non-marketing</code>. The answer is a cookie rather than browser storage because a request carries cookies, and carries nothing else PMP could write, so your own server, and anything in front of it, can act on the answer. The cookie carries no <code>HttpOnly</code> flag, which would stop a script reading it, because the page reads it back and replaces it when the visitor changes their mind. PMP also acts as the consent management platform (CMP) by exposing the consent state through the IAB Transparency and Consent Framework (TCF) API, so a separate consent manager is not needed. For the underlying concept and the cloud endpoint, see <a class="el" href="_identifiers__p_m_p.html" title="PMP (Preference Management Platform)">PMP (Preference Management Platform)</a>.</p>
 <p>Configure the popup from the <code>PMP</code> tab:</p>
@@ -111,7 +109,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <li><b>Terms / Privacy URL</b> is linked from the popup, so a visitor can read your terms before answering, and is required.</li>
 <li><b>Brand Name</b> and <b>Brand Logo URL</b> set the branding shown in the popup. Replace the placeholder defaults with your own.</li>
 <li><b>Show Standard Marketing Option</b> shows the <code>Standard</code> choice alongside <code>Personalized</code> and the alternative button.</li>
-<li><b>TCF Vendor String</b> is the base IAB TCF v2 consent string onto which PMP overlays the visitor's purpose consents at runtime. The built-in default consents every vendor on the current IAB Global Vendor List; override it to restrict the vendor set.</li>
+<li><b>TCF Vendor String</b> is the base IAB TCF v2 consent string onto which PMP overlays the visitor's purpose consents at runtime. The built-in default gives consent to every vendor that asks for it on one fixed version of the IAB Global Vendor List, so vendors added to the list after that version are not included. Override it to restrict the vendor set or to cover a later version of the list.</li>
 </ul>
 <p>The popup works out of the box. To react to the visitor's choice, override the global callback on your page - the plugin ships a no-op default:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;script&gt;</div>
@@ -121,13 +119,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line">&lt;/script&gt;</div>
 </div><!-- fragment --><h2 class="doxsection" id="developer-information-and-advanced-features">Developer information and advanced features<a class="headerlink" href="#developer-information-and-advanced-features" aria-label="Permalink to this section">🔗</a></h2>
 <p><em>Value replacement</em></p>
-<p>You can insert snippets into your pages that will be replaced with the corresponding value. For example, the text <code>{Pipeline::get("device", "browsername")}</code> would be replaced with <code>Chrome</code>, <code>Safari</code> and <code>Firefox</code>, etc, depending on the browser being used by the person visiting your site. To set this up, take the text from the 'Usage in Content' column on the 'Properties' tab of the plugin.</p>
+<p>Insert a snippet such as <code>{Pipeline::get("device", "browsername")}</code> into your page to display the corresponding value, such as <code>Chrome</code>, <code>Safari</code>, or <code>Firefox</code>. Copy snippets from the 'Usage in Content' column on the plugin's 'Properties' tab.</p>
 <p><em>Conditional blocks</em></p>
 <p>This feature allows you to show/hide content based on the property values supplied by the Pipeline API. To start, click 'add a new block' and select the <code>51Degrees conditional group block</code>. Select the block to display the configuration UI on the right-hand side. For example, you can configure the block to only appear if the hardware vendor property is 'Apple'.</p>
 <h2 class="doxsection" id="accessing-properties-in-php-code">Accessing properties in PHP code<a class="headerlink" href="#accessing-properties-in-php-code" aria-label="Permalink to this section">🔗</a></h2>
 <p>To get a specific property, look it up on the available properties list and use the get() method specified.</p>
 <p><code>Pipeline::get("device", "ismobile")</code> You can also get a list of properties by category as an array.</p>
-<p><code>Pipeline::getCategory("Supported Media"))</code> The code snippet above will give you all the properties with <code>Supported Media</code> category included in the Resource Key.</p>
+<p><code>Pipeline::getCategory("Supported Media")</code> The code snippet above will give you all the properties with <code>Supported Media</code> category included in the Resource Key.</p>
 <h2 class="doxsection" id="javascript-integration">JavaScript integration<a class="headerlink" href="#javascript-integration" aria-label="Permalink to this section">🔗</a></h2>
 <p>The 51Degrees library exposes the same property values in JavaScript. These are accessed through the global <code>fod</code> object</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;script type=&quot;text/javascript&quot; &gt;</div>
@@ -156,7 +154,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 </div><!-- fragment --><p>Now, when the user clicks on the 'Use my location' button, the JavaScript that we pasted in will execute. This lets the global <code>fod</code> object know that we want access to the location data, which in turn causes the 'wants to know your location' confirmation pop-up to be displayed.</p>
 <p><b>Note:</b> On the first request, the server will not have the location information so the location properties will not have values. After the button is clicked, we need to make another request to the server for the location values to be populated. The content on the page can also be updated by using JavaScript, rather than waiting for the user to make a second request. This involves editing the JavaScript snippet above to update the page within the callback function that is passed to fod.complete.</p>
 <h2 class="doxsection" id="apple-device-models">Apple device models<a class="headerlink" href="#apple-device-models" aria-label="Permalink to this section">🔗</a></h2>
-<p>Determining the exact model of Apple devices is more difficult that others. This is because Apple include limited information about the device hardware in the 'User-Agent' HTTP header that is sent to the webserver. To get around this problem, device detection uses JavaScript that runs directly on the client to gather some additional information. This can usually be used to determine the exact model of device and will at least narrow down the possibilities.</p>
+<p>Apple includes limited hardware information in the 'User-Agent' HTTP header. We use client-side JavaScript to gather more evidence and identify an Apple model or narrow the result to a group of models.</p>
 <p>The WordPress plugin will handle this for you automatically. However, be aware that, due to having to get additional data from the client, the model may be less clear on the first request than on subsequent requests. After the JavaScript runs on the client, a second request is made and the array of values would be significantly narrowed down.</p>
 <p><b>Note:</b> The content on the page can also be updated by using JavaScript, rather than waiting for the user to make a second request. The global <code>fod</code> object can be used to pass a callback that is executed when the updated values are available. For example:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;script type=&quot;text/javascript&quot; &gt;</div>
@@ -164,14 +162,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line">       fod.complete(function(data) { /* access values here. e.g. data.device.hardwarename */ });</div>
 <div class="c-code__line">     };</div>
 <div class="c-code__line">&lt;/script&gt;</div>
-</div><!-- fragment --><h2 class="doxsection" id="manual-installation-using-wordpress-plugin-manager">Manual installation using WordPress Plugin Manager<a class="headerlink" href="#manual-installation-using-wordpress-plugin-manager" aria-label="Permalink to this section">🔗</a></h2>
+</div><!-- fragment --><h2 class="doxsection" id="manual-installation-from-the-wordpress-plugin-directory">Manual installation from the WordPress plugin directory<a class="headerlink" href="#manual-installation-from-the-wordpress-plugin-directory" aria-label="Permalink to this section">🔗</a></h2>
 <ol type="1">
-<li>Download <code>fiftyonedegrees</code> zip package from <a href="https://wordpress.org/plugins/wp-plugin-manager/">WordPress Plugin Manager</a>.</li>
-<li>Upload the entire <code>fiftyonedegrees</code> zip folder to the <code>/wp-content/plugins/</code> directory.</li>
+<li>Download the plugin zip file from the <a href="https://wordpress.org/plugins/51degrees-optimize-by-device-location/">51Degrees plugin page</a> in the WordPress plugin directory.</li>
+<li>Unzip it and upload the <code>51degrees-optimize-by-device-location</code> folder to the <code>/wp-content/plugins/</code> directory.</li>
 <li>Visit <code>Plugins</code>.</li>
 <li>Activate the 51Degrees plugin.</li>
 </ol>
-<h2 class="doxsection" id="manual-installation-using-github-repository">Manual installation using GitHub Repository<a class="headerlink" href="#manual-installation-using-github-repository" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="manual-installation-from-github">Manual installation from GitHub<a class="headerlink" href="#manual-installation-from-github" aria-label="Permalink to this section">🔗</a></h2>
 <p>If you want to build the plugin yourself and install locally, you will need to follow these steps:</p>
 <ol type="1">
 <li>Clone the <a href="https://github.com/51Degrees/pipeline-wordpress/">51Degrees WordPress plugin repository</a>.</li>
@@ -180,7 +178,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <li>Copy the <code>fiftyonedegrees</code> directory into your 'wp-content/plugins' directory.</li>
 <li>Activate the 51Degrees plugin.</li>
 </ol>
-<p>This plugin is free and provided without warranty of any kind. Use it at your own risk; 51Degrees is not responsible for any improper use of this plugin, nor for any damage it might cause to your site. Always backup all your data before installing a new plugin. </p>
+<p>This plugin is free and licensed under the <a href="https://opensource.org/licenses/EUPL-1.2">European Union Public Licence (EUPL) v1.2</a>, which provides it without warranty and limits the liability of 51Degrees. Always back up your data before installing a new plugin. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->

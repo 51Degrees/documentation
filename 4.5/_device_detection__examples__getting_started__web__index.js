@@ -1,10 +1,10 @@
 var _device_detection__examples__getting_started__web__index =
 [
     [ "Introduction", "_device_detection__examples__getting_started__web__index.html#introduction-5", null ],
-    [ "Getting Started Web Cloud", "_device_detection__examples__getting_started__web__cloud.html", [
+    [ "Getting started with cloud detection in a web application", "_device_detection__examples__getting_started__web__cloud.html", [
       [ "Introduction", "_device_detection__examples__getting_started__web__cloud.html#introduction-4", null ]
     ] ],
-    [ "Getting Started Web On-premise", "_device_detection__examples__getting_started__web__on_premise.html", [
+    [ "Getting started with on-premise detection in a web application", "_device_detection__examples__getting_started__web__on_premise.html", [
       [ "Introduction", "_device_detection__examples__getting_started__web__on_premise.html#introduction-6", null ]
     ] ]
 ];

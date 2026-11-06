@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Error Messages - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Error Messages</title>
+<meta name="description" content="Error messages - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Error messages</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,13 +64,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_services__index.html">Services</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_services__cloud__index.html">Cloud Service</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_services__cloud__error_messages.html">Error Messages</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_services__index.html">Services</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_services__cloud__index.html">Cloud Service</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_services__cloud__error_messages.html">Error messages</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Error Messages </h1></div><!--header-->
+<h1 class="g-docs__page-title">Error messages </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="cloud-error-response-messages">Cloud error response messages<a class="headerlink" href="#cloud-error-response-messages" aria-label="Permalink to this section">🔗</a></h2>
-<p>This page contains explainers for cloud error messages when using 51Degrees services.</p>
+<p>Use this page to diagnose errors returned by the 51Degrees Cloud service.</p>
 <h3 class="doxsection" id="Continuous_processing_of_unique_User_Agents">Continuous processing of unique User-Agents<a class="headerlink" href="#Continuous_processing_of_unique_User_Agents" aria-label="Permalink to this section">🔗</a></h3>
 <p>Continuous processing of unique User-Agents is limited. This is to limit the amount of offline processing that is performed using the 51Degrees Cloud service. You can resume making requests when the number of seconds in the <code>Retry-After</code> response header has elapsed. To find out more see the <a href="https://cloud.51degrees.com/api-docs/index.html">cloud documentation</a></p>
 <h3 class="doxsection" id="Evidence_keys_could_not_be_determined">Evidence keys could not be determined<a class="headerlink" href="#Evidence_keys_could_not_be_determined" aria-label="Permalink to this section">🔗</a></h3>
@@ -80,7 +78,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <h3 class="doxsection" id="Internal_server_error">Internal server errors<a class="headerlink" href="#Internal_server_error" aria-label="Permalink to this section">🔗</a></h3>
 <p>There is an issue with the Cloud service. Check the  <a href="https://51degrees.com/service-availability" target="_blank">service status page</a> for current outages. If the problem persists then please create a new issue on our <a href="https://github.com/51Degrees/cloud-issues/issues">cloud-issues GitHub</a> repository.</p>
 <h3 class="doxsection" id="Invalid_license_supplied">Invalid License supplied<a class="headerlink" href="#Invalid_license_supplied" aria-label="Permalink to this section">🔗</a></h3>
-<p>The supplied License Key(s) do not contain any valid products for the 51Degrees Cloud service. The keys you have provided will be displayed in the error message returned from the service. Validate that these are the same keys found in your sign-up email. If the keys match, then please refer to our <a href="https://51degrees.com/pricing">pricing page</a> to validate you have chosen the correct subscription.</p>
+<p>The supplied License Key(s) do not contain any valid products for the 51Degrees Cloud service. The keys you have provided will be displayed in the error message returned from the service, so remove them before you share the message anywhere public, such as a GitHub issue, because anyone who has a License Key can make requests that count against its subscription. Validate that these are the same keys found in your sign-up email. If the keys match, then please refer to our <a href="https://51degrees.com/pricing">pricing page</a> to validate you have chosen the correct subscription.</p>
 <h3 class="doxsection" id="Invalid_product">Invalid product<a class="headerlink" href="#Invalid_product" aria-label="Permalink to this section">🔗</a></h3>
 <p>The product(s) mentioned in the error message is invalid. Cross-reference this with the mapping in the <a class="el" href="#Product_to_subscription_mapping" title="Product to subscription mapping">product to subscription mapping</a> and check that you have access to the correct subscription by checking your sign-up email. Otherwise, please see our <a href="https://51degrees.com/pricing">pricing page</a> for details.</p>
 <h3 class="doxsection" id="Location_lookup_error">Location lookup error<a class="headerlink" href="#Location_lookup_error" aria-label="Permalink to this section">🔗</a></h3>
@@ -90,11 +88,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <h3 class="doxsection" id="No_properties_associated_with_these_products">No properties associated with these products<a class="headerlink" href="#No_properties_associated_with_these_products" aria-label="Permalink to this section">🔗</a></h3>
 <p>This error means that there are no properties that are offered by the Cloud service which can be accessed by the available products that are defined by your License Keys. The error will list the available products, cross-reference this with the mapping in the <a class="el" href="#Product_to_subscription_mapping" title="Product to subscription mapping">product to subscription mapping</a> and the <a href="https://51degrees.com/developers/property-dictionary">property dictionary</a>.</p>
 <h3 class="doxsection" id="Non_unique_property_requested">Non-unique properties requested<a class="headerlink" href="#Non_unique_property_requested" aria-label="Permalink to this section">🔗</a></h3>
-<p>A non-unique property has been requested; make sure that each property is only requested once and specify the property name in the format: <code>&lt;product&gt;.&lt;property&gt;</code> to avoid ambiguity, e.g., <code>device.ismobile</code> or <code>location.country</code>. This may occur when using the <code>values</code> parameter in requests to the Cloud service. Refer to the <a href="https://cloud.51degrees.com/api/metadata/properties">cloud property metadata</a> for a list of valid properties IDs.</p>
+<p>Request each property only once. Use the <code>&lt;product&gt;.&lt;property&gt;</code> format, such as <code>device.ismobile</code> or <code>location.country</code>, to avoid ambiguity when using the <code>values</code> parameter. See <a href="https://cloud.51degrees.com/api/metadata/properties">cloud property metadata</a> for valid property IDs.</p>
 <h3 class="doxsection" id="Only_add_on_product_provided">Only add-on product provided<a class="headerlink" href="#Only_add_on_product_provided" aria-label="Permalink to this section">🔗</a></h3>
-<p>This product is an add-on to one of the plans outlined on the <a href="https://51degrees.com/pricing">pricing page</a>. The base subscription is licensed in a separate Licence Key. Ensure this Licence Key found in your sign-up email has been included when creating your Resource Key on <a href="https://configure.51degrees.com/">configure.51degrees.com</a>.</p>
+<p>This product is an add-on to one of the plans outlined on the <a href="https://51degrees.com/pricing">pricing page</a>. The base subscription is licensed in a separate License Key. Ensure this License Key found in your sign-up email has been included when creating your Resource Key on <a href="https://configure.51degrees.com/">configure.51degrees.com</a>.</p>
 <h3 class="doxsection" id="Product_to_subscription_mapping">Product to subscription mapping<a class="headerlink" href="#Product_to_subscription_mapping" aria-label="Permalink to this section">🔗</a></h3>
-<p>Some error messages from the 51Degrees Cloud service may list the products that are available in the request or the products that are required to resolve the error. These map to a subscriptions references on the  <a href="https://51degrees.com/pricing" target="_blank">pricing</a> page and the <a href="https://51degrees.com/developers/property-dictionary">property dictionary</a>.</p>
+<p>Some cloud error messages list the products available to the request, or the products needed to resolve the error. Match those products to the subscriptions on the  <a href="https://51degrees.com/pricing" target="_blank">pricing</a> page and the <a href="https://51degrees.com/developers/property-dictionary">property dictionary</a>.</p>
 <h3 class="doxsection" id="Products_in_subscription_not_valid">Products in subscription not valid<a class="headerlink" href="#Products_in_subscription_not_valid" aria-label="Permalink to this section">🔗</a></h3>
 <p>The products available in your subscription are not valid. Refer to the error message for products available in your subscription and cross reference this with the mapping in the <a class="el" href="#Product_to_subscription_mapping" title="Product to subscription mapping">product to subscription mapping</a>. Check that you have access to the correct subscription by checking your sign-up email, otherwise, please see our <a href="https://51degrees.com/pricing">pricing page</a> to sign up for a valid 51Degrees Cloud product.</p>
 <h3 class="doxsection" id="Products_not_associated_with_the_cloud_service">Products not associated with the Cloud service<a class="headerlink" href="#Products_not_associated_with_the_cloud_service" aria-label="Permalink to this section">🔗</a></h3>
@@ -102,7 +100,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <h3 class="doxsection" id="Properties_not_available_with_this_subscription">Properties not available with this subscription<a class="headerlink" href="#Properties_not_available_with_this_subscription" aria-label="Permalink to this section">🔗</a></h3>
 <p>There are no available properties which are associated with the products determined in the request. Refer to the products listed in the original error message and the mapping in the <a class="el" href="#Product_to_subscription_mapping" title="Product to subscription mapping">product to subscription mapping</a>, then visit the 51Degrees <a href="https://51degrees.com/developers/property-dictionary">property dictionary</a> to see the table of available properties for your subscription.</p>
 <h3 class="doxsection" id="Referer_or_Origin_header_not_set">Referer or origin header not set<a class="headerlink" href="#Referer_or_Origin_header_not_set" aria-label="Permalink to this section">🔗</a></h3>
-<p>The Referer or Origin header has not been provided in the request. These headers are used to validate that the traffic has originated from a legitimate source. Make sure that the Referer or Origin header is set when making requests to the 51Degrees Cloud service. You can resume making requests when the number of seconds in the <code>Retry-After</code> response header has elapsed. If using one of the native pipeline APIs then you can use the <code>CloudRequestOrigin</code> setting in the Pipeline or Cloud Request Engine builder to specify the origin. Note that, as with all engine builder methods, this can also be specified in the configuration file.</p>
+<p>A Resource Key that names domains is accepted only from a request whose <code>Referer</code> or <code>Origin</code> header names one of them. A request with neither header is refused with <code>401</code> and the message under <a class="el" href="#Resource_key_not_authorized_on_domain" title="Resource Key not authorized on domain">Resource Key not authorized on domain</a>, naming an empty domain. A Resource Key that names no domains, and a License Key sent alone, need neither header, which suits a server. See <a class="el" href="_services__cloud__resource_keys.html#Resource_key_domains" title="The domains a Resource Key accepts">the domains a Resource Key accepts</a>. If using one of the native pipeline APIs then you can use the <code>CloudRequestOrigin</code> setting in the Pipeline or Cloud Request Engine builder to specify the origin. Note that, as with all engine builder methods, this can also be specified in the configuration file.</p>
 <h3 class="doxsection" id="Requests_have_been_blocked">Requests have been blocked<a class="headerlink" href="#Requests_have_been_blocked" aria-label="Permalink to this section">🔗</a></h3>
 <p>Your requests to the service have been blocked. This is because the requests to the Cloud service have been found in breach of the terms of service and access to the service has been removed. For details, please review the 51Degrees <a href="https://51degrees.com/terms">terms and policies</a>.</p>
 <h3 class="doxsection" id="Request_limit_reached">Request limit reached<a class="headerlink" href="#Request_limit_reached" aria-label="Permalink to this section">🔗</a></h3>
@@ -120,9 +118,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <h3 class="doxsection" id="Resource_or_license_key_required">Resource or License Key required<a class="headerlink" href="#Resource_or_license_key_required" aria-label="Permalink to this section">🔗</a></h3>
 <p>The OWID public-key endpoint, <code>/owid/api/v3/public-key</code>, needs a Resource Key or a License Key, and returns <code>401</code> without one. Its plain-text answer lists the places to supply one, being the <code>X-51D-Resource-Key</code> or <code>X-51D-License-Key</code> header, the <code>resource=</code> or <code>license=</code> query parameter, or a <code>resource</code> or <code>license</code> form field. A License Key alone is enough, with no <code>values</code> list, because the endpoint always returns the same fields.</p>
 <h3 class="doxsection" id="Sequence_value_invalid">Sequence value invalid<a class="headerlink" href="#Sequence_value_invalid" aria-label="Permalink to this section">🔗</a></h3>
-<p>The value for the <code>sequence</code> parameter could not be parsed to an integer, make sure that the <code>sequence</code> value is an integer. If the problem persists then please create a new issue on our <a href="https://github.com/51Degrees/cloud-issues/issues">cloud-issues GitHub</a> repository.</p>
+<p>The <code>sequence</code> parameter must be an integer. Check its value and retry. If the error persists, create an issue in the <a href="https://github.com/51Degrees/cloud-issues/issues">cloud-issues GitHub</a> repository.</p>
 <h3 class="doxsection" id="Sequence_value_not_found">Sequence value not found<a class="headerlink" href="#Sequence_value_not_found" aria-label="Permalink to this section">🔗</a></h3>
-<p>The value for the <code>sequence</code> parameter could not found. If the <code>sequence</code> parameter has been provided in the request, make sure that the value in is an integer. Otherwise, please create a new issue on our <a href="https://github.com/51Degrees/cloud-issues/issues">cloud-issues GitHub</a> repo.</p>
+<p>The <code>sequence</code> value could not be found. If you supplied the <code>sequence</code> parameter, check that its value is an integer. Otherwise, create an issue in the <a href="https://github.com/51Degrees/cloud-issues/issues">cloud-issues GitHub</a> repository.</p>
 <h3 class="doxsection" id="Signing_key_date_malformed">Signing key date malformed<a class="headerlink" href="#Signing_key_date_malformed" aria-label="Permalink to this section">🔗</a></h3>
 <p>The <code>date</code> parameter on the OWID public-key endpoint (<code>/owid/api/v3/public-key?date=</code>) could not be parsed. It must be an unsigned 32-bit integer giving the number of minutes since <code>2020-01-01T00:00:00Z</code> (the OWID envelope's date encoding). Returned as HTTP <code>400</code>.</p>
 <h3 class="doxsection" id="Signing_key_date_too_old">Signing key date too old<a class="headerlink" href="#Signing_key_date_too_old" aria-label="Permalink to this section">🔗</a></h3>
@@ -134,7 +132,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <h3 class="doxsection" id="Trial_period_expired">Trial period expired<a class="headerlink" href="#Trial_period_expired" aria-label="Permalink to this section">🔗</a></h3>
 <p>Your trial period has expired. To keep using the Cloud service, please upgrade your subscription. See our <a href="https://51degrees.com/pricing">pricing page</a> for details on subscriptions.</p>
 <h3 class="doxsection" id="Values_required_for_license_key_call">Values required for license-key call<a class="headerlink" href="#Values_required_for_license_key_call" aria-label="Permalink to this section">🔗</a></h3>
-<p>This request authenticated with a License Key but did not list which properties to return. A bare License Key has no property list, so License-key callers must list the properties they want via <code>values</code>: the <code>X-51D-Values</code> header, the <code>?values=</code> query parameter, or a <code>values</code> form field. See the 51Degrees <a href="https://51degrees.com/developers/property-dictionary">Property Dictionary</a> for the properties available on your license. Returns <code>400</code>. </p>
+<p>This request authenticated with a License Key but did not list which properties to return. A bare License Key has no property list, so Callers using a License Key must list the properties they want via <code>values</code>: the <code>X-51D-Values</code> header, the <code>?values=</code> query parameter, or a <code>values</code> form field. See the 51Degrees <a href="https://51degrees.com/developers/property-dictionary">Property Dictionary</a> for the properties available on your license. Returns <code>400</code>. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->

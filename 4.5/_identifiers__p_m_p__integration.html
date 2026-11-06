@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Integration - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Integration</title>
+<meta name="description" content="PMP integration - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: PMP integration</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -64,9 +62,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers__
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_identifiers__index.html">Identifiers</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_identifiers__p_m_p.html">PMP (Preference Management Platform)</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_identifiers__p_m_p__integration.html">Integration</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_identifiers__index.html">Identifiers</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_identifiers__p_m_p.html">PMP (Preference Management Platform)</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_identifiers__p_m_p__integration.html">PMP integration</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Integration </h1></div><!--header-->
+<h1 class="g-docs__page-title">PMP integration </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="adding-the-tag">Adding the tag<a class="headerlink" href="#adding-the-tag" aria-label="Permalink to this section">🔗</a></h2>
@@ -85,7 +83,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers__
 <p>PMP reads two things from the 51Degrees client script, being whether third party cookies work in this browser and whether the General Data Protection Regulation (GDPR) applies. The first decides whether the second card can be offered and the second is what PMP reports as <code>gdprApplies</code> through <code>__tcfapi</code>, the consent function that ad scripts call. Both come from properties on your Resource Key, <code>ThirdPartyCookiesEnabled</code> with <code>ThirdPartyCookiesEnabledJavaScript</code> and <code>IsGdpr</code>, so ask for those when you create the key and put the client script on the page too:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;script src=&quot;https://cloud.51degrees.com/api/v4/YOUR-RESOURCE-KEY.js&quot; async&gt;&lt;/script&gt;</div>
 </div><!-- fragment --><p>The two tags can go in either order and both can carry <code>async</code>, because the client script listens on the window for PMP's answer whilst PMP watches for the client script's object, which is <code>fod</code> unless <code>data-object-name</code> says otherwise. The object is the only thing PMP looks at, so it does not matter where the client script came from, and one served by a different 51Degrees cloud, by a proxy of your own or out of a bundle you built yourself all work the same way.</p>
-<p>An <code>async</code> tag has usually not run at the moment PMP starts, so an object that is not there yet is not an object that is never coming, and PMP waits for it instead of deciding straight away. The wait finishes once your page has loaded, since every tag written into the markup has had its turn by then, and it is capped at 5000 milliseconds for a page whose load event is very late. If nothing has appeared by the end of it, PMP loads the client script itself from the cloud that served PMP, using the Resource Key it already has, and says so in the console. Writing the tag yourself is still the better option, because then the placement and the timing are yours.</p>
+<p>If an <code>async</code> client script's object is not available when PMP starts, PMP waits until the page has loaded, up to 5000 milliseconds. If the object is still absent, PMP loads the client script from the cloud that served PMP, using the same Resource Key, and logs a console message. Include the script tag yourself to control its placement and timing.</p>
 <p>Load the client script once. A second copy runs a second round and creates a second identifier, and the client script itself warns about it.</p>
 <h2 class="doxsection" id="opening-the-dialog-from-your-page">Opening the dialog from your page<a class="headerlink" href="#opening-the-dialog-from-your-page" aria-label="Permalink to this section">🔗</a></h2>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">window.__51d_pmp.open();</div>
@@ -100,7 +98,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers__
 <h2 class="doxsection" id="caching-1">Caching<a class="headerlink" href="#caching-1" aria-label="Permalink to this section">🔗</a></h2>
 <p>The loader is cacheable by anybody for a day, because it is the same bytes for every caller and no request for it is counted against the key's monthly requests. The bundle is cacheable only by the browser that asked for it, also for a day, because the bundle is the request that is counted. During development, a hard reload or disabling the cache in developer tools gets past both, and there are two scripts to get past, the loader and the bundle it pulled in.</p>
 <h2 class="doxsection" id="browser-requirement-1">Browser requirement<a class="headerlink" href="#browser-requirement-1" aria-label="Permalink to this section">🔗</a></h2>
-<p>The bundles are built to ES2020, the 2020 edition of the JavaScript standard, and are not converted for anything older, which covers every browser released since early 2020. Televisions, set-top boxes and games consoles are the ones to watch, as their browsers tend to lag well behind a phone bought at the same time and seldom get updated after the device ships, so check what such a device supports before deploying PMP to it. </p>
+<p>The bundles are built to ES2020, the 2020 edition of the JavaScript standard, and are not converted for anything older, and they also use one feature of the 2021 edition, so they need Chrome or Edge 85, Firefox 77, Safari 13.1 (iOS 13.4), Samsung Internet 14, or a later version. Televisions, set-top boxes, and games consoles are the ones to watch, as their browsers tend to lag well behind a phone bought at the same time and seldom get updated after the device ships, so check what such a device supports before deploying PMP to it. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->

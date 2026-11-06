@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Getting Started Console Cloud - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Getting Started Console Cloud</title>
+<meta name="description" content="Getting started with cloud detection in a console application - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Getting started with cloud detection in a console application</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -64,14 +62,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__examples__index.html">Device Detection Examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__examples__getting_started__console__index.html">Getting Started - Console</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__examples__getting_started__console__cloud.html">Getting Started Console Cloud</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__examples__index.html">Device Detection examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__examples__getting_started__console__index.html">Getting started with console applications</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__examples__getting_started__console__cloud.html">Getting started with cloud detection in a console application</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Getting Started Console Cloud </h1></div><!--header-->
+<h1 class="g-docs__page-title">Getting started with cloud detection in a console application </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-1">Introduction<a class="headerlink" href="#introduction-1" aria-label="Permalink to this section">🔗</a></h2>
-<p>This example shows how to get set up an cloud based Device Detection <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> and use it to process User-Agents and/or User-Agent Client Hints.</p>
-<p>There are many different ways to use the pipeline. Rather that creating examples for every scenario, we have used the following table where possible when creating the 'getting started' examples. You can mix and match elements from different examples in order to match your use case.</p>
+<p>This example shows how to set up a cloud Device Detection <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect engine">Aspect Engine</a> to process User-Agents, User-Agent Client Hints, or both.</p>
+<p>The table shows how each example configures the pipeline. You can combine elements from different examples to suit your application.</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell"></td><td class="c-table__cell">Console  </td><td class="c-table__cell">Web  </td></tr>

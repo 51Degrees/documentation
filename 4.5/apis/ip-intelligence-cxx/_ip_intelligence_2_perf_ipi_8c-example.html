@@ -34,18 +34,16 @@
    <div id="projectbrief">IP intelligence services for 51Degrees Pipeline</div>
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -69,6 +67,21 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <p>Getting started example of using 51Degrees IP intelligence.</p>
 <p>Getting started example of using 51Degrees IP intelligence.The example shows how to run a performance test on 51Degrees on-premise IP intelligence APIs.</p>
 <p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-cxx/blob/main/examples/ipi/C/IpIntelligence/PerfIpi.c">GitHub</a>.</p>
+<p> 
+<p>
+This example requires a local IP Intelligence data file. The free 'Lite' data file can be
+downloaded with the scripts in the <a href="https://github.com/51Degrees/data">data</a> GitHub
+repository, which this repository includes at <code>cxx/data</code>. Fetch the submodules by
+running <code>git submodule update --init --recursive</code>, then run
+<code>sh cxx/data/get-data-files.sh 51Degrees-LiteV41.ipi</code> from the repository root,
+which saves the file as <code>cxx/data/ip-intelligence/51Degrees-LiteV41.ipi</code>.
+</p>
+<p>
+The Lite data file gives RegisteredCountry, RegisteredName and RegisteredOwner, and is only used
+for illustration. The Enterprise data file has every property, including the location, network
+and connection properties. <a href="https://51degrees.com/contact-us">Contact us</a> about a copy.
+</p>
+  </p>
 <p>In detail, the example performs two separate measurements. One does not do any actual lookups and one does. The difference is then taken to calculate the actual performance of the lookup work.</p>
 <p>Expected output: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">...</div>
 <div class="c-code__line">Caching <a id="_a0" name="_a0"></a><a class="code hl_typedef" href="group___fifty_one_degrees_synonyms.html#gaad0a959cad42d676f5184f89b6188f99">Data</a> pass 1 of 1:</div>

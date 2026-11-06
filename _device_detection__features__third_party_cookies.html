@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Third-Party Cookies Detection - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Third-Party Cookies Detection</title>
+<meta name="description" content="Third-party cookie detection - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Third-party cookie detection</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,35 +64,35 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__index.html">Device Detection Features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__third_party_cookies.html">Third-Party Cookies Detection</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__index.html">Device Detection features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__third_party_cookies.html">Third-party cookie detection</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Third-Party Cookies Detection </h1></div><!--header-->
+<h1 class="g-docs__page-title">Third-party cookie detection </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-21">Introduction<a class="headerlink" href="#introduction-21" aria-label="Permalink to this section">🔗</a></h2>
-<p>Third-party cookies are cookies set by a domain other than the one the user is currently visiting. Web browsers have been increasingly restricting third-party cookies due to privacy concerns, with many browsers now blocking them by default or planning to phase them out.</p>
-<p>For businesses that rely on third-party cookies for functionality such as cross-site tracking, personalization, or analytics, it is important to know whether a user's browser supports third-party cookies. This allows applications to adapt their behavior accordingly, such as falling back to alternative methods when third-party cookies are unavailable.</p>
+<p>Third-party cookies are set by a site other than the one the user is visiting. Whether a browser accepts them depends on the browser, its version, and the user's settings.</p>
+<p>If your application uses third-party cookies, for example for advertising, analytics, or sign-in, check whether the visitor's browser accepts them so that you can switch to an alternative when it does not.</p>
 <p>51Degrees provides a lightweight, stateless mechanism to detect third-party cookie support as part of the cloud service.</p>
-<h2 class="doxsection" id="how-it-works-1">How It Works<a class="headerlink" href="#how-it-works-1" aria-label="Permalink to this section">🔗</a></h2>
-<p>The detection mechanism relies on verifying whether the browser can send cookies to a third-party domain. This is achieved through generated <a class="el" href="_pipeline_api__features__client_side_evidence.html" title="Client-side Evidence">client-side evidence</a> JavaScript that contains special detection snippets.</p>
-<h2 class="doxsection" id="two-origin-architecture">Two-Origin Architecture<a class="headerlink" href="#two-origin-architecture" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="how-it-works-1">How it works<a class="headerlink" href="#how-it-works-1" aria-label="Permalink to this section">🔗</a></h2>
+<p>The generated <a class="el" href="_pipeline_api__features__client_side_evidence.html" title="Client-side evidence">client-side evidence</a> JavaScript checks whether the browser can send a cookie to a third-party domain.</p>
+<h2 class="doxsection" id="two-origin-architecture">Two-origin architecture<a class="headerlink" href="#two-origin-architecture" aria-label="Permalink to this section">🔗</a></h2>
 <p>The detection requires two distinct origins:</p>
 <ol type="1">
 <li><b>Origin A</b> - The customer's website (e.g., <code>example.com</code>)</li>
 <li><b>Origin B</b> - The third-party detection endpoint (e.g., <code>cloud.51degrees.com</code>)</li>
 </ol>
-<h2 class="doxsection" id="detection-flow">Detection Flow<a class="headerlink" href="#detection-flow" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="detection-flow">Detection flow<a class="headerlink" href="#detection-flow" aria-label="Permalink to this section">🔗</a></h2>
 <ol type="1">
-<li>The user's page on Origin A includes the 51Degrees <a class="el" href="_pipeline_api__features__client_side_evidence.html" title="Client-side Evidence">client-side evidence</a> JavaScript. This JavaScript can be served from either Origin A (first-party) or Origin B (third-party) - the serving location does not affect the detection.</li>
+<li>The user's page on Origin A includes the 51Degrees <a class="el" href="_pipeline_api__features__client_side_evidence.html" title="Client-side evidence">client-side evidence</a> JavaScript. This JavaScript can be served from either Origin A (first-party) or Origin B (third-party) - the serving location does not affect the detection.</li>
 <li>The JavaScript contains a detection snippet that always makes a request to the third-party endpoint (Origin B) to check cookie support.</li>
 <li>When the third-party endpoint receives the initial request, it sets a detection cookie: <code>51D_ThirdPartyCookiesEnabled=true</code> with <code>SameSite=None; Secure</code> attributes.</li>
 <li>If the browser supports third-party cookies, it stores the cookie.</li>
 <li>The JavaScript makes a subsequent callback request to Origin B with credentials.</li>
-<li>If the cookie was stored and sent with the callback, the server detects it and sets <code>ThirdPartyCookiesEnabled</code> to <code>True</code> in the response.</li>
-<li>If the cookie was not sent (third-party cookies blocked), the server sets <code>ThirdPartyCookiesEnabled</code> to <code>False</code>.</li>
+<li>The endpoint answers <code>{"status": true}</code> when the cookie came back with the request and <code>{"status": false}</code> when it did not. The JavaScript asks twice before it treats the cookie as blocked.</li>
+<li>The JavaScript records the answer as <code>51D_ThirdPartyCookiesEnabled</code>, set to <code>True</code>, <code>False</code>, or <code>Unknown</code> when the endpoint could not be reached, and sends that value as evidence with the callback, so <code>ThirdPartyCookiesEnabled</code> takes the same value.</li>
 </ol>
 <p>The key point is that regardless of where the JavaScript is served from, the detection snippet inside always communicates with a third-party domain to test cross-origin cookie behavior.</p>
-<h2 class="doxsection" id="cookie-attributes">Cookie Attributes<a class="headerlink" href="#cookie-attributes" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="cookie-attributes">Cookie attributes<a class="headerlink" href="#cookie-attributes" aria-label="Permalink to this section">🔗</a></h2>
 <p>The detection cookie uses specific attributes required for cross-site delivery in modern browsers:</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
@@ -118,34 +116,40 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line">  }</div>
 <div class="c-code__line">});</div>
 </div><!-- fragment --><h2 class="doxsection" id="thirdpartycookiesenabled">ThirdPartyCookiesEnabled<a class="headerlink" href="#thirdpartycookiesenabled" aria-label="Permalink to this section">🔗</a></h2>
-<p>A boolean value indicating whether third-party cookies are supported by the user's browser.</p>
+<p>A string value indicating whether third-party cookies are enabled in the user's browser. Until the JavaScript in <code>ThirdPartyCookiesEnabledJavaScript</code> has run, the value is the likely status for the browser.</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Value  </td><td class="c-table__cell">Meaning  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>True</code>  </td><td class="c-table__cell">Third-party cookies are enabled and working  </td></tr>
+<td class="c-table__cell"><code>True</code>  </td><td class="c-table__cell">Third-party cookies are enabled, and the JavaScript has confirmed it  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>False</code>  </td><td class="c-table__cell">Third-party cookies are blocked or unavailable  </td></tr>
+<td class="c-table__cell"><code>False</code>  </td><td class="c-table__cell">Third-party cookies are not enabled, and the JavaScript has confirmed it  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>ProbablyTrue</code>  </td><td class="c-table__cell">Third-party cookies are enabled by default for this browser, and the JavaScript has not confirmed it  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>ProbablyFalse</code>  </td><td class="c-table__cell">Third-party cookies are not enabled by default for this browser, and the JavaScript has not confirmed it  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><code>Unknown</code>  </td><td class="c-table__cell">The status is not known, either for this browser by default or because the JavaScript could not complete its check  </td></tr>
 </table>
-<h2 class="doxsection" id="thirdpartycookiesenabledjavascript">ThirdPartyCookiesEnabledJavascript<a class="headerlink" href="#thirdpartycookiesenabledjavascript" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="thirdpartycookiesenabledjavascript">ThirdPartyCookiesEnabledJavaScript<a class="headerlink" href="#thirdpartycookiesenabledjavascript" aria-label="Permalink to this section">🔗</a></h2>
 <p>A JavaScript snippet for client-side detection. This property is populated only when server-side detection was not conclusive (e.g., on the first request before the callback). When server-side detection succeeds, this property is empty, eliminating the need for additional client-side detection logic.</p>
 <h2 class="doxsection" id="integration">Integration<a class="headerlink" href="#integration" aria-label="Permalink to this section">🔗</a></h2>
-<p>Third-party cookies detection is automatically performed when using the 51Degrees <a class="el" href="_pipeline_api__features__client_side_evidence.html" title="Client-side Evidence">client-side evidence</a> JavaScript integration.</p>
-<p><b>Note:</b> If you are using the 51Degrees Cloud service, you need a Resource Key that includes the <code>ThirdPartyCookiesEnabled</code> and <code>ThirdPartyCookiesEnabledJavascript</code> properties. The <a class="el" href="_services__configurator.html" title="Creating a Resource Key">Resource Key guide</a> shows how to create one.</p>
-<p>When the JavaScript is loaded and makes its callback to the cloud service, the detection happens transparently. The results are available in the response data alongside other device detection properties.</p>
-<h2 class="doxsection" id="custom-endpoint-configuration">Custom Endpoint Configuration<a class="headerlink" href="#custom-endpoint-configuration" aria-label="Permalink to this section">🔗</a></h2>
-<p>By default, the detection snippet communicates with <code>cloud.51degrees.com</code>. If you are hosting your own 51Degrees cloud service or need to use a different endpoint, you can customize the third-party cookie detection endpoint by setting the <code>window.fodTpcEndpoint</code> global variable before loading the JavaScript:</p>
+<p>Third-party cookies detection is automatically performed when using the 51Degrees <a class="el" href="_pipeline_api__features__client_side_evidence.html" title="Client-side evidence">client-side evidence</a> JavaScript integration.</p>
+<p><b>Note:</b> If you are using the 51Degrees Cloud service, you need a Resource Key that includes the <code>ThirdPartyCookiesEnabled</code> and <code>ThirdPartyCookiesEnabledJavaScript</code> properties. The <a class="el" href="_services__configurator.html" title="Creating a Resource Key">Resource Key guide</a> shows how to create one.</p>
+<p>After the JavaScript callback to the cloud service, the response includes the cookie detection result alongside the other device detection properties.</p>
+<h2 class="doxsection" id="custom-endpoint-configuration">Custom endpoint configuration<a class="headerlink" href="#custom-endpoint-configuration" aria-label="Permalink to this section">🔗</a></h2>
+<p>By default, the detection snippet calls <code><a href="https://cloud.51degrees.com/api/v4/3pc">https://cloud.51degrees.com/api/v4/3pc</a></code>. If you host the cloud service yourself (see <a class="el" href="_services__cloud__self_hosted_docker.html" title="Self-hosted Docker">Self-hosted Docker</a>) or need to use a different endpoint, put the endpoint on a different domain from your pages, not on a subdomain of your own site. A browser treats a cookie from your own site as a first-party cookie, so the check would report third-party cookies as enabled even when the browser blocks them. Then set the <code>window.fodTpcEndpoint</code> global variable to the full address of the endpoint before loading the JavaScript:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;script&gt;</div>
 <div class="c-code__line">  window.fodTpcEndpoint = &quot;https://your-custom-3pc-detection-endpoint&quot;;</div>
 <div class="c-code__line">&lt;/script&gt;</div>
 <div class="c-code__line">&lt;script src=&quot;51Degrees.core.js&quot;&gt;&lt;/script&gt;</div>
 </div><!-- fragment --><p>This allows you to point the detection to your own hosted instance while maintaining the third-party cookie detection functionality.</p>
-<h2 class="doxsection" id="browser-support-considerations">Browser Support Considerations<a class="headerlink" href="#browser-support-considerations" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="browser-support-considerations">Browser support considerations<a class="headerlink" href="#browser-support-considerations" aria-label="Permalink to this section">🔗</a></h2>
 <p>Modern browsers have varying levels of third-party cookie support:</p>
 <ul>
 <li><b>Safari</b>: Blocks third-party cookies by default via Intelligent Tracking Prevention (ITP).</li>
 <li><b>Firefox</b>: Blocks third-party tracking cookies by default via Enhanced Tracking Protection (ETP).</li>
-<li><b>Chrome</b>: Planning to phase out third-party cookies (check current status as this is evolving). Note that Chrome Incognito mode blocks third-party cookies by default.</li>
+<li><b>Chrome</b>: Google no longer plans to phase out third-party cookies, and users can block them in Chrome's settings. Chrome Incognito mode blocks third-party cookies by default.</li>
 <li><b>Edge</b>: Follows similar patterns to Chrome with configurable tracking prevention levels.</li>
 </ul>
 <p>This detection feature allows your application to adapt to the user's actual browser configuration rather than relying on browser identification alone. </p>

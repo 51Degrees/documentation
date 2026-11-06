@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Reverse Geocoding Getting Started - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Reverse Geocoding Getting Started</title>
+<meta name="description" content="Reverse geocoding quick start example - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Reverse geocoding quick start example</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -64,13 +62,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_reverse_geoco
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_reverse_geocoding__index.html">Reverse Geocoding</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_reverse_geocoding__examples__index.html">Reverse Geocoding Examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_reverse_geocoding__examples__getting_started_51_degrees_cloud.html">Reverse Geocoding Getting Started</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_reverse_geocoding__index.html">Reverse Geocoding</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_reverse_geocoding__examples__index.html">Reverse Geocoding examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_reverse_geocoding__examples__getting_started_51_degrees_cloud.html">Reverse geocoding quick start example</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Reverse Geocoding Getting Started </h1></div><!--header-->
+<h1 class="g-docs__page-title">Reverse geocoding quick start example </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-83">Introduction<a class="headerlink" href="#introduction-83" aria-label="Permalink to this section">🔗</a></h2>
-<p>This example shows how to get set up a reverse geocoding <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> using the 51Degrees Cloud service to process coordinates.</p>
+<p>This example shows how to set up a reverse geocoding <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect engine">Aspect Engine</a> that uses the 51Degrees Cloud service to process coordinates.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'location-dotnet', '_cloud_2_getting_started_2_program_8cs')">C#</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'location-java', 'cloud_2_getting_started_8java')">Java</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'location-node', 'getting_started_8js')">Node.js</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'location-php', 'cloud_2getting_started_8php')">PHP</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'location-python', 'cloud_2gettingstarted_8py')">Python</button>   <div class="c-tabgroup__main" id="grabbed-example"></div>   </div>  </p>
 </div></div><!-- primary -->
 </div><!-- inner -->

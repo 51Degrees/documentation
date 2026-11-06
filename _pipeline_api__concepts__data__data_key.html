@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Data Key - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Data Key</title>
+<meta name="description" content="Data key - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Data key</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,25 +64,25 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__index.html">Concepts</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__data__index.html">Types of Data</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__data__data_key.html">Data Key</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__index.html">Concepts</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__data__index.html">Types of data</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__data__data_key.html">Data key</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Data Key </h1></div><!--header-->
+<h1 class="g-docs__page-title">Data key </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-48">Introduction<a class="headerlink" href="#introduction-48" aria-label="Permalink to this section">🔗</a></h2>
-<p>A <b>data key</b> is a multi-field key intended for use in <a class="el" href="_pipeline_api__features__result_caching.html" title="Result Caching">caching</a> and similar scenarios.</p>
+<p>A <b>data key</b> is a multi-field key intended for use in <a class="el" href="_pipeline_api__features__result_caching.html" title="Result caching">caching</a> and similar scenarios.</p>
 <h2 class="doxsection" id="internals-1">Internals<a class="headerlink" href="#internals-1" aria-label="Permalink to this section">🔗</a></h2>
 <p>Exact implementation details for <b>data key</b> may vary depending on language. However, in each case, the primary features are an integer hash code and a list of values in a specific order.</p>
 <p>The hash code is calculated when the <b>data key</b> is created. It can subsequently be used as an efficient method to identify if one <b>data key</b> instance may match with another.</p>
-<p>When a hash match occurs, each individual key field value should also be checked for equality between the keys to ensure a true match. This is necessary because the possibility space for a large number of keys with arbitrary value types is far larger than that of a 32-bit integer, so hash collisions can occur.</p>
+<p>When a hash match occurs, each individual key field value should also be checked for equality between the keys to ensure a true match. Different field values can produce the same 32-bit hash code, so compare the fields as well as the hash.</p>
 <h2 class="doxsection" id="usage-example">Usage example<a class="headerlink" href="#usage-example" aria-label="Permalink to this section">🔗</a></h2>
-<p>A data key builder is used to construct <b>data keys</b> by specifying the details of the keys to be included. This will often be a subset of the evidence keys stored in a <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a> instance. The diagram below shows an example <b>data key</b> being generated from the latitude and longitude values in an <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a> collection.</p>
+<p>A data key builder is used to construct <b>data keys</b> by specifying the details of the keys to be included. This will often be a subset of the evidence keys stored in a <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow data">flow data</a> instance. The diagram below shows an example <b>data key</b> being generated from the latitude and longitude values in an <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a> collection.</p>
 <div class="dotgraph">
 <iframe scrolling="no" loading="lazy" frameborder="0" src="dot_datakey-evidence.gvdot_3fa62e28b1a3cabc44f6d0339d767e3f.svg" width="454" height="206"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<p>The <b>data key</b> can then be used to determine whether the current <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a> has the same values, for a specific subset of evidence keys, as any <b>data key</b> in a given list.</p>
+<p>The <b>data key</b> can then be used to determine whether the current <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow data">flow data</a> has the same values, for a specific subset of evidence keys, as any <b>data key</b> in a given list.</p>
 <div class="dotgraph">
 <iframe scrolling="no" loading="lazy" frameborder="0" src="dot_datakey-check.gvdot_2f83314e7d082d3ca82c61e564f932de.svg" width="504" height="327"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<p>First, the <a class="el" href="_pipeline_api__features__result_caching.html" title="Result Caching">cache</a> will look for a match on just hash code as this is a fast operation. In the example above, the generated <b>data key</b> matches two of the items in the cache on hash code. When the hashes are found to match, the <a class="el" href="_pipeline_api__features__result_caching.html" title="Result Caching">cache</a> will then compare the values of the key fields to check for a true match. </p>
+<p>First, the <a class="el" href="_pipeline_api__features__result_caching.html" title="Result caching">cache</a> will look for a match on just hash code as this is a fast operation. In the example above, the generated <b>data key</b> matches two of the items in the cache on hash code. When the hashes are found to match, the <a class="el" href="_pipeline_api__features__result_caching.html" title="Result caching">cache</a> will then compare the values of the key fields to check for a true match. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->

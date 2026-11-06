@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,13 +64,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__index.html">IP Intelligence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__features__index.html">IP Intelligence Features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__features__diversity.html">Diversity</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__index.html">IP Intelligence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__features__index.html">IP Intelligence features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__features__diversity.html">Diversity</a></li>  </ul>
 </div>
 <h1 class="g-docs__page-title">Diversity </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="overview-7">Overview<a class="headerlink" href="#overview-7" aria-label="Permalink to this section">🔗</a></h2>
-<p>Diversity properties are used to express how many different <a class="el" href="_pipeline_api__concepts__flow_elements__fifty_one_on_premise_engine.html#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles" title="Profiles">profiles</a> for a specific <a class="el" href="_pipeline_api__concepts__flow_elements__fifty_one_on_premise_engine.html#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components" title="Components">component</a> are seen within an IP range. This can be used to make various conclusions about what traffic from a certain range is likely to be. A diversity can relate to any <a class="el" href="_pipeline_api__concepts__flow_elements__fifty_one_on_premise_engine.html#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components" title="Components">component</a>, an example is <code>HardwareDiversity</code>, which is the number of different hardware profiles. This is different from the number of unique physical devices, as there could be 2 of the same model smartphone.</p>
+<p>Diversity properties describe the variety of <a class="el" href="_pipeline_api__concepts__flow_elements__fifty_one_on_premise_engine.html#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles" title="Profiles">profiles</a> for a <a class="el" href="_pipeline_api__concepts__flow_elements__fifty_one_on_premise_engine.html#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components" title="Components">component</a> within an IP range. For example, <code>HardwareDiversity</code> measures different hardware profiles rather than individual physical devices. The 2 smartphones in an IP range could share one hardware profile.</p>
 <p>Properties of this type have values between 0-10, where 0 indicates unknown, 1 is a low diversity, and 10 is high diversity.</p>
 <p>If, for an IP range, there is an average of 1 profile per IP, then the diversity score would be 1. However, if there were 10 or more profiles per IP, the score would be 10. This is a slight simplification, but is generally accurate. Details of the full calculation are in the <a class="el" href="#calculation" title="Calculation">calculation</a>calculation section.</p>
 <h2 class="doxsection" id="properties-3">Properties<a class="headerlink" href="#properties-3" aria-label="Permalink to this section">🔗</a></h2>
@@ -100,10 +98,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <td class="c-table__cell"><code>10</code>  </td><td class="c-table__cell">The average number of unique profiles per IP in the range is <code>10</code> or above.  </td></tr>
 </table>
 <p>The values are not the exact average number of unique profiles, as 2 forms of weighting are applied:</p>
-<h3 class="doxsection" id="age-weight">Age Weight<a class="headerlink" href="#age-weight" aria-label="Permalink to this section">🔗</a></h3>
+<h3 class="doxsection" id="age-weight">Age weight<a class="headerlink" href="#age-weight" aria-label="Permalink to this section">🔗</a></h3>
 <p>While an event from the current day is counted as 1 event, events from previous days are also included when calculating the score. The older the event, the less it contributes.</p>
-<p>This helps fill in data for ranges which see lower daily levels of traffic, while ensuring that profile changes across time do not affect the result.</p>
-<h3 class="doxsection" id="consistency-weight">Consistency Weight<a class="headerlink" href="#consistency-weight" aria-label="Permalink to this section">🔗</a></h3>
+<p>This helps fill in data for ranges which see lower daily levels of traffic, while reducing the effect of profile changes over time, because older events count for less.</p>
+<h3 class="doxsection" id="consistency-weight">Consistency weight<a class="headerlink" href="#consistency-weight" aria-label="Permalink to this section">🔗</a></h3>
 <p>If we see 1 profile 1000 times for an IP, but another 5 profiles are seen only once each, this will not give a score of 6. This is because profiles where the count is below the average make a smaller contribution.</p>
 <p>This helps to keep values for IPs like the example above low, where the majority of the events are for 1 profile. So values are a reflection of the distribution of traffic, not just the count.</p>
 <h2 class="doxsection" id="calculation">Calculation<a class="headerlink" href="#calculation" aria-label="Permalink to this section">🔗</a></h2>

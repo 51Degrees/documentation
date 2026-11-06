@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,22 +64,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__index.html">IP Intelligence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__features__index.html">IP Intelligence Features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__features__confidence.html">Confidence</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__index.html">IP Intelligence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__features__index.html">IP Intelligence features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__features__confidence.html">Confidence</a></li>  </ul>
 </div>
 <h1 class="g-docs__page-title">Confidence </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="overview-5">Overview<a class="headerlink" href="#overview-5" aria-label="Permalink to this section">🔗</a></h2>
-<p>Many factors determine the reliability of IP Intelligence results. For example; a request from a data center that acts as a proxy for many countries might be completely useless for location identification.</p>
-<p>The <code>LocationConfidence</code> property should always be consulted before considering how to use results. Three different values are provided; <code>High</code>, <code>Medium</code>, and <code>Low</code>.</p>
+<p>IP location reliability varies. For example, a request routed through a data center proxy may not identify the user's location.</p>
+<p>The <code>LocationConfidence</code> property should always be consulted before considering how to use results. Four values are provided: <code>High</code>, <code>Medium</code>, <code>Low</code>, and <code>Unknown</code>.</p>
 <p>See the <a href="https://51degrees.com/developers/ip-tester">IP Tester</a> to see how the <code>LocationConfidence</code> results vary for different IP addresses.</p>
 <h2 class="doxsection" id="values-1">Values<a class="headerlink" href="#values-1" aria-label="Permalink to this section">🔗</a></h2>
 <p>Always check the value of <code>LocationConfidence</code> when determining how to use IP Intelligence results.</p>
 <ul>
 <li><b>High</b> confidence results can be relied upon and considered useful for all practical purposes.</li>
 <li><b>Medium</b> confidence results might be useful where the use case can tolerate a degree of imprecision.</li>
-<li><b>Low</b> or <b>Unknown</b> confidence results should be discarded when the results might be used to make consequential decisions. Instead of using the results consider asking the user to share their location via device APIs such as GPS and then using reverse geocoding, or enter their postal address manually. Subsequent processing may also be similar to handling an exception when obtaining the result.</li>
 </ul>
+<p>Discard <b>Low</b> or <b>Unknown</b> confidence results when making consequential decisions. Instead, ask the user to share their location through a device API such as GPS for reverse geocoding, or to enter their postal address.</p>
 <p>See the <a href="https://51degrees.com/developers/property-dictionary?item=Location%7CCoordinates%20Accuracy">property dictionary</a> for more information. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->

@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Hardware Benchmarks - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Hardware Benchmarks</title>
+<meta name="description" content="Hardware benchmarks - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Hardware benchmarks</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -64,9 +62,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_product_summa
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_product_summaries__index.html">Product Summaries</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_product_summaries__benchmarks.html">Benchmarks</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_product_summaries__benchmarks__hardware.html">Hardware Benchmarks</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_product_summaries__index.html">Product Summaries</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_product_summaries__benchmarks.html">Benchmarks</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_product_summaries__benchmarks__hardware.html">Hardware benchmarks</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Hardware Benchmarks </h1></div><!--header-->
+<h1 class="g-docs__page-title">Hardware benchmarks </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><p>These results are for version 4.5.70 of the Device Detection C library and version 4.5.34 of the IP Intelligence C library. The <a class="el" href="#ProductSummaries_Benchmarks_Hardware_Machines" title="Machines">machines</a> and <a class="el" href="#ProductSummaries_Benchmarks_Hardware_HowWeTested" title="How we tested">how we tested</a>, including what InMemory and Balanced mean, follow the results.</p>
@@ -111,7 +109,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_product_summa
 <td class="c-table__cell">Desktop PC from 2008  </td><td class="c-table__cell">75,363  </td><td class="c-table__cell">83,635  </td><td class="c-table__cell">47,220  </td><td class="c-table__cell">62,049  </td><td class="c-table__cell">14,276  </td><td class="c-table__cell">472  </td></tr>
 </table>
 <p>Measured on 31 July 2026.</p>
-<p>The every-property column for Balanced comes from about 20,000 records rather than one million. Balanced is very slow when every property is requested, so if you need many properties, keep the whole data file in memory. <a class="el" href="_device_detection__features__performance_options.html" title="Performance Options">Performance Options</a> also recommends keeping the data file in memory when many threads run at once.</p>
+<p>The every-property column for Balanced comes from about 20,000 records rather than one million. Balanced is very slow when every property is requested, so if you need many properties, keep the whole data file in memory. <a class="el" href="_device_detection__features__performance_options.html" title="Performance options">Performance Options</a> also recommends keeping the data file in memory when many threads run at once.</p>
 <p>On the 2008 desktop, Balanced beat InMemory for <code>IsMobile</code> and <code>IsCrawler</code>. Don't read much into that, as Balanced timed only the first one million records and InMemory all six million.</p>
 <h2 class="doxsection" id="startup-and-memory">Startup and memory<a class="headerlink" href="#startup-and-memory" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
@@ -211,12 +209,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_product_summa
 <h2 class="doxsection" id="configurations">Configurations<a class="headerlink" href="#configurations" aria-label="Permalink to this section">🔗</a></h2>
 <p>Each library ran in two configurations:</p>
 <ul>
-<li>InMemory loads the whole data file into memory. It is the configuration that the <code>MaxPerformance</code> <a class="el" href="_device_detection__features__performance_options.html" title="Performance Options">profile</a> selects. For these runs we also compiled the library with the memory-only option (<code>FIFTYONE_DEGREES_MEMORY_ONLY</code>), which leaves out the code for reading from disk.</li>
-<li>Balanced, the default profile, reads most of the data file through caches that keep the most used data in memory and leave the rest on disk. For IP Intelligence, Balanced still loads some parts of the data file fully into memory, including the text strings and the IP address graphs described in <a class="el" href="_ip_intelligence__algorithm.html" title="IP Intelligence Algorithm">IP Intelligence Algorithm</a>. From version 4.5.98, a caller who names required properties changes what that holds. The strings and the graphs those properties do not read stay on disk, and the memory that frees holds the values and profiles they do read, so lookups are faster and memory does not rise. The figures on this page come from an earlier version. Each Balanced run made an untimed warm-up pass over the same records it then timed, so the caches had already seen that traffic. We set the expected concurrency to the number of threads, as <a class="el" href="_device_detection__features__concurrent_processing.html" title="Concurrent Processing">Concurrent Processing</a> describes. On the Dell server, with 128 threads, that raised every cache smaller than 16,384 entries to 16,384.</li>
+<li>InMemory loads the whole data file into memory. It is the configuration that the <code>MaxPerformance</code> <a class="el" href="_device_detection__features__performance_options.html" title="Performance options">profile</a> selects. For these runs we also compiled the library with the memory-only option (<code>FIFTYONE_DEGREES_MEMORY_ONLY</code>), which leaves out the code for reading from disk.</li>
+<li>Balanced, the default profile, reads most of the data file through caches that keep the most used data in memory and leave the rest on disk. For IP Intelligence, Balanced still loads some parts of the data file fully into memory, including the text strings and the IP address graphs described in <a class="el" href="_ip_intelligence__algorithm.html" title="IP Intelligence algorithm">IP Intelligence Algorithm</a>. From version 4.5.98, a caller who names required properties changes what that holds. The strings and the graphs those properties do not read stay on disk, and the memory that frees holds the values and profiles they do read, so lookups are faster and memory does not rise. The figures on this page come from an earlier version. Each Balanced run made an untimed warm-up pass over the same records it then timed, so the caches had already seen that traffic. We set the expected concurrency to the number of threads, as <a class="el" href="_device_detection__features__concurrent_processing.html" title="Concurrent processing">Concurrent Processing</a> describes. On the Dell server, with 128 threads, that raised every cache smaller than 16,384 entries to 16,384.</li>
 </ul>
 <h2 class="doxsection" id="properties-5">Properties<a class="headerlink" href="#properties-5" aria-label="Permalink to this section">🔗</a></h2>
 <p>The <code>IsMobile</code>, <code>PlatformName</code>, <code>BrowserName</code>, and <code>IsCrawler</code> columns each request that property alone. In that order, they come from the hardware, operating system, browser, and crawler components. "One per component" requests all four properties together, and "Every property" requests all 279. For IP Intelligence, the <code>RegisteredName</code>, <code>AsnName</code>, and <code>Longitude</code> columns each request that property alone. "All three" requests them together, and "Every property" requests all 49.</p>
-<p>Requesting fewer properties is faster because each detection has fewer values to read, and for Device Detection the library evaluates only the components that the requested properties belong to (see <a class="el" href="_device_detection__features__performance_options.html" title="Performance Options">Restrict properties</a>).</p>
+<p>Requesting fewer properties is faster because each detection has fewer values to read, and for Device Detection the library evaluates only the components that the requested properties belong to (see <a class="el" href="_device_detection__features__performance_options.html" title="Performance options">Restrict properties</a>).</p>
 <h2 class="doxsection" id="evidence">Evidence<a class="headerlink" href="#evidence" aria-label="Permalink to this section">🔗</a></h2>
 <p>Device Detection used six million sets of HTTP request headers from real web traffic. Each set has a User-Agent, plus User-Agent Client Hints where the browser sent them. Popular devices and browsers appear many times.</p>
 <p>IP Intelligence used six million IP addresses from real web traffic, with no address repeated in the set.</p>

@@ -1,15 +1,15 @@
 var _human_confidence__index =
 [
-    [ "Human Confidence Overview", "_human_confidence__overview.html", [
+    [ "Human Confidence overview", "_human_confidence__overview.html", [
       [ "Introduction", "_human_confidence__overview.html#introduction-32", [
         [ "The values", "_human_confidence__overview.html#the-values", null ],
         [ "Two ways to use it", "_human_confidence__overview.html#two-ways-to-use-it", null ],
         [ "Crawlers that say what they are", "_human_confidence__overview.html#crawlers-that-say-what-they-are", null ]
       ] ]
     ] ],
-    [ "Human Confidence Quick Start", "_human_confidence__quickstart.html", [
-      [ "Getting Started with Human Confidence", "_human_confidence__quickstart.html#getting-started-with-human-confidence", [
-        [ "Choose Your Integration", "_human_confidence__quickstart.html#choose-your-integration-1", [
+    [ "Human Confidence quick start", "_human_confidence__quickstart.html", [
+      [ "Getting started with Human Confidence", "_human_confidence__quickstart.html#getting-started-with-human-confidence", [
+        [ "Choose your integration", "_human_confidence__quickstart.html#choose-your-integration-1", [
           [ "Analytics", "_human_confidence__quickstart.html#analytics", null ],
           [ "Server", "_human_confidence__quickstart.html#server", null ]
         ] ],
@@ -34,6 +34,6 @@ var _human_confidence__index =
       [ "Find out more", "_human_confidence__analytics.html#find-out-more", null ]
     ] ],
     [ "Google Analytics 4 (Moved)", "_human_confidence__google_analytics.html", [
-      [ "Location Changed", "_human_confidence__google_analytics.html#location-changed-2", null ]
+      [ "Google Analytics 4 documentation", "_human_confidence__google_analytics.html#google-analytics-4-documentation", null ]
     ] ]
 ];

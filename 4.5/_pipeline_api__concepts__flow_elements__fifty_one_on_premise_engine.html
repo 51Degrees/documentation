@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="51Degrees On-premise Engine - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: 51Degrees On-premise Engine</title>
+<meta name="description" content="51Degrees on-premise engine - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: 51Degrees on-premise engine</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -64,22 +62,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__index.html">Concepts</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__flow_elements__index.html">Flow Elements</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__flow_elements__fifty_one_on_premise_engine.html">51Degrees On-premise Engine</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__index.html">Concepts</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__flow_elements__index.html">Flow elements</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__flow_elements__fifty_one_on_premise_engine.html">51Degrees on-premise engine</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">51Degrees On-premise Engine </h1></div><!--header-->
+<h1 class="g-docs__page-title">51Degrees on-premise engine </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-56">Introduction<a class="headerlink" href="#introduction-56" aria-label="Permalink to this section">🔗</a></h2>
-<p>A <b>51Degrees On-premise Engine</b> adds functionality to an <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html" title="On-premise Engine">On-premise Engine</a> that is specific to 51Degrees. <a class="el" href="_pipeline_api__concepts__meta_data__index.html" title="Metadata Properties">Metadata</a> is exposed which relates to the data structure common to most 51Degrees data files.</p>
-<p>In many cases, a <b>51Degrees engine</b> contains a <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_NativeCode" title="Native code">native</a> binary which the <b>engine</b> acts as a wrapper for. This gives the improved performance achievable with <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_NativeCode" title="Native code">native</a> code, while still seamlessly slotting in with the target language (it is not always obvious that a <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_NativeCode" title="Native code">native</a> binary has been used). It also means that all languages the <b>engine</b> is implemented in can more readily benefit from any optimizations or features which are added to the <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_NativeCode" title="Native code">native</a> library.</p>
+<p>A <b>51Degrees On-premise Engine</b> adds functionality to an <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html" title="On-premise engine">On-premise Engine</a> that is specific to 51Degrees. <a class="el" href="_pipeline_api__concepts__meta_data__index.html" title="Metadata properties">Metadata</a> is exposed which relates to the data structure common to most 51Degrees data files.</p>
+<p>Many <b>51Degrees engines</b> wrap a <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_NativeCode" title="Native code">native</a> binary and expose it through the target language's interface. These wrappers share the optimizations and features implemented in the <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_NativeCode" title="Native code">native</a> library.</p>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#On-premise-engines">Specification</a> for more technical details.</p>
 <h2 class="doxsection" id="metadata">Metadata<a class="headerlink" href="#metadata" aria-label="Permalink to this section">🔗</a></h2>
-<p>The majority of <b>51Degrees engines</b> share a similar data structure. This means <a class="el" href="_pipeline_api__concepts__meta_data__index.html" title="Metadata Properties">metadata</a> is exposed in a common way for all <b>51Degrees engines</b> that share this structure.</p>
+<p>The majority of <b>51Degrees engines</b> share a similar data structure. This means <a class="el" href="_pipeline_api__concepts__meta_data__index.html" title="Metadata properties">metadata</a> is exposed in a common way for all <b>51Degrees engines</b> that share this structure.</p>
 <div class="dotgraph">
 <iframe scrolling="no" loading="lazy" frameborder="0" src="dot_51d-data-structure.gvdot_92ea78b7325da3520e5592aaf081b5e0.svg" width="211" height="155"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <h2 class="doxsection" id="PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Properties">Properties<a class="headerlink" href="#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Properties" aria-label="Permalink to this section">🔗</a></h2>
-<p>The <b>properties</b> exposed by a <b>51Degrees engine</b> should not be seen differently from the <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element Properties">element properties</a> or <a class="el" href="_pipeline_api__concepts__meta_data__aspect_properties.html" title="Aspect Properties">aspect properties</a> that are exposed by any other <b>engine</b>. They merely extend <a class="el" href="_pipeline_api__concepts__meta_data__aspect_properties.html" title="Aspect Properties">aspect property</a> to add <a class="el" href="_pipeline_api__concepts__meta_data__index.html" title="Metadata Properties">metadata</a> that is specific to the <b>properties</b> in 51Degrees data structures.</p>
-<p>The metadata contained in a <b>51Degrees aspect property</b> is everything in an <a class="el" href="_pipeline_api__concepts__meta_data__aspect_properties.html" title="Aspect Properties">aspect property</a> with the addition of:</p>
+<p>The <b>properties</b> exposed by a <b>51Degrees engine</b> should not be seen differently from the <a class="el" href="_pipeline_api__concepts__meta_data__element_properties.html" title="Element properties">element properties</a> or <a class="el" href="_pipeline_api__concepts__meta_data__aspect_properties.html" title="Aspect properties">aspect properties</a> that are exposed by any other <b>engine</b>. They merely extend <a class="el" href="_pipeline_api__concepts__meta_data__aspect_properties.html" title="Aspect properties">aspect property</a> to add <a class="el" href="_pipeline_api__concepts__meta_data__index.html" title="Metadata properties">metadata</a> that is specific to the <b>properties</b> in 51Degrees data structures.</p>
+<p>The metadata contained in a <b>51Degrees aspect property</b> is everything in an <a class="el" href="_pipeline_api__concepts__meta_data__aspect_properties.html" title="Aspect properties">aspect property</a> with the addition of:</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Metadata  </td><td class="c-table__cell">Description  </td></tr>
@@ -124,7 +122,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 </table>
 <h2 class="doxsection" id="PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components">Components<a class="headerlink" href="#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Components" aria-label="Permalink to this section">🔗</a></h2>
 <p>A <b>component</b> defines a group of <b>properties</b> that are related.</p>
-<p>In a 51Degrees data set, a <b>property</b> only exists in a single <b>component</b>. For example, the <code>Browser Name</code> <b>property</b> is part of the <code>Software</code> <b>component</b>, whereas the <code>Model Name</code> <b>property</b> is part of the <code>Hardware</code> <b>component</b>.</p>
+<p>In a 51Degrees data set, a <b>property</b> only exists in a single <b>component</b>. For example, the <code>BrowserName</code> <b>property</b> is part of the <code>BrowserUA</code> <b>component</b>, whereas the <code>HardwareModel</code> <b>property</b> is part of the <code>HardwarePlatform</code> <b>component</b>.</p>
 <p>The metadata contained in a <b>component</b> is:</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
@@ -134,14 +132,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <tr class="c-table__row">
 <td class="c-table__cell">Name  </td><td class="c-table__cell">The name of the <b>component</b> that gives a more 'human' identifier than id. By convention, this is unique within the data file.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Default profile  </td><td class="c-table__cell">The default <b>profile</b> for the <b>component</b>. This is used to provide <b>values</b> for the <b>component's</b> <b>properties</b> when a <b>profile</b> matching the <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a> cannot be found.  </td></tr>
+<td class="c-table__cell">Default profile  </td><td class="c-table__cell">The default <b>profile</b> for the <b>component</b>. When the <b>engine</b> allows unmatched results, this is used to provide <b>values</b> for the <b>component's</b> <b>properties</b> when a <b>profile</b> matching the <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a> cannot be found.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Properties  </td><td class="c-table__cell">The <b>properties</b> associated with this <b>component</b>.  </td></tr>
 </table>
 <h2 class="doxsection" id="PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles">Profiles<a class="headerlink" href="#PipelineApi_Concepts_FlowElements_FiftyOneOnPremiseEngine_Profiles" aria-label="Permalink to this section">🔗</a></h2>
 <p>A <b>profile</b> defines a unique set of <b>values</b> for all <b>properties</b> of a single <b>component</b>.</p>
-<p>An <b>engine</b> will populate <a class="el" href="_pipeline_api__concepts__data__aspect_data.html" title="Aspect Data">aspect data</a> with at least one <b>profile</b> for each <b>component</b> in the data file. This means that all properties should be able to present a value, even if that value is 'Unknown'.</p>
-<p>Internally, this is how <b>values</b> are stored in <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a> once <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a> has been processed. However, these <b>profiles</b> are also exposed directly as <a class="el" href="_pipeline_api__concepts__meta_data__index.html" title="Metadata Properties">metadata</a> so all possible results can be interrogated. The metadata contained in a <b>profile</b> is:</p>
+<p>An <b>engine</b> populates <a class="el" href="_pipeline_api__concepts__data__aspect_data.html" title="Aspect data">aspect data</a> with the <b>profiles</b> matched for each <b>component</b>. By default, when no <b>profile</b> matches for a <b>component</b>, that <b>component's</b> properties have no value, so check that a value is available before using it. When the <b>engine</b> is configured to allow unmatched results, as the <code>AllowUnmatched</code> option does for Device Detection, the <b>component's</b> default <b>profile</b> is used instead and its properties return default values such as 'Unknown'. See <a class="el" href="_device_detection__features__false_positive_control.html" title="False positives">false positives</a>.</p>
+<p>Internally, this is how <b>values</b> are stored in <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element data">element data</a> once <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a> has been processed. However, these <b>profiles</b> are also exposed directly as <a class="el" href="_pipeline_api__concepts__meta_data__index.html" title="Metadata properties">metadata</a> so all possible results can be interrogated. The metadata contained in a <b>profile</b> is:</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Metadata  </td><td class="c-table__cell">Description  </td></tr>

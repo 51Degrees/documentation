@@ -1,6 +1,6 @@
 var _services__cloud__index =
 [
-    [ "Cloud Service Overview", "_services__cloud__overview.html", [
+    [ "Cloud Service overview", "_services__cloud__overview.html", [
       [ "Authentication", "_services__cloud__overview.html#authentication", null ],
       [ "RESTful API", "_services__cloud__overview.html#restful-api", null ],
       [ "Libraries", "_services__cloud__overview.html#libraries", null ]
@@ -13,10 +13,10 @@ var _services__cloud__index =
       [ "What the cloud returns", "_services__cloud__robots_txt.html#what-the-cloud-returns", null ],
       [ "Find out more", "_services__cloud__robots_txt.html#find-out-more-11", null ]
     ] ],
-    [ "Self-Hosted Docker", "_services__cloud__self_hosted_docker.html", [
+    [ "Self-hosted Docker", "_services__cloud__self_hosted_docker.html", [
       [ "Prerequisites", "_services__cloud__self_hosted_docker.html#prerequisites-2", null ],
-      [ "Data Files", "_services__cloud__self_hosted_docker.html#data-files", null ],
-      [ "Environment Variables", "_services__cloud__self_hosted_docker.html#environment-variables", null ],
+      [ "Data files", "_services__cloud__self_hosted_docker.html#data-files", null ],
+      [ "Environment variables", "_services__cloud__self_hosted_docker.html#environment-variables", null ],
       [ "Running", "_services__cloud__self_hosted_docker.html#running", null ],
       [ "Verifying", "_services__cloud__self_hosted_docker.html#verifying", null ],
       [ "Telemetry", "_services__cloud__self_hosted_docker.html#telemetry", null ],
@@ -25,7 +25,7 @@ var _services__cloud__index =
     [ "Resource Keys", "_services__cloud__resource_keys.html", [
       [ "Authorization errors", "_services__cloud__resource_keys.html#authorization-errors", null ],
       [ "Failed to load aspect properties", "_services__cloud__resource_keys.html#failed-to-load-aspect-properties", null ],
-      [ "Seeing existing key authorized properties", "_services__cloud__resource_keys.html#Seeing_existing_key_authorized_properties", null ],
+      [ "View properties authorized for an existing key", "_services__cloud__resource_keys.html#Seeing_existing_key_authorized_properties", null ],
       [ "Resource Keys and License Keys", "_services__cloud__resource_keys.html#Resource_keys_and_license_keys", null ],
       [ "The domains a Resource Key accepts", "_services__cloud__resource_keys.html#Resource_key_domains", null ]
     ] ],
@@ -34,7 +34,7 @@ var _services__cloud__index =
       [ "Every endpoint", "_services__cloud__metering.html#every-endpoint", null ],
       [ "Find out more", "_services__cloud__metering.html#find-out-more-10", null ]
     ] ],
-    [ "Error Messages", "_services__cloud__error_messages.html", [
+    [ "Error messages", "_services__cloud__error_messages.html", [
       [ "Cloud error response messages", "_services__cloud__error_messages.html#cloud-error-response-messages", null ]
     ] ]
 ];

@@ -36,18 +36,16 @@
    <div id="projectbrief">Device detection services for 51Degrees Pipeline</div>
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -85,8 +83,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_offl
  </p>
  <p>
  The Lite data file is only used for illustration, and has limited accuracy and capabilities.
- Find out about the more capable data files that are available on our 
- <a href="https://51degrees.com/pricing">pricing page</a>.
+ The Enterprise data file has every property.
+ <a href="https://51degrees.com/contact-us">Contact us</a> about a copy.
  </p>
    </p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">/* *********************************************************************</span></div>

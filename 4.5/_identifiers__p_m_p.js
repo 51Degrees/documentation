@@ -1,6 +1,6 @@
 var _identifiers__p_m_p =
 [
-    [ "Integration", "_identifiers__p_m_p__integration.html", [
+    [ "PMP integration", "_identifiers__p_m_p__integration.html", [
       [ "Endpoints", "_identifiers__p_m_p.html#endpoints-1", null ],
       [ "The load process", "_identifiers__p_m_p.html#the-load-process", null ],
       [ "In this section", "_identifiers__p_m_p.html#in-this-section", null ],

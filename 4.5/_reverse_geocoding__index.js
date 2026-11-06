@@ -1,35 +1,35 @@
 var _reverse_geocoding__index =
 [
-    [ "Reverse Geocoding Overview", "_reverse_geocoding__overview.html", [
+    [ "Reverse Geocoding overview", "_reverse_geocoding__overview.html", [
       [ "Introduction", "_reverse_geocoding__overview.html#introduction-85", [
-        [ "How It Works", "_reverse_geocoding__overview.html#how-it-works-6", null ],
+        [ "How it works", "_reverse_geocoding__overview.html#how-it-works-6", null ],
         [ "Cloud Service", "_reverse_geocoding__overview.html#cloud-service-2", null ],
-        [ "Common Use Cases", "_reverse_geocoding__overview.html#common-use-cases-3", [
-          [ "🌍 Content Personalization", "_reverse_geocoding__overview.html#autotoc_md-content-personalization-1", null ],
-          [ "📝 Address Completion", "_reverse_geocoding__overview.html#autotoc_md-address-completion", null ],
-          [ "📊 Analytics and Insights", "_reverse_geocoding__overview.html#autotoc_md-analytics-and-insights", null ],
-          [ "🚫 Compliance and Geo-fencing", "_reverse_geocoding__overview.html#autotoc_md-compliance-and-geo-fencing", null ],
-          [ "🆘 Emergency Services", "_reverse_geocoding__overview.html#autotoc_md-emergency-services", null ]
+        [ "Common use cases", "_reverse_geocoding__overview.html#common-use-cases-3", [
+          [ "🌍 Content personalization", "_reverse_geocoding__overview.html#autotoc_md-content-personalization-1", null ],
+          [ "📝 Address completion", "_reverse_geocoding__overview.html#autotoc_md-address-completion", null ],
+          [ "📊 Analytics and insights", "_reverse_geocoding__overview.html#autotoc_md-analytics-and-insights", null ],
+          [ "🚫 Geographical restrictions", "_reverse_geocoding__overview.html#autotoc_md-geographical-restrictions-1", null ],
+          [ "🚚 Delivery services", "_reverse_geocoding__overview.html#autotoc_md-delivery-services", null ]
         ] ],
-        [ "Getting Started", "_reverse_geocoding__overview.html#getting-started", null ]
+        [ "Getting started", "_reverse_geocoding__overview.html#getting-started", null ]
       ] ]
     ] ],
-    [ "Reverse Geocoding Quick Start", "_reverse_geocoding__quickstart.html", [
-      [ "Getting Started with Reverse Geocoding", "_reverse_geocoding__quickstart.html#getting-started-with-reverse-geocoding", [
-        [ "Step 1: Get Your Resource Key", "_reverse_geocoding__quickstart.html#step-1-get-your-resource-key", null ],
-        [ "Step 2: Install the Library", "_reverse_geocoding__quickstart.html#step-2-install-the-library", null ],
-        [ "Step 3: Set Up Your Pipeline", "_reverse_geocoding__quickstart.html#step-3-set-up-your-pipeline", null ],
-        [ "Step 4: Add Your Coordinates", "_reverse_geocoding__quickstart.html#step-4-add-your-coordinates", null ],
-        [ "Step 5: Run the Query", "_reverse_geocoding__quickstart.html#step-5-run-the-query", null ],
-        [ "Step 6: Get Your Results", "_reverse_geocoding__quickstart.html#step-6-get-your-results", null ]
+    [ "Reverse Geocoding quick start", "_reverse_geocoding__quickstart.html", [
+      [ "Getting started with Reverse Geocoding", "_reverse_geocoding__quickstart.html#getting-started-with-reverse-geocoding", [
+        [ "Step 1: Get your Resource Key", "_reverse_geocoding__quickstart.html#step-1-get-your-resource-key", null ],
+        [ "Step 2: Install the library", "_reverse_geocoding__quickstart.html#step-2-install-the-library", null ],
+        [ "Step 3: Set up your pipeline", "_reverse_geocoding__quickstart.html#step-3-set-up-your-pipeline", null ],
+        [ "Step 4: Add your coordinates", "_reverse_geocoding__quickstart.html#step-4-add-your-coordinates", null ],
+        [ "Step 5: Run the query", "_reverse_geocoding__quickstart.html#step-5-run-the-query", null ],
+        [ "Step 6: Get your results", "_reverse_geocoding__quickstart.html#step-6-get-your-results", null ]
       ] ],
       [ "Troubleshooting", "_reverse_geocoding__quickstart.html#troubleshooting-1", [
-        [ "Resource Key Problems", "_reverse_geocoding__quickstart.html#resource-key-problems", null ],
-        [ "Wrong Evidence Keys", "_reverse_geocoding__quickstart.html#wrong-evidence-keys", null ]
+        [ "Resource Key problems", "_reverse_geocoding__quickstart.html#resource-key-problems", null ],
+        [ "Wrong evidence keys", "_reverse_geocoding__quickstart.html#wrong-evidence-keys", null ]
       ] ]
     ] ],
-    [ "Reverse Geocoding Examples", "_reverse_geocoding__examples__index.html", "_reverse_geocoding__examples__index" ],
-    [ "Combined Device Detection + Reverse Geocoding", "_reverse_geocoding__examples__combining_services.html", [
+    [ "Reverse Geocoding examples", "_reverse_geocoding__examples__index.html", "_reverse_geocoding__examples__index" ],
+    [ "Combine Device Detection and Reverse Geocoding", "_reverse_geocoding__examples__combining_services.html", [
       [ "Introduction", "_reverse_geocoding__examples__combining_services.html#introduction-81", null ]
     ] ]
 ];

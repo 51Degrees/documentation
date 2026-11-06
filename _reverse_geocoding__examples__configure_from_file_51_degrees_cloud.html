@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Reverse Geocoding Configuration File - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Reverse Geocoding Configuration File</title>
+<meta name="description" content="Reverse Geocoding configuration file - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Reverse Geocoding configuration file</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,13 +64,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_reverse_geoco
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_reverse_geocoding__index.html">Reverse Geocoding</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_reverse_geocoding__examples__index.html">Reverse Geocoding Examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_reverse_geocoding__examples__configure_from_file_51_degrees_cloud.html">Reverse Geocoding Configuration File</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_reverse_geocoding__index.html">Reverse Geocoding</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_reverse_geocoding__examples__index.html">Reverse Geocoding examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_reverse_geocoding__examples__configure_from_file_51_degrees_cloud.html">Reverse Geocoding configuration file</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Reverse Geocoding Configuration File </h1></div><!--header-->
+<h1 class="g-docs__page-title">Reverse Geocoding configuration file </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-82">Introduction<a class="headerlink" href="#introduction-82" aria-label="Permalink to this section">🔗</a></h2>
-<p>This example shows how to get set up with a reverse geocoding <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> using a configuration file.</p>
+<p>This example shows how to configure a reverse geocoding <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect engine">Aspect Engine</a> from a file.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'location-php', 'cloud_2configurefromfile_8php')">PHP</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'location-node', 'configure_from_file_8js')">Node.js</button>   <div class="c-tabgroup__main" id="grabbed-example"></div>   </div>  </p>
 </div></div><!-- primary -->
 </div><!-- inner -->

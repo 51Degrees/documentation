@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Nightly Benchmarks - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Nightly Benchmarks</title>
+<meta name="description" content="Nightly benchmarks - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Nightly benchmarks</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -64,9 +62,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_product_summa
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_product_summaries__index.html">Product Summaries</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_product_summaries__benchmarks.html">Benchmarks</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_product_summaries__benchmarks__nightly.html">Nightly Benchmarks</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_product_summaries__index.html">Product Summaries</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_product_summaries__benchmarks.html">Benchmarks</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_product_summaries__benchmarks__nightly.html">Nightly benchmarks</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Nightly Benchmarks </h1></div><!--header-->
+<h1 class="g-docs__page-title">Nightly benchmarks </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><table class="c-table">
@@ -96,7 +94,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_product_summa
 <h2 class="doxsection" id="how-we-test">How we test<a class="headerlink" href="#how-we-test" aria-label="Permalink to this section">🔗</a></h2>
 <p>These tests are run using a console performance example. If language appropriate, multiple threads are used to run the tests. For technical details, see the example repositories on <a href="https://github.com/51Degrees?q=example">GitHub</a>.</p>
 <p>NGINX and Varnish have no console example, so their figures come from requests through NGINX or Varnish, each making one detection, with as many concurrent requests as the machine has processors, timed in the same way. They include the server's own request handling and the program making the requests, so look at their trend rather than comparing their values with the other rows.</p>
-<p>We run performance tests regularly on GitHub Actions. The performance of this may not be as good as a dedicated machine, as it's running on a GitHub runner, but gives an indication of consistency. Results from dedicated machines are in the <a class="el" href="_product_summaries__benchmarks__hardware.html" title="Hardware Benchmarks">hardware benchmarks</a>. </p>
+<p>We run performance tests regularly on GitHub Actions to track consistency over time. Throughput on a hosted runner may differ from throughput on a dedicated machine. See the <a class="el" href="_product_summaries__benchmarks__hardware.html" title="Hardware benchmarks">hardware benchmarks</a> for dedicated-machine results. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->

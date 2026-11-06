@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -70,7 +68,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers_5
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><p>This page is for a site whose consent management platform produces a TC string, which is how the IAB Europe Transparency and Consent Framework (TCF) records what a visitor consented to. The cloud reads that string, works out the usage of the <a class="el" href="_identifiers_51_did.html" title="51Did (51Degrees Identifier)">51Did (51Degrees Identifier)</a> from the purposes the string grants, and records inside the identifier that the usage came that way.</p>
-<p>Putting a consent management platform and the 51Degrees client script on a page is <a class="el" href="_identifiers__p_m_p__cmp_wiring.html" title="Using a consent management platform instead">Using a consent management platform instead</a>. This page is what the cloud does with the string once it arrives.</p>
+<p>To connect a consent management platform to the 51Degrees client script, see <a class="el" href="_identifiers__p_m_p__cmp_wiring.html" title="Using a consent management platform instead">Using a consent management platform instead</a>. This page explains how the cloud processes the resulting string.</p>
 <h2 class="doxsection" id="sending-the-string">Sending the string<a class="headerlink" href="#sending-the-string" aria-label="Permalink to this section">🔗</a></h2>
 <p>Send it as <code>tcstring</code>, either as a query parameter or as a field of the same name in a form post. Both reach the service as the same evidence, so either transport does the job. There is no header form, so a request header named <code>tcstring</code> is not read.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">GET /api/v4/json?resource=&lt;RESOURCE_KEY&gt;</div>

@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,7 +64,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__index.html">IP Intelligence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__migration.html">Migration Guide</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__migration__ip_info.html">From IPInfo</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__index.html">IP Intelligence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__migration.html">Migration guide</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__migration__ip_info.html">From IPInfo</a></li>  </ul>
 </div>
 <h1 class="g-docs__page-title">From IPInfo </h1></div><!--header-->
 <div class="g-docs__inner">
@@ -102,7 +100,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>timezone</code>  </td><td class="c-table__cell"><code>TimeZoneIana</code>  </td><td class="c-table__cell">IANA identifier. <code>TimeZoneOffset</code> gives the UTC offset separately.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>radius</code>  </td><td class="c-table__cell"><code>AccuracyRadiusMax</code>  </td><td class="c-table__cell">IPInfo returns a location accuracy radius in kilometers. Use <code>AccuracyRadiusMin</code> for the inner-bound radius. See the <code>LocationConfidence</code> note below for the categorical confidence signal.  </td></tr>
+<td class="c-table__cell"><code>radius</code>  </td><td class="c-table__cell"><code>AccuracyRadiusMin</code>  </td><td class="c-table__cell">IPInfo returns a location accuracy radius in kilometers. 51Degrees recommends <code>AccuracyRadiusMin</code> when comparing with other solutions. <code>AccuracyRadiusMax</code> is the radius of the circle that covers the whole area. See the <code>LocationConfidence</code> note below for the categorical confidence signal.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><code>org</code>  </td><td class="c-table__cell"><code>Asn</code> + <code>AsnName</code>  </td><td class="c-table__cell">IPInfo combines the ASN and organization name into one string (<code>"AS15169 Google LLC"</code>); 51Degrees exposes them separately.  </td></tr>
 <tr class="c-table__row">
@@ -110,7 +108,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>bogon</code>  </td><td class="c-table__cell"></td><td class="c-table__cell">No direct equivalent.  </td></tr>
 </table>
-<p><b>Coordinate randomization</b>: 51Degrees randomizes <code>Latitude</code> and <code>Longitude</code> within around 1 km of the true average location for the IP range. The randomization is applied during data file generation, so the value returned for a given IP address is stable across all lookups against the same data file and only changes when a new data file is published. This guarantees the coordinates cannot be classified as personal data. No other property is affected. See <a class="el" href="_ip_intelligence__features__randomization.html" title="Randomization">Randomization</a>.</p>
+<p><b>Coordinate randomization</b>: 51Degrees randomizes <code>Latitude</code> and <code>Longitude</code> within around 1 km of the true average location for the IP range. The randomization is applied during data file generation, so the value returned for a given IP address is stable across all lookups against the same data file and only changes when a new data file is published. No other property is affected. See <a class="el" href="_ip_intelligence__features__randomization.html" title="Randomization">Randomization</a>.</p>
 <p><b>Location confidence</b>: 51Degrees rolls up location certainty into a single string-valued <code>LocationConfidence</code> property covering the town and country. IPInfo's <code>radius</code> field expresses precision as a numeric kilometer figure; the closest categorical 51Degrees equivalent is <code>LocationConfidence</code>, which complements the numeric <code>AccuracyRadiusMax</code> and <code>AccuracyRadiusMin</code> properties. See the <a href="https://51degrees.com/developers/property-dictionary">property dictionary</a> for the set of possible values.</p>
 <h2 class="doxsection" id="asn-product">ASN product<a class="headerlink" href="#asn-product" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
@@ -159,7 +157,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>carrier.mnc</code>  </td><td class="c-table__cell"></td><td class="c-table__cell">Mobile network code is not exposed as a separate property.  </td></tr>
 </table>
-<h2 class="doxsection" id="company-hosted-domains-abuse">Company, Hosted Domains, Abuse<a class="headerlink" href="#company-hosted-domains-abuse" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="company-hosted-domains-and-abuse">Company, hosted domains, and abuse<a class="headerlink" href="#company-hosted-domains-and-abuse" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">IPInfo field  </td><td class="c-table__cell">51Degrees property  </td><td class="c-table__cell">Notes  </td></tr>
@@ -175,7 +173,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <td class="c-table__cell"><code>abuse.*</code>  </td><td class="c-table__cell"></td><td class="c-table__cell">51Degrees does not return abuse contact details.  </td></tr>
 </table>
 <h2 class="doxsection" id="properties-unique-to-51degrees">Properties unique to 51Degrees<a class="headerlink" href="#properties-unique-to-51degrees" aria-label="Permalink to this section">🔗</a></h2>
-<p>The following 51Degrees properties have no IPInfo equivalent. They are the additional context that drives <a class="el" href="_ip_intelligence__features__weighting.html" title="Weighting">accuracy weighting</a> and bot detection.</p>
+<p>These additional properties describe IP ranges and location <a class="el" href="_ip_intelligence__features__weighting.html" title="Weighting">weighting</a>, or support crawler detection.</p>
 <ul>
 <li><b>Diversity scores</b>: <code>BrowserDiversity</code>, <code>HardwareDiversity</code>, <code>PlatformDiversity</code> quantify how varied the traffic from an IP range is. See <a class="el" href="_ip_intelligence__features__diversity.html" title="Diversity">Diversity</a>.</li>
 <li><b>GeoNames identifiers</b>: <code>ContinentGeoNameId</code>, <code>CountryGeoNameId</code>, <code>StateGeoNameId</code>, <code>CountyGeoNameId</code> and <code>TownGeoNameId</code>, and <code>StateGeoNameIdsGeographical</code>, which lists each region of the location's country that the area overlaps, weighted by the region's share of the area. See <a class="el" href="_ip_intelligence__features__weighting.html" title="Weighting">Weighting</a>.</li>

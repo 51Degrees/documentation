@@ -1,10 +1,10 @@
 var _ip_intelligence__examples__getting_started__console__index =
 [
     [ "Introduction", "_ip_intelligence__examples__getting_started__console__index.html#introduction-38", null ],
-    [ "IP Intelligence Getting Started Console Cloud", "_ip_intelligence__examples__getting_started__console__cloud.html", [
+    [ "IP Intelligence cloud console quick start", "_ip_intelligence__examples__getting_started__console__cloud.html", [
       [ "Introduction", "_ip_intelligence__examples__getting_started__console__cloud.html#introduction-37", null ]
     ] ],
-    [ "IP Intelligence Getting Started Console On-premise", "_ip_intelligence__examples__getting_started__console__on_premise.html", [
+    [ "IP Intelligence on-premise console quick start", "_ip_intelligence__examples__getting_started__console__on_premise.html", [
       [ "Introduction", "_ip_intelligence__examples__getting_started__console__on_premise.html#introduction-39", null ]
     ] ]
 ];

@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -64,7 +62,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__index.html">IP Intelligence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__migration.html">Migration Guide</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__migration__max_mind.html">From MaxMind</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__index.html">IP Intelligence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__migration.html">Migration guide</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__migration__max_mind.html">From MaxMind</a></li>  </ul>
 </div>
 <h1 class="g-docs__page-title">From MaxMind </h1></div><!--header-->
 <div class="g-docs__inner">
@@ -94,7 +92,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>registered_country.iso_code</code>  </td><td class="c-table__cell"><code>RegisteredCountry</code>  </td><td class="c-table__cell"></td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>registered_country.names.{locale}</code>  </td><td class="c-table__cell"><code>RegisteredCountry</code>  </td><td class="c-table__cell">51Degrees returns the country only, not localized names.  </td></tr>
+<td class="c-table__cell"><code>registered_country.names.{locale}</code>  </td><td class="c-table__cell"><code>RegisteredCountry</code>  </td><td class="c-table__cell">Approximate. <code>RegisteredCountry</code> is the country's two-letter code, not its name. Look the name up from <code>RegisteredCountryGeoNameId</code>, the country's GeoNames identifier.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><code>registered_country.geoname_id</code>  </td><td class="c-table__cell"><code>RegisteredCountryGeoNameId</code>  </td><td class="c-table__cell"></td></tr>
 <tr class="c-table__row">
@@ -136,7 +134,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>location.longitude</code>  </td><td class="c-table__cell"><code>Longitude</code>  </td><td class="c-table__cell">51Degrees returns a single averaged value. See coordinate randomization note below.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>location.accuracy_radius</code>  </td><td class="c-table__cell"><code>AccuracyRadiusMax</code>  </td><td class="c-table__cell">Use <code>AccuracyRadiusMin</code> for the inner-bound radius. See the <code>LocationConfidence</code> note below for the categorical confidence signal that complements these radii.  </td></tr>
+<td class="c-table__cell"><code>location.accuracy_radius</code>  </td><td class="c-table__cell"><code>AccuracyRadiusMin</code>  </td><td class="c-table__cell">51Degrees recommends <code>AccuracyRadiusMin</code> when comparing with other solutions. <code>AccuracyRadiusMax</code> is the radius of the circle that covers the whole area. See the <code>LocationConfidence</code> note below for the categorical confidence signal that complements these radii.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><code>location.time_zone</code>  </td><td class="c-table__cell"><code>TimeZoneIana</code>  </td><td class="c-table__cell"><code>TimeZoneOffset</code> gives UTC offset separately.  </td></tr>
 <tr class="c-table__row">
@@ -146,7 +144,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>location.population_density</code>  </td><td class="c-table__cell"></td><td class="c-table__cell">No equivalent.  </td></tr>
 </table>
-<p><b>Coordinate randomization</b>: 51Degrees randomizes <code>Latitude</code> and <code>Longitude</code> within around 1 km of the true average location for the IP range. The randomization is applied during data file generation, so the value returned for a given IP address is stable across all lookups against the same data file and only changes when a new data file is published. This guarantees the coordinates cannot be classified as personal data. No other property is affected. See <a class="el" href="_ip_intelligence__features__randomization.html" title="Randomization">Randomization</a>.</p>
+<p><b>Coordinate randomization</b>: 51Degrees randomizes <code>Latitude</code> and <code>Longitude</code> within around 1 km of the true average location for the IP range. The randomization is applied during data file generation, so the value returned for a given IP address is stable across all lookups against the same data file and only changes when a new data file is published. No other property is affected. See <a class="el" href="_ip_intelligence__features__randomization.html" title="Randomization">Randomization</a>.</p>
 <p><b>Location confidence</b>: 51Degrees rolls up location certainty into a single string-valued <code>LocationConfidence</code> property covering the town and country. Where MaxMind exposes a numeric <code>*.confidence</code> score on each geographic level (<code>country.confidence</code>, <code>city.confidence</code>, <code>subdivisions[0].confidence</code>, <code>postal.confidence</code>), the categorical 51Degrees equivalent is <code>LocationConfidence</code>, complemented by the numeric <code>AccuracyRadiusMax</code> and <code>AccuracyRadiusMin</code> properties for spatial precision. See the <a href="https://51degrees.com/developers/property-dictionary">property dictionary</a> for the set of possible values.</p>
 <h2 class="doxsection" id="traits-network-and-asn">Traits (network and ASN)<a class="headerlink" href="#traits-network-and-asn" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
@@ -167,7 +165,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>traits.domain</code>  </td><td class="c-table__cell"></td><td class="c-table__cell">No equivalent.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>traits.connection_type</code>  </td><td class="c-table__cell"><code>ConnectionType</code>  </td><td class="c-table__cell">Both classify Cable/DSL, Cellular, Corporate, Satellite, Hosting (51Degrees rolls hosting and anonymous into one category). <code>IsBroadband</code>, <code>IsCellular</code>, <code>IsHosted</code> give the same information as booleans.  </td></tr>
+<td class="c-table__cell"><code>traits.connection_type</code>  </td><td class="c-table__cell"><code>ConnectionType</code>  </td><td class="c-table__cell">Approximate. MaxMind returns <code>Cable/DSL</code>, <code>Cellular</code>, <code>Corporate</code>, or <code>Satellite</code>. 51Degrees returns <code>Broadband</code>, <code>Cellular</code>, or <code>Hosting &amp; Anonymous</code>, where <code>Broadband</code> covers DSL, cable, fiber, and satellite, and there is no corporate category. <code>IsBroadband</code>, <code>IsCellular</code>, and <code>IsHosted</code> give the same information as booleans.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><code>traits.mobile_country_code</code>  </td><td class="c-table__cell"><code>Mcc</code>  </td><td class="c-table__cell"></td></tr>
 <tr class="c-table__row">
@@ -183,7 +181,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <tr class="c-table__row">
 <td class="c-table__cell"><code>traits.ip_risk_snapshot</code>  </td><td class="c-table__cell"></td><td class="c-table__cell">Differs in semantics. <code>HumanProbability</code> is the closest signal. It returns confidence from 0 to 10 that traffic is from a human rather than hosting or automated infrastructure.  </td></tr>
 </table>
-<h2 class="doxsection" id="anonymizer-privacy--vpn">Anonymizer (privacy / VPN)<a class="headerlink" href="#anonymizer-privacy--vpn" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="anonymizer-vpn-proxy-tor-and-hosting">Anonymizer (VPN, proxy, Tor, and hosting)<a class="headerlink" href="#anonymizer-vpn-proxy-tor-and-hosting" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">MaxMind field  </td><td class="c-table__cell">51Degrees property  </td><td class="c-table__cell">Notes  </td></tr>
@@ -207,7 +205,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <td class="c-table__cell"><code>anonymizer.provider_name</code>  </td><td class="c-table__cell"></td><td class="c-table__cell"></td></tr>
 </table>
 <h2 class="doxsection" id="properties-unique-to-51degrees-1">Properties unique to 51Degrees<a class="headerlink" href="#properties-unique-to-51degrees-1" aria-label="Permalink to this section">🔗</a></h2>
-<p>The following 51Degrees properties have no MaxMind equivalent. They are the additional context that drives <a class="el" href="_ip_intelligence__features__weighting.html" title="Weighting">accuracy weighting</a> and bot detection.</p>
+<p>These additional properties describe IP ranges and location <a class="el" href="_ip_intelligence__features__weighting.html" title="Weighting">weighting</a>, or support crawler detection.</p>
 <ul>
 <li><b>Diversity scores</b>: <code>BrowserDiversity</code>, <code>HardwareDiversity</code>, <code>PlatformDiversity</code> quantify how varied the traffic from an IP range is. See <a class="el" href="_ip_intelligence__features__diversity.html" title="Diversity">Diversity</a>.</li>
 <li><b>Finer places</b>: <code>Suburb</code>, and <code>Iso31662Lvl8</code> and <code>Iso31662Lvl8SubdivisionOnly</code>, the ISO 3166-2 code of the OpenStreetMap level 8 area the location is in.</li>

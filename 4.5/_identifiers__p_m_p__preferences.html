@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -81,7 +79,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers__
 <td class="c-table__cell">Standard  </td><td class="c-table__cell">Only with <code>data-show-standard="true"</code>  </td><td class="c-table__cell"><code>standard</code>  </td></tr>
 </table>
 <p>Each option has a description behind an expandable "More information" section. There is no close cross on the first dialog, so answering is the only way past it. Once answered, the dialog shrinks to a small bubble in the corner that opens it again, and later visits start at that bubble rather than the full dialog, so the visitor can change their answer whenever they like.</p>
-<p>The alternative button sets the visitor's preference under the Model Terms for Marketing to <code>non-marketing</code>, the third of the three words those terms define beside <code>standard</code> and <code>personalized</code>, and that word travels every way the other two do. It is written to the <code>__mtm_pref</code> cookie for your own server to read, fired as the <code>51d-pmp-preference</code> event on the window so the 51Degrees client script sends it as <code>id.usage=non-marketing</code> and the 51Did carries it, and substituted for <code>{preference}</code> in <code>data-action-url</code>. Then <code>data-alt-url</code> runs, where an <code>http(s)</code> URL navigates the page and a <code>javascript:</code> URL runs inline and leaves the visitor on your site.</p>
+<p>The alternative button sets the visitor's preference under the Model Terms for Marketing to <code>non-marketing</code>, the third of the three words those terms define beside <code>standard</code> and <code>personalized</code>, and that word travels every way the other two do. PMP writes it to the <code>__mtm_pref</code> cookie for your own server to read and substitutes it for <code>{preference}</code> in <code>data-action-url</code>. It also fires the <code>51d-pmp-preference</code> event on the window, so the 51Degrees client script sends it as <code>id.usage=non-marketing</code> and the 51Did carries it. Then <code>data-alt-url</code> runs, where an <code>http(s)</code> URL navigates the page and a <code>javascript:</code> URL runs inline and leaves the visitor on your site.</p>
 <p>The alternative button stores <code>non-marketing</code> rather than <code>standard</code>, so that a publisher reading an answer shared from another site can tell a visitor who declined from one who accepted the lesser of the two kinds.</p>
 <p>No TCF consent string is built for <code>non-marketing</code>, because under TCF the visitor consented to nothing and so nothing is claimed. The Model Terms answer and the TCF consent string are different things, being what the visitor asked for under a contract and a claim of consent, and a decline has the first without the second. Whilst that answer stands, <code>__tcfapi</code> answers <code>ping</code> truthfully, still honors <code>removeEventListener</code>, and answers <code>getTCData</code> and <code>addEventListener</code> with <code>success: false</code>. A listener registered before the decline is told once, with <code>success: false</code>, that there is no longer any TC data. Choosing Standard or Personalized afterwards restores the full API.</p>
 <h2 class="doxsection" id="idusage-mapping"><code>id.usage</code> mapping<a class="headerlink" href="#idusage-mapping" aria-label="Permalink to this section">🔗</a></h2>
@@ -151,6 +149,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers__
 <div class="c-code__line">  // tcData.eventStatus is &#39;tcloaded&#39; when a consent string is ready,</div>
 <div class="c-code__line">  // &#39;cmpuishown&#39; when the dialog is shown again, and</div>
 <div class="c-code__line">  // &#39;useractioncomplete&#39; when the visitor has just answered.</div>
+<div class="c-code__line">  if (!success) return; // no TC data while the alternative answer stands</div>
 <div class="c-code__line">  console.log(tcData.eventStatus, tcData.tcString);</div>
 <div class="c-code__line">});</div>
 </div><!-- fragment --><p>The consent string is the publisher's own from <code>data-tcf-vendor</code> with the purpose bits, the dates, the CMP id and the policy and vendor list versions rewritten for the answer, so it starts differently from the string on the tag and ends the same, and the vendor consents in it are exactly what the publisher put there. The CMP id it reports is that of a consent management platform currently registered on the IAB Global CMP List, and a different one each UTC day, which is what PMP is meant to do rather than a stand-in for an id of its own. The id written into the consent string and the id <code>__tcfapi</code> reports are always the same value for a page, and a page left open past midnight keeps the one it loaded with. </p>

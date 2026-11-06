@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Upgrading to Version 4 - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Upgrading to Version 4</title>
+<meta name="description" content="Upgrading to version 4 - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Upgrading to version 4</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -64,42 +62,42 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__upgradingto_v4.html">Upgrading to Version 4</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__upgradingto_v4.html">Upgrading to version 4</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Upgrading to Version 4 </h1></div><!--header-->
+<h1 class="g-docs__page-title">Upgrading to version 4 </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="doxsection" id="upgrading-to-51degrees-version-4">Upgrading to 51Degrees Version 4<a class="headerlink" href="#upgrading-to-51degrees-version-4" aria-label="Permalink to this section">🔗</a></h2>
+<div class="textblock"><h2 class="doxsection" id="upgrading-to-51degrees-version-4">Upgrading to 51Degrees version 4<a class="headerlink" href="#upgrading-to-51degrees-version-4" aria-label="Permalink to this section">🔗</a></h2>
 <p>This guide details how current Version 3 customers of 51Degrees can upgrade to Version 4.</p>
-<p>Version 4 is faster, has a smaller data file, and has an upgraded algorithm that allows better detection of new, different, and rare User-Agents. Additionally, Version 4 has support for <a href="https://learnclienthints.com/">Google's changes to the User-Agent</a> and the new <a href="https://51degrees.com/blog/updates-to-user-agent-client-hints-version-4-4">User-Agent Client Hints</a> HTTP request header.</p>
+<p>Version 4 is faster, has a smaller data file, and has an upgraded algorithm that allows better detection of new, different, and rare User-Agents. Version 4 supports <a href="https://learnclienthints.com/">Google's changes to the User-Agent</a> and <a href="https://51degrees.com/blog/updates-to-user-agent-client-hints-version-4-4">User-Agent Client Hints</a> HTTP request headers.</p>
 <p>The steps to upgrade will vary depending on whether you are using our Cloud or On-premise service.</p>
 <p><br  />
 </p>
 <h2 class="doxsection" id="V3_Cloud">V3 Cloud users<a class="headerlink" href="#V3_Cloud" aria-label="Permalink to this section">🔗</a></h2>
 <p>Create a new Resource Key at <a href="https://configure.51degrees.com/">configure.51degrees.com</a>. You can follow our <a class="el" href="_services__configurator.html" title="Creating a Resource Key">Resource Key guide</a>. This Resource Key should contain all the properties you wish to collect data for – you can find a list of all the available properties on our <a href="https://51degrees.com/developers/property-dictionary">property dictionary</a>. Some advanced properties may require the purchase of a License Key. Sign up to one of our <a href="https://51degrees.com/pricing">pricing plans</a> to be granted a License Key.</p>
-<p>If you are looking for User-Agent Client Hints support in the cloud, please follow the <a class="el" href="_device_detection__features__u_a_c_h__overview.html" title="UA-CH Overview">User-Agent Client Hints documentation</a>.</p>
+<p>If you are looking for User-Agent Client Hints support in the cloud, please follow the <a class="el" href="_device_detection__features__u_a_c_h__overview.html" title="UA-CH overview">User-Agent Client Hints documentation</a>.</p>
 <p><br  />
 </p>
-<h2 class="doxsection" id="V3_On_Prem">V3 On-premise users<a class="headerlink" href="#V3_On_Prem" aria-label="Permalink to this section">🔗</a></h2>
-<p>If you wish to continue to use 51Degrees On-premise, you will need to purchase a License Key to access the Version 4 data files. Visit our <a href="https://51degrees.com/pricing">pricing</a> page and select the suitable plan for your needs. Alternatively, you may wish to use our <a class="el" href="#V3_Cloud" title="V3 Cloud users">Cloud Service</a>, which can be called from the server via our APIs.</p>
-<p>Once you have received a License Key after signing up for a pricing plan, you can use the key to download a data file for On-premise implementations that contains all the properties. You can <a href="https://51degrees.com/developers/downloads">download the file manually</a> or set up <a class="el" href="_pipeline_api__features__automatic_datafile_updates.html" title="Automatic Data File Updates">automatic data file updates</a>.</p>
+<h2 class="doxsection" id="V3_On_Prem">V3 on-premise users<a class="headerlink" href="#V3_On_Prem" aria-label="Permalink to this section">🔗</a></h2>
+<p>If you wish to continue to use 51Degrees On-premise, the free Lite data file needs no License Key, but it has fewer properties and is updated monthly. Data files with every property need a License Key from the Bespoke plan, which you can ask about on our <a href="https://51degrees.com/pricing">pricing</a> page. Alternatively, you may wish to use our <a class="el" href="#V3_Cloud" title="V3 Cloud users">Cloud Service</a>, which can be called from the server via our APIs.</p>
+<p>Once you have received a License Key after signing up for a pricing plan, you can use the key to download a data file for On-premise implementations that contains all the properties. You can <a href="https://51degrees.com/developers/downloads">download the file manually</a> or set up <a class="el" href="_pipeline_api__features__automatic_datafile_updates.html" title="Automatic data file updates">automatic data file updates</a>.</p>
 <p>You can download the latest API packages for your programming language via our <a href="https://51degrees.com/developers/downloads">downloads page</a> or <a href="https://github.com/51Degrees">GitHub</a>.</p>
-<p>Once you have obtained your new License Key and downloaded the latest API packages and data file, see the <a class="el" href="#migration-guides" title="Migration Guides">language-specific migration guides</a>language-specific migration guides below for the next steps.</p>
-<p>We also recommend enabling <a class="el" href="_pipeline_api__features__usage_sharing.html" title="Usage Sharing Feature">usage sharing</a> in your environment. This allows our machine learning algorithm to grow and therefore detect new and unique User-Agents quicker with higher levels of accuracy.</p>
-<p>If you are looking for User-Agent Client Hints support, please follow the <a class="el" href="_device_detection__features__u_a_c_h__overview.html" title="UA-CH Overview">User-Agent Client Hints documentation</a>.</p>
+<p>Once you have obtained your new License Key and downloaded the latest API packages and data file, see the <a class="el" href="#migration-guides" title="Migration guides">language-specific migration guides</a>language-specific migration guides below for the next steps.</p>
+<p>We also recommend enabling <a class="el" href="_pipeline_api__features__usage_sharing.html" title="Usage sharing feature">usage sharing</a> in your environment. This allows our machine learning algorithm to grow and therefore detect new and unique User-Agents quicker with higher levels of accuracy.</p>
+<p>If you are looking for User-Agent Client Hints support, please follow the <a class="el" href="_device_detection__features__u_a_c_h__overview.html" title="UA-CH overview">User-Agent Client Hints documentation</a>.</p>
 <p>If you require any help upgrading, get in touch with <a href="https://51degrees.com/contact-us">Sales</a>.</p>
 <p><br  />
 </p>
 <h2 class="doxsection" id="New_Customers">New customers<a class="headerlink" href="#New_Customers" aria-label="Permalink to this section">🔗</a></h2>
-<p>If you wish to get started with 51Degrees, check out our  <a href="https://51degrees.com/pricing" target="_blank">pricing</a> page for an overview of all our pricing tiers. You can then follow the <a class="el" href="_services__configurator.html" title="Creating a Resource Key">Resource Key guide</a> to get started in the cloud or use our <a class="el" href="_device_detection__examples__getting_started__web__on_premise.html" title="Getting Started Web On-premise">On-premise documentation</a>.</p>
+<p>If you wish to get started with 51Degrees, check out our  <a href="https://51degrees.com/pricing" target="_blank">pricing</a> page for an overview of all our pricing tiers. You can then follow the <a class="el" href="_services__configurator.html" title="Creating a Resource Key">Resource Key guide</a> to get started in the cloud or use our <a class="el" href="_device_detection__examples__getting_started__web__on_premise.html" title="Getting started with on-premise detection in a web application">On-premise documentation</a>.</p>
 <p>Alternatively, get in touch with our <a href="https://51degrees.com/contact-us">Sales</a> team and mention your use case. Please provide as much information as possible such as intended deployment method, programming language, and environment configuration as this will help us discuss the best solution for you.</p>
 <p><br  />
 </p>
-<h2 class="doxsection" id="migration-guides">Migration Guides<a class="headerlink" href="#migration-guides" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="migration-guides">Migration guides<a class="headerlink" href="#migration-guides" aria-label="Permalink to this section">🔗</a></h2>
 <p>This section describes the detailed steps for migrating from the previous 51Degrees Device detection API to either version 4 of that API or to the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> API where it is available. In either case, there are breaking changes so this guide should be followed carefully to ensure no problems arise.</p>
 <h2 class="doxsection" id="overview-3">Overview<a class="headerlink" href="#overview-3" aria-label="Permalink to this section">🔗</a></h2>
 <p>The language that you are using is the most important factor in determining what work is required to migrate to the new API. For some languages and frameworks, such as C, Nginx, or Varnish, there is no <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> API so you will be migrating directly to version 4 of the Device Detection API. For other languages such as Java or .NET, you will be migrating from a pure device detection installation to the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> API with a device detection plugin.</p>
-<h2 class="doxsection" id="language-specific-migration-steps">Language-Specific Migration Steps<a class="headerlink" href="#language-specific-migration-steps" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="language-specific-migration-steps">Language-specific migration steps<a class="headerlink" href="#language-specific-migration-steps" aria-label="Permalink to this section">🔗</a></h2>
 <p>Regardless of which API you are migrating to, there are breaking changes and new features to be aware of. See the following section for detail on the changes needed for your language of choice.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'c')">C</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'cpp')">C++</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'aspdotnet')">C# - ASP.NET Framework</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'aspdotnetcore')">C# - ASP.NET Core</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'python')">Python</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'nginx')">Nginx</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'varnish')">Varnish</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language to view a language specific migration guide.  </div>   <div class="c-tabgroup__main" data-lang="c" style="display:none;">   </p>
 <p>First, add the device detection libraries from the <a href="https://github.com/51Degrees/51degrees-cxx">GitHub repo</a>. These can be included using the Visual Studio projects, the CMake projects, or just the files themselves.</p>
@@ -107,7 +105,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">fiftyoneDegreesDataSetInitStatus status =</div>
 <div class="c-code__line">    fiftyoneDegreesInitProviderWithPropertyString(</div>
 <div class="c-code__line">    fileName, &amp;provider, properties, 4, 1000);</div>
-</div><!-- fragment --><p>An equivalent service can be set up using the V4 device detection API. However, the Hash data files have been significantly improved for V4, and are now equivalent or superior to Pattern in every way. As such, Hash is now the only option. It takes the following parameters:</p>
+</div><!-- fragment --><p>The V4 Device Detection API uses Hash data files. To initialize the data set, supply the following parameters:</p>
 <ol type="1">
 <li>A resource manager. This is similar to the V3 provider, but provides a generic way of managing resources in a thread-safe manner.</li>
 <li>A configuration structure. This defines the way the data set is used. For example, whether the data set is loaded into memory, or streamed from file.</li>
@@ -123,8 +121,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line">        &amp;properties,</div>
 <div class="c-code__line">        dataFilePath,</div>
 <div class="c-code__line">        exception);</div>
-</div><!-- fragment --><p>To process a User-Agent with the old API, the <code>fiftyoneDegreesMatch</code> is called with a workset which has been fetched from the provider. Instead new set of results should be created, then the <code>fiftyoneDegreesResultsHashFromUserAgent</code> is used in a similar way to <code>fiftyoneDegreesMatch</code>.</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">fiftyoneDegreesResultsHash *result =</div>
+</div><!-- fragment --><p>V3 calls <code>fiftyoneDegreesMatch</code> with a workset from the provider. In V4, create a results structure and pass it to <code>fiftyoneDegreesResultsHashFromUserAgent</code>.</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">fiftyoneDegreesResultsHash *results =</div>
 <div class="c-code__line">    fiftyoneDegreesResultsHashCreate(&amp;manager, 1, 0);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">fiftyoneDegreesResultsHashFromUserAgent(</div>
@@ -133,8 +131,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line">    strlen(userAgent),</div>
 <div class="c-code__line">    exception);</div>
 </div><!-- fragment --><p>A set of results is used by one thread at a time, because reading a value writes into the results, so each thread creates its own. The resource manager can be shared by every thread.</p>
-<p>To get a value of a property in the old API, the <code>fiftyoneDegreesSetValues</code> and <code>fiftyoneDegreesGetString</code> methods were used. Using the new results structure, values of a property can be retrieved using the <code>fiftyoneDegreesResultsHashGetValueString</code> method.</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">fiftyoneDegreesResultsPatternGetValuesString(</div>
+<p>To get a value of a property in the old API, the <code>fiftyoneDegreesSetValues</code> and <code>fiftyoneDegreesGetString</code> methods were used. Using the new results structure, values of a property can be retrieved using the <code>fiftyoneDegreesResultsHashGetValuesString</code> method.</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">fiftyoneDegreesResultsHashGetValuesString(</div>
 <div class="c-code__line">    results,</div>
 <div class="c-code__line">    propertyName,</div>
 <div class="c-code__line">    valueBuffer,</div>
@@ -154,7 +152,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line">    results,</div>
 <div class="c-code__line">    evidence,</div>
 <div class="c-code__line">    exception);</div>
-</div><!-- fragment --><p>Once finished, the results are released using the <code>fiftyoneDegreesResultsHashFree</code> method, and the data set with the <code>fiftyoneDegreesManagerFree</code> method.</p>
+</div><!-- fragment --><p>Once finished, the results are released using the <code>fiftyoneDegreesResultsHashFree</code> method, and the data set with the <code>fiftyoneDegreesResourceManagerFree</code> method.</p>
 <p> </div>   <div class="c-tabgroup__main" data-lang="cpp" style="display:none;">   </p>
 <p>First, add the device detection libraries from the <a href="https://github.com/51Degrees/51degrees-cxx">GitHub repo</a>. These can be included using the Visual Studio projects, the CMake projects, or just the files themselves.</p>
 <p>The old (V3) device detection API used a <code>Provider</code> class initialized with the path to the data file and the required properties, and was similar for Pattern and Hash.</p>
@@ -175,7 +173,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line"> </div>
 <div class="c-code__line">ResultsHash *results = engine-&gt;process(evidence);</div>
 </div><!-- fragment --><p>A set of results is used by one thread at a time, because reading a value writes into the results. The engine can be shared by every thread, and each call to <code>process</code> returns new results for the thread that made it.</p>
-<p>Getting values from a <code>ResultsHash</code> (or any class extending <code>ResultsBase</code>) instance is similar to the old API, however the values returned are slightly different. Values follow the nullable pattern. For example, rather than returning a boolean, the <code>results-&gt;getValueAsBool</code> method returns a <code>Value&lt;bool&gt;</code> type that has <code>hasValue()</code> and <code>getValue()</code> methods (in addition to a <code>*</code> operator which maps to the <code>getValue()</code> method). Calling <code>getValue()</code> on a property value that does not have a value will result in an exception. For more detail see the <a class="el" href="_device_detection__features__false_positive_control.html" title="False Positives">false positive control</a> feature page.</p>
+<p>Getting values from a <code>ResultsHash</code> (or any class extending <code>ResultsBase</code>) instance is similar to the old API, however the values returned are slightly different. Values follow the nullable pattern. For example, rather than returning a boolean, the <code>results-&gt;getValueAsBool</code> method returns a <code>Value&lt;bool&gt;</code> type that has <code>hasValue()</code> and <code>getValue()</code> methods (in addition to a <code>*</code> operator which maps to the <code>getValue()</code> method). Calling <code>getValue()</code> on a property value that does not have a value will result in an exception. For more detail see the <a class="el" href="_device_detection__features__false_positive_control.html" title="False positives">false positive control</a> feature page.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">Value&lt;bool&gt; value = results-&gt;getValueAsBool(<span class="c-code__stringliteral">&quot;IsMobile&quot;</span>);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> (value.hasValue()) {</div>
@@ -188,29 +186,29 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 </div><!-- fragment --><p>Once finished, the results, evidence, engine, and configuration are freed using their destructors. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keyword">delete</span> results;</div>
 <div class="c-code__line"><span class="c-code__keyword">delete</span> evidence;</div>
 <div class="c-code__line"><span class="c-code__keyword">delete</span> engine;</div>
-<div class="c-code__line"><span class="c-code__keyword">delete</span> config</div>
-</div><!-- fragment --><p> </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">    Note: If you are working with a ASP.NET or ASP.NET Core web app then check those tabs for a more focused migration guide.</p>
-<p>The <a class="el" href="_device_detection__examples__getting_started__console__index.html" title="Getting Started - Console">getting started</a> examples may be a useful reference while migrating.</p>
+<div class="c-code__line"><span class="c-code__keyword">delete</span> config;</div>
+</div><!-- fragment --><p> </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">    Note: If you are working with an ASP.NET or ASP.NET Core web app, use the corresponding tab for a focused migration guide.</p>
+<p>The <a class="el" href="_device_detection__examples__getting_started__console__index.html" title="Getting started with console applications">getting started</a> examples may be a useful reference while migrating.</p>
 <p>First, add the <code>FiftyOne.DeviceDetection</code> NuGet package. Don't forget to remove the old <code>51Degrees.mobi-core</code> package and any related packages as well.</p>
 <p>The old (V3) device detection API generally had two initialization steps, one to create a <code>DataSet</code> and one to create a <code>Provider</code> from that <code>DataSet</code>. The precise details would depend on:</p><ul>
 <li>Whether you are using the Pattern or Hash algorithm.</li>
 <li>Whether you are loading all the data into memory for better performance or not.</li>
 <li>Other DataSet creation options being used.</li>
 </ul>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">DataSet dataSet = StreamFactory.Create(fileName, <span class="c-code__keyword">false</span>)</div>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">DataSet dataSet = StreamFactory.Create(fileName, <span class="c-code__keyword">false</span>);</div>
 <div class="c-code__line">Provider provider = <span class="c-code__keyword">new</span> Provider(dataSet);   </div>
 </div><!-- fragment --><p>There are several ways to set up an equivalent service using the Pipeline API. For example, you could create the device detection engine and then create the Pipeline. However, the easiest method is to use a specific <code>DeviceDetectionPipelineBuilder</code>. This can be configured using a settings file or directly in code:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">var pipeline = <span class="c-code__keyword">new</span> DeviceDetectionPipelineBuilder()</div>
 <div class="c-code__line">  .UseOnPremise(dataFile, <span class="c-code__keyword">true</span>)</div>
 <div class="c-code__line">  .SetPerformanceProfile(PerformanceProfiles.LowMemory)</div>
 <div class="c-code__line">  .SetDataUpdateLicenseKey(<span class="c-code__stringliteral">&quot;yourkey&quot;</span>)</div>
-<div class="c-code__line">  .Build()</div>
+<div class="c-code__line">  .Build();</div>
 </div><!-- fragment --><p>The supplied settings will be dependent on your old implementation:</p>
 <ul>
 <li>If using the 51Degrees Cloud Service, you'll first need to create a Resource Key at <a href="https://configure.51degrees.com">configure.51degrees.com</a> (this will only take a few minutes and does not require any payment). Next, change the first line to <code>.UseCloud</code> and pass in the Resource Key you created.</li>
-<li>If using <code>MemoryFactory</code> rather that <code>StreamFactory</code> then change the performance profile to <code>MaxPerformance</code>.</li>
+<li>If using <code>MemoryFactory</code> rather than <code>StreamFactory</code>, change the performance profile to <code>MaxPerformance</code>.</li>
 <li>If using a custom caching configuration, you will need to create the device detection engine first using a <code>DeviceDetectionHashEngineBuilder</code>. The <code>SetCache</code> method can then be used to supply your custom configuration. Finally, the generic <code>PipelineBuilder</code> can be used to create a pipeline with the device detection engine added to it.</li>
-<li>If you have auto updates disabled then remove the <code>SetDataUpdateLinceseKey</code> line and instead use <code>SetAutoUpdate(false)</code> and <code>SetUpdateOnStartup(false)</code>.</li>
+<li>If you have auto updates disabled then remove the <code>SetDataUpdateLicenseKey</code> line and instead use <code>SetAutoUpdate(false)</code> and <code>SetDataUpdateOnStartUp(false)</code>.</li>
 </ul>
 <p>Regardless of the details above, a configuration file can be used instead:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">var config = <span class="c-code__keyword">new</span> ConfigurationBuilder()</div>
@@ -226,7 +224,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Create the pipeline using the options object</span></div>
 <div class="c-code__line">var pipeline = <span class="c-code__keyword">new</span> FiftyOnePipelineBuilder()</div>
-<div class="c-code__line">    .BuildFromConfiguration(options)</div>
+<div class="c-code__line">    .BuildFromConfiguration(options);</div>
 </div><!-- fragment --><p>The JSON configuration file for the same setup as above (on premise, low memory, auto updates enabled) would look like this:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div>
 <div class="c-code__line">  &quot;PipelineOptions&quot;: {</div>
@@ -272,7 +270,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line">var device = data.Get&lt;IDeviceData&gt;();</div>
 </div><!-- fragment --><p>Finally, the way that data is accessed has also changed in several ways.</p><ol type="1">
 <li>Values can now be accessed by strongly typed properties rather than having to remember 'magic strings' (although magic string accessors still work as well).</li>
-<li>Many properties follow the nullable pattern. For example, rather than returning a boolean, the 'IsMobile' property returns a wrapper type that has 'HasValue' and 'Value' accessors. Calling '.Value' on a property that does not have a value will result in an exception. For more detail see the <a class="el" href="_device_detection__features__false_positive_control.html" title="False Positives">false positive control</a> feature page.</li>
+<li>Many properties follow the nullable pattern. For example, rather than returning a boolean, the 'IsMobile' property returns a wrapper type that has 'HasValue' and 'Value' accessors. Calling '.Value' on a property that does not have a value will result in an exception. For more detail see the <a class="el" href="_device_detection__features__false_positive_control.html" title="False positives">false positive control</a> feature page.</li>
 </ol>
 <p>As an example:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">var isMobile = match[<span class="c-code__stringliteral">&quot;IsMobile&quot;</span>].ToBool();</div>
@@ -287,7 +285,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line">    var isMobile = data.GetAs&lt;AspectPropertyValue&gt;(<span class="c-code__stringliteral">&quot;IsMobile&quot;</span>).Value;</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="aspdotnet" style="display:none;">    This section describes how to migrate from the ASP.NET integration in version 3 of the device detection API to the ASP.NET integration in Pipeline API. Note - The redirect, image optimization and performance monitoring services are no longer supported in the Pipeline API.</p>
-<p>The <a class="el" href="_device_detection__examples__getting_started__web__index.html" title="Getting Started - Web">getting started</a> examples may be a useful reference while migrating.</p>
+<p>The <a class="el" href="_device_detection__examples__getting_started__web__index.html" title="Getting started with web applications">getting started</a> examples may be a useful reference while migrating.</p>
 <p>First, add the <code>FiftyOne.DeviceDetection</code> and <code>FiftyOne.Pipeline.Web</code> NuGet packages. Don't forget to remove the old <code>51Degrees.mobi-core</code> package and any related packages as well.</p>
 <p>The main difference is in the configuration file supplied to the Pipeline. This must be in the App_Data folder and can be named:</p>
 <ul>
@@ -336,7 +334,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line">  }</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --><ul>
-<li>Modification to <code>Application_Start</code> method in the application class from <code>"global.asax.cs"</code> file to include loading of assemblies required by the pipeline is needed. Again, this is different for cloud and On-premise scenarios. See snippets for both below.</li>
+<li>Update <code>Application_Start</code> in the application class in <code>"global.asax.cs"</code> to load the assemblies the pipeline needs. Use the snippet for your cloud or on-premise deployment below.</li>
 </ul>
 <p>On-premise: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.DeviceDetection.Hash.Engine.OnPremise.FlowElements;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Engines.FiftyOne.FlowElements;</div>
@@ -376,12 +374,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">var deviceDetectionPipeline = WebPipeline.GetInstance();</div>
 <div class="c-code__line">var engine = deviceDetectionPipeline.GetElement&lt;DeviceDetectionHashEngine&gt;(); </div>
 </div><!-- fragment --><p>Finally, if you use client-side overrides (which enables detection of Apple models), you'll need to make sure you add a script tag for <code>51degrees.core.js</code>. The 51Degrees infrastructure will intercept this request and serve the JavaScript that is used to gather the necessary client side data and pass it back to the server.</p>
-<p>You can see examples of this feature in action in the <a class="el" href="_device_detection__examples__getting_started__web__index.html" title="Getting Started - Web">getting started</a> web examples.</p>
+<p>You can see examples of this feature in action in the <a class="el" href="_device_detection__examples__getting_started__web__index.html" title="Getting started with web applications">getting started</a> web examples.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;script async src=&#39;51Degrees.core.js&#39; type=&#39;text/javascript&#39;&gt;&lt;/script&gt;</div>
 </div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="aspdotnetcore" style="display:none;">    This section describes how to migrate from the ASP.NET integration in version 3 of the device detection API to the ASP.NET Core integration in Pipeline API. Note - The redirect, image optimization and performance monitoring services are no longer supported in the Pipeline API.</p>
-<p>The <a class="el" href="_device_detection__examples__getting_started__web__index.html" title="Getting Started - Web">getting started</a> examples may be a useful reference while migrating.</p>
+<p>The <a class="el" href="_device_detection__examples__getting_started__web__index.html" title="Getting started with web applications">getting started</a> examples may be a useful reference while migrating.</p>
 <p>First, add the <code>FiftyOne.DeviceDetection</code> and <code>FiftyOne.Pipeline.Web</code> NuGet packages. Don't forget to remove the old <code>51Degrees.mobi-core</code> package and any related packages as well.</p>
-<p>Add the following lines to you 'ConfigureService' method:</p>
+<p>Add the following lines to your 'ConfigureService' method:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">services.AddSingleton&lt;DeviceDetectionHashEngineBuilder&gt;();</div>
 <div class="c-code__line">services.AddFiftyOne&lt;PipelineBuilder&gt;(Configuration);</div>
 </div><!-- fragment --><p>Add the following line to the 'Configure' method:</p>
@@ -446,6 +444,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">@model FiftyOne.DeviceDetection.IDeviceData</div>
 <div class="c-code__line">@{</div>
 <div class="c-code__line">    ViewData[&quot;Title&quot;] = &quot;Device detection example&quot;;</div>
+<div class="c-code__line">    var hardwareVendor = Model.HardwareVendor;</div>
+<div class="c-code__line">    var hardwareName = Model.HardwareName;</div>
+<div class="c-code__line">    var deviceType = Model.DeviceType;</div>
+<div class="c-code__line">    var platformVendor = Model.PlatformVendor;</div>
+<div class="c-code__line">    var platformName = Model.PlatformName;</div>
+<div class="c-code__line">    var platformVersion = Model.PlatformVersion;</div>
+<div class="c-code__line">    var browserVendor = Model.BrowserVendor;</div>
+<div class="c-code__line">    var browserName = Model.BrowserName;</div>
+<div class="c-code__line">    var browserVersion = Model.BrowserVersion;</div>
 <div class="c-code__line">}</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">&lt;h2&gt;Example&lt;/h2&gt;</div>
@@ -463,7 +470,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line">&lt;/p&gt;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">@await Component.InvokeAsync(&quot;FiftyOneJS&quot;)</div>
-</div><!-- fragment --><p>The <code>FiftyOneJS</code> component handles the inclusion of <a class="el" href="_pipeline_api__features__client_side_evidence.html" title="Client-side Evidence">client-side evidence</a>. The main use-case for this in device detection is in detecting iPhone/iPad models correctly.  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">    First, add the <code>com.51degrees.device-detection</code> Maven package.</p>
+</div><!-- fragment --><p>The <code>FiftyOneJS</code> component handles the inclusion of <a class="el" href="_pipeline_api__features__client_side_evidence.html" title="Client-side evidence">client-side evidence</a>. The main use-case for this in device detection is in detecting iPhone/iPad models correctly.  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">    First, add the <code>com.51degrees.device-detection</code> Maven package.</p>
 <p>The old (V3) device detection API generally had two initialization steps, one to create a <code>DataSet</code> and one to create a <code>Provider</code> from that <code>DataSet</code>. The precise details would depend on:</p><ul>
 <li>Whether you are using the Pattern or Hash algorithm.</li>
 <li>Whether you are loading all the data into memory for better performance or not.</li>
@@ -482,16 +489,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <li>If using the 51Degrees Cloud Service, you'll first need to create a Resource Key at <a href="https://configure.51degrees.com">configure.51degrees.com</a> (this will only take a few minutes and does not require any payment). Next, change the first line to <code>.useCloud</code> and pass in the Resource Key you created.</li>
 <li>If using <code>MemoryFactory</code> rather than <code>StreamFactory</code> then change the performance profile to <code>MaxPerformance</code>.</li>
 <li>If using a custom caching configuration, you will need to create the device detection engine first using a <code>DeviceDetectionCloudEngineBuilder</code> (cache is not available on hash engine). The <code>setCache</code> method can then be used to supply your custom configuration. Finally, the generic <code>PipelineBuilder</code> can be used to create a pipeline with the device detection engine added to it.</li>
-<li>If you have auto updates disabled then remove the <code>setDataUpdateLincenseKey</code> line and instead use <code>setAutoUpdate(false)</code> and <code>setUpdateOnStartup(false)</code></li>
+<li>If you have auto updates disabled then remove the <code>setDataUpdateLicenseKey</code> line and instead use <code>setAutoUpdate(false)</code> and <code>setDataUpdateOnStartup(false)</code>.</li>
 </ul>
 <p>Regardless of the details above, a configuration file can be used instead:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">// Create the configuration object</span></div>
-<div class="c-code__line">File file = <span class="c-code__keyword">new</span> File(<span class="c-code__stringliteral">&quot;yourconfiguration.xml&quot;</span>).getFile());</div>
+<div class="c-code__line">File file = <span class="c-code__keyword">new</span> File(<span class="c-code__stringliteral">&quot;yourconfiguration.xml&quot;</span>);</div>
 <div class="c-code__line">PipelineOptions pipelineOptions = PipelineOptionsFactory.getOptionsFromFile(file);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Create a simple pipeline to access the engine with.</span></div>
 <div class="c-code__line">Pipeline pipeline = <span class="c-code__keyword">new</span> FiftyOnePipelineBuilder()</div>
-<div class="c-code__line">    .buildFromConfiguration(options);</div>
+<div class="c-code__line">    .buildFromConfiguration(pipelineOptions);</div>
 </div><!-- fragment --><p>The XML configuration file for the same setup as above (On-premise, low memory, auto updates enabled) would look like this:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;?<span class="c-code__keyword">xml</span> <span class="c-code__keyword">version</span>=<span class="c-code__stringliteral">&quot;1.0&quot;</span> <span class="c-code__keyword">encoding</span>=<span class="c-code__stringliteral">&quot;utf-8&quot;</span> ?&gt;</div>
 <div class="c-code__line">&lt;<span class="c-code__keywordtype">PipelineOptions</span>&gt;</div>
@@ -540,12 +547,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line">}</div>
 </div><!-- fragment --><p>Finally, the way that data is accessed has also changed in several ways.</p><ol type="1">
 <li>Values can now be accessed by strongly typed properties rather than having to remember 'magic strings' (although magic string accessors still work as well).</li>
-<li>Many properties follow the nullable pattern. For example, rather than returning a boolean, the 'IsMobile' property returns a wrapper type that has 'hasValue' and 'value' accessors. Calling '.gertValue' on a property that does not have a value will result in an exception. For more detail see the <a class="el" href="_device_detection__features__false_positive_control.html" title="False Positives">false positive control</a> feature page.</li>
+<li>Many properties follow the nullable pattern. For example, rather than returning a boolean, the 'IsMobile' property returns a wrapper type that has 'hasValue()' and 'getValue()' methods. Calling 'getValue()' on a property that does not have a value will result in an exception. For more detail see the <a class="el" href="_device_detection__features__false_positive_control.html" title="False positives">false positive control</a> feature page.</li>
 </ol>
 <p>As an example:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keywordtype">boolean</span> isMobile = match.getValues(<span class="c-code__stringliteral">&quot;IsMobile&quot;</span>).ToBoolean();</div>
 </div><!-- fragment --><p>becomes:</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keywordflow">if</span>(device.getIsMobile().hasValue) {</div>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keywordflow">if</span>(device.getIsMobile().hasValue()) {</div>
 <div class="c-code__line">    <span class="c-code__keywordtype">boolean</span> isMobile = device.getIsMobile().getValue();</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">    First, add the fiftyone.devicedetection package from NPM.</p>
@@ -610,14 +617,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div class="c-code__line">    // 3. The Pipeline can return all sorts of different data so we need to tell it the type of data that we want. In this case, details about the device associated with the User-Agent.</div>
 <div class="c-code__line">    var device = flowData.device;</div>
 <div class="c-code__line">});</div>
-</div><!-- fragment --><p>Accessing the property values is similar in the new API and the old API. The main difference is the addition of the 'hasValue' property that is used to indicate when no match has been found. For more detail on this see the <a class="el" href="_device_detection__features__false_positive_control.html" title="False Positives">false positive control</a> feature page.</p>
+</div><!-- fragment --><p>Accessing the property values is similar in the new API and the old API. The main difference is the addition of the 'hasValue' property that is used to indicate when no match has been found. For more detail on this see the <a class="el" href="_device_detection__features__false_positive_control.html" title="False positives">false positive control</a> feature page.</p>
 <p>As an example:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">var isMobile = device.ismobile;</div>
 </div><!-- fragment --><p>Becomes:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">if(device.ismobile.hasValue) {</div>
 <div class="c-code__line">    var isMobile = device.ismobile.value;</div>
 <div class="c-code__line">}</div>
-</div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="python" style="display:none;">    First, add the fiftyone_devicedetection package from PyPi.</p>
+</div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="python" style="display:none;">    First, add the fiftyone_devicedetection package from PyPI.</p>
 <p>With the V3 API, a provider could be created with something like this:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">provider = fiftyone_degrees_mobile_detector_v3_trie_wrapper.Provider(</div>
 <div class="c-code__line">    dataFile,</div>
@@ -636,17 +643,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <p>Once the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> has been created, you'll need to make a few changes to the way data is passed to it and accessed. With the old API, you would do something like this:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">match = provider.getMatch(userAgent)</div>
 </div><!-- fragment --><p>In the new API, this is slightly more complicated as it needs to deal with the potential for different types of data in and out.</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">// 1. Create a <span class="c-code__stringliteral">&#39;FlowData&#39;</span> instance <span class="c-code__keyword">from</span> the Pipeline. This <span class="c-code__keywordflow">is</span> used to <span class="c-code__keywordflow">pass</span> data <span class="c-code__keywordflow">in</span> <span class="c-code__keywordflow">and</span> access results.</div>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment"># 1. Create a &#39;FlowData&#39; instance from the Pipeline. This is used to pass data in and access results.</span></div>
 <div class="c-code__line">flowData = pipeline.create_flowdata()</div>
-<div class="c-code__line">// 2. Add <span class="c-code__stringliteral">&#39;evidence&#39;</span> to the FlowData <span class="c-code__keywordflow">and</span> process it. In this case, we are adding a User-Agent HTTP header.</div>
+<div class="c-code__line"><span class="c-code__comment"># 2. Add &#39;evidence&#39; to the FlowData and process it. In this case, we are adding a User-Agent HTTP header.</span></div>
 <div class="c-code__line">flowData.evidence.add(<span class="c-code__stringliteral">&quot;header.user-agent&quot;</span>, userAgent)</div>
-<div class="c-code__line">// 3. The Pipeline can <span class="c-code__keywordflow">return</span> all sorts of different data so we need to tell it the type of data that we want. In this case, details about the device associated <span class="c-code__keyword">with</span> the User-Agent.</div>
+<div class="c-code__line">flowData.process()</div>
+<div class="c-code__line"><span class="c-code__comment"># 3. The Pipeline can return all sorts of different data so we need to tell it the type of data that we want. In this case, details about the device associated with the User-Agent.</span></div>
 <div class="c-code__line">device = flowData.device</div>
-</div><!-- fragment --><p>Accessing the property values is similar in the new API and the old API. The main difference is the addition of the 'hasValue' property that is used to indicate when no match has been found. For more detail on this see the <a class="el" href="_device_detection__features__false_positive_control.html" title="False Positives">false positive control</a> feature page.</p>
+</div><!-- fragment --><p>Accessing the property values is similar in the new API and the old API. The main difference is the addition of the 'has_value()' method that is used to indicate when no match has been found. For more detail on this see the <a class="el" href="_device_detection__features__false_positive_control.html" title="False positives">false positive control</a> feature page.</p>
 <p>As an example:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">match.getValues(<span class="c-code__stringliteral">&#39;IsMobile&#39;</span>)</div>
 </div><!-- fragment --><p>Becomes:</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keywordflow">if</span> (device.ismobile.has_value():</div>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keywordflow">if</span> device.ismobile.has_value():</div>
 <div class="c-code__line">  isMobile = device.ismobile.value()</div>
 </div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">    If you currently use an On-premise data file with PHP then you will need to get the On-premise version of the PHP API from <a href="https://github.com/51Degrees/51degrees-php/tree/main/device-detection/onpremise">GitHub</a>.</p>
 <p>If you use the cloud version then you can install the fiftyone.devicedetection package from composer.</p>
@@ -660,20 +668,20 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 </div><!-- fragment --><p>Once the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> has been created, you'll need to make a few changes to the way data is passed to it and accessed. With the old API, you would do something like this:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">$match = $provider-&gt;getMatch($mobileUserAgent);</div>
 </div><!-- fragment --><p>In the new API, this is slightly more complicated as it needs to deal with the potential for different types of data in and out.</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">// 1. Create a &#39;FlowData&#39; instance from the Pipeline. This is used to pass data in and access results.</div>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">// 1. Create a &#39;FlowData&#39; instance from the Pipeline. This is used to pass data in and access results.</span></div>
 <div class="c-code__line">$flowData = $deviceDetectionPipeline-&gt;createFlowData();</div>
-<div class="c-code__line">// 2. Add &#39;evidence&#39; to the FlowData. In this case, we are adding a User-Agent HTTP header.</div>
-<div class="c-code__line">$flowData-&gt;evidence-&gt;set(&quot;header.user-agent&quot;, userAgent);</div>
-<div class="c-code__line">// 3. Process the evidence.</div>
+<div class="c-code__line"><span class="c-code__comment">// 2. Add &#39;evidence&#39; to the FlowData. In this case, we are adding a User-Agent HTTP header.</span></div>
+<div class="c-code__line">$flowData-&gt;evidence-&gt;set(<span class="c-code__stringliteral">&quot;header.user-agent&quot;</span>, $userAgent);</div>
+<div class="c-code__line"><span class="c-code__comment">// 3. Process the evidence.</span></div>
 <div class="c-code__line">$pipelineResult = $flowData-&gt;process();</div>
-<div class="c-code__line">// 4. The Pipeline can return all sorts of different data so we need to tell it the type of data that we want. In this case, details about the device associated with the User-Agent.</div>
-<div class="c-code__line">$device = $pipelineResult-&gt;get(&quot;device&quot;)</div>
-</div><!-- fragment --><p>Accessing the property values is similar in the new API and the old API. The main difference is the addition of the 'hasValue' property that is used to indicate when no match has been found. For more detail on this see the <a class="el" href="_device_detection__features__false_positive_control.html" title="False Positives">false positive control</a> feature page.</p>
+<div class="c-code__line"><span class="c-code__comment">// 4. The Pipeline can return all sorts of different data so we need to tell it the type of data that we want. In this case, details about the device associated with the User-Agent.</span></div>
+<div class="c-code__line">$device = $pipelineResult-&gt;get(<span class="c-code__stringliteral">&quot;device&quot;</span>);</div>
+</div><!-- fragment --><p>Accessing the property values is similar in the new API and the old API. The main difference is the addition of the 'hasValue' property that is used to indicate when no match has been found. For more detail on this see the <a class="el" href="_device_detection__features__false_positive_control.html" title="False positives">false positive control</a> feature page.</p>
 <p>As an example:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">$isMobile = $match-&gt;getValue(<span class="c-code__stringliteral">&quot;IsMobile&quot;</span>);</div>
 </div><!-- fragment --><p>Becomes:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keywordflow">if</span>($device-&gt;get(<span class="c-code__stringliteral">&quot;ismobile&quot;</span>)-&gt;hasValue) {</div>
-<div class="c-code__line">    $isMobile = $device-&gt;get(<span class="c-code__stringliteral">&quot;ismobile&quot;</span>).value;</div>
+<div class="c-code__line">    $isMobile = $device-&gt;get(<span class="c-code__stringliteral">&quot;ismobile&quot;</span>)-&gt;value;</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --><p> </div>   <div class="c-tabgroup__main" data-lang="nginx" style="display:none;">    Nginx module comes only with an On-premise version, you will need to get the On-premise version of the Nginx API from <a href="https://github.com/51Degrees/51degrees-nginx">GitHub</a>.</p>
 <p>The implementation of 51Degrees Device Detection V4 module is based on the V3 version and the migration process from V3 to V4 is straightforward. Existing V3 customers can build and use V4 in a similar way as V3. Please make sure to obtain a V4 Hash data file using 51Degrees <a class="el" href="_services__distributor.html" title="Distributor (On-premise)">Distributor</a> (License Key is required, check <a href="https://51degrees.com/pricing">pricing</a> page) and be aware of the changes described below.</p>
@@ -699,17 +707,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <li><code>51D_drift</code></li>
 <li><code>51D_difference</code></li>
 <li><code>51D_allow_unmatched</code></li>
-<li><code>51D_use_performance_graph</code></li>
-<li><code>51D_use_predictive_graph</code></li>
+<li><code>51D_use_performance_graph</code> and <code>51D_use_predictive_graph</code>. Since version 4.5 the performance graph is the same as the predictive graph, so these directives no longer change the detection results.</li>
 <li><code>51D_get_javascript_single</code></li>
 <li><code>51D_get_javascript_all</code></li>
 <li><code>51D_set_resp_headers</code></li>
 </ul>
 <p>New requirements in V4:</p><ul>
-<li>Building V4 module requires a compiler that support C11.</li>
+<li>Building the V4 module requires a compiler that supports C11.</li>
 <li>libatomic1</li>
 </ul>
-<p>Changes in behaviour:</p><ul>
+<p>Changes in behavior:</p><ul>
 <li><code>51D_match_all</code> also takes evidence from query string and cookie.<ul>
 <li>Evidence input from query string takes precedence over header evidence.<ul>
 <li>For example, if <code>User-Agent</code> is supplied via query string, the value will be used instead of the header <code>User-Agent</code>.</li>
@@ -760,7 +767,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <li>To support automatic requesting relevant User-Agent Client Hints, a new function <code>set_resp_headers</code> can be added to the <code>vcl_deliver</code> block. This only works with browsers that support User-Agent Client Hints. For device detection to work with User-Agent Client Hints, the function <code>match_all</code> should be used.</li>
 </ul>
 <p>New requirements in V4:</p><ul>
-<li>Building V4 module requires a compiler that support C11.</li>
+<li>Building the V4 module requires a compiler that supports C11.</li>
 <li>libatomic1</li>
 </ul>
 <p>Further reads:</p><ul>

@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Usage Sharing Examples - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Usage Sharing Examples</title>
+<meta name="description" content="Usage sharing examples - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Usage sharing examples</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,13 +64,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__examples__index.html">Pipeline API Examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__examples__usage_sharing.html">Usage Sharing Examples</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__examples__index.html">Pipeline API examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__examples__usage_sharing.html">Usage sharing examples</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Usage Sharing Examples </h1></div><!--header-->
+<h1 class="g-docs__page-title">Usage sharing examples </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-66">Introduction<a class="headerlink" href="#introduction-66" aria-label="Permalink to this section">🔗</a></h2>
-<p>This example demonstrates how to configure the <a class="el" href="_pipeline_api__features__usage_sharing.html" title="Usage Sharing Feature">usage sharing</a> feature.</p>
+<p>This example demonstrates how to configure the <a class="el" href="_pipeline_api__features__usage_sharing.html" title="Usage sharing feature">usage sharing</a> feature.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'pipeline-dotnet', '_usage_sharing_2_program_8cs')">.NET</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'pipeline-java', 'usagesharing_2_main_8java')">Java</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'pipeline-node', 'usage_sharing_2usage_sharing_8js')">Node</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'pipeline-python', 'usagesharing_2usagesharing_8py')">Python</button>   <div class="c-tabgroup__main" id="grabbed-example"></div>   </div>  </p>
 </div></div><!-- primary -->
 </div><!-- inner -->

@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -71,11 +69,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <h1 class="g-docs__page-title">Concepts </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><p><a class="el" href="_pipeline_api__concepts__flow_elements__index.html" title="Flow Elements">Flow Elements</a></p>
-<p><a class="el" href="_pipeline_api__concepts__data__index.html" title="Types of Data">Types of Data</a></p>
-<p><a class="el" href="_pipeline_api__concepts__meta_data__index.html" title="Metadata Properties">Metadata Properties</a></p>
+<div class="textblock"><p><a class="el" href="_pipeline_api__concepts__flow_elements__index.html" title="Flow elements">Flow elements</a></p>
+<p><a class="el" href="_pipeline_api__concepts__data__index.html" title="Types of data">Types of data</a></p>
+<p><a class="el" href="_pipeline_api__concepts__meta_data__index.html" title="Metadata properties">Metadata properties</a></p>
 <p><a class="el" href="_pipeline_api__concepts__configuration__index.html" title="Configuration">Configuration</a></p>
-<p><a class="el" href="_pipeline_api__concepts__pipeline_basics.html" title="Pipeline Basics">Pipeline Basics</a></p>
+<p><a class="el" href="_pipeline_api__concepts__pipeline_basics.html" title="Pipeline basics">Pipeline basics</a></p>
 <p><a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a></p>
 <p><a class="el" href="_pipeline_api__concepts__terminology.html" title="Terminology">Terminology</a> </p>
 </div></div><!-- primary -->

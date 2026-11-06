@@ -1,10 +1,10 @@
 var _pipeline_api__concepts__index =
 [
-    [ "Flow Elements", "_pipeline_api__concepts__flow_elements__index.html", "_pipeline_api__concepts__flow_elements__index" ],
-    [ "Types of Data", "_pipeline_api__concepts__data__index.html", "_pipeline_api__concepts__data__index" ],
-    [ "Metadata Properties", "_pipeline_api__concepts__meta_data__index.html", "_pipeline_api__concepts__meta_data__index" ],
+    [ "Flow elements", "_pipeline_api__concepts__flow_elements__index.html", "_pipeline_api__concepts__flow_elements__index" ],
+    [ "Types of data", "_pipeline_api__concepts__data__index.html", "_pipeline_api__concepts__data__index" ],
+    [ "Metadata properties", "_pipeline_api__concepts__meta_data__index.html", "_pipeline_api__concepts__meta_data__index" ],
     [ "Configuration", "_pipeline_api__concepts__configuration__index.html", "_pipeline_api__concepts__configuration__index" ],
-    [ "Pipeline Basics", "_pipeline_api__concepts__pipeline_basics.html", [
+    [ "Pipeline basics", "_pipeline_api__concepts__pipeline_basics.html", [
       [ "51Degrees Pipeline documentation", "_pipeline_api__concepts__pipeline_basics.html#autotoc_md51degrees-pipeline-documentation", [
         [ "Fundamentals", "_pipeline_api__concepts__pipeline_basics.html#fundamentals", null ],
         [ "Key features", "_pipeline_api__concepts__pipeline_basics.html#key-features", null ],

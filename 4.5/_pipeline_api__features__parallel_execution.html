@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Parallel Execution - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Parallel Execution</title>
+<meta name="description" content="Parallel execution - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Parallel execution</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -64,25 +62,25 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__features__index.html">API Features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__features__parallel_execution.html">Parallel Execution</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__features__index.html">API features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__features__parallel_execution.html">Parallel execution</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Parallel Execution </h1></div><!--header-->
+<h1 class="g-docs__page-title">Parallel execution </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-77">Introduction<a class="headerlink" href="#introduction-77" aria-label="Permalink to this section">🔗</a></h2>
-<p><b>Parallel execution</b> can refer to two or more <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> whose processing is executed simultaneously within the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>.</p>
-<p>It also refers to the ability of an individual <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> instance to process multiple requests simultaneously. For example, one <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> instance with one <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> being called from separate threads.</p>
-<p>Note, that some languages with <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> implementations do not have the built-in ability to handle <b>parallel execution</b>. For example, the PHP process runs in a single-thread, so <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> cannot be configured to run in <b>parallel</b>.</p>
+<p><b>Parallel execution</b> can refer to two or more <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow elements</a> whose processing is executed simultaneously within the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>.</p>
+<p>It also refers to the ability of an individual <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a> instance to process multiple requests simultaneously. For example, one <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> instance with one <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a> being called from separate threads.</p>
+<p>Some <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> implementations do not support <b>parallel execution</b>. For example, PHP runs in a single thread, so you cannot configure <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow elements</a> to run in <b>parallel</b>.</p>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/advanced-features/parallel-processing.md#">Specification</a> for more technical details.</p>
 <h2 class="doxsection" id="executing-flow-elements-in-parallel">Executing flow elements in parallel<a class="headerlink" href="#executing-flow-elements-in-parallel" aria-label="Permalink to this section">🔗</a></h2>
-<p>By default, <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> are executed sequentially in the order they are added to the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>. However, if the <a class="el" href="_product_summaries__feature_matrix.html" title="Feature Matrix">language supports it</a>, two or more <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> can be executed in <b>parallel</b> within the overall sequential structure.</p>
+<p>By default, <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow elements</a> are executed sequentially in the order they are added to the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>. However, if the <a class="el" href="_product_summaries__feature_matrix.html" title="Feature matrix">language supports it</a>, two or more <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow elements</a> can be executed in <b>parallel</b> within the overall sequential structure.</p>
 <div class="dotgraph">
 <iframe scrolling="no" loading="lazy" frameborder="0" src="dot_pipeline-parallel-process.gvdot_ff7c7d622ca432386c84edf0993e81aa.svg" width="498" height="199"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <p>In the example above, elements <b>E1</b> and <b>E2</b> will start their processing at the same time.</p>
 <p>Note that <b>parallel execution</b> is limited by the hardware the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> is running on. If the CPU only has two cores, then running four elements in parallel is unlikely to prove effective.</p>
 <h2 class="doxsection" id="calling-the-pipeline-from-multiple-threads">Calling the Pipeline from multiple threads<a class="headerlink" href="#calling-the-pipeline-from-multiple-threads" aria-label="Permalink to this section">🔗</a></h2>
-<p>The <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> is able to handle concurrent process requests. However, the ability of a <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> to also support this will depend on its individual implementation.</p>
-<p>All 51Degrees <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> have been designed to function correctly in this scenario (assuming the <a class="el" href="_product_summaries__feature_matrix.html" title="Feature Matrix">language supports it</a>). </p>
+<p>The <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> is able to handle concurrent process requests. However, the ability of a <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a> to also support this will depend on its individual implementation.</p>
+<p>All 51Degrees <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow elements</a> have been designed to function correctly in this scenario (assuming the <a class="el" href="_product_summaries__feature_matrix.html" title="Feature matrix">language supports it</a>). </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->

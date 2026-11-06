@@ -36,18 +36,16 @@
    <div id="projectbrief">Device detection services for 51Degrees Pipeline</div>
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -68,8 +66,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_u_a_c_h-manua
 <h1 class="g-docs__page-title">UACH-manual/Startup.cs</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<p>This example demonstrates device detection using user-agent client hints in a real-world scenario.</p>
-<p>This example demonstrates device detection using user-agent client hints in a real-world scenario. When a clint-hints-enabled user first visits a website, the server will recieve the sec-ch-ua and sec-ch-ua-mobile headers. Along with the user-agent. This information is then used to determine if the client supports user-agent client hints and request them if needed by setting the Accept-CH header in the response. Clicking the button below will cause a new request to be sent to the server, along with any additional headers that have been requested.  </p>
+<p>This example demonstrates device detection using User-Agent Client Hints on a website.</p>
+<p>This example demonstrates device detection using User-Agent Client Hints on a website. When a browser that supports User-Agent Client Hints first visits a website, the server receives the sec-ch-ua and sec-ch-ua-mobile headers along with the user-agent header. The server uses these headers to determine whether the browser supports User-Agent Client Hints. It can request additional hints by setting the Accept-CH response header. Clicking the button below will cause a new request to be sent to the server, along with any additional headers that have been requested.  </p>
 <p>In this scenario, the standard Pipeline API web integration is not used. This means that several jobs that the API usually takes care of automatically must be handled manually. For example, setting the HTTP response headers to request user-agent client hints.</p>
 <p>The source code for this example is available in full on <a href="https://github.com/51Degrees/51degrees-dotnet/tree/main/examples/device-detection/Legacy%20Web/UACH-manual">GitHub</a>.</p>
 <p>Required NuGet Dependencies:</p><ul>

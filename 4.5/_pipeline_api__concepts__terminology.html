@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -90,7 +88,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <p>A service accessed via a <a class="el" href="#PipelineApi_Concepts_Terminology_WebRequest" title="Web request">web request</a>. It is used to send data, receive data, carry out processing, or all of the above.</p>
 <p>A cloud service can be used in much the same way as a local service running on the same machine, with the extra step of a <a class="el" href="#PipelineApi_Concepts_Terminology_WebRequest" title="Web request">web request</a> being required.</p>
 <h2 class="doxsection" id="PipelineApi_Concepts_Terminology_DataTier">Data tier<a class="headerlink" href="#PipelineApi_Concepts_Terminology_DataTier" aria-label="Permalink to this section">🔗</a></h2>
-<p>The data tier is a term that encapsulates the properties and capabilities that a user has access to.</p>
+<p>A data tier defines the properties and capabilities you can access.</p>
 <p>Currently active tiers are:</p><ul>
 <li>Lite</li>
 <li>Enterprise</li>

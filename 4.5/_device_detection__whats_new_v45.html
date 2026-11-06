@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="What&#39;s New in Version 4.5 - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: What&#39;s New in Version 4.5</title>
+<meta name="description" content="Device detection version 4.5 features - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Device detection version 4.5 features</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -64,28 +62,28 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__whats_new_v45.html">What's New in Version 4.5</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__whats_new_v45.html">Device detection version 4.5 features</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">What's New in Version 4.5 </h1></div><!--header-->
+<h1 class="g-docs__page-title">Device detection version 4.5 features </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="doxsection" id="whats-new-in-version-45-of-device-detection">What's New in Version 4.5 of Device Detection<a class="headerlink" href="#whats-new-in-version-45-of-device-detection" aria-label="Permalink to this section">🔗</a></h2>
+<div class="textblock"><h2 class="doxsection" id="device-detection-version-45-features">Device detection version 4.5 features<a class="headerlink" href="#device-detection-version-45-features" aria-label="Permalink to this section">🔗</a></h2>
 <h2 class="doxsection" id="performance">Performance<a class="headerlink" href="#performance" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
-<li>Optimized processing of <a class="el" href="_device_detection__features__u_a_c_h__overview.html" title="UA-CH Overview">User-Agent Client Hints</a>, reducing lookup time.</li>
+<li>Optimized processing of <a class="el" href="_device_detection__features__u_a_c_h__overview.html" title="UA-CH overview">User-Agent Client Hints</a>, reducing lookup time.</li>
 </ul>
-<h2 class="doxsection" id="graph-selection">Graph Selection<a class="headerlink" href="#graph-selection" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="graph-selection">Graph selection<a class="headerlink" href="#graph-selection" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
-<li>Removed <code>usePerformanceGraph</code> and <code>usePredictiveGraph</code> configuration options. <br  />
- Detection now uses a single, unified predictive graph.</li>
+<li>The data files now point the performance graph at the predictive graph, so detection uses a single predictive graph. <br  />
+ The <code>usePerformanceGraph</code> and <code>usePredictiveGraph</code> configuration options remain, but they no longer change the results. At least one of them must be <code>true</code>.</li>
 </ul>
-<h2 class="doxsection" id="property-retrieval">Property Retrieval<a class="headerlink" href="#property-retrieval" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="property-retrieval">Property retrieval<a class="headerlink" href="#property-retrieval" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
 <li>Added <code>propertyValueIndex</code> configuration option. <br  />
  When <code>true</code>, property values are indexed at startup for faster retrieval. <br  />
- See <a class="el" href="_device_detection__features__performance_options.html" title="Performance Options">Property Indexing</a> for more details.</li>
+ See <a class="el" href="_device_detection__features__performance_options.html" title="Performance options">Property Indexing</a> for more details.</li>
 </ul>
-<h2 class="doxsection" id="new-evidence-keys">New Evidence Keys<a class="headerlink" href="#new-evidence-keys" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="evidence-keys">Evidence keys<a class="headerlink" href="#evidence-keys" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
 <li><p class="startli">Added support for alternative representations of User-Agent Client Hints via the following evidence keys (usable with <code>query.</code> and <code>cookie.</code> prefixes):</p><ul>
 <li><code>51D_GetHighEntropyValues</code>: Base64-encoded JSON string from <code>JSON.stringify()</code> of the <code>getHighEntropyValues()</code> JavaScript call.</li>
@@ -102,11 +100,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <p class="startli">The conversion happens natively in the device detection engine, eliminating the need for additional pipeline elements. See the <a class="el" href="_device_detection__features__u_a_c_h__javascript.html" title="JavaScript">UA-CH JavaScript page</a> for detailed usage information.</p>
 </li>
 </ul>
-<h2 class="doxsection" id="results-serialization">Results Serialization<a class="headerlink" href="#results-serialization" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="results-serialization">Results serialization<a class="headerlink" href="#results-serialization" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
 <li>Introduced <code>ResultsHashSerializer</code> service class. <br  />
- Enables retrieval of all detected property values as a single JSON-serialized string. <br  />
- Previously, properties could only be accessed individually by key. </li>
+ Enables retrieval of all detected property values as a single JSON-serialized string. </li>
 </ul>
 </div></div><!-- primary -->
 </div><!-- inner -->

@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Pipeline Builder - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Pipeline Builder</title>
+<meta name="description" content="Pipeline builder - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Pipeline builder</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,28 +64,28 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__index.html">Concepts</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__configuration__index.html">Configuration</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__configuration__builders__index.html">Builders</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__configuration__builders__pipeline_builder.html">Pipeline Builder</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__index.html">Concepts</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__configuration__index.html">Configuration</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__configuration__builders__index.html">Builders</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__configuration__builders__pipeline_builder.html">Pipeline builder</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Pipeline Builder </h1></div><!--header-->
+<h1 class="g-docs__page-title">Pipeline builder </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-46">Introduction<a class="headerlink" href="#introduction-46" aria-label="Permalink to this section">🔗</a></h2>
-<p>A <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> is created using a <b>builder</b> which follows the <a href="https://en.wikipedia.org/wiki/Fluent_interface">fluent builder pattern</a>. <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">Flow elements</a> are added to a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> via the <b>builder</b>, along with other configuration options for the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>. In languages that support it, a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> can also be built from a configuration file.</p>
+<p>A <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> is created using a <b>builder</b> which follows the <a href="https://en.wikipedia.org/wiki/Fluent_interface">fluent builder pattern</a>. <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">Flow elements</a> are added to a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> via the <b>builder</b>, along with other configuration options for the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>. In languages that support it, a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> can also be built from a configuration file.</p>
 <p>A <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>'s configuration is immutable once it has been constructed, so all its configuration must be done in the <b>builder</b>.</p>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/pipeline-configuration.md#">Specification</a> for more technical details.</p>
 <h2 class="doxsection" id="options">Options<a class="headerlink" href="#options" aria-label="Permalink to this section">🔗</a></h2>
-<h2 class="doxsection" id="auto-dispose-elements">Auto dispose Elements<a class="headerlink" href="#auto-dispose-elements" aria-label="Permalink to this section">🔗</a></h2>
-<p>By default, when a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> is disposed of, the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> which it contained will still exist and will need to be disposed of at some point.</p>
-<p>An option is available in the <b>Pipeline builder</b> to automatically dispose of all the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> on the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> during its own disposal. This option should not be used when a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> contains <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> which are also present in another <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>, as they may still be required elsewhere. This should not usually be the case, but must be considered if building multiple <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipelines</a>.</p>
+<h2 class="doxsection" id="auto-dispose-elements">Auto dispose elements<a class="headerlink" href="#auto-dispose-elements" aria-label="Permalink to this section">🔗</a></h2>
+<p>By default, when a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> is disposed of, the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow elements</a> which it contained will still exist and will need to be disposed of at some point.</p>
+<p>An option is available in the <b>Pipeline builder</b> to automatically dispose of all the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow elements</a> on the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> during its own disposal. This option should not be used when a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> contains <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow elements</a> which are also present in another <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>, as they may still be required elsewhere. This should not usually be the case, but must be considered if building multiple <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipelines</a>.</p>
 <h2 class="doxsection" id="PipelineApi_Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions">Suppress process exceptions<a class="headerlink" href="#PipelineApi_Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions" aria-label="Permalink to this section">🔗</a></h2>
-<p>By default, exceptions that occur during the processing of a <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a> will be thrown. However, it is sometimes preferable to suppress and analyze these at runtime, rather than breaking the execution.</p>
-<p>By enabling this option, any exceptions that occur during the processing of a <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a> are added to an <a class="el" href="_pipeline_api__concepts__data__flow_data.html#PipelineApi_Concepts_Data_FlowData_Errors" title="Errors">errors</a> collection in the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a> and are not thrown.</p>
+<p>By default, exceptions that occur during the processing of a <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow data">flow data</a> will be thrown. However, it is sometimes preferable to suppress and analyze these at runtime, rather than breaking the execution.</p>
+<p>By enabling this option, any exceptions that occur during the processing of a <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow data">flow data</a> are added to an <a class="el" href="_pipeline_api__concepts__data__flow_data.html#PipelineApi_Concepts_Data_FlowData_Errors" title="Errors">errors</a> collection in the <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow data">flow data</a> and are not thrown.</p>
 <h2 class="doxsection" id="configuration-1">Configuration<a class="headerlink" href="#configuration-1" aria-label="Permalink to this section">🔗</a></h2>
 <p>Following the convention of fluent builder, configuration methods are prefixed with 'set'. For example, to set the 'auto dispose elements' option, the <b>builder</b> has a 'SetAutoDisposeElements' method which takes a boolean as an argument and returns the <b>builder</b>.</p>
 <h2 class="doxsection" id="building-1">Building<a class="headerlink" href="#building-1" aria-label="Permalink to this section">🔗</a></h2>
 <p>Once all options are set in the <b>builder</b>, a 'build' method is used to build and return a <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> with the configuration provided.</p>
 <h2 class="doxsection" id="building-from-a-configuration">Building from a configuration<a class="headerlink" href="#building-from-a-configuration" aria-label="Permalink to this section">🔗</a></h2>
-<p>Rather than setting all build options and <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow elements</a> explicitly in code form, it is often preferable to make the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> configurable without the need to recompile. For more on this, see <a class="el" href="_pipeline_api__concepts__configuration__builders__build_from_configuration.html" title="Building from Configuration">Building from Configuration</a>.</p>
+<p>Rather than setting all build options and <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow elements</a> explicitly in code form, it is often preferable to make the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> configurable without the need to recompile. For more on this, see <a class="el" href="_pipeline_api__concepts__configuration__builders__build_from_configuration.html" title="Building from configuration">Building from Configuration</a>.</p>
 <h2 class="doxsection" id="usage-4">Usage<a class="headerlink" href="#usage-4" aria-label="Permalink to this section">🔗</a></h2>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'python')">Python</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language to view language specific usage example.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">IPipeline pipeline = <span class="c-code__keyword">new</span> PipelineBuilder(loggerFactory)</div>
 <div class="c-code__line">    .SetAutoDisposeElements(<span class="c-code__keyword">true</span>)</div>

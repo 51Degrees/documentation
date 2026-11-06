@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Reverse Geocoding Quick Start - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Reverse Geocoding Quick Start</title>
+<meta name="description" content="Reverse Geocoding quick start - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Reverse Geocoding quick start</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -64,19 +62,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_reverse_geoco
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_reverse_geocoding__index.html">Reverse Geocoding</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_reverse_geocoding__quickstart.html">Reverse Geocoding Quick Start</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_reverse_geocoding__index.html">Reverse Geocoding</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_reverse_geocoding__quickstart.html">Reverse Geocoding quick start</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Reverse Geocoding Quick Start </h1></div><!--header-->
+<h1 class="g-docs__page-title">Reverse Geocoding quick start </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="doxsection" id="getting-started-with-reverse-geocoding">Getting Started with Reverse Geocoding<a class="headerlink" href="#getting-started-with-reverse-geocoding" aria-label="Permalink to this section">🔗</a></h2>
-<p>Reverse geocoding turns GPS coordinates into real places like countries, cities, and addresses. Here's how to set it up in minutes.</p>
-<h2 class="doxsection" id="step-1-get-your-resource-key">Step 1: Get Your Resource Key<a class="headerlink" href="#step-1-get-your-resource-key" aria-label="Permalink to this section">🔗</a></h2>
+<div class="textblock"><h2 class="doxsection" id="getting-started-with-reverse-geocoding">Getting started with Reverse Geocoding<a class="headerlink" href="#getting-started-with-reverse-geocoding" aria-label="Permalink to this section">🔗</a></h2>
+<p>Reverse geocoding converts latitude and longitude to location details such as countries, cities, and addresses. Follow these steps to set it up.</p>
+<h2 class="doxsection" id="step-1-get-your-resource-key">Step 1: Get your Resource Key<a class="headerlink" href="#step-1-get-your-resource-key" aria-label="Permalink to this section">🔗</a></h2>
 <p>You'll need a Resource Key to access our reverse geocoding service. Follow the <a class="el" href="_services__configurator.html" title="Creating a Resource Key">Resource Key guide</a> to create one. Make sure your Resource Key includes at least the Country field.</p>
-<h2 class="doxsection" id="step-2-install-the-library">Step 2: Install the Library<a class="headerlink" href="#step-2-install-the-library" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="step-2-install-the-library">Step 2: Install the library<a class="headerlink" href="#step-2-install-the-library" aria-label="Permalink to this section">🔗</a></h2>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'python')">Python</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language.  </div>   <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  Install the <a href="https://www.nuget.org/packages/FiftyOne.GeoLocation">FiftyOne.GeoLocation</a> package via Nuget.  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  Install the <a href="https://search.maven.org/artifact/com.51degrees/pipeline.geo-location">com.51degrees.pipeline.geo-location</a> package via Maven.  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  Install the <a href="https://www.npmjs.com/package/fiftyone.geolocation">fiftyone.geolocation</a> package from NPM with <code>npm install fiftyone.geolocation</code>  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  Install the <a href="https://packagist.org/packages/51degrees/fiftyone.geolocation">51degrees/fiftyone.geolocation</a> package using <a href="https://getcomposer.org">Composer</a> with <code>composer require 51degrees/fiftyone.geolocation</code>  </div>   <div class="c-tabgroup__main" data-lang="python" style="display:none;">  Install the <a href="https://pypi.org/project/fiftyone-location/">fiftyone-location</a> package from PyPI with <code>pip install fiftyone-location</code>.  </div> </p>
-<h2 class="doxsection" id="step-3-set-up-your-pipeline">Step 3: Set Up Your Pipeline<a class="headerlink" href="#step-3-set-up-your-pipeline" aria-label="Permalink to this section">🔗</a></h2>
-<p>The pipeline is how you connect to 51Degrees APIs (learn more in <a class="el" href="_pipeline_api__concepts__pipeline_basics.html" title="Pipeline Basics">basic pipeline description</a> and <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>). Use the Resource Key you created in step 1.</p>
+<h2 class="doxsection" id="step-3-set-up-your-pipeline">Step 3: Set up your pipeline<a class="headerlink" href="#step-3-set-up-your-pipeline" aria-label="Permalink to this section">🔗</a></h2>
+<p>The pipeline is how you connect to 51Degrees APIs (learn more in <a class="el" href="_pipeline_api__concepts__pipeline_basics.html" title="Pipeline basics">basic pipeline description</a> and <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a>). Use the Resource Key you created in step 1.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'python')">Python</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language.  </div> </p>
 <p> <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">string resourceKey = &quot;AAAAAAABBBBBBCCCCCC&quot;;</div>
 <div class="c-code__line">using (var pipeline =</div>
@@ -95,7 +93,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_reverse_geoco
 <div class="c-code__line">    .useLazyLoading(1000)</div>
 <div class="c-code__line">    .setAutoCloseElements(<span class="c-code__keyword">true</span>)</div>
 <div class="c-code__line">    .build();</div>
-</div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">const FiftyOneDegreesGeoLocation = require(&#39;./index&#39;);</div>
+</div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">const FiftyOneDegreesGeoLocation = require(&#39;fiftyone.geolocation&#39;);</div>
 <div class="c-code__line">let localResourceKey = &#39;AAAAAAAABBBBBBCC&#39;;</div>
 <div class="c-code__line">const pipeline = new FiftyOneDegreesGeoLocation.GeoLocationPipelineBuilder({</div>
 <div class="c-code__line">  resourceKey: localResourceKey</div>
@@ -113,7 +111,7 @@ $pipeline = $builder-&gt;build();
 <div class="c-code__line">resourceKey = <span class="c-code__stringliteral">&quot;AAAAAAAABBBBBBCC&quot;</span></div>
 <div class="c-code__line">pipeline = LocationPipelineBuilder({<span class="c-code__stringliteral">&quot;resourceKey&quot;</span>: resourceKey}).build()</div>
 </div><!-- fragment --><p>  </div> </p>
-<h2 class="doxsection" id="step-4-add-your-coordinates">Step 4: Add Your Coordinates<a class="headerlink" href="#step-4-add-your-coordinates" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="step-4-add-your-coordinates">Step 4: Add your coordinates<a class="headerlink" href="#step-4-add-your-coordinates" aria-label="Permalink to this section">🔗</a></h2>
 <p>You need to provide latitude and longitude coordinates (called <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a>). Use these specific keys:</p>
 <ul>
 <li>query.51D_pos_latitude</li>
@@ -144,7 +142,7 @@ $pipeline = $builder-&gt;build();
 <div class="c-code__line">fd.evidence.add(<span class="c-code__stringliteral">&quot;query.51D_Pos_latitude&quot;</span>, latitude)</div>
 <div class="c-code__line">fd.evidence.add(<span class="c-code__stringliteral">&quot;query.51D_Pos_longitude&quot;</span>, longitude)</div>
 </div><!-- fragment --><p>  </div> </p>
-<h2 class="doxsection" id="step-5-run-the-query">Step 5: Run the Query<a class="headerlink" href="#step-5-run-the-query" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="step-5-run-the-query">Step 5: Run the query<a class="headerlink" href="#step-5-run-the-query" aria-label="Permalink to this section">🔗</a></h2>
 <p>Call <code>process()</code> to start the reverse geocoding lookup.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'python')">Python</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language.  </div> </p>
 <p> <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">data.Process();</div>
@@ -152,26 +150,31 @@ $pipeline = $builder-&gt;build();
 </div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">$result = $flowData-&gt;process();</div>
 </div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="python" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">fd.process()</div>
 </div><!-- fragment --><p>  </div> </p>
-<h2 class="doxsection" id="step-6-get-your-results">Step 6: Get Your Results<a class="headerlink" href="#step-6-get-your-results" aria-label="Permalink to this section">🔗</a></h2>
-<p>Your results are in the <code>flowData</code> object (not returned from <code>process()</code>). Each property has a <code>hasValue</code> boolean. If it's populated, <code>hasValue</code> is true and <code>value</code> contains the result. If not, <code>hasValue</code> is false and you'll find why in the null reason property.</p>
+<h2 class="doxsection" id="step-6-get-your-results">Step 6: Get your results<a class="headerlink" href="#step-6-get-your-results" aria-label="Permalink to this section">🔗</a></h2>
+<p>Read the results from the flow data once <code>process()</code> has finished, as the snippets below show. Each property says whether it has a value (<code>HasValue</code> in C#, <code>hasValue()</code> in Java, <code>hasValue</code> in Node.js and PHP, and <code>has_value()</code> in Python). If it does, its value is the result. If not, its no value message says why.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'dotnet')">C#</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'java')">Java</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'python')">Python</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Select a language.  </div> </p>
 <p> <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">var country = data.Get&lt;IGeoData&gt;().Country;</div>
-<div class="c-code__line">Console.Write($&quot;Awaiting response&quot;);</div>
-<div class="c-code__line">CancellationTokenSource cancellationSource = new CancellationTokenSource();</div>
-<div class="c-code__line">Task.Run(() =&gt; { OutputUntilCancelled(&quot;.&quot;, 1000, cancellationSource.Token); });</div>
-<div class="c-code__line">cancellationSource.Cancel();</div>
-<div class="c-code__line">Console.WriteLine();</div>
-<div class="c-code__line">Console.WriteLine($&quot;Country: {country.ToString()}&quot;);</div>
+<div class="c-code__line">// With lazy loading, reading the value waits for the result, up to the</div>
+<div class="c-code__line">// timeout set in step 3.</div>
+<div class="c-code__line">if (country.HasValue)</div>
+<div class="c-code__line">{</div>
+<div class="c-code__line">    Console.WriteLine($&quot;Country: {country.Value}&quot;);</div>
+<div class="c-code__line">}</div>
+<div class="c-code__line">else</div>
+<div class="c-code__line">{</div>
+<div class="c-code__line">    Console.WriteLine($&quot;Country: {country.NoValueMessage}&quot;);</div>
+<div class="c-code__line">}</div>
 </div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">AspectPropertyValue&lt;String&gt; country = flowData.get(GeoData.class).getCountry();</div>
 <div class="c-code__line">Future future = flowData.get(GeoData.class).getProcessFuture();</div>
 <div class="c-code__line">System.out.print(<span class="c-code__stringliteral">&quot;Awaiting response&quot;</span>);</div>
 <div class="c-code__line">System.out.println(flowData.get(CloudRequestData.class).getJsonResponse());</div>
 <div class="c-code__line">System.out.println(<span class="c-code__stringliteral">&quot;Country: &quot;</span> + country.toString());</div>
 <div class="c-code__line">pipeline.close();</div>
-</div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">if (flowData.country.hasValue) {</div>
-<div class="c-code__line">    console.log(&quot;Country name:&quot;, flowData.country.value)</div>
+</div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">const country = flowData.location.country;</div>
+<div class="c-code__line">if (country.hasValue) {</div>
+<div class="c-code__line">    console.log(&quot;Country name:&quot;, country.value)</div>
 <div class="c-code__line">} else {</div>
-<div class="c-code__line">    console.error(&quot;Country not available:&quot;, flowData.countrynullreason)</div>
+<div class="c-code__line">    console.error(&quot;Country not available:&quot;, country.noValueMessage)</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --><p>  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">$country = $flowData-&gt;location-&gt;country;</div>
 <div class="c-code__line"> </div>
@@ -193,10 +196,10 @@ $pipeline = $builder-&gt;build();
 <p> <div class="c-tabgroup__main" data-lang="dotnet" style="display:none;">  <a href="https://github.com/51Degrees/51degrees-dotnet/blob/main/location/Examples/Cloud/GettingStarted/Program.cs">https://github.com/51Degrees/51degrees-dotnet/blob/main/location/Examples/Cloud/GettingStarted/Program.cs</a>  </div>   <div class="c-tabgroup__main" data-lang="java" style="display:none;">  <a href="https://github.com/51Degrees/51degrees-java/blob/main/location/geo-location.shell.examples/src/main/java/fiftyone/geolocation/examples/cloud/GettingStarted.java">https://github.com/51Degrees/51degrees-java/blob/main/location/geo-location.shell.examples/src/main/java/fiftyone/geolocation/examples/cloud/GettingStarted.java</a>  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  <a href="https://github.com/51Degrees/51degrees-node/blob/main/location/examples/gettingStarted.js">https://github.com/51Degrees/51degrees-node/blob/main/location/examples/gettingStarted.js</a>  </div>   <div class="c-tabgroup__main" data-lang="php" style="display:none;">  <a href="https://github.com/51Degrees/51degrees-php/blob/main/location/examples/cloud/gettingstarted.php">https://github.com/51Degrees/51degrees-php/blob/main/location/examples/cloud/gettingstarted.php</a>  </div>   <div class="c-tabgroup__main" data-lang="python" style="display:none;">  <a href="https://github.com/51Degrees/51degrees-python/blob/main/location/examples/cloud/gettingstarted.py">https://github.com/51Degrees/51degrees-python/blob/main/location/examples/cloud/gettingstarted.py</a>  </div> </p>
 <h2 class="doxsection" id="troubleshooting-1">Troubleshooting<a class="headerlink" href="#troubleshooting-1" aria-label="Permalink to this section">🔗</a></h2>
 <p>Having issues? Here are common problems and fixes:</p>
-<h2 class="doxsection" id="resource-key-problems">Resource Key Problems<a class="headerlink" href="#resource-key-problems" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="resource-key-problems">Resource Key problems<a class="headerlink" href="#resource-key-problems" aria-label="Permalink to this section">🔗</a></h2>
 <p><b>"Resource Key not found" error:</b> Your Resource Key is invalid. Create a new one with the properties you need.</p>
 <p><b>Properties missing from results:</b> Your Resource Key might not have access to location properties. Check what your key can access at <a href="https://configure.51degrees.com/YOUR_RESOURCE_KEY">https://configure.51degrees.com/YOUR_RESOURCE_KEY</a> or create a new key with the right permissions.</p>
-<h2 class="doxsection" id="wrong-evidence-keys">Wrong Evidence Keys<a class="headerlink" href="#wrong-evidence-keys" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="wrong-evidence-keys">Wrong evidence keys<a class="headerlink" href="#wrong-evidence-keys" aria-label="Permalink to this section">🔗</a></h2>
 <p>If you get an error about missing evidence, check you're using the correct keys:</p>
 <ul>
 <li>query.51d_pos_latitude</li>

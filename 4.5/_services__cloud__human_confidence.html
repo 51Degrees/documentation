@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -81,7 +79,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 </ol>
 <h2 class="doxsection" id="step-1-create-a-resource-key">Step 1. Create a Resource Key<a class="headerlink" href="#step-1-create-a-resource-key" aria-label="Permalink to this section">🔗</a></h2>
 <p><a href="https://configure.51degrees.com/AQRVdgJ-fPDE5gU130g">Create a Resource Key from this link</a>. It opens with the properties Human Confidence needs already ticked. Add the License Key from your plan. A free License Key won't work, because Human Confidence starts at Pro.</p>
-<p>Don't add other properties to this key, as each one adds a script to the holding page and slows it down.</p>
+<p>Don't add other properties to this key. Some properties carry a script of their own that the holding page has to run, and each of those slows it down.</p>
 <p>Leave the domain list empty. The server calls the cloud with the same key, and a server request has no <code>Origin</code> header, so a key limited to domains fails with <code>401</code> and <code>This resource key is not authorised for the domain ''</code>. If you want the limit anyway, send an <code>Origin</code> header naming one of your domains on the server's request, for example <code>Origin: <a href="https://www.example.com">https://www.example.com</a></code>.</p>
 <p>Only the Resource Key goes in the holding page, never the License Key.</p>
 <p>To check the key, open <code><a href="https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.json">https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.json</a></code> in a browser. You should see this. Unknown is right at this point, because the script hasn't run yet.</p>
@@ -126,7 +124,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <div class="c-code__line">&lt;/body&gt;</div>
 <div class="c-code__line">&lt;/html&gt;</div>
 </div><!-- fragment --><ul>
-<li><code>fod-js-enable-cookies=true</code> asks the 51Degrees script to keep its values in cookies with names that start <code>51D_</code>. Without the parameter, the script keeps the values in session storage, which your server cannot read. See <a class="el" href="_pipeline_api__features__client_side_evidence.html" title="Client-side Evidence">Client-side Evidence</a> for more.</li>
+<li><code>fod-js-enable-cookies=true</code> asks the 51Degrees script to keep its values in cookies with names that start <code>51D_</code>. Without the parameter, the script keeps the values in session storage, which your server cannot read. See <a class="el" href="_pipeline_api__features__client_side_evidence.html" title="Client-side evidence">Client-side evidence</a> for more.</li>
 <li>Clients that don't run JavaScript, such as curl, stay on the holding page.</li>
 </ul>
 <h2 class="doxsection" id="step-3-ask-the-cloud-from-your-server-and-decide">Step 3. Ask the cloud from your server and decide<a class="headerlink" href="#step-3-ask-the-cloud-from-your-server-and-decide" aria-label="Permalink to this section">🔗</a></h2>
@@ -141,7 +139,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <li>The server sets <code>client-ip</code> last. A visitor's own <code>Client-IP</code> header can't then replace the address. If your site sits behind a load balancer or a CDN, make sure the address is the visitor's and not the load balancer's. Each example has a comment where this matters.</li>
 <li>Node.js writes IPv4 addresses in the form <code>::ffff:203.0.113.7</code>. The Node.js code removes the <code>::ffff:</code> part before sending the address.</li>
 </ul>
-<p>If the cloud can't be reached, takes longer than 2 seconds or returns an error status, the server lets the visitor through for that page and tries again on the next request. If the cloud does respond but with Unknown, the visitor gets your challenge (step 4). The example price API only answers sessions that are High, so it refuses calls until a check has worked.</p>
+<p>If the cloud can't be reached, takes longer than 2 seconds to answer a request, or returns an error status, the server lets the visitor through for that page and tries again on the next request. A check that also reads the evidence key list makes two requests, each with its own 2 second limit. If the cloud does respond but with Unknown, the visitor gets your challenge (step 4). The example price API only answers sessions that are High, so it refuses calls until a check has worked.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'node')">Node.js</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'php')">PHP</button>   <button class="b-btn b-btn--tab" onclick="showSnippet(this,'python')">Python</button>   <div class="c-tabgroup__main" data-lang="none" style="display:block;">  Choose a language to see the server code.  </div>   <div class="c-tabgroup__main" data-lang="node" style="display:none;">  This uses Express and needs Node.js 18 or later. Save it as <code>server.mjs</code> next to <code>holding.html</code>, then run these two commands.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">npm install express express-session</div>
 <div class="c-code__line">RESOURCE_KEY=YOUR_RESOURCE_KEY SESSION_SECRET=any-long-random-text node server.mjs</div>
@@ -509,7 +507,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <p>A Low visit is almost always software, so you can serve it something made for software rather than a page made for people. The examples refuse it, and these are the other treatments websites use, alone or together:</p>
 <ul>
 <li><b>The page without what you sell.</b> A retailer serves the product page without prices and stock, a listing site answers a search with no contact details, and a publisher serves the first paragraph of the article.</li>
-<li><b>Content for machines.</b> Serve the same content as Markdown or plain text instead of HTML, with no navigation, scripts, or ads, so an AI gets what it came for cheaply and your page for people stays as it is.</li>
+<li><b>Content for machines.</b> Serve the same content as Markdown or plain text instead of HTML, with no navigation, scripts, or ads, so software gets what it came for cheaply and your page for people stays as it is.</li>
 <li><b>Your license terms.</b> Serve the terms the software has to accept to use your content, with a way to get a license. Ours is <a href="https://51degrees.com/ai-notice">the AI notice</a>. The Movement for an Open Web's <a href="https://m4ow.uk/socw/3.txt">Search Only Contract</a> is a published set of terms any website can adopt, and the <a href="https://51degrees.com/robots-txt">robots.txt generator</a> writes a robots.txt that cites it.</li>
 <li><b>No ads.</b> Leave the ad slots empty, so nobody pays to show an ad to a script.</li>
 <li><b>A block.</b> Refuse with <code>403</code>, as the example API does, and log the visit.</li>

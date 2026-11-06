@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -95,7 +93,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <tr class="c-table__row">
 <td class="c-table__cell"><code>/api/v4/pmp/&lt;key&gt;.js</code> and <code>/api/v4/adi/&lt;key&gt;.js</code>  </td><td class="c-table__cell">No  </td><td class="c-table__cell">The loaders.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>/api/v4/pmp/&lt;key&gt;/&lt;name&gt;</code> and <code>/api/v4/adi/&lt;key&gt;/&lt;name&gt;</code>  </td><td class="c-table__cell">Yes  </td><td class="c-table__cell">The bundles, one per page view.  </td></tr>
+<td class="c-table__cell"><code>/api/v4/pmp/&lt;key&gt;/&lt;name&gt;</code> and <code>/api/v4/adi/&lt;key&gt;/&lt;name&gt;</code>  </td><td class="c-table__cell">Yes  </td><td class="c-table__cell">The bundles, one per download. A browser can keep a bundle for a day, so later page views in that browser can reuse it without a new request.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><code>/api/v4/pmp/pref</code>  </td><td class="c-table__cell">No  </td><td class="c-table__cell">The shared answer store. The key identifies the caller and is not charged.  </td></tr>
 <tr class="c-table__row">
@@ -120,7 +118,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_services__clo
 <h2 class="doxsection" id="find-out-more-10">Find out more<a class="headerlink" href="#find-out-more-10" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
 <li><a class="el" href="_services__cloud__resource_keys.html" title="Resource Keys">Resource Keys</a>, for the two kinds of key and the domains a key accepts</li>
-<li><a class="el" href="_services__cloud__overview.html" title="Cloud Service Overview">Cloud Service Overview</a>, for the caching rules</li>
+<li><a class="el" href="_services__cloud__overview.html" title="Cloud Service overview">Cloud Service overview</a>, for the caching rules</li>
 <li><a class="el" href="_identifiers__p_m_p.html" title="PMP (Preference Management Platform)">PMP (Preference Management Platform)</a> and <a class="el" href="_identifiers__a_d_i.html" title="ADI (Ad Inspector)">ADI (Ad Inspector)</a>, for the loader and bundle requests</li>
 <li><a href="https://51degrees.com/pricing">Pricing</a>, for the allowance each plan gives </li>
 </ul>

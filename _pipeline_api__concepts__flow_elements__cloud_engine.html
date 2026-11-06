@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Cloud Engine - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Cloud Engine</title>
+<meta name="description" content="Cloud engine - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Cloud engine</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,25 +64,25 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__index.html">Concepts</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__flow_elements__index.html">Flow Elements</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__flow_elements__cloud_engine.html">Cloud Engine</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__index.html">Concepts</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__flow_elements__index.html">Flow elements</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__flow_elements__cloud_engine.html">Cloud engine</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Cloud Engine </h1></div><!--header-->
+<h1 class="g-docs__page-title">Cloud engine </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-55">Introduction<a class="headerlink" href="#introduction-55" aria-label="Permalink to this section">🔗</a></h2>
-<p><b>Cloud Engines</b> are a specialization of <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> where the processing is handed off to a <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_CloudService" title="Cloud service">Cloud Service</a>. This is in contrast to an <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html" title="On-premise Engine">On-premise Engine</a> where processing occurs locally to the <b>engine</b>. Having data that does not reside in the <b>engine</b> itself means that the same <b>engine</b> can be used with multiple data sets.</p>
+<p><b>Cloud Engines</b> are a specialization of <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect engine">Aspect Engine</a> where the processing is handed off to a <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_CloudService" title="Cloud service">Cloud Service</a>. This is in contrast to an <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html" title="On-premise engine">On-premise Engine</a> where processing occurs locally to the <b>engine</b>. Having data that does not reside in the <b>engine</b> itself means that the same <b>engine</b> can be used with multiple data sets.</p>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#cloud-aspect-engine">Specification</a> for more technical details.</p>
 <h2 class="doxsection" id="use-cases-4">Use cases<a class="headerlink" href="#use-cases-4" aria-label="Permalink to this section">🔗</a></h2>
-<p>A <b>Cloud Engine</b> is very lightweight compared to an <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html" title="On-premise Engine">On-premise Engine</a> both in terms of memory and CPU usage. This is because all the complex processing and any data that is required for that processing to occur are handled by the associated <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_CloudService" title="Cloud service">Cloud Service</a>. The trade-off is that a <b>Cloud Engine</b> cannot provide the same performance as an <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html" title="On-premise Engine">On-premise Engine</a>.</p>
-<p>In many cases, a <b>Cloud Engine's</b> performance is sufficient and is ideal for small environments where memory is in short supply. On small services such as a cloud Lambda function where there are low limits to the size of the services, <b>Cloud Engines</b> are a perfect fit.</p>
+<p>A <b>Cloud Engine</b> is very lightweight compared to an <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html" title="On-premise engine">On-premise Engine</a> both in terms of memory and CPU usage. This is because all the complex processing and any data that is required for that processing to occur are handled by the associated <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_CloudService" title="Cloud service">Cloud Service</a>. The trade-off is that a <b>Cloud Engine</b> cannot provide the same performance as an <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html" title="On-premise engine">On-premise Engine</a>.</p>
+<p>Consider a <b>Cloud Engine</b> when local memory is limited, such as in a small Lambda function. Account for the latency of requests to the cloud service.</p>
 <p>As <b>Cloud Engines</b> typically offload the actual processing onto a <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_CloudService" title="Cloud service">Cloud Service</a>, this also makes them a good choice for environments that lack processing power. By letting a <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_CloudService" title="Cloud service">Cloud Service</a> do all the work, CPU cycles are freed up on the low power device for other tasks.</p>
 <h2 class="doxsection" id="internals-2">Internals<a class="headerlink" href="#internals-2" aria-label="Permalink to this section">🔗</a></h2>
 <p>All the data for a <b>Cloud Engine</b> is accessed through a <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_CloudService" title="Cloud service">Cloud Service</a>, any data or processing needed by the <b>engine</b> is serviced through HTTP requests. This means the <b>engine</b> itself has limited knowledge of its capabilities, for example, the properties available in a <b>Cloud Engine</b> may be populated from a request to the <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_CloudService" title="Cloud service">Cloud Service</a>.</p>
 <p>Typically, a <b>Cloud Engine</b> does not carry out processing itself. Instead, its processing consists of sending a call to a <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_CloudService" title="Cloud service">Cloud Service</a> and interpreting the result.</p>
-<h2 class="doxsection" id="autotoc_md51degrees-cloud-engines">51Degrees Cloud Engines<a class="headerlink" href="#autotoc_md51degrees-cloud-engines" aria-label="Permalink to this section">🔗</a></h2>
-<p>The functionality of all <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engines</a> that make use of the 51Degrees cloud is split into two separate <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engines</a>. The 'cloud request engine' marshals the evidence and makes a request to the Cloud Service. The resulting raw JSON string is stored in the request engine's associated <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a>.</p>
-<p>There are then individual <b>Cloud Engines</b> that can be added to the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> for each <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_Aspect" title="Aspect">aspect</a>. These will take the part of the raw JSON string which is relevant to them and transform it into something with the same interface as the associated <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html" title="On-premise Engine">On-premise Engine</a>.</p>
-<p>This splitting allows a single request to be made even if the details of multiple <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_Aspect" title="Aspect">aspects</a> need to be populated while also allowing the ability to easily swap between a <b>Cloud Engine</b> and the <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html" title="On-premise Engine">On-premise Engine</a> concerned with the same <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_Aspect" title="Aspect">aspect</a>. </p>
+<h2 class="doxsection" id="autotoc_md51degrees-cloud-engines">51Degrees cloud engines<a class="headerlink" href="#autotoc_md51degrees-cloud-engines" aria-label="Permalink to this section">🔗</a></h2>
+<p>The functionality of all <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect engine">Aspect Engines</a> that make use of the 51Degrees cloud is split into two separate <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect engine">Aspect Engines</a>. The 'cloud request engine' marshals the evidence and makes a request to the Cloud Service. The resulting raw JSON string is stored in the request engine's associated <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element data">element data</a>.</p>
+<p>There are then individual <b>Cloud Engines</b> that can be added to the <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> for each <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_Aspect" title="Aspect">aspect</a>. These will take the part of the raw JSON string which is relevant to them and transform it into something with the same interface as the associated <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html" title="On-premise engine">On-premise Engine</a>.</p>
+<p>This splitting allows a single request to be made even if the details of multiple <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_Aspect" title="Aspect">aspects</a> need to be populated while also allowing the ability to easily swap between a <b>Cloud Engine</b> and the <a class="el" href="_pipeline_api__concepts__flow_elements__on_premise_engine.html" title="On-premise engine">On-premise Engine</a> concerned with the same <a class="el" href="_pipeline_api__concepts__terminology.html#PipelineApi_Concepts_Terminology_Aspect" title="Aspect">aspect</a>. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->

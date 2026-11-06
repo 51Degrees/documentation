@@ -1,15 +1,15 @@
 var _product_summaries__index =
 [
     [ "Benchmarks", "_product_summaries__benchmarks.html", "_product_summaries__benchmarks" ],
-    [ "Feature Matrix", "_product_summaries__feature_matrix.html", [
+    [ "Feature matrix", "_product_summaries__feature_matrix.html", [
       [ "Data services", "_product_summaries__feature_matrix.html#data-services", null ],
       [ "Web integrations and plugins", "_product_summaries__feature_matrix.html#web-integrations-and-plugins", null ],
-      [ "Pipeline API Features", "_product_summaries__feature_matrix.html#pipeline-api-features", null ]
+      [ "Pipeline API features", "_product_summaries__feature_matrix.html#pipeline-api-features", null ]
     ] ],
-    [ "OpenRTB Mappings (Moved)", "_product_summaries__open_r_t_b_mappings.html", [
-      [ "Location Changed", "_product_summaries__open_r_t_b_mappings.html#location-changed-3", null ]
+    [ "OpenRTB mappings (moved)", "_product_summaries__open_r_t_b_mappings.html", [
+      [ "OpenRTB mappings", "_product_summaries__open_r_t_b_mappings.html#openrtb-mappings", null ]
     ] ],
-    [ "Tested Versions", "_product_summaries__tested_versions.html", [
+    [ "Tested versions", "_product_summaries__tested_versions.html", [
       [ "Automation", "_product_summaries__tested_versions.html#automation", null ]
     ] ]
 ];

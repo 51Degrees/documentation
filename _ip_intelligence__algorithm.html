@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="IP Intelligence Algorithm - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: IP Intelligence Algorithm</title>
+<meta name="description" content="IP Intelligence algorithm - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: IP Intelligence algorithm</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,17 +64,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__index.html">IP Intelligence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__algorithm.html">IP Intelligence Algorithm</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__index.html">IP Intelligence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_ip_intelligence__algorithm.html">IP Intelligence algorithm</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">IP Intelligence Algorithm </h1></div><!--header-->
+<h1 class="g-docs__page-title">IP Intelligence algorithm </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="doxsection" id="ip-intelligence-algorithm">IP Intelligence Algorithm<a class="headerlink" href="#ip-intelligence-algorithm" aria-label="Permalink to this section">🔗</a></h2>
-<p>51Degrees IP Intelligence uses a directed acyclic graph to identify geolocation and network from a IP v4 or v6 address.</p>
-<h2 class="doxsection" id="core-algorithm-design">Core Algorithm Design<a class="headerlink" href="#core-algorithm-design" aria-label="Permalink to this section">🔗</a></h2>
-<h3 class="doxsection" id="data-structure-1">Data Structure<a class="headerlink" href="#data-structure-1" aria-label="Permalink to this section">🔗</a></h3>
+<div class="textblock"><h2 class="doxsection" id="ip-intelligence-algorithm">IP Intelligence algorithm<a class="headerlink" href="#ip-intelligence-algorithm" aria-label="Permalink to this section">🔗</a></h2>
+<p>51Degrees IP Intelligence uses a directed acyclic graph to identify location and network information from an IPv4 or IPv6 address.</p>
+<h2 class="doxsection" id="core-algorithm-design">Core algorithm design<a class="headerlink" href="#core-algorithm-design" aria-label="Permalink to this section">🔗</a></h2>
+<h3 class="doxsection" id="data-structure-1">Data structure<a class="headerlink" href="#data-structure-1" aria-label="Permalink to this section">🔗</a></h3>
 <p>Vertices are variable length bits forming lower and upper limits corresponding to bit positions in the target IP address.</p>
-<p>Bits from the target IP address are evaluated against these limits to identify five possible edges.</p>
+<p>We compare bits from the target IP address with these limits to choose one of five possible edges:</p>
 <ol type="1">
 <li>Less than the lower limit</li>
 <li>Equal to the lower limit</li>
@@ -85,11 +83,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <li>Greater than the upper limit</li>
 </ol>
 <p>When an edge is found that corresponds to a location or network profile a result is returned.</p>
-<p>The physical data structure is extremely space efficient and performant when compared to previous data structures.</p>
 <h3 class="doxsection" id="implementation">Implementation<a class="headerlink" href="#implementation" aria-label="Permalink to this section">🔗</a></h3>
-<p>The algorithm is implemented in C code for maximum portability and performance including in edge computing and network appliances. Key characteristics include;</p>
+<p>The algorithm is implemented in C for use in applications including edge computing and network appliances. Its deployment options include:</p>
 <ul>
-<li><b>In-process</b> - all the data and compute operation resides in the same process delivering minimum latency and the best possible performance.</li>
+<li><b>In-process</b> - Data access and computation run in the same process to reduce latency.</li>
 <li><b>In-memory</b> - all data is loaded into memory for maximum performance. Ideal for offline processing or highly parallelized environments.</li>
 <li><b>On-disk</b> - data is retained on disk for fastest start up performance. Ideal for serverless and web environments. With the default Balanced profile, naming the required properties holds what they read in memory and leaves what they do not read on disk, which makes lookups faster without using more memory.</li>
 <li><b>Simple</b> - high-level language APIs make deployment simple for developers of all experience levels.</li>

@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -71,7 +69,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers__
 <h1 class="g-docs__page-title">ADI (Ad Inspector) </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><p>ADI is a small embeddable widget that puts an icon on every ad a page carries and, when the visitor taps it, tells them in one plain sentence why that ad was served to them. The sentence is read out of the <a class="el" href="_identifiers_51_did.html" title="51Did (51Degrees Identifier)">51Did (51Degrees Identifier)</a> that went into the ad auction, the identifier's signature is checked in the browser against a 51Degrees public key, and the color of the icon says what that check found before anything is tapped.</p>
+<div class="textblock"><p>ADI is a small embeddable widget that puts an icon on each ad slot the page marks or names and, when the visitor taps it, tells them in one plain sentence why that ad was served to them. The sentence is read out of the <a class="el" href="_identifiers_51_did.html" title="51Did (51Degrees Identifier)">51Did (51Degrees Identifier)</a> that went into the ad auction, the identifier's signature is checked in the browser against a 51Degrees public key, and the color of the icon says what that check found before anything is tapped.</p>
 <p>ADI sits beside <a class="el" href="_identifiers__p_m_p.html" title="PMP (Preference Management Platform)">PMP (Preference Management Platform)</a>. A publisher who has the PMP tag adds the ADI tag the same way, and the two are built, served, counted and translated alike.</p>
 <h2 class="doxsection" id="endpoints">Endpoints<a class="headerlink" href="#endpoints" aria-label="Permalink to this section">🔗</a></h2>
 <p>A page view makes two requests for the widget. The tag on the page fetches the loader, and the loader works out which bundle the visitor's language calls for and fetches that.</p>
@@ -116,7 +114,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers__
 <p>An element that comes into view with no identifiers on it and no provider answer within the timeout gets the <em>No identifier</em> state, never a guess from elsewhere on the page.</p>
 <p>The icon is placed against the container's own box, so a container whose <code>position</code> is <code>static</code> is given <code>position: relative</code>. That is the one style ADI writes on a publisher's element, and it is written only where the element has no positioning of its own. A container whose <code>data-51did</code> attribute changes after it has been inspected, which is what a wrapper does when it fills the slot with a new auction, is inspected again with what it now carries. Containers marked <code>data-adi</code> that are added to the page later are found as they are added. Containers only the provider names are found when ADI starts and whenever the page calls <code>window.__51d_adi.rescan()</code>.</p>
 <h2 class="doxsection" id="the-provider">The provider<a class="headerlink" href="#the-provider" aria-label="Permalink to this section">🔗</a></h2>
-<p><code>data-provider</code> names an object with two optional methods. Both are called with the slot element and may answer with a value or a promise.</p>
+<p><code>data-provider</code> names an object with two optional methods. <code>slots()</code> is called with no argument and answers at once with the elements, as a list or anything iterable. <code>describe(slot)</code> is called with the slot element and may answer with a value or a promise.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">window.yoursite = window.yoursite || {};</div>
 <div class="c-code__line">window.yoursite.adInspector = {</div>
 <div class="c-code__line">  // Optional. The elements that carry ads, in addition to any marked</div>
@@ -152,7 +150,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers__
 <tr class="c-table__row">
 <td class="c-table__cell">No identifier  </td><td class="c-table__cell">A thin white ring on black with nothing inside  </td><td class="c-table__cell">The slot carries no 51Did, or every identifier's usage is <code>non-marketing</code>, so no marketing preference selected this ad  </td></tr>
 </table>
-<p>Black is <code>#000000</code> and white is <code>#FFFFFF</code>. All five are fixed. The icon is the same 20 pixels in every state, so the ad never moves as the state changes, and no icon is drawn until the identifiers are in hand, so the visitor never sees one kind of icon replaced by another.</p>
+<p>Black is <code>#000000</code> and white is <code>#FFFFFF</code>. All five are fixed. The icon is the same 20 pixels in every state, so the ad never moves as the state changes, and no icon is drawn until ADI knows which identifiers the slot carries, if any, so the visitor never sees one kind of icon replaced by another while the slot is checked.</p>
 <p>On a page served over plain <code>http</code> there is no Web Crypto, so no signature can be checked. ADI writes one console line and draws no icon at all. What ADI looks for is <code>window.crypto.subtle</code>, which is the capability itself rather than the scheme, so a page on <code>localhost</code> over <code>http</code>, which browsers treat as secure, still works.</p>
 <p>An identifier whose signature could not be judged, being no published key covering its date, no cloud to ask, or a key that could not be used, is gray rather than red, because "could not check" is not "does not match".</p>
 <h2 class="doxsection" id="the-pop-up">The pop-up<a class="headerlink" href="#the-pop-up" aria-label="Permalink to this section">🔗</a></h2>
@@ -216,8 +214,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers__
 <p>Of the four things ADI does for a page, two count against the Resource Key's monthly requests.</p>
 <ul>
 <li>The loader is not checked and not counted. Any cache may hold it.</li>
-<li>The bundle counts as one request per page view, and is the request checked against the key's domains.</li>
-<li>The public keys count as one request per call. ADI keeps the answer in the browser's <code>localStorage</code> under <code>__51d_adi_keys</code>, one entry per creator domain, and asks again only where it holds nothing for that domain or an identifier is dated after both the newest key it holds and the moment it last asked. That is once per browser per key period, rather than once per ad.</li>
+<li>The bundle counts as one request per download, and is the request checked against the key's domains. A browser can keep the bundle for a day, so later page views in that browser can reuse it without a new request.</li>
+<li>The public keys count as one request per call. ADI checks signatures with the client in the 51Did package, one for each creator domain on the page, which fetches the key list when the page first needs it and again only under the rules in <em>Fetching the public keys</em> on <a class="el" href="_identifiers_51_did.html" title="51Did (51Degrees Identifier)">51Did (51Degrees Identifier)</a>. Between page views the browser's own cache keeps the list for up to 1800 seconds, and never past the moment the next key is published, so a browser asks about once every half hour for each creator domain, rather than once per ad.</li>
 <li>The signature check is not a request, because it runs in the browser.</li>
 </ul>
 <p>Two ads carrying the same identifier on one page need one check, because verdicts are kept per identifier for the page.</p>
@@ -230,7 +228,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers__
 <h2 class="doxsection" id="one-copy-on-a-page">One copy on a page<a class="headerlink" href="#one-copy-on-a-page" aria-label="Permalink to this section">🔗</a></h2>
 <p>ADI checks as it starts whether <code>window.__51d_adi</code> already exists, which means a second copy of the bundle is on the page. If so, ADI writes a console warning and renders nothing, because two copies would give every ad two icons and every tap two cards. Load the tag once. <code>window.__51d_adi</code> carries one member, <code>rescan()</code>, for a page whose provider names new slots after the page settled.</p>
 <h2 class="doxsection" id="browser-requirement">Browser requirement<a class="headerlink" href="#browser-requirement" aria-label="Permalink to this section">🔗</a></h2>
-<p>The bundles are built to ES2020, the 2020 edition of the JavaScript standard, and are not converted for anything older, which covers every browser released since early 2020. The signature check needs Web Crypto, which browsers provide only on a secure context, so the page must be served over <code>https</code>, with <code>localhost</code> as the exception browsers make.</p>
+<p>The bundles are built to ES2020, the 2020 edition of the JavaScript standard, and are not converted for anything older, so they need Chrome or Edge 80, Firefox 74, Safari 13.1 (iOS 13.4), Samsung Internet 13, or a later version. The signature check needs Web Crypto, which browsers provide only on a secure context, so the page must be served over <code>https</code>, with <code>localhost</code> as the exception browsers make.</p>
 <h2 class="doxsection" id="cross-references">Cross-references<a class="headerlink" href="#cross-references" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
 <li><a class="el" href="_identifiers_51_did.html" title="51Did (51Degrees Identifier)">51Did (51Degrees Identifier)</a> - the identifier ADI inspects, the usage it carries and the public keys it is checked against.</li>

@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Human Confidence Quick Start - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Human Confidence Quick Start</title>
+<meta name="description" content="Human Confidence quick start - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Human Confidence quick start</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,15 +64,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_human_confide
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_human_confidence__index.html">Human Confidence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_human_confidence__quickstart.html">Human Confidence Quick Start</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_human_confidence__index.html">Human Confidence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_human_confidence__quickstart.html">Human Confidence quick start</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Human Confidence Quick Start </h1></div><!--header-->
+<h1 class="g-docs__page-title">Human Confidence quick start </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><h2 class="doxsection" id="getting-started-with-human-confidence">Getting Started with Human Confidence<a class="headerlink" href="#getting-started-with-human-confidence" aria-label="Permalink to this section">🔗</a></h2>
+<div class="textblock"><h2 class="doxsection" id="getting-started-with-human-confidence">Getting started with Human Confidence<a class="headerlink" href="#getting-started-with-human-confidence" aria-label="Permalink to this section">🔗</a></h2>
 <p>Human Confidence comes from the 51Degrees cloud service. It isn't in the on-premise data files.</p>
 <p><b>Get a License Key with Human Confidence:</b> <a href="https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&amp;conversion=SignUp">buy the Pro plan online</a> for the cloud service, or <a href="https://51degrees.com/contact-us">talk to us</a> about the Bespoke plan to run it on your own servers in a Docker container. <a href="https://51degrees.com/pricing">Compare plans</a>.</p>
-<h2 class="doxsection" id="choose-your-integration-1">Choose Your Integration<a class="headerlink" href="#choose-your-integration-1" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="choose-your-integration-1">Choose your integration<a class="headerlink" href="#choose-your-integration-1" aria-label="Permalink to this section">🔗</a></h2>
 <h3 class="doxsection" id="analytics">Analytics<a class="headerlink" href="#analytics" aria-label="Permalink to this section">🔗</a></h3>
 <p><b>Best for:</b> Finding out how much of your traffic is people before you change anything</p>
 <p><b>Benefits:</b></p><ul>
@@ -91,7 +89,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_human_confide
 <p><b>Best for:</b> Deciding what each visit gets, for example a product page, an article, a listing, a form, or an API</p>
 <p><b>Benefits:</b></p><ul>
 <li><b>Server-side decision</b> - The value goes from the cloud to your server, so a browser can't change it</li>
-<li><b>No SDK needed</b> - The examples are one file each in Node.js, PHP and Python, calling the cloud over HTTPS</li>
+<li><b>No SDK needed</b> - Use the single-file Node.js, PHP, and Python examples to call the cloud over HTTPS</li>
 </ul>
 <p><b>Things to consider:</b></p><ul>
 <li><b>Holding page</b> - A visitor you haven't checked yet waits a moment on a holding page while the script runs</li>
@@ -113,14 +111,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_human_confide
 <div class="c-code__line">  });</div>
 <div class="c-code__line">&lt;/script&gt;</div>
 </div><!-- fragment --></li>
-<li>Load the page in your browser and look at the console. On a public site you'll normally see High. On localhost, Medium is common.</li>
+<li>Load the page in your browser and look at the console, which shows High, Medium, or Low.</li>
 </ol>
 <hr  />
 <h2 class="doxsection" id="find-out-more-2">Find out more<a class="headerlink" href="#find-out-more-2" aria-label="Permalink to this section">🔗</a></h2>
 <ul>
-<li><a class="el" href="_human_confidence__overview.html" title="Human Confidence Overview">Human Confidence Overview</a></li>
+<li><a class="el" href="_human_confidence__overview.html" title="Human Confidence overview">Human Confidence overview</a></li>
 <li><a class="el" href="_services__cloud__resource_keys.html" title="Resource Keys">Resource Keys</a></li>
-<li><a class="el" href="_pipeline_api__features__client_side_evidence.html" title="Client-side Evidence">Client-side Evidence</a>, for how the 51Degrees script works in the browser</li>
+<li><a class="el" href="_pipeline_api__features__client_side_evidence.html" title="Client-side evidence">Client-side evidence</a>, for how the 51Degrees script works in the browser</li>
 <li><a href="https://51degrees.com/developers/property-dictionary?item=Derived%7CHuman%20Detection">Human Confidence in the property dictionary</a></li>
 </ul>
 <p>Human Confidence needs the Pro plan, which you can <a href="https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&amp;conversion=SignUp">buy online</a>, or the Bespoke plan for your own servers. Ask us about Bespoke through the <a href="https://51degrees.com/contact-us">contact page</a>. </p>

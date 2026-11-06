@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -79,7 +77,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers__
 <ul>
 <li><b>Your platform's stub must come before the 51Degrees script tag.</b> Every consent management platform ships one, and the TCF specification already requires it to be first on the page. The stub queues the registration.</li>
 <li><b>The consent management platform itself may load later.</b> That is the normal case, and it works because the stub holds the registration until the platform takes over and then calls back.</li>
-<li><p class="startli"><b>A missing stub has no recovery on that page view.</b> Where nothing answers to <code>__tcfapi</code> as the client script starts, and PMP is not on the page either, the script writes one warning to the console as it starts. Nothing recovers it on that page view.</p>
+<li><p class="startli"><b>A missing stub cannot recover on the same page view.</b> If <code>__tcfapi</code> is absent when the client script starts and PMP is not on the page, the script logs one warning. Add the platform's stub before the client script and reload the page.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">51Degrees: no preference platform was found on this page. A platform&#39;s stub must precede this script. No 51Did will be created until a platform answers.</div>
 </div><!-- fragment --><p class="startli">That warning is the only signal, so read the console when a page produces no identifier.</p>
 </li>
@@ -115,7 +113,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers__
 <li>PMP for a site that does not run a consent management platform: <a class="el" href="_identifiers__p_m_p.html" title="PMP (Preference Management Platform)">PMP (Preference Management Platform)</a></li>
 <li>How PMP compares with a consent management platform, feature by feature: <a class="el" href="_identifiers__p_m_p__cmp_comparison.html" title="Compared with a consent management platform">Compared with a consent management platform</a></li>
 <li>Header bidding with the identifier: <a class="el" href="_integrations__prebid.html" title="Prebid">Prebid</a></li>
-<li>How the client script gathers page values: <a class="el" href="_pipeline_api__features__client_side_evidence.html" title="Client-side Evidence">Client-side Evidence</a></li>
+<li>How the client script gathers page values: <a class="el" href="_pipeline_api__features__client_side_evidence.html" title="Client-side evidence">Client-side evidence</a></li>
 <li>The client script itself: <a href="https://github.com/51Degrees/javascript-templates">https://github.com/51Degrees/javascript-templates</a></li>
 <li>The Model Terms for Marketing, version 2: <a href="https://m4ow.uk/mtm/2.txt">https://m4ow.uk/mtm/2.txt</a> </li>
 </ul>

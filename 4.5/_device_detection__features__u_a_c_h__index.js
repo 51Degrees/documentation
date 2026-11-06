@@ -1,6 +1,6 @@
 var _device_detection__features__u_a_c_h__index =
 [
-    [ "UA-CH Overview", "_device_detection__features__u_a_c_h__overview.html", [
+    [ "UA-CH overview", "_device_detection__features__u_a_c_h__overview.html", [
       [ "Introduction", "_device_detection__features__u_a_c_h__overview.html#introduction-24", [
         [ "Two ways to retrieve UA-CH values", "_device_detection__features__u_a_c_h__overview.html#two-ways-to-retrieve-ua-ch-values", null ],
         [ "Examples", "_device_detection__features__u_a_c_h__overview.html#examples-1", null ]
@@ -21,7 +21,7 @@ var _device_detection__features__u_a_c_h__index =
         [ "Additional resources", "_device_detection__features__u_a_c_h__overview.html#additional-resources", null ]
       ] ]
     ] ],
-    [ "HTTP Headers", "_device_detection__features__u_a_c_h__headers.html", [
+    [ "HTTP headers", "_device_detection__features__u_a_c_h__headers.html", [
       [ "Introduction", "_device_detection__features__u_a_c_h__headers.html#introduction-22", null ],
       [ "Background", "_device_detection__features__u_a_c_h__headers.html#background", null ],
       [ "Cloud", "_device_detection__features__u_a_c_h__headers.html#UACH_Headers_Cloud", [
@@ -32,7 +32,7 @@ var _device_detection__features__u_a_c_h__index =
         [ "Integrated", "_device_detection__features__u_a_c_h__headers.html#UACH_Http_Headers_Integrated", null ],
         [ "Non-integrated", "_device_detection__features__u_a_c_h__headers.html#UACH_Http_Headers_NonIntegrated", null ],
         [ "Critical-CH", "_device_detection__features__u_a_c_h__headers.html#UACH_Http_Headers_Critical", null ],
-        [ "B2B Service Supplier", "_device_detection__features__u_a_c_h__headers.html#UACH_Http_Headers_BtoB", null ]
+        [ "B2B service supplier", "_device_detection__features__u_a_c_h__headers.html#UACH_Http_Headers_BtoB", null ]
       ] ]
     ] ],
     [ "JavaScript", "_device_detection__features__u_a_c_h__javascript.html", [
@@ -42,18 +42,18 @@ var _device_detection__features__u_a_c_h__index =
         [ "Integrated", "_device_detection__features__u_a_c_h__javascript.html#UACH_Javascript_Integrated", null ],
         [ "Non-integrated", "_device_detection__features__u_a_c_h__javascript.html#UACH_Javascript_NonIntegrated", null ]
       ] ],
-      [ "Alternative Evidence Formats", "_device_detection__features__u_a_c_h__javascript.html#UACH_Javascript_Alternatives", [
-        [ "Technical Details", "_device_detection__features__u_a_c_h__javascript.html#UACH_Javascript_Technical", null ]
+      [ "Alternative evidence formats", "_device_detection__features__u_a_c_h__javascript.html#UACH_Javascript_Alternatives", [
+        [ "Technical details", "_device_detection__features__u_a_c_h__javascript.html#UACH_Javascript_Technical", null ]
       ] ]
     ] ],
     [ "Structured User Agent (SUA)", "_device_detection__features__u_a_c_h__s_u_a.html", [
       [ "Introduction", "_device_detection__features__u_a_c_h__s_u_a.html#introduction-25", null ],
-      [ "Passing SUA to Device Detection", "_device_detection__features__u_a_c_h__s_u_a.html#passing-sua-to-device-detection", null ],
-      [ "SUA Format", "_device_detection__features__u_a_c_h__s_u_a.html#sua-format", null ],
-      [ "Technical Details", "_device_detection__features__u_a_c_h__s_u_a.html#technical-details", null ],
-      [ "Related Pages", "_device_detection__features__u_a_c_h__s_u_a.html#related-pages", null ]
+      [ "Pass SUA to Device Detection", "_device_detection__features__u_a_c_h__s_u_a.html#pass-sua-to-device-detection", null ],
+      [ "SUA format", "_device_detection__features__u_a_c_h__s_u_a.html#sua-format", null ],
+      [ "Technical details", "_device_detection__features__u_a_c_h__s_u_a.html#technical-details", null ],
+      [ "Related pages", "_device_detection__features__u_a_c_h__s_u_a.html#related-pages", null ]
     ] ],
-    [ "Required UA-CH Headers", "_device_detection__features__u_a_c_h__required_uach_headers.html", [
+    [ "Required UA-CH headers", "_device_detection__features__u_a_c_h__required_uach_headers.html", [
       [ "Overview", "_device_detection__features__u_a_c_h__required_uach_headers.html#overview-2", null ],
       [ "Background", "_device_detection__features__u_a_c_h__required_uach_headers.html#background-1", null ],
       [ "Pseudo-headers", "_device_detection__features__u_a_c_h__required_uach_headers.html#UACH_Http_Headers_Pseudoheaders", [

@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -69,7 +67,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers__
 <h1 class="g-docs__page-title">Configuration attributes </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><p>The attributes PMP reads from its own <code>&lt;script&gt;</code> tag.</p>
+<div class="textblock"><p>Set the following attributes on the PMP <code>&lt;script&gt;</code> tag:</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Attribute  </td><td class="c-table__cell">Required  </td><td class="c-table__cell">Default  </td><td class="c-table__cell">Purpose  </td></tr>
@@ -112,7 +110,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers__
 <p>PMP ships the dialog text in 24 languages and chooses one from the browser's own language list, so a visitor reading German is answered in German without you doing anything.</p>
 <p><code>data-dialog-heading</code> and <code>data-dialog-body</code> replace the heading and the paragraph beneath it where the shipped wording does not suit you. Everything else on the card keeps the shipped text.</p>
 <h3 class="doxsection" id="giving-the-wording-per-language">Giving the wording per language<a class="headerlink" href="#giving-the-wording-per-language" aria-label="Permalink to this section">🔗</a></h3>
-<p>Writing the attribute once replaces that text for every language, which is usually wrong for a site with readers in more than one. Suffix the attribute with a language code to set the wording for that language alone.</p>
+<p>An attribute with no language suffix replaces that text in every language, which is usually wrong for a site with readers in more than one. Suffix the attribute with a language code to set the wording for that language alone.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">&lt;script</div>
 <div class="c-code__line">  src=&quot;https://cloud.51degrees.com/api/v4/pmp/YOUR-RESOURCE-KEY.js&quot;</div>
 <div class="c-code__line">  data-brand-name=&quot;Your Brand&quot;</div>
@@ -122,9 +120,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_identifiers__
 <div class="c-code__line">&lt;/script&gt;</div>
 </div><!-- fragment --><p>PMP reads three candidates in order and takes the first one that is present:</p>
 <ol type="1">
-<li>the attribute suffixed with the whole code of the language it is running in, such as <code>data-dialog-heading-fr-ca</code></li>
-<li>the attribute suffixed with the language on its own, such as <code>data-dialog-heading-fr</code></li>
-<li>the attribute with no suffix, which is the fallback for every language that has no variant of its own</li>
+<li>The attribute suffixed with the whole code of the language it is running in, such as <code>data-dialog-heading-fr-ca</code></li>
+<li>The attribute suffixed with the language on its own, such as <code>data-dialog-heading-fr</code></li>
+<li>The attribute with no suffix, which is the fallback for every language that has no variant of its own</li>
 </ol>
 <p>Write none of the three and the shipped wording for that language stands.</p>
 <p>The match ignores case, so <code>data-dialog-heading-FR</code> and <code>data-dialog-heading-fr</code> are the same attribute. A code with no region never matches a longer one, so a bundle running as <code>sw</code> does not pick up <code>data-dialog-heading-sw-ke</code>.</p>

@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Data File Updates - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Data File Updates</title>
+<meta name="description" content="Data file updates - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Data file updates</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,14 +64,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__examples__index.html">Device Detection Examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__data_file_updates.html">Data File Updates</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__examples__index.html">Device Detection examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__data_file_updates.html">Data file updates</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Data File Updates </h1></div><!--header-->
+<h1 class="g-docs__page-title">Data file updates </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction">Introduction<a class="headerlink" href="#introduction" aria-label="Permalink to this section">🔗</a></h2>
-<p>New device detection data files are released daily by 51Degrees. This page demonstrates various methods to update device detection data files, including automatic and manual approaches.</p>
-<p>For more information on data file updates in general, see the <a class="el" href="_pipeline_api__features__automatic_datafile_updates.html" title="Automatic Data File Updates">automatic data file updates</a> documentation.</p>
+<p>We release new device detection data files daily. These examples show how to update data files automatically or manually.</p>
+<p>For more information on data file updates in general, see the <a class="el" href="_pipeline_api__features__automatic_datafile_updates.html" title="Automatic data file updates">automatic data file updates</a> documentation.</p>
 <h2 class="doxsection" id="examples">Examples<a class="headerlink" href="#examples" aria-label="Permalink to this section">🔗</a></h2>
 <p>The examples below demonstrate automatic update methods (File System Watcher, Polling Interval, Update on Startup) with the exception of PHP which shows manual data file updates.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-dotnet', '_on_premise_2_update_data_file-_console_2_program_8cs')">C#</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-java', 'console_2_update_data_file_8java')">Java</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-node', 'onpremise_2automaticupdates_2data_file_system_watcher_8js')">Node.js - File System Watcher</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-node', 'onpremise_2automaticupdates_2update_polling_interval_8js')">Node.js - Polling Interval</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-node', 'onpremise_2automaticupdates_2update_on_start_up_8js')">Node.js - Update On Startup</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-python', 'onpremise_2datafileupdate_console_8py')">Python</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-php-onpremise', 'onpremise_2manual_data_update_8php')">PHP - Manual Updates</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'rust', 'dd-onprem-update-data-file')">Rust</button>   <div class="c-tabgroup__main" id="grabbed-example"></div>   </div>  </p>

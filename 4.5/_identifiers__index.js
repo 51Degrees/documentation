@@ -1,6 +1,6 @@
 var _identifiers__index =
 [
-    [ "Overview", "_identifiers__overview.html", null ],
+    [ "Identifiers overview", "_identifiers__overview.html", null ],
     [ "51Did (51Degrees Identifier)", "_identifiers_51_did.html", "_identifiers_51_did" ],
     [ "PMP (Preference Management Platform)", "_identifiers__p_m_p.html", "_identifiers__p_m_p" ],
     [ "ADI (Ad Inspector)", "_identifiers__a_d_i.html", null ]

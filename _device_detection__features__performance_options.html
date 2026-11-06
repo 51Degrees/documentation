@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Performance Options - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Performance Options</title>
+<meta name="description" content="Performance options - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Performance options</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,19 +64,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__index.html">Device Detection Features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__performance_options.html">Performance Options</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__index.html">Device Detection features</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__features__performance_options.html">Performance options</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Performance Options </h1></div><!--header-->
+<h1 class="g-docs__page-title">Performance options </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-18">Introduction<a class="headerlink" href="#introduction-18" aria-label="Permalink to this section">🔗</a></h2>
-<p>For device detection, as with many computing tasks, there are trade-offs to be made between the performance of the algorithm and memory usage, as well as performance vs adaptability.</p>
-<p>Rather than trying to solve this with a one-size-fits-all approach, our Device Detection API allows you to easily configure the solution to suit your requirements.</p>
-<p>Be aware that all these options only apply to the On-premise implementation. The cloud solution is inherently far more limited in the range of options you have to adjust performance.</p>
+<p>Device detection has tradeoffs between speed, memory use, and tolerance for unfamiliar evidence.</p>
+<p>Use the options below to configure Device Detection for your workload.</p>
+<p>These options apply to on-premise detection. The cloud service offers fewer performance controls.</p>
 <h2 class="doxsection" id="performance-profile-templates">Performance profile templates<a class="headerlink" href="#performance-profile-templates" aria-label="Permalink to this section">🔗</a></h2>
 <p>At the low level, the Device Detection API uses various collections of data from the data file in order to perform detections. These collections may either be fully mapped into memory or accessed via highly optimized <a href="https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)">LRU caches</a>, with data being loaded from disk on a cache miss.</p>
 <p>The mechanism used to access the data, as well as the size of these caches, can be configured specifically. However, we have defined templates which we believe will cover the majority of scenarios.</p>
-<p>The exact method for specifying the template will vary by programing language. See the <a class="el" href="_device_detection__examples__performance__on_premise_hash.html" title="Performance Test On-premise Hash">performance examples</a> for a demonstration.</p>
+<p>How you select a template depends on your programming language. See the <a class="el" href="_device_detection__examples__performance__on_premise_hash.html" title="On-premise Hash performance test">performance examples</a>.</p>
 <p>The table below explains the options, from fastest performance and highest memory usage to slowest performance and lowest memory usage.</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
@@ -86,24 +84,24 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <tr class="c-table__row">
 <td class="c-table__cell">MaxPerformance  </td><td class="c-table__cell">All data from the data file is mapped into main memory at startup. As caches are not needed, data access is lock-free.  </td><td class="c-table__cell">Use when memory usage is not a problem and performance is critical. This configuration is also strongly recommended when the API is running in a highly concurrent environment.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">HighPerformance  </td><td class="c-table__cell">Data accessed via caches; caches are large enough that all data from the data file can be accommodated as it is requested over time.  </td><td class="c-table__cell">Generally not recommended. It offers slightly worse performance than MaxPerformance but will grow to the same memory usage over time. Can be useful as a starting point when creating a custom configuration.  </td></tr>
+<td class="c-table__cell">HighPerformance  </td><td class="c-table__cell">Every collection is loaded into main memory at startup, each one separately rather than the data file as a single block, so no caches are used.  </td><td class="c-table__cell">Generally not recommended, because it uses about as much memory as MaxPerformance. It can be a starting point for a custom configuration.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Balanced (Default)  </td><td class="c-table__cell">Data accessed via caches; some caches are smaller than the high performance template. However, there is enough space that the most commonly accessed items are retained in memory. As such, loading from the disk is still relatively uncommon (assuming a typical web server workload).  </td><td class="c-table__cell">Fine for generic workloads where there is no extreme memory or performance requirement.  </td></tr>
+<td class="c-table__cell">Balanced (Default)  </td><td class="c-table__cell">Some collections are loaded into memory at startup and the rest are read through caches of a fixed size. Frequently used items stay in memory, so disk reads are relatively uncommon for a typical web server workload.  </td><td class="c-table__cell">Use for general workloads without extreme memory or performance requirements.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">LowMemory  </td><td class="c-table__cell">Data always streamed from disk on-demand.  </td><td class="c-table__cell">Recommended when the lowest possible memory usage is more important than performance.  </td></tr>
 </table>
 <p>The precise values associated with each template can be seen in the source code on <a href="https://github.com/51Degrees/51degrees-cxx/blob/67503df045efb32e84eb59fe7e320772dd6475db/src/hash/hash.c#L177">GitHub</a>.</p>
-<p>We measured throughput, startup time, and memory for Device Detection on seven machines, with the data file held in memory and with <code>Balanced</code>. The results are in the <a class="el" href="_product_summaries__benchmarks__hardware.html" title="Hardware Benchmarks">hardware benchmarks</a>.</p>
+<p>We measured throughput, startup time, and memory for Device Detection on seven machines, with the data file held in memory and with <code>Balanced</code>. The results are in the <a class="el" href="_product_summaries__benchmarks__hardware.html" title="Hardware benchmarks">hardware benchmarks</a>.</p>
 <h2 class="doxsection" id="evaluation-graphs">Evaluation graphs<a class="headerlink" href="#evaluation-graphs" aria-label="Permalink to this section">🔗</a></h2>
-<p>In version 4.5 and later, the device detection algorithm uses a single, unified predictive graph. Previously, it was possible to select between performance and predictive graphs, but these have been consolidated to provide the best balance of speed and accuracy.</p>
-<h2 class="doxsection" id="property-indexing">Property Indexing<a class="headerlink" href="#property-indexing" aria-label="Permalink to this section">🔗</a></h2>
+<p>In version 4.5 and later, device detection uses a single predictive graph.</p>
+<h2 class="doxsection" id="property-indexing">Property indexing<a class="headerlink" href="#property-indexing" aria-label="Permalink to this section">🔗</a></h2>
 <p>A configuration option <code>propertyValueIndex</code> is available (introduced in version 4.5). When enabled (set to <code>true</code>), the engine indexes property values at startup.</p>
 <p>This improves the speed of property retrieval, which is particularly beneficial for applications that need to access a large number of properties for each detection. It ensures more consistent performance in high-scale environments.</p>
 <h2 class="doxsection" id="restrict-properties">Restrict properties<a class="headerlink" href="#restrict-properties" aria-label="Permalink to this section">🔗</a></h2>
 <p>When the device detection engine is created, you can specify exactly which properties you want to be populated in the result. By default, all properties are populated. By limiting the properties to only those that you're actually going to use, performance may be significantly improved.</p>
 <p>Internally, detection is actually performed separately for each <b>component</b> (The four components associated with device detection are hardware, operating system, browser, and crawler) This means that if you only want 'IsMobile' and 'HardwareName', which are both hardware properties, then the algorithm can skip the detection for operating system, browser, and crawler.</p>
-<p>For example, on an eight-core AWS Graviton3 instance with the data file held in memory, requesting only <code>IsMobile</code> gave 1,362,952 detections per second. One property from each of the four components gave 306,275, and every property gave 166,181. The <a class="el" href="_product_summaries__benchmarks__hardware.html" title="Hardware Benchmarks">hardware benchmarks</a> have the same comparison for the other machines.</p>
-<p>As with all the performance options, we recommend experimenting to see what effect this has in your specific scenario. See the <a class="el" href="_device_detection__examples__performance__on_premise_hash.html" title="Performance Test On-premise Hash">performance examples</a> for a demonstration of how to specify the properties you want in your language of choice. </p>
+<p>For example, on an eight-core AWS Graviton3 instance with the data file held in memory, requesting only <code>IsMobile</code> gave 1,362,952 detections per second. One property from each of the four components gave 306,275, and every property gave 166,181. The <a class="el" href="_product_summaries__benchmarks__hardware.html" title="Hardware benchmarks">hardware benchmarks</a> have the same comparison for the other machines.</p>
+<p>As with all the performance options, we recommend experimenting to see what effect this has in your specific scenario. See the <a class="el" href="_device_detection__examples__performance__on_premise_hash.html" title="On-premise Hash performance test">performance examples</a> for a demonstration of how to specify the properties you want in your language of choice. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 </div><!-- PageDoc -->

@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Aspect Data - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Aspect Data</title>
+<meta name="description" content="Aspect data - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Aspect data</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,15 +64,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__index.html">Concepts</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__data__index.html">Types of Data</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__data__aspect_data.html">Aspect Data</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__index.html">Concepts</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__data__index.html">Types of data</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__data__aspect_data.html">Aspect data</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Aspect Data </h1></div><!--header-->
+<h1 class="g-docs__page-title">Aspect data </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-47">Introduction<a class="headerlink" href="#introduction-47" aria-label="Permalink to this section">🔗</a></h2>
-<p><b>Aspect data</b> is the container for data that is returned as a result of the processing performed by an <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a>. Just as an <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> is a specialization of a <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a>, <b>aspect data</b> is a specialization of <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a>.</p>
-<p><b>Aspect data</b> works with <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> to provide the features associated with engines. For example, much of the <a class="el" href="_pipeline_api__features__lazy_loading.html" title="Lazy Loading">lazy loading</a> functionality in .NET actually resides in the <b>aspect data</b> class. For more details see the <a class="el" href="_pipeline_api__features__lazy_loading.html" title="Lazy Loading">lazy loading</a> feature page.</p>
-<p>For details on data structure, lifecycle and thread-safety, see <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element Data">element data</a>.</p>
+<p><b>Aspect data</b> holds the results returned by an <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect engine">Aspect Engine</a>. Just as an <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect engine">Aspect Engine</a> is a specialization of a <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a>, <b>aspect data</b> is a specialization of <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element data">element data</a>.</p>
+<p><b>Aspect data</b> works with <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect engine">Aspect Engine</a> to provide the features associated with engines. For example, much of the <a class="el" href="_pipeline_api__features__lazy_loading.html" title="Lazy loading">lazy loading</a> functionality in .NET actually resides in the <b>aspect data</b> class. For more details see the <a class="el" href="_pipeline_api__features__lazy_loading.html" title="Lazy loading">lazy loading</a> feature page.</p>
+<p>For details on data structure, lifecycle and thread-safety, see <a class="el" href="_pipeline_api__concepts__data__element_data.html" title="Element data">element data</a>.</p>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#aspect-data">Specification</a> for more technical details. </p>
 </div></div><!-- primary -->
 </div><!-- inner -->

@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Evidence Key Filter - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Evidence Key Filter</title>
+<meta name="description" content="Evidence key filter - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Evidence key filter</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,36 +64,38 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__index.html">Concepts</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__data__index.html">Types of Data</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__data__evidence_key_filter.html">Evidence Key Filter</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__index.html">Pipeline API</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__index.html">Concepts</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__data__index.html">Types of data</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_pipeline_api__concepts__data__evidence_key_filter.html">Evidence key filter</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Evidence Key Filter </h1></div><!--header-->
+<h1 class="g-docs__page-title">Evidence key filter </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-52">Introduction<a class="headerlink" href="#introduction-52" aria-label="Permalink to this section">🔗</a></h2>
 <p>An <b>evidence key filter</b> lets a caller know if a given key value is included or excluded.</p>
-<p>For example, each <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> has an <b>evidence key filter</b> which will only include key values that the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow Element">flow element</a> can make use of.</p>
+<p>For example, each <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a> has an <b>evidence key filter</b> which will only include key values that the <a class="el" href="_pipeline_api__concepts__flow_elements__flow_element.html" title="Flow element">flow element</a> can make use of.</p>
 <p>Additionally, the <b>evidence key filter</b> can indicate the relative importance or order of each key value that it includes.</p>
 <p>See the <a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/advertize-accepted-evidence.md#">Specification</a> for more technical details.</p>
 <h2 class="doxsection" id="usage-5">Usage<a class="headerlink" href="#usage-5" aria-label="Permalink to this section">🔗</a></h2>
-<p><b>Evidence key filters</b> are used by <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a> to generate <a class="el" href="_pipeline_api__concepts__data__data_key.html" title="Data Key">data keys</a>. These <a class="el" href="_pipeline_api__concepts__data__data_key.html" title="Data Key">data keys</a> can then used in <a class="el" href="_pipeline_api__features__result_caching.html" title="Result Caching">caching</a>. This allows the <a class="el" href="_pipeline_api__concepts__data__data_key.html" title="Data Key">data key</a> to contain the minimum amount of necessary information to determine if a given <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow Data">flow data</a> will result in the same output from a given <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect Engine">Aspect Engine</a> as another, regardless of any other values that may be present in the <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a>.</p>
-<p><b>Evidence key filters</b> can also be used by <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> callers to restrict the amount of evidence they supply, to only that which is needed. The <a class="el" href="_pipeline_api__features__web_integration.html" title="Web Integration Feature">web integration</a> feature will do this automatically for many languages and web frameworks.</p>
+<p>Use <b>evidence key filters</b> with <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow data">flow data</a> to generate <a class="el" href="_pipeline_api__concepts__data__data_key.html" title="Data key">data keys</a> for <a class="el" href="_pipeline_api__features__result_caching.html" title="Result caching">caching</a>. This allows the <a class="el" href="_pipeline_api__concepts__data__data_key.html" title="Data key">data key</a> to contain the minimum amount of necessary information to determine if a given <a class="el" href="_pipeline_api__concepts__data__flow_data.html" title="Flow data">flow data</a> will result in the same output from a given <a class="el" href="_pipeline_api__concepts__flow_elements__aspect_engine.html" title="Aspect engine">Aspect Engine</a> as another, regardless of any other values that may be present in the <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a>.</p>
+<p><b>Evidence key filters</b> can also be used by <a class="el" href="_pipeline_api__concepts__pipeline.html" title="Pipeline">Pipeline</a> callers to restrict the amount of evidence they supply, to only that which is needed. The <a class="el" href="_pipeline_api__features__web_integration.html" title="Web integration feature">web integration</a> feature will do this automatically for many languages and web frameworks.</p>
 <h2 class="doxsection" id="implementations">Implementations<a class="headerlink" href="#implementations" aria-label="Permalink to this section">🔗</a></h2>
 <h2 class="doxsection" id="whitelist-filter">Whitelist filter<a class="headerlink" href="#whitelist-filter" aria-label="Permalink to this section">🔗</a></h2>
 <p>The whitelist filter is a very simple filter that will include any <a class="el" href="_pipeline_api__concepts__data__evidence.html" title="Evidence">evidence</a> key names that are in a list supplied at construction time.</p>
 <h2 class="doxsection" id="filter-aggregator">Filter aggregator<a class="headerlink" href="#filter-aggregator" aria-label="Permalink to this section">🔗</a></h2>
-<p>The filter aggregator combines multiple filters together using a logical OR approach, i.e. if any one of the child filters would allow the inclusion of an evidence key then this aggregator will allow it as well.</p>
+<p>The filter aggregator includes an evidence key if any child filter includes it. This combines the filters with a logical OR.</p>
 <h2 class="doxsection" id="share-usage-filter">Share usage filter<a class="headerlink" href="#share-usage-filter" aria-label="Permalink to this section">🔗</a></h2>
-<p>The share usage filter is a specific implementation for 51Degrees <a class="el" href="_pipeline_api__features__usage_sharing.html" title="Usage Sharing Feature">usage sharing</a>. It will include anything that meets the following criteria:</p>
+<p>The share usage filter is a specific implementation for 51Degrees <a class="el" href="_pipeline_api__features__usage_sharing.html" title="Usage sharing feature">usage sharing</a>. It will include anything that meets the following criteria:</p>
 <ol type="1">
 <li>Any HTTP header.</li>
 <li>Any cookie with a name that starts with '51D_'.</li>
-<li>A user session cookie.</li>
-<li>Any evidence that is not a header, cookie or query string parameter.</li>
+<li>A user session cookie, in .NET and Java. It is used only to tell user sessions apart when session tracking is turned on, and it is never sent to 51Degrees.</li>
+<li>Any session value with a name that starts with '51D_'.</li>
+<li>Any evidence that is not a header, cookie, session value or query string parameter.</li>
 </ol>
+<p>In .NET, evidence named <code>id.email</code>, <code>id.salt</code>, <code>request-query</code> or <code>request-path</code> is never shared, whatever its prefix and however the filter is configured.</p>
 <p>Configuration options allow this to be tuned to meet your requirements:</p>
 <ol type="1">
 <li>A blacklist of HTTP header names to exclude from sharing can be supplied.</li>
-<li>Sharing of user session cookies can be disabled and the name of the cookie is customizable. (This will default to the appropriate cookie for the language, for example the ASP.NET session cookie in .NET)</li>
+<li>In .NET and Java, session tracking can be turned on and the name of the session cookie can be changed. (The default is the ASP.NET session cookie in .NET and <code>JSESSIONID</code> in Java.)</li>
 <li>A whitelist of query string parameters to share can be supplied. </li>
 </ol>
 </div></div><!-- primary -->

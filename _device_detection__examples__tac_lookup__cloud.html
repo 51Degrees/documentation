@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="TAC Cloud Lookup - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: TAC Cloud Lookup</title>
+<meta name="description" content="Cloud TAC lookup - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Cloud TAC lookup</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,13 +64,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__examples__index.html">Device Detection Examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__examples__tac_lookup__index.html">TAC Lookup</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__examples__tac_lookup__cloud.html">TAC Cloud Lookup</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__examples__index.html">Device Detection examples</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__examples__tac_lookup__index.html">TAC lookup</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__examples__tac_lookup__cloud.html">Cloud TAC lookup</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">TAC Cloud Lookup </h1></div><!--header-->
+<h1 class="g-docs__page-title">Cloud TAC lookup </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-14">Introduction<a class="headerlink" href="#introduction-14" aria-label="Permalink to this section">🔗</a></h2>
-<p>This example shows how to use the TAC lookup capability of the 51Degrees Cloud service.</p>
+<p>This example shows how to use TAC lookup in the 51Degrees Cloud service. Before running it, check the <a class="el" href="_device_detection__features__tac_lookup.html" title="TAC lookup">required Resource Key properties</a>.</p>
 <p> <div class="c-tabgroup">   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-dotnet', '_cloud_2_t_a_c-_console_2_program_8cs')">C#</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-java', 'console_2_tac_cloud_8java')">Java</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-node', 'cloud_2taclookup-console_2tac_lookup_8js')">Node.js</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-php', 'cloud_2tac_lookup_console_8php')">PHP</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'device-detection-python', 'cloud_2taclookup_console_8py')">Python</button>   <button class="b-btn b-btn--tab examplebtn" onclick="grabExample(this, 'rust', 'dd-cloud-tac')">Rust</button>   <div class="c-tabgroup__main" id="grabbed-example"></div>   </div>  </p>
 </div></div><!-- primary -->
 </div><!-- inner -->

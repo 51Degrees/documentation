@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -69,9 +67,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_product_summa
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><ul>
 <li><a class="el" href="_product_summaries__benchmarks.html" title="Benchmarks">Benchmarks</a></li>
-<li><a class="el" href="_product_summaries__feature_matrix.html" title="Feature Matrix">Feature Matrix</a></li>
-<li><a class="el" href="_product_summaries__open_r_t_b_mappings.html" title="OpenRTB Mappings (Moved)">OpenRTB Mappings (Moved)</a></li>
-<li><a class="el" href="_product_summaries__tested_versions.html" title="Tested Versions">Tested Versions</a> </li>
+<li><a class="el" href="_product_summaries__feature_matrix.html" title="Feature matrix">Feature matrix</a></li>
+<li><a class="el" href="_product_summaries__open_r_t_b_mappings.html" title="OpenRTB mappings (moved)">OpenRTB mappings (moved)</a></li>
+<li><a class="el" href="_product_summaries__tested_versions.html" title="Tested versions">Tested versions</a> </li>
 </ul>
 </div></div><!-- primary -->
 </div><!-- inner -->

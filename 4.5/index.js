@@ -1,30 +1,30 @@
 var index =
 [
     [ "Welcome to 51Degrees", "index.html#welcome-to-51degrees", [
-      [ "What We Do", "index.html#what-we-do", null ],
-      [ "Get Started Fast", "index.html#get-started-fast", [
+      [ "What we do", "index.html#what-we-do", null ],
+      [ "Get started", "index.html#get-started", [
         [ "Device Detection", "index.html#device-detection", null ],
         [ "IP Intelligence", "index.html#ip-intelligence-1", null ],
         [ "Human Confidence", "index.html#human-confidence", null ],
         [ "Reverse Geocoding", "index.html#reverse-geocoding", null ],
         [ "Identifiers", "index.html#identifiers", null ],
-        [ "Client-Side Only", "index.html#client-side-only", null ]
+        [ "Client-side only", "index.html#client-side-only", null ]
       ] ],
-      [ "Language Support", "index.html#language-support", null ],
-      [ "Specialized Integrations", "index.html#specialized-integrations", null ],
-      [ "Common Use Cases", "index.html#common-use-cases-2", [
-        [ "🎯 Enhanced User Experience", "index.html#autotoc_md-enhanced-user-experience", null ],
-        [ "🛡️ Fraud Prevention &amp; Security", "index.html#️-fraud-prevention--security", null ],
-        [ "📊 Programmatic Advertising", "index.html#autotoc_md-programmatic-advertising", null ],
-        [ "📈 Advanced Analytics", "index.html#autotoc_md-advanced-analytics", null ],
-        [ "🌍 Geo-Compliance &amp; Personalization", "index.html#autotoc_md-geo-compliance--personalization", null ],
-        [ "⚡ Performance Optimization", "index.html#autotoc_md-performance-optimization-2", null ]
+      [ "Language support", "index.html#language-support", null ],
+      [ "Specialized integrations", "index.html#specialized-integrations", null ],
+      [ "Common use cases", "index.html#common-use-cases-2", [
+        [ "🎯 Enhanced user experience", "index.html#autotoc_md-enhanced-user-experience", null ],
+        [ "🛡️ Fraud prevention and security", "index.html#️-fraud-prevention-and-security", null ],
+        [ "📊 Programmatic advertising", "index.html#autotoc_md-programmatic-advertising", null ],
+        [ "📈 Advanced analytics", "index.html#autotoc_md-advanced-analytics", null ],
+        [ "🌍 Location and personalization", "index.html#autotoc_md-location-and-personalization", null ],
+        [ "⚡ Performance optimization", "index.html#autotoc_md-performance-optimization-2", null ]
       ] ],
-      [ "Documentation Hub", "index.html#documentation-hub", [
-        [ "💡 Quick Starts", "index.html#autotoc_md-quick-starts", null ],
-        [ "Deep Dives", "index.html#deep-dives", null ],
-        [ "Advanced Topics", "index.html#advanced-topics", null ]
+      [ "Documentation hub", "index.html#documentation-hub", [
+        [ "💡 Quick starts", "index.html#autotoc_md-quick-starts", null ],
+        [ "Detailed guides", "index.html#detailed-guides", null ],
+        [ "Advanced topics", "index.html#advanced-topics", null ]
       ] ],
-      [ "💬 Get Support", "index.html#autotoc_md-get-support", null ]
+      [ "💬 Get support", "index.html#autotoc_md-get-support", null ]
     ] ]
 ];

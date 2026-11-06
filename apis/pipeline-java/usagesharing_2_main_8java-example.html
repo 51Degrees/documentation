@@ -36,18 +36,16 @@
    <div id="projectbrief">51Degrees Pipeline for Java</div>
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -70,7 +68,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('usagesharing_2
 <div class="g-docs__primary" id="primary">
 <p> 
     <p>
-    This Example shows how to configure the usage sharing feature of 
+    This example shows how to configure the usage sharing feature of 
     the Pipeline API. Usage sharing is a feature that allows you to share details 
     of the requests you are processing with 51Degrees.
     </p>
@@ -78,15 +76,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('usagesharing_2
     Usage sharing works by adding a 'ShareUsageElement' to the pipeline.
     This element will collect evidence values as they pass through, 
     periodically sending them to 51Degrees for processing.
+    </p>
     <p>
     If you want to know more about usage sharing, and why you should 
     consider using it, see the 
-    <a href="/documentation/4.5/_pipeline_api__features__usage_sharing.html">Share Usage reference</a>.
+    <a href="/documentation/4.5/_pipeline_api__features__usage_sharing.html">Usage sharing reference</a>.
     </p>
       </p>
 <p> 
     <p>
-    This Example shows how to configure the usage sharing feature of 
+    This example shows how to configure the usage sharing feature of 
     the Pipeline API. Usage sharing is a feature that allows you to share details 
     of the requests you are processing with 51Degrees.
     </p>
@@ -94,10 +93,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('usagesharing_2
     Usage sharing works by adding a 'ShareUsageElement' to the pipeline.
     This element will collect evidence values as they pass through, 
     periodically sending them to 51Degrees for processing.
+    </p>
     <p>
     If you want to know more about usage sharing, and why you should 
     consider using it, see the 
-    <a href="/documentation/4.5/_pipeline_api__features__usage_sharing.html">Share Usage reference</a>.
+    <a href="/documentation/4.5/_pipeline_api__features__usage_sharing.html">Usage sharing reference</a>.
     </p>
        Usage sharing is enabled by default if using a pipeline builder that is derived from FiftyOnePipelineBuilder. For instance, the DeviceDetectionPipelineBuilder. In this example, we show how to add a ShareUsageElement to a Pipeline using configuration.</p>
 <p>As with all ElementBuilders, this can also be handled in code, using the ShareUsageBuilder. The commented section in the example demonstrates this.</p>

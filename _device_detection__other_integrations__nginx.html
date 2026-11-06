@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,15 +64,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__other_integrations__index.html">Other Integrations</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__other_integrations__nginx.html">Nginx</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__index.html">Device Detection</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__other_integrations__index.html">Other integrations</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_device_detection__other_integrations__nginx.html">Nginx</a></li>  </ul>
 </div>
 <h1 class="g-docs__page-title">Nginx </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-29">Introduction<a class="headerlink" href="#introduction-29" aria-label="Permalink to this section">🔗</a></h2>
-<p>We have also integrated our Device Detection to Nginx. This page describes in detail how you can install and use our module in your Nginx environment. </p>
+<p>Use our Nginx module to run Device Detection in Nginx. This page explains installation and configuration. </p>
 <h2 class="doxsection" id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" aria-label="Permalink to this section">🔗</a></h2>
-<p>For the latest tested versions and tested platforms information, please refer to our <a class="el" href="_product_summaries__tested_versions.html" title="Tested Versions">tested versions</a> page.</p>
+<p>See our <a class="el" href="_product_summaries__tested_versions.html" title="Tested versions">tested versions</a> page for tested versions and platforms.</p>
 <h2 class="doxsection" id="installing">Installing<a class="headerlink" href="#installing" aria-label="Permalink to this section">🔗</a></h2>
 <p>If you haven’t already, you can obtain the latest version of the API from the <a href="https://github.com/51Degrees/51degrees-nginx">51degrees-nginx repository</a>.</p>
 <p>To build the module only, run the following command. This will output to <code>ngx_http_51D_module.so</code> in the <code>build/modules</code> directory. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">make module</div>
@@ -88,11 +86,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_device_detect
 </div><!-- fragment --><p> <br  />
 </p>
 <p>Finally, run the 51Degrees tests with the default 51Degrees Lite data file, which the tests read from the <code>cxx/data/device-detection</code> folder. Download it first by running <code>sh cxx/data/get-data-files.sh 51Degrees-LiteV4.1.hash</code> from the repository root. The script is part of the <a href="https://github.com/51Degrees/data">data</a> repository, which the <code>cxx</code> submodule includes at <code>cxx/data</code>. Make sure to build the module with <code>make install</code> command as the tests do not work on a static build. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">make test</div>
-</div><!-- fragment --><p>To run the 51Degrees together with the Nginx test suite, run the following command: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">make test-full</div>
+</div><!-- fragment --><p>To run the 51Degrees tests together with the Nginx test suite, run: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">make test-full</div>
 </div><!-- fragment --><p>These do not run all the required tests as some tests require properties that are not supported with the Lite version of the data file. To run all tests, obtain a data file that provides properties: JavascriptHardwareProfile, ScreenPixelsWidthJavascript, and ScreenPixelsWidth. Then, use the <code>51DEGREES_DD_PATH</code> variable to give the path of the data file to run the tests with. If tests still fail, obtain a data file with any other properties used in the tests. Below is an example of running tests with a different data file named <code>51Degrees-EnterpriseV4.1.hash</code>: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">make [test|test-full] 51DEGREES_DD_PATH=/path/to/51Degrees-EnterpriseV4.1.hash</div>
 </div><!-- fragment --><h2 class="doxsection" id="configuring-the-nginx-api">Configuring the Nginx API<a class="headerlink" href="#configuring-the-nginx-api" aria-label="Permalink to this section">🔗</a></h2>
 <p>Before you start performing any detections, you may wish to configure the detection.</p>
-<h2 class="doxsection" id="init-settings">Init Settings<a class="headerlink" href="#init-settings" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="initialization-settings">Initialization settings<a class="headerlink" href="#initialization-settings" aria-label="Permalink to this section">🔗</a></h2>
 <p>Detection configuration directives.</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
@@ -106,27 +104,27 @@ Specify the data file to used for 51Degrees Device Detection V4 engine  </td></t
 <td class="c-table__cell">Syntax: <code>51D_drift</code> <em>drift</em>;<br  />
 Default: 51D_drift 0;<br  />
 Context: main<br  />
-Specify the <code>drift</code> value that a detection can allow. Details about how setting <code>drift</code> value effects the results can be found at <a class="el" href="_device_detection__features__false_positive_control.html" title="False Positives">False Positive</a>.  </td></tr>
+Specify the <code>drift</code> value that a detection can allow. Details about how setting <code>drift</code> value effects the results can be found at <a class="el" href="_device_detection__features__false_positive_control.html" title="False positives">False Positive</a>.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Syntax: <code>51D_difference</code> <em>difference</em>;<br  />
 Default: 51D_difference 0;<br  />
 Context: main<br  />
-Specify the <code>difference</code> value that a detection can allow. Details about how setting <code>difference</code> value effects the results can be found at <a class="el" href="_device_detection__features__false_positive_control.html" title="False Positives">False Positive</a>.  </td></tr>
+Specify the <code>difference</code> value that a detection can allow. Details about how setting <code>difference</code> value effects the results can be found at <a class="el" href="_device_detection__features__false_positive_control.html" title="False positives">False Positive</a>.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Syntax: <code>51D_allow_unmatched</code> <em>on | off</em>;<br  />
 Default: 51D_allow_unmatched off;<br  />
 Context: main<br  />
-Specify if <code>AllowUnmatched</code> should be allowed. Details about how setting <code>AllowUnmatched</code> value effects the results can be found at <a class="el" href="_device_detection__features__false_positive_control.html" title="False Positives">False Positive</a>.  </td></tr>
+Specify if <code>AllowUnmatched</code> should be allowed. Details about how setting <code>AllowUnmatched</code> value effects the results can be found at <a class="el" href="_device_detection__features__false_positive_control.html" title="False positives">False Positive</a>.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Syntax: <code>51D_use_performance_graph</code> <em>on | off</em>;<br  />
 Default: 51D_use_performance_graph off;<br  />
 Context: main<br  />
-Specify if performance graph should be used in detection. More details about <code>performance graph</code> can be found at <a class="el" href="_device_detection__hash.html" title="Hash Algorithm">Hash</a>.  </td></tr>
+Specify if performance graph should be used in detection. Deprecated since version 4.5. The performance graph is now an alias of the predictive graph, so this setting does not change the results. More details about <code>performance graph</code> can be found at <a class="el" href="_device_detection__hash.html" title="Hash algorithm">Hash</a>.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Syntax: <code>51D_use_predictive_graph</code> <em>on | off</em>;<br  />
 Default: 51D_use_predictive_graph on;<br  />
 Context: main<br  />
-Specify if predictive graph should be used in detection. More details about <code>predictive graph</code> can be found at <a class="el" href="_device_detection__hash.html" title="Hash Algorithm">Hash</a>.  </td></tr>
+Specify if predictive graph should be used in detection. More details about <code>predictive graph</code> can be found at <a class="el" href="_device_detection__hash.html" title="Hash algorithm">Hash</a>.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Syntax: <code>51D_value_separator</code> <em>separator</em>;<br  />
 Default: 51D_value_separator ',';<br  />
@@ -143,13 +141,13 @@ Specify the separator to be used in the value string returned from a detection. 
 Default: &mdash;<br  />
 Context: main, server, <code>location</code> (<b>NOTE</b>: This directive can be used in main, server and location blocks. Specified properties are aggregated and eventually queried in the location. <em>header</em> value is set after the query is performed and is only available within <code>location</code> block)<br  />
 Perform a detection using a single request header <code>User-Agent</code>. <em>header</em> specifies which request header the returned <em>properties</em> values should be stored at. <em>properties</em> is a comma separated list string. <em>argument</em> specifies if <code>User-Agent</code> is supplied as a query argument. This will override the value in the <code>User-Agent</code> header. The <em>argument</em> is optional.<br  />
-If a property is not available for any reason, the value being returned for that property will be <code>NA</code>  </td></tr>
+If a property is not available for any reason, the value being returned for that property will be <code>NoMatch</code>  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Syntax: <code>51D_match_all</code> <em>header</em> <em>properties</em>;<br  />
 Default: &mdash;<br  />
 Context: main, server, <code>location</code> (<b>NOTE</b>: This directive can be used in main, server and location blocks. Specified properties are aggregated and eventually queried in the location. <em>header</em> value is set after the query is performed and is only available within <code>location</code> block)<br  />
 Perform a detection using all headers, query argument and cookie from a http request. <em>header</em> specifies which request header the returned <em>properties</em> values should be stored at. <em>properties</em> is a comma separated list string.<br  />
-If a property is not available for any reason, the value being returned for that property will be <code>NA</code>  </td></tr>
+If a property is not available for any reason, the value being returned for that property will be <code>NoMatch</code>  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Syntax: <code>51D_get_javascript_single</code> <em>javascript_property</em> [<em>argument</em>];<br  />
 Default: &mdash;<br  />
@@ -171,26 +169,26 @@ Context: main, server, location<br  />
 Allow Client Hints to be set in response headers where it is applicable to the user agent (e.g. Chrome 89 or above) so that more evidence can be returned in subsequent requests, allowing more accurate detection. Value set in a block overwrites values set in precedent blocks (e.g. value set in <code>location</code> block will overwrite value set in <code>server</code> and <code>main</code> blocks). This will only be available from the 4.3.0 version onwards.  </td></tr>
 </table>
 <h2 class="doxsection" id="new-features">New features<a class="headerlink" href="#new-features" aria-label="Permalink to this section">🔗</a></h2>
-<p>Following set of new features has been introduced in Nginx Device Detection V4 module:</p><ul>
+<p>The Nginx Device Detection V4 module supports:</p><ul>
 <li>Detection match metrics</li>
 <li>Javascript and property overrides</li>
 <li>False Positive controls</li>
-<li>User-Agent Client Hint supports</li>
+<li>User-Agent Client Hints support</li>
 </ul>
 <h2 class="doxsection" id="detection-match-metrics">Detection match metrics<a class="headerlink" href="#detection-match-metrics" aria-label="Permalink to this section">🔗</a></h2>
 <p>This V3 functionality is extended with more options available in V4. These metrics can be used in the same way as the properties. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">51D_match_all x-metrics IsMobile,Iterations,Drift,Difference,Method,UserAgents,MatchedNodes,DeviceId;</div>
-</div><!-- fragment --><h2 class="doxsection" id="javascript-and-property-overrides">Javascript and property overrides<a class="headerlink" href="#javascript-and-property-overrides" aria-label="Permalink to this section">🔗</a></h2>
-<p>Some certain properties might require further steps to obtain. For example, to determine ScreenPixelsWidth, users might need to execute the Javascript returned from ScreenPixelsWidthJavascript property in client User-Agents. In V4, we allow users to request the Javascript as static content via using <code>51D_get_javascript_single</code> and <code>51D_get_javascript_all</code> directives.</p>
+</div><!-- fragment --><h2 class="doxsection" id="javascript-and-property-overrides">JavaScript and property overrides<a class="headerlink" href="#javascript-and-property-overrides" aria-label="Permalink to this section">🔗</a></h2>
+<p>Some properties require JavaScript to run in the browser. For example, run the JavaScript from ScreenPixelsWidthJavascript to obtain ScreenPixelsWidth. Use <code>51D_get_javascript_single</code> or <code>51D_get_javascript_all</code> to serve the JavaScript as response content.</p>
 <p>Once the value has been obtained by executing the Javascript in client user agent, it can be added as evidence in the next request's cookie or query argument. 51Degrees module will override the returned value with what it found in the request.</p>
-<h2 class="doxsection" id="false-positive-controls">False Positive Controls<a class="headerlink" href="#false-positive-controls" aria-label="Permalink to this section">🔗</a></h2>
-<p>Nginx Device Detection V4 module supports <code>False Positives</code> features as described at <a class="el" href="_device_detection__features__false_positive_control.html" title="False Positives">False Positives</a> via settings of directives <code>51D_drift</code>, <code>51D_difference</code>, and <code>51D_allow_unmatched</code>. When <code>AllowUnmatched</code> is set to <code>off</code>, if <code>HasValue</code> is <code>false</code>, a <code>NoMatch</code> will be returned. Else, if <code>AllowUnmatched</code> is set to <code>on</code>, when a match can not be found, default profile will be returned such as <code>Unknown</code>, <code>N/A</code>, or similar.</p>
-<h2 class="doxsection" id="user-agent-client-hint-supports">User-Agent Client Hint supports<a class="headerlink" href="#user-agent-client-hint-supports" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="false-positive-controls">False positive controls<a class="headerlink" href="#false-positive-controls" aria-label="Permalink to this section">🔗</a></h2>
+<p>Nginx Device Detection V4 module supports <code>False Positives</code> features as described at <a class="el" href="_device_detection__features__false_positive_control.html" title="False positives">False Positives</a> via settings of directives <code>51D_drift</code>, <code>51D_difference</code>, and <code>51D_allow_unmatched</code>. When <code>AllowUnmatched</code> is set to <code>off</code>, if <code>HasValue</code> is <code>false</code>, a <code>NoMatch</code> will be returned. Else, if <code>AllowUnmatched</code> is set to <code>on</code>, when a match can not be found, default profile will be returned such as <code>Unknown</code>, <code>N/A</code>, or similar.</p>
+<h2 class="doxsection" id="user-agent-client-hints-support">User-Agent Client Hints support<a class="headerlink" href="#user-agent-client-hints-support" aria-label="Permalink to this section">🔗</a></h2>
 <p>User-Agent Client Hint was introduced by Google in Chrome, preventing traditional detection using User-Agents from performing accurate matches. In Nginx Device Detection V4 module, <code>51D_set_resp_headers</code> was implemented to allow Client Hint request headers to be set in responses so that more evidence is provided in subsequent requests, allowing better matches.</p>
 <h2 class="doxsection" id="other-resources">Other resources<a class="headerlink" href="#other-resources" aria-label="Permalink to this section">🔗</a></h2>
 <p>More details can be found at:</p><ul>
 <li><a href="https://github.com/51Degrees/51degrees-nginx/blob/main/README%2Emd">README</a>.</li>
 <li><a href="/documentation/4.5/apis/device-detection-nginx/examples.html">Examples</a></li>
-<li><a class="el" href="_device_detection__upgradingto_v4.html" title="Upgrading to Version 4">Migrations</a> </li>
+<li><a class="el" href="_device_detection__upgradingto_v4.html" title="Upgrading to version 4">Migrations</a> </li>
 </ul>
 </div></div><!-- primary -->
 </div><!-- inner -->

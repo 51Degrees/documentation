@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Human Confidence Overview - 51Degrees API Documentation documentation."/>
-<title>51Degrees API Documentation: Human Confidence Overview</title>
+<meta name="description" content="Human Confidence overview - 51Degrees API Documentation documentation."/>
+<title>51Degrees API Documentation: Human Confidence overview</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -35,18 +35,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,16 +64,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_human_confide
 <div><div class="g-docs__header">
 <div class="c-breadcrumb">
   <ul class="c-breadcrumb">
-<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_human_confidence__index.html">Human Confidence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_human_confidence__overview.html">Human Confidence Overview</a></li>  </ul>
+<li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_human_confidence__index.html">Human Confidence</a></li><li class="c-breadcrumb__item"><a class="c-breadcrumb__link" href="_human_confidence__overview.html">Human Confidence overview</a></li>  </ul>
 </div>
-<h1 class="g-docs__page-title">Human Confidence Overview </h1></div><!--header-->
+<h1 class="g-docs__page-title">Human Confidence overview </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="introduction-32">Introduction<a class="headerlink" href="#introduction-32" aria-label="Permalink to this section">🔗</a></h2>
-<p>Human Confidence tells you how likely it is that a person is looking at the page. Every visit gets High, Medium or Low. If the 51Degrees script never ran in the browser, the value is Unknown.</p>
+<p>Human Confidence tells you how likely it is that a person is looking at the page. The value for each visit is High, Medium, or Low, or Unknown where it could not be measured, which is usually because the 51Degrees script never ran in the browser.</p>
 <p>It comes from the 51Degrees cloud as the property <code>derived.HumanConfidence</code>, on the Pro plan, our cloud service, and on the Bespoke plan for your own servers.</p>
 <p><b>Get a License Key with Human Confidence:</b> <a href="https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&amp;conversion=SignUp">buy the Pro plan online</a> for the cloud service, or <a href="https://51degrees.com/contact-us">talk to us</a> about the Bespoke plan to run it on your own servers in a Docker container. <a href="https://51degrees.com/pricing">Compare plans</a>.</p>
-<p>To try it, follow the <a class="el" href="_human_confidence__quickstart.html" title="Human Confidence Quick Start">Quick Start</a>.</p>
+<p>To try it, follow the <a class="el" href="_human_confidence__quickstart.html" title="Human Confidence quick start">Quick Start</a>.</p>
 <hr  />
 <h2 class="doxsection" id="the-values">The values<a class="headerlink" href="#the-values" aria-label="Permalink to this section">🔗</a></h2>
 <table class="c-table">
@@ -92,7 +90,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_human_confide
 </table>
 <hr  />
 <h2 class="doxsection" id="two-ways-to-use-it">Two ways to use it<a class="headerlink" href="#two-ways-to-use-it" aria-label="Permalink to this section">🔗</a></h2>
-<p><b>Measure.</b> Send Human Confidence to your analytics as a custom dimension and your reports show how much of your traffic is people. Nothing changes for your visitors. The steps for any analytics tool are in <a class="el" href="_human_confidence__analytics.html" title="Human and bot traffic in your analytics">Human and bot traffic in your analytics</a>, and there's a separate page for Google Analytics 4, <a class="el" href="_integrations__google_analytics.html" title="Google Analytics 4 (GA4)">Google Analytics 4 (GA4)</a>.</p>
+<p><b>Measure.</b> Send Human Confidence to your analytics as a custom dimension and your reports show how much of your traffic is likely to be people. Nothing changes for your visitors. The steps for any analytics tool are in <a class="el" href="_human_confidence__analytics.html" title="Human and bot traffic in your analytics">Human and bot traffic in your analytics</a>, and there's a separate page for Google Analytics 4, <a class="el" href="_integrations__google_analytics.html" title="Google Analytics 4 (GA4)">Google Analytics 4 (GA4)</a>.</p>
 <p><b>Act.</b> Your server gets Human Confidence from the cloud before it sends a page and decides what to send. See <a class="el" href="_services__cloud__human_confidence.html" title="Deploy Human Confidence with the cloud">Deploy Human Confidence with the cloud</a> for the code.</p>
 <p>You can do either on its own, or measure first and act once you know your numbers.</p>
 <hr  />

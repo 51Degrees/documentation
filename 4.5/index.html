@@ -33,18 +33,16 @@
   <div id="projectalign" style="padding-left: 0.5em;">
   </div>
   <div id="main-nav"></div>
-  <section class="g-search">
-    <div class="c-search is-openable" id="searchOpenable">
-    <form class="c-search__form">
+  <section class="g-search" hidden="hidden">
+    <div class="c-search">
+    <form class="c-search__form" action="/search-results" method="get">
       <div class="b-form-group b-form-group--with-icon">
-        <label for="inputSearch" class="b-text--hidden">Search</label>
-        <img src="icon-search.svg" class="b-icon" alt="Search" />
-        <input type="text" class="c-search__input" id="inputSearch" onkeyup="javascript:onSearch(this,event.keyCode)" placeholder="Search" aria-label="Search">
+        <label for="inputSearch" class="b-text--hidden">Ask a question</label>
+        <img src="icon-search.svg" class="b-icon" alt="" />
+        <input type="text" class="c-search__input" id="inputSearch" name="query" placeholder="Ask a question" aria-label="Ask a question" required="required" minlength="3">
       </div>
     </form>
-    <div class="c-search__content" id="searchContent">
-    </div>
-  </div> 
+  </div>
   </section>
 </div>
 <!-- end header part -->
@@ -66,67 +64,67 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><h2 class="doxsection" id="welcome-to-51degrees">Welcome to 51Degrees<a class="headerlink" href="#welcome-to-51degrees" aria-label="Permalink to this section">🔗</a></h2>
-<p>Real-time user intelligence that transforms web requests into powerful insights</p>
-<p>Why settle for vague analytics when you can truly understand who's visiting your site and what they need? 51Degrees gives you instant, precise intelligence so you can detect devices, pinpoint locations, and deliver brilliant user experiences at lightning speed, all with industry-leading accuracy.</p>
-<h2 class="doxsection" id="what-we-do">What We Do<a class="headerlink" href="#what-we-do" aria-label="Permalink to this section">🔗</a></h2>
-<p>At 51Degrees, we turn every user interaction into a chance to learn, optimize, and impress. Here's how:</p>
+<p>Device, network, and location data from web requests</p>
+<p>Use 51Degrees to detect devices and retrieve location and network data from web requests.</p>
+<h2 class="doxsection" id="what-we-do">What we do<a class="headerlink" href="#what-we-do" aria-label="Permalink to this section">🔗</a></h2>
+<p>Our services include:</p>
 <ul>
 <li><b>Device Detection</b> - Detect 250+ device properties from HTTP headers and other signals to tailor every user experience.</li>
-<li><b>IP Intelligence</b> - Unlock geolocation, ISP, and network data from IP addresses for sharper insights and smarter decisions.</li>
-<li><b>Human Confidence</b> - Rate every visit High, Medium, or Low by how likely it is that a person is viewing the page.</li>
+<li><b>IP Intelligence</b> - Retrieve geolocation, ISP, and network data from IP addresses.</li>
+<li><b>Human Confidence</b> - Rate every visit High, Medium, or Low by how likely it is that a person is viewing the page, and Unknown where the 51Degrees script has not run.</li>
 <li><b>Reverse Geocoding</b> - Transform latitude and longitude into real-world addresses, cities, and regions.</li>
 <li><b>Identifiers</b> - Generate 51Dids, identifiers that name the terms they were created under, and capture user marketing preferences (PMP) to feed downstream systems.</li>
-<li><b>Ultra-fast Performance</b> - Enjoy lightning-fast detection speeds thanks to in-process deployment.</li>
-<li><b>On-premise Options</b> - Prefer to keep your data close? Our on-premise options run entirely on your own servers.</li>
+<li><b>In-process deployment</b> - Run detection in your application process.</li>
+<li><b>On-premise deployment</b> - Run the services on your own servers.</li>
 </ul>
 <hr  />
-<h2 class="doxsection" id="get-started-fast">Get Started Fast<a class="headerlink" href="#get-started-fast" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="get-started">Get started<a class="headerlink" href="#get-started" aria-label="Permalink to this section">🔗</a></h2>
 <p>Mix and match our services to fit your needs:</p>
 <h3 class="doxsection" id="device-detection">Device Detection<a class="headerlink" href="#device-detection" aria-label="Permalink to this section">🔗</a></h3>
 <p>Identify devices, browsers, and capabilities to deliver tailored experiences across smartphones, tablets, desktops, TVs, and IoT devices.</p>
 <ul>
-<li><a class="el" href="_device_detection__overview.html" title="Device Detection Overview">Overview</a> - How it works and why it matters</li>
-<li><a class="el" href="_device_detection__quickstart.html" title="Device Detection Quick Start">Quick Start</a> - Cloud vs. On-premise setup</li>
-<li><a class="el" href="_device_detection__features__apple_detection.html" title="Apple Model Detection">Apple Detection</a> - Pinpoint specific iPhone/iPad models</li>
+<li><a class="el" href="_device_detection__overview.html" title="Device Detection overview">Overview</a> - How it works and why it matters</li>
+<li><a class="el" href="_device_detection__quickstart.html" title="Device Detection quick start">Quick Start</a> - Cloud vs. On-premise setup</li>
+<li><a class="el" href="_device_detection__features__apple_detection.html" title="Apple model detection">Apple Detection</a> - Pinpoint specific iPhone/iPad models</li>
 </ul>
 <h3 class="doxsection" id="ip-intelligence-1">IP Intelligence<a class="headerlink" href="#ip-intelligence-1" aria-label="Permalink to this section">🔗</a></h3>
-<p>Tap into geolocation, ISP, and network insights. Perfect for fraud prevention, personalization, and compliance.</p>
+<p>Retrieve geolocation, ISP, and network data for fraud prevention, personalization, and geographical restrictions.</p>
 <ul>
-<li><a class="el" href="_ip_intelligence__overview.html" title="IP Intelligence Overview">Overview</a> - Understand network data and location capabilities</li>
-<li><a class="el" href="_ip_intelligence__quickstart.html" title="IP Intelligence Quick Start">Quick Start</a> - Integrate in minutes</li>
+<li><a class="el" href="_ip_intelligence__overview.html" title="IP Intelligence overview">Overview</a> - Understand network data and location capabilities</li>
+<li><a class="el" href="_ip_intelligence__quickstart.html" title="IP Intelligence quick start">Quick Start</a> - Integrate in minutes</li>
 </ul>
 <h3 class="doxsection" id="human-confidence">Human Confidence<a class="headerlink" href="#human-confidence" aria-label="Permalink to this section">🔗</a></h3>
 <p>How likely it is that a person, not a script, is viewing the page, from the 51Degrees cloud. Measure it in your analytics, or act on it from your server.</p>
 <ul>
-<li><a class="el" href="_human_confidence__overview.html" title="Human Confidence Overview">Overview</a> - What the answers mean and how to use them</li>
-<li><a class="el" href="_human_confidence__quickstart.html" title="Human Confidence Quick Start">Quick Start</a> - From License Key to the first answer</li>
+<li><a class="el" href="_human_confidence__overview.html" title="Human Confidence overview">Overview</a> - What the answers mean and how to use them</li>
+<li><a class="el" href="_human_confidence__quickstart.html" title="Human Confidence quick start">Quick Start</a> - From License Key to the first answer</li>
 <li><a class="el" href="_services__cloud__human_confidence.html" title="Deploy Human Confidence with the cloud">Deploy with the cloud</a> - Decide what each visit gets on your server</li>
 <li><a class="el" href="_human_confidence__analytics.html" title="Human and bot traffic in your analytics">Analytics</a> - Send Human Confidence to your reports, with <a class="el" href="_integrations__google_analytics.html" title="Google Analytics 4 (GA4)">Google Analytics 4</a> step by step</li>
 </ul>
 <h3 class="doxsection" id="reverse-geocoding">Reverse Geocoding<a class="headerlink" href="#reverse-geocoding" aria-label="Permalink to this section">🔗</a></h3>
-<p>Turn GPS coordinates into meaningful places. Bring real-world context to your digital experiences.</p>
+<p>Convert GPS coordinates to addresses, cities, and regions.</p>
 <ul>
-<li><a class="el" href="_reverse_geocoding__overview.html" title="Reverse Geocoding Overview">Overview</a> - Map coordinates to addresses, cities, and regions</li>
-<li><a class="el" href="_reverse_geocoding__quickstart.html" title="Reverse Geocoding Quick Start">Quick Start</a> - Step-by-step implementation guide</li>
+<li><a class="el" href="_reverse_geocoding__overview.html" title="Reverse Geocoding overview">Overview</a> - Map coordinates to addresses, cities, and regions</li>
+<li><a class="el" href="_reverse_geocoding__quickstart.html" title="Reverse Geocoding quick start">Quick Start</a> - Step-by-step implementation guide</li>
 </ul>
 <h3 class="doxsection" id="identifiers">Identifiers<a class="headerlink" href="#identifiers" aria-label="Permalink to this section">🔗</a></h3>
-<p>Signed, probabilistic device-bound identifiers (51Did) and an embeddable preference widget (PMP) that feeds <code>id.usage</code> into 51Did.</p>
+<p>Generate signed, probabilistic device-bound identifiers (51Did). Use the Preference Management Platform (PMP), an embeddable preference widget, to pass <code>id.usage</code> to 51Did.</p>
 <ul>
-<li><a class="el" href="_identifiers__overview.html" title="Overview">Overview</a> - How the pieces fit together</li>
+<li><a class="el" href="_identifiers__overview.html" title="Identifiers overview">Overview</a> - How the pieces fit together</li>
 <li><a class="el" href="_identifiers_51_did.html" title="51Did (51Degrees Identifier)">51Did</a> - Properties, <code>id.usage</code>, licensing</li>
 <li><a class="el" href="_identifiers__p_m_p.html" title="PMP (Preference Management Platform)">PMP</a> - Embeddable preference widget</li>
 <li><a class="el" href="_identifiers__a_d_i.html" title="ADI (Ad Inspector)">ADI</a> - Embeddable ad inspector that tells a visitor why an ad was served</li>
 </ul>
-<h3 class="doxsection" id="client-side-only">Client-Side Only<a class="headerlink" href="#client-side-only" aria-label="Permalink to this section">🔗</a></h3>
-<p>Prefer a lightweight approach? Implement device detection directly in the browser - no server-side code needed.</p>
+<h3 class="doxsection" id="client-side-only">Client-side only<a class="headerlink" href="#client-side-only" aria-label="Permalink to this section">🔗</a></h3>
+<p>Run device detection directly in the browser without server-side code.</p>
 <ul>
 <li><a href="https://configure.51degrees.com/">configure.51degrees.com</a> - Create a Resource Key and get the JavaScript snippet for it</li>
 <li><a class="el" href="_services__configurator.html" title="Creating a Resource Key">Resource Key guide</a> - Creating a Resource Key step by step</li>
 <li><a href="https://cloud.51degrees.com/api-docs/index.html">Cloud API Reference</a> - Complete HTTP API documentation</li>
 </ul>
 <hr  />
-<h2 class="doxsection" id="language-support">Language Support<a class="headerlink" href="#language-support" aria-label="Permalink to this section">🔗</a></h2>
-<p>Work in the language that suits you best. Our services are production-ready across:</p>
+<h2 class="doxsection" id="language-support">Language support<a class="headerlink" href="#language-support" aria-label="Permalink to this section">🔗</a></h2>
+<p>Use the following libraries to integrate Device Detection and IP Intelligence:</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Language  </td><td class="c-table__cell">Device Detection  </td><td class="c-table__cell">IP Intelligence  </td></tr>
@@ -139,70 +137,70 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <tr class="c-table__row">
 <td class="c-table__cell">Node.js  </td><td class="c-table__cell"><a href="https://github.com/51Degrees/51degrees-node/tree/main/device-detection">device-detection-node</a>  </td><td class="c-table__cell"><a href="https://github.com/51Degrees/51degrees-node/tree/main/ip-intelligence">ip-intelligence-node</a>  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Python  </td><td class="c-table__cell"><a href="https://github.com/51Degrees/51degrees-python/tree/main/device-detection">device-detection-python</a>  </td><td class="c-table__cell">-  </td></tr>
+<td class="c-table__cell">Python  </td><td class="c-table__cell"><a href="https://github.com/51Degrees/51degrees-python/tree/main/device-detection">device-detection-python</a>  </td><td class="c-table__cell"><a href="https://github.com/51Degrees/51degrees-python/tree/main/ip-intelligence">ip-intelligence-python</a>  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">PHP  </td><td class="c-table__cell"><a href="https://github.com/51Degrees/51degrees-php/tree/main/device-detection">device-detection-php</a>  </td><td class="c-table__cell">-  </td></tr>
 </table>
 <hr  />
-<h2 class="doxsection" id="specialized-integrations">Specialized Integrations<a class="headerlink" href="#specialized-integrations" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="specialized-integrations">Specialized integrations<a class="headerlink" href="#specialized-integrations" aria-label="Permalink to this section">🔗</a></h2>
 <p>Tailor your setup for maximum performance:</p>
 <ul>
 <li><a href="https://github.com/51Degrees/51degrees-nginx">Nginx Module</a> - integrate device detection at the edge</li>
 <li><a class="el" href="_integrations__google_analytics.html" title="Google Analytics 4 (GA4)">Google Analytics 4</a> - send device, location, crawler and Human Confidence properties to your reports</li>
 <li><a class="el" href="_integrations__prebid.html" title="Prebid">Prebid Integration</a> - enrich OpenRTB bid requests</li>
-<li><a href="https://github.com/51Degrees/ua-parser-js">UA Parser JS</a> - seamless cloud API integration</li>
+<li><a href="https://github.com/51Degrees/ua-parser-js">UA Parser JS</a> - integrate with the cloud API</li>
 <li><a href="https://github.com/51Degrees/51degrees-varnish">Varnish Module</a> - cache smarter, deliver faster</li>
 </ul>
 <p>Explore all our SDKs on <a href="https://github.com/51Degrees/">GitHub</a>.</p>
 <hr  />
-<h2 class="doxsection" id="common-use-cases-2">Common Use Cases<a class="headerlink" href="#common-use-cases-2" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="common-use-cases-2">Common use cases<a class="headerlink" href="#common-use-cases-2" aria-label="Permalink to this section">🔗</a></h2>
 <p>Here's how you can combine our services for real-world results:</p>
-<h3 class="doxsection" id="autotoc_md-enhanced-user-experience">🎯 Enhanced User Experience<a class="headerlink" href="#autotoc_md-enhanced-user-experience" aria-label="Permalink to this section">🔗</a></h3>
+<h3 class="doxsection" id="autotoc_md-enhanced-user-experience">🎯 Enhanced user experience<a class="headerlink" href="#autotoc_md-enhanced-user-experience" aria-label="Permalink to this section">🔗</a></h3>
 <p>Device Detection + IP Intelligence = spot-on content delivery.</p>
 <p>Detect mobile users in rural areas and serve relevant content tailored to their needs.</p>
-<h3 class="doxsection" id="️-fraud-prevention--security">🛡️ Fraud Prevention &amp; Security<a class="headerlink" href="#️-fraud-prevention--security" aria-label="Permalink to this section">🔗</a></h3>
-<p>Device Detection + IP Intelligence = rock-solid risk assessment.</p>
-<p>Spot suspicious device and location patterns, detect bots, and prevent account takeovers.</p>
-<h3 class="doxsection" id="autotoc_md-programmatic-advertising">📊 Programmatic Advertising<a class="headerlink" href="#autotoc_md-programmatic-advertising" aria-label="Permalink to this section">🔗</a></h3>
+<h3 class="doxsection" id="️-fraud-prevention-and-security">🛡️ Fraud prevention and security<a class="headerlink" href="#️-fraud-prevention-and-security" aria-label="Permalink to this section">🔗</a></h3>
+<p>Combine Device Detection and IP Intelligence to assess device and location patterns.</p>
+<p>Spot suspicious device and location patterns, detect bots, and flag logins that need a closer look.</p>
+<h3 class="doxsection" id="autotoc_md-programmatic-advertising">📊 Programmatic advertising<a class="headerlink" href="#autotoc_md-programmatic-advertising" aria-label="Permalink to this section">🔗</a></h3>
 <p>Device Detection + IP Intelligence + <a class="el" href="_integrations__prebid.html" title="Prebid">Prebid Integration</a> = better targeting.</p>
 <p>Enrich bid requests with precise device and location data for sharper targeting.</p>
-<h3 class="doxsection" id="autotoc_md-advanced-analytics">📈 Advanced Analytics<a class="headerlink" href="#autotoc_md-advanced-analytics" aria-label="Permalink to this section">🔗</a></h3>
-<p>Device Detection + IP Intelligence = next-level audience segmentation.</p>
+<h3 class="doxsection" id="autotoc_md-advanced-analytics">📈 Advanced analytics<a class="headerlink" href="#autotoc_md-advanced-analytics" aria-label="Permalink to this section">🔗</a></h3>
+<p>Combine Device Detection and IP Intelligence to segment audiences by device and location.</p>
 <p>See the difference between "iPhone users in London" and "Android tablet users in rural areas" for highly targeted insights.</p>
-<h3 class="doxsection" id="autotoc_md-geo-compliance--personalization">🌍 Geo-Compliance &amp; Personalization<a class="headerlink" href="#autotoc_md-geo-compliance--personalization" aria-label="Permalink to this section">🔗</a></h3>
-<p>IP Intelligence + Reverse Geocoding = smarter, compliant experiences.</p>
-<p>Enable GDPR compliance, local content licensing, and location-based personalization.</p>
-<h3 class="doxsection" id="autotoc_md-performance-optimization-2">⚡ Performance Optimization<a class="headerlink" href="#autotoc_md-performance-optimization-2" aria-label="Permalink to this section">🔗</a></h3>
+<h3 class="doxsection" id="autotoc_md-location-and-personalization">🌍 Location and personalization<a class="headerlink" href="#autotoc_md-location-and-personalization" aria-label="Permalink to this section">🔗</a></h3>
+<p>Combine IP Intelligence and Reverse Geocoding for location-based experiences.</p>
+<p>Apply rules that differ by country or region, such as data protection law and local content licensing, and personalize content by location.</p>
+<h3 class="doxsection" id="autotoc_md-performance-optimization-2">⚡ Performance optimization<a class="headerlink" href="#autotoc_md-performance-optimization-2" aria-label="Permalink to this section">🔗</a></h3>
 <p>Device Detection + IP Intelligence = faster, smarter websites.</p>
 <p>Serve optimized images, adjust content for connection speeds, and choose the best CDN for each user.</p>
 <hr  />
-<h2 class="doxsection" id="documentation-hub">Documentation Hub<a class="headerlink" href="#documentation-hub" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="documentation-hub">Documentation hub<a class="headerlink" href="#documentation-hub" aria-label="Permalink to this section">🔗</a></h2>
 <p>Everything you need to succeed:</p>
-<h3 class="doxsection" id="autotoc_md-quick-starts">💡 Quick Starts<a class="headerlink" href="#autotoc_md-quick-starts" aria-label="Permalink to this section">🔗</a></h3>
+<h3 class="doxsection" id="autotoc_md-quick-starts">💡 Quick starts<a class="headerlink" href="#autotoc_md-quick-starts" aria-label="Permalink to this section">🔗</a></h3>
 <ul>
-<li><a class="el" href="_device_detection__quickstart.html" title="Device Detection Quick Start">Device Detection</a> - Cloud vs. On-premise</li>
-<li><a class="el" href="_ip_intelligence__quickstart.html" title="IP Intelligence Quick Start">IP Intelligence</a> - Location and network data</li>
-<li><a class="el" href="_human_confidence__quickstart.html" title="Human Confidence Quick Start">Human Confidence</a> - People or scripts</li>
-<li><a class="el" href="_reverse_geocoding__quickstart.html" title="Reverse Geocoding Quick Start">Reverse Geocoding</a> - From coordinates to addresses</li>
-<li><a class="el" href="_identifiers__overview.html" title="Overview">Identifiers</a> - 51Did and PMP</li>
+<li><a class="el" href="_device_detection__quickstart.html" title="Device Detection quick start">Device Detection</a> - Cloud vs. On-premise</li>
+<li><a class="el" href="_ip_intelligence__quickstart.html" title="IP Intelligence quick start">IP Intelligence</a> - Location and network data</li>
+<li><a class="el" href="_human_confidence__quickstart.html" title="Human Confidence quick start">Human Confidence</a> - People or scripts</li>
+<li><a class="el" href="_reverse_geocoding__quickstart.html" title="Reverse Geocoding quick start">Reverse Geocoding</a> - From coordinates to addresses</li>
+<li><a class="el" href="_identifiers__overview.html" title="Identifiers overview">Identifiers</a> - 51Did and PMP</li>
 </ul>
-<h3 class="doxsection" id="deep-dives">Deep Dives<a class="headerlink" href="#deep-dives" aria-label="Permalink to this section">🔗</a></h3>
+<h3 class="doxsection" id="detailed-guides">Detailed guides<a class="headerlink" href="#detailed-guides" aria-label="Permalink to this section">🔗</a></h3>
 <ul>
-<li><a class="el" href="_device_detection__overview.html" title="Device Detection Overview">Device Detection Overview</a></li>
-<li><a class="el" href="_ip_intelligence__overview.html" title="IP Intelligence Overview">IP Intelligence Overview</a></li>
-<li><a class="el" href="_human_confidence__overview.html" title="Human Confidence Overview">Human Confidence Overview</a></li>
-<li><a class="el" href="_reverse_geocoding__overview.html" title="Reverse Geocoding Overview">Reverse Geocoding Overview</a></li>
-<li><a class="el" href="_identifiers__overview.html" title="Overview">Identifiers Overview</a></li>
+<li><a class="el" href="_device_detection__overview.html" title="Device Detection overview">Device Detection Overview</a></li>
+<li><a class="el" href="_ip_intelligence__overview.html" title="IP Intelligence overview">IP Intelligence Overview</a></li>
+<li><a class="el" href="_human_confidence__overview.html" title="Human Confidence overview">Human Confidence Overview</a></li>
+<li><a class="el" href="_reverse_geocoding__overview.html" title="Reverse Geocoding overview">Reverse Geocoding Overview</a></li>
+<li><a class="el" href="_identifiers__overview.html" title="Identifiers overview">Identifiers Overview</a></li>
 </ul>
-<h3 class="doxsection" id="advanced-topics">Advanced Topics<a class="headerlink" href="#advanced-topics" aria-label="Permalink to this section">🔗</a></h3>
+<h3 class="doxsection" id="advanced-topics">Advanced topics<a class="headerlink" href="#advanced-topics" aria-label="Permalink to this section">🔗</a></h3>
 <ul>
-<li><a class="el" href="_pipeline_api__features__index.html" title="API Features">Pipeline API features</a></li>
+<li><a class="el" href="_pipeline_api__features__index.html" title="API features">Pipeline API features</a></li>
 <li><a class="el" href="_pipeline_api__concepts__index.html" title="Concepts">Architecture concepts</a></li>
-<li><a class="el" href="_product_summaries__feature_matrix.html" title="Feature Matrix">Feature comparisons</a></li>
+<li><a class="el" href="_product_summaries__feature_matrix.html" title="Feature matrix">Feature comparisons</a></li>
 <li><a class="el" href="_product_summaries__benchmarks.html" title="Benchmarks">Performance benchmarks</a></li>
 </ul>
 <hr  />
-<h2 class="doxsection" id="autotoc_md-get-support">💬 Get Support<a class="headerlink" href="#autotoc_md-get-support" aria-label="Permalink to this section">🔗</a></h2>
+<h2 class="doxsection" id="autotoc_md-get-support">💬 Get support<a class="headerlink" href="#autotoc_md-get-support" aria-label="Permalink to this section">🔗</a></h2>
 <p>We're here to help every step of the way:</p>
 <ul>
 <li>Have quick questions? <a href="https://github.com/51Degrees/">Raise an issue on GitHub</a></li>
