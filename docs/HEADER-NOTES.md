@@ -158,6 +158,37 @@ from DoxyGen substitutions; eliminating the proxy's remaining canonical
 / hreflang / title rewrites needs a feature in the custom 51Degrees
 DoxyGen build, not a template change.
 
+## Why the search box starts hidden
+
+The search box hands the visitor's question to the 51degrees.com assistant,
+which answers on the site's `/search-results` page. The assistant is not
+available to every visitor, and the documentation is also published at
+https://51degrees.github.io/documentation/, where there is no assistant at
+all. So `header.html` emits the box with the `hidden` attribute, and
+`search51.js` removes the attribute only when `GET /api/v1/sid/status`
+answers with `ready: true`. A failed request, a response that is not OK, or
+no answer within 4 seconds leaves the box hidden, which is what happens on
+GitHub Pages.
+
+The status depends on the 51Degrees cloud's view of the visitor. On
+51degrees.com the site adds its analytics script, marked
+`data-fiftyone-analytics`, to the documentation pages it serves, so the search
+script waits for that script's `fodscriptsran` event, or 12 seconds, before it
+asks.
+
+The pattern library styles `.g-search[hidden]` with `visibility: hidden`
+rather than leaving it to the browser's `display: none`. The box keeps its
+space in the header whether it is shown or not, so the header never changes
+size or moves the brand when the box appears.
+
+Pressing Enter with a question of at least 3 characters stores the question
+in `sessionStorage` under `sidTypedQuestion` and opens
+`/search-results?query=<question>`. The chat page sends a question by itself
+only when it finds that key, so a crawler following the address never starts
+a conversation. The form also names `/search-results` as its action, so a
+browser still running an older copy of the script lands on the chat page with
+the question in its box, ready for the visitor to send.
+
 ## Why these notes are not inline comments
 
 A prior version had this rationale as `<!-- ... -->` blocks inside
