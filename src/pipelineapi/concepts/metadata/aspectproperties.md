@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_MetaData_AspectProperties Aspect Properties
+@page PipelineApi_Concepts_MetaData_AspectProperties Aspect properties
 
 # Introduction
 
@@ -15,5 +15,5 @@ for more technical details.
 
 The data tier of a **property** describes which product tiers the **property** is available in. For example,
 an @aspectengine could consume both a free and enterprise @datafile. Please be aware that certain 
-**properties** may not be available in the free data file..
+**properties** may not be available in the free data file.
 

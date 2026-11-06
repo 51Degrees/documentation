@@ -1,8 +1,8 @@
-@page PipelineApi_Features_ErrorHandling Error Handling
+@page PipelineApi_Features_ErrorHandling Error handling
 
 # Introduction
 
-The @Pipeline can contain and number or configuration of @flowelements, including custom third-party ones. As such, it must have a robust and consistent error handling solution.
+A @Pipeline can contain any number or combination of @flowelements, including custom elements. Errors from these elements are handled consistently.
 
 See the
 [Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/exception-handling.md#)
@@ -35,14 +35,14 @@ As with all configuration settings, this can be set in code or via a @Pipeline c
 The setting name follows each language's conventions: `SuppressProcessExceptions` in .NET, `setSuppressProcessException` / `<SuppressProcessException>` (singular) in Java, `suppressProcessExceptions` in Node.js, and `suppress_process_exceptions` in Python. In Node.js and Python it is read from the pipeline-level `PipelineOptions.BuildParameters` section of a configuration file. See [Pipeline Builder](@ref PipelineApi_Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions) for per-language code and configuration examples.
 
 
-# Testing the unhappy path scenarios
+# Testing failure scenarios
 
 In each integration there are dependencies that can fail, such as network connectivity, DNS, load balancers, web servers etc.  
 This is especially true for scenarios relying on 51Degrees Cloud Service. There are several steps you need to take to ensure your integration is safe against such failures and won't crash in production. 
 
 ## Simulating the failure
 
-For Cloud integration there two ways to simulate a 51Degrees Cloud Service dependency failure:
+For a cloud integration, there are two ways to simulate a 51Degrees Cloud Service dependency failure:
 
 1. Specify a non-existent `EndPoint` in the `CloudRequestEngine` configuration in the configuration file. For example, set it to "http://nonexistent.domain/".
 2. Specify `127.0.0.1	cloud.51degrees.com` in the `/etc/hosts` file (`C:\Windows\System32\drivers\etc\hosts` on Windows).
@@ -51,9 +51,9 @@ Under any of these conditions your server app won't be able to talk to `cloud.51
 
 ## Testing
 1. Simulate the failure using one of the methods above. 
-2. By default `SuppressProcessExceptions` is `false`, thus demanding you to first test the behaviors under this setting. Verify that you receive an exception originating in the 51D `Pipeline` code – it should state that `cloud.51degrees.com` is not reachable or similar.
-3. Next set `SuppressProcessExceptions` to `true` in the configuration and rerun the service. Verify that you don't get an exception from the 51D `Pipeline` code, but instead it now returns `FlowData` object with `Errors`. If you still get some exceptions, check the next step.
+2. First test with `SuppressProcessExceptions` set to its default, `false`. Verify that the 51Degrees `Pipeline` raises an exception stating that `cloud.51degrees.com` cannot be reached.
+3. Set `SuppressProcessExceptions` to `true` in the configuration and rerun the service. Verify that the 51Degrees `Pipeline` returns a `FlowData` object with `Errors` instead of raising an exception. If an exception still occurs, follow the next step.
 4. Make sure you properly wrap getting the device data in your code from FlowData (`FlowData.Get<IDeviceData>()` in .NET) as this call may throw an exception (see [.NET example](https://github.com/51Degrees/51degrees-dotnet/blob/main/examples/device-detection/Cloud/Framework-Web/Default.aspx#L97)). Also make sure that you wrap retrieving properties from device data, such as using a function that try-catch-wraps and null-checks the device data and its properties (see [.NET example](https://github.com/51Degrees/51degrees-dotnet/blob/main/examples/device-detection/Cloud/Framework-Web/Default.aspx#L111)). 
 5. Finally, undo the failure simulation (either remove the non-existent endpoint from the configuration or comment out the record in the `hosts` file), and observe the happy path scenario. All should work as expected.
 
-Leave the `SuppressProcessExceptions` configuration set to `true` for the production setup, as it will protect the users from interruptions in case any of the dependencies fail.
+Leave the `SuppressProcessExceptions` configuration set to `true` for the production setup. With that setting and the error handling from step 4 in place, a failed dependency does not interrupt your users.

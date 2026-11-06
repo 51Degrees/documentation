@@ -1,3 +1,3 @@
-@page IpIntelligence_Combined_Web_Index Web Examples
+@page IpIntelligence_Combined_Web_Index Web examples
 
 @subpage IpIntelligence_Combined_Web_OnPremise

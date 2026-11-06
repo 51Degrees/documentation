@@ -1,4 +1,4 @@
-@page Services_Cloud_Overview Cloud Service Overview
+@page Services_Cloud_Overview Cloud Service overview
 
 The Cloud Service comes in two forms: the Cloud hosted by 51Degrees, which this page describes, and the [Self-Hosted Docker](@ref Services_Cloud_SelfHostedDocker) image, which serves the same API from your own infrastructure and authenticates with your License Key alone, supplied once when the container starts.
 
@@ -19,7 +19,7 @@ Most v4 responses, including the detection endpoints, are cacheable only by the 
 # RESTful API
 
 
-In the most raw form Cloud Service is accessible via a RESTful API, documented in the [Cloud REST API reference](https://cloud.51degrees.com/api-docs/index.html).
+Call the Cloud Service directly through its REST API. See the [Cloud REST API reference](https://cloud.51degrees.com/api-docs/index.html).
 
 ---
 

@@ -1,10 +1,8 @@
-@page PipelineApi_Concepts_Data_FlowData Flow Data
+@page PipelineApi_Concepts_Data_FlowData Flow data
 
 # Introduction
 
-**Flow data** is a container that encapsulates all the data related to a single @Pipeline process request.
-This includes input and output data as well as metadata related to the processing such as 
-the details of any errors that occurred.
+**Flow data** holds the inputs, outputs, metadata, and errors for one @Pipeline processing request.
 
 See the
 [Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#flow-data)
@@ -63,18 +61,18 @@ that are most appropriate for the configuration of the @flowelements in the @Pip
 For example, thread-safe but slower data collections only need to be used if the @Pipeline
 is configured to execute @elements in @parallel.
 
-## Disposal / Cleanup
+## Disposal and cleanup
 
-**Flow data** disposal should be left up to the garbage collector. This ensures that any resource which may still be needed (e.g., if it has been cached) is freed at the correct point.
+Dispose of **flow data** as soon as it is no longer needed. **Flow data** can hold native resources, such as the results of an on-premise engine, and under high load the garbage collector may not free them fast enough, which can cause an out-of-memory error.
 
-There are exceptions where **Flow data** must be disposed immediately after it is no longer needed. This is because the garbage collector does not free the resource fast enough under high load and causes an out of memory exception. Two languages where this is required are Java and C#.
+In C# use a `using` block and in Java a try-with-resources block, as shown below. In Python use a `with` statement, and in PHP call `close()`. Node.js has no disposal method, so leave **flow data** to the garbage collector.
 
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
 @defaultsnippet{Select a language.}
 @startsnippet{dotnet}
-In .NET, try-with-resource pattern is done as below.
+In .NET, use a using block to dispose of flow data:
 ```
 // Create the FlowData instance.
 using (var data = pipeline.CreateFlowData())
@@ -84,7 +82,7 @@ using (var data = pipeline.CreateFlowData())
 ```
 @endsnippet
 @startsnippet{java}
-In Java, try-with-resource pattern is done as below.
+In Java, use a try-with-resources block:
 
 ```            
 // A try-with-resource block MUST be used for 

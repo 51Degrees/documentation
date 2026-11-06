@@ -1,4 +1,4 @@
-@page DeviceDetection_Features_FalsePositiveControl False Positives
+@page DeviceDetection_Features_FalsePositiveControl False positives
 
 # Introduction
 
@@ -6,17 +6,17 @@ Most device detection solutions rely primarily on the User-Agent HTTP header. Ho
 
 A false positive occurs when the service tells you it has found a match but in reality the details provided are incorrect.
 
-In these scenarios, different use cases often demand different responses. 51Degrees Device Detection allows the developer to determine exactly what happens.
+You can configure how 51Degrees Device Detection handles unmatched evidence and limits differences between the evidence and a match.
 
 # HasValue
 
-The Device Detection API returns many different properties. Every single one of these can either have a specified value or not.
+Each property returned by the Device Detection API may have a value or no value.
 
 Each language implements this differently but in all cases, there will be some form of `HasValue` method or property associated with each result property. Where `HasValue` is false, accessing the property value will cause an exception to be returned or thrown (depending on the language). 
 
 The detail associated with this exception will explain why the property does not have a specified value.
 
-# No Match Found
+# No match found
 
 In some cases, the device detection algorithm can fail to find any match at all for the supplied evidence.
 
@@ -26,10 +26,10 @@ If `AllowUnmatched` is true then the default @profile will be returned.
 
 The default @profile has specific values for properties but they may be incorrect. For example, the default hardware profile has `IsMobile = false`. In reality, if no match was found then we have no idea if the device is a mobile device or not.
 
-# Bad Match
+# Bad match
 
 The `Difference` value is used to measure how different a potential match is from the supplied evidence.
-The `Drift` value is used to measure how far a matching substring is from it's expected position.
+The `Drift` value measures how far a matching substring is from its expected position.
 
 The maximum allowable `Difference` and `Drift` values can be set when the engine is created. This is used to control how far the supplied evidence is allowed to differ from the real-world training data that was used to create the data file.  
 For example, if the maximum `Difference` value is set to 0 (default) then a match will only be returned if the difference value is 0. 
@@ -50,11 +50,10 @@ Regardless of the settings used, the result will return additional metadata that
 
 # The 'Unknown' value
 
-Previous versions of the Device Detection API were unable to indicate that a property did not have a value.  
-Therefore, in the past, the string values `Unknown` or `N/A` were used to indicate that the API did not have a value for a particular property.
+Some properties use the string values `Unknown` or `N/A` to indicate that a value is not known or is not applicable.
 
 These values are treated as distinct from `HasValue`, i.e., it is possible for `HasValue` to return `true` and `Value` to return `Unknown`.  
-In the future, this may be changed so that `HasValue` will return false if `Value` is `Unknown`, `N/A`, or similar, but this is not currently planned.
+
 
 # Use cases
 
@@ -74,7 +73,7 @@ In the future, this may be changed so that `HasValue` will return false if `Valu
 
 - **I'm migrating from 51Degrees V3 Device Detection and want to retain the previous functionality.**  
   OR  
-  **I want to keep my code simple as possible. I'm not worried about some false positives.**  
+  **I want to keep my code as simple as possible. I'm not worried about some false positives.**  
   Set `AllowUnmatched` to true.  
   Set `Difference` (and `Drift` if using @Hash) to -1.  
   These settings will mean that `HasValue` is never false. Each property will always have a value so you don't need to worry about dealing with a situation where they do not. 

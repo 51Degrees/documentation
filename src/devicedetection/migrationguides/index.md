@@ -1,4 +1,4 @@
-@page DeviceDetection_MigrationGuides_Index Migration Guides
+@page DeviceDetection_MigrationGuides_Index Migration guides
 
 @subpage DeviceDetection_MigrationGuides_DeviceAtlas
 

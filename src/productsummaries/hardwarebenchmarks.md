@@ -1,4 +1,4 @@
-@page ProductSummaries_Benchmarks_Hardware Hardware Benchmarks
+@page ProductSummaries_Benchmarks_Hardware Hardware benchmarks
 
 These results are for version 4.5.70 of the Device Detection C library and
 version 4.5.34 of the IP Intelligence C library. The

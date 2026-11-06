@@ -2,7 +2,7 @@
 
 The consent surface reports `gdprApplies`, which says whether the General Data Protection Regulation (GDPR) applies to the visit, and PMP takes the answer from `IsGdpr` on the client script's object. That property is worked out from the visitor's country, true for the European Economic Area, the United Kingdom and the French outermost regions and false everywhere else, an address that cannot be placed included. It is a good default and not a determination, because GDPR also reaches a publisher by where the publisher is established, so a publisher established in the European Union is within scope while serving a visitor in the United States and this answers false for that request. A publisher who knows their own position should say so rather than take this.
 
-PMP depends on three properties from the client script, so ask for all three when you create the resource key. Where the key does not carry one of them PMP says so in the console once per page view, and everything else carries on working, so the console is the only place the gap shows.
+PMP depends on three properties from the client script, so ask for all three when you create the Resource Key. Where the key does not carry one of them PMP says so in the console once per page view, and everything else carries on working, so the console is the only place the gap shows.
 
 | Property | What is lost without it |
 |---|---|

@@ -19,7 +19,7 @@ Every Resource Key has a monthly allowance of requests, set by the plan behind i
 | `/api/v4/accessibleproperties` | Yes | One per call. |
 | `/api/v4/evidencekeys` | Only with a key | Counted when a Resource Key or a License Key is sent, because the answer is then narrowed to that key's properties. Not counted without one. |
 | `/api/v4/pmp/<key>.js` and `/api/v4/adi/<key>.js` | No | The loaders. |
-| `/api/v4/pmp/<key>/<name>` and `/api/v4/adi/<key>/<name>` | Yes | The bundles, one per page view. |
+| `/api/v4/pmp/<key>/<name>` and `/api/v4/adi/<key>/<name>` | Yes | The bundles, one per download. A browser can keep a bundle for a day, so later page views in that browser can reuse it without a new request. |
 | `/api/v4/pmp/pref` | No | The shared answer store. The key identifies the caller and is not charged. |
 | `/api/v4/id/key` | Yes | One per call. ADI keeps the answer in the browser, so it asks about once per key period rather than once per ad. |
 | `/api/v4/id/verify` | Yes | One per call. |

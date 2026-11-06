@@ -18,7 +18,7 @@ The usage inside a 51Did says what a recipient of the identifier may do with it,
 
 This is not a special case for the Global Privacy Platform. A TCF string that grants too little for either usage produces no identifier either, for the same reason, which is that the signal does not say what the usage values say.
 
-Mapping the Global Privacy Platform needs a new version of the Model Terms and a cloud release that reads it, so there is no setting on a resource key or a parameter on a request that turns this on.
+Mapping the Global Privacy Platform needs a new version of the Model Terms and a cloud release that reads it, so there is no setting on a Resource Key or a parameter on a request that turns this on.
 
 ## If a Global Privacy Platform string is all you have
 

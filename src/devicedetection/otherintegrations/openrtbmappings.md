@@ -1,7 +1,7 @@
-@page DeviceDetection_OtherIntegrations_OpenRTBMappings OpenRTB Mappings (Moved)
+@page DeviceDetection_OtherIntegrations_OpenRTBMappings OpenRTB mappings
 
-# Location Changed
+# OpenRTB mapping documentation
 
-OpenRTB mappings now apply to both Geo and Device object and are no longer singularly concerned with device.
+OpenRTB mappings cover both Geo and Device objects.
 
-This page has been moved to [Integrations -> OpenRTB Mappings](_integrations__open_r_t_b_mappings.html).
+See [Integrations -> OpenRTB Mappings](_integrations__open_r_t_b_mappings.html) for the documentation.

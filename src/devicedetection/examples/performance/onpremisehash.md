@@ -1,4 +1,4 @@
-@page DeviceDetection_Examples_Performance_OnPremiseHash Performance Test On-premise Hash
+@page DeviceDetection_Examples_Performance_OnPremiseHash On-premise Hash performance test
 
 # Introduction
 
@@ -20,6 +20,6 @@ A [feature page](@ref DeviceDetection_Features_PerformanceOptions) is also avail
 There is no performance example for C++, see the C tab instead.
 @endsnippet
 @startsnippet{php}
-The PHP device-detection On-premise repository includes a modified version of ApacheBench along with benchmarking script tool. Details of how to run this can be found in the [GitHub Readme](https://github.com/51Degrees/51degrees-php/tree/main/device-detection/onpremise#performance)
+The PHP on-premise device detection repository includes a modified ApacheBench and a benchmarking script. See the [GitHub Readme](https://github.com/51Degrees/51degrees-php/tree/main/device-detection/onpremise#performance) for instructions.
 @endsnippet
 @endsnippets

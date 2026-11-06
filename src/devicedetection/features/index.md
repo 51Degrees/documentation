@@ -1,4 +1,4 @@
-@page DeviceDetection_Features_Index Device Detection Features
+@page DeviceDetection_Features_Index Device Detection features
 
 @subpage DeviceDetection_Features_AppleDetection
 

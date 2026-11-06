@@ -1,4 +1,4 @@
-@page IpIntelligence_Features_Index IP Intelligence Features
+@page IpIntelligence_Features_Index IP Intelligence features
 
 @subpage IpIntelligence_Features_Confidence
 

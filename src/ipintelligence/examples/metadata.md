@@ -1,4 +1,4 @@
-@page IpIntelligence_Examples_Metadata IP Intelligence Metadata
+@page IpIntelligence_Examples_Metadata IP Intelligence metadata
 
 @startsnippets
 @grabexample{ip-intelligence-cxx,_ip_intelligence_2_meta_data_8cpp,C++}

@@ -22,6 +22,13 @@ jobs:
           BRANCH: ${{ github.event.pull_request.head.ref || github.ref_name }}
         run: |
           set -x
-          git rm -rf "${BRANCH//[\/]/-}"
+          dir=${BRANCH//[\/]/-}
+          # A pull request closed before its preview was published has no
+          # preview to remove.
+          if [ ! -e "$dir" ]; then
+            echo "No preview for $BRANCH"
+            exit 0
+          fi
+          git rm -rf -q "$dir"
           git -c user.name=Automation51D -c user.email=60396166+Automation51D@users.noreply.github.com commit --amend --no-edit --reset-author
-          git push --force-with-lease || sleep 5 && git pull --rebase && git push --force-with-lease
+          git push --force-with-lease
