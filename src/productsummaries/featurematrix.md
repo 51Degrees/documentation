@@ -1,4 +1,4 @@
-@page ProductSummaries_FeatureMatrix Feature Matrix
+@page ProductSummaries_FeatureMatrix Feature matrix
 
 # Data services
 
@@ -8,13 +8,13 @@
 | .NET                 | <center>@tick</center>            | <center>@tick</center>            | <center>Cloud only</center>        | <center>@tick</center>     |
 | Java                 | <center>@tick</center>            | <center>@tick</center>            | <center>Cloud only</center>        | <center>@tick</center>     |
 | JavaScript           | <center>Cloud only</center>       |                  | <center>Cloud only</center>        |           |
-| Node.js              | <center>@tick</center>            |                  | <center>Cloud only</center>        | <center>@tick</center>     |
+| Node.js              | <center>@tick</center>            | <center>@tick</center>            | <center>Cloud only</center>        | <center>@tick</center>     |
 | PHP                  | <center>@tick*</center>           |                  | <center>Cloud only</center>        | <center>@tick</center>     |
-| Python               | <center>@tick</center>            |                  | <center>Cloud only</center>        | <center>@tick</center>     |
+| Python               | <center>@tick</center>            | <center>@tick</center>            | <center>Cloud only</center>        | <center>@tick</center>     |
 | Go                   | <center>On-premise only</center>  | <center>On-premise only</center>  |                   |           |
 | Rust                 | <center>@tick</center>            | <center>@tick</center>            |                   | <center>@tick</center>     |
 
-*On-premise not available through composer.<BR>
+*On-premise not available through Composer.<BR>
 
 # Web integrations and plugins
 
@@ -30,9 +30,9 @@
 | Go                   | N/A                          |
 | Rust                 | axum                         |
 
-# Pipeline API Features
+# Pipeline API features
 
-| Language / Framework | <center>[Automatic Data Updates](@ref PipelineApi_Features_AutomaticDatafileUpdates)</center> | <center>[Client-side Evidence](@ref PipelineApi_Features_ClientSideEvidence)</center> | <center>[Usage Sharing](@ref PipelineApi_Features_UsageSharing)</center> | <center>[Asynchronous Execution](@ref PipelineApi_Features_AsynchronousExecution)</center> | <center>[Lazy Loading](@ref PipelineApi_Features_LazyLoading)</center> | <center>[Parallel Execution](@ref PipelineApi_Features_ParallelExecution)</center> | <center>[Result Caching](@ref PipelineApi_Features_ResultCaching)</center> |
+| Language / Framework | <center>[Automatic data file updates](@ref PipelineApi_Features_AutomaticDatafileUpdates)</center> | <center>[Client-side evidence](@ref PipelineApi_Features_ClientSideEvidence)</center> | <center>[Usage sharing](@ref PipelineApi_Features_UsageSharing)</center> | <center>[Asynchronous execution](@ref PipelineApi_Features_AsynchronousExecution)</center> | <center>[Lazy loading](@ref PipelineApi_Features_LazyLoading)</center> | <center>[Parallel execution](@ref PipelineApi_Features_ParallelExecution)</center> | <center>[Result caching](@ref PipelineApi_Features_ResultCaching)</center> |
 |----------------------|------------------------------------------------------------------|----------------------------------------------------------|---------------------------------------------|---------------------------------------------------------------|-------------------------------------------|-------------------------------------------------------|-----------------------------------------------|
 | .NET                 | <center>@tick</center>                                                            | <center>@tick</center>                                                    | <center>@tick</center>                                       |                                                               | <center>@tick</center>                                     | <center>@tick</center>                                                 | <center>@tick</center>                                         |
 | Java                 | <center>@tick</center>                                                            | <center>@tick</center>                                                    | <center>@tick</center>                                       |                                                               | <center>@tick</center>                                     | <center>@tick</center>                                                 | <center>@tick</center>                                         | 

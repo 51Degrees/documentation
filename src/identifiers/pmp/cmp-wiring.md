@@ -16,7 +16,7 @@ The 51Degrees client script reads your consent management platform through `wind
 
 - **Your platform's stub must come before the 51Degrees script tag.** Every consent management platform ships one, and the TCF specification already requires it to be first on the page. The stub queues the registration.
 - **The consent management platform itself may load later.** That is the normal case, and it works because the stub holds the registration until the platform takes over and then calls back.
-- **A missing stub has no recovery on that page view.** Where nothing answers to `__tcfapi` as the client script starts, and PMP is not on the page either, the script writes one warning to the console as it starts. Nothing recovers it on that page view.
+- **A missing stub cannot recover on the same page view.** If `__tcfapi` is absent when the client script starts and PMP is not on the page, the script logs one warning. Add the platform's stub before the client script and reload the page.
 
   ```
   51Degrees: no preference platform was found on this page. A platform's stub must precede this script. No 51Did will be created until a platform answers.

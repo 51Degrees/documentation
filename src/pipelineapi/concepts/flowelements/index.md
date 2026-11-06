@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_FlowElements_Index Flow Elements
+@page PipelineApi_Concepts_FlowElements_Index Flow elements
 @subpage PipelineApi_Concepts_FlowElements_FlowElement
 
 @subpage PipelineApi_Concepts_FlowElements_AspectEngine

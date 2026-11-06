@@ -2,9 +2,9 @@
 
 # Overview
 
-Many factors determine the reliability of IP Intelligence results. For example; a request from a data center that acts as a proxy for many countries might be completely useless for location identification.
+IP location reliability varies. For example, a request routed through a data center proxy may not identify the user's location.
 
-The `LocationConfidence` property should always be consulted before considering how to use results. Three different values are provided; `High`, `Medium`, and `Low`.
+The `LocationConfidence` property should always be consulted before considering how to use results. Four values are provided: `High`, `Medium`, `Low`, and `Unknown`.
 
 See the [IP Tester](https://51degrees.com/developers/ip-tester) to see how the `LocationConfidence` results vary for different IP addresses.
 
@@ -16,6 +16,6 @@ Always check the value of `LocationConfidence` when determining how to use IP In
 
 - **Medium** confidence results might be useful where the use case can tolerate a degree of imprecision.
 
-- **Low** or **Unknown** confidence results should be discarded when the results might be used to make consequential decisions. Instead of using the results consider asking the user to share their location via device APIs such as GPS and then using reverse geocoding, or enter their postal address manually. Subsequent processing may also be similar to handling an exception when obtaining the result.
+Discard **Low** or **Unknown** confidence results when making consequential decisions. Instead, ask the user to share their location through a device API such as GPS for reverse geocoding, or to enter their postal address.
 
 See the [property dictionary](https://51degrees.com/developers/property-dictionary?item=Location%7CCoordinates%20Accuracy) for more information.

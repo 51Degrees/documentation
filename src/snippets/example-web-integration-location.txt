@@ -1,9 +1,6 @@
 @htmlonly
 <p>
-This example demonstrates how to get location information from the device
-that a user is using to access a website. 
-In addition, JavaScript is used to update the page with postal address details 
-for this location.
+This example shows how to get the location of a device accessing a website. JavaScript then updates the page with postal address details for that location.
 </p>
 <p>
 This works by using the <a href="/documentation/4.5/_pipeline_api__features__client_side_evidence.html">client-side evidence</a> 

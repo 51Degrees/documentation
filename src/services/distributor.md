@@ -1,9 +1,6 @@
 @page Services_Distributor Distributor (On-premise)
 
-The 51Degrees Distributor service is a client-facing cloud-based service which is used by the 
-API to request the latest data files. You can also manually download files via the front end on
-our [website](https://51degrees.com/developers/downloads/enhanced-device-data), or by calling the 
-Distributor web API directly using curl or similar.
+The APIs use the Distributor service to download current data files. You can also download files from our [website](https://51degrees.com/developers/downloads/enhanced-device-data) or call the Distributor web API directly with curl or another HTTP client.
 
 The URL is `%https://distributor.51degrees.com/api/v2/download`
 
@@ -34,7 +31,7 @@ used combinations are:
 | TAC (V4)                          | `%https://distributor.51degrees.com/api/v2/download?LicenseKeys=YOUR_LICENSE_KEY&Type=HashV41&Product=V4TAC` |
 | IP Intelligence Enterprise (V4)   | `%https://distributor.51degrees.com/api/v2/download?LicenseKeys=YOUR_LICENSE_KEY&Type=IPIV41&Product=IPIV4Enterprise` |
 
-The numeric `Type`/`Product` ids from the tables above work too — e.g.
+You can also use the numeric `Type`/`Product` IDs from the tables. For example,
 `Type=27&Product=22` is equivalent to `Type=HashV41&Product=V4Enterprise`.
 
 ## HTTP headers
@@ -47,7 +44,7 @@ It can be used to verify the download by hashing the content and comparing the r
 The server will also respond with a `Last-Modified` header. This contains the publish date of the data file that is being downloaded.
 This value should be used to populate the `If-Modified-Since` header on the next request (see request headers below).
 
-If returning a 429 status (see response codes below), the server will specify an `Retry-After` header. This is the minimum number of seconds to wait before the distributor will serve requests for this License Key.
+If returning a 429 status (see response codes below), the server will specify a `Retry-After` header. This is the minimum number of seconds to wait before the distributor will serve requests for this License Key.
 
 ### Request headers
 
@@ -65,7 +62,7 @@ If the data file is newer, it will be returned, along with HTTP 200.
 | 400           | Bad request. Check the URL is correct and that the required parameters are supplied. Also returned if the License Key is invalid                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | 403           | Forbidden. The supplied License Key has been revoked. Contact support@51degrees.com for assistance.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | 404           | Not found. Usually indicates that a License Key has been supplied without a 'Product', and the Distributor has been unable to automatically determine which product you want. May also occur due to the supplied product and type being an invalid combination.                                                                                                                                                                                                                                                                                                                              | 
-| 429           | Too many requests. Has a couple of causes <ul><li>You are over the threshold of requests per minute for this License Key. The server will specify a `Retry-After` header. Also see the 'Recommendations for large clusters' section at the bottom of the [data updates feature page](@ref PipelineApi_Features_AutomaticDatafileUpdates) for advice.</li><li>`Unable to update the data file successfully due to another process using the file.` This is an internal failure due to the way Distributor currently works. It should be resolved if you try again in a few minutes.</li></ul> |
+| 429           | Too many requests. Has a couple of causes <ul><li>The License Key has made as many successful downloads in the last 30 minutes as the number of servers it supports. The server will specify a `Retry-After` header, which counts down to 30 minutes after the most recent download. Also see the 'Recommendations for large clusters' section at the bottom of the [data updates feature page](@ref PipelineApi_Features_AutomaticDatafileUpdates) for advice.</li><li>`Unable to update the data file successfully due to another process using the file.` This is an internal failure due to the way Distributor currently works. It should be resolved if you try again in a few minutes.</li></ul> |
 | 500           | Internal server error. Some unexpected problem has occurred. Please try again later and contact support@51degrees.com if this continues.                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 
 

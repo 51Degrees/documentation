@@ -1,4 +1,4 @@
-@page DeviceDetection_Examples_GettingStarted_Web_Index Getting Started - Web
+@page DeviceDetection_Examples_GettingStarted_Web_Index Getting started with web applications
 
 # Introduction
 
@@ -10,20 +10,11 @@ properties to your handler so you can adapt the response.
 
 Two deployment models are covered:
 
-- **Cloud** — calls 51Degrees' hosted Cloud service over HTTPS. No data file
-  to manage, no on-premise binary to update; suitable for traffic that already
-  reaches a public endpoint and for teams who want the fastest path to a
-  working integration. See @ref DeviceDetection_Examples_GettingStarted_Web_Cloud.
+- **Cloud** calls our hosted service over HTTPS. You do not need to manage a local data file or detection binary. See @ref DeviceDetection_Examples_GettingStarted_Web_Cloud.
 
-- **On-premise** — runs the Hash engine inside your own process against a
-  locally distributed data file. Suitable for workloads that need offline
-  operation, predictable latency, or the highest request throughput. See
-  @ref DeviceDetection_Examples_GettingStarted_Web_OnPremise.
+- **On-premise** runs the Hash engine in your process with a local data file. Use it for offline operation or when latency and throughput are priorities. See @ref DeviceDetection_Examples_GettingStarted_Web_OnPremise.
 
-Both examples follow the same pattern: configure a pipeline, register it with
-the framework, and read the detected properties off the request. Each ships
-side-by-side snippets across every supported language and web framework, so
-you can pick the one that matches your stack and skip the rest. If you are
+For both examples, configure a pipeline, register it with your web framework, and read the detected properties from each request. Select a tab for your language and framework. If you are
 evaluating which deployment model fits your use case first, see
 @ref DeviceDetection_CloudToOnPremise for a comparison.
 

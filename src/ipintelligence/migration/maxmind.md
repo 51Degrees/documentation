@@ -17,7 +17,7 @@ Where a mapping is approximate, the **Notes** column calls it out. Where no equi
 | `country.confidence` | `LocationConfidence` | MaxMind exposes confidence per geographic level (country, city, subdivision, postal); 51Degrees rolls them up into a single string-valued `LocationConfidence`. See the note below the City/postal/location table. |
 | `country.geoname_id` | `CountryGeoNameId` |  |
 | `registered_country.iso_code` | `RegisteredCountry` | |
-| `registered_country.names.{locale}` | `RegisteredCountry` | 51Degrees returns the country only, not localized names. |
+| `registered_country.names.{locale}` | `RegisteredCountry` | Approximate. `RegisteredCountry` is the country's two-letter code, not its name. Look the name up from `RegisteredCountryGeoNameId`, the country's GeoNames identifier. |
 | `registered_country.geoname_id` | `RegisteredCountryGeoNameId` | |
 | `represented_country.*` |  | 51Degrees does not separately model represented country (US military bases etc.). |
 
@@ -43,13 +43,13 @@ Where a mapping is approximate, the **Notes** column calls it out. Where no equi
 | `postal.confidence` | `LocationConfidence` | See the note below this table. |
 | `location.latitude` | `Latitude` | 51Degrees returns a single averaged value. See coordinate randomization note below. |
 | `location.longitude` | `Longitude` | 51Degrees returns a single averaged value. See coordinate randomization note below. |
-| `location.accuracy_radius` | `AccuracyRadiusMax` | Use `AccuracyRadiusMin` for the inner-bound radius. See the `LocationConfidence` note below for the categorical confidence signal that complements these radii. |
+| `location.accuracy_radius` | `AccuracyRadiusMin` | 51Degrees recommends `AccuracyRadiusMin` when comparing with other solutions. `AccuracyRadiusMax` is the radius of the circle that covers the whole area. See the `LocationConfidence` note below for the categorical confidence signal that complements these radii. |
 | `location.time_zone` | `TimeZoneIana` | `TimeZoneOffset` gives UTC offset separately. |
 | `location.metro_code` |  | Deprecated by MaxMind; no 51Degrees equivalent. |
 | `location.average_income` |  | No equivalent. |
 | `location.population_density` |  | No equivalent. |
 
-**Coordinate randomization**: 51Degrees randomizes `Latitude` and `Longitude` within around 1 km of the true average location for the IP range. The randomization is applied during data file generation, so the value returned for a given IP address is stable across all lookups against the same data file and only changes when a new data file is published. This guarantees the coordinates cannot be classified as personal data. No other property is affected. See [Randomization](@ref IpIntelligence_Features_Randomization).
+**Coordinate randomization**: 51Degrees randomizes `Latitude` and `Longitude` within around 1 km of the true average location for the IP range. The randomization is applied during data file generation, so the value returned for a given IP address is stable across all lookups against the same data file and only changes when a new data file is published. No other property is affected. See [Randomization](@ref IpIntelligence_Features_Randomization).
 
 **Location confidence**: 51Degrees rolls up location certainty into a single string-valued `LocationConfidence` property covering the town and country. Where MaxMind exposes a numeric `*.confidence` score on each geographic level (`country.confidence`, `city.confidence`, `subdivisions[0].confidence`, `postal.confidence`), the categorical 51Degrees equivalent is `LocationConfidence`, complemented by the numeric `AccuracyRadiusMax` and `AccuracyRadiusMin` properties for spatial precision. See the [property dictionary](https://51degrees.com/developers/property-dictionary) for the set of possible values.
 
@@ -64,7 +64,7 @@ Where a mapping is approximate, the **Notes** column calls it out. Where no equi
 | `traits.isp` | `AsnName` | 51Degrees does not separate ISP from AS organization. |
 | `traits.organization` | `RegisteredOwner` | |
 | `traits.domain` |  | No equivalent. |
-| `traits.connection_type` | `ConnectionType` | Both classify Cable/DSL, Cellular, Corporate, Satellite, Hosting (51Degrees rolls hosting and anonymous into one category). `IsBroadband`, `IsCellular`, `IsHosted` give the same information as booleans. |
+| `traits.connection_type` | `ConnectionType` | Approximate. MaxMind returns `Cable/DSL`, `Cellular`, `Corporate`, or `Satellite`. 51Degrees returns `Broadband`, `Cellular`, or `Hosting & Anonymous`, where `Broadband` covers DSL, cable, fiber, and satellite, and there is no corporate category. `IsBroadband`, `IsCellular`, and `IsHosted` give the same information as booleans. |
 | `traits.mobile_country_code` | `Mcc` | |
 | `traits.mobile_network_code` |  | Not exposed as a separate property. |
 | `traits.is_anycast` |  | No equivalent. |
@@ -73,7 +73,7 @@ Where a mapping is approximate, the **Notes** column calls it out. Where no equi
 | `traits.static_ip_score` |  | No equivalent. |
 | `traits.ip_risk_snapshot` |  | Differs in semantics. `HumanProbability` is the closest signal. It returns confidence from 0 to 10 that traffic is from a human rather than hosting or automated infrastructure. |
 
-# Anonymizer (privacy / VPN)
+# Anonymizer (VPN, proxy, Tor, and hosting)
 
 | MaxMind field | 51Degrees property | Notes |
 |---------------|--------------------|-------|
@@ -89,7 +89,7 @@ Where a mapping is approximate, the **Notes** column calls it out. Where no equi
 
 # Properties unique to 51Degrees
 
-The following 51Degrees properties have no MaxMind equivalent. They are the additional context that drives [accuracy weighting](@ref IpIntelligence_Features_Weighting) and bot detection.
+These additional properties describe IP ranges and location [weighting](@ref IpIntelligence_Features_Weighting), or support crawler detection.
 
 - **Diversity scores**: `BrowserDiversity`, `HardwareDiversity`, `PlatformDiversity` quantify how varied the traffic from an IP range is. See [Diversity](@ref IpIntelligence_Features_Diversity).
 - **Finer places**: `Suburb`, and `Iso31662Lvl8` and `Iso31662Lvl8SubdivisionOnly`, the ISO 3166-2 code of the OpenStreetMap level 8 area the location is in.

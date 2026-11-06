@@ -1,6 +1,6 @@
 @page Identifiers_PMP_Configuration Configuration attributes
 
-The attributes PMP reads from its own `<script>` tag.
+Set the following attributes on the PMP `<script>` tag:
 
 | Attribute                      | Required | Default | Purpose |
 |--------------------------------|----------|---------|---------|
@@ -33,7 +33,7 @@ PMP ships the dialog text in 24 languages and chooses one from the browser's own
 
 ### Giving the wording per language
 
-Writing the attribute once replaces that text for every language, which is usually wrong for a site with readers in more than one. Suffix the attribute with a language code to set the wording for that language alone.
+An attribute with no language suffix replaces that text in every language, which is usually wrong for a site with readers in more than one. Suffix the attribute with a language code to set the wording for that language alone.
 
 ```html
 <script
@@ -47,9 +47,9 @@ Writing the attribute once replaces that text for every language, which is usual
 
 PMP reads three candidates in order and takes the first one that is present:
 
-1. the attribute suffixed with the whole code of the language it is running in, such as `data-dialog-heading-fr-ca`
-2. the attribute suffixed with the language on its own, such as `data-dialog-heading-fr`
-3. the attribute with no suffix, which is the fallback for every language that has no variant of its own
+1. The attribute suffixed with the whole code of the language it is running in, such as `data-dialog-heading-fr-ca`
+2. The attribute suffixed with the language on its own, such as `data-dialog-heading-fr`
+3. The attribute with no suffix, which is the fallback for every language that has no variant of its own
 
 Write none of the three and the shipped wording for that language stands.
 

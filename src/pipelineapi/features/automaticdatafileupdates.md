@@ -1,4 +1,4 @@
-@page PipelineApi_Features_AutomaticDatafileUpdates Automatic Data File Updates
+@page PipelineApi_Features_AutomaticDatafileUpdates Automatic data file updates
 
 # Introduction
 
@@ -8,7 +8,7 @@ and the @onpremiseengine refreshed with it. The file location where the @datafil
 from can also be monitored for changes, so when a @datafile is manually replaced, the
 @onpremiseengine will be refreshed with it.
 
-This page describes the functionality and options for data updates in the pipeline API. 
+This page describes data updates in the Pipeline API.
 In addition, it is worth being familiar with the @Distributor web API, 
 which supplies the updated data files.
 
@@ -61,8 +61,9 @@ update is expected, then the @dataupdateservice will not check for updates at al
 In large clusters of servers, it is beneficial to stagger an update. If all servers download a new @datafile and
 refresh at the same time, a service's overall performance can be affected. To prevent this, the randomization option
 enables a random time interval to be added to the time at which the new @datafile is downloaded. For example, if there
-are 10 servers, and a full download and refresh takes around 10 seconds, it is sensible to set the randomization to
-above 10 seconds. In this case, there should only be one server updating at any one time.
+are 10 servers and a full download and refresh takes around 10 seconds, a randomization of 10 seconds still has all 10 servers
+updating at the 10 second mark. A randomization of several minutes spreads the updates out so that few of them overlap.
+Because the delay is random, randomization reduces the overlap but cannot guarantee that only one server updates at a time.
 
 ## URL formatter {#PipelineApi_Features_AutomaticDatafileUpdates_UrlFormatter}
 Where an @onpremiseengine needs to download a @datafile from a URL which is not constant, a URL formatter is used.
@@ -74,8 +75,7 @@ URL formatter by looking at the current @datafile to see what is needed.
 
 ## Temporary file
 
-It is good practice to set a @datafile to be copied to a temporary location for use by an @onpremiseengine. This means that
-whatever mode the file is being used in (e.g., in memory or streamed from file) an **update** can occur smoothly.
+Use a temporary copy of the @datafile with an @onpremiseengine so the original file remains available for an **update**, whether the engine uses memory or streams from the file.
 
 By setting the @onpremiseengine to use a temporary file location, the original @datafile is free to be changed by the
 **autoupdateservice**. Once the file has been replaced, the @onpremiseengine will be informed and manage the removal of the
@@ -102,10 +102,10 @@ is enabled (which it is by default for most @onpremiseengines) the `If-Modified-
 current @datafile was last modified. If there is not a newer @datafile on the server then the service will not attempt to download a file.
 
 # Recommendations for large clusters {#Large_Clusters}
-The @Distributor API is limited in the number of requests it can 
-service per day. This is enforced by each License Key being limited to a certain number of 
-requests (max 100, although some Keys will have a lower threshold than this) in each 
-30-minute period.
+The @Distributor API limits how often each License Key can download a data file. Each License Key can
+download a data file a set number of times in any 30-minute period, and the number depends on the license.
+Once a key reaches its limit, further requests receive HTTP status 429 with a `Retry-After` header until
+30 minutes have passed since its last download.
 
 Environments that use large numbers of independent nodes can easily exceed this threshold 
 if the automatic update functionality provided by the pipeline API is switched on.
@@ -134,8 +134,8 @@ gives you more control over when updates happen.
 
 In addition, we would only recommend using this setup with the 'MaxPerformance' 
 [performance option](@ref DeviceDetection_Features_PerformanceOptions) enabled.
-Other options will stream data from the data file as needed, which will be relatively 
-slow and bandwidth-heavy. 
+The Balanced and LowMemory options read data from the data file as needed, which is relatively
+slow and bandwidth-heavy when the file is in a shared network location.
 
 ## Push data file to nodes
 
@@ -175,8 +175,7 @@ You can also configure it in code using the relevant engine builder.
 
 The key settings for our purposes are:
 - **DataUpdateUrl** - The static URL to use when checking for a new data file.
-- **DataUpdateVerifyMd5** - You can either configure your endpoint to also response with an MD5 HTTP 
-  Header, or set this to false to prevent it trying to verify the content.
+- **DataUpdateVerifyMd5** - Configure your endpoint to return the MD5 HTTP header, or set this to false to disable content verification.
 - **DataUpdateUseUrlFormatter** - This must be set to false to prevent the API from appending the 
   query string parameters that are required when calling the 51Degrees Distributor service. 
 

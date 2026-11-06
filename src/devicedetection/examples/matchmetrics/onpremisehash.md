@@ -1,9 +1,8 @@
-@page DeviceDetection_Examples_MatchMetrics_OnPremiseHash Match Metrics On-premise Hash
+@page DeviceDetection_Examples_MatchMetrics_OnPremiseHash On-premise Hash match metrics
 
 # Introduction
 
-This example shows how to view metrics associated with the results of processing with a Device Detection
-@aspectengine using the Hash algorithm.
+This example shows how to read match metrics from a Device Detection @aspectengine that uses the Hash algorithm.
 
 @startsnippets
 @grabexample{device-detection-cxx,_hash_2_match_metrics_8c,C}

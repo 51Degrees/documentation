@@ -1,9 +1,5 @@
 @htmlonly
 <p>
-This example shows how the 51Degrees device detection engine deals with 
-evidence that does not match any known device. 
-In this scenario, 'HasValue' can be used to check if the property has been 
-populated by the engine. If it hasn't then 'NoValueMessage' can be used 
-to get the reason why.
+This example shows how the 51Degrees device detection engine handles evidence that does not match a known device. Use 'HasValue' to check whether a property has a value. If it does not, use 'NoValueMessage' to get the reason.
 </p>
 @endhtmlonly

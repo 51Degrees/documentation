@@ -1,4 +1,4 @@
-@page DeviceDetection_Examples_Index Device Detection Examples
+@page DeviceDetection_Examples_Index Device Detection examples
 
 @subpage DeviceDetection_Examples_GettingStarted_Console_Index 
 
@@ -18,6 +18,6 @@
 
 @subpage DeviceDetection_Examples_TacLookup_Index
 
-## Combined Services
+## Combined services
 
 For examples that combine Device Detection with IP Intelligence, see @ref IpIntelligence_Combined_Index

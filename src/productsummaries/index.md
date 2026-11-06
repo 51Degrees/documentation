@@ -1,4 +1,4 @@
-@page ProductSummaries_Index Product Summaries
+@page ProductSummaries_Index Product summaries
 
 - @subpage ProductSummaries_Benchmarks
 

@@ -20,12 +20,12 @@ Where a mapping is approximate, the **Notes** column calls it out. Where no equi
 | `postal` | `ZipCode` | |
 | `loc` | `Latitude`, `Longitude` | IPInfo returns a single `"lat,long"` string; 51Degrees exposes each coordinate as a separate single-value property. See coordinate randomization note below. |
 | `timezone` | `TimeZoneIana` | IANA identifier. `TimeZoneOffset` gives the UTC offset separately. |
-| `radius` | `AccuracyRadiusMax` | IPInfo returns a location accuracy radius in kilometers. Use `AccuracyRadiusMin` for the inner-bound radius. See the `LocationConfidence` note below for the categorical confidence signal. |
+| `radius` | `AccuracyRadiusMin` | IPInfo returns a location accuracy radius in kilometers. 51Degrees recommends `AccuracyRadiusMin` when comparing with other solutions. `AccuracyRadiusMax` is the radius of the circle that covers the whole area. See the `LocationConfidence` note below for the categorical confidence signal. |
 | `org` | `Asn` + `AsnName` | IPInfo combines the ASN and organization name into one string (`"AS15169 Google LLC"`); 51Degrees exposes them separately. |
 | `anycast` |  | No direct equivalent. |
 | `bogon` |  | No direct equivalent. |
 
-**Coordinate randomization**: 51Degrees randomizes `Latitude` and `Longitude` within around 1 km of the true average location for the IP range. The randomization is applied during data file generation, so the value returned for a given IP address is stable across all lookups against the same data file and only changes when a new data file is published. This guarantees the coordinates cannot be classified as personal data. No other property is affected. See [Randomization](@ref IpIntelligence_Features_Randomization).
+**Coordinate randomization**: 51Degrees randomizes `Latitude` and `Longitude` within around 1 km of the true average location for the IP range. The randomization is applied during data file generation, so the value returned for a given IP address is stable across all lookups against the same data file and only changes when a new data file is published. No other property is affected. See [Randomization](@ref IpIntelligence_Features_Randomization).
 
 **Location confidence**: 51Degrees rolls up location certainty into a single string-valued `LocationConfidence` property covering the town and country. IPInfo's `radius` field expresses precision as a numeric kilometer figure; the closest categorical 51Degrees equivalent is `LocationConfidence`, which complements the numeric `AccuracyRadiusMax` and `AccuracyRadiusMin` properties. See the [property dictionary](https://51degrees.com/developers/property-dictionary) for the set of possible values.
 
@@ -60,7 +60,7 @@ Where a mapping is approximate, the **Notes** column calls it out. Where no equi
 | `carrier.mcc` | `Mcc` | Mobile country code. |
 | `carrier.mnc` |  | Mobile network code is not exposed as a separate property. |
 
-# Company, Hosted Domains, Abuse
+# Company, hosted domains, and abuse
 
 | IPInfo field | 51Degrees property | Notes |
 |--------------|--------------------|-------|
@@ -72,7 +72,7 @@ Where a mapping is approximate, the **Notes** column calls it out. Where no equi
 
 # Properties unique to 51Degrees
 
-The following 51Degrees properties have no IPInfo equivalent. They are the additional context that drives [accuracy weighting](@ref IpIntelligence_Features_Weighting) and bot detection.
+These additional properties describe IP ranges and location [weighting](@ref IpIntelligence_Features_Weighting), or support crawler detection.
 
 - **Diversity scores**: `BrowserDiversity`, `HardwareDiversity`, `PlatformDiversity` quantify how varied the traffic from an IP range is. See [Diversity](@ref IpIntelligence_Features_Diversity).
 - **GeoNames identifiers**: `ContinentGeoNameId`, `CountryGeoNameId`, `StateGeoNameId`, `CountyGeoNameId` and `TownGeoNameId`, and `StateGeoNameIdsGeographical`, which lists each region of the location's country that the area overlaps, weighted by the region's share of the area. See [Weighting](@ref IpIntelligence_Features_Weighting).

@@ -1,7 +1,7 @@
-@page ProductSummaries_OpenRTBMappings OpenRTB Mappings (Moved)
+@page ProductSummaries_OpenRTBMappings OpenRTB mappings (moved)
 
-# Location Changed
+# OpenRTB mappings
 
-OpenRTB mappings now sit alongside the Prebid integration in the data-enrichment story.
+See the OpenRTB property mappings alongside the Prebid integration.
 
-This page has been moved to [Integrations -> OpenRTB Mappings](_integrations__open_r_t_b_mappings.html).
+[OpenRTB mappings](_integrations__open_r_t_b_mappings.html).

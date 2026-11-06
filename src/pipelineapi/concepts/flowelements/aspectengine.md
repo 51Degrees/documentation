@@ -1,11 +1,11 @@
-@page PipelineApi_Concepts_FlowElements_AspectEngine Aspect Engine
+@page PipelineApi_Concepts_FlowElements_AspectEngine Aspect engine
 
 # Introduction
 
 An **Aspect Engine** builds on the @flowelement concept to introduce the ability to:
 * cache processing results
 * handle cases where a property has not been populated by an **Aspect Engine**, but it could be if certain configuration changes were made
-* [lazily load] (@ref PipelineApi_Features_LazyLoading) values in the @flowdata
+* [Lazily load](@ref PipelineApi_Features_LazyLoading) values in the @flowdata
 
 In the same way a @flowelement can produce an @elementdata containing results of its processing, an 
 **engine** can produce an @aspectdata. This builds on @elementdata to add some of the extra functionality
@@ -36,9 +36,7 @@ Consider another case where an **engine** has been built with specific @properti
 attempts to retrieve a value for a @property which was not included. An error would be returned stating that the **engine** was not
 configured correctly to return values for that @property.
 
-Both these cases are distinct from that, where the **engine** simply does not know what the @property is, and cannot return values
-for it. So, it is important to distinguish between these scenarios, and be clear to the user about what they need to do to get 
-access to the property they want.
+Distinguish a @property excluded by configuration or data tier from a property the **engine** does not recognize. The error should explain what you need to change to access the property.
 
 
 # Lazy loading
