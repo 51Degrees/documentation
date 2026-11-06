@@ -18,9 +18,9 @@ other data query mechanism.
 
 # Cloud Service
 
-Include a 'TAC' query parameter in your Cloud Service request. Your [Resource Key](@term{ResourceKey}) must include one or more hardware device properties, plus 'profiles' and 'TAC'. The service returns details of devices that match the supplied TAC.
+Include a 'TAC' query parameter in your Cloud Service request. Your [Resource Key](@term{ResourceKey}) must include 'profiles' and one or more hardware device properties. The service returns details of devices that match the supplied TAC.
 
-NOTE: You **MUST** select the 'profiles' and 'TAC' properties for TAC lookup to work.
+NOTE: You **MUST** select the 'profiles' property for TAC lookup to work.
 
 For language specific details, see these [examples](@ref DeviceDetection_Examples_TacLookup_Cloud). 
 
