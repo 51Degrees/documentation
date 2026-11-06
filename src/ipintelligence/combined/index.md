@@ -1,4 +1,4 @@
-@page IpIntelligence_Combined_Index Combined Device Detection + IP Intelligence
+@page IpIntelligence_Combined_Index Combine Device Detection and IP Intelligence
 
 # Introduction
 

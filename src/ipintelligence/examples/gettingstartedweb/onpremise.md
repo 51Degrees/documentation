@@ -1,13 +1,11 @@
-@page IpIntelligence_Examples_GettingStarted_Web_OnPremise IP Intelligence Getting Started Web On-premise
+@page IpIntelligence_Examples_GettingStarted_Web_OnPremise IP Intelligence on-premise web quick start
 
 # Introduction
 
 This example shows how to integrate a Pipeline running an On-premise IP intelligence engine 
 into a simple web page.
 
-There are many different ways to use the pipeline. Rather that creating examples for every scenario, 
-we have used the following table where possible when creating the 'getting started' examples. 
-You can mix and match elements from different examples in order to match your use case.
+The table shows how each example configures the pipeline. You can combine elements from different examples to suit your application.
 
 |            | Console             | Web                 |
 |------------|---------------------|---------------------|

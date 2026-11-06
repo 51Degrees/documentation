@@ -1,4 +1,4 @@
-@page PipelineApi_Features_AutomaticDatafileUpdates Automatic Data File Updates
+@page PipelineApi_Features_AutomaticDatafileUpdates Automatic data file updates
 
 # Introduction
 
@@ -8,7 +8,7 @@ and the @onpremiseengine refreshed with it. The file location where the @datafil
 from can also be monitored for changes, so when a @datafile is manually replaced, the
 @onpremiseengine will be refreshed with it.
 
-This page describes the functionality and options for data updates in the pipeline API. 
+This page describes data updates in the Pipeline API.
 In addition, it is worth being familiar with the @Distributor web API, 
 which supplies the updated data files.
 
@@ -74,8 +74,7 @@ URL formatter by looking at the current @datafile to see what is needed.
 
 ## Temporary file
 
-It is good practice to set a @datafile to be copied to a temporary location for use by an @onpremiseengine. This means that
-whatever mode the file is being used in (e.g., in memory or streamed from file) an **update** can occur smoothly.
+Use a temporary copy of the @datafile with an @onpremiseengine so the original file remains available for an **update**, whether the engine uses memory or streams from the file.
 
 By setting the @onpremiseengine to use a temporary file location, the original @datafile is free to be changed by the
 **autoupdateservice**. Once the file has been replaced, the @onpremiseengine will be informed and manage the removal of the
@@ -175,8 +174,7 @@ You can also configure it in code using the relevant engine builder.
 
 The key settings for our purposes are:
 - **DataUpdateUrl** - The static URL to use when checking for a new data file.
-- **DataUpdateVerifyMd5** - You can either configure your endpoint to also response with an MD5 HTTP 
-  Header, or set this to false to prevent it trying to verify the content.
+- **DataUpdateVerifyMd5** - Configure your endpoint to return the MD5 HTTP header, or set this to false to disable content verification.
 - **DataUpdateUseUrlFormatter** - This must be set to false to prevent the API from appending the 
   query string parameters that are required when calling the 51Degrees Distributor service. 
 

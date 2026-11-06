@@ -1,3 +1,3 @@
-@page IpIntelligence_Combined_Console_Index Console Examples
+@page IpIntelligence_Combined_Console_Index Console examples
 
 @subpage IpIntelligence_Combined_Console_OnPremise

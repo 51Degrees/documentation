@@ -1,4 +1,4 @@
-@page Identifiers_PMP_Integration Integration
+@page Identifiers_PMP_Integration PMP integration
 
 ## Adding the tag
 

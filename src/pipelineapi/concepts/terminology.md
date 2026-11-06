@@ -29,7 +29,7 @@ A cloud service can be used in much the same way as a local service running on t
 with the extra step of a [web request](@term{WebRequest}) being required.
 
 # Data tier {#PipelineApi_Concepts_Terminology_DataTier}
-The data tier is a term that encapsulates the properties and capabilities that a user has access to.
+A data tier defines the properties and capabilities you can access.
 
 Currently active tiers are:
 - Lite

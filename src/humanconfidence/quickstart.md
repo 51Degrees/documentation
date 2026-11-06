@@ -1,12 +1,12 @@
-@page HumanConfidence_Quickstart Human Confidence Quick Start
+@page HumanConfidence_Quickstart Human Confidence quick start
 
-# Getting Started with Human Confidence
+# Getting started with Human Confidence
 
 Human Confidence comes from the 51Degrees cloud service. It isn't in the on-premise data files.
 
 **Get a License Key with Human Confidence:** [buy the Pro plan online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp) for the cloud service, or [talk to us](https://51degrees.com/contact-us) about the Bespoke plan to run it on your own servers in a Docker container. [Compare plans](https://51degrees.com/pricing).
 
-## Choose Your Integration
+## Choose your integration
 
 ### Analytics
 **Best for:** Finding out how much of your traffic is people before you change anything
@@ -28,7 +28,7 @@ Human Confidence comes from the 51Degrees cloud service. It isn't in the on-prem
 
 **Benefits:**
 - **Server-side decision** - The value goes from the cloud to your server, so a browser can't change it
-- **No SDK needed** - The examples are one file each in Node.js, PHP and Python, calling the cloud over HTTPS
+- **No SDK needed** - Use the single-file Node.js, PHP, and Python examples to call the cloud over HTTPS
 
 **Things to consider:**
 - **Holding page** - A visitor you haven't checked yet waits a moment on a holding page while the script runs

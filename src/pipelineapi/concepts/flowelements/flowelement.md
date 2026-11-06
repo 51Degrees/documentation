@@ -1,12 +1,9 @@
-@page PipelineApi_Concepts_FlowElements_FlowElement Flow Element
+@page PipelineApi_Concepts_FlowElements_FlowElement Flow element
 
 # Introduction
 
-A **flow element** is an atomic processing component of a @Pipeline. 
-It takes an input in the form of @evidence, and outputs results in the form of @elementdata. 
-A **flow element** can be seen as a black
-box where the internal method of processing, and the way in which it is used externally, are decoupled, such
-that any **element** can be used in the same manner, regardless of its input, output, or method of processing.
+A **flow element** is a processing component in a @Pipeline. It reads @evidence and can return results as @elementdata.
+All **flow elements** use the same interface, regardless of how they process their inputs or produce their outputs.
 These are the building blocks of a @pipeline, and do all the processing as instructed by
 the @pipeline they reside in.
 
@@ -123,7 +120,7 @@ final TData aspectData = flowData.getOrAdd(getTypedDataKey(), getDataFactory());
 @endsnippets
 # Scope
 
-By convention, an **element's** configuration is immutable once created. Although this is not enforced.
+By convention, an **element's** configuration is immutable after creation, although this is not enforced.
 
 An **element** can be added to any number of @pipelines. A @pipeline is merely an organizational layer which instructs **elements** to
 carry out processing on a @flowdata, so the **element** acts in isolation without the need to reference to the @pipeline.

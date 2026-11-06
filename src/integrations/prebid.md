@@ -1,12 +1,12 @@
 @page Integrations_Prebid Prebid
 
-# Prebid Integration
+# Prebid integration
 
 51Degrees enriches OpenRTB bid requests with three streams of data: **Device Detection** properties, the **51Did** probabilistic device identifier, and **IP Intelligence** location signals. Together they let buyers target and value impressions more accurately, and recognise the same device across requests without cookies.
 
 > **Try it.** To experiment with a simple Prebid OpenRTB transaction, use the [Prebid.js developer tool](https://51degrees.com/developers/prebid-js-demo). It runs a Prebid.js auction with the 51Degrees RTD module, for your own browser or a sample device, and shows the OpenRTB bid request before and after 51Degrees enriches it.
 
-## What the Integration Delivers
+## What the integration provides
 
 | Enrichment stream | Prebid.js RTD Module (client-side) | Prebid Server (server-side) |
 |---|---|---|
@@ -16,11 +16,11 @@
 
 The client-side RTD module delivers all three streams. The server-side Prebid Server modules currently deliver device detection only.
 
-## Implementation Options
+## Implementation options
 
 You can enrich bid requests in the browser or on your Prebid Server.
 
-### Client-Side: Prebid.js RTD Module
+### Client-side Prebid.js RTD module
 
 Use this when you want the full enrichment set (device, 51Did, IP Intelligence) and maximum device-detection accuracy. The module runs in the user's browser, can read JavaScript APIs for precise device identification (best for distinguishing Apple models), and calls cloud.51degrees.com to fetch the data.
 
@@ -32,13 +32,13 @@ Use this when you want the full enrichment set (device, 51Did, IP Intelligence) 
 - **IP Intelligence** (`device.ip`, `device.geo.*`): `Latitude`, `Longitude`, `CountryCode3`, `Iso31662Lvl4`, `ZipCode`, `TimeZoneOffset`, `AccuracyRadiusMin`, `LocationConfidence`.
 - **51Did** (`user.eids`): `IdProbLic`, `IdProbGlobal`. Issuing the 51Did for `standard` or `personalized` usage also needs a License Key that carries the 51Did product (see the 51Did section below).
 
-### Server-Side: Prebid Server (Java and Go)
+### Server-side Prebid Server (Java and Go)
 
 Use this when you need faster response times or want to centralize detection logic. Prebid Server currently adds **device detection** properties only. Both the Java and Go implementations share a single Prebid.org module documentation page: [Prebid Server 51Degrees Module Documentation](https://docs.prebid.org/prebid-server/pbs-modules/51degrees-device-detection.html)
 
-## Enrichment Streams
+## Enrichment streams
 
-### Device Properties
+### Device properties
 
 The modules detect the device from HTTP headers (and, client-side, JavaScript signals) and map the result onto the OpenRTB `device` object: `make`, `model`, `os`, `osv`, `hwv`, `h`, `w`, `pxratio`, `ppi`, and `devicetype`. A 51Degrees device ID is attached in an `ext` field that links to 250+ further properties in the [property dictionary](https://51degrees.com/developers/property-dictionary).
 
@@ -91,9 +91,9 @@ From the request IP the RTD module adds the IP address and, when confident, an a
 - `device.ip` and `device.ipv6` are always set when available.
 - `device.geo.*` (`lat`, `lon`, `country` as ISO-3166-1 alpha-3, `region` as ISO-3166-2, `zip`, `utcoffset`, `accuracy`) is set only when location confidence is high or medium. `device.geo.type` is `2` (IP-derived) and `device.geo.ipservice` is `511` (high confidence) or `512` (medium).
 
-This stream provides IP and geo only. Connection type, carrier/ISP, ASN, and MCC-MNC are not surfaced in the bid object - [contact us](https://51degrees.com/contact-us) if you need them. For the full OpenRTB Geo mapping see @ref Integrations_OpenRTBMappings. IP Intelligence in the bid stream is delivered by the RTD module only; see @ref IpIntelligence_Overview for the data itself.
+The RTD module adds IP and location data to the bid object. It does not add connection type, carrier/ISP, ASN, or MCC-MNC. [Contact us](https://51degrees.com/contact-us) if you need those fields. See @ref Integrations_OpenRTBMappings. See @ref IpIntelligence_Overview for the underlying IP data.
 
-## Enriched Bid Request Examples
+## Enriched bid request examples
 
 ### Client-side (RTD module) - full enrichment
 
@@ -165,7 +165,7 @@ This stream provides IP and geo only. Connection type, carrier/ISP, ASN, and MCC
 }
 ```
 
-## Use Cases
+## Use cases
 
 📰 **Publishers** can:
 - Create device-specific ad placements and set floor prices by device capability.
@@ -173,7 +173,7 @@ This stream provides IP and geo only. Connection type, carrier/ISP, ASN, and MCC
 
 🎯 **Advertisers** can:
 - Target specific device models and serve the right creative format (video vs. static).
-- Target specific geos.
+- Target specific geographic areas.
 - Reconcile a device across requests with the 51Did, without cookies or IDFA.
 
 ⚙️ **Ad Tech Platforms** can:

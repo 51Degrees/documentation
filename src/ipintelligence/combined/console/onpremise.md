@@ -1,4 +1,4 @@
-@page IpIntelligence_Combined_Console_OnPremise On-Premise Console
+@page IpIntelligence_Combined_Console_OnPremise On-premise console
 
 # Introduction
 

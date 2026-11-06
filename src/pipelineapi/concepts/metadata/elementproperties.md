@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_MetaData_ElementProperties Element Properties
+@page PipelineApi_Concepts_MetaData_ElementProperties Element properties
 
 # Introduction
 

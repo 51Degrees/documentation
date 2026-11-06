@@ -1,9 +1,8 @@
-@page PipelineApi_Concepts_Data_ElementData Element Data
+@page PipelineApi_Concepts_Data_ElementData Element data
 
 # Introduction
 
-**Element data** is the container for data that is returned as a result of the processing 
-performed by a @flowelement.
+**Element data** holds the results returned by a @flowelement.
 
 See the
 [Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/conceptual-overview.md#element-data)

@@ -1,13 +1,11 @@
-@page DeviceDetection_Examples_GettingStarted_Web_Cloud Getting Started Web Cloud
+@page DeviceDetection_Examples_GettingStarted_Web_Cloud Getting started with cloud detection in a web application
 
 # Introduction
 
 This example shows how to integrate a Pipeline running a cloud based @devicedetection engine 
 into a simple web page.
 
-There are many different ways to use the pipeline. Rather than creating examples for every scenario, 
-we have used the following table where possible when creating the 'getting started' examples. 
-You can mix and match elements from different examples in order to match your use case.
+The table shows how each example configures the pipeline. You can combine elements from different examples to suit your application.
 
 |            | Console             | Web                 |
 |------------|---------------------|---------------------|

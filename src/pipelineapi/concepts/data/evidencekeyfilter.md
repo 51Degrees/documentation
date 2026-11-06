@@ -1,4 +1,4 @@
-@page PipelineApi_Concepts_Data_EvidenceKeyFilter Evidence Key Filter
+@page PipelineApi_Concepts_Data_EvidenceKeyFilter Evidence key filter
 
 # Introduction
 
@@ -16,8 +16,7 @@ for more technical details.
 
 # Usage
 
-**Evidence key filters** are used by @flowdata to generate @datakeys. These @datakeys can then
-used in @caching.
+Use **evidence key filters** with @flowdata to generate @datakeys for @caching.
 This allows the @datakey to contain the minimum amount of necessary information to determine
 if a given @flowdata will result in the same output from a given @aspectengine as another, regardless
 of any other values that may be present in the @evidence.
@@ -35,7 +34,7 @@ are in a list supplied at construction time.
 
 ## Filter aggregator
 
-The filter aggregator combines multiple filters together using a logical OR approach, i.e. if any one of the child filters would allow the inclusion of an evidence key then this aggregator will allow it as well.
+The filter aggregator includes an evidence key if any child filter includes it. This combines the filters with a logical OR.
 
 ## Share usage filter
 

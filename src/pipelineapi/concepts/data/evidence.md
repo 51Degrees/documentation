@@ -63,7 +63,5 @@ Typically, this **evidence** will be sent back to the server as a cookie in the 
 
 For more details, see the @clientsideevidence page.
 
-This use of client-side code requires additional JavaScript to be sent to the client
-device. The Pipeline @webintegration is designed to handle 
-this seamlessly for a variety of languages and web frameworks.
+Client-side evidence collection requires JavaScript in the browser. The Pipeline @webintegration can send this JavaScript for supported languages and web frameworks.
 

@@ -1,7 +1,5 @@
 @htmlonly
-<p>Automatic updates example for 51Degrees device detection ‘Hash’ engine 
-shows how to build a pipeline using the 51Degrees device detection pipeline builder 
-and demonstrates how to configure the update polling interval. 
+<p>This example shows how to use the 51Degrees device detection pipeline builder to configure the update polling interval.
 The <a href="https://51degrees.com/documentation/_features__automatic_datafile_updates.html">automatic data file updates</a> 
 page explains the different options you can configure.</p>
 @endhtmlonly

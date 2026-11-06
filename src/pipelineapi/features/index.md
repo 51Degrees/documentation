@@ -1,4 +1,4 @@
-@page PipelineApi_Features_Index API Features
+@page PipelineApi_Features_Index API features
 
 @subpage PipelineApi_Features_AgentSignature
 

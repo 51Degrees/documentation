@@ -1,10 +1,10 @@
-@page DeviceDetection_CloudToOnPremise Migrating from Cloud to On-premise
+@page DeviceDetection_CloudToOnPremise Migrating from cloud to on-premise
 
-# Migrating from Cloud to On-premise Device Detection
+# Migrating from cloud to on-premise Device Detection
 
 This guide walks you through migrating from 51Degrees Cloud Device Detection to On-premise deployment. You'll learn when to migrate, how to update your configuration, and what changes to expect.
 
-## When to Consider On-premise
+## When to consider on-premise
 
 On-premise deployment works better when you need:
 
@@ -14,7 +14,7 @@ On-premise deployment works better when you need:
 - **Offline capability** - No internet connection required
 - **Predictable costs** - Fixed licensing instead of per-request pricing
 
-## Migration Steps Overview
+## Migration steps
 
 1. Get an On-premise license and data file
 2. Update package dependencies (if needed)
@@ -23,7 +23,7 @@ On-premise deployment works better when you need:
 5. Set up data file updates
 6. Test and optimize performance
 
-## Step 1: Get License and Data File
+## Step 1: Get a license and data file
 
 **For testing:**
 - Download the free Lite data file with the scripts in the [data](https://github.com/51Degrees/data) repository on GitHub
@@ -34,7 +34,7 @@ On-premise deployment works better when you need:
 - Includes full data file with all device properties
 - Automatic data file updates included
 
-## Step 2: Update Dependencies
+## Step 2: Update dependencies
 
 Most 51Degrees packages already include both Cloud and On-premise capabilities. You typically only need configuration changes.
 
@@ -68,7 +68,7 @@ npm install fiftyone.devicedetection
 - **PHP**: [device-detection-php-onpremise](https://github.com/51Degrees/51degrees-php/tree/main/device-detection/onpremise)
 - **Python**: `pip install fiftyone-devicedetection-onpremise`
 
-## Step 3: Update Configuration
+## Step 3: Update configuration
 
 Replace your Cloud configuration with file-based settings.
 
@@ -106,7 +106,7 @@ Replace your Cloud configuration with file-based settings.
 }
 ```
 
-## Step 4: Update Code
+## Step 4: Update code
 
 The Pipeline API keeps most code unchanged. Main differences:
 
@@ -142,7 +142,7 @@ For complete examples:
 - [On-premise Console Examples](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise)
 - [On-premise Web Examples](@ref DeviceDetection_Examples_GettingStarted_Web_OnPremise)
 
-## Step 5: Set Up Data File Updates
+## Step 5: Set up data file updates
 
 On-premise deployments need regular data file updates to detect new devices.
 
@@ -157,7 +157,7 @@ Configure the pipeline to handle updates. See the [Data File Updates examples](@
 
 Download new data files from the [51Degrees Distributor](@ref Services_Distributor) using your License Key.
 
-## Step 6: Optimize Performance
+## Step 6: Optimize performance
 
 **Choose Performance Profile**
 
@@ -174,14 +174,14 @@ Download new data files from the [51Degrees Distributor](@ref Services_Distribut
 
 See [Performance Examples](@ref DeviceDetection_Examples_Performance_OnPremiseHash) for benchmarking.
 
-## Testing Your Migration
+## Testing your migration
 
 1. **Compare Results** - Verify detection matches Cloud results for test cases
 2. **Load Testing** - Confirm performance under expected traffic
 3. **Update Testing** - Ensure data file updates work without disruption
 4. **Failover Testing** - Test what happens if data file becomes unavailable
 
-## Common Migration Patterns
+## Common migration patterns
 
 **Web Applications**
 - Use [web integration examples](@ref DeviceDetection_Examples_GettingStarted_Web_OnPremise)
@@ -198,7 +198,7 @@ See [Performance Examples](@ref DeviceDetection_Examples_Performance_OnPremiseHa
 - Share data file via volume mount
 - Use environment variables for configuration
 
-## Planning Your Rollback
+## Planning your rollback
 
 Keep Cloud access during migration:
 
@@ -229,14 +229,14 @@ Keep Cloud access during migration:
 - Consider out-of-process deployment
 - Monitor memory usage patterns
 
-## Next Steps
+## Next steps
 
 1. Review [On-premise examples](@ref DeviceDetection_Examples_GettingStarted_Console_OnPremise)
 2. Set up [automatic data file updates](@ref DeviceDetection_DataFileUpdates)
 3. Enable [client-side evidence](@ref PipelineApi_Features_ClientSideEvidence) for better accuracy
 4. Monitor [match metrics](@ref DeviceDetection_Examples_MatchMetrics_OnPremiseHash) for quality
 
-## 💬 Get Help
+## 💬 Get help
 
 - Enterprise support: [support@51degrees.com](mailto:support@51degrees.com)  
 - Technical documentation: [On-premise Guide](@ref DeviceDetection_Quickstart)

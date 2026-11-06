@@ -1,4 +1,4 @@
-@page PipelineApi_Examples_UsageSharing Usage Sharing Examples
+@page PipelineApi_Examples_UsageSharing Usage sharing examples
 
 # Introduction
 

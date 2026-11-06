@@ -1,3 +1,3 @@
-@page DeviceDetection_Examples_OfflineProcessing_Index Offline Processing
+@page DeviceDetection_Examples_OfflineProcessing_Index Offline processing
 
 @subpage DeviceDetection_Examples_OfflineProcessing_OnPremiseHash

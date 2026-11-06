@@ -1,13 +1,12 @@
-@page DeviceDetection_Features_PerformanceOptions Performance Options
+@page DeviceDetection_Features_PerformanceOptions Performance options
 
 # Introduction
 
-For device detection, as with many computing tasks, there are trade-offs to be made between the performance of the algorithm and memory usage, as well as performance vs adaptability.
+Device detection has tradeoffs between speed, memory use, and tolerance for unfamiliar evidence.
 
-Rather than trying to solve this with a one-size-fits-all approach, our Device Detection API allows you to easily configure the solution to suit your requirements.
+Use the options below to configure Device Detection for your workload.
 
-Be aware that all these options only apply to the On-premise implementation. The cloud solution is
-inherently far more limited in the range of options you have to adjust performance.
+These options apply to on-premise detection. The cloud service offers fewer performance controls.
 
 # Performance profile templates
 
@@ -16,15 +15,15 @@ These collections may either be fully mapped into memory or accessed via highly 
 
 The mechanism used to access the data, as well as the size of these caches, can be configured specifically. However, we have defined templates which we believe will cover the majority of scenarios.
 
-The exact method for specifying the template will vary by programing language. See the [performance examples](@ref DeviceDetection_Examples_Performance_OnPremiseHash) for a demonstration.
+How you select a template depends on your programming language. See the [performance examples](@ref DeviceDetection_Examples_Performance_OnPremiseHash).
 
 The table below explains the options, from fastest performance and highest memory usage to slowest performance and lowest memory usage.
 
 | Template Name | Behavior | Recommendations |
 |---|---|---|
 |MaxPerformance|All data from the data file is mapped into main memory at startup. As caches are not needed, data access is lock-free. | Use when memory usage is not a problem and performance is critical. This configuration is also strongly recommended when the API is running in a highly concurrent environment. |
-|HighPerformance|Data accessed via caches; caches are large enough that all data from the data file can be accommodated as it is requested over time. |Generally not recommended. It offers slightly worse performance than MaxPerformance but will grow to the same memory usage over time. Can be useful as a starting point when creating a custom configuration. |
-|Balanced (Default)|Data accessed via caches; some caches are smaller than the high performance template. However, there is enough space that the most commonly accessed items are retained in memory. As such, loading from the disk is still relatively uncommon (assuming a typical web server workload). |Fine for generic workloads where there is no extreme memory or performance requirement. |
+|HighPerformance|Data is accessed through caches large enough to hold the entire data file as it is requested over time.|Generally not recommended. It is slightly slower than MaxPerformance and grows to the same memory use over time. It can be a starting point for a custom configuration.|
+|Balanced (Default)|Data is accessed through caches, some smaller than those in HighPerformance. Frequently used items stay in memory, so disk reads are relatively uncommon for a typical web server workload.|Use for general workloads without extreme memory or performance requirements.|
 |LowMemory|Data always streamed from disk on-demand. | Recommended when the lowest possible memory usage is more important than performance. |
 
 The precise values associated with each template can be seen in the source code on [GitHub](https://github.com/51Degrees/51degrees-cxx/blob/67503df045efb32e84eb59fe7e320772dd6475db/src/hash/hash.c#L177).
@@ -33,9 +32,9 @@ We measured throughput, startup time, and memory for Device Detection on seven m
 
 # Evaluation graphs
 
-In version 4.5 and later, the device detection algorithm uses a single, unified predictive graph. Previously, it was possible to select between performance and predictive graphs, but these have been consolidated to provide the best balance of speed and accuracy.
+In version 4.5 and later, device detection uses a single predictive graph.
 
-# Property Indexing
+# Property indexing
 
 A configuration option `propertyValueIndex` is available (introduced in version 4.5). 
 When enabled (set to `true`), the engine indexes property values at startup.

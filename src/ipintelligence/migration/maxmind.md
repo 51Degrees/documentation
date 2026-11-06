@@ -89,7 +89,7 @@ Where a mapping is approximate, the **Notes** column calls it out. Where no equi
 
 # Properties unique to 51Degrees
 
-The following 51Degrees properties have no MaxMind equivalent. They are the additional context that drives [accuracy weighting](@ref IpIntelligence_Features_Weighting) and bot detection.
+These additional properties describe IP ranges and location [weighting](@ref IpIntelligence_Features_Weighting), or support crawler detection.
 
 - **Diversity scores**: `BrowserDiversity`, `HardwareDiversity`, `PlatformDiversity` quantify how varied the traffic from an IP range is. See [Diversity](@ref IpIntelligence_Features_Diversity).
 - **Finer places**: `Suburb`, and `Iso31662Lvl8` and `Iso31662Lvl8SubdivisionOnly`, the ISO 3166-2 code of the OpenStreetMap level 8 area the location is in.

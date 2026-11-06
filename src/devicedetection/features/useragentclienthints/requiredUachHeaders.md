@@ -1,4 +1,4 @@
-@page DeviceDetection_Features_UACH_RequiredUachHeaders Required UA-CH Headers
+@page DeviceDetection_Features_UACH_RequiredUachHeaders Required UA-CH headers
 
 # Overview
 
@@ -15,8 +15,7 @@ recommend supplying all of these for the best detection results:
 - Sec-CH-UA-Platform
 - Sec-CH-UA-Platform-Version
 
-If you want to be more selective for some reason, the rest of the page describes how the data is
-used. The table at the end shows which UA-CH values are needed for each 'component'.
+To request only the values needed for specific properties, use the component table below.
 
 # Background
 
@@ -37,7 +36,7 @@ We concatenate the various UA-CH headers that are needed to identify a component
 
 
 # Pseudo-headers {#UACH_Http_Headers_Pseudoheaders}
-The table below shows which pseudo-headers are required in order to detect each component. These are the minimum pseudo-headers we use to detect the component; however, we recommend providing all UA-CH values for the best detection. Additionally, this table is only applicable for Chromium-based browsers; to detect non-Chromium browsers, you will need to continue supplying User-Agent information.
+The table shows the UA-CH values used to build pseudo-headers for each component. We recommend providing all UA-CH values for the best detection results. This applies to Chromium-based browsers. Continue supplying User-Agent information for other browsers.
 
 Some pseudo-headers are not required to detect the component but can provide more detailed detection results. For example, Sec-CH-UA-Platform-Version is not required to determine the Platform component, but provides additional version information when supplied.
 
@@ -50,7 +49,7 @@ To raise the limit, set a larger value before creating the engine, which uses mo
 ## Key
 - x = This value is required in order to determine the component.
 - x* = This value is not required, but if provided may return more detailed results.
-- y and z = One of these values are required. Supplying y may return a more accurate result and removes the need to supply z.
+- y and z = One of these values is required. Supplying y may return a more accurate result and removes the need to supply z.
 
 |UA-CH header|Hardware|Platform|Browser/App|
 |---|---|---|---|

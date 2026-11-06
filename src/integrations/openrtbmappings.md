@@ -1,10 +1,10 @@
-@page Integrations_OpenRTBMappings OpenRTB Mappings
+@page Integrations_OpenRTBMappings OpenRTB mappings
 
 # Introduction
 
 The RTB Project is an API specification for companies needing an open protocol for the automated trading of digital media across a broader range of platforms, devices, and advertising solutions. To aid those wishing to enhance the capture of device data, we've compiled a guide to map OpenRTB Object: Device and Geo fields to 51Degrees properties and values. The full Open RTB API Specification can be found in [the OpenRTB 2.6 specification](https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md) with the Device Object specification in section [3.2.18](https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md#3218---object-device-) and Geo Object specification in section [3.2.19](https://github.com/InteractiveAdvertisingBureau/openrtb2.x/blob/main/2.6.md#3219---object-geo-).
 
-# OpenRTB API Device Mappings
+# OpenRTB API device mappings
 
 The following table lists the OpenRTB (3.2.18 Object: Device) field names, supported 51Degrees properties that contain equivalent data, alongside notes that may be helpful when mapping OpenRTB and 51Degrees values.
 
@@ -13,7 +13,7 @@ The following table lists the OpenRTB (3.2.18 Object: Device) field names, suppo
 |ua|Browser user agent string.|User-Agent field from HTTP header.|The User-Agent string can be used to identify the device, application, operating system, software vendor or software version of the requesting device.|
 |sua|Structured user agent information defined by a UserAgent object (see Section 3.2.29 of the OpenRTB 2.6 spec).|Info obtained from the [User-Agent Client Hints (UA-CH) HTTP headers](@ref DeviceDetection_Features_UACH_Overview) (or equivalent NavigatorUAData JS object) sent by the browsers that support it.|ua may contain a reduced User-Agent string, thus if present, 'sua' should be considered a more accurate and complete device info. [You can also convert UA-CH values into sua information (and vice versa)](https://github.com/51Degrees/sua-uach-conversion) with our [sua and UA-CH converter](https://51degrees.github.io/sua-uach-conversion/).|
 |devicetype|The general type of device. Refer to List 5.21.|[DeviceType](https://51degrees.com/developers/property-dictionary?item=Device%7CDevice)| Indicates the type of the device based on values set in other properties, such as IsMobile, IsTablet, IsSmartphone, IsSmallScreen etc.<br>See [OpenRTB Device Type Mappings](@ref Integrations_OpenRTBMappings_DeviceType) table below.|
-|make|Device make (e.g., “Apple”)|[HardwareVendor](https://51degrees.com/developers/property-dictionary?item=Device%7CName)|Indicates the name of the company that manufactures the device or primarily sells it, e.g. Samsung.<br>The full set of vendor values is contained in the 51Degrees [on-premise data file](@ref DeviceDetection_CloudToOnPremise).
+|make|Device make (e.g., “Apple”)|[HardwareVendor](https://51degrees.com/developers/property-dictionary?item=Device%7CName)|Indicates the name of the company that manufactures the device or primarily sells it, e.g. Samsung.<br>The full set of vendor values is contained in the 51Degrees [on-premise data file](@ref DeviceDetection_CloudToOnPremise).|
 |model|Device model (e.g., “iPhone”)|[HardwareNamePrefix](https://51degrees.com/developers/property-dictionary?item=Device%7CName)| |
 |os|Device operating system (e.g., "iOS")|[PlatformName](https://51degrees.com/developers/property-dictionary?item=Operating%20System%7CName)|Indicates the name of the operating system the device is using.<br>The full set of platform values is contained in the 51Degrees [on-premise data file](@ref DeviceDetection_CloudToOnPremise).|
 |osv|Device operating system version (e.g., "3.1.2").|[PlatformVersion](https://51degrees.com/developers/property-dictionary?item=Operating%20System%7CName)|Indicates the version or subversion of the software platform.|
@@ -23,7 +23,7 @@ The following table lists the OpenRTB (3.2.18 Object: Device) field names, suppo
 |ppi|Screen size as pixels per linear inch.|(([ScreenPixelsWidth](https://51degrees.com/developers/property-dictionary?item=Device%7CScreen) / [ScreenInchesWidth](https://51degrees.com/developers/property-dictionary?item=Device%7CScreen)) + ([ScreenPixelsHeight]( https://51degrees.com/developers/property-dictionary?item=Device%7CScreen) / [ScreenInchesHeight]( https://51degrees.com/developers/property-dictionary?item=Device%7CScreen))) / 2|Screen size as pixels per linear inch computed from screen dimensions in pixels and inches.|
 |js|Support for JavaScript, where 0 = no, 1 = yes.|[Javascript](https://51degrees.com/developers/property-dictionary?item=Web%20Browser%20and%20Apps%7CJavascript)|Indicates if the browser supports JavaScript.|
 
-# OpenRTB Device Type Mappings <a href="#Integrations_OpenRTBMappings_DeviceType">#</a> @anchor Integrations_OpenRTBMappings_DeviceType
+# OpenRTB device type mappings <a href="#Integrations_OpenRTBMappings_DeviceType">#</a> @anchor Integrations_OpenRTBMappings_DeviceType
 
 This table shows the mappings between OpenRTB Device Types (5.21) and 51Degrees [DeviceType](https://51degrees.com/developers/property-dictionary?item=Device%7CDevice) Values.
 
@@ -37,7 +37,7 @@ This table shows the mappings between OpenRTB Device Types (5.21) and 51Degrees 
 |6|Connected Device|Console, EReader, SmartWatch|
 |7|Set Top Box|MediaHub|
 
-# OpenRTB API Geo Mappings
+# OpenRTB API Geo mappings
 
 The following table lists the OpenRTB (3.2.19 Object: Geo) field names, supported 51Degrees properties that contain equivalent data, alongside notes that may be helpful when mapping OpenRTB and 51Degrees values.
 
@@ -51,7 +51,7 @@ The following table lists the OpenRTB (3.2.19 Object: Geo) field names, supporte
 |zip|ZIP or postal code.|[ZipCode](https://51degrees.com/developers/property-dictionary?item=Location%7CRegion%20Areas)||
 |utcoffset|Local time as the number +/- of minutes from UTC.|[TimeZoneOffset](https://51degrees.com/developers/property-dictionary?item=Location%7CTime%20Zone)||
 
-# Unsupported OpenRTB API
+# Unsupported OpenRTB fields
 
 Currently, the following fields are not directly supported by 51Degrees. Unless stated otherwise, this is because the value is unique to an individual device.
 
@@ -77,6 +77,6 @@ Currently, the following fields are not directly supported by 51Degrees. Unless 
 |macmd5|MAC address of the device; hashed via MD5.|||
 |ext|Placeholder for exchange-specific extensions to OpenRTB.|n/a||
 
-# OpenRTB Property Values
+# OpenRTB property values
 
 51Degrees no longer publishes standalone lists of hardware vendor, hardware model and platform name values. The complete, current set of these values is contained in the 51Degrees on-premise data file. See [Migrating from Cloud to On-premise](@ref DeviceDetection_CloudToOnPremise) for the on-premise data option.

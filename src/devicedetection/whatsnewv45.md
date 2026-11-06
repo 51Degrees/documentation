@@ -1,23 +1,23 @@
-@page DeviceDetection_WhatsNewV45 What's New in Version 4.5
+@page DeviceDetection_WhatsNewV45 Device detection version 4.5 features
 
-# What's New in Version 4.5 of Device Detection
+# Device detection version 4.5 features
 
 ## Performance
 
 - Optimized processing of @useragentclienthints, reducing lookup time.
 
-## Graph Selection
+## Graph selection
 
 - Removed `usePerformanceGraph` and `usePredictiveGraph` configuration options.  
   Detection now uses a single, unified predictive graph.
 
-## Property Retrieval
+## Property retrieval
 
 - Added `propertyValueIndex` configuration option.  
   When `true`, property values are indexed at startup for faster retrieval.  
   See [Property Indexing](@ref DeviceDetection_Features_PerformanceOptions) for more details.
 
-## New Evidence Keys
+## Evidence keys
 
 - Added support for alternative representations of User-Agent Client Hints via the following evidence keys (usable with `query.` and `cookie.` prefixes):
   - `51D_GetHighEntropyValues`: Base64-encoded JSON string from `JSON.stringify()` of the `getHighEntropyValues()` JavaScript call.
@@ -35,8 +35,8 @@
   additional pipeline elements. See the [UA-CH JavaScript page](@ref DeviceDetection_Features_UACH_Javascript)
   for detailed usage information.
 
-## Results Serialization
+## Results serialization
 
 - Introduced `ResultsHashSerializer` service class.  
   Enables retrieval of all detected property values as a single JSON-serialized string.  
-  Previously, properties could only be accessed individually by key.
+

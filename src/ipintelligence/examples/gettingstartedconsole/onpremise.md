@@ -1,13 +1,10 @@
-@page IpIntelligence_Examples_GettingStarted_Console_OnPremise IP Intelligence Getting Started Console On-premise
+@page IpIntelligence_Examples_GettingStarted_Console_OnPremise IP Intelligence on-premise console quick start
 
 # Introduction
 
-This example shows how to get set up an On-premise IP Intelligence @aspectengine and use it 
-to process IP addresses.
+This example shows how to set up an on-premise IP Intelligence @aspectengine to process IP addresses.
 
-There are many different ways to use the pipeline. Rather that creating examples for every scenario, 
-we have used the following table where possible when creating the 'getting started' examples. 
-You can mix and match elements from different examples in order to match your use case.
+The table shows how each example configures the pipeline. You can combine elements from different examples to suit your application.
 
 |            | Console             | Web                 |
 |------------|---------------------|---------------------|

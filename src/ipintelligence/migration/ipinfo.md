@@ -60,7 +60,7 @@ Where a mapping is approximate, the **Notes** column calls it out. Where no equi
 | `carrier.mcc` | `Mcc` | Mobile country code. |
 | `carrier.mnc` |  | Mobile network code is not exposed as a separate property. |
 
-# Company, Hosted Domains, Abuse
+# Company, hosted domains, and abuse
 
 | IPInfo field | 51Degrees property | Notes |
 |--------------|--------------------|-------|
@@ -72,7 +72,7 @@ Where a mapping is approximate, the **Notes** column calls it out. Where no equi
 
 # Properties unique to 51Degrees
 
-The following 51Degrees properties have no IPInfo equivalent. They are the additional context that drives [accuracy weighting](@ref IpIntelligence_Features_Weighting) and bot detection.
+These additional properties describe IP ranges and location [weighting](@ref IpIntelligence_Features_Weighting), or support crawler detection.
 
 - **Diversity scores**: `BrowserDiversity`, `HardwareDiversity`, `PlatformDiversity` quantify how varied the traffic from an IP range is. See [Diversity](@ref IpIntelligence_Features_Diversity).
 - **GeoNames identifiers**: `ContinentGeoNameId`, `CountryGeoNameId`, `StateGeoNameId`, `CountyGeoNameId` and `TownGeoNameId`, and `StateGeoNameIdsGeographical`, which lists each region of the location's country that the area overlaps, weighted by the region's share of the area. See [Weighting](@ref IpIntelligence_Features_Weighting).

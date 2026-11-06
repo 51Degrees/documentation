@@ -1,10 +1,8 @@
-@page PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration Building from Configuration
+@page PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration Building from configuration
 
 # Introduction
 
-Rather than setting all build options and @flowelements explicitly in code form, it is often
-preferable to make the @pipeline configurable without recompiling. A @pipelinebuilder allows
-this via its 'BuildFromConfiguration' method.
+Use the 'BuildFromConfiguration' method on a @pipelinebuilder to configure a @pipeline and its @flowelements without recompiling your code.
 
 See the
 [Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/features/pipeline-configuration.md#)
@@ -15,11 +13,7 @@ for more technical details.
 A configuration can be parsed manually from XML, JSON, or any other source and given to a @pipelinebuilder. 
 Alternatively, in @webintegrations, a configuration file is loaded automatically.
 
-Note, the possible format of the configuration file varies greatly between languages, with some languages 
-having many options and others only having one.
-Where possible, we recommend using JSON as the simplest and most transferable configuration format; JSON is
-also supported by the PHP and Node.js bindings, where XML is not. In contrast, it should be noted that Java 
-only supports XML configuration files.
+Supported configuration formats vary by language. Use JSON where possible. PHP and Node.js support JSON but not XML. Java supports only XML configuration files.
 
 ## Parsing XML
 
@@ -125,7 +119,7 @@ set the @pipeline to [suppress process exceptions](@ref PipelineApi_Concepts_Con
 Configure a @pipeline with a @flowelement named 'MyElement' with a build parameter, and
 set the @pipeline to [suppress process exceptions](@ref PipelineApi_Concepts_Configuration_Builders_PipelineBuilder_SuppressProcessExceptions).
 
-Note that for use in node.js, `BuilderName` and `BuildParameters` should be replaced by `elementName` and `elementParameters` for each element. The pipeline-level `BuildParameters` key is itself cased per language: `SuppressProcessExceptions` (.NET), `suppressProcessExceptions` (Node.js) and `suppress_process_exceptions` (Python). In Node.js and Python the setting is read from `PipelineOptions.BuildParameters`.
+Note that for use in Node.js, `BuilderName` and `BuildParameters` should be replaced by `elementName` and `elementParameters` for each element. The pipeline-level `BuildParameters` key is itself cased per language, with `SuppressProcessExceptions` (.NET), `suppressProcessExceptions` (Node.js), and `suppress_process_exceptions` (Python). In Node.js and Python the setting is read from `PipelineOptions.BuildParameters`.
 
 There is a sample file demonstrating all configuration options for .NET on [GitHub](https://github.com/51Degrees/51degrees-dotnet/blob/main/examples/device-detection/sample-configuration.json).
 
@@ -179,7 +173,7 @@ Each of the following is tried in turn to find a method that matches the supplie
 [alternative name](@ref PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration_AlternativeName) for the method.
 
 The value part of each entry in the 'build parameters' list is then passed to the matching method as a parameter.
-For strongly-types languages, this may also involve parsing a string value from the configuration into the required type.
+For strongly typed languages, this may also involve parsing a string value from the configuration into the required type.
 
 If there are any build parameters for which a method cannot be found, they will be used to set parameters on the
 'Build' method once configuration is complete.
@@ -208,7 +202,7 @@ This can be used to specify one or more other names to match on when building fr
 @endsnippet
 @startsnippet{java}
 The `ElementBuilder(alternateName)` attribute can be used to decorate @elementbuilder classes.
-This can be used to specify one or more other names to match when buiding from configuration.
+This can be used to specify one or more other names to match when building from configuration.
 @endsnippet
 @endsnippets
 
@@ -229,8 +223,8 @@ In .NET, @pipelinebuilder relies on reflection to find the correct builder to bu
 the @flowelements required by the configuration. For this reason, it is necessary for the
 libraries that contain the @elementbuilders for each @flowelement to be loaded. This can be done
 in a number of ways:
-* loading the library by calling a method in code;
-* adding a library to a config file to be loaded;
+* Load the library by calling a method in code.
+* Add a library to a config file to be loaded.
 
 For example:
 ```{cs}
