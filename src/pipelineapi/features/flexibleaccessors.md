@@ -40,7 +40,7 @@ If you have an instance of the element that you want to get data for, this can a
 get the data populated by that instance:
 
 ```{cs}
-var deviceData = flowdata.getFromElement(deviceDetectionEngine);
+var deviceData = flowdata.GetFromElement(deviceDetectionEngine);
 ```
 
 After you have the specific element data instance, the individual properties can be accessed as 
@@ -151,14 +151,14 @@ For example, if you are using the 51Degrees device detection engine then after t
 you can request the device data from it:
 
 ```{php}
-$deviceData = flowdata->device;
+$deviceData = $flowdata->device;
 ```
 
 If you have an instance of the element that you want to get data for, this can also be used to get the 
 data populated by that instance without having to know the associated name:
 
 ```{php}
-$deviceData = $flowdata->getFromElement(deviceDetectionEngine);
+$deviceData = $flowdata->getFromElement($deviceDetectionEngine);
 ```
 
 After you have the specific element data instance, the individual properties can be accessed using normal property accessors. 
@@ -171,7 +171,7 @@ $flowdata->device->ismobile;
 ```
 @endsnippet
 @startsnippet{python}
-In python, auto-complete support is not feasible so you need to know the name of the element and property that you're accessing.
+In Python, auto-complete support is not feasible so you need to know the name of the element and property that you're accessing.
 For example, if you are using the 51Degrees device detection engine then after the @flowdata has been processed, 
 you can request the device data from it:
 

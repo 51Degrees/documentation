@@ -13,9 +13,9 @@ for more technical details.
 
 # Creation
 
-**Flow elements** are built using a corresponding @elementbuilder, which
-follows the fluent builder pattern. All configuration of an **element** occurs in the
-@elementbuilder.
+In .NET and Java, **flow elements** are built using a corresponding @elementbuilder, which
+follows the fluent builder pattern, and all configuration of an **element** occurs in the
+@elementbuilder. In Node.js, PHP, and Python, most **elements** take their configuration as constructor parameters instead.
 By convention, the configuration of an **element** is immutable once it has been built. 
 However, this is not enforced, and is dependent on the implementation of each specific **element**.
 

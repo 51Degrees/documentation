@@ -24,9 +24,9 @@ Pick the ones you want. Each is sent as an event parameter named after the eleme
 | `device_isartificialintelligence` | IsArtificialIntelligence | True when the crawler works for an AI purpose, going by its CrawlerUsage | Essentials |
 | `device_priceband` | PriceBand | The device's recommended retail price when it was released, as a range in US dollars | Pro |
 | `derived_humanconfidence` | HumanConfidence | How confident 51Degrees is that a person is viewing the page, High, Medium, Low or Unknown | Pro |
-| `ip_countrycode` | CountryCode | The 2-character ISO 3166-1 code of the country the IP address is in | Bespoke |
-| `ip_state` | State | The top-level subdivision, such as a US state or a UK country | Bespoke |
-| `ip_region` | Region | The subdivision one level below State | Bespoke |
+| `ip_countrycode` | CountryCode | The 2-character ISO 3166-1 code of the country the IP address is in | Pro |
+| `ip_state` | State | The top-level subdivision, such as a US state or a UK country | Pro |
+| `ip_region` | Region | The subdivision one level below State | Pro |
 
 The last three come from @ref IpIntelligence_Overview, which looks up the visitor's IP address, so the visitor is never asked to share their location.
 
@@ -101,4 +101,4 @@ You don't need the code on WordPress. The free [51Degrees WordPress plugin](http
 - @ref IpIntelligence_Overview, for the country, state and region of an IP address
 - @ref Services_Cloud_HumanConfidence, to act on Human Confidence on your server
 
-[Compare plans](https://51degrees.com/pricing). The Pro plan, which includes Human Confidence, can be [bought online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp). Ask us about the Bespoke plan, which adds IP Intelligence, through the [contact page](https://51degrees.com/contact-us).
+[Compare plans](https://51degrees.com/pricing). The Pro plan, which includes Human Confidence, can be [bought online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp). Ask us about the Bespoke plan, which adds every property and on-premise use, through the [contact page](https://51degrees.com/contact-us).

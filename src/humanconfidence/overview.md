@@ -2,7 +2,7 @@
 
 # Introduction
 
-Human Confidence tells you how likely it is that a person is looking at the page. Every visit gets High, Medium or Low. If the 51Degrees script never ran in the browser, the value is Unknown.
+Human Confidence tells you how likely it is that a person is looking at the page. The value for each visit is High, Medium, or Low, or Unknown where it could not be measured, which is usually because the 51Degrees script never ran in the browser.
 
 It comes from the 51Degrees cloud as the property `derived.HumanConfidence`, on the Pro plan, our cloud service, and on the Bespoke plan for your own servers.
 
@@ -25,7 +25,7 @@ To try it, follow the [Quick Start](@ref HumanConfidence_Quickstart).
 
 ## Two ways to use it
 
-**Measure.** Send Human Confidence to your analytics as a custom dimension and your reports show how much of your traffic is people. Nothing changes for your visitors. The steps for any analytics tool are in @ref HumanConfidence_Analytics, and there's a separate page for Google Analytics 4, @ref Integrations_GoogleAnalytics.
+**Measure.** Send Human Confidence to your analytics as a custom dimension and your reports show how much of your traffic is likely to be people. Nothing changes for your visitors. The steps for any analytics tool are in @ref HumanConfidence_Analytics, and there's a separate page for Google Analytics 4, @ref Integrations_GoogleAnalytics.
 
 **Act.** Your server gets Human Confidence from the cloud before it sends a page and decides what to send. See @ref Services_Cloud_HumanConfidence for the code.
 

@@ -22,8 +22,8 @@ The table below explains the options, from fastest performance and highest memor
 | Template Name | Behavior | Recommendations |
 |---|---|---|
 |MaxPerformance|All data from the data file is mapped into main memory at startup. As caches are not needed, data access is lock-free. | Use when memory usage is not a problem and performance is critical. This configuration is also strongly recommended when the API is running in a highly concurrent environment. |
-|HighPerformance|Data is accessed through caches large enough to hold the entire data file as it is requested over time.|Generally not recommended. It is slightly slower than MaxPerformance and grows to the same memory use over time. It can be a starting point for a custom configuration.|
-|Balanced (Default)|Data is accessed through caches, some smaller than those in HighPerformance. Frequently used items stay in memory, so disk reads are relatively uncommon for a typical web server workload.|Use for general workloads without extreme memory or performance requirements.|
+|HighPerformance|Every collection is loaded into main memory at startup, each one separately rather than the data file as a single block, so no caches are used.|Generally not recommended, because it uses about as much memory as MaxPerformance. It can be a starting point for a custom configuration.|
+|Balanced (Default)|Some collections are loaded into memory at startup and the rest are read through caches of a fixed size. Frequently used items stay in memory, so disk reads are relatively uncommon for a typical web server workload.|Use for general workloads without extreme memory or performance requirements.|
 |LowMemory|Data always streamed from disk on-demand. | Recommended when the lowest possible memory usage is more important than performance. |
 
 The precise values associated with each template can be seen in the source code on [GitHub](https://github.com/51Degrees/51degrees-cxx/blob/67503df045efb32e84eb59fe7e320772dd6475db/src/hash/hash.c#L177).

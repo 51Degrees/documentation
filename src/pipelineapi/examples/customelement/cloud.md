@@ -27,18 +27,18 @@ The dependencies needed for .NET are the `FiftyOne.Pipeline.Engines` and
 `FiftyOne.Pipeline.CloudRequestEngine` NuGet packages.
 @endsnippet
 @startsnippet{java}
-The only dependency needed for Java is the `pipeline.core` Maven package from `com.51degrees`.
-To include this, add the following to the `<dependencies>` section of the project's `pom.xml`:
+The dependencies needed for Java are the `pipeline.engines` and `pipeline.cloudrequestengine` Maven packages from `com.51degrees`.
+To include them, add the following to the `<dependencies>` section of the project's `pom.xml`:
 ```{xml}
 <dependency>
     <groupId>com.51degrees</groupId>
     <artifactId>pipeline.cloudrequestengine</artifactId>
-    <version>4.2.0</version>
+    <version>4.5.128</version>
 </dependency>
 <dependency>
     <groupId>com.51degrees</groupId>
     <artifactId>pipeline.engines</artifactId>
-    <version>4.2.0</version>
+    <version>4.5.128</version>
 </dependency>
 ```
 @endsnippet
@@ -148,14 +148,14 @@ the previous example. However, it also now needs a cloud request @aspectengine.
 @showsnippet{java,Java}
 @defaultsnippet{Select a tab to view language specific @elementbuilder implementation.}
 @startsnippet{dotnet}
-As this @aspectengine is using a @datafile, the builder can make use of the logic in the
+As this @aspectengine gets its results from a cloud service, the builder can make use of the logic in the
 `CloudAspectEngineBuilderBase`.
 
 @snippet "CustomFlowElement/4. Cloud Engine/FlowElements/SimpleCloudEngineBuilder.cs" class
 
 @endsnippet
 @startsnippet{java}
-As this @aspectengine is using a @datafile, the builder can make use of the logic in the
+As this @aspectengine gets its results from a cloud service, the builder can make use of the logic in the
 `CloudAspectEngineBuilderBase`.
 
 @snippet pipeline.developer-examples.cloud-engine/src/main/java/pipeline/developerexamples/cloudengine/flowelements/SimpleCloudEngineBuilder.java class

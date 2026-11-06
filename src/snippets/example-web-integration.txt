@@ -5,13 +5,13 @@ details about a device based on its User-Agent and User-Agent Client Hint HTTP h
 </p>
 <p>
 We demonstrate how to use the
-<a href="https://51degrees.com/documentation/_features__web_integration.html">web integration</a> 
+<a href="/documentation/4.5/_pipeline_api__features__web_integration.html">web integration</a> 
 feature to:
+</p>
 <ul>
   <li>Pass the required information from the web context to the Pipeline API.</li>
   <li>Populate relevant response headers such as Accept-CH for User-Agent Client Hints.</li>
   <li>Acquire and process evidence from client-side JavaScript. This is used to determine 
   iPhone / iPad models.</li>
 </ul>
-</p>
 @endhtmlonly

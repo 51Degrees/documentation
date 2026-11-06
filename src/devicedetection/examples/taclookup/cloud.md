@@ -2,7 +2,7 @@
 
 # Introduction
 
-This example shows how to use the TAC lookup capability of the 51Degrees Cloud service.
+This example shows how to use TAC lookup in the 51Degrees Cloud service. Before running it, check the [required Resource Key properties](@ref DeviceDetection_Features_TacLookup).
 
 @startsnippets
 @grabexample{device-detection-dotnet,_cloud_2_t_a_c-_console_2_program_8cs,C#}

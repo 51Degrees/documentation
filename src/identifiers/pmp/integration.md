@@ -27,7 +27,7 @@ PMP reads two things from the 51Degrees client script, being whether third party
 
 The two tags can go in either order and both can carry `async`, because the client script listens on the window for PMP's answer whilst PMP watches for the client script's object, which is `fod` unless `data-object-name` says otherwise. The object is the only thing PMP looks at, so it does not matter where the client script came from, and one served by a different 51Degrees cloud, by a proxy of your own or out of a bundle you built yourself all work the same way.
 
-An `async` tag has usually not run at the moment PMP starts, so an object that is not there yet is not an object that is never coming, and PMP waits for it instead of deciding straight away. The wait finishes once your page has loaded, since every tag written into the markup has had its turn by then, and it is capped at 5000 milliseconds for a page whose load event is very late. If nothing has appeared by the end of it, PMP loads the client script itself from the cloud that served PMP, using the Resource Key it already has, and says so in the console. Writing the tag yourself is still the better option, because then the placement and the timing are yours.
+If an `async` client script's object is not available when PMP starts, PMP waits until the page has loaded, up to 5000 milliseconds. If the object is still absent, PMP loads the client script from the cloud that served PMP, using the same Resource Key, and logs a console message. Include the script tag yourself to control its placement and timing.
 
 Load the client script once. A second copy runs a second round and creates a second identifier, and the client script itself warns about it.
 
@@ -54,4 +54,4 @@ The loader is cacheable by anybody for a day, because it is the same bytes for e
 
 ## Browser requirement
 
-The bundles are built to ES2020, the 2020 edition of the JavaScript standard, and are not converted for anything older, which covers every browser released since early 2020. Televisions, set-top boxes and games consoles are the ones to watch, as their browsers tend to lag well behind a phone bought at the same time and seldom get updated after the device ships, so check what such a device supports before deploying PMP to it.
+The bundles are built to ES2020, the 2020 edition of the JavaScript standard, and are not converted for anything older, and they also use one feature of the 2021 edition, so they need Chrome or Edge 85, Firefox 77, Safari 13.1 (iOS 13.4), Samsung Internet 14, or a later version. Televisions, set-top boxes, and games consoles are the ones to watch, as their browsers tend to lag well behind a phone bought at the same time and seldom get updated after the device ships, so check what such a device supports before deploying PMP to it.

@@ -64,7 +64,7 @@ Apple has continually worked to homogenize any information that a website can ge
 
 Below we cover the detection results that are experienced for each iPhone, starting from the iPhone 3GS, when using Safari.
 
-The 'percentage' column shows the share of data submissions that would return each detection result for the given display mode. For example, '100.00%' in Standard mode means all submissions for that device would return that result when passed to our detection script. '1.50%' means 1.5% of submissions would return that result.
+The 'percentage' column shows the share of data submissions that would return each detection result for the given display mode. For example, '100.00%' in Standard mode means all submissions for that device would return that result when passed to our detection script. '1.50%' means 1.5% of submissions would return that result. Results returned for fewer than 1% of submissions are not listed, so the percentages for a device can add up to less than 100%.
 
 As we receive more data on Apple devices, this table will change. We will update this table following each update to the JavaScript. The tables currently match the released JavaScript created on 22 September 2026.
 

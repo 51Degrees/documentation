@@ -10,7 +10,7 @@
 
 Each option has a description behind an expandable "More information" section. There is no close cross on the first dialog, so answering is the only way past it. Once answered, the dialog shrinks to a small bubble in the corner that opens it again, and later visits start at that bubble rather than the full dialog, so the visitor can change their answer whenever they like.
 
-The alternative button sets the visitor's preference under the Model Terms for Marketing to `non-marketing`, the third of the three words those terms define beside `standard` and `personalized`, and that word travels every way the other two do. It is written to the `__mtm_pref` cookie for your own server to read, fired as the `51d-pmp-preference` event on the window so the 51Degrees client script sends it as `id.usage=non-marketing` and the 51Did carries it, and substituted for `{preference}` in `data-action-url`. Then `data-alt-url` runs, where an `http(s)` URL navigates the page and a `javascript:` URL runs inline and leaves the visitor on your site.
+The alternative button sets the visitor's preference under the Model Terms for Marketing to `non-marketing`, the third of the three words those terms define beside `standard` and `personalized`, and that word travels every way the other two do. PMP writes it to the `__mtm_pref` cookie for your own server to read and substitutes it for `{preference}` in `data-action-url`. It also fires the `51d-pmp-preference` event on the window, so the 51Degrees client script sends it as `id.usage=non-marketing` and the 51Did carries it. Then `data-alt-url` runs, where an `http(s)` URL navigates the page and a `javascript:` URL runs inline and leaves the visitor on your site.
 
 The alternative button stores `non-marketing` rather than `standard`, so that a publisher reading an answer shared from another site can tell a visitor who declined from one who accepted the lesser of the two kinds.
 
@@ -121,6 +121,7 @@ __tcfapi('addEventListener', 2, function (tcData, success) {
   // tcData.eventStatus is 'tcloaded' when a consent string is ready,
   // 'cmpuishown' when the dialog is shown again, and
   // 'useractioncomplete' when the visitor has just answered.
+  if (!success) return; // no TC data while the alternative answer stands
   console.log(tcData.eventStatus, tcData.tcString);
 });
 ```

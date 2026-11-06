@@ -99,7 +99,7 @@ This example shows the process flow between client and server.
 
 @dotfile client-side-evidence.gvdot
 
-## Privacy Policy
+## Privacy policy
 
 If you are using this feature, especially when using the server-side capability
 to return enriched data, it is your responsibility to consider any updates to
@@ -119,7 +119,7 @@ handling and is used solely for the purpose of enabling this technical feature.
 
 By default, when using the 51Degrees Cloud service, values returned from client-side
 evidence processing are stored using `sessionStorage`. This avoids setting any
-cookies unless explicitly required. However, this behaviour can be changed by
+cookies unless explicitly required. However, this behavior can be changed by
 adding the `fod-js-enable-cookies=true` query parameter to the Resource Key URL.
 When set, this instructs the client-side script to use `cookies` instead of 
 `sessionStorage` for storing data.
@@ -192,8 +192,7 @@ This script includes JavaScript snippets that perform client-side evidence colle
 
 ### Client-side execution
 * The `51degrees.core.js` script executes each snippet sequentially in the client browser.
-* Snippets store collected evidence in the session storage (or cookies) using `51D_` prefixes, for example:
-  * `51D_profileIds`
+* Snippets store collected evidence in cookies, or in session storage when cookies are turned off. A cookie takes the `51D_` name the snippet sets, for example `51D_ProfileIds`. In session storage the same value is kept under a key that starts with the JavaScript object name, `fod` by default, for example `fod_data_51D_ProfileIds`.
 * The collected evidence will be sent to the server as property overrides and also received in the client code in a callback provided to a `fod.complete` function:
 ```js
 fod.complete(function() {
@@ -202,7 +201,7 @@ fod.complete(function() {
 ```
 
 ### Profile matching
-* The collected `51D_profileIds` values must be matched against the same data file used to generate the snippets.
+* The collected `51D_ProfileIds` values must be matched against the same data file used to generate the snippets.
 * This ensures accurate and consistent device identification.
 
 ## Semi-static scenario
@@ -224,7 +223,7 @@ You must implement this integration in your own system. The steps below are an o
 * Pre-generate and cache short-lived variants of the 51Degrees-generated script for device groups (e.g., iPhone, iPad, Mac).
 * Your script can decide which cached snippet to load based on basic client-side conditions.
 * Cached variants should be refreshed whenever the data file updates.
-* Always ensure that `51D_profileIds` are matched against the same data file from which snippets were derived.
+* Always ensure that `51D_ProfileIds` are matched against the same data file from which snippets were derived.
 
 ## Conceptual static approach
 
@@ -258,12 +257,12 @@ There is no one-size-fits-all static solution. Stale or outdated static scripts 
 * This helps debug inconsistencies between collected evidence and device matching.
 
 ### Fallback handling
-* Implement fallback logic for cases where no `51D_profileIds` are available (e.g., script blocked, or execution failed).
+* Implement fallback logic for cases where no `51D_ProfileIds` are available (e.g., script blocked, or execution failed).
 * Fallback can use baseline server-side detection or cached evidence.
 
 ### Testing
 * Test across major device types (mobile, tablet, desktop) to ensure snippets behave correctly in different environments.
-* Validate that the evidence collection keys (e.g., `51D_profileIds`) are properly populated in storage and transmitted.
+* Validate that the evidence collection keys (e.g., `51D_ProfileIds`) are properly populated in storage and transmitted.
 
 ### Security
 * Avoid exposing sensitive internal URLs or raw data file paths in the browser.

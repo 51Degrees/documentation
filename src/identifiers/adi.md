@@ -1,6 +1,6 @@
 @page Identifiers_ADI ADI (Ad Inspector)
 
-ADI is a small embeddable widget that puts an icon on every ad a page carries and, when the visitor taps it, tells them in one plain sentence why that ad was served to them. The sentence is read out of the @ref Identifiers_51Did that went into the ad auction, the identifier's signature is checked in the browser against a 51Degrees public key, and the color of the icon says what that check found before anything is tapped.
+ADI is a small embeddable widget that puts an icon on each ad slot the page marks or names and, when the visitor taps it, tells them in one plain sentence why that ad was served to them. The sentence is read out of the @ref Identifiers_51Did that went into the ad auction, the identifier's signature is checked in the browser against a 51Degrees public key, and the color of the icon says what that check found before anything is tapped.
 
 ADI sits beside @ref Identifiers_PMP. A publisher who has the PMP tag adds the ADI tag the same way, and the two are built, served, counted and translated alike.
 
@@ -74,7 +74,7 @@ The icon is placed against the container's own box, so a container whose `positi
 
 ## The provider
 
-`data-provider` names an object with two optional methods. Both are called with the slot element and may answer with a value or a promise.
+`data-provider` names an object with two optional methods. `slots()` is called with no argument and answers at once with the elements, as a list or anything iterable. `describe(slot)` is called with the slot element and may answer with a value or a promise.
 
 ```javascript
 window.yoursite = window.yoursite || {};
@@ -110,7 +110,7 @@ A 20 pixel black circle, 4 pixels in from the top left corner of the ad, inside 
 | Timeout       | Gray `#919191` | The check could not finish within the timeout, being no key, no answer from the cloud, or a key that could not be used |
 | No identifier | A thin white ring on black with nothing inside | The slot carries no 51Did, or every identifier's usage is `non-marketing`, so no marketing preference selected this ad |
 
-Black is `#000000` and white is `#FFFFFF`. All five are fixed. The icon is the same 20 pixels in every state, so the ad never moves as the state changes, and no icon is drawn until the identifiers are in hand, so the visitor never sees one kind of icon replaced by another.
+Black is `#000000` and white is `#FFFFFF`. All five are fixed. The icon is the same 20 pixels in every state, so the ad never moves as the state changes, and no icon is drawn until ADI knows which identifiers the slot carries, if any, so the visitor never sees one kind of icon replaced by another while the slot is checked.
 
 On a page served over plain `http` there is no Web Crypto, so no signature can be checked. ADI writes one console line and draws no icon at all. What ADI looks for is `window.crypto.subtle`, which is the capability itself rather than the scheme, so a page on `localhost` over `http`, which browsers treat as secure, still works.
 
@@ -193,8 +193,8 @@ The signature is checked in the browser with Web Crypto, against the public key 
 Of the four things ADI does for a page, two count against the Resource Key's monthly requests.
 
 - The loader is not checked and not counted. Any cache may hold it.
-- The bundle counts as one request per page view, and is the request checked against the key's domains.
-- The public keys count as one request per call. ADI keeps the answer in the browser's `localStorage` under `__51d_adi_keys`, one entry per creator domain, and asks again only where it holds nothing for that domain or an identifier is dated after both the newest key it holds and the moment it last asked. That is once per browser per key period, rather than once per ad.
+- The bundle counts as one request per download, and is the request checked against the key's domains. A browser can keep the bundle for a day, so later page views in that browser can reuse it without a new request.
+- The public keys count as one request per call. ADI checks signatures with the client in the 51Did package, one for each creator domain on the page, which fetches the key list when the page first needs it and again only under the rules in *Fetching the public keys* on @ref Identifiers_51Did. Between page views the browser's own cache keeps the list for up to 1800 seconds, and never past the moment the next key is published, so a browser asks about once every half hour for each creator domain, rather than once per ad.
 - The signature check is not a request, because it runs in the browser.
 
 Two ads carrying the same identifier on one page need one check, because verdicts are kept per identifier for the page.
@@ -217,7 +217,7 @@ ADI checks as it starts whether `window.__51d_adi` already exists, which means a
 
 ## Browser requirement
 
-The bundles are built to ES2020, the 2020 edition of the JavaScript standard, and are not converted for anything older, which covers every browser released since early 2020. The signature check needs Web Crypto, which browsers provide only on a secure context, so the page must be served over `https`, with `localhost` as the exception browsers make.
+The bundles are built to ES2020, the 2020 edition of the JavaScript standard, and are not converted for anything older, so they need Chrome or Edge 80, Firefox 74, Safari 13.1 (iOS 13.4), Samsung Internet 13, or a later version. The signature check needs Web Crypto, which browsers provide only on a secure context, so the page must be served over `https`, with `localhost` as the exception browsers make.
 
 ## Cross-references
 

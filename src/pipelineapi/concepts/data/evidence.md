@@ -40,7 +40,7 @@ Categories used by 51Degrees are:
 
 # Thread-safety
 
-**Evidence** is not thread-safe and should never be written to by @flowelements.
+Whether **evidence** is thread-safe depends on the language and configuration. See [thread-safety](@ref PipelineApi_Concepts_Data_FlowData_ThreadSafety) on the @flowdata page for each language. @Flowelements should never write to **evidence**.
 
 # Client-side evidence
 

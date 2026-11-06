@@ -16,8 +16,8 @@ Two deployment models are covered:
 
 - **On-premise** runs the IP Intelligence engine in your process with a local data file. Use it when network access is restricted or latency is a priority. See @ref IpIntelligence_Examples_GettingStarted_Console_OnPremise.
 
-Both examples are available across every supported language with a matching
-pattern, so the same logic can be compared side by side. If you intend to
+Each example follows the same pattern in every language it is written in, so
+the same logic can be compared side by side. If you intend to
 deploy inside a web framework rather than a console, see
 @ref IpIntelligence_Examples_GettingStarted_Web_Index instead.
 

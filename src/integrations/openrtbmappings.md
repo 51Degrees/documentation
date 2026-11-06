@@ -22,6 +22,9 @@ The following table lists the OpenRTB (3.2.18 Object: Device) field names, suppo
 |w|Physical width of the screen in pixels|[ScreenPixelsWidth](https://51degrees.com/developers/property-dictionary?item=Device%7CScreen)|Indicates the width of the device's screen in pixels. This property is not applicable for a device that does not have a screen. For devices such as tablets or TV which are predominantly used in landscape mode, the pixel width will be the larger value compared to the pixel height.|
 |ppi|Screen size as pixels per linear inch.|(([ScreenPixelsWidth](https://51degrees.com/developers/property-dictionary?item=Device%7CScreen) / [ScreenInchesWidth](https://51degrees.com/developers/property-dictionary?item=Device%7CScreen)) + ([ScreenPixelsHeight]( https://51degrees.com/developers/property-dictionary?item=Device%7CScreen) / [ScreenInchesHeight]( https://51degrees.com/developers/property-dictionary?item=Device%7CScreen))) / 2|Screen size as pixels per linear inch computed from screen dimensions in pixels and inches.|
 |js|Support for JavaScript, where 0 = no, 1 = yes.|[Javascript](https://51degrees.com/developers/property-dictionary?item=Web%20Browser%20and%20Apps%7CJavascript)|Indicates if the browser supports JavaScript.|
+|pxratio|The ratio of physical pixels to device independent pixels.|[PixelRatio](https://51degrees.com/developers/property-dictionary?item=Device%7CScreen)|The ratio of the resolution in physical pixels to the resolution in CSS pixels. This is approximated by screen resolution and screen size when the value is not known.|
+|ip|IPv4 address closest to device.|[Ip](https://51degrees.com/developers/property-dictionary?item=Network%7CNetwork)|The IPv4 address of the request, returned by IP Intelligence.|
+|ipv6|IP address closest to device as IPv6.|[IpV6](https://51degrees.com/developers/property-dictionary?item=Network%7CNetwork)|The IPv6 address of the request, returned by IP Intelligence.|
 
 # OpenRTB device type mappings <a href="#Integrations_OpenRTBMappings_DeviceType">#</a> @anchor Integrations_OpenRTBMappings_DeviceType
 
@@ -45,7 +48,7 @@ The following table lists the OpenRTB (3.2.19 Object: Geo) field names, supporte
 |---|---|---|---|
 |lat|Latitude from -90.0 to +90.0, where negative is south.|[Latitude](https://51degrees.com/developers/property-dictionary?item=Location%7CCoordinates%20Accuracy)||
 |lon|Longitude from -180.0 to +180.0, where negative is west.|[Longitude](https://51degrees.com/developers/property-dictionary?item=Location%7CCoordinates%20Accuracy)||
-|accuracy|Estimated location accuracy in meters; recommended when lat/lon are specified and derived from a device’s location services (i.e., type = 1). Note that this is the accuracy as reported from the device. Consult OS specific documentation (e.g., Android, iOS) for exact interpretation.|[AccuracyRadiusMin](https://51degrees.com/developers/property-dictionary?item=Location%7CCoordinates%20Accuracy)|AccuracyRadiusMax is in kilometers so a conversion should be applied.|
+|accuracy|Estimated location accuracy in meters; recommended when lat/lon are specified and derived from a device’s location services (i.e., type = 1). Note that this is the accuracy as reported from the device. Consult OS specific documentation (e.g., Android, iOS) for exact interpretation.|[AccuracyRadiusMin](https://51degrees.com/developers/property-dictionary?item=Location%7CCoordinates%20Accuracy)|AccuracyRadiusMin is in kilometers, so multiply it by 1,000 to give meters.|
 |country|Country code using ISO-3166-1-alpha-3.|[CountryCode3](https://51degrees.com/developers/property-dictionary?item=Location%7CCountry%20Information)||
 |region|Region code using ISO-3166-2; 2-letter state code if USA.|[Iso31662Lvl4 and Iso31662Lvl4SubdivisionOnly](https://51degrees.com/developers/property-dictionary?item=Location%7CRegion%20Areas)|Where Country is USA, use the SubdivisionOnly as this is the 2 letter state code. For other countries, use Iso31662Lvl4.|
 |zip|ZIP or postal code.|[ZipCode](https://51degrees.com/developers/property-dictionary?item=Location%7CRegion%20Areas)||
@@ -57,17 +60,14 @@ Currently, the following fields are not directly supported by 51Degrees. Unless 
 
 |OpenRTB property|OpenRTB Description|Source|51Degrees Comments|
 |---|---|---|---|
-|dnt|Standard “Do Not Track” flag as set in the header by the browser, where 0 = tracking is unrestricted, 1 = do not track||This data is not captured as it is unique to a device.|
+|dnt|Standard “Do Not Track” flag as set in the header by the browser, where 0 = tracking is unrestricted, 1 = do not track||Not provided, because the flag comes from the browser's settings rather than from the device.|
 |lmt|“Limit Ad Tracking” signal commercially endorsed (e.g., iOS, Android), where 0 = tracking is unrestricted, 1 = tracking must be limited per commercial guidelines.||This data is not captured as it is unique to a device.|
-|ip|IPv4 address closest to device.|From HTTP requests.|[Contact Us](https://51degrees.com/contact-us)|
-|ipv6|IP address closest to device as IPv6.|From HTTP requests.|This data is not captured as IPv6 adoption is not universal enough to justify.|
-|pxratio|The ratio of physical pixels to device independent pixels.||[Contact Us](https://51degrees.com/contact-us)|
-|geofetch|Indicates if the geolocation API will be available to JavaScript code running in the banner, where 0 = no, 1 = yes.||This data is not captured as it is unique to a device.|
+|geofetch|Indicates if the geolocation API will be available to JavaScript code running in the banner, where 0 = no, 1 = yes.||Not mapped. [GeoLocation](https://51degrees.com/developers/property-dictionary?item=Web%20Browser%20and%20Apps%7CGps) says whether the browser supports a feature to acquire the geographical location, which is not the same, because browsers block that feature in a frame from another origin unless the page allows the frame to use the feature.|
 |flashver|Version of Flash supported by the browser.||Not mapped as legacy property.|
 |language|Browser language using ISO-639-1-alpha-2.|Accept-Language field from HTTP header.|This data is not captured as it is unique to a device.|
-|carrier|Carrier or ISP (e.g., “VERIZON”) using exchange curated string names which should be published to bidders a priori.||[Contact Us](https://51degrees.com/contact-us)|
-|mccmnc|Mobile carrier as the concatenated MCC-MNC code (e.g., “310-005” identifies Verizon Wireless CDMA in the USA).||[Contact Us](https://51degrees.com/contact-us)|
-|connectiontype|Network connection type. Refer to List 5.22.||[Contact Us](https://51degrees.com/contact-us)|
+|carrier|Carrier or ISP (e.g., “VERIZON”) using exchange curated string names which should be published to bidders a priori.||Not mapped, because OpenRTB expects names the exchange chooses. [AsnName](https://51degrees.com/developers/property-dictionary?item=Asn%7CAsn) gives the name registered to the Autonomous System Number of the IP address, and [Carrier](https://51degrees.com/developers/property-dictionary?item=Device%7CName) gives the carrier a device is sold through when it is sold on a single carrier.|
+|mccmnc|Mobile carrier as the concatenated MCC-MNC code (e.g., “310-005” identifies Verizon Wireless CDMA in the USA).||Not mapped. [Mcc](https://51degrees.com/developers/property-dictionary?item=Mcc%7CMcc) gives the mobile country code of the network the device is connected to, found from its IP address, whereas `mccmnc` describes the SIM and also needs the network code.|
+|connectiontype|Network connection type. Refer to List 5.22.||Not mapped, because the values differ. [ConnectionType](https://51degrees.com/developers/property-dictionary?item=Location%7CConnection%20Type) returns Broadband, Cellular, or Hosting and Anonymous, while the OpenRTB list names Ethernet, Wi-Fi, and each generation of mobile network.|
 |ifa|ID sanctioned for advertiser use in the clear (i.e., not hashed).|||
 |didsha1|Hardware device ID (e.g., IMEI); hashed via SHA1.|||
 |didmd5|Hardware device ID (e.g., IMEI); hashed via MD5.|||

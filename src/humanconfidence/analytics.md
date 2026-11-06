@@ -55,7 +55,7 @@ Put Human Confidence next to the reports you already read.
 
 - Filter conversions to High to get a conversion rate for the visits most likely to be people, and compare it with your overall rate.
 - Chart Medium and Low by month and by page, alongside High.
-- Use CrawlerName, CrawlerUsage and IsArtificialIntelligence to see which crawlers read which pages, and whether they index, train or answer questions with them. Then set your robots.txt rules from what you see.
+- Use CrawlerName, CrawlerUsage, and IsArtificialIntelligence to see which crawlers read which pages, and whether they index, train, or answer questions with them. Then set your robots.txt rules from what you see.
 
 ![Monthly visits by Human Confidence on a demonstration site, May to September, with known crawlers removed](images/human-confidence-analytics.svg)
 
@@ -63,7 +63,7 @@ This chart comes from a demonstration site, with known crawlers removed. From Ju
 
 # Crawlers that never run the page
 
-Plenty of crawlers don't run JavaScript. They never reach your tag, so your analytics never counts them. IsCrawler picks up the ones that do run it. You can keep them in, to see which AI crawlers read your pages, or send the values only when `device.iscrawler` is false. Either way, an agent that hides what it is still gets counted. Filter on Human Confidence to separate those visits from people.
+Plenty of crawlers don't run JavaScript. They never reach your tag, so your analytics never counts them. IsCrawler picks up the ones that do run it. You can keep them in, to see which AI crawlers read your pages, or send the values only when `device.iscrawler` is false. Either way, an agent that hides what it is still gets counted. Filter on Human Confidence to separate the visits most likely to be people from the rest.
 
 # Find out more
 

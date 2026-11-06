@@ -2,7 +2,7 @@
 
 # Introduction
 
-This example shows how to use the native key lookup capability of the 51Degrees Cloud service.
+This example shows how to use native key lookup in the 51Degrees Cloud service. Before running it, check the [required Resource Key properties](@ref DeviceDetection_Features_NativeKeyLookup).
 
 @startsnippets
 @grabexample{device-detection-dotnet,_cloud_2_native_model-_console_2_program_8cs,C#}

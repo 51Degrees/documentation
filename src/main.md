@@ -13,7 +13,7 @@ Our services include:
 
 - **Device Detection** - Detect 250+ device properties from HTTP headers and other signals to tailor every user experience.
 - **IP Intelligence** - Retrieve geolocation, ISP, and network data from IP addresses.
-- **Human Confidence** - Rate every visit High, Medium, or Low by how likely it is that a person is viewing the page.
+- **Human Confidence** - Rate every visit High, Medium, or Low by how likely it is that a person is viewing the page, and Unknown where the 51Degrees script has not run.
 - **Reverse Geocoding** - Transform latitude and longitude into real-world addresses, cities, and regions.
 - **Identifiers** - Generate 51Dids, identifiers that name the terms they were created under, and capture user marketing preferences (PMP) to feed downstream systems.
 - **In-process deployment** - Run detection in your application process.
@@ -36,7 +36,7 @@ Identify devices, browsers, and capabilities to deliver tailored experiences acr
 
 ### IP Intelligence
 
-Tap into geolocation, ISP, and network insights. Perfect for fraud prevention, personalization, and compliance.
+Retrieve geolocation, ISP, and network data for fraud prevention, personalization, and geographical restrictions.
 
 - [Overview](@ref IpIntelligence_Overview) - Understand network data and location capabilities
 - [Quick Start](@ref IpIntelligence_Quickstart) - Integrate in minutes
@@ -59,7 +59,7 @@ Convert GPS coordinates to addresses, cities, and regions.
 
 ### Identifiers
 
-Signed, probabilistic device-bound identifiers (51Did) and an embeddable preference widget (PMP) that feeds `id.usage` into 51Did.
+Generate signed, probabilistic device-bound identifiers (51Did). Use the Preference Management Platform (PMP), an embeddable preference widget, to pass `id.usage` to 51Did.
 
 - [Overview](@ref Identifiers_Overview) - How the pieces fit together
 - [51Did](@ref Identifiers_51Did) - Properties, `id.usage`, licensing
@@ -87,7 +87,7 @@ Use the following libraries to integrate Device Detection and IP Intelligence:
 | Java | [device-detection-java](https://github.com/51Degrees/51degrees-java/tree/main/device-detection) | [ip-intelligence-java](https://github.com/51Degrees/51degrees-java/tree/main/ip-intelligence) |
 | Go | [device-detection-go](https://github.com/51Degrees/51degrees-go/tree/main/device-detection) | [ip-intelligence-go](https://github.com/51Degrees/51degrees-go/tree/main/ip-intelligence) |
 | Node.js | [device-detection-node](https://github.com/51Degrees/51degrees-node/tree/main/device-detection) | [ip-intelligence-node](https://github.com/51Degrees/51degrees-node/tree/main/ip-intelligence) |
-| Python | [device-detection-python](https://github.com/51Degrees/51degrees-python/tree/main/device-detection) | - |
+| Python | [device-detection-python](https://github.com/51Degrees/51degrees-python/tree/main/device-detection) | [ip-intelligence-python](https://github.com/51Degrees/51degrees-python/tree/main/ip-intelligence) |
 | PHP | [device-detection-php](https://github.com/51Degrees/51degrees-php/tree/main/device-detection) | - |
 
 ---
@@ -122,7 +122,7 @@ Detect mobile users in rural areas and serve relevant content tailored to their 
 
 Combine Device Detection and IP Intelligence to assess device and location patterns.
 
-Spot suspicious device and location patterns, detect bots, and prevent account takeovers.
+Spot suspicious device and location patterns, detect bots, and flag logins that need a closer look.
 
 ### 📊 Programmatic advertising
 
@@ -138,9 +138,9 @@ See the difference between "iPhone users in London" and "Android tablet users in
 
 ### 🌍 Location and personalization
 
-IP Intelligence + Reverse Geocoding = smarter, compliant experiences.
+Combine IP Intelligence and Reverse Geocoding for location-based experiences.
 
-Enable GDPR compliance, local content licensing, and location-based personalization.
+Apply rules that differ by country or region, such as data protection law and local content licensing, and personalize content by location.
 
 ### ⚡ Performance optimization
 

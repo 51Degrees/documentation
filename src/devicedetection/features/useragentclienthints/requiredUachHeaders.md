@@ -27,9 +27,9 @@ Client Hints values are different in that they relate to varying numbers of comp
 example, the Sec-CH-UA-Model header only relates to the hardware device component.
 
 However, multiple UA-CH values are sometimes needed to fully identify a component. For example, 
-Apple devices running Chrome will not populate the Sec-CH-UA-Model header, so that won't help 
+Chrome on a Mac will not populate the Sec-CH-UA-Model header, so that won't help 
 give us an answer to the hardware component. Instead, we need the Sec-CH-UA-Platform header, 
-which can at least tell us that this is an iOS device.
+which can at least tell us that this is a macOS device.
 
 We concatenate the various UA-CH headers that are needed to identify a component to create 
 ‘pseudo-headers’. These are then used internally to perform the detection. 

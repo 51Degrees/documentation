@@ -2,9 +2,9 @@
 
 # Introduction
 
-Third-party cookies are cookies set by a domain other than the one the user is currently visiting. Web browsers have been increasingly restricting third-party cookies due to privacy concerns, with many browsers now blocking them by default or planning to phase them out.
+Third-party cookies are set by a site other than the one the user is visiting. Whether a browser accepts them depends on the browser, its version, and the user's settings.
 
-For businesses that rely on third-party cookies for functionality such as cross-site tracking, personalization, or analytics, it is important to know whether a user's browser supports third-party cookies. This allows applications to adapt their behavior accordingly, such as falling back to alternative methods when third-party cookies are unavailable.
+If your application uses third-party cookies, for example for advertising, analytics, or sign-in, check whether the visitor's browser accepts them so that you can switch to an alternative when it does not.
 
 51Degrees provides a lightweight, stateless mechanism to detect third-party cookie support as part of the cloud service.
 
@@ -26,8 +26,8 @@ The detection requires two distinct origins:
 3. When the third-party endpoint receives the initial request, it sets a detection cookie: `51D_ThirdPartyCookiesEnabled=true` with `SameSite=None; Secure` attributes.
 4. If the browser supports third-party cookies, it stores the cookie.
 5. The JavaScript makes a subsequent callback request to Origin B with credentials.
-6. If the cookie was stored and sent with the callback, the server detects it and sets `ThirdPartyCookiesEnabled` to `True` in the response.
-7. If the cookie was not sent (third-party cookies blocked), the server sets `ThirdPartyCookiesEnabled` to `False`.
+6. The endpoint answers `{"status": true}` when the cookie came back with the request and `{"status": false}` when it did not. The JavaScript asks twice before it treats the cookie as blocked.
+7. The JavaScript records the answer as `51D_ThirdPartyCookiesEnabled`, set to `True`, `False`, or `Unknown` when the endpoint could not be reached, and sends that value as evidence with the callback, so `ThirdPartyCookiesEnabled` takes the same value.
 
 The key point is that regardless of where the JavaScript is served from, the detection snippet inside always communicates with a third-party domain to test cross-origin cookie behavior.
 
@@ -57,14 +57,17 @@ fod.complete(function(data) {
 
 ## ThirdPartyCookiesEnabled
 
-A boolean value indicating whether third-party cookies are supported by the user's browser.
+A string value indicating whether third-party cookies are enabled in the user's browser. Until the JavaScript in `ThirdPartyCookiesEnabledJavaScript` has run, the value is the likely status for the browser.
 
 | Value | Meaning |
 |-------|---------|
-| `True` | Third-party cookies are enabled and working |
-| `False` | Third-party cookies are blocked or unavailable |
+| `True` | Third-party cookies are enabled, and the JavaScript has confirmed it |
+| `False` | Third-party cookies are not enabled, and the JavaScript has confirmed it |
+| `ProbablyTrue` | Third-party cookies are enabled by default for this browser, and the JavaScript has not confirmed it |
+| `ProbablyFalse` | Third-party cookies are not enabled by default for this browser, and the JavaScript has not confirmed it |
+| `Unknown` | The status is not known, either for this browser by default or because the JavaScript could not complete its check |
 
-## ThirdPartyCookiesEnabledJavascript
+## ThirdPartyCookiesEnabledJavaScript
 
 A JavaScript snippet for client-side detection. This property is populated only when server-side detection was not conclusive (e.g., on the first request before the callback). When server-side detection succeeds, this property is empty, eliminating the need for additional client-side detection logic.
 
@@ -72,13 +75,13 @@ A JavaScript snippet for client-side detection. This property is populated only 
 
 Third-party cookies detection is automatically performed when using the 51Degrees @ref PipelineApi_Features_ClientSideEvidence "client-side evidence" JavaScript integration.
 
-**Note:** If you are using the 51Degrees Cloud service, you need a Resource Key that includes the `ThirdPartyCookiesEnabled` and `ThirdPartyCookiesEnabledJavascript` properties. The @ref Services_Configurator "Resource Key guide" shows how to create one.
+**Note:** If you are using the 51Degrees Cloud service, you need a Resource Key that includes the `ThirdPartyCookiesEnabled` and `ThirdPartyCookiesEnabledJavaScript` properties. The @ref Services_Configurator "Resource Key guide" shows how to create one.
 
 After the JavaScript callback to the cloud service, the response includes the cookie detection result alongside the other device detection properties.
 
 ## Custom endpoint configuration
 
-By default, the detection snippet communicates with `cloud.51degrees.com`. If you are hosting your own 51Degrees cloud service or need to use a different endpoint, you can customize the third-party cookie detection endpoint by setting the `window.fodTpcEndpoint` global variable before loading the JavaScript:
+By default, the detection snippet calls `https://cloud.51degrees.com/api/v4/3pc`. If you host the cloud service yourself (see @ref Services_Cloud_SelfHostedDocker) or need to use a different endpoint, put the endpoint on a different domain from your pages, not on a subdomain of your own site. A browser treats a cookie from your own site as a first-party cookie, so the check would report third-party cookies as enabled even when the browser blocks them. Then set the `window.fodTpcEndpoint` global variable to the full address of the endpoint before loading the JavaScript:
 
 ```html
 <script>
@@ -95,7 +98,7 @@ Modern browsers have varying levels of third-party cookie support:
 
 - **Safari**: Blocks third-party cookies by default via Intelligent Tracking Prevention (ITP).
 - **Firefox**: Blocks third-party tracking cookies by default via Enhanced Tracking Protection (ETP).
-- **Chrome**: Planning to phase out third-party cookies (check current status as this is evolving). Note that Chrome Incognito mode blocks third-party cookies by default.
+- **Chrome**: Google no longer plans to phase out third-party cookies, and users can block them in Chrome's settings. Chrome Incognito mode blocks third-party cookies by default.
 - **Edge**: Follows similar patterns to Chrome with configurable tracking prevention levels.
 
 This detection feature allows your application to adapt to the user's actual browser configuration rather than relying on browser identification alone.

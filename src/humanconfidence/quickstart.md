@@ -56,7 +56,7 @@ Human Confidence comes from the 51Degrees cloud service. It isn't in the on-prem
      });
    </script>
    ```
-4. Load the page in your browser and look at the console. On a public site you'll normally see High. On localhost, Medium is common.
+4. Load the page in your browser and look at the console, which shows High, Medium, or Low.
 
 ---
 

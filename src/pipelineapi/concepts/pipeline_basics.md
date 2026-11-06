@@ -28,7 +28,7 @@ For a deeper understanding of the Pipeline concept, start with the @Pipeline pag
 - Support for high performance native data processing libraries via SWIG.
 - All components designed for scalable, multithreaded applications.
 - Modern software design including fluent builders, dependency injection, unit testing, and continuous integration. DevOps friendly.
-- Support for .NET, Java, PHP, and Node with more being added over time.
+- Support for .NET, Java, PHP, Node.js, Python, and Rust.
 - Plug-in architecture supporting custom third party data services.
 
 ## New to the Pipeline?

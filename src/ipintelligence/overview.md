@@ -52,7 +52,7 @@ Combine IP Intelligence with [Device Detection](@ref DeviceDetection_Overview) t
 Choose what fits your stack:
 
 - **On-premise:** Run detection on your own servers.
-- **Cloud API:** No infrastructure headaches, always updated, pay-as-you-go.
+- **Cloud API:** No infrastructure headaches and always updated, with a free plan and monthly or yearly paid plans.
 
 [Compare integration options](@ref IpIntelligence_Quickstart)
 
@@ -91,7 +91,7 @@ Detect click fraud, suspicious logins, and automated attacks by analyzing IP pat
 
 ### 🚫 Geographical restrictions
 
-Enforce geographical restrictions for gambling, content licensing, or data protection law such as GDPR.
+Apply rules that differ by country or region, such as for gambling, content licensing, or data protection law. Check `LocationConfidence` and `IsVPN` first, and ask the visitor for a precise location when the answer is unclear.
 
 ### 🗺️ Reverse Geocoding
 

@@ -33,7 +33,7 @@ To include this, add the following to the `<dependencies>` section of the projec
 <dependency>
     <groupId>com.51degrees</groupId>
     <artifactId>pipeline.core</artifactId>
-    <version>4.2.0</version>
+    <version>4.5.128</version>
 </dependency>
 ```
 @endsnippet
@@ -266,16 +266,6 @@ This new @flowelement can now be added to a @pipeline and used like:
 @snippet "simpleEvidenceFlowElement.js" usage
 
 To print the star sign of the user.
-@endsnippet
-@startsnippet{java}
-This new @flowelement can now be added to a @pipeline and used like:
-
-@snippet "pipeline.developer-examples.flowelement/src/main/java/pipeline/developerexamples/flowelement/Main.java" usage
-
-to give an output of:
-```{bash}
-With a date of birth of 18/12/1992, your star sign is Sagittarius.
-```
 @endsnippet
 @endsnippets
 

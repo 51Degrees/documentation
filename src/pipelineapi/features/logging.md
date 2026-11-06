@@ -93,7 +93,7 @@ Here is an example of a basic logger that stores its logs in an array.
 The log object passed to the overridden logInternal function is an associative array that contains:
 
 * time - Y-m-d H:i:s format timestamp
-* level - one of "trace", "debug", "information", "warning", "error", "critical"
+* level - one of "trace", "debug", "info", "warning", "error", "critical"
 * message - the message
 
 ```{php}
@@ -104,7 +104,7 @@ class MemoryLogger extends Logger
 {
     public $log = [];
 
-    public function logInternal($log)
+    public function logInternal(array $log): void
     {
 
             $this->log[] = $log;
@@ -123,7 +123,7 @@ $logger = new MemoryLogger("info"); // Pass in the minimum log level to the cons
 
 $pipelineBuilder = new PipelineBuilder();
 
-$pipelineBuilder->addLogger($this->logger);
+$pipelineBuilder->addLogger($logger);
 
 // Then add elements and build the Pipeline as usual
 
@@ -138,8 +138,8 @@ Here is an example of a basic logger that stores its logs in a list.
 
 The log object passed to the overridden log_internal function is a dictionary that contains:
 
-* time - Y-m-d H:i:s format timestamp
-* level - one of "trace", "debug", "information", "warning", "error", "critical"
+* time - timestamp in the format `%Y-%m-%d, %H:%M:%S`
+* level - one of "debug", "info", "warning", "error", "critical"
 * message - the message
 
 ```{python}
@@ -167,7 +167,7 @@ Pass your logger to the PipelineBuilder when creating the Pipeline:
 
 from fiftyone_pipeline_core.pipelinebuilder import PipelineBuilder
 
-logger = MemoryLogger('info') // Pass in the minimum log level to the constructor
+logger = MemoryLogger('info')  # Pass in the minimum log level to the constructor
 
 pipeline = (PipelineBuilder())\
             .add_logger(logger)\

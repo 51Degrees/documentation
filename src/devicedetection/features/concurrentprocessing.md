@@ -99,7 +99,7 @@ Or in config file:
         {
             "elementName": "deviceDetectionOnPremise",
             "elementParameters": {
-                "performanceProfile": "LowMemmory",
+                "performanceProfile": "LowMemory",
                 "dataFilePath": "51Degrees-LiteV4.1.hash",
                 "concurrency": 30
             }

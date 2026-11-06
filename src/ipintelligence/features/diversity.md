@@ -33,7 +33,7 @@ The values are not the exact average number of unique profiles, as 2 forms of we
 ### Age weight
 While an event from the current day is counted as 1 event, events from previous days are also included when calculating the score. The older the event, the less it contributes.
 
-This helps fill in data for ranges which see lower daily levels of traffic, while ensuring that profile changes across time do not affect the result.
+This helps fill in data for ranges which see lower daily levels of traffic, while reducing the effect of profile changes over time, because older events count for less.
 
 ### Consistency weight
 If we see 1 profile 1000 times for an IP, but another 5 profiles are seen only once each, this will not give a score of 6. This is because profiles where the count is below the average make a smaller contribution.

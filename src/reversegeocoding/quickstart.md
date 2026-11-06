@@ -73,7 +73,7 @@ Pipeline pipeline = new GeoLocationPipelineBuilder(loggerFactory)
 @endsnippet
 @startsnippet{node}
 ```js
-const FiftyOneDegreesGeoLocation = require('./index');
+const FiftyOneDegreesGeoLocation = require('fiftyone.geolocation');
 let localResourceKey = 'AAAAAAAABBBBBBCC';
 const pipeline = new FiftyOneDegreesGeoLocation.GeoLocationPipelineBuilder({
   resourceKey: localResourceKey
@@ -199,7 +199,7 @@ fd.process()
 
 ## Step 6: Get your results
 
-Your results are in the `flowData` object (not returned from `process()`). Each property has a `hasValue` boolean. If it's populated, `hasValue` is true and `value` contains the result. If not, `hasValue` is false and you'll find why in the null reason property.
+Read the results from the flow data once `process()` has finished, as the snippets below show. Each property says whether it has a value (`HasValue` in C#, `hasValue()` in Java, `hasValue` in Node.js and PHP, and `has_value()` in Python). If it does, its value is the result. If not, its no value message says why.
 
 @startsnippets
 @showsnippet{dotnet,C#}
@@ -212,12 +212,16 @@ Your results are in the `flowData` object (not returned from `process()`). Each 
 @startsnippet{dotnet}
 ```
 var country = data.Get<IGeoData>().Country;
-Console.Write($"Awaiting response");
-CancellationTokenSource cancellationSource = new CancellationTokenSource();
-Task.Run(() => { OutputUntilCancelled(".", 1000, cancellationSource.Token); });
-cancellationSource.Cancel();
-Console.WriteLine();
-Console.WriteLine($"Country: {country.ToString()}");
+// With lazy loading, reading the value waits for the result, up to the
+// timeout set in step 3.
+if (country.HasValue)
+{
+    Console.WriteLine($"Country: {country.Value}");
+}
+else
+{
+    Console.WriteLine($"Country: {country.NoValueMessage}");
+}
 ```
 @endsnippet
 @startsnippet{java}
@@ -232,10 +236,11 @@ pipeline.close();
 @endsnippet
 @startsnippet{node}
 ```js
-if (flowData.country.hasValue) {
-    console.log("Country name:", flowData.country.value)
+const country = flowData.location.country;
+if (country.hasValue) {
+    console.log("Country name:", country.value)
 } else {
-    console.error("Country not available:", flowData.countrynullreason)
+    console.error("Country not available:", country.noValueMessage)
 }
 ```
 @endsnippet
