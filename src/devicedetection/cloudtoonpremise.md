@@ -162,9 +162,11 @@ Download new data files from the [51Degrees Distributor](@ref Services_Distribut
 **Choose Performance Profile**
 
 - **MaxPerformance** - Fastest detection, uses more memory (recommended)
-- **HighPerformance** - Uses about as much memory as MaxPerformance, so it is generally not recommended
+- **HighPerformance** - Loads the data into memory, and when you name only some properties it leaves out the values they don't read
 - **LowMemory** - Slowest but minimal memory usage
 - **Balanced** - Default middle ground
+
+See [choosing a profile](@ref DeviceDetection_Features_PerformanceOptions) for which one suits your service.
 
 In PHP, the engine built when PHP starts always uses `MaxPerformance`, so there is no profile to choose. See [Performance options](@ref DeviceDetection_Features_PerformanceOptions) for the reason.
 
