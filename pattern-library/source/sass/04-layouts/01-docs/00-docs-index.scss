@@ -95,6 +95,10 @@
     p, ul, ol {
       margin: 0 0 size(0) 0;
     }
+    // Space between list items, so long items read as separate points.
+    li + li {
+      margin-top: size(-2);
+    }
     a {
       @include make-link-docs();
     }
