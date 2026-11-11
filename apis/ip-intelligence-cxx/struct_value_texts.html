@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <base href="/documentation/4.5/">
-  <link rel="canonical" href="https://51degrees.com/documentation/apis/ip-intelligence-cxx/structheld_strings_bucket.html">
-  <link rel="alternate" hreflang="en-US" href="https://51degrees.com/documentation/apis/ip-intelligence-cxx/structheld_strings_bucket.html" />
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/ip-intelligence-cxx/struct_value_texts.html">
+  <link rel="alternate" hreflang="en-US" href="https://51degrees.com/documentation/apis/ip-intelligence-cxx/struct_value_texts.html" />
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="heldStringsBucket Struct Reference - IP intelligence services for 51Degrees Pipeline - 51Degrees documentation."/>
-<title>51Degrees IP Intelligence C/C++: heldStringsBucket Struct Reference</title>
+<meta name="description" content="ValueTexts Struct Reference - IP intelligence services for 51Degrees Pipeline - 51Degrees documentation."/>
+<title>51Degrees IP Intelligence C/C++: ValueTexts Struct Reference</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -59,24 +59,30 @@
   </nav>
 </div>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded',() => { initNavTree('structheld_strings_bucket.html','',''); });
+document.addEventListener('DOMContentLoaded',() => { initNavTree('struct_value_texts.html','',''); });
 </script>
 <div id="doc-content" class="g-docs__content">
 <div class="g-docs__header">
-<h1 class="g-docs__page-title">heldStringsBucket Struct Reference</h1></div><!--header-->
+<h1 class="g-docs__page-title">ValueTexts Struct Reference</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
-<div class="textblock"><p>The lowest and highest required string offsets in part of the strings, and how the highest is stored so that its size can be worked out. </p>
+<div class="textblock"><p>The text of the values fiftyoneDegreesResultsIpiGetValueTexts is writing. </p>
 </div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="c-table__row memitem:acfd23fde34189a85b92a7f4a3e81a420" id="r_acfd23fde34189a85b92a7f4a3e81a420"><td class="c-table__cell"><a id="acfd23fde34189a85b92a7f4a3e81a420" name="acfd23fde34189a85b92a7f4a3e81a420"></a>
-uint32_t&#160;</td><td class="c-table__cell"><b>first</b></td></tr>
-<tr class="c-table__row memitem:a5b4319f37ea5cb68aa9f6d9722cb7313" id="r_a5b4319f37ea5cb68aa9f6d9722cb7313"><td class="c-table__cell"><a id="a5b4319f37ea5cb68aa9f6d9722cb7313" name="a5b4319f37ea5cb68aa9f6d9722cb7313"></a>
-uint32_t&#160;</td><td class="c-table__cell"><b>last</b></td></tr>
-<tr class="c-table__row memitem:a68092c552d2a4c1d040dc8b0547e1f87" id="r_a68092c552d2a4c1d040dc8b0547e1f87"><td class="c-table__cell"><a id="a68092c552d2a4c1d040dc8b0547e1f87" name="a68092c552d2a4c1d040dc8b0547e1f87"></a>
-<a class="el" href="group___fifty_one_degrees_synonyms.html#ga8a7783e7ddfc7a668eca04c87bb7dc75">PropertyValueType</a>&#160;</td><td class="c-table__cell"><b>lastType</b></td></tr>
+<tr class="c-table__row memitem:a0214506bcfe3ae5bf82adaf9382826ca" id="r_a0214506bcfe3ae5bf82adaf9382826ca"><td class="c-table__cell"><a id="a0214506bcfe3ae5bf82adaf9382826ca" name="a0214506bcfe3ae5bf82adaf9382826ca"></a>
+char&#160;*&#160;</td><td class="c-table__cell"><b>buffer</b></td></tr>
+<tr class="c-table__row memdesc:a0214506bcfe3ae5bf82adaf9382826ca"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The caller's memory, which is never freed. <br /></td></tr>
+<tr class="c-table__row memitem:a0fcf1a300b74f0b9da240f391f80ff14" id="r_a0fcf1a300b74f0b9da240f391f80ff14"><td class="c-table__cell"><a id="a0fcf1a300b74f0b9da240f391f80ff14" name="a0fcf1a300b74f0b9da240f391f80ff14"></a>
+char&#160;*&#160;</td><td class="c-table__cell"><b>text</b></td></tr>
+<tr class="c-table__row memdesc:a0fcf1a300b74f0b9da240f391f80ff14"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The memory written into, being buffer or allocated. <br /></td></tr>
+<tr class="c-table__row memitem:aad4a1d76d023227f8c0df0f985992c03" id="r_aad4a1d76d023227f8c0df0f985992c03"><td class="c-table__cell"><a id="aad4a1d76d023227f8c0df0f985992c03" name="aad4a1d76d023227f8c0df0f985992c03"></a>
+size_t&#160;</td><td class="c-table__cell"><b>length</b></td></tr>
+<tr class="c-table__row memdesc:aad4a1d76d023227f8c0df0f985992c03"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The bytes text holds. <br /></td></tr>
+<tr class="c-table__row memitem:a16f94b50fd085b480142d78a3ee305a8" id="r_a16f94b50fd085b480142d78a3ee305a8"><td class="c-table__cell"><a id="a16f94b50fd085b480142d78a3ee305a8" name="a16f94b50fd085b480142d78a3ee305a8"></a>
+size_t&#160;</td><td class="c-table__cell"><b>used</b></td></tr>
+<tr class="c-table__row memdesc:a16f94b50fd085b480142d78a3ee305a8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The bytes of text written so far. <br /></td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li><b>ipi.c</b></li>

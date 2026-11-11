@@ -1,0 +1,7 @@
+<map id="fiftyoneDegreesCollectionHeldStrings" name="fiftyoneDegreesCollectionHeldStrings">
+<area shape="rect" id="Node000001" title="The strings to hold, worked out from the offsets of the strings needed." alt="" coords="112,116,303,156"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_collection_held_bucket.html" title="The lowest and highest string offsets recorded in part of the strings, and a tag for the highest that..." alt="" coords="5,5,196,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,54,191,114,187,118,127,57"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_collection_held_range.html" title="A stretch of a collection to hold in memory, in the units of the collection&#39;s keys." alt="" coords="220,5,411,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="289,57,228,118,224,114,285,53"/>
+</map>

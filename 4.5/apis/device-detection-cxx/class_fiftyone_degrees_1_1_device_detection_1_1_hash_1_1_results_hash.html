@@ -76,14 +76,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fiftyone
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__keyword">using namespace </span><a class="code hl_namespace" href="namespace_fiftyone_degrees_1_1_device_detection_1_1_hash.html">FiftyoneDegrees::DeviceDetection::Hash</a>;</div>
 <div class="c-code__line"><a class="code hl_function" href="#a45ef4202f375c5b6e9b342184ad86474">ResultsHash</a> *results;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__comment">// Get the maximum drift used to arrive at the result</span></div>
+<div class="c-code__line"><span class="c-code__comment">// Get the total drift used to arrive at the result</span></div>
 <div class="c-code__line"><span class="c-code__keywordtype">int</span> drift = results-&gt;getDrift();</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Delete the results</span></div>
 <div class="c-code__line"><span class="c-code__keyword">delete</span> results;</div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash_html_a45ef4202f375c5b6e9b342184ad86474"><div class="ttname"><a href="#a45ef4202f375c5b6e9b342184ad86474">FiftyoneDegrees::DeviceDetection::Hash::ResultsHash::ResultsHash</a></div><div class="ttdeci">ResultsHash(fiftyoneDegreesResultsHash *results, shared_ptr&lt; fiftyoneDegreesResourceManager &gt; manager)</div></div>
 <div class="ttc" id="anamespace_fiftyone_degrees_1_1_device_detection_1_1_hash_html"><div class="ttname"><a href="namespace_fiftyone_degrees_1_1_device_detection_1_1_hash.html">FiftyoneDegrees::DeviceDetection::Hash</a></div><div class="ttdoc">Hash Device Detection specific classes.</div><div class="ttdef"><b>Definition</b> ComponentMetaDataBuilderHash.hpp:35</div></div>
-</div><!-- fragment --> <dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_getting_started_8cpp-example.html#_a13">Hash/GettingStarted.cpp</a>, <a class="el" href="_hash_2_match_metrics_8cpp-example.html#_a13">Hash/MatchMetrics.cpp</a>, and <a class="el" href="_hash_2_strongly_typed_8cpp-example.html#_a5">Hash/StronglyTyped.cpp</a>.</dd>
+</div><!-- fragment --> <dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_getting_started_8cpp-example.html#_a13">Hash/GettingStarted.cpp</a>, and <a class="el" href="_hash_2_strongly_typed_8cpp-example.html#_a5">Hash/StronglyTyped.cpp</a>.</dd>
 </dl>
 </div><h2 class="g-docs__section-heading">
 Inheritance diagram for FiftyoneDegrees::DeviceDetection::Hash::ResultsHash:</h2>
@@ -109,7 +109,7 @@ virtual&#160;</td><td class="c-table__cell"><b>~ResultsHash</b> ()</td></tr>
 <tr class="c-table__row memitem:a1efee9eab1d90cd15814aba89f7eedab" id="r_a1efee9eab1d90cd15814aba89f7eedab"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#a1efee9eab1d90cd15814aba89f7eedab">getIterations</a> () const</td></tr>
 <tr class="c-table__row memdesc:a1efee9eab1d90cd15814aba89f7eedab"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the number of iterations carried out in order to find a match.  <br /></td></tr>
 <tr class="c-table__row memitem:a15da49c63b4017a8aa13b65bb312aeb1" id="r_a15da49c63b4017a8aa13b65bb312aeb1"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#a15da49c63b4017a8aa13b65bb312aeb1">getDrift</a> () const</td></tr>
-<tr class="c-table__row memdesc:a15da49c63b4017a8aa13b65bb312aeb1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns the maximum drift for a matched substring from the character position where it was expected to be found.  <br /></td></tr>
+<tr class="c-table__row memdesc:a15da49c63b4017a8aa13b65bb312aeb1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns the total drift of the results.  <br /></td></tr>
 <tr class="c-table__row memitem:a70a22c4cd3ad760c339ad054fe6a9e42" id="r_a70a22c4cd3ad760c339ad054fe6a9e42"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#a70a22c4cd3ad760c339ad054fe6a9e42">getDrift</a> (uint32_t resultIndex) const</td></tr>
 <tr class="c-table__row memdesc:a70a22c4cd3ad760c339ad054fe6a9e42"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns the drift for a matched substring from the character position where it was expected to be found.  <br /></td></tr>
 <tr class="c-table__row memitem:a7be2dd30053edfc81195cff72f9fdeab" id="r_a7be2dd30053edfc81195cff72f9fdeab"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#a7be2dd30053edfc81195cff72f9fdeab">getMatchedNodes</a> () const</td></tr>
@@ -233,6 +233,8 @@ class&#160;</td><td class="c-table__cell"><b>::EngineHashTests</b></td></tr>
 class&#160;</td><td class="c-table__cell"><b>::HashFirstReadRuleTests</b></td></tr>
 <tr class="c-table__row memitem:a565a1aa92a1054b13b2632645956c6c7" id="r_a565a1aa92a1054b13b2632645956c6c7"><td class="c-table__cell"><a id="a565a1aa92a1054b13b2632645956c6c7" name="a565a1aa92a1054b13b2632645956c6c7"></a>
 class&#160;</td><td class="c-table__cell"><b>::HashFirstReadTests</b></td></tr>
+<tr class="c-table__row memitem:a789f1011a9e35176e40e70876c56b626" id="r_a789f1011a9e35176e40e70876c56b626"><td class="c-table__cell"><a id="a789f1011a9e35176e40e70876c56b626" name="a789f1011a9e35176e40e70876c56b626"></a>
+class&#160;</td><td class="c-table__cell"><b>::HashMatchMetricsTests</b></td></tr>
 <tr class="c-table__row memitem:ab18a93814b2d539346a3f3f5e487a66c" id="r_ab18a93814b2d539346a3f3f5e487a66c"><td class="c-table__cell"><a id="ab18a93814b2d539346a3f3f5e487a66c" name="ab18a93814b2d539346a3f3f5e487a66c"></a>
 class&#160;</td><td class="c-table__cell"><b>ResultsHashSerializer</b></td></tr>
 </table><table class="c-table c-table--directory">
@@ -333,7 +335,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">device id string </dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_getting_started_8cpp-example.html#a19">Hash/GettingStarted.cpp</a>, and <a class="el" href="_hash_2_match_metrics_8cpp-example.html#a17">Hash/MatchMetrics.cpp</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_getting_started_8cpp-example.html#a20">Hash/GettingStarted.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -359,8 +361,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Returns the total difference between the results returned and the target User-Agents. </p>
 <p>Where multiple evidence items are used, this is the total difference. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">total difference </dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_match_metrics_8cpp-example.html#a19">Hash/MatchMetrics.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -390,7 +390,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">individual difference </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">individual difference, or 0 when there is no result at the index </dd></dl>
 
 </div>
 </div>
@@ -413,10 +413,8 @@ Additional Inherited Members</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Returns the maximum drift for a matched substring from the character position where it was expected to be found. </p>
-<p>The higher this value, the less accurate the results should be considered. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">int maximum drift </dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_match_metrics_8cpp-example.html#a18">Hash/MatchMetrics.cpp</a>.</dd>
-</dl>
+<p>Returns the total drift of the results. </p>
+<p>Each result's drift is the largest number of characters a matched substring was from where it was expected to be found, and this is the sum of them. The higher this value, the less accurate the results should be considered. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">total drift </dd></dl>
 
 </div>
 </div>
@@ -440,13 +438,13 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Returns the drift for a matched substring from the character position where it was expected to be found. </p>
-<p>The higher this value, the lass accurate the results should be considered. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The higher this value, the less accurate the results should be considered. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">resultIndex</td><td>index of the individual User-Agent in the results </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">individual drift </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">individual drift, or 0 when there is no result at the index </dd></dl>
 
 </div>
 </div>
@@ -471,8 +469,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Get the number of iterations carried out in order to find a match. </p>
 <p>This is the number of nodes in the graph which have been visited. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">number of iterations </dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_match_metrics_8cpp-example.html#a20">Hash/MatchMetrics.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -496,7 +492,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Returns the number of hash nodes matched within the evidence. </p>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">total number of matched nodes </dd></dl>
 
 </div>
 </div>
@@ -521,8 +517,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Returns the method used to determine the match result. </p>
 <p>See <a class="el" href="group___fifty_one_degrees_hash_api.html#ga67aa036768bc73323346f87d05ab7130" title="DATA STRUCTURES.">fiftyoneDegreesHashMatchMethod</a> </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">highest method used </dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_match_metrics_8cpp-example.html#a21">Hash/MatchMetrics.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -721,8 +715,6 @@ Additional Inherited Members</h2></td></tr>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">string set to the HTTP header value matched </dd></dl>
 
 <p>Implements <a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_results_device_detection.html#abdc6aeac81c82d147c63748e30b941f8">FiftyoneDegrees::DeviceDetection::ResultsDeviceDetection</a>.</p>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_match_metrics_8cpp-example.html#a22">Hash/MatchMetrics.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>

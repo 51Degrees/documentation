@@ -1,5 +1,10 @@
 var NAVTREEINDEX2 =
 {
+"namespace_fiftyone_degrees.html":[2,0],
+"namespace_fiftyone_degrees_1_1_common.html":[2,0,0],
+"namespace_fiftyone_degrees_1_1_common.html#a7e5e82f45d65fc6f1a983433c1a7dcbb":[2,0,0,24],
+"namespace_fiftyone_degrees_1_1_common.html#ace2b1584b166946cdfad6bb3f1678e9a":[2,0,0,25],
+"namespace_fiftyone_degrees_1_1_device_detection.html":[2,0,1],
 "namespace_fiftyone_degrees_1_1_device_detection_1_1_hash.html":[2,0,1,0],
 "namespace_fiftyone_degrees_1_1_examples.html":[2,0,2],
 "namespace_fiftyone_degrees_1_1_examples_1_1_hash.html":[2,0,2,0],

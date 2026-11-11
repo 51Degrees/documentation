@@ -77,13 +77,13 @@ Collaboration diagram for fiftyoneDegreesCache:</h2>
 Data Fields</h2></td></tr>
 <tr class="c-table__row memitem:a300c54922111caf8a87d0143ca1dc879" id="r_a300c54922111caf8a87d0143ca1dc879"><td class="c-table__cell"><a id="a300c54922111caf8a87d0143ca1dc879" name="a300c54922111caf8a87d0143ca1dc879"></a>
 <a class="el" href="structfiftyone_degrees_cache_shard.html">fiftyoneDegreesCacheShard</a>&#160;*&#160;</td><td class="c-table__cell"><b>shards</b></td></tr>
-<tr class="c-table__row memdesc:a300c54922111caf8a87d0143ca1dc879"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Array of shards / concurrency. <br /></td></tr>
+<tr class="c-table__row memdesc:a300c54922111caf8a87d0143ca1dc879"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Array of shards / shardCount. <br /></td></tr>
 <tr class="c-table__row memitem:ac9d5e86f2a4575120f9845ce664bfb22" id="r_ac9d5e86f2a4575120f9845ce664bfb22"><td class="c-table__cell"><a id="ac9d5e86f2a4575120f9845ce664bfb22" name="ac9d5e86f2a4575120f9845ce664bfb22"></a>
 <a class="el" href="structfiftyone_degrees_cache_node.html">fiftyoneDegreesCacheNode</a>&#160;*&#160;</td><td class="c-table__cell"><b>nodes</b></td></tr>
 <tr class="c-table__row memdesc:ac9d5e86f2a4575120f9845ce664bfb22"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Array of nodes / capacity. <br /></td></tr>
-<tr class="c-table__row memitem:aac77f96993e9f516104937c307b9d971" id="r_aac77f96993e9f516104937c307b9d971"><td class="c-table__cell"><a id="aac77f96993e9f516104937c307b9d971" name="aac77f96993e9f516104937c307b9d971"></a>
-uint16_t&#160;</td><td class="c-table__cell"><b>concurrency</b></td></tr>
-<tr class="c-table__row memdesc:aac77f96993e9f516104937c307b9d971"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Expected concurrency and number of shards. <br /></td></tr>
+<tr class="c-table__row memitem:a33448bc601889a6184bbe1753e0b4c25" id="r_a33448bc601889a6184bbe1753e0b4c25"><td class="c-table__cell"><a id="a33448bc601889a6184bbe1753e0b4c25" name="a33448bc601889a6184bbe1753e0b4c25"></a>
+uint16_t&#160;</td><td class="c-table__cell"><b>shardCount</b></td></tr>
+<tr class="c-table__row memdesc:a33448bc601889a6184bbe1753e0b4c25"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Number of shards, each with its own lock. <br /></td></tr>
 <tr class="c-table__row memitem:a8cd71237a94f74d0bdc9685c16d2955b" id="r_a8cd71237a94f74d0bdc9685c16d2955b"><td class="c-table__cell"><a id="a8cd71237a94f74d0bdc9685c16d2955b" name="a8cd71237a94f74d0bdc9685c16d2955b"></a>
 int32_t&#160;</td><td class="c-table__cell"><b>capacity</b></td></tr>
 <tr class="c-table__row memdesc:a8cd71237a94f74d0bdc9685c16d2955b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Capacity of the cache. <br /></td></tr>

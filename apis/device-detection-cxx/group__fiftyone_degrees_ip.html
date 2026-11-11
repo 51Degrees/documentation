@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__fiftyon
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
 <div class="textblock"><p>Types and methods to parse IP address strings. </p>
 <h2>Introduction</h2>
-<p>IP v4 and v6 addresses can be parsed using the <a class="el" href="#ga1fc6a7ff4d3eba96d3d48269ef87fc4d" title="Parse a single IP address string.">fiftyoneDegreesIpAddressParse</a> and #fiftyoneDegreesIpAddressesParse methods. </p>
+<p>IP v4 and v6 addresses can be parsed using the <a class="el" href="#ga1fc6a7ff4d3eba96d3d48269ef87fc4d" title="Parse a single IP address string.">fiftyoneDegreesIpAddressParse</a> method. </p>
 </div><h2 class="g-docs__section-heading">
 Collaboration diagram for IP:</h2>
 <div class="dyncontent">
@@ -213,10 +213,17 @@ Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Parse a single IP address string. </p>
+<p>The string is read only when all of it is one of these forms:</p><ul>
+<li>an IPv4 address in dotted-decimal form, such as 203.0.113.1, with no leading zeros</li>
+<li>an IPv6 address in any text form of RFC 4291 section 2.2, such as 2001:db8::1 or ::ffff:203.0.113.1</li>
+<li>an IPv4 address, a colon and a port, such as 203.0.113.1:8080</li>
+<li>an IPv6 address in square brackets, with or without a colon and a port after the closing bracket, such as [2001:db8::1]:8080</li>
+</ul>
+<p>The port is checked and then dropped. Anything else is not read, including a prefix length, text or a space before or after the address, a list of addresses and an IPv6 zone index. The address is not changed in that case. An IPv4-mapped IPv6 address stays an IPv6 address here. See <a href="https://github.com/51Degrees/specifications/blob/main/ip-intelligence-specification/pipeline-elements/ip-intelligence-on-premise.md#reading-the-client-ip-value">https://github.com/51Degrees/specifications/blob/main/ip-intelligence-specification/pipeline-elements/ip-intelligence-on-premise.md#reading-the-client-ip-value</a></p>
 <p>Does not modify the last 12 (out of 16) bytes when parsing IPv4. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">start</td><td>of the string containing the IP address to parse </td></tr>
-    <tr><td class="paramname">end</td><td>the last character of the string (with IP address) to be considered for parsing </td></tr>
+    <tr><td class="paramname">end</td><td>the character after the last character of the string </td></tr>
     <tr><td class="paramname">address</td><td>memory to write parsed IP address into. </td></tr>
   </table>
   </dd>

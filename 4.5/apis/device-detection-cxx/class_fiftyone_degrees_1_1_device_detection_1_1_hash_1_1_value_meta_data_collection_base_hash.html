@@ -79,6 +79,8 @@ Collaboration diagram for FiftyoneDegrees::DeviceDetection::Hash::ValueMetaDataC
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a4186ba23028a0b34b7fab0651fa2e71b" id="r_a4186ba23028a0b34b7fab0651fa2e71b"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html">ValueMetaData</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#a4186ba23028a0b34b7fab0651fa2e71b">getDefaultForProperty</a> (const std::string &amp;propertyName) const</td></tr>
+<tr class="c-table__row memdesc:a4186ba23028a0b34b7fab0651fa2e71b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the value the metadata gives as the default of the property named, as fiftyoneDegreesValueGetDefaultIndex finds it.  <br /></td></tr>
 <tr id="pub-methods-0" class="c-table__row"><td class="c-table__cell" colspan="2"><h3 class="c-table__heading">Constructors and Destructors</h3></td></tr>
 <tr class="c-table__row memitem:a07d84ac466acd041df8ac685285e423f" id="r_a07d84ac466acd041df8ac685285e423f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a07d84ac466acd041df8ac685285e423f">ValueMetaDataCollectionBaseHash</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager)</td></tr>
 <tr class="c-table__row memdesc:a07d84ac466acd041df8ac685285e423f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructs a new instance of the collection from the data set managed by the manager provided.  <br /></td></tr>
@@ -180,6 +182,36 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_collection.html#a7bcc8990db337f869e9f0a4f0da85c7b">FiftyoneDegrees::Common::Collection&lt; ValueMetaDataKey, ValueMetaData &gt;</a>.</p>
 
 <p>Reimplemented in <a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_value_meta_data_collection_for_profile_hash.html#a00a955eebc8d686bfa57a9016347b083">FiftyoneDegrees::DeviceDetection::Hash::ValueMetaDataCollectionForProfileHash</a>, <a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_value_meta_data_collection_for_property_hash.html#a2675623a068b7c4115ee5f8ef0fdd5db">FiftyoneDegrees::DeviceDetection::Hash::ValueMetaDataCollectionForPropertyHash</a>, and <a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_value_meta_data_collection_hash.html#aa10667369071997b04cd7ae7e74b964d">FiftyoneDegrees::DeviceDetection::Hash::ValueMetaDataCollectionHash</a>.</p>
+
+</div>
+</div>
+<a id="a4186ba23028a0b34b7fab0651fa2e71b" name="a4186ba23028a0b34b7fab0651fa2e71b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4186ba23028a0b34b7fab0651fa2e71b">&#9670;&#160;</a></span>getDefaultForProperty()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html">ValueMetaData</a> * FiftyoneDegrees::DeviceDetection::Hash::ValueMetaDataCollectionBaseHash::getDefaultForProperty </td>
+          <td>(</td>
+          <td class="c-table__cell">const std::string &amp;</td>          <td class="c-table__cell"><span class="paramname"><em>propertyName</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Get the value the metadata gives as the default of the property named, as fiftyoneDegreesValueGetDefaultIndex finds it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyName</td><td>name of the property </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the default value, or nullptr when the data set has no such property or the property has no default among its values </dd></dl>
 
 </div>
 </div>

@@ -113,6 +113,8 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:gae7168c95cc9b6ca17697f6917e91b6e2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the binary value at the required offset from the collection provided.  <br /></td></tr>
 <tr class="c-table__row memitem:ga1b877b90dfaa9367ce5298ff04fc6e8a" id="r_ga1b877b90dfaa9367ce5298ff04fc6e8a"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#ga1b877b90dfaa9367ce5298ff04fc6e8a">fiftyoneDegreesStoredBinaryValueCompareWithString</a> (const <a class="el" href="unionfiftyone_degrees_stored_binary_value.html">fiftyoneDegreesStoredBinaryValue</a> *value, fiftyoneDegreesPropertyValueType storedValueType, const char *target, <a class="el" href="structfiftyone_degrees_string_builder.html">fiftyoneDegreesStringBuilder</a> *tempBuilder, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:ga1b877b90dfaa9367ce5298ff04fc6e8a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Function to compare the current binary value to the target string value using the text format.  <br /></td></tr>
+<tr class="c-table__row memitem:gab2a21dc2fb78f24ab86c897e06ba4d09" id="r_gab2a21dc2fb78f24ab86c897e06ba4d09"><td class="c-table__cell">char&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#gab2a21dc2fb78f24ab86c897e06ba4d09">fiftyoneDegreesStoredBinaryValueToText</a> (const <a class="el" href="unionfiftyone_degrees_stored_binary_value.html">fiftyoneDegreesStoredBinaryValue</a> *value, fiftyoneDegreesPropertyValueType storedValueType, uint8_t decimalPlaces, char *buffer, size_t bufferLength, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:gab2a21dc2fb78f24ab86c897e06ba4d09"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Writes the binary value as text, as results and metadata give it, with a number written to at most <code>decimalPlaces</code> places after the point.  <br /></td></tr>
 <tr class="c-table__row memitem:ga86e6bd5f95831de2e957595618ff46ab" id="r_ga86e6bd5f95831de2e957595618ff46ab"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#ga86e6bd5f95831de2e957595618ff46ab">fiftyoneDegreesStoredBinaryValueToIntOrDefault</a> (const <a class="el" href="unionfiftyone_degrees_stored_binary_value.html">fiftyoneDegreesStoredBinaryValue</a> *value, fiftyoneDegreesPropertyValueType storedValueType, int defaultValue)</td></tr>
 <tr class="c-table__row memdesc:ga86e6bd5f95831de2e957595618ff46ab"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Function to convert the binary value to int when possible.  <br /></td></tr>
 <tr class="c-table__row memitem:ga690781569a66c988ee884870e87d03f5" id="r_ga690781569a66c988ee884870e87d03f5"><td class="c-table__cell">double&#160;</td><td class="c-table__cell"><a class="el" href="#ga690781569a66c988ee884870e87d03f5">fiftyoneDegreesStoredBinaryValueToDoubleOrDefault</a> (const <a class="el" href="unionfiftyone_degrees_stored_binary_value.html">fiftyoneDegreesStoredBinaryValue</a> *value, fiftyoneDegreesPropertyValueType storedValueType, double defaultValue)</td></tr>
@@ -457,6 +459,65 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">converted value (when possible) or default one (when type is not convertible). </dd></dl>
+
+</div>
+</div>
+<a id="gab2a21dc2fb78f24ab86c897e06ba4d09" name="gab2a21dc2fb78f24ab86c897e06ba4d09"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gab2a21dc2fb78f24ab86c897e06ba4d09">&#9670;&#160;</a></span>fiftyoneDegreesStoredBinaryValueToText()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">char * fiftyoneDegreesStoredBinaryValueToText </td>
+          <td>(</td>
+          <td class="c-table__cell">const <a class="el" href="unionfiftyone_degrees_stored_binary_value.html">fiftyoneDegreesStoredBinaryValue</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">fiftyoneDegreesPropertyValueType</td>          <td class="c-table__cell"><span class="paramname"><em>storedValueType</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint8_t</td>          <td class="c-table__cell"><span class="paramname"><em>decimalPlaces</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">char *</td>          <td class="c-table__cell"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">size_t</td>          <td class="c-table__cell"><span class="paramname"><em>bufferLength</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Writes the binary value as text, as results and metadata give it, with a number written to at most <code>decimalPlaces</code> places after the point. </p>
+<p>The text is written into <code>buffer</code> when it fits in <code>bufferLength</code> bytes, and otherwise into memory allocated with fiftyoneDegreesMalloc, which the caller frees with fiftyoneDegreesFree when the pointer returned is not <code>buffer</code>. A string or an area that would not fit <code>buffer</code> is written straight into memory sized from its length or its bytes. A string is therefore written once. An area is normally written once too, as #FIFTYONE_DEGREES_TEXT_PER_GEOMETRY_BYTE characters for each byte normally hold its text. A reduced area written to more than 4 places can need more, as each point of 4 bytes can then take more than 20 characters, and is written a second time when it does. A number or an IP address has no size until it is written, so one whose text does not fit <code>buffer</code> is written twice, as an IPv6 address of 39 characters is with a buffer of less than 40 bytes. <code>buffer</code> can be NULL with <code>bufferLength</code> 0, and the text is then always allocated. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the binary value to write </td></tr>
+    <tr><td class="paramname">storedValueType</td><td>format of byte array representation </td></tr>
+    <tr><td class="paramname">decimalPlaces</td><td>the most places to write after the decimal point </td></tr>
+    <tr><td class="paramname">buffer</td><td>memory the text is written into when it fits </td></tr>
+    <tr><td class="paramname">bufferLength</td><td>the bytes <code>buffer</code> holds </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the null terminated text, or NULL when the value cannot be written or memory cannot be allocated </dd></dl>
 
 </div>
 </div>

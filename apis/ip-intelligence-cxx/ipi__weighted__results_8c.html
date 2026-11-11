@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi__weighted_
 </div><div class="textblock"><h2 class="g-docs__section-heading">
 Include dependency graph for ipi_weighted_results.c:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="ipi__weighted__results_8c__incl.svg" width="6040" height="1356"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="ipi__weighted__results_8c__incl.svg" width="6072" height="1356"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-nested-classes" class="g-docs__section-heading"><a id="nested-classes" name="nested-classes"></a>
@@ -89,6 +89,12 @@ Data Structures</h2></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Context structure for populating a property values chunk.  <a href="struct_prop_values_chunk_context.html#details">More...</a><br /></td></tr>
 <tr class="c-table__row memitem:PropValuesItemConversionDefaults" id="r_PropValuesItemConversionDefaults"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="struct_prop_values_item_conversion_defaults.html">PropValuesItemConversionDefaults</a></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default values for property value conversion.  <a href="struct_prop_values_item_conversion_defaults.html#details">More...</a><br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-define-members" class="g-docs__section-heading"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="c-table__row memitem:a97c29547815305aef2433f17f6a5514c" id="r_a97c29547815305aef2433f17f6a5514c"><td class="c-table__cell"><a id="a97c29547815305aef2433f17f6a5514c" name="a97c29547815305aef2433f17f6a5514c"></a>
+#define&#160;</td><td class="c-table__cell"><b>SMALL_TEXT_BYTES</b>&#160;&#160;&#160;64</td></tr>
+<tr class="c-table__row memdesc:a97c29547815305aef2433f17f6a5514c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Bytes of text that hold any value which is neither a string nor a geometry, such as a number or an IP address, with its terminating null. <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-typedef-members" class="g-docs__section-heading"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -123,6 +129,8 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a0708dbc31c3633b0784ed3ee1cbf0341"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Saves a byte value from a stored binary value.  <br /></td></tr>
 <tr class="c-table__row memitem:a0b0fd90868d2aace6edd1c6da47024cd" id="r_a0b0fd90868d2aace6edd1c6da47024cd"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a0b0fd90868d2aace6edd1c6da47024cd">InitString</a> (WeightedValueHeader *const header, void *const converterState)</td></tr>
 <tr class="c-table__row memdesc:a0b0fd90868d2aace6edd1c6da47024cd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initializes a string weighted value.  <br /></td></tr>
+<tr class="c-table__row memitem:a524f9acc2d974e0b6fa0ec71474ee8fa" id="r_a524f9acc2d974e0b6fa0ec71474ee8fa"><td class="c-table__cell">static&#160;size_t&#160;</td><td class="c-table__cell"><a class="el" href="#a524f9acc2d974e0b6fa0ec71474ee8fa">TextBytesExpected</a> (const <a class="el" href="group___fifty_one_degrees_synonyms.html#ga2f1470d585801ed06f9442c322465498">StoredBinaryValue</a> *const storedBinaryValue, const <a class="el" href="group___fifty_one_degrees_synonyms.html#ga8a7783e7ddfc7a668eca04c87bb7dc75">PropertyValueType</a> propertyValueType)</td></tr>
+<tr class="c-table__row memdesc:a524f9acc2d974e0b6fa0ec71474ee8fa"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Bytes the text of a stored value is expected to need.  <br /></td></tr>
 <tr class="c-table__row memitem:a6c9986e1d454d6754ad6c81a923c283c" id="r_a6c9986e1d454d6754ad6c81a923c283c"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a6c9986e1d454d6754ad6c81a923c283c">SaveString</a> (WeightedValueHeader *const header, const <a class="el" href="group___fifty_one_degrees_synonyms.html#ga2f1470d585801ed06f9442c322465498">StoredBinaryValue</a> *const storedBinaryValue, const <a class="el" href="group___fifty_one_degrees_synonyms.html#ga8a7783e7ddfc7a668eca04c87bb7dc75">PropertyValueType</a> propertyValueType, void *const converterState, <a class="el" href="group___fifty_one_degrees_synonyms.html#ga445536368cf748f73d502fd471b19e98">Exception</a> *const exception)</td></tr>
 <tr class="c-table__row memdesc:a6c9986e1d454d6754ad6c81a923c283c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Saves a string value from a stored binary value.  <br /></td></tr>
 <tr class="c-table__row memitem:a68700d06107c94772c74f71b28861f7a" id="r_a68700d06107c94772c74f71b28861f7a"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a68700d06107c94772c74f71b28861f7a">FreeString</a> (WeightedValueHeader *const header)</td></tr>
@@ -1432,7 +1440,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Saves a string value from a stored binary value. </p>
-<p>Converts the stored binary value to a string and saves it in the weighted value. This function handles memory allocation for the string.</p>
+<p>Converts the stored binary value to a string and saves it in the weighted value. This function handles memory allocation for the string. The temporary data is made large enough for the text expected before converting, so each value is converted once, and only text longer than expected is converted again.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">header</td><td>Pointer to the weighted value header </td></tr>
@@ -1443,6 +1451,50 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a524f9acc2d974e0b6fa0ec71474ee8fa" name="a524f9acc2d974e0b6fa0ec71474ee8fa"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a524f9acc2d974e0b6fa0ec71474ee8fa">&#9670;&#160;</a></span>TextBytesExpected()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">size_t TextBytesExpected </td>
+          <td>(</td>
+          <td class="c-table__cell">const <a class="el" href="group___fifty_one_degrees_synonyms.html#ga2f1470d585801ed06f9442c322465498">StoredBinaryValue</a> *const</td>          <td class="c-table__cell"><span class="paramname"><em>storedBinaryValue</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const <a class="el" href="group___fifty_one_degrees_synonyms.html#ga8a7783e7ddfc7a668eca04c87bb7dc75">PropertyValueType</a></td>          <td class="c-table__cell"><span class="paramname"><em>propertyValueType</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Bytes the text of a stored value is expected to need. </p>
+<p>Exact for a string, more than the data needs for a geometry, and enough for any other value, with the terminating null in each case.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">storedBinaryValue</td><td>Pointer to the stored binary value </td></tr>
+    <tr><td class="paramname">propertyValueType</td><td>Type of the property value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The bytes of text expected </dd></dl>
 
 </div>
 </div>
@@ -1623,8 +1675,8 @@ Variables</h2></td></tr>
 <div class="c-code__line">    <span class="c-code__keyword">sizeof</span>(WeightedString),</div>
 <div class="c-code__line">}</div>
 <div class="ttc" id="aipi__weighted__results_8c_html_a0b0fd90868d2aace6edd1c6da47024cd"><div class="ttname"><a href="#a0b0fd90868d2aace6edd1c6da47024cd">InitString</a></div><div class="ttdeci">static void InitString(WeightedValueHeader *const header, void *const converterState)</div><div class="ttdoc">Initializes a string weighted value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:318</div></div>
-<div class="ttc" id="aipi__weighted__results_8c_html_a68700d06107c94772c74f71b28861f7a"><div class="ttname"><a href="#a68700d06107c94772c74f71b28861f7a">FreeString</a></div><div class="ttdeci">static void FreeString(WeightedValueHeader *const header)</div><div class="ttdoc">Frees resources used by a string weighted value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:403</div></div>
-<div class="ttc" id="aipi__weighted__results_8c_html_a6c9986e1d454d6754ad6c81a923c283c"><div class="ttname"><a href="#a6c9986e1d454d6754ad6c81a923c283c">SaveString</a></div><div class="ttdeci">static void SaveString(WeightedValueHeader *const header, const StoredBinaryValue *const storedBinaryValue, const PropertyValueType propertyValueType, void *const converterState, Exception *const exception)</div><div class="ttdoc">Saves a string value from a stored binary value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:349</div></div>
+<div class="ttc" id="aipi__weighted__results_8c_html_a68700d06107c94772c74f71b28861f7a"><div class="ttname"><a href="#a68700d06107c94772c74f71b28861f7a">FreeString</a></div><div class="ttdeci">static void FreeString(WeightedValueHeader *const header)</div><div class="ttdoc">Frees resources used by a string weighted value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:451</div></div>
+<div class="ttc" id="aipi__weighted__results_8c_html_a6c9986e1d454d6754ad6c81a923c283c"><div class="ttname"><a href="#a6c9986e1d454d6754ad6c81a923c283c">SaveString</a></div><div class="ttdeci">static void SaveString(WeightedValueHeader *const header, const StoredBinaryValue *const storedBinaryValue, const PropertyValueType propertyValueType, void *const converterState, Exception *const exception)</div><div class="ttdoc">Saves a string value from a stored binary value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:385</div></div>
 </div><!-- fragment -->
 </div>
 </div>

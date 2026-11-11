@@ -86,6 +86,18 @@ uint16_t&#160;</td><td class="c-table__cell"><b>count</b></td></tr>
 <tr class="c-table__row memitem:a323f0385f619cd3228b7da7e3de3e825" id="r_a323f0385f619cd3228b7da7e3de3e825"><td class="c-table__cell"><a id="a323f0385f619cd3228b7da7e3de3e825" name="a323f0385f619cd3228b7da7e3de3e825"></a>
 <a class="el" href="group___fifty_one_degrees_pool.html#ga60a64a27f6b37e18d1e6c69e1c27d804">fiftyoneDegreesPoolResourceFree</a>&#160;</td><td class="c-table__cell"><b>resourceFree</b></td></tr>
 <tr class="c-table__row memdesc:a323f0385f619cd3228b7da7e3de3e825"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Frees a resource. <br /></td></tr>
+<tr class="c-table__row memitem:a89d7bcae5438bf06986d5aac09f607ad" id="r_a89d7bcae5438bf06986d5aac09f607ad"><td class="c-table__cell"><a id="a89d7bcae5438bf06986d5aac09f607ad" name="a89d7bcae5438bf06986d5aac09f607ad"></a>
+volatile&#160;long&#160;</td><td class="c-table__cell"><b>waiting</b></td></tr>
+<tr class="c-table__row memdesc:a89d7bcae5438bf06986d5aac09f607ad"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Number of threads waiting for an item. <br /></td></tr>
+<tr class="c-table__row memitem:a5599beb4cc39c96a8dea64eb8dba4939" id="r_a5599beb4cc39c96a8dea64eb8dba4939"><td class="c-table__cell"><a id="a5599beb4cc39c96a8dea64eb8dba4939" name="a5599beb4cc39c96a8dea64eb8dba4939"></a>
+long&#160;</td><td class="c-table__cell"><b>waits</b></td></tr>
+<tr class="c-table__row memdesc:a5599beb4cc39c96a8dea64eb8dba4939"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Counts waits for an item, for the tests. <br /></td></tr>
+<tr class="c-table__row memitem:a15c9aa3721e253351a8bd10b6fc4bcde" id="r_a15c9aa3721e253351a8bd10b6fc4bcde"><td class="c-table__cell"><a id="a15c9aa3721e253351a8bd10b6fc4bcde" name="a15c9aa3721e253351a8bd10b6fc4bcde"></a>
+<a class="el" href="group___fifty_one_degrees_threading.html#ga0ecd790b5dd9490c9a876d4a3e720184">fiftyoneDegreesMutex</a>&#160;</td><td class="c-table__cell"><b>lock</b></td></tr>
+<tr class="c-table__row memdesc:a15c9aa3721e253351a8bd10b6fc4bcde"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Guards the count and the wait for an item. <br /></td></tr>
+<tr class="c-table__row memitem:a0a9e336a3b7bcaa950653e6f789b6d5e" id="r_a0a9e336a3b7bcaa950653e6f789b6d5e"><td class="c-table__cell"><a id="a0a9e336a3b7bcaa950653e6f789b6d5e" name="a0a9e336a3b7bcaa950653e6f789b6d5e"></a>
+pthread_cond_t&#160;</td><td class="c-table__cell"><b>released</b></td></tr>
+<tr class="c-table__row memdesc:a0a9e336a3b7bcaa950653e6f789b6d5e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Wakes a waiting thread. <br /></td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="pool_8h_source.html">pool.h</a></li>

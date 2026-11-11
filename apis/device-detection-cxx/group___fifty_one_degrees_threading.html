@@ -83,6 +83,9 @@ Structs</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-define-members" class="g-docs__section-heading"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="c-table__row memitem:ga50565b8a6d0e5566cd945be516b4899e" id="r_ga50565b8a6d0e5566cd945be516b4899e"><td class="c-table__cell"><a id="ga50565b8a6d0e5566cd945be516b4899e" name="ga50565b8a6d0e5566cd945be516b4899e"></a>
+#define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_PROCESSOR_COUNT_MAX</b>&#160;&#160;&#160;(UINT16_MAX - 1)</td></tr>
+<tr class="c-table__row memdesc:ga50565b8a6d0e5566cd945be516b4899e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The most processors <a class="el" href="#gaa70a3268ca0540c0c03af1897ec28429" title="Gets the number of processors the system has online, which is the default for the number of operation...">fiftyoneDegreesThreadingGetProcessorCount</a> returns, which leaves room for the null item a pool adds to its items. <br /></td></tr>
 <tr class="c-table__row memitem:ga73811e87d8e1da7f10bc3943591333ec" id="r_ga73811e87d8e1da7f10bc3943591333ec"><td class="c-table__cell"><a id="ga73811e87d8e1da7f10bc3943591333ec" name="ga73811e87d8e1da7f10bc3943591333ec"></a>
 #define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_THREAD</b>&#160;&#160;&#160;pthread_t</td></tr>
 <tr class="c-table__row memdesc:ga73811e87d8e1da7f10bc3943591333ec"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A thread created with the <a class="el" href="#ga2a981a4247ef8f912fadcc9e52c0f26d" title="Creates a new thread with the following parameters:">FIFTYONE_DEGREES_THREAD_CREATE</a> macro. <br /></td></tr>
@@ -139,6 +142,8 @@ typedef&#160;void&#160;*(*&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGRE
 Functions</h2></td></tr>
 <tr class="c-table__row memitem:ga66a371765a2e4cf3d3492e90783532b8" id="r_ga66a371765a2e4cf3d3492e90783532b8"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ga66a371765a2e4cf3d3492e90783532b8">fiftyoneDegreesThreadingGetIsThreadSafe</a> ()</td></tr>
 <tr class="c-table__row memdesc:ga66a371765a2e4cf3d3492e90783532b8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Determines if the methods that should be thread safe have been compiled so they are thread safe.  <br /></td></tr>
+<tr class="c-table__row memitem:gaa70a3268ca0540c0c03af1897ec28429" id="r_gaa70a3268ca0540c0c03af1897ec28429"><td class="c-table__cell">uint16_t&#160;</td><td class="c-table__cell"><a class="el" href="#gaa70a3268ca0540c0c03af1897ec28429">fiftyoneDegreesThreadingGetProcessorCount</a> ()</td></tr>
+<tr class="c-table__row memdesc:gaa70a3268ca0540c0c03af1897ec28429"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the number of processors the system has online, which is the default for the number of operations expected to use an engine at the same time.  <br /></td></tr>
 <tr class="c-table__row memitem:ga412e363ad605956b5284fa8d2f718781" id="r_ga412e363ad605956b5284fa8d2f718781"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ga412e363ad605956b5284fa8d2f718781">fiftyoneDegreesMutexCreate</a> (<a class="el" href="#ga0ecd790b5dd9490c9a876d4a3e720184">fiftyoneDegreesMutex</a> *mutex)</td></tr>
 <tr class="c-table__row memdesc:ga412e363ad605956b5284fa8d2f718781"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initialises the mutex passed to the method.  <br /></td></tr>
 <tr class="c-table__row memitem:gae8b7eda0e659010045819482e662dfe9" id="r_gae8b7eda0e659010045819482e662dfe9"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#gae8b7eda0e659010045819482e662dfe9">fiftyoneDegreesMutexClose</a> (<a class="el" href="#ga0ecd790b5dd9490c9a876d4a3e720184">fiftyoneDegreesMutex</a> *mutex)</td></tr>
@@ -257,7 +262,7 @@ Functions</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 <b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a class="code hl_define" href="#ga0c3b5a1ee9d321d5f494ff1ed71c771a">FIFTYONE_DEGREES_INTERLOCK_EXCHANGE</a>(d,e,c)</div>
-<div class="ttc" id="agroup___fifty_one_degrees_threading_html_ga0c3b5a1ee9d321d5f494ff1ed71c771a"><div class="ttname"><a href="#ga0c3b5a1ee9d321d5f494ff1ed71c771a">FIFTYONE_DEGREES_INTERLOCK_EXCHANGE</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_INTERLOCK_EXCHANGE(d, e, c)</div><div class="ttdoc">Replaces the destination value with the exchange value, only if the destination value matched the com...</div><div class="ttdef"><b>Definition</b> threading.h:341</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_threading_html_ga0c3b5a1ee9d321d5f494ff1ed71c771a"><div class="ttname"><a href="#ga0c3b5a1ee9d321d5f494ff1ed71c771a">FIFTYONE_DEGREES_INTERLOCK_EXCHANGE</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_INTERLOCK_EXCHANGE(d, e, c)</div><div class="ttdoc">Replaces the destination value with the exchange value, only if the destination value matched the com...</div><div class="ttdef"><b>Definition</b> threading.h:355</div></div>
 </div><!-- fragment -->
 <p>64 bit compare and swap. </p>
 <p>Replaces the destination value with the exchange value, only if the destination value matched the comparand. Returns the value of d before the swap. </p><dl class="params"><dt>Parameters</dt><dd>
@@ -305,7 +310,7 @@ Functions</h2></td></tr>
 <div class="c-code__line">    <span class="c-code__keyword">false</span>, \</div>
 <div class="c-code__line">    __ATOMIC_SEQ_CST, \</div>
 <div class="c-code__line">    __ATOMIC_SEQ_CST))</div>
-<div class="ttc" id="astructfiftyone_degrees_interlock_double_width_html"><div class="ttname"><a href="structfiftyone_degrees_interlock_double_width.html">fiftyoneDegreesInterlockDoubleWidth</a></div><div class="ttdoc">Double width (64 or 128 depending on the architecture) compare and exchange.</div><div class="ttdef"><b>Definition</b> threading.h:430</div></div>
+<div class="ttc" id="astructfiftyone_degrees_interlock_double_width_html"><div class="ttname"><a href="structfiftyone_degrees_interlock_double_width.html">fiftyoneDegreesInterlockDoubleWidth</a></div><div class="ttdoc">Double width (64 or 128 depending on the architecture) compare and exchange.</div><div class="ttdef"><b>Definition</b> threading.h:444</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1027,6 +1032,30 @@ Functions</h2></td></tr>
 <p>In single threaded operation compiling without threading using the <code>FIFTYONE_DEGREES_NO_THREADING</code> directive results in performance improvements. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if the library is thread safe, otherwise false. </dd></dl>
 <dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_reload_from_file_8cpp-example.html#a9">Hash/ReloadFromFile.cpp</a>, and <a class="el" href="_hash_2_reload_from_memory_8cpp-example.html#a9">Hash/ReloadFromMemory.cpp</a>.</dd>
 </dl>
+
+</div>
+</div>
+<a id="gaa70a3268ca0540c0c03af1897ec28429" name="gaa70a3268ca0540c0c03af1897ec28429"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaa70a3268ca0540c0c03af1897ec28429">&#9670;&#160;</a></span>fiftyoneDegreesThreadingGetProcessorCount()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">uint16_t fiftyoneDegreesThreadingGetProcessorCount </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the number of processors the system has online, which is the default for the number of operations expected to use an engine at the same time. </p>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the number of processors, at least 1, and 1 in a single threaded build. </dd></dl>
 
 </div>
 </div>

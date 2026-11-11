@@ -71,9 +71,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <h2>Introduction</h2>
 <p>Implements a pool of file handles for use within multi-threaded environments where the overhead of opening and closing a file handle for each thread would be too great. Primarily used to load collection items from file with file based collections or where a cache is used.</p>
 <h2>Creation</h2>
-<p>The <a class="el" href="#ga0b9b6e35e4dc0f6196a07645204ed458" title="Initialises the pool with a stack of open read only file handles all associated with the file name.">fiftyoneDegreesFilePoolInit</a> method is used to initialise a pointer to a <a class="el" href="structfiftyone_degrees_file_pool.html" title="Stack of handles used to read data from a single source file.">fiftyoneDegreesFilePool</a>. A concurrency value is provided to indicate the maximum number of threads that will be in operation. If this value is lower than the actual number of threads the stack can be exhausted and a null pointer is returned instead of a valid file handle. The concurrency value must always be the same or greater than the number of threads. When compiled in single threaded operation a pool is not strictly required and the implementation maintains a simple stack for consistency of interface and to minimise divergent code.</p>
+<p>The <a class="el" href="#ga0b9b6e35e4dc0f6196a07645204ed458" title="Initialises the pool with a stack of open read only file handles all associated with the file name.">fiftyoneDegreesFilePoolInit</a> method is used to initialise a pointer to a <a class="el" href="structfiftyone_degrees_file_pool.html" title="Stack of handles used to read data from a single source file.">fiftyoneDegreesFilePool</a>. A concurrency value is provided to indicate the number of file handles to open, up to <a class="el" href="#ga90e1f7befbb58ed4d08a5557854318e6" title="The most file handles a file pool opens, whatever the concurrency.">FIFTYONE_DEGREES_FILE_POOL_MAX_HANDLES</a>, which is the number of threads that can read the file at the same time. Further threads wait until a handle is released. When compiled in single threaded operation a pool is not strictly required and the implementation maintains a simple stack for consistency of interface and to minimise divergent code.</p>
 <h2>Get &amp; Release</h2>
-<p>Handles are retrieved from the pool via the <a class="el" href="#gacb61703589a06504f8e6b1e653baf700" title="Retrieves a read only open file handle from the pool.">fiftyoneDegreesFileHandleGet</a> method. The handle <b>MUST</b> be returned with the <a class="el" href="#ga597c3f2a4d837ae3317906686947d18b" title="Returns a handle previously retrieved via fiftyoneDegreesFileHandleGet back to the pool.">fiftyoneDegreesFileHandleRelease</a> method when it is finished with. The handle will always be open and ready for read only operation. The position of the handle within the source file cannot be assumed. If too many threads are accessing the pool simultaneously, meaning a handle cannot be secured, then a NULL pointer is returned.</p>
+<p>Handles are retrieved from the pool via the <a class="el" href="#gacb61703589a06504f8e6b1e653baf700" title="Retrieves a read only open file handle from the pool, waiting for one to be released if every handle ...">fiftyoneDegreesFileHandleGet</a> method. The handle <b>MUST</b> be returned with the <a class="el" href="#ga597c3f2a4d837ae3317906686947d18b" title="Returns a handle previously retrieved via fiftyoneDegreesFileHandleGet back to the pool.">fiftyoneDegreesFileHandleRelease</a> method when it is finished with. The handle will always be open and ready for read only operation. The position of the handle within the source file cannot be assumed. If every handle is in use, the thread waits until another thread releases one. A single threaded build cannot wait, so a NULL pointer is returned instead.</p>
 <h2>Free</h2>
 <p>The handles are closed when the reader is released via the <a class="el" href="#gae1e78286866f6910b04fc1bc162ccc4b" title="Releases the file handles contained in the pool and frees any internal memory used by the pool.">fiftyoneDegreesFilePoolRelease</a> method. Any memory allocated by the implementation for the stack is freed.</p>
 <h2>File Operations</h2>
@@ -126,8 +126,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <div class="ttc" id="agroup___fifty_one_degrees_exceptions_html_gae78f9f100e8f25f01c57fd36e7a6aa18"><div class="ttname"><a href="group___fifty_one_degrees_exceptions.html#gae78f9f100e8f25f01c57fd36e7a6aa18">FIFTYONE_DEGREES_EXCEPTION_CREATE</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_EXCEPTION_CREATE</div><div class="ttdoc">Macro used to create an exception.</div><div class="ttdef"><b>Definition</b> exceptions.h:200</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_file_html_gae1e78286866f6910b04fc1bc162ccc4b"><div class="ttname"><a href="#gae1e78286866f6910b04fc1bc162ccc4b">fiftyoneDegreesFilePoolRelease</a></div><div class="ttdeci">void fiftyoneDegreesFilePoolRelease(fiftyoneDegreesFilePool *pool)</div><div class="ttdoc">Releases the file handles contained in the pool and frees any internal memory used by the pool.</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_status_html_gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4"><div class="ttname"><a href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4">FIFTYONE_DEGREES_STATUS_SUCCESS</a></div><div class="ttdeci">@ FIFTYONE_DEGREES_STATUS_SUCCESS</div><div class="ttdoc">All okay.</div><div class="ttdef"><b>Definition</b> status.h:82</div></div>
-<div class="ttc" id="astructfiftyone_degrees_file_pool_html"><div class="ttname"><a href="structfiftyone_degrees_file_pool.html">fiftyoneDegreesFilePool</a></div><div class="ttdoc">Stack of handles used to read data from a single source file.</div><div class="ttdef"><b>Definition</b> file.h:233</div></div>
-<div class="ttc" id="aunionfiftyone_degrees_file_handle_html"><div class="ttname"><a href="unionfiftyone_degrees_file_handle.html">fiftyoneDegreesFileHandle</a></div><div class="ttdoc">File handle node in the stack of handles.</div><div class="ttdef"><b>Definition</b> file.h:225</div></div>
+<div class="ttc" id="astructfiftyone_degrees_file_pool_html"><div class="ttname"><a href="structfiftyone_degrees_file_pool.html">fiftyoneDegreesFilePool</a></div><div class="ttdoc">Stack of handles used to read data from a single source file.</div><div class="ttdef"><b>Definition</b> file.h:239</div></div>
+<div class="ttc" id="aunionfiftyone_degrees_file_handle_html"><div class="ttname"><a href="unionfiftyone_degrees_file_handle.html">fiftyoneDegreesFileHandle</a></div><div class="ttdoc">File handle node in the stack of handles.</div><div class="ttdef"><b>Definition</b> file.h:231</div></div>
 </div><!-- fragment --><h2>Design</h2>
 <p>To improve performance in multi-threaded operation a non locking stack is used where a Compare and Swap (CAS) atomic operation is used to pop and push handles on and off the stack. The design was adapted from the following article (<a href="http://nullprogram.com/blog/2014/09/02/">http://nullprogram.com/blog/2014/09/02/</a>) which explains some of the challenges involved including the ABA problem (<a href="https://en.wikipedia.org/wiki/ABA_problem">https://en.wikipedia.org/wiki/ABA_problem</a>). It is for this reason the head structure is implemented as a union between the values and the exchange integer. Pointers are not used as the address space for the stack is continuous and always very small compared to the total addressable memory space.</p>
 <ul>
@@ -161,6 +161,8 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="c-table__cell"><b>TEMP_UNIQUE_STRING_LENGTH</b>&#160;&#160;&#160;20</td></tr>
 <tr class="c-table__row memitem:gaf3ee91aae926f0082ceb3bd0b291bee1" id="r_gaf3ee91aae926f0082ceb3bd0b291bee1"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#gaf3ee91aae926f0082ceb3bd0b291bee1">FIFTYONE_DEGREES_FILE_MAX_PATH</a>&#160;&#160;&#160;4096</td></tr>
 <tr class="c-table__row memdesc:gaf3ee91aae926f0082ceb3bd0b291bee1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Define the max path length on the target system.  <br /></td></tr>
+<tr class="c-table__row memitem:ga90e1f7befbb58ed4d08a5557854318e6" id="r_ga90e1f7befbb58ed4d08a5557854318e6"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#ga90e1f7befbb58ed4d08a5557854318e6">FIFTYONE_DEGREES_FILE_POOL_MAX_HANDLES</a>&#160;&#160;&#160;64</td></tr>
+<tr class="c-table__row memdesc:ga90e1f7befbb58ed4d08a5557854318e6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The most file handles a file pool opens, whatever the concurrency.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-typedef-members" class="g-docs__section-heading"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -202,9 +204,9 @@ Functions</h2></td></tr>
 <tr class="c-table__row memitem:ga0b9b6e35e4dc0f6196a07645204ed458" id="r_ga0b9b6e35e4dc0f6196a07645204ed458"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga0b9b6e35e4dc0f6196a07645204ed458">fiftyoneDegreesFilePoolInit</a> (<a class="el" href="structfiftyone_degrees_file_pool.html">fiftyoneDegreesFilePool</a> *filePool, const char *fileName, uint16_t concurrency, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:ga0b9b6e35e4dc0f6196a07645204ed458"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initialises the pool with a stack of open read only file handles all associated with the file name.  <br /></td></tr>
 <tr class="c-table__row memitem:gacb61703589a06504f8e6b1e653baf700" id="r_gacb61703589a06504f8e6b1e653baf700"><td class="c-table__cell"><a class="el" href="unionfiftyone_degrees_file_handle.html">fiftyoneDegreesFileHandle</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#gacb61703589a06504f8e6b1e653baf700">fiftyoneDegreesFileHandleGet</a> (<a class="el" href="structfiftyone_degrees_file_pool.html">fiftyoneDegreesFilePool</a> *filePool, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
-<tr class="c-table__row memdesc:gacb61703589a06504f8e6b1e653baf700"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Retrieves a read only open file handle from the pool.  <br /></td></tr>
+<tr class="c-table__row memdesc:gacb61703589a06504f8e6b1e653baf700"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Retrieves a read only open file handle from the pool, waiting for one to be released if every handle is in use.  <br /></td></tr>
 <tr class="c-table__row memitem:ga597c3f2a4d837ae3317906686947d18b" id="r_ga597c3f2a4d837ae3317906686947d18b"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ga597c3f2a4d837ae3317906686947d18b">fiftyoneDegreesFileHandleRelease</a> (<a class="el" href="unionfiftyone_degrees_file_handle.html">fiftyoneDegreesFileHandle</a> *handle)</td></tr>
-<tr class="c-table__row memdesc:ga597c3f2a4d837ae3317906686947d18b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns a handle previously retrieved via <a class="el" href="#gacb61703589a06504f8e6b1e653baf700" title="Retrieves a read only open file handle from the pool.">fiftyoneDegreesFileHandleGet</a> back to the pool.  <br /></td></tr>
+<tr class="c-table__row memdesc:ga597c3f2a4d837ae3317906686947d18b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns a handle previously retrieved via <a class="el" href="#gacb61703589a06504f8e6b1e653baf700" title="Retrieves a read only open file handle from the pool, waiting for one to be released if every handle ...">fiftyoneDegreesFileHandleGet</a> back to the pool.  <br /></td></tr>
 <tr class="c-table__row memitem:ga406230d6d342978623f3ae42cff02dd2" id="r_ga406230d6d342978623f3ae42cff02dd2"><td class="c-table__cell"><a class="el" href="#ga03afb3a21c9c17ffc67601df949c2017">fiftyoneDegreesFileOffset</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga406230d6d342978623f3ae42cff02dd2">fiftyoneDegreesFileGetSize</a> (const char *fileName)</td></tr>
 <tr class="c-table__row memdesc:ga406230d6d342978623f3ae42cff02dd2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns the size of a file in bytes, or -1 if the file does not exist or cannot be accessed.  <br /></td></tr>
 <tr class="c-table__row memitem:ga255608eeb431d144b537d71d685461bd" id="r_ga255608eeb431d144b537d71d685461bd"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga255608eeb431d144b537d71d685461bd">fiftyoneDegreesFileReadToByteArray</a> (const char *fileName, <a class="el" href="structfiftyone_degrees_memory_reader.html">fiftyoneDegreesMemoryReader</a> *reader)</td></tr>
@@ -235,8 +237,29 @@ Functions</h2></td></tr>
 
 <p>Define the max path length on the target system. </p>
 <p>For Windows this is <code>260</code> characters, and <code>4096</code> on most UNIX systems. The compiler defined values are not used here as although Windows MSVC always defined <code>_MAX_PATH</code>, UNIX systems do not consistently define the <code>PATH_MAX</code> macro resulting in undefined behavior. For this reason the length of <code>4096</code> is used as this is almost always the case. </p>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_getting_started_8cpp-example.html#_a33">Hash/GettingStarted.cpp</a>, <a class="el" href="_hash_2_match_metrics_8cpp-example.html#_a30">Hash/MatchMetrics.cpp</a>, <a class="el" href="_hash_2_meta_data_8cpp-example.html#_a19">Hash/MetaData.cpp</a>, <a class="el" href="_hash_2_reload_from_file_8cpp-example.html#_a20">Hash/ReloadFromFile.cpp</a>, <a class="el" href="_hash_2_reload_from_memory_8cpp-example.html#_a22">Hash/ReloadFromMemory.cpp</a>, and <a class="el" href="_hash_2_strongly_typed_8cpp-example.html#_a24">Hash/StronglyTyped.cpp</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_getting_started_8cpp-example.html#_a36">Hash/GettingStarted.cpp</a>, <a class="el" href="_hash_2_match_metrics_8cpp-example.html#_a23">Hash/MatchMetrics.cpp</a>, <a class="el" href="_hash_2_meta_data_8cpp-example.html#_a20">Hash/MetaData.cpp</a>, <a class="el" href="_hash_2_reload_from_file_8cpp-example.html#_a21">Hash/ReloadFromFile.cpp</a>, <a class="el" href="_hash_2_reload_from_memory_8cpp-example.html#_a23">Hash/ReloadFromMemory.cpp</a>, and <a class="el" href="_hash_2_strongly_typed_8cpp-example.html#_a32">Hash/StronglyTyped.cpp</a>.</dd>
 </dl>
+
+</div>
+</div>
+<a id="ga90e1f7befbb58ed4d08a5557854318e6" name="ga90e1f7befbb58ed4d08a5557854318e6"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga90e1f7befbb58ed4d08a5557854318e6">&#9670;&#160;</a></span>FIFTYONE_DEGREES_FILE_POOL_MAX_HANDLES</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define FIFTYONE_DEGREES_FILE_POOL_MAX_HANDLES&#160;&#160;&#160;64</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The most file handles a file pool opens, whatever the concurrency. </p>
+<p>Further operations wait for a handle, which keeps a process within the limit its system puts on open files. </p>
 
 </div>
 </div>
@@ -733,15 +756,15 @@ Functions</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Retrieves a read only open file handle from the pool. </p>
-<p>The handle retrieve must be returned to the pool using <a class="el" href="#gacb61703589a06504f8e6b1e653baf700" title="Retrieves a read only open file handle from the pool.">fiftyoneDegreesFileHandleGet</a> and must not be freed or closed directly. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Retrieves a read only open file handle from the pool, waiting for one to be released if every handle is in use. </p>
+<p>The handle retrieved must be returned to the pool using <a class="el" href="#ga597c3f2a4d837ae3317906686947d18b" title="Returns a handle previously retrieved via fiftyoneDegreesFileHandleGet back to the pool.">fiftyoneDegreesFileHandleRelease</a> and must not be freed or closed directly. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filePool</td><td>to retrieve the file handle from </td></tr>
     <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a read only open file handle or NULL if no available handles remain in the pool </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a read only open file handle, or NULL in a single threaded build if every handle is in use </dd></dl>
 
 </div>
 </div>
@@ -764,7 +787,7 @@ Functions</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Returns a handle previously retrieved via <a class="el" href="#gacb61703589a06504f8e6b1e653baf700" title="Retrieves a read only open file handle from the pool.">fiftyoneDegreesFileHandleGet</a> back to the pool. </p>
+<p>Returns a handle previously retrieved via <a class="el" href="#gacb61703589a06504f8e6b1e653baf700" title="Retrieves a read only open file handle from the pool, waiting for one to be released if every handle ...">fiftyoneDegreesFileHandleGet</a> back to the pool. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">handle</td><td>to be returned to the pool </td></tr>
@@ -896,11 +919,11 @@ Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Initialises the pool with a stack of open read only file handles all associated with the file name. </p>
-<p>The concurrency parameter determines the number of items in the stack. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The concurrency parameter determines the number of items in the stack, up to <a class="el" href="#ga90e1f7befbb58ed4d08a5557854318e6" title="The most file handles a file pool opens, whatever the concurrency.">FIFTYONE_DEGREES_FILE_POOL_MAX_HANDLES</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filePool</td><td>to be initialised </td></tr>
     <tr><td class="paramname">fileName</td><td>full path to the file to open </td></tr>
-    <tr><td class="paramname">concurrency</td><td>number of items in the stack </td></tr>
+    <tr><td class="paramname">concurrency</td><td>number of operations expected to read the file at the same time </td></tr>
     <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
   </table>
   </dd>

@@ -80,7 +80,43 @@ Collaboration diagram for Date:</h2>
 Structs</h2></td></tr>
 <tr class="c-table__row memitem:fiftyoneDegreesDate" id="r_fiftyoneDegreesDate"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_date.html">fiftyoneDegreesDate</a></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Used to store the date when the dataset was produced and next date 51Degrees expect to provide a new data file.  <a href="structfiftyone_degrees_date.html#details">More...</a><br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="c-table__row memitem:gab1ac30b20e7d2a105082984b6d5686c8" id="r_gab1ac30b20e7d2a105082984b6d5686c8"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#gab1ac30b20e7d2a105082984b6d5686c8">fiftyoneDegreesDateIsValid</a> (const <a class="el" href="structfiftyone_degrees_date.html">fiftyoneDegreesDate</a> *date)</td></tr>
+<tr class="c-table__row memdesc:gab1ac30b20e7d2a105082984b6d5686c8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Determines whether the date is a day of the Gregorian calendar, meaning a year above zero, a month from 1 to 12 and a day from 1 to the number of days in that month, with 29 in February of a leap year.  <br /></td></tr>
 </table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
+<a id="gab1ac30b20e7d2a105082984b6d5686c8" name="gab1ac30b20e7d2a105082984b6d5686c8"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gab1ac30b20e7d2a105082984b6d5686c8">&#9670;&#160;</a></span>fiftyoneDegreesDateIsValid()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool fiftyoneDegreesDateIsValid </td>
+          <td>(</td>
+          <td class="c-table__cell">const <a class="el" href="structfiftyone_degrees_date.html">fiftyoneDegreesDate</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>date</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Determines whether the date is a day of the Gregorian calendar, meaning a year above zero, a month from 1 to 12 and a day from 1 to the number of days in that month, with 29 in February of a leap year. </p>
+<p>A data file holds whatever bytes it was written with, so a date read from one is checked with this before it is used. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>pointer to the date to check, or NULL </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if the date is valid, otherwise false, including for NULL </dd></dl>
+
+</div>
+</div>
 </div><!-- primary -->
 </div><!-- inner -->
 <div id="page-nav" class="page-nav-panel">

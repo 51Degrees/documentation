@@ -81,6 +81,8 @@ Collaboration diagram for FiftyoneDegrees::IpIntelligence::ValueMetaDataCollecti
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a99df142d84d9ab48efaff2bcd4ca940b" id="r_a99df142d84d9ab48efaff2bcd4ca940b"><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html">ValueMetaData</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#a99df142d84d9ab48efaff2bcd4ca940b">getDefaultForProperty</a> (const std::string &amp;propertyName) const</td></tr>
+<tr class="c-table__row memdesc:a99df142d84d9ab48efaff2bcd4ca940b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the value the metadata gives as the default of the property named, as fiftyoneDegreesValueGetDefaultIndex finds it.  <br /></td></tr>
 <tr id="pub-methods-0" class="c-table__row"><td class="c-table__cell" colspan="2"><h3 class="c-table__heading">Constructors and Destructors</h3></td></tr>
 <tr class="c-table__row memitem:a4a7e84c7f7c1a7160d868f5e458b8250" id="r_a4a7e84c7f7c1a7160d868f5e458b8250"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a4a7e84c7f7c1a7160d868f5e458b8250">ValueMetaDataCollectionBaseIpi</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager)</td></tr>
 <tr class="c-table__row memdesc:a4a7e84c7f7c1a7160d868f5e458b8250"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructs a new instance of the collection from the data set managed by the manager provided.  <br /></td></tr>
@@ -141,6 +143,37 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a99df142d84d9ab48efaff2bcd4ca940b" name="a99df142d84d9ab48efaff2bcd4ca940b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a99df142d84d9ab48efaff2bcd4ca940b">&#9670;&#160;</a></span>getDefaultForProperty()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html">ValueMetaData</a> * ValueMetaDataCollectionBaseIpi::getDefaultForProperty </td>
+          <td>(</td>
+          <td class="c-table__cell">const std::string &amp;</td>          <td class="c-table__cell"><span class="paramname"><em>propertyName</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Get the value the metadata gives as the default of the property named, as fiftyoneDegreesValueGetDefaultIndex finds it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyName</td><td>name of the property </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the default value, or nullptr when the data set has no such property or the property has no default among its values </dd></dl>
 
 </div>
 </div>

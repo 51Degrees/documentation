@@ -41,7 +41,7 @@ var NAVTREEINDEX =
 [
 "/documentation/4.5/index.html",
 "class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html#ae76f7a44aa6bdd30513a451a86e08371",
-"class_fiftyone_degrees_1_1_ip_intelligence_1_1_profile_meta_data_collection_ipi.html#af031394a7b906477d8110f3196b0bc24"
+"class_fiftyone_degrees_1_1_ip_intelligence_1_1_profile_meta_data_builder_ipi.html"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

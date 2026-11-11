@@ -11,7 +11,6 @@ var class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_engine_hash =
     [ "getPublishedTime", "class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_engine_hash.html#a0b1ea6996d4ec440dc503601d1a7140b", null ],
     [ "getType", "class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_engine_hash.html#a69d7d2e6f400fa3fdbdf5fbfdc57f7a4", null ],
     [ "getUpdateAvailableTime", "class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_engine_hash.html#a89d0fb0fe9a52139ce0c05d660076d2a", null ],
-    [ "init", "class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_engine_hash.html#ad237fae1c3e69604c7c1e711976f4810", null ],
     [ "init", "class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_engine_hash.html#a26f2e72a5ff601440f5f362ca58e4ff6", null ],
     [ "process", "class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_engine_hash.html#a99edfbd855f0584c4e6686e1422b93f8", null ],
     [ "process", "class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_engine_hash.html#adf6dd1f88d1d90d84f2633739a6aa6db", null ],

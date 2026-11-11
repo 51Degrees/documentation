@@ -66,8 +66,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__r_e_a_d_m_
 <h1 class="g-docs__page-title">51Degrees Ip Intelligence API </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><p><img src="https://51degrees.com/img/logo.png?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-cxx&amp;utm_content=readme.md&amp;utm_term=51degrees-ip-intelligence-api" alt="51Degrees" title="Data rewards the curious" class="inline"/> <b>IP Intelligence in C</b></p>
-<p><a href="https://51degrees.com/documentation/apis/ip-intelligence-cxx/index.html?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-cxx&amp;utm_content=readme.md&amp;utm_term=51degrees-ip-intelligence-api">C Documentation</a> and the <a href="https://51degrees.com/documentation/apis/ip-intelligence-cxx/namespaces.html?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-cxx&amp;utm_content=readme.md&amp;utm_term=51degrees-ip-intelligence-api">C++ Documentation</a>.</p>
+<div class="textblock"><p><img src="https://raw.githubusercontent.com/51Degrees/51degrees-cxx/main/.github/images/logo-160.png" alt="51Degrees" title="Data rewards the curious" class="inline"/> <b>IP Intelligence in C</b></p>
+<p><a href="https://51degrees.com/documentation/apis/ip-intelligence-cxx/group___fifty_one_degrees_ip_intelligence_api.html?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-cxx&amp;utm_content=readme.md&amp;utm_term=51degrees-ip-intelligence-api">C Documentation</a> and the <a href="https://51degrees.com/documentation/apis/ip-intelligence-cxx/namespaces.html?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-cxx&amp;utm_content=readme.md&amp;utm_term=51degrees-ip-intelligence-api">C++ Documentation</a>.</p>
 <p>The 51Degrees IP intelligence API is built on the 51Degrees <a class="el" href="dir_fdedb0aba14d44ce9d99bc100e026e6a.html" title="/home/runner/work/documentation/documentation/apis/51degrees-cxx/src/common/README.md">common API</a>.</p>
 <h1>Pre-requisites</h1>
 <h2><a class="el" href="group___fifty_one_degrees_synonyms.html#gaad0a959cad42d676f5184f89b6188f99" title="Synonym for fiftyoneDegreesData type.">Data</a> file</h2>
@@ -77,28 +77,39 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__r_e_a_d_m_
 <ol type="1">
 <li>A path supplied as a command line argument to the example.</li>
 <li>The <code>51DEGREES_IPI_PATH</code> environment variable containing an explicit path to the data file.</li>
-<li>A search of the parent folder structure for the expected file name in the <code>data/ip-intelligence</code> folder, where the free 'Lite' data file is downloaded to. When it is missing there, the example runs the data repository's script to download it.</li>
+<li>A search of the parent folder structure for the example's default file in the <code>data/ip-intelligence</code> folder, where the scripts save the free data files. Most examples default to the free Lite data file. The performance and reload examples default to the far smaller free ASN data file, as any data file will do for them. When the file is missing there, the example runs the data repository's script to download it.</li>
 </ol>
+<p>On a free data file, the examples show the properties only the Enterprise data file has as needing it, with a link to ask for a copy. The country overlap example needs properties only the Enterprise data file has, so on a free data file it says which, gives the link and stops.</p>
 <p>Note that on Linux shells the <code>51DEGREES_IPI_PATH</code> variable name starts with a digit, so it must be set with the <code>env</code> command, for example <code>env 51DEGREES_IPI_PATH=/path/to/file.ipi ./GettingStarted</code>, rather than a plain <code>export</code>.</p>
 <h1>Building and testing</h1>
 <p>Cloning, building with CMake or Visual Studio, and running the tests are the same for every product in this repository, and are described in the repository README.</p>
 <h1>Memory and the required properties</h1>
-<p>The Balanced configuration (<code><a class="el" href="group___fifty_one_degrees_ip_intelligence_api.html#ga2f4c9ccf90559af9006fd18ee8204e2a" title="Uses caching to balance memory usage and performance.">fiftyoneDegreesIpiBalancedConfig</a></code>, or <code>setBalanced()</code> in C++) holds the strings, the graphs, the profile offsets and the property types in memory, and reads values and profiles through caches of 50,000 values and 10,000 profiles. The C API uses it when no configuration is given.</p>
-<p>Naming the required properties is all it takes to get more from it. There is no other setting. When fewer properties are named than the data file has, the parts of the file they do not read stay on file:</p>
+<p>Two settings of the configuration, <code><a class="el" href="structfiftyone_degrees_config_ipi.html" title="IP Intelligence specific configuration structure.">fiftyoneDegreesConfigIpi</a></code> in C and <code>ConfigIpi</code> in C++, hold in memory what the required properties read. Each preset sets both, and any configuration can set either.</p>
+<p><code>loadRequiredPropertiesOnly</code> (<code>setLoadRequiredPropertiesOnly()</code> in C++) applies when the required properties name some but not all of the properties in the data file. Only what they read is then loaded into memory:</p>
 <ul>
-<li>The graphs of components with no required property.</li>
-<li>Stretches of strings of at least 64 KiB that no required property reads. For example, the polygons of <code>Areas</code> stay on file unless <code>Areas</code> is named.</li>
+<li>The graphs of the components the named properties belong to, each following the graph setting. The graphs of other components read from the file.</li>
+<li>The profile offsets, profile groups and profiles of those components.</li>
+<li>The values of the named properties, with their default values.</li>
+<li>The strings of those values, leaving on file any stretch of at least 64 KiB that no named property reads. For example, the polygons of <code>Areas</code> stay on file unless <code>Areas</code> is named.</li>
 </ul>
-<p>The memory that frees is then spent, in this order, as far as it lasts:</p>
-<ol type="1">
-<li>The values of the required properties, smallest first.</li>
-<li>The profile groups.</li>
-<li>The profiles of the components with a required property, smallest first.</li>
-<li>A larger profile cache, then part of the next component's profiles if at least half of them fit.</li>
-</ol>
-<p>The memory used does not rise above what naming nothing uses, and the answers do not change. A caller who names nothing, or every property, gets the configuration as it is, with only the default value of each property held in memory. A lookup reads the default of each mandatory property its profile has no value for, so holding the defaults means those reads take no lock and read nothing from the file.</p>
-<p>Whatever is named, a profile read through a cache is read once for each lookup rather than once for each property, which uses 512 bytes for each component in each set of results.</p>
-<p>Anything not held reads from the file, so it still works, more slowly and allocating memory. That covers a direct graph call for a component with no required property, and meta data for what was not named. A property that was not named gives no value, as it does with every other configuration.</p>
+<p>Each part is held in whole records, and the rest of those collections reads from the file when needed, with no cache. The components, maps, properties, property types and the collection that lists the graphs follow their own settings. Anything not held reads from the file, so it still works, more slowly and allocating memory. That covers a direct graph call for a component with no named property, and meta data for what was not named. A property that was not named gives no value, as it does with every other configuration. The setting has no effect when no property or every property is named, or when the whole data file is in memory.</p>
+<p><code>defaultValuesInMemory</code> (<code>setDefaultValuesInMemory()</code> in C++) holds the default value of each required property in memory when the data set is created, with what reading it takes from the strings and the property types. A lookup reads the default of each mandatory property its profile has no value for, so holding the defaults means those reads take no lock and read nothing from the file. Nothing is copied from a collection that is already in memory, so the setting has no effect where the values, strings and property types are all loaded, as in HighPerformance with no properties named. It also has no effect when the whole data file is in memory, or when <code>loadRequiredPropertiesOnly</code> applies, as both already hold the default values.</p>
+<p>The presets set them as follows. Choosing a preset in C++ replaces both settings with the preset's.</p>
+<table class="c-table">
+<tr class="c-table__row--heading">
+<td class="c-table__cell">Preset  </td><td class="c-table__cell"><code>loadRequiredPropertiesOnly</code>  </td><td class="c-table__cell"><code>defaultValuesInMemory</code>  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">InMemory (<code>setMaxPerformance()</code>)  </td><td class="c-table__cell">false  </td><td class="c-table__cell">true, with no effect  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">HighPerformance  </td><td class="c-table__cell">true  </td><td class="c-table__cell">true  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">Balanced, BalancedTemp and the default  </td><td class="c-table__cell">false  </td><td class="c-table__cell">true  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">LowMemory  </td><td class="c-table__cell">false  </td><td class="c-table__cell">true  </td></tr>
+</table>
+<p>The HighPerformance configuration (<code><a class="el" href="group___fifty_one_degrees_ip_intelligence_api.html#gae7adb2804367bcaabc90dc8c7b91704d" title="Highest performance configuration that reads the data file.">fiftyoneDegreesIpiHighPerformanceConfig</a></code>, or <code>setHighPerformance()</code> in C++) loads the data file into memory, so with some properties named it loads only what they read and a lookup that reads them reads nothing from the file. Naming no properties, or every one, loads everything.</p>
+<p>The Balanced configuration (<code><a class="el" href="group___fifty_one_degrees_ip_intelligence_api.html#ga2f4c9ccf90559af9006fd18ee8204e2a" title="Uses caching to balance memory usage and performance.">fiftyoneDegreesIpiBalancedConfig</a></code>, or <code>setBalanced()</code> in C++) holds the strings, the graphs, the profile offsets and the property types in memory, and reads values, profiles and profile groups through caches of 100,000 values, 20,000 profiles and 50,000 profile groups. The default value of each required property is held in memory too, and the profile of each result is read through the cache once for each lookup rather than once for each property, which uses 512 bytes for each component in each set of results. Naming the required properties does not change what Balanced holds. The C API uses Balanced when no configuration is given.</p>
+<p>The LowMemory configuration (<code><a class="el" href="group___fifty_one_degrees_ip_intelligence_api.html#gaf314e413634a408603d98c2cc5ee5aa5" title="Low memory configuration.">fiftyoneDegreesIpiLowMemoryConfig</a></code>, or <code>setLowMemory()</code> in C++) holds only the default values in memory, and reads everything else from the file with no cache.</p>
 <h1>Address forms</h1>
 <p>An IPv4-mapped IPv6 address (<code>::ffff:a.b.c.d</code>) is looked up as the IPv4 address <code>a.b.c.d</code>, whether it is given as text in any form, as evidence or as bytes. Every property and the target address are then those of the IPv4 address.</p>
 <p>Every other IPv6 address is looked up as an IPv6 address, including those that hold an IPv4 address. An IPv4-embedded address from <a href="https://www.rfc-editor.org/rfc/rfc6052.html">RFC 6052</a>, such as <code>64:ff9b::a.b.c.d</code>, stays an IPv6 address, because deriving the IPv4 address from it is the job of an address translator (<a href="https://www.rfc-editor.org/rfc/rfc6052.html#section-1.3">RFC 6052 section 1.3</a>).</p>
@@ -121,12 +132,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__r_e_a_d_m_
 <li><code>fiftyone-ip-intelligence-cxx</code></li>
 </ul>
 <p>The CMake project also builds a single shared library containing everything. This is named <code>fiftyone-ip-intelligence-complete</code> and can be referenced by any C or C++ project.</p>
+<p>A project that uses an installed copy of the libraries finds them with <code>find_package(51Degrees CONFIG REQUIRED)</code> and links <code>51Degrees::ip-intelligence-c</code> or <code>51Degrees::ip-intelligence-cxx</code>, which bring the libraries above and the definitions their copy of common is compiled with. The headers are then included as, for example, <code>&lt;51degrees/ipi/ipi.h&gt;</code>. <a href="../../README.md#installing">Installing</a> in the repository README says how to install them.</p>
 <h2>Adding references with Visual Studio</h2>
 <p>The Visual Studio solution contains static libraries which have all the dependencies set up correctly, so referencing these in a Visual Studio solution should be fairly self explanatory.</p>
 <h1>Examples</h1>
 <p>There are several examples available, the source files can be found in the <a href="../../examples/ipi"><code>examples/ipi</code></a> folder. The examples are written in C or CPP.</p>
 <h2>⚠️ Required files</h2>
-<p>See the data repository README (local / <a href="https://github.com/51Degrees/data#get-the-data-files">GitHub</a>) on how to download the necessary files.</p>
+<p>See the <a href="https://github.com/51Degrees/data#get-the-data-files">data repository README</a> on how to download the necessary files.</p>
 <h2>Running examples in Visual Studio</h2>
 <p>All the examples are available to run in the <code>VisualStudio/IpIntelligence/IpIntelligence.sln</code> solution.</p>
 <h2>IP Intelligence Examples</h2>
@@ -136,6 +148,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__r_e_a_d_m_
 <tr class="c-table__row">
 <td class="c-table__cell">Getting Started  </td><td class="c-table__cell">This example shows how to get set up with an IP Intelligence engine and begin using it to process IP addresses.  </td><td class="c-table__cell">C / C++  </td></tr>
 <tr class="c-table__row">
+<td class="c-table__cell">Country Overlap  </td><td class="c-table__cell">This example measures how often the likely area of an IPv4 address crosses a country border, and writes the results to a CSV file. It needs the Enterprise data file.  </td><td class="c-table__cell">C  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">Find Profiles  </td><td class="c-table__cell">This example iterates over every profile in the data file that has a given property value, such as a registered country.  </td><td class="c-table__cell">C  </td></tr>
+<tr class="c-table__row">
 <td class="c-table__cell">Meta <a class="el" href="group___fifty_one_degrees_synonyms.html#gaad0a959cad42d676f5184f89b6188f99" title="Synonym for fiftyoneDegreesData type.">Data</a>  </td><td class="c-table__cell">This example shows how to interrogate the meta data associated with the contents of an IP Intelligence data file.  </td><td class="c-table__cell">C++  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">MemIpi  </td><td class="c-table__cell">This example measures the memory usage of the IP Intelligence process.  </td><td class="c-table__cell">C  </td></tr>
@@ -144,13 +160,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__r_e_a_d_m_
 <tr class="c-table__row">
 <td class="c-table__cell">PerfIpi  </td><td class="c-table__cell">Command line performance evaluation program which takes a file of IP addresses and returns a performance score measured in lookups per second per CPU core.  </td><td class="c-table__cell">C  </td></tr>
 <tr class="c-table__row">
+<td class="c-table__cell">Performance  </td><td class="c-table__cell">This example times looking up the IP addresses in an evidence file, first for a few properties and then for every property.  </td><td class="c-table__cell">C  </td></tr>
+<tr class="c-table__row">
 <td class="c-table__cell">ProcIpi  </td><td class="c-table__cell">Command line process which takes an IP address via stdin and return IP intelligence properties via stdout.  </td><td class="c-table__cell">C  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Reload From File  </td><td class="c-table__cell">This example illustrates how to reload the data file from the data file on disk without restarting the application.  </td><td class="c-table__cell">C / C++  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Reload From Memory  </td><td class="c-table__cell">This example illustrates how to reload the data file from a continuous memory space that the data file was read into without restarting the application.  </td><td class="c-table__cell">C / C++  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Strongly Typed  </td><td class="c-table__cell">This example takes some IP addresses and returns the value of the AverageLocation property as a coordinate which is a pair of float.  </td><td class="c-table__cell">C / C++  </td></tr>
+<td class="c-table__cell">Strongly Typed  </td><td class="c-table__cell">This example takes some IP addresses and returns the Longitude and Latitude properties as numbers, and the Areas property, which all need the Enterprise data file.  </td><td class="c-table__cell">C++  </td></tr>
 </table>
 </div></div><!-- primary -->
 </div><!-- inner -->

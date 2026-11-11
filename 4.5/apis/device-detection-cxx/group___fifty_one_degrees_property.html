@@ -85,6 +85,19 @@ Structs</h2></td></tr>
 <tr class="c-table__row memitem:fiftyoneDegreesPropertyTypeRecord" id="r_fiftyoneDegreesPropertyTypeRecord"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_property_type_record.html">fiftyoneDegreesPropertyTypeRecord</a></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_synonyms.html#gac33ed2a033290cebf9ec90809d9bdf90" title="Synonym for fiftyoneDegreesProperty type.">Property</a> structure containing stored type of a property.  <a href="structfiftyone_degrees_property_type_record.html#details">More...</a><br /></td></tr>
 </table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-enum-members" class="g-docs__section-heading"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="c-table__row memitem:gaba001e5574619ce676a7113def413714" id="r_gaba001e5574619ce676a7113def413714"><td class="c-table__cell">enum &#160;</td><td class="c-table__cell"><a class="el" href="#gaba001e5574619ce676a7113def413714">fiftyoneDegreesPropertyText</a> { <br />
+&#160;&#160;<a class="el" href="#ggaba001e5574619ce676a7113def413714acfab042402c999a260a65de3f0c55bda">FIFTYONE_DEGREES_PROPERTY_TEXT_NAME</a> = 0
+, <a class="el" href="#ggaba001e5574619ce676a7113def413714ab31f20ecde6677acfcaad6ef15a0c273">FIFTYONE_DEGREES_PROPERTY_TEXT_DESCRIPTION</a> = 1
+, <a class="el" href="#ggaba001e5574619ce676a7113def413714aa4ffe5fedac209e137238af003eedb60">FIFTYONE_DEGREES_PROPERTY_TEXT_CATEGORY</a> = 2
+, <a class="el" href="#ggaba001e5574619ce676a7113def413714a3e656edb2923b97b7c78c30efdebaa47">FIFTYONE_DEGREES_PROPERTY_TEXT_URL</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="#ggaba001e5574619ce676a7113def413714a9016b91a93c03b603b0ec6dc70a26a8e">FIFTYONE_DEGREES_PROPERTY_TEXT_DEFAULT_VALUE</a> = 4
+<br />
+ }</td></tr>
+<tr class="c-table__row memdesc:gaba001e5574619ce676a7113def413714"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The text of a property that <a class="el" href="#ga3cc611e1217df93d8e3be61560aa3f77" title="Gets a text of the property as the metadata gives it.">fiftyoneDegreesPropertyGetText</a> gives.  <a href="#gaba001e5574619ce676a7113def413714">More...</a><br /></td></tr>
+</table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="c-table__row memitem:gacd635974266f514e2c3136930ed45353" id="r_gacd635974266f514e2c3136930ed45353"><td class="c-table__cell">const&#160;<a class="el" href="structfiftyone_degrees_string.html">fiftyoneDegreesString</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#gacd635974266f514e2c3136930ed45353">fiftyoneDegreesPropertyGetName</a> (const <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *stringsCollection, const <a class="el" href="structfiftyone_degrees_property.html">fiftyoneDegreesProperty</a> *property, <a class="el" href="structfiftyone_degrees_collection_item.html">fiftyoneDegreesCollectionItem</a> *item, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
@@ -105,7 +118,53 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:gaba376b019d768bb6e7748de89236be03"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the property at the requested index from the properties collection provided.  <br /></td></tr>
 <tr class="c-table__row memitem:gaabce199bade9bf110e3dc0ca62ff5dd9" id="r_gaabce199bade9bf110e3dc0ca62ff5dd9"><td class="c-table__cell">const&#160;<a class="el" href="structfiftyone_degrees_property.html">fiftyoneDegreesProperty</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#gaabce199bade9bf110e3dc0ca62ff5dd9">fiftyoneDegreesPropertyGetByName</a> (<a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *properties, <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *strings, const char *requiredPropertyName, <a class="el" href="structfiftyone_degrees_collection_item.html">fiftyoneDegreesCollectionItem</a> *item, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:gaabce199bade9bf110e3dc0ca62ff5dd9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the property with the requested name from the properties collection provided.  <br /></td></tr>
+<tr class="c-table__row memitem:gaeddfe96ac405e2c040ee378cf0a0a8b1" id="r_gaeddfe96ac405e2c040ee378cf0a0a8b1"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#gaeddfe96ac405e2c040ee378cf0a0a8b1">fiftyoneDegreesPropertyGetIndexByName</a> (<a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *properties, <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *strings, const char *propertyName, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:gaeddfe96ac405e2c040ee378cf0a0a8b1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the index in the properties collection of the property with the name provided, which must match exactly.  <br /></td></tr>
+<tr class="c-table__row memitem:ga3cc611e1217df93d8e3be61560aa3f77" id="r_ga3cc611e1217df93d8e3be61560aa3f77"><td class="c-table__cell">char&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga3cc611e1217df93d8e3be61560aa3f77">fiftyoneDegreesPropertyGetText</a> (const <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *values, const <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *strings, const <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *propertyTypes, const <a class="el" href="structfiftyone_degrees_property.html">fiftyoneDegreesProperty</a> *property, <a class="el" href="#gaba001e5574619ce676a7113def413714">fiftyoneDegreesPropertyText</a> text, char *buffer, size_t bufferLength, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:ga3cc611e1217df93d8e3be61560aa3f77"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets a text of the property as the metadata gives it.  <br /></td></tr>
+<tr class="c-table__row memitem:gacd5cb650b8257455cc94aad0be16777f" id="r_gacd5cb650b8257455cc94aad0be16777f"><td class="c-table__cell">char&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#gacd5cb650b8257455cc94aad0be16777f">fiftyoneDegreesPropertyGetMapText</a> (const <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *strings, const <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *maps, const <a class="el" href="structfiftyone_degrees_property.html">fiftyoneDegreesProperty</a> *property, uint32_t mapIndex, char *buffer, size_t bufferLength, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:gacd5cb650b8257455cc94aad0be16777f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the name of one of the maps the property is in, which the metadata gives as the data files the property is present in, such as "Lite".  <br /></td></tr>
+<tr class="c-table__row memitem:ga79cc9880e9d8626a589bc1d7817ac2ab" id="r_ga79cc9880e9d8626a589bc1d7817ac2ab"><td class="c-table__cell">uint32_t&#160;</td><td class="c-table__cell"><a class="el" href="#ga79cc9880e9d8626a589bc1d7817ac2ab">fiftyoneDegreesPropertyGetValueCount</a> (const <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *values, const <a class="el" href="structfiftyone_degrees_property.html">fiftyoneDegreesProperty</a> *property)</td></tr>
+<tr class="c-table__row memdesc:ga79cc9880e9d8626a589bc1d7817ac2ab"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the number of values the values collection holds for the property, which are at the indexes from its <code>firstValueIndex</code> to its <code>lastValueIndex</code>.  <br /></td></tr>
 </table>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="g-docs__section-heading">Enumeration Type Documentation</h2>
+<a id="gaba001e5574619ce676a7113def413714" name="gaba001e5574619ce676a7113def413714"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaba001e5574619ce676a7113def413714">&#9670;&#160;</a></span>fiftyoneDegreesPropertyText</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">enum <a class="el" href="#gaba001e5574619ce676a7113def413714">fiftyoneDegreesPropertyText</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The text of a property that <a class="el" href="#ga3cc611e1217df93d8e3be61560aa3f77" title="Gets a text of the property as the metadata gives it.">fiftyoneDegreesPropertyGetText</a> gives. </p>
+<div class="g-table g-table--overflow">
+<table class="c-table c-table--invert">
+<thead class="c-table__head">
+<tr class="c-table__row"><td class="c-table__cell" colspan="2"><h3 class="c-table__heading">Enumerator</h3></td></tr></thead>
+<tbody class="c-table__body"><tr class="c-table__row"><td class="c-table__cell"><a id="ggaba001e5574619ce676a7113def413714acfab042402c999a260a65de3f0c55bda" name="ggaba001e5574619ce676a7113def413714acfab042402c999a260a65de3f0c55bda"></a>FIFTYONE_DEGREES_PROPERTY_TEXT_NAME&#160;</td><td class="c-table__cell"><p>The property's name. </p>
+</td></tr>
+<tr class="c-table__row"><td class="c-table__cell"><a id="ggaba001e5574619ce676a7113def413714ab31f20ecde6677acfcaad6ef15a0c273" name="ggaba001e5574619ce676a7113def413714ab31f20ecde6677acfcaad6ef15a0c273"></a>FIFTYONE_DEGREES_PROPERTY_TEXT_DESCRIPTION&#160;</td><td class="c-table__cell"><p>The property's description, empty when it has none. </p>
+</td></tr>
+<tr class="c-table__row"><td class="c-table__cell"><a id="ggaba001e5574619ce676a7113def413714aa4ffe5fedac209e137238af003eedb60" name="ggaba001e5574619ce676a7113def413714aa4ffe5fedac209e137238af003eedb60"></a>FIFTYONE_DEGREES_PROPERTY_TEXT_CATEGORY&#160;</td><td class="c-table__cell"><p>The name of the category the property is in, empty when it is in none. </p>
+</td></tr>
+<tr class="c-table__row"><td class="c-table__cell"><a id="ggaba001e5574619ce676a7113def413714a3e656edb2923b97b7c78c30efdebaa47" name="ggaba001e5574619ce676a7113def413714a3e656edb2923b97b7c78c30efdebaa47"></a>FIFTYONE_DEGREES_PROPERTY_TEXT_URL&#160;</td><td class="c-table__cell"><p>The URL of more about the property, empty when it has none. </p>
+</td></tr>
+<tr class="c-table__row"><td class="c-table__cell"><a id="ggaba001e5574619ce676a7113def413714a9016b91a93c03b603b0ec6dc70a26a8e" name="ggaba001e5574619ce676a7113def413714a9016b91a93c03b603b0ec6dc70a26a8e"></a>FIFTYONE_DEGREES_PROPERTY_TEXT_DEFAULT_VALUE&#160;</td><td class="c-table__cell"><p>The property's default value, as <a class="el" href="group___fifty_one_degrees_value.html#ga111b2c14f61b5ac5345aab4454bf8f26" title="Gets the text the metadata gives as the property&#39;s default value.">fiftyoneDegreesValueGetDefaultText</a> gives it. </p>
+</td></tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
 <a id="gaba376b019d768bb6e7748de89236be03" name="gaba376b019d768bb6e7748de89236be03"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaba376b019d768bb6e7748de89236be03">&#9670;&#160;</a></span>fiftyoneDegreesPropertyGet()</h2>
@@ -301,6 +360,118 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="gaeddfe96ac405e2c040ee378cf0a0a8b1" name="gaeddfe96ac405e2c040ee378cf0a0a8b1"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaeddfe96ac405e2c040ee378cf0a0a8b1">&#9670;&#160;</a></span>fiftyoneDegreesPropertyGetIndexByName()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">int fiftyoneDegreesPropertyGetIndexByName </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>properties</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>strings</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>propertyName</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the index in the properties collection of the property with the name provided, which must match exactly. </p>
+<p>This finds the property that <a class="el" href="#gaabce199bade9bf110e3dc0ca62ff5dd9" title="Gets the property with the requested name from the properties collection provided.">fiftyoneDegreesPropertyGetByName</a> gets. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">properties</td><td>collection to find the property in </td></tr>
+    <tr><td class="paramname">strings</td><td>collection containing the names of the properties </td></tr>
+    <tr><td class="paramname">propertyName</td><td>name of the property to find </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the 0 based index of the property, or -1 when no property has the name or reading a property or a name sets the exception. A property whose name the strings collection gives nothing for is taken as the one named, so its index is returned. </dd></dl>
+
+</div>
+</div>
+<a id="gacd5cb650b8257455cc94aad0be16777f" name="gacd5cb650b8257455cc94aad0be16777f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gacd5cb650b8257455cc94aad0be16777f">&#9670;&#160;</a></span>fiftyoneDegreesPropertyGetMapText()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">char * fiftyoneDegreesPropertyGetMapText </td>
+          <td>(</td>
+          <td class="c-table__cell">const <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>strings</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>maps</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const <a class="el" href="structfiftyone_degrees_property.html">fiftyoneDegreesProperty</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>property</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>mapIndex</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">char *</td>          <td class="c-table__cell"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">size_t</td>          <td class="c-table__cell"><span class="paramname"><em>bufferLength</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the name of one of the maps the property is in, which the metadata gives as the data files the property is present in, such as "Lite". </p>
+<p>The name is written as <a class="el" href="#ga3cc611e1217df93d8e3be61560aa3f77" title="Gets a text of the property as the metadata gives it.">fiftyoneDegreesPropertyGetText</a> writes a text. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strings</td><td>collection containing the names of the maps </td></tr>
+    <tr><td class="paramname">maps</td><td>collection of the offsets in <code>strings</code> of the map names </td></tr>
+    <tr><td class="paramname">property</td><td>the property to get the name of a map of </td></tr>
+    <tr><td class="paramname">mapIndex</td><td>the 0 based place of the map among the property's <code>mapCount</code> maps </td></tr>
+    <tr><td class="paramname">buffer</td><td>memory the name is written into when it fits </td></tr>
+    <tr><td class="paramname">bufferLength</td><td>the bytes <code>buffer</code> holds </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the null terminated name, or NULL. NULL with no exception set means the strings collection gives nothing at the map's offset, and NULL with the exception set means <code>mapIndex</code> is not less than the property's <code>mapCount</code> or the name cannot be read or written. </dd></dl>
+
+</div>
+</div>
 <a id="gacd635974266f514e2c3136930ed45353" name="gacd635974266f514e2c3136930ed45353"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#gacd635974266f514e2c3136930ed45353">&#9670;&#160;</a></span>fiftyoneDegreesPropertyGetName()</h2>
 
@@ -430,6 +601,77 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga3cc611e1217df93d8e3be61560aa3f77" name="ga3cc611e1217df93d8e3be61560aa3f77"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga3cc611e1217df93d8e3be61560aa3f77">&#9670;&#160;</a></span>fiftyoneDegreesPropertyGetText()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">char * fiftyoneDegreesPropertyGetText </td>
+          <td>(</td>
+          <td class="c-table__cell">const <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>values</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>strings</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>propertyTypes</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const <a class="el" href="structfiftyone_degrees_property.html">fiftyoneDegreesProperty</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>property</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="#gaba001e5574619ce676a7113def413714">fiftyoneDegreesPropertyText</a></td>          <td class="c-table__cell"><span class="paramname"><em>text</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">char *</td>          <td class="c-table__cell"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">size_t</td>          <td class="c-table__cell"><span class="paramname"><em>bufferLength</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets a text of the property as the metadata gives it. </p>
+<p>A description, category or URL the property does not have is an empty text, as is a string the strings collection gives nothing for. The text is written into <code>buffer</code> when it fits, and otherwise into memory the caller frees, as <a class="el" href="group___fifty_one_degrees_string.html#gab2a21dc2fb78f24ab86c897e06ba4d09" title="Writes the binary value as text, as results and metadata give it, with a number written to at most de...">fiftyoneDegreesStoredBinaryValueToText</a> describes. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td>collection containing the property's values, which only <a class="el" href="#ggaba001e5574619ce676a7113def413714a9016b91a93c03b603b0ec6dc70a26a8e" title="The property&#39;s default value, as fiftyoneDegreesValueGetDefaultText gives it.">FIFTYONE_DEGREES_PROPERTY_TEXT_DEFAULT_VALUE</a> reads </td></tr>
+    <tr><td class="paramname">strings</td><td>collection containing the property's strings </td></tr>
+    <tr><td class="paramname">propertyTypes</td><td>collection of the type each property's values are stored as, or NULL when every value is stored as a string, which only <a class="el" href="#ggaba001e5574619ce676a7113def413714a9016b91a93c03b603b0ec6dc70a26a8e" title="The property&#39;s default value, as fiftyoneDegreesValueGetDefaultText gives it.">FIFTYONE_DEGREES_PROPERTY_TEXT_DEFAULT_VALUE</a> reads </td></tr>
+    <tr><td class="paramname">property</td><td>the property to get the text of </td></tr>
+    <tr><td class="paramname">text</td><td>which text of the property to get </td></tr>
+    <tr><td class="paramname">buffer</td><td>memory the text is written into when it fits </td></tr>
+    <tr><td class="paramname">bufferLength</td><td>the bytes <code>buffer</code> holds </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the null terminated text, or NULL when it cannot be read or written or <code>text</code> is none of <a class="el" href="#gaba001e5574619ce676a7113def413714" title="The text of a property that fiftyoneDegreesPropertyGetText gives.">fiftyoneDegreesPropertyText</a> </dd></dl>
+
+</div>
+</div>
 <a id="ga4a0c95a9e68ff253f7fea4a7dcbf4753" name="ga4a0c95a9e68ff253f7fea4a7dcbf4753"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga4a0c95a9e68ff253f7fea4a7dcbf4753">&#9670;&#160;</a></span>fiftyoneDegreesPropertyGetUrl()</h2>
 
@@ -474,6 +716,41 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a pointer to a string in the collection item data structure, or to an empty string if the property has no URL. </dd></dl>
+
+</div>
+</div>
+<a id="ga79cc9880e9d8626a589bc1d7817ac2ab" name="ga79cc9880e9d8626a589bc1d7817ac2ab"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga79cc9880e9d8626a589bc1d7817ac2ab">&#9670;&#160;</a></span>fiftyoneDegreesPropertyGetValueCount()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">uint32_t fiftyoneDegreesPropertyGetValueCount </td>
+          <td>(</td>
+          <td class="c-table__cell">const <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>values</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const <a class="el" href="structfiftyone_degrees_property.html">fiftyoneDegreesProperty</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>property</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the number of values the values collection holds for the property, which are at the indexes from its <code>firstValueIndex</code> to its <code>lastValueIndex</code>. </p>
+<p>A property whose value indexes are not both in the collection, as when both are -1, has none. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td>collection containing the property's values </td></tr>
+    <tr><td class="paramname">property</td><td>the property to count the values of </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the number of values </dd></dl>
 
 </div>
 </div>

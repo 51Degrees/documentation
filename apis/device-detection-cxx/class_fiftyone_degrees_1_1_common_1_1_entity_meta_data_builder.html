@@ -79,8 +79,8 @@ Static Protected Member Functions</h2></td></tr>
 <tr id="pro-static-methods-0" class="c-table__row"><td class="c-table__cell" colspan="2"><h3 class="c-table__heading">Static Helpers</h3></td></tr>
 <tr class="c-table__row memitem:a390c56d0ea257cd787fb6a329432a03e" id="r_a390c56d0ea257cd787fb6a329432a03e"><td class="c-table__cell">static&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a390c56d0ea257cd787fb6a329432a03e">getString</a> (<a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *stringsCollection, uint32_t offset)</td></tr>
 <tr class="c-table__row memdesc:a390c56d0ea257cd787fb6a329432a03e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a copy of a string from the strings collection at the offset provided.  <br /></td></tr>
-<tr class="c-table__row memitem:a35f7f2a154ca0f71bbbf600c0a7739f0" id="r_a35f7f2a154ca0f71bbbf600c0a7739f0"><td class="c-table__cell">static&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a35f7f2a154ca0f71bbbf600c0a7739f0">getValue</a> (<a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *stringsCollection, uint32_t offset, fiftyoneDegreesPropertyValueType storedValueType)</td></tr>
-<tr class="c-table__row memdesc:a35f7f2a154ca0f71bbbf600c0a7739f0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a copy of a binary value (as string) from the strings collection at the offset provided.  <br /></td></tr>
+<tr class="c-table__row memitem:a341acab03e758435387c1b0c7d94f930" id="r_a341acab03e758435387c1b0c7d94f930"><td class="c-table__cell">static&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a341acab03e758435387c1b0c7d94f930">takeText</a> (char *text, const char *buffer, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:a341acab03e758435387c1b0c7d94f930"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a copy of the text a C function wrote into the buffer provided or into memory it allocated, freeing that memory.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="a390c56d0ea257cd787fb6a329432a03e" name="a390c56d0ea257cd787fb6a329432a03e"></a>
@@ -126,8 +126,8 @@ Static Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a35f7f2a154ca0f71bbbf600c0a7739f0" name="a35f7f2a154ca0f71bbbf600c0a7739f0"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a35f7f2a154ca0f71bbbf600c0a7739f0">&#9670;&#160;</a></span>getValue()</h2>
+<a id="a341acab03e758435387c1b0c7d94f930" name="a341acab03e758435387c1b0c7d94f930"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a341acab03e758435387c1b0c7d94f930">&#9670;&#160;</a></span>takeText()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -138,19 +138,19 @@ Static Protected Member Functions</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">string FiftyoneDegrees::Common::EntityMetaDataBuilder::getValue </td>
+              <td class="c-table__cell">string FiftyoneDegrees::Common::EntityMetaDataBuilder::takeText </td>
           <td>(</td>
-          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>stringsCollection</em></span>, </td>
+          <td class="c-table__cell">char *</td>          <td class="c-table__cell"><span class="paramname"><em>text</em></span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>offset</em></span>, </td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>buffer</em></span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">fiftyoneDegreesPropertyValueType</td>          <td class="c-table__cell"><span class="paramname"><em>storedValueType</em></span>&#160;)</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
         </tr>
           </table>
         </div>
@@ -162,16 +162,16 @@ Static Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="c-member__body">
 
-<p>Get a copy of a binary value (as string) from the strings collection at the offset provided. </p>
+<p>Get a copy of the text a C function wrote into the buffer provided or into memory it allocated, freeing that memory. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">stringsCollection</td><td>pointer to the collection to copy the value (as string) from </td></tr>
-    <tr><td class="paramname">offset</td><td>offset in the strings collection of the binary value to copy (as string) </td></tr>
-    <tr><td class="paramname">storedValueType</td><td>format of byte array representation. </td></tr>
+    <tr><td class="paramname">text</td><td>the text the C function returned, or nullptr </td></tr>
+    <tr><td class="paramname">buffer</td><td>the buffer the C function was given </td></tr>
+    <tr><td class="paramname">exception</td><td>the exception the C function was given, thrown when it is set </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">string describing contents of binary value the offset provided </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">copy of the text, or an empty string when there is none </dd></dl>
 
 </div>
 </div>

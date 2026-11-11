@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structfiftyone
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
 <div class="textblock"><p>Hash specific configuration structure. </p>
 <p>This extends the <a class="el" href="structfiftyone_degrees_config_device_detection.html" title="Device detection configuration structure containing device detection specific configuration options,...">fiftyoneDegreesConfigDeviceDetection</a> structure by adding collection configurations and options for the allowable drift and difference. </p>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_getting_started_8cpp-example.html#_a27">Hash/GettingStarted.cpp</a>, <a class="el" href="_hash_2_match_metrics_8cpp-example.html#_a25">Hash/MatchMetrics.cpp</a>, <a class="el" href="_hash_2_meta_data_8cpp-example.html#_a14">Hash/MetaData.cpp</a>, <a class="el" href="_hash_2_reload_from_file_8cpp-example.html#_a14">Hash/ReloadFromFile.cpp</a>, and <a class="el" href="_hash_2_strongly_typed_8cpp-example.html#_a19">Hash/StronglyTyped.cpp</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_getting_started_8cpp-example.html#_a30">Hash/GettingStarted.cpp</a>, <a class="el" href="_hash_2_match_metrics_8cpp-example.html#_a18">Hash/MatchMetrics.cpp</a>, <a class="el" href="_hash_2_meta_data_8cpp-example.html#_a15">Hash/MetaData.cpp</a>, <a class="el" href="_hash_2_reload_from_file_8cpp-example.html#_a15">Hash/ReloadFromFile.cpp</a>, and <a class="el" href="_hash_2_strongly_typed_8cpp-example.html#_a27">Hash/StronglyTyped.cpp</a>.</dd>
 </dl>
 </div><h2 class="g-docs__section-heading">
 Collaboration diagram for fiftyoneDegreesConfigHash:</h2>
@@ -119,6 +119,8 @@ bool&#160;</td><td class="c-table__cell"><b>usePredictiveGraph</b></td></tr>
 <tr class="c-table__row memdesc:a3c817851ab2952d5e98c9d1b8a7c20d4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True if the predictive optimized graph should be used for processing. <br /></td></tr>
 <tr class="c-table__row memitem:a8b350a724a1f02b790d938cafaabd47e" id="r_a8b350a724a1f02b790d938cafaabd47e"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a8b350a724a1f02b790d938cafaabd47e">traceRoute</a></td></tr>
 <tr class="c-table__row memdesc:a8b350a724a1f02b790d938cafaabd47e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True if the route through each graph should be traced during processing.  <br /></td></tr>
+<tr class="c-table__row memitem:a8a508a509f369ca4ac227278f1007990" id="r_a8a508a509f369ca4ac227278f1007990"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a8a508a509f369ca4ac227278f1007990">loadRequiredPropertiesOnly</a></td></tr>
+<tr class="c-table__row memdesc:a8a508a509f369ca4ac227278f1007990"><td class="c-table__cell">&#160;</td><td class="c-table__cell">When true, and the required properties are some but not all of the properties in the data file, only the data they read is loaded into memory.  <br /></td></tr>
 </table>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Field Documentation</h2>
 <a id="aa0a2193105a8cec76045a47160ac0c17" name="aa0a2193105a8cec76045a47160ac0c17"></a>
@@ -160,6 +162,28 @@ bool&#160;</td><td class="c-table__cell"><b>usePredictiveGraph</b></td></tr>
 
 <p>The maximum drift to allow when matching hashes. </p>
 <p>If the drift is exceeded, the result is considered invalid and values will not be returned. By default this is 0. </p>
+
+</div>
+</div>
+<a id="a8a508a509f369ca4ac227278f1007990" name="a8a508a509f369ca4ac227278f1007990"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8a508a509f369ca4ac227278f1007990">&#9670;&#160;</a></span>loadRequiredPropertiesOnly</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool fiftyoneDegreesConfigHash::loadRequiredPropertiesOnly</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>When true, and the required properties are some but not all of the properties in the data file, only the data they read is loaded into memory. </p>
+<p>That is the values of the required properties and the strings those values use, in whole records, with the rest of the values and strings read from the file when needed with no cache. Other collections, including the profiles and nodes every lookup walks, follow their own settings. It has no effect when no property or every property is required, or when allInMemory is true. True in the HighPerformance configuration only.</p>
+<p>IP Intelligence also has defaultValuesInMemory. Device Detection does not, because a Hash lookup uses no default value, and a property that a profile has no value for returns no value. </p>
 
 </div>
 </div>

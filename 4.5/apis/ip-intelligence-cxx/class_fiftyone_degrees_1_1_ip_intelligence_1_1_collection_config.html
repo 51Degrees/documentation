@@ -90,7 +90,7 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a4a6f959912f6ee5061bef5478e402cd6" id="r_a4a6f959912f6ee5061bef5478e402cd6"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a4a6f959912f6ee5061bef5478e402cd6">setCapacity</a> (uint32_t capacity)</td></tr>
 <tr class="c-table__row memdesc:a4a6f959912f6ee5061bef5478e402cd6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the number of items the cache should store, 0 for no cache.  <br /></td></tr>
 <tr class="c-table__row memitem:aed82b94d51bfca983b92464dc04fe34f" id="r_aed82b94d51bfca983b92464dc04fe34f"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#aed82b94d51bfca983b92464dc04fe34f">setConcurrency</a> (uint16_t concurrency)</td></tr>
-<tr class="c-table__row memdesc:aed82b94d51bfca983b92464dc04fe34f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the expected number of concurrent requests.  <br /></td></tr>
+<tr class="c-table__row memdesc:aed82b94d51bfca983b92464dc04fe34f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the expected number of operations that use the collection at the same time.  <br /></td></tr>
 <tr class="c-table__row memitem:afd57cf928498fe5809f7e6a0c311a220" id="r_afd57cf928498fe5809f7e6a0c311a220"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#afd57cf928498fe5809f7e6a0c311a220">setLoaded</a> (uint32_t loaded)</td></tr>
 <tr class="c-table__row memdesc:afd57cf928498fe5809f7e6a0c311a220"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the number of items to load into memory from the start of the collection.  <br /></td></tr>
 <tr id="pub-methods-2" class="c-table__row"><td class="c-table__cell" colspan="2"><h3 class="c-table__heading">Getters</h3></td></tr>
@@ -302,8 +302,8 @@ Public Member Functions</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Set the expected number of concurrent requests. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Set the expected number of operations that use the collection at the same time. </p>
+<p>A data set takes 0 as one for each processor. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">concurrency</td><td>to set </td></tr>
   </table>

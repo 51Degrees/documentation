@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fiftyone
 <div class="c-code__line"><span class="c-code__keyword">delete</span> engine;</div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_config_base_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_config_base.html">FiftyoneDegrees::Common::ConfigBase</a></div><div class="ttdoc">C++ class wrapper for the fiftyoneDegreesConfigBase configuration structure.</div><div class="ttdef"><b>Definition</b> ConfigBase.hpp:61</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_engine_base_html_a08aa00905555d2ac9dcaf445fd8f2820"><div class="ttname"><a href="#a08aa00905555d2ac9dcaf445fd8f2820">FiftyoneDegrees::Common::EngineBase::EngineBase</a></div><div class="ttdeci">EngineBase(ConfigBase *config, RequiredPropertiesConfig *properties)</div><div class="ttdoc">Construct a new instance of the engine class with the configuration and properties provided.</div></div>
-<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_engine_base_html_a4f72773e876f66ff0365214ab3c30dbb"><div class="ttname"><a href="#a4f72773e876f66ff0365214ab3c30dbb">FiftyoneDegrees::Common::EngineBase::config</a></div><div class="ttdeci">ConfigBase * config</div><div class="ttdoc">Pointer to the configuration used to build the engine.</div><div class="ttdef"><b>Definition</b> EngineBase.hpp:262</div></div>
+<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_engine_base_html_a4f72773e876f66ff0365214ab3c30dbb"><div class="ttname"><a href="#a4f72773e876f66ff0365214ab3c30dbb">FiftyoneDegrees::Common::EngineBase::config</a></div><div class="ttdeci">ConfigBase * config</div><div class="ttdoc">Pointer to the configuration used to build the engine.</div><div class="ttdef"><b>Definition</b> EngineBase.hpp:268</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_engine_base_html_af48da459a4f1ac0960b1fab2ce51c46c"><div class="ttname"><a href="#af48da459a4f1ac0960b1fab2ce51c46c">FiftyoneDegrees::Common::EngineBase::processBase</a></div><div class="ttdeci">virtual ResultsBase * processBase(EvidenceBase *evidence) const =0</div><div class="ttdoc">Processes the evidence provided and returns the result.</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_evidence_base_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_evidence_base.html">FiftyoneDegrees::Common::EvidenceBase</a></div><div class="ttdoc">Base evidence class containing evidence to be processed by an engine.</div><div class="ttdef"><b>Definition</b> EvidenceBase.hpp:68</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_required_properties_config_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_required_properties_config.html">FiftyoneDegrees::Common::RequiredPropertiesConfig</a></div><div class="ttdoc">C++ class wrapper for the fiftyoneDegreesPropertiesRequired structure.</div><div class="ttdef"><b>Definition</b> RequiredPropertiesConfig.hpp:59</div></div>
@@ -158,16 +158,17 @@ virtual&#160;</td><td class="c-table__cell"><b>~EngineBase</b> ()</td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-methods" class="g-docs__section-heading"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a87bf600ac70793a83afa3df66a694bf8" id="r_a87bf600ac70793a83afa3df66a694bf8"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a87bf600ac70793a83afa3df66a694bf8">setKeys</a> (vector&lt; string &gt; &amp;&amp;newKeys) const</td></tr>
+<tr class="c-table__row memdesc:a87bf600ac70793a83afa3df66a694bf8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Makes a list the engine's evidence keys unless it is the same as the current list.  <br /></td></tr>
 <tr class="c-table__row memitem:a0f8e135ab10d3e8c663e720f10e348f5" id="r_a0f8e135ab10d3e8c663e720f10e348f5"><td class="c-table__cell">virtual&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a0f8e135ab10d3e8c663e720f10e348f5">appendValue</a> (stringstream &amp;stream, <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *strings, uint32_t offset, fiftyoneDegreesPropertyValueType storedValueType) const</td></tr>
 <tr class="c-table__row memdesc:a0f8e135ab10d3e8c663e720f10e348f5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets a string from a strings collection, and appends to a stream.  <br /></td></tr>
 <tr class="c-table__row memitem:a085a87a56fe8b9a931b74d0e55677a2f" id="r_a085a87a56fe8b9a931b74d0e55677a2f"><td class="c-table__cell">virtual&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a085a87a56fe8b9a931b74d0e55677a2f">appendString</a> (stringstream &amp;stream, <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *strings, uint32_t offset) const</td></tr>
 <tr class="c-table__row memdesc:a085a87a56fe8b9a931b74d0e55677a2f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets a string from a strings collection, and appends to a stream.  <br /></td></tr>
-<tr class="c-table__row memitem:a7053361b54f304f127719cf19a55d16d" id="r_a7053361b54f304f127719cf19a55d16d"><td class="c-table__cell">virtual&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a7053361b54f304f127719cf19a55d16d">initHttpHeaderKeys</a> (<a class="el" href="group___fifty_one_degrees_headers.html#ga8742ecca65bb05ccfb68ae6e23afa6b0">fiftyoneDegreesHeaders</a> *uniqueHeaders)</td></tr>
-<tr class="c-table__row memdesc:a7053361b54f304f127719cf19a55d16d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initialise the HTTP header keys which are used by this engine.  <br /></td></tr>
-<tr class="c-table__row memitem:ae093ec6c179c7827eb211e9f05ba7693" id="r_ae093ec6c179c7827eb211e9f05ba7693"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ae093ec6c179c7827eb211e9f05ba7693">initOverrideKeys</a> (<a class="el" href="structfiftyone_degrees_override_property_array.html">fiftyoneDegreesOverridePropertyArray</a> *overrideProperties)</td></tr>
-<tr class="c-table__row memdesc:ae093ec6c179c7827eb211e9f05ba7693"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initialise the override keys which are used by this engine.  <br /></td></tr>
-<tr class="c-table__row memitem:a648badcbbd119f937fce6b64bc28cf29" id="r_a648badcbbd119f937fce6b64bc28cf29"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a648badcbbd119f937fce6b64bc28cf29">addKey</a> (string key)</td></tr>
-<tr class="c-table__row memdesc:a648badcbbd119f937fce6b64bc28cf29"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Adds a key to the list of keys which should be added as evidence.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-static-methods" class="g-docs__section-heading"><a id="pro-static-methods" name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a01d0c0f101e80988a35368870dd3ce05" id="r_a01d0c0f101e80988a35368870dd3ce05"><td class="c-table__cell">static&#160;vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a01d0c0f101e80988a35368870dd3ce05">readKeys</a> (const std::function&lt; size_t(char *, size_t, const char *)&gt; &amp;write)</td></tr>
+<tr class="c-table__row memdesc:a01d0c0f101e80988a35368870dd3ce05"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the evidence keys that a C function writes as one string with a separator between them.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-attribs" class="g-docs__section-heading"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -190,9 +191,11 @@ string&#160;</td><td class="c-table__cell"><b>updateUrl</b></td></tr>
 <tr class="c-table__row memitem:ac44016eb7dfd579cba041c9fc88632a7" id="r_ac44016eb7dfd579cba041c9fc88632a7"><td class="c-table__cell"><a id="ac44016eb7dfd579cba041c9fc88632a7" name="ac44016eb7dfd579cba041c9fc88632a7"></a>
 string&#160;</td><td class="c-table__cell"><b>defaultDataKey</b></td></tr>
 <tr class="c-table__row memdesc:ac44016eb7dfd579cba041c9fc88632a7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default key to use when adding the results to a dictionary. <br /></td></tr>
-<tr class="c-table__row memitem:a2da4e59e9d5ee54a0c060e1aee0ea702" id="r_a2da4e59e9d5ee54a0c060e1aee0ea702"><td class="c-table__cell"><a id="a2da4e59e9d5ee54a0c060e1aee0ea702" name="a2da4e59e9d5ee54a0c060e1aee0ea702"></a>
-vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b></td></tr>
-<tr class="c-table__row memdesc:a2da4e59e9d5ee54a0c060e1aee0ea702"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Keys which should be added to evidence. <br /></td></tr>
+<tr class="c-table__row memitem:a6c01f3f905f7ee4a2290941b57576423" id="r_a6c01f3f905f7ee4a2290941b57576423"><td class="c-table__cell">vector&lt;&#160;std::unique_ptr&lt;&#160;const&#160;vector&lt;&#160;string&#160;&gt;&#160;&gt;&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a6c01f3f905f7ee4a2290941b57576423">keyLists</a></td></tr>
+<tr class="c-table__row memdesc:a6c01f3f905f7ee4a2290941b57576423"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Every list of evidence keys the engine has had, the last being current.  <br /></td></tr>
+<tr class="c-table__row memitem:a2f165c7871ad0a993d4786104114f1a0" id="r_a2f165c7871ad0a993d4786104114f1a0"><td class="c-table__cell"><a id="a2f165c7871ad0a993d4786104114f1a0" name="a2f165c7871ad0a993d4786104114f1a0"></a>
+std::mutex&#160;</td><td class="c-table__cell"><b>keysMutex</b></td></tr>
+<tr class="c-table__row memdesc:a2f165c7871ad0a993d4786104114f1a0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Guards keyLists. <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="a08aa00905555d2ac9dcaf445fd8f2820" name="a08aa00905555d2ac9dcaf445fd8f2820"></a>
@@ -230,43 +233,6 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
-<a id="a648badcbbd119f937fce6b64bc28cf29" name="a648badcbbd119f937fce6b64bc28cf29"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a648badcbbd119f937fce6b64bc28cf29">&#9670;&#160;</a></span>addKey()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">void FiftyoneDegrees::Common::EngineBase::addKey </td>
-          <td>(</td>
-          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>key</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-          </table>
-        </div>
-      </div>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="c-member__body">
-
-<p>Adds a key to the list of keys which should be added as evidence. </p>
-<p>This is called by the key init methods. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">key</td><td>to add </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a085a87a56fe8b9a931b74d0e55677a2f" name="a085a87a56fe8b9a931b74d0e55677a2f"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a085a87a56fe8b9a931b74d0e55677a2f">&#9670;&#160;</a></span>appendString()</h2>
 
@@ -537,7 +503,7 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 </div><div class="c-member__body">
 
 <p>Get the list of keys which the engine accepts as evidence. </p>
-<p>This is a pointer to an internal vector should not (and cannot) be freed. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">pointer to the list of evidence keys </dd></dl>
+<p>This is a pointer to an internal vector should not (and cannot) be freed. The list is never changed once returned, and a refresh that changes the keys gives later calls another list, so the pointer stays valid until the engine is destroyed. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">pointer to the list of evidence keys </dd></dl>
 
 </div>
 </div>
@@ -629,7 +595,7 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 </div><div class="c-member__body">
 
 <p>Get the date at which the current data set was published. </p>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">data set published date </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">data set published date, or a year, month and day of zero when the data file holds no valid date </dd></dl>
 
 <p>Implemented in <a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_engine_hash.html#a0b1ea6996d4ec440dc503601d1a7140b">FiftyoneDegrees::DeviceDetection::Hash::EngineHash</a>.</p>
 
@@ -721,83 +687,9 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 </div><div class="c-member__body">
 
 <p>Get the date at which a new data file will be available to download from the URL returned by <a class="el" href="#a991361c390349351c92ee864efbeaa2d" title="Get the URL to be used when updating the data file, or an empty string if this is not set.">getDataUpdateUrl()</a>. </p>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">new data set available date </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">new data set available date, or a year, month and day of zero when the data file holds no valid date </dd></dl>
 
 <p>Implemented in <a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_engine_hash.html#a89d0fb0fe9a52139ce0c05d660076d2a">FiftyoneDegrees::DeviceDetection::Hash::EngineHash</a>.</p>
-
-</div>
-</div>
-<a id="a7053361b54f304f127719cf19a55d16d" name="a7053361b54f304f127719cf19a55d16d"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7053361b54f304f127719cf19a55d16d">&#9670;&#160;</a></span>initHttpHeaderKeys()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">virtual void FiftyoneDegrees::Common::EngineBase::initHttpHeaderKeys </td>
-          <td>(</td>
-          <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_headers.html#ga8742ecca65bb05ccfb68ae6e23afa6b0">fiftyoneDegreesHeaders</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>uniqueHeaders</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-          </table>
-        </div>
-      </div>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="c-member__body">
-
-<p>Initialise the HTTP header keys which are used by this engine. </p>
-<p>These are the pieces of evidence which should be passed in if available. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">uniqueHeaders</td><td>to get the keys from </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ae093ec6c179c7827eb211e9f05ba7693" name="ae093ec6c179c7827eb211e9f05ba7693"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae093ec6c179c7827eb211e9f05ba7693">&#9670;&#160;</a></span>initOverrideKeys()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">void FiftyoneDegrees::Common::EngineBase::initOverrideKeys </td>
-          <td>(</td>
-          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_override_property_array.html">fiftyoneDegreesOverridePropertyArray</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>overrideProperties</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-          </table>
-        </div>
-      </div>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="c-member__body">
-
-<p>Initialise the override keys which are used by this engine. </p>
-<p>These are additional pieces of evidence which should be passed in if available. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">overrideProperties</td><td>to get the keys from </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -838,6 +730,44 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a new results instance with the values for all requested properties </dd></dl>
 
 <p>Implemented in <a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_engine_hash.html#a998a42bd70bb3dcd39ad1c5e838a281a">FiftyoneDegrees::DeviceDetection::Hash::EngineHash</a>.</p>
+
+</div>
+</div>
+<a id="a01d0c0f101e80988a35368870dd3ce05" name="a01d0c0f101e80988a35368870dd3ce05"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a01d0c0f101e80988a35368870dd3ce05">&#9670;&#160;</a></span>readKeys()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">vector&lt; string &gt; FiftyoneDegrees::Common::EngineBase::readKeys </td>
+          <td>(</td>
+          <td class="c-table__cell">const std::function&lt; size_t(char *, size_t, const char *)&gt; &amp;</td>          <td class="c-table__cell"><span class="paramname"><em>write</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Gets the evidence keys that a C function writes as one string with a separator between them. </p>
+<p>The function is called once to find the length needed and once to fill a buffer of that length. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">write</td><td>calls the C function with the buffer, its length and the separator, and returns the length the keys need </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the keys in the order they were written </dd></dl>
 
 </div>
 </div>
@@ -1031,6 +961,43 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 
 </div>
 </div>
+<a id="a87bf600ac70793a83afa3df66a694bf8" name="a87bf600ac70793a83afa3df66a694bf8"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a87bf600ac70793a83afa3df66a694bf8">&#9670;&#160;</a></span>setKeys()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void FiftyoneDegrees::Common::EngineBase::setKeys </td>
+          <td>(</td>
+          <td class="c-table__cell">vector&lt; string &gt; &amp;&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>newKeys</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Makes a list the engine's evidence keys unless it is the same as the current list. </p>
+<p>The list <a class="el" href="#a1e59e75e19511dcecfd26b9c5eb23a40" title="Get the list of keys which the engine accepts as evidence.">getKeys()</a> returned before is not changed. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newKeys</td><td>the evidence keys </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a3440364467ef3133e04f72fe57bb567a" name="a3440364467ef3133e04f72fe57bb567a"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3440364467ef3133e04f72fe57bb567a">&#9670;&#160;</a></span>setLicenseKey()</h2>
 
@@ -1061,6 +1028,35 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Field Documentation</h2>
+<a id="a6c01f3f905f7ee4a2290941b57576423" name="a6c01f3f905f7ee4a2290941b57576423"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6c01f3f905f7ee4a2290941b57576423">&#9670;&#160;</a></span>keyLists</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">vector&lt;std::unique_ptr&lt;const vector&lt;string&gt; &gt; &gt; FiftyoneDegrees::Common::EngineBase::keyLists</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel mutable">mutable</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Every list of evidence keys the engine has had, the last being current. </p>
+<p>A replaced list is kept until the engine is destroyed, so the pointer <a class="el" href="#a1e59e75e19511dcecfd26b9c5eb23a40" title="Get the list of keys which the engine accepts as evidence.">getKeys()</a> returned for it stays valid. </p>
+
+</div>
+</div>
 <a id="ab45bcdc93a8bfa716c0504100d7a7372" name="ab45bcdc93a8bfa716c0504100d7a7372"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab45bcdc93a8bfa716c0504100d7a7372">&#9670;&#160;</a></span>licenceKey</h2>
 

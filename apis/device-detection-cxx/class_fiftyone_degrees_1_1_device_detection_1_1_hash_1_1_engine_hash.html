@@ -107,13 +107,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fiftyone
 <div class="c-code__line"><span class="c-code__comment">// Delete the results and the engine</span></div>
 <div class="c-code__line"><span class="c-code__keyword">delete</span> results;</div>
 <div class="c-code__line"><span class="c-code__keyword">delete</span> engine;</div>
-<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_engine_base_html_a4f72773e876f66ff0365214ab3c30dbb"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a4f72773e876f66ff0365214ab3c30dbb">FiftyoneDegrees::Common::EngineBase::config</a></div><div class="ttdeci">ConfigBase * config</div><div class="ttdoc">Pointer to the configuration used to build the engine.</div><div class="ttdef"><b>Definition</b> EngineBase.hpp:262</div></div>
+<div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_engine_base_html_a4f72773e876f66ff0365214ab3c30dbb"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a4f72773e876f66ff0365214ab3c30dbb">FiftyoneDegrees::Common::EngineBase::config</a></div><div class="ttdeci">ConfigBase * config</div><div class="ttdoc">Pointer to the configuration used to build the engine.</div><div class="ttdef"><b>Definition</b> EngineBase.hpp:268</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_common_1_1_required_properties_config_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_common_1_1_required_properties_config.html">FiftyoneDegrees::Common::RequiredPropertiesConfig</a></div><div class="ttdoc">C++ class wrapper for the fiftyoneDegreesPropertiesRequired structure.</div><div class="ttdef"><b>Definition</b> RequiredPropertiesConfig.hpp:59</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_device_detection_1_1_evidence_device_detection_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_device_detection_1_1_evidence_device_detection.html">FiftyoneDegrees::DeviceDetection::EvidenceDeviceDetection</a></div><div class="ttdoc">Device detection specific evidence class containing evidence to be processed by a device detection en...</div><div class="ttdef"><b>Definition</b> EvidenceDeviceDetection.hpp:64</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_config_hash_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_config_hash.html">FiftyoneDegrees::DeviceDetection::Hash::ConfigHash</a></div><div class="ttdoc">C++ class wrapper for the fiftyoneDegreesConfigHash configuration structure.</div><div class="ttdef"><b>Definition</b> ConfigHash.hpp:72</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_engine_hash_html_ac964cf4158f1ed7f949bb056421b5bad"><div class="ttname"><a href="#ac964cf4158f1ed7f949bb056421b5bad">FiftyoneDegrees::DeviceDetection::Hash::EngineHash::EngineHash</a></div><div class="ttdeci">EngineHash(const char *fileName, ConfigHash *config, RequiredPropertiesConfig *properties)</div><div class="ttdoc">Construct a new instance of the engine class with the configuration and properties provided.</div></div>
 <div class="ttc" id="aclass_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_engine_hash_html_adf6dd1f88d1d90d84f2633739a6aa6db"><div class="ttname"><a href="#adf6dd1f88d1d90d84f2633739a6aa6db">FiftyoneDegrees::DeviceDetection::Hash::EngineHash::process</a></div><div class="ttdeci">ResultsHash * process(EvidenceDeviceDetection *evidence) const</div></div>
-<div class="ttc" id="aclass_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash.html">FiftyoneDegrees::DeviceDetection::Hash::ResultsHash</a></div><div class="ttdoc">Encapsulates the results of a Hash device detection engine&#39;s processing.</div><div class="ttdef"><b>Definition</b> ResultsHash.hpp:80</div></div>
+<div class="ttc" id="aclass_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash_html"><div class="ttname"><a href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_results_hash.html">FiftyoneDegrees::DeviceDetection::Hash::ResultsHash</a></div><div class="ttdoc">Encapsulates the results of a Hash device detection engine&#39;s processing.</div><div class="ttdef"><b>Definition</b> ResultsHash.hpp:81</div></div>
 <div class="ttc" id="anamespace_fiftyone_degrees_1_1_common_html"><div class="ttname"><a href="namespace_fiftyone_degrees_1_1_common.html">FiftyoneDegrees::Common</a></div><div class="ttdoc">Shared classes.</div><div class="ttdef"><b>Definition</b> Collection.hpp:31</div></div>
 <div class="ttc" id="anamespace_fiftyone_degrees_1_1_device_detection_1_1_hash_html"><div class="ttname"><a href="namespace_fiftyone_degrees_1_1_device_detection_1_1_hash.html">FiftyoneDegrees::DeviceDetection::Hash</a></div><div class="ttdoc">Hash Device Detection specific classes.</div><div class="ttdef"><b>Definition</b> ComponentMetaDataBuilderHash.hpp:35</div></div>
 <div class="ttc" id="anamespace_fiftyone_degrees_1_1_device_detection_html"><div class="ttname"><a href="namespace_fiftyone_degrees_1_1_device_detection.html">FiftyoneDegrees::DeviceDetection</a></div><div class="ttdoc">Device Detection specific classes.</div><div class="ttdef"><b>Definition</b> ComponentMetaDataBuilderHash.hpp:34</div></div>
@@ -206,20 +206,14 @@ virtual&#160;</td><td class="c-table__cell"><b>~EngineBase</b> ()</td></tr>
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-methods" class="g-docs__section-heading"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a26f2e72a5ff601440f5f362ca58e4ff6" id="r_a26f2e72a5ff601440f5f362ca58e4ff6"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a26f2e72a5ff601440f5f362ca58e4ff6">init</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet)</td></tr>
-<tr class="c-table__row memdesc:a26f2e72a5ff601440f5f362ca58e4ff6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initialise the engine with the data set provided.     <br /></td></tr>
-<tr class="c-table__row memitem:ad237fae1c3e69604c7c1e711976f4810" id="r_ad237fae1c3e69604c7c1e711976f4810"><td class="c-table__cell">virtual&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#ad237fae1c3e69604c7c1e711976f4810">init</a> (<a class="el" href="structfiftyone_degrees_data_set_device_detection.html">fiftyoneDegreesDataSetDeviceDetection</a> *dataSet)</td></tr>
-<tr class="c-table__row memdesc:ad237fae1c3e69604c7c1e711976f4810"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initialise the engine with the data set provided.  <br /></td></tr>
+<tr class="c-table__row memdesc:a26f2e72a5ff601440f5f362ca58e4ff6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initialise the evidence keys and the metadata from the data set provided.  <br /></td></tr>
 <tr class="c-table__row inherit_header pro_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Protected Member Functions inherited from <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html">FiftyoneDegrees::Common::EngineBase</a></h3></td></tr>
+<tr class="c-table__row memitem:a87bf600ac70793a83afa3df66a694bf8 pro_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base" id="r_a87bf600ac70793a83afa3df66a694bf8"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a87bf600ac70793a83afa3df66a694bf8">setKeys</a> (vector&lt; string &gt; &amp;&amp;newKeys) const</td></tr>
+<tr class="c-table__row memdesc:a87bf600ac70793a83afa3df66a694bf8 pro_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Makes a list the engine's evidence keys unless it is the same as the current list.  <br /></td></tr>
 <tr class="c-table__row memitem:a0f8e135ab10d3e8c663e720f10e348f5 pro_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base" id="r_a0f8e135ab10d3e8c663e720f10e348f5"><td class="c-table__cell">virtual&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a0f8e135ab10d3e8c663e720f10e348f5">appendValue</a> (stringstream &amp;stream, <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *strings, uint32_t offset, fiftyoneDegreesPropertyValueType storedValueType) const</td></tr>
 <tr class="c-table__row memdesc:a0f8e135ab10d3e8c663e720f10e348f5 pro_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets a string from a strings collection, and appends to a stream.  <br /></td></tr>
 <tr class="c-table__row memitem:a085a87a56fe8b9a931b74d0e55677a2f pro_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base" id="r_a085a87a56fe8b9a931b74d0e55677a2f"><td class="c-table__cell">virtual&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a085a87a56fe8b9a931b74d0e55677a2f">appendString</a> (stringstream &amp;stream, <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *strings, uint32_t offset) const</td></tr>
 <tr class="c-table__row memdesc:a085a87a56fe8b9a931b74d0e55677a2f pro_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets a string from a strings collection, and appends to a stream.  <br /></td></tr>
-<tr class="c-table__row memitem:a7053361b54f304f127719cf19a55d16d pro_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base" id="r_a7053361b54f304f127719cf19a55d16d"><td class="c-table__cell">virtual&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a7053361b54f304f127719cf19a55d16d">initHttpHeaderKeys</a> (<a class="el" href="group___fifty_one_degrees_headers.html#ga8742ecca65bb05ccfb68ae6e23afa6b0">fiftyoneDegreesHeaders</a> *uniqueHeaders)</td></tr>
-<tr class="c-table__row memdesc:a7053361b54f304f127719cf19a55d16d pro_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initialise the HTTP header keys which are used by this engine.  <br /></td></tr>
-<tr class="c-table__row memitem:ae093ec6c179c7827eb211e9f05ba7693 pro_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base" id="r_ae093ec6c179c7827eb211e9f05ba7693"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#ae093ec6c179c7827eb211e9f05ba7693">initOverrideKeys</a> (<a class="el" href="structfiftyone_degrees_override_property_array.html">fiftyoneDegreesOverridePropertyArray</a> *overrideProperties)</td></tr>
-<tr class="c-table__row memdesc:ae093ec6c179c7827eb211e9f05ba7693 pro_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initialise the override keys which are used by this engine.  <br /></td></tr>
-<tr class="c-table__row memitem:a648badcbbd119f937fce6b64bc28cf29 pro_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base" id="r_a648badcbbd119f937fce6b64bc28cf29"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a648badcbbd119f937fce6b64bc28cf29">addKey</a> (string key)</td></tr>
-<tr class="c-table__row memdesc:a648badcbbd119f937fce6b64bc28cf29 pro_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Adds a key to the list of keys which should be added as evidence.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-friends" class="g-docs__section-heading"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -232,6 +226,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="c-table__row memitem:a58b8afcf13b5b86aa0dc5b0f25fda754 pub_static_attribs_class_fiftyone_degrees_1_1_device_detection_1_1_engine_device_detection" id="r_a58b8afcf13b5b86aa0dc5b0f25fda754"><td class="c-table__cell">
 static&#160;string&#160;</td><td class="c-table__cell"><b>defaultElementDataKey</b></td></tr>
 <tr class="c-table__row memdesc:a58b8afcf13b5b86aa0dc5b0f25fda754 pub_static_attribs_class_fiftyone_degrees_1_1_device_detection_1_1_engine_device_detection"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The data key which will be used to store the results of processing. <br /></td></tr>
+<tr class="c-table__row inherit_header pro_static_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Static Protected Member Functions inherited from <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html">FiftyoneDegrees::Common::EngineBase</a></h3></td></tr>
+<tr class="c-table__row memitem:a01d0c0f101e80988a35368870dd3ce05 pro_static_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base" id="r_a01d0c0f101e80988a35368870dd3ce05"><td class="c-table__cell">static&#160;vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a01d0c0f101e80988a35368870dd3ce05">readKeys</a> (const std::function&lt; size_t(char *, size_t, const char *)&gt; &amp;write)</td></tr>
+<tr class="c-table__row memdesc:a01d0c0f101e80988a35368870dd3ce05 pro_static_methods_class_fiftyone_degrees_1_1_common_1_1_engine_base"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the evidence keys that a C function writes as one string with a separator between them.  <br /></td></tr>
 <tr class="c-table__row inherit_header pro_attribs_class_fiftyone_degrees_1_1_common_1_1_engine_base"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Protected Attributes inherited from <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html">FiftyoneDegrees::Common::EngineBase</a></h3></td></tr>
 <tr class="c-table__row memitem:a4f72773e876f66ff0365214ab3c30dbb pro_attribs_class_fiftyone_degrees_1_1_common_1_1_engine_base" id="r_a4f72773e876f66ff0365214ab3c30dbb"><td class="c-table__cell">
 <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_config_base.html">ConfigBase</a>&#160;*&#160;</td><td class="c-table__cell"><b>config</b></td></tr>
@@ -252,9 +249,11 @@ string&#160;</td><td class="c-table__cell"><b>updateUrl</b></td></tr>
 <tr class="c-table__row memitem:ac44016eb7dfd579cba041c9fc88632a7 pro_attribs_class_fiftyone_degrees_1_1_common_1_1_engine_base" id="r_ac44016eb7dfd579cba041c9fc88632a7"><td class="c-table__cell">
 string&#160;</td><td class="c-table__cell"><b>defaultDataKey</b></td></tr>
 <tr class="c-table__row memdesc:ac44016eb7dfd579cba041c9fc88632a7 pro_attribs_class_fiftyone_degrees_1_1_common_1_1_engine_base"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default key to use when adding the results to a dictionary. <br /></td></tr>
-<tr class="c-table__row memitem:a2da4e59e9d5ee54a0c060e1aee0ea702 pro_attribs_class_fiftyone_degrees_1_1_common_1_1_engine_base" id="r_a2da4e59e9d5ee54a0c060e1aee0ea702"><td class="c-table__cell">
-vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b></td></tr>
-<tr class="c-table__row memdesc:a2da4e59e9d5ee54a0c060e1aee0ea702 pro_attribs_class_fiftyone_degrees_1_1_common_1_1_engine_base"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Keys which should be added to evidence. <br /></td></tr>
+<tr class="c-table__row memitem:a6c01f3f905f7ee4a2290941b57576423 pro_attribs_class_fiftyone_degrees_1_1_common_1_1_engine_base" id="r_a6c01f3f905f7ee4a2290941b57576423"><td class="c-table__cell">vector&lt;&#160;std::unique_ptr&lt;&#160;const&#160;vector&lt;&#160;string&#160;&gt;&#160;&gt;&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a6c01f3f905f7ee4a2290941b57576423">keyLists</a></td></tr>
+<tr class="c-table__row memdesc:a6c01f3f905f7ee4a2290941b57576423 pro_attribs_class_fiftyone_degrees_1_1_common_1_1_engine_base"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Every list of evidence keys the engine has had, the last being current.  <br /></td></tr>
+<tr class="c-table__row memitem:a2f165c7871ad0a993d4786104114f1a0 pro_attribs_class_fiftyone_degrees_1_1_common_1_1_engine_base" id="r_a2f165c7871ad0a993d4786104114f1a0"><td class="c-table__cell">
+std::mutex&#160;</td><td class="c-table__cell"><b>keysMutex</b></td></tr>
+<tr class="c-table__row memdesc:a2f165c7871ad0a993d4786104114f1a0 pro_attribs_class_fiftyone_degrees_1_1_common_1_1_engine_base"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Guards keyLists. <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="ac964cf4158f1ed7f949bb056421b5bad" name="ac964cf4158f1ed7f949bb056421b5bad"></a>
@@ -595,7 +594,7 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 </div><div class="c-member__body">
 
 <p>Get the date at which the current data set was published. </p>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">data set published date </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">data set published date, or a year, month and day of zero when the data file holds no valid date </dd></dl>
 
 <p>Implements <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a521430d313a5b27bea4636055d825007">FiftyoneDegrees::Common::EngineBase</a>.</p>
 
@@ -663,53 +662,14 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 </div><div class="c-member__body">
 
 <p>Get the date at which a new data file will be available to download from the URL returned by <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a991361c390349351c92ee864efbeaa2d" title="Get the URL to be used when updating the data file, or an empty string if this is not set.">getDataUpdateUrl()</a>. </p>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">new data set available date </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">new data set available date, or a year, month and day of zero when the data file holds no valid date </dd></dl>
 
 <p>Implements <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_engine_base.html#a94fc9a7a5d5551150ff217cc77bd9b82">FiftyoneDegrees::Common::EngineBase</a>.</p>
 
 </div>
 </div>
-<a id="ad237fae1c3e69604c7c1e711976f4810" name="ad237fae1c3e69604c7c1e711976f4810"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad237fae1c3e69604c7c1e711976f4810">&#9670;&#160;</a></span>init() <span class="c-member__count">[1/2]</span></h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">virtual void <a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_engine_device_detection.html#ad237fae1c3e69604c7c1e711976f4810">FiftyoneDegrees::DeviceDetection::EngineDeviceDetection::init</a> </td>
-          <td>(</td>
-          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_device_detection.html">fiftyoneDegreesDataSetDeviceDetection</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-          </table>
-        </div>
-      </div>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="c-member__body">
-
-<p>Initialise the engine with the data set provided. </p>
-<p>This is the data set which carries out all the processing in the engine. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">dataSet</td><td>pointer to the data used by the engine </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented from <a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_engine_device_detection.html#ad237fae1c3e69604c7c1e711976f4810">FiftyoneDegrees::DeviceDetection::EngineDeviceDetection</a>.</p>
-
-</div>
-</div>
 <a id="a26f2e72a5ff601440f5f362ca58e4ff6" name="a26f2e72a5ff601440f5f362ca58e4ff6"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a26f2e72a5ff601440f5f362ca58e4ff6">&#9670;&#160;</a></span>init() <span class="c-member__count">[2/2]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a26f2e72a5ff601440f5f362ca58e4ff6">&#9670;&#160;</a></span>init()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -735,10 +695,10 @@ vector&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>keys</b>
 </table>
 </div><div class="c-member__body">
 
-<p>Initialise the engine with the data set provided.    </p>
-<p>This is the data set which carries out all the processing in the engine. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Initialise the evidence keys and the metadata from the data set provided. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dataSet</td><td>pointer to the data used by the engine    </td></tr>
+    <tr><td class="paramname">dataSet</td><td>pointer to the data used by the engine </td></tr>
   </table>
   </dd>
 </dl>

@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <p>A <a class="el" href="structfiftyone_degrees_collection_config.html" title="Collection configuration structure which defines how the collection should be created by the create m...">fiftyoneDegreesCollectionConfig</a> structure is used to configure the operation of the resulting Collection. This structure has the following fields.</p>
 <p><b>loaded</b> : the number of Items to load into memory from the start of the Collection’s data structure.</p>
 <p><b>capacity</b> : 0 if a cache should not be used, otherwise the capacity of cache.</p>
-<p><b>concurrency</b> : the expected number of concurrent operations, 1 or greater.</p>
+<p><b>concurrency</b> : the expected number of operations at the same time. A data set takes 0 as one for each processor.</p>
 <p>The file create method will work out the different types of Collection(s) needed and how to chain them based on the configuration provided.</p>
 <p>Additionally, a pointer to a method to read an <a class="el" href="group___fifty_one_degrees_synonyms.html#ga522ca5fb70c69eca75cde263aaf1030a" title="Synonym for fiftyoneDegreesCollectionItem type.">Item</a> into the Collection from the underlying data file is required. For fixed width Collections the fiftyoneDegreesCollectionReadFileFixed can be used where the <a class="el" href="group___fifty_one_degrees_synonyms.html#ga522ca5fb70c69eca75cde263aaf1030a" title="Synonym for fiftyoneDegreesCollectionItem type.">Item</a> key is the zero based index in the Collection. For variable byte width Collections the consumer will need to provide a method that implements <a class="el" href="#gaa62f57b3373e17c261d859c394d060f7" title="Reads the item from the underlying data file.">fiftyoneDegreesCollectionFileRead</a>.</p>
 <p>All creation methods return a pointer to an instance of <a class="el" href="structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections.">fiftyoneDegreesCollection</a>. Following creation only the methods exposed by this Collection should be used to retrieve and release Items.</p>
@@ -146,16 +146,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <div class="c-code__line">    <span class="c-code__comment">// Free the collection</span></div>
 <div class="c-code__line">    <a class="code hl_define" href="#ga71bee288cc35e09101c9349eebfa7219">FIFTYONE_DEGREES_COLLECTION_FREE</a>(collection);</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="agroup___fifty_one_degrees_collection_html_ga71bee288cc35e09101c9349eebfa7219"><div class="ttname"><a href="#ga71bee288cc35e09101c9349eebfa7219">FIFTYONE_DEGREES_COLLECTION_FREE</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_COLLECTION_FREE(c)</div><div class="ttdoc">Free a collection by checking if it is NULL first.</div><div class="ttdef"><b>Definition</b> collection.h:261</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_collection_html_gad015940a119a3bc156ee852e326d7a4e"><div class="ttname"><a href="#gad015940a119a3bc156ee852e326d7a4e">FIFTYONE_DEGREES_COLLECTION_RELEASE</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_COLLECTION_RELEASE(c, i)</div><div class="ttdoc">Collection release macro used to release a collection item.</div><div class="ttdef"><b>Definition</b> collection.h:272</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_collection_html_ga71bee288cc35e09101c9349eebfa7219"><div class="ttname"><a href="#ga71bee288cc35e09101c9349eebfa7219">FIFTYONE_DEGREES_COLLECTION_FREE</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_COLLECTION_FREE(c)</div><div class="ttdoc">Free a collection by checking if it is NULL first.</div><div class="ttdef"><b>Definition</b> collection.h:262</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_collection_html_gad015940a119a3bc156ee852e326d7a4e"><div class="ttname"><a href="#gad015940a119a3bc156ee852e326d7a4e">FIFTYONE_DEGREES_COLLECTION_RELEASE</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_COLLECTION_RELEASE(c, i)</div><div class="ttdoc">Collection release macro used to release a collection item.</div><div class="ttdef"><b>Definition</b> collection.h:273</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_exceptions_html_gae78f9f100e8f25f01c57fd36e7a6aa18"><div class="ttname"><a href="group___fifty_one_degrees_exceptions.html#gae78f9f100e8f25f01c57fd36e7a6aa18">FIFTYONE_DEGREES_EXCEPTION_CREATE</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_EXCEPTION_CREATE</div><div class="ttdoc">Macro used to create an exception.</div><div class="ttdef"><b>Definition</b> exceptions.h:200</div></div>
-<div class="ttc" id="astructfiftyone_degrees_collection_config_html"><div class="ttname"><a href="structfiftyone_degrees_collection_config.html">fiftyoneDegreesCollectionConfig</a></div><div class="ttdoc">Collection configuration structure which defines how the collection should be created by the create m...</div><div class="ttdef"><b>Definition</b> collection.h:295</div></div>
-<div class="ttc" id="astructfiftyone_degrees_collection_header_html"><div class="ttname"><a href="structfiftyone_degrees_collection_header.html">fiftyoneDegreesCollectionHeader</a></div><div class="ttdoc">Collection header structure which defines the size and location of the collection data.</div><div class="ttdef"><b>Definition</b> collection.h:282</div></div>
-<div class="ttc" id="astructfiftyone_degrees_collection_html"><div class="ttname"><a href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a></div><div class="ttdoc">All the shared methods and fields required by file, memory and cached collections.</div><div class="ttdef"><b>Definition</b> collection.h:408</div></div>
-<div class="ttc" id="astructfiftyone_degrees_collection_html_a0df0146feccd079d879c17da909a17fc"><div class="ttname"><a href="structfiftyone_degrees_collection.html#a0df0146feccd079d879c17da909a17fc">fiftyoneDegreesCollection::get</a></div><div class="ttdeci">fiftyoneDegreesCollectionGetMethod get</div><div class="ttdoc">Gets an entry into the item provided.</div><div class="ttdef"><b>Definition</b> collection.h:409</div></div>
-<div class="ttc" id="astructfiftyone_degrees_collection_item_html"><div class="ttname"><a href="structfiftyone_degrees_collection_item.html">fiftyoneDegreesCollectionItem</a></div><div class="ttdoc">Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish...</div><div class="ttdef"><b>Definition</b> collection.h:315</div></div>
-<div class="ttc" id="astructfiftyone_degrees_collection_item_html_a2a6c691d3e58694438f2b5575a2d7f08"><div class="ttname"><a href="structfiftyone_degrees_collection_item.html#a2a6c691d3e58694438f2b5575a2d7f08">fiftyoneDegreesCollectionItem::data</a></div><div class="ttdeci">fiftyoneDegreesData data</div><div class="ttdoc">Item data including allocated memory.</div><div class="ttdef"><b>Definition</b> collection.h:316</div></div>
-<div class="ttc" id="astructfiftyone_degrees_file_pool_html"><div class="ttname"><a href="structfiftyone_degrees_file_pool.html">fiftyoneDegreesFilePool</a></div><div class="ttdoc">Stack of handles used to read data from a single source file.</div><div class="ttdef"><b>Definition</b> file.h:233</div></div>
+<div class="ttc" id="astructfiftyone_degrees_collection_config_html"><div class="ttname"><a href="structfiftyone_degrees_collection_config.html">fiftyoneDegreesCollectionConfig</a></div><div class="ttdoc">Collection configuration structure which defines how the collection should be created by the create m...</div><div class="ttdef"><b>Definition</b> collection.h:296</div></div>
+<div class="ttc" id="astructfiftyone_degrees_collection_header_html"><div class="ttname"><a href="structfiftyone_degrees_collection_header.html">fiftyoneDegreesCollectionHeader</a></div><div class="ttdoc">Collection header structure which defines the size and location of the collection data.</div><div class="ttdef"><b>Definition</b> collection.h:283</div></div>
+<div class="ttc" id="astructfiftyone_degrees_collection_html"><div class="ttname"><a href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a></div><div class="ttdoc">All the shared methods and fields required by file, memory and cached collections.</div><div class="ttdef"><b>Definition</b> collection.h:410</div></div>
+<div class="ttc" id="astructfiftyone_degrees_collection_html_a0df0146feccd079d879c17da909a17fc"><div class="ttname"><a href="structfiftyone_degrees_collection.html#a0df0146feccd079d879c17da909a17fc">fiftyoneDegreesCollection::get</a></div><div class="ttdeci">fiftyoneDegreesCollectionGetMethod get</div><div class="ttdoc">Gets an entry into the item provided.</div><div class="ttdef"><b>Definition</b> collection.h:411</div></div>
+<div class="ttc" id="astructfiftyone_degrees_collection_item_html"><div class="ttname"><a href="structfiftyone_degrees_collection_item.html">fiftyoneDegreesCollectionItem</a></div><div class="ttdoc">Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish...</div><div class="ttdef"><b>Definition</b> collection.h:317</div></div>
+<div class="ttc" id="astructfiftyone_degrees_collection_item_html_a2a6c691d3e58694438f2b5575a2d7f08"><div class="ttname"><a href="structfiftyone_degrees_collection_item.html#a2a6c691d3e58694438f2b5575a2d7f08">fiftyoneDegreesCollectionItem::data</a></div><div class="ttdeci">fiftyoneDegreesData data</div><div class="ttdoc">Item data including allocated memory.</div><div class="ttdef"><b>Definition</b> collection.h:318</div></div>
+<div class="ttc" id="astructfiftyone_degrees_file_pool_html"><div class="ttname"><a href="structfiftyone_degrees_file_pool.html">fiftyoneDegreesFilePool</a></div><div class="ttdoc">Stack of handles used to read data from a single source file.</div><div class="ttdef"><b>Definition</b> file.h:239</div></div>
 </div><!-- fragment --><h2>Important Considerations</h2>
 <p>The <a class="el" href="group___fifty_one_degrees_synonyms.html#ga522ca5fb70c69eca75cde263aaf1030a" title="Synonym for fiftyoneDegreesCollectionItem type.">Item</a> passed to the Get method <b>MUST</b> have had <a class="el" href="group___fifty_one_degrees_data.html#gaa4e9094f98c7d526d430950174967048" title="Resets the data structure ready for a new operation.">fiftyoneDegreesDataReset</a> called on the data field before use to set the default field values. Without this reset the Collection will not know if it can reuse any memory already allocated from a previous Get operation that is no longer being referenced. For example, if a large string was loaded into an <a class="el" href="group___fifty_one_degrees_synonyms.html#ga522ca5fb70c69eca75cde263aaf1030a" title="Synonym for fiftyoneDegreesCollectionItem type.">Item</a>, and the <a class="el" href="group___fifty_one_degrees_synonyms.html#ga522ca5fb70c69eca75cde263aaf1030a" title="Synonym for fiftyoneDegreesCollectionItem type.">Item</a> is then reused for a shorter string, there is no need to reallocate memory. Therefore, the same memory is reused.</p>
 <p>The get and release methods of the collection are the only methods that should be used to retrieve items from a collection. An item retrieved with the get method <b>MUST</b> be released when finished with via a call to the collection’s release method.</p>
@@ -182,6 +182,12 @@ Structs</h2></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Type of collection where the collection is streamed from file.  <a href="structfiftyone_degrees_collection_file.html#details">More...</a><br /></td></tr>
 <tr class="c-table__row memitem:fiftyoneDegreesCollectionCache" id="r_fiftyoneDegreesCollectionCache"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_collection_cache.html">fiftyoneDegreesCollectionCache</a></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Type of collection where items are cached as they are used.  <a href="structfiftyone_degrees_collection_cache.html#details">More...</a><br /></td></tr>
+<tr class="c-table__row memitem:fiftyoneDegreesCollectionHeldRange" id="r_fiftyoneDegreesCollectionHeldRange"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_collection_held_range.html">fiftyoneDegreesCollectionHeldRange</a></td></tr>
+<tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A stretch of a collection to hold in memory, in the units of the collection's keys.  <a href="structfiftyone_degrees_collection_held_range.html#details">More...</a><br /></td></tr>
+<tr class="c-table__row memitem:fiftyoneDegreesCollectionHeldBucket" id="r_fiftyoneDegreesCollectionHeldBucket"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_collection_held_bucket.html">fiftyoneDegreesCollectionHeldBucket</a></td></tr>
+<tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The lowest and highest string offsets recorded in part of the strings, and a tag for the highest that tells the end method how it is stored.  <a href="structfiftyone_degrees_collection_held_bucket.html#details">More...</a><br /></td></tr>
+<tr class="c-table__row memitem:fiftyoneDegreesCollectionHeldStrings" id="r_fiftyoneDegreesCollectionHeldStrings"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_collection_held_strings.html">fiftyoneDegreesCollectionHeldStrings</a></td></tr>
+<tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The strings to hold, worked out from the offsets of the strings needed.  <a href="structfiftyone_degrees_collection_held_strings.html#details">More...</a><br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-define-members" class="g-docs__section-heading"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
@@ -189,6 +195,11 @@ Macros</h2></td></tr>
 <tr class="c-table__row memdesc:ga71bee288cc35e09101c9349eebfa7219"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Free a collection by checking if it is NULL first.  <br /></td></tr>
 <tr class="c-table__row memitem:gad015940a119a3bc156ee852e326d7a4e" id="r_gad015940a119a3bc156ee852e326d7a4e"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#gad015940a119a3bc156ee852e326d7a4e">FIFTYONE_DEGREES_COLLECTION_RELEASE</a>(c,  i)</td></tr>
 <tr class="c-table__row memdesc:gad015940a119a3bc156ee852e326d7a4e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Collection release macro used to release a collection item.  <br /></td></tr>
+<tr class="c-table__row memitem:gad7ae8e6d2bca880b059b3a0c6f092fe5" id="r_gad7ae8e6d2bca880b059b3a0c6f092fe5"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#gad7ae8e6d2bca880b059b3a0c6f092fe5">FIFTYONE_DEGREES_COLLECTION_HELD_STRINGS_GAP_BYTES</a>&#160;&#160;&#160;((uint32_t)65536)</td></tr>
+<tr class="c-table__row memdesc:gad7ae8e6d2bca880b059b3a0c6f092fe5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">HOLDING PART OF A COLLECTION IN MEMORY.  <br /></td></tr>
+<tr class="c-table__row memitem:gacfa4c33e23315d452db0d6e10cc162b0" id="r_gacfa4c33e23315d452db0d6e10cc162b0"><td class="c-table__cell"><a id="gacfa4c33e23315d452db0d6e10cc162b0" name="gacfa4c33e23315d452db0d6e10cc162b0"></a>
+#define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_COLLECTION_HELD_SCAN_BUFFER_BYTES</b>&#160;&#160;&#160;((uint32_t)65536)</td></tr>
+<tr class="c-table__row memdesc:gacfa4c33e23315d452db0d6e10cc162b0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Bytes read from the file at a time when scanning records. <br /></td></tr>
 <tr class="c-table__row memitem:ga22e7fa63b6c785e5d8e6b2889896d013" id="r_ga22e7fa63b6c785e5d8e6b2889896d013"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#ga22e7fa63b6c785e5d8e6b2889896d013">fiftyoneDegreesCollectionGetCount</a>(collection)</td></tr>
 <tr class="c-table__row memdesc:ga22e7fa63b6c785e5d8e6b2889896d013"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the actual number of items in the collection by iterating through to the base collection.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
@@ -206,6 +217,12 @@ Typedefs</h2></td></tr>
 <tr class="c-table__row memdesc:gabe1f2dacc3f648143ca68165289def72"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Frees all the memory and handles associated with the collection.  <br /></td></tr>
 <tr class="c-table__row memitem:ga21092fb5854da380c73dcea3c575fd8d" id="r_ga21092fb5854da380c73dcea3c575fd8d"><td class="c-table__cell">typedef&#160;bool(*&#160;</td><td class="c-table__cell"><a class="el" href="#ga21092fb5854da380c73dcea3c575fd8d">fiftyoneDegreesCollectionIterateMethod</a>) (void *state, uint32_t key, void *data)</td></tr>
 <tr class="c-table__row memdesc:ga21092fb5854da380c73dcea3c575fd8d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Method used to iterate over data held in a collection.  <br /></td></tr>
+<tr class="c-table__row memitem:ga9a3adf54ee70b2c888e58cc7ee0d22dd" id="r_ga9a3adf54ee70b2c888e58cc7ee0d22dd"><td class="c-table__cell">typedef&#160;<a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>(*&#160;</td><td class="c-table__cell"><a class="el" href="#ga9a3adf54ee70b2c888e58cc7ee0d22dd">fiftyoneDegreesCollectionHeldCreateMethod</a>) (void *state, const <a class="el" href="structfiftyone_degrees_collection_config.html">fiftyoneDegreesCollectionConfig</a> *config, <a class="el" href="structfiftyone_degrees_collection_header.html">fiftyoneDegreesCollectionHeader</a> header, <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> **collection)</td></tr>
+<tr class="c-table__row memdesc:ga9a3adf54ee70b2c888e58cc7ee0d22dd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Creates the collection that replaces the one provided when everything in it is to be held.  <br /></td></tr>
+<tr class="c-table__row memitem:gaba71d6e41b39c9ff758739f804df9dc3" id="r_gaba71d6e41b39c9ff758739f804df9dc3"><td class="c-table__cell">typedef&#160;uint32_t(*&#160;</td><td class="c-table__cell"><a class="el" href="#gaba71d6e41b39c9ff758739f804df9dc3">fiftyoneDegreesCollectionHeldStringEnd</a>) (void *state, uint32_t offset, uint32_t tag, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:gaba71d6e41b39c9ff758739f804df9dc3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the offset after the string at the offset provided.  <br /></td></tr>
+<tr class="c-table__row memitem:ga861de8664eeb588b9fbecec0504498ec" id="r_ga861de8664eeb588b9fbecec0504498ec"><td class="c-table__cell">typedef&#160;void(*&#160;</td><td class="c-table__cell"><a class="el" href="#ga861de8664eeb588b9fbecec0504498ec">fiftyoneDegreesCollectionHeldScanMethod</a>) (void *state, const <a class="el" href="group___fifty_one_degrees_data.html#ga0c8186d9b9b7880309c27230bbb5e69d">byte</a> *record)</td></tr>
+<tr class="c-table__row memdesc:ga861de8664eeb588b9fbecec0504498ec"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Called for each fixed size record of a stretch of the data file.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -229,6 +246,26 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:gac33086e992bce47bb6cf98dd2b57b780"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Reads the 4 bytes at the current reader position and configures the collection header.  <br /></td></tr>
 <tr class="c-table__row memitem:ga628daf39582c96d2e88377e00d175e35" id="r_ga628daf39582c96d2e88377e00d175e35"><td class="c-table__cell">long&#160;</td><td class="c-table__cell"><a class="el" href="#ga628daf39582c96d2e88377e00d175e35">fiftyoneDegreesCollectionBinarySearch</a> (const <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> *collection, <a class="el" href="structfiftyone_degrees_collection_item.html">fiftyoneDegreesCollectionItem</a> *item, <a class="el" href="unionfiftyone_degrees_collection_index_or_offset.html">fiftyoneDegreesCollectionIndexOrOffset</a> lowerKey, <a class="el" href="unionfiftyone_degrees_collection_index_or_offset.html">fiftyoneDegreesCollectionIndexOrOffset</a> upperKey, const <a class="el" href="structfiftyone_degrees_collection_key_type.html">fiftyoneDegreesCollectionKeyType</a> *keyType, void *state, <a class="el" href="#ga3b57063f899a7c18da61343f23ecf6e4">fiftyoneDegreesCollectionItemComparer</a> comparer, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:ga628daf39582c96d2e88377e00d175e35"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Where a collection is fixed width and contains an ordered list of items this method is used to perform a divide and conquer search.  <br /></td></tr>
+<tr class="c-table__row memitem:ga4bb3c7ec6c15f40136b12b1a20f78deb" id="r_ga4bb3c7ec6c15f40136b12b1a20f78deb"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ga4bb3c7ec6c15f40136b12b1a20f78deb">fiftyoneDegreesCollectionHeldRangeAdd</a> (<a class="el" href="structfiftyone_degrees_collection_held_range.html">fiftyoneDegreesCollectionHeldRange</a> *ranges, uint32_t *count, uint32_t first, uint32_t end)</td></tr>
+<tr class="c-table__row memdesc:ga4bb3c7ec6c15f40136b12b1a20f78deb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Adds a stretch to a list with room for it.  <br /></td></tr>
+<tr class="c-table__row memitem:ga6df9ee1de07dac24468957d797d80297" id="r_ga6df9ee1de07dac24468957d797d80297"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ga6df9ee1de07dac24468957d797d80297">fiftyoneDegreesCollectionHeldRangeAddWithin</a> (<a class="el" href="structfiftyone_degrees_collection_held_range.html">fiftyoneDegreesCollectionHeldRange</a> *ranges, uint32_t *count, uint32_t first, uint32_t length, uint32_t limit)</td></tr>
+<tr class="c-table__row memdesc:ga6df9ee1de07dac24468957d797d80297"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Adds a stretch cut to end at the limit of its collection.  <br /></td></tr>
+<tr class="c-table__row memitem:ga5030b230263d4862cd30b688311d67cf" id="r_ga5030b230263d4862cd30b688311d67cf"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga5030b230263d4862cd30b688311d67cf">fiftyoneDegreesCollectionHeldCreate</a> (<a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> **collection, FILE *file, uint64_t startPosition, uint32_t unitBytes, <a class="el" href="structfiftyone_degrees_collection_held_range.html">fiftyoneDegreesCollectionHeldRange</a> *ranges, uint32_t rangeCount)</td></tr>
+<tr class="c-table__row memdesc:ga5030b230263d4862cd30b688311d67cf"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Replaces the collection with one holding the stretches in memory, which reads everything else from the collection replaced.  <br /></td></tr>
+<tr class="c-table__row memitem:ga50f4f1623d139a0ba44ab47e2bc1297a" id="r_ga50f4f1623d139a0ba44ab47e2bc1297a"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga50f4f1623d139a0ba44ab47e2bc1297a">fiftyoneDegreesCollectionHeldApply</a> (<a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> **collection, FILE *file, <a class="el" href="structfiftyone_degrees_collection_header.html">fiftyoneDegreesCollectionHeader</a> header, <a class="el" href="group___fifty_one_degrees_data.html#ga0c8186d9b9b7880309c27230bbb5e69d">byte</a> shift, bool replaceable, <a class="el" href="structfiftyone_degrees_collection_held_range.html">fiftyoneDegreesCollectionHeldRange</a> *ranges, uint32_t rangeCount, <a class="el" href="#ga9a3adf54ee70b2c888e58cc7ee0d22dd">fiftyoneDegreesCollectionHeldCreateMethod</a> create, void *createState)</td></tr>
+<tr class="c-table__row memdesc:ga50f4f1623d139a0ba44ab47e2bc1297a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Holds the stretches of a collection that reads from the file.  <br /></td></tr>
+<tr class="c-table__row memitem:ga004b666a0e5bacb26502faff0a2949f7" id="r_ga004b666a0e5bacb26502faff0a2949f7"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga004b666a0e5bacb26502faff0a2949f7">fiftyoneDegreesCollectionHeldScan</a> (FILE *file, <a class="el" href="group___fifty_one_degrees_data.html#ga0c8186d9b9b7880309c27230bbb5e69d">byte</a> *buffer, uint64_t position, uint32_t count, uint32_t recordBytes, <a class="el" href="#ga861de8664eeb588b9fbecec0504498ec">fiftyoneDegreesCollectionHeldScanMethod</a> method, void *state)</td></tr>
+<tr class="c-table__row memdesc:ga004b666a0e5bacb26502faff0a2949f7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Calls the method for each fixed size record in a stretch of the data file.  <br /></td></tr>
+<tr class="c-table__row memitem:gaab4101d9f93f77664fa975b1083ad98c" id="r_gaab4101d9f93f77664fa975b1083ad98c"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#gaab4101d9f93f77664fa975b1083ad98c">fiftyoneDegreesCollectionHeldStringsInit</a> (<a class="el" href="structfiftyone_degrees_collection_held_strings.html">fiftyoneDegreesCollectionHeldStrings</a> *strings, uint32_t bytes)</td></tr>
+<tr class="c-table__row memdesc:gaab4101d9f93f77664fa975b1083ad98c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Prepares to record the offsets of the strings needed.  <br /></td></tr>
+<tr class="c-table__row memitem:ga663bd538c8d67fb3f399b9aba3c5c6c8" id="r_ga663bd538c8d67fb3f399b9aba3c5c6c8"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ga663bd538c8d67fb3f399b9aba3c5c6c8">fiftyoneDegreesCollectionHeldStringsAdd</a> (<a class="el" href="structfiftyone_degrees_collection_held_strings.html">fiftyoneDegreesCollectionHeldStrings</a> *strings, uint32_t offset, uint32_t tag)</td></tr>
+<tr class="c-table__row memdesc:ga663bd538c8d67fb3f399b9aba3c5c6c8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Records the offset of a string that is needed.  <br /></td></tr>
+<tr class="c-table__row memitem:ga4c9efc9f057c0e30373783edc4c0e9d3" id="r_ga4c9efc9f057c0e30373783edc4c0e9d3"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga4c9efc9f057c0e30373783edc4c0e9d3">fiftyoneDegreesCollectionHeldStringsPlan</a> (<a class="el" href="structfiftyone_degrees_collection_held_strings.html">fiftyoneDegreesCollectionHeldStrings</a> *strings, <a class="el" href="#gaba71d6e41b39c9ff758739f804df9dc3">fiftyoneDegreesCollectionHeldStringEnd</a> end, void *state, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:ga4c9efc9f057c0e30373783edc4c0e9d3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Works out the stretches of the strings to hold from the offsets recorded, which leaves on file any stretch long enough that holds no string needed.  <br /></td></tr>
+<tr class="c-table__row memitem:gae9ff1d504e17fa79ed425fdb6fe6163a" id="r_gae9ff1d504e17fa79ed425fdb6fe6163a"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#gae9ff1d504e17fa79ed425fdb6fe6163a">fiftyoneDegreesCollectionHeldStringsFreeOffsets</a> (<a class="el" href="structfiftyone_degrees_collection_held_strings.html">fiftyoneDegreesCollectionHeldStrings</a> *strings)</td></tr>
+<tr class="c-table__row memdesc:gae9ff1d504e17fa79ed425fdb6fe6163a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Frees the offsets recorded, which are not needed once the stretches are worked out.  <br /></td></tr>
+<tr class="c-table__row memitem:gaa540274e58fed26cabc7db2823c13482" id="r_gaa540274e58fed26cabc7db2823c13482"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#gaa540274e58fed26cabc7db2823c13482">fiftyoneDegreesCollectionHeldStringsFree</a> (<a class="el" href="structfiftyone_degrees_collection_held_strings.html">fiftyoneDegreesCollectionHeldStrings</a> *strings)</td></tr>
+<tr class="c-table__row memdesc:gaa540274e58fed26cabc7db2823c13482"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Frees everything held by the strings plan.  <br /></td></tr>
 </table>
 <a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="g-docs__section-heading">Macro Definition Documentation</h2>
 <a id="ga71bee288cc35e09101c9349eebfa7219" name="ga71bee288cc35e09101c9349eebfa7219"></a>
@@ -258,6 +295,27 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="gad7ae8e6d2bca880b059b3a0c6f092fe5" name="gad7ae8e6d2bca880b059b3a0c6f092fe5"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gad7ae8e6d2bca880b059b3a0c6f092fe5">&#9670;&#160;</a></span>FIFTYONE_DEGREES_COLLECTION_HELD_STRINGS_GAP_BYTES</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define FIFTYONE_DEGREES_COLLECTION_HELD_STRINGS_GAP_BYTES&#160;&#160;&#160;((uint32_t)65536)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>HOLDING PART OF A COLLECTION IN MEMORY. </p>
+<p>A held collection keeps stretches of another collection in memory and passes every other read to that collection, so a caller that knows which records it will read holds only those. Each stretch is made of whole records, in the units of the collection's keys, so an item that starts in a stretch ends in it. The fewest bytes between two held strings worth leaving on file, as more stretches cost time on every string read. </p>
 
 </div>
 </div>
@@ -412,6 +470,93 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the value in the data-&gt;ptr field, or NULL if not successful </dd></dl>
+
+</div>
+</div>
+<a id="ga9a3adf54ee70b2c888e58cc7ee0d22dd" name="ga9a3adf54ee70b2c888e58cc7ee0d22dd"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga9a3adf54ee70b2c888e58cc7ee0d22dd">&#9670;&#160;</a></span>fiftyoneDegreesCollectionHeldCreateMethod</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">typedef <a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>(* fiftyoneDegreesCollectionHeldCreateMethod) (void *state, const <a class="el" href="structfiftyone_degrees_collection_config.html">fiftyoneDegreesCollectionConfig</a> *config, <a class="el" href="structfiftyone_degrees_collection_header.html">fiftyoneDegreesCollectionHeader</a> header, <a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> **collection)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Creates the collection that replaces the one provided when everything in it is to be held. </p>
+<p>The method sets the collection, which is NULL when it could not be created, and returns the status of creating it. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>provided to the apply method </td></tr>
+    <tr><td class="paramname">config</td><td>to create the collection with </td></tr>
+    <tr><td class="paramname">header</td><td>of the collection </td></tr>
+    <tr><td class="paramname">collection</td><td>to set to the collection created </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status of creating the collection </dd></dl>
+
+</div>
+</div>
+<a id="ga861de8664eeb588b9fbecec0504498ec" name="ga861de8664eeb588b9fbecec0504498ec"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga861de8664eeb588b9fbecec0504498ec">&#9670;&#160;</a></span>fiftyoneDegreesCollectionHeldScanMethod</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">typedef void(* fiftyoneDegreesCollectionHeldScanMethod) (void *state, const <a class="el" href="group___fifty_one_degrees_data.html#ga0c8186d9b9b7880309c27230bbb5e69d">byte</a> *record)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Called for each fixed size record of a stretch of the data file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>provided to the scan method </td></tr>
+    <tr><td class="paramname">record</td><td>the bytes of the record </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaba71d6e41b39c9ff758739f804df9dc3" name="gaba71d6e41b39c9ff758739f804df9dc3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaba71d6e41b39c9ff758739f804df9dc3">&#9670;&#160;</a></span>fiftyoneDegreesCollectionHeldStringEnd</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">typedef uint32_t(* fiftyoneDegreesCollectionHeldStringEnd) (void *state, uint32_t offset, uint32_t tag, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the offset after the string at the offset provided. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>provided to the plan method </td></tr>
+    <tr><td class="paramname">offset</td><td>of the string </td></tr>
+    <tr><td class="paramname">tag</td><td>given with the offset when it was recorded </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the offset after the string, or the offset provided if it could not be read </dd></dl>
 
 </div>
 </div>
@@ -804,6 +949,485 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a header set with the details for the collection </dd></dl>
+
+</div>
+</div>
+<a id="ga50f4f1623d139a0ba44ab47e2bc1297a" name="ga50f4f1623d139a0ba44ab47e2bc1297a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga50f4f1623d139a0ba44ab47e2bc1297a">&#9670;&#160;</a></span>fiftyoneDegreesCollectionHeldApply()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a> fiftyoneDegreesCollectionHeldApply </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> **</td>          <td class="c-table__cell"><span class="paramname"><em>collection</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">FILE *</td>          <td class="c-table__cell"><span class="paramname"><em>file</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_collection_header.html">fiftyoneDegreesCollectionHeader</a></td>          <td class="c-table__cell"><span class="paramname"><em>header</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_data.html#ga0c8186d9b9b7880309c27230bbb5e69d">byte</a></td>          <td class="c-table__cell"><span class="paramname"><em>shift</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">bool</td>          <td class="c-table__cell"><span class="paramname"><em>replaceable</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_collection_held_range.html">fiftyoneDegreesCollectionHeldRange</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>ranges</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>rangeCount</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="#ga9a3adf54ee70b2c888e58cc7ee0d22dd">fiftyoneDegreesCollectionHeldCreateMethod</a></td>          <td class="c-table__cell"><span class="paramname"><em>create</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">void *</td>          <td class="c-table__cell"><span class="paramname"><em>createState</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Holds the stretches of a collection that reads from the file. </p>
+<p>A collection that is needed in full is replaced by one loaded into memory like any other if it can be replaced, and one with nothing needed stays on file. A collection cannot be replaced while items read from it are still to be released through it. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>the collection to hold stretches of </td></tr>
+    <tr><td class="paramname">file</td><td>open on the data file </td></tr>
+    <tr><td class="paramname">header</td><td>of the collection </td></tr>
+    <tr><td class="paramname">shift</td><td>number of bits a stored offset is shifted to give bytes, or zero </td></tr>
+    <tr><td class="paramname">replaceable</td><td>true if the collection can be replaced by one loaded into memory </td></tr>
+    <tr><td class="paramname">ranges</td><td>the stretches to hold </td></tr>
+    <tr><td class="paramname">rangeCount</td><td>number of stretches </td></tr>
+    <tr><td class="paramname">create</td><td>creates the collection loaded into memory, which is not used unless replaceable </td></tr>
+    <tr><td class="paramname">createState</td><td>provided to the create method </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status of holding the stretches </dd></dl>
+
+</div>
+</div>
+<a id="ga5030b230263d4862cd30b688311d67cf" name="ga5030b230263d4862cd30b688311d67cf"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga5030b230263d4862cd30b688311d67cf">&#9670;&#160;</a></span>fiftyoneDegreesCollectionHeldCreate()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a> fiftyoneDegreesCollectionHeldCreate </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_collection.html">fiftyoneDegreesCollection</a> **</td>          <td class="c-table__cell"><span class="paramname"><em>collection</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">FILE *</td>          <td class="c-table__cell"><span class="paramname"><em>file</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint64_t</td>          <td class="c-table__cell"><span class="paramname"><em>startPosition</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>unitBytes</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_collection_held_range.html">fiftyoneDegreesCollectionHeldRange</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>ranges</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>rangeCount</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Replaces the collection with one holding the stretches in memory, which reads everything else from the collection replaced. </p>
+<p>Anything allocated is freed with the collection if this fails. The stretches are put in order and joined where they meet. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>the collection to replace, which becomes the source of what is not held </td></tr>
+    <tr><td class="paramname">file</td><td>open on the data file </td></tr>
+    <tr><td class="paramname">startPosition</td><td>of the collection in the data file </td></tr>
+    <tr><td class="paramname">unitBytes</td><td>bytes in each unit of a key </td></tr>
+    <tr><td class="paramname">ranges</td><td>the stretches to hold </td></tr>
+    <tr><td class="paramname">rangeCount</td><td>number of stretches </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status of holding the stretches </dd></dl>
+
+</div>
+</div>
+<a id="ga4bb3c7ec6c15f40136b12b1a20f78deb" name="ga4bb3c7ec6c15f40136b12b1a20f78deb"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga4bb3c7ec6c15f40136b12b1a20f78deb">&#9670;&#160;</a></span>fiftyoneDegreesCollectionHeldRangeAdd()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyoneDegreesCollectionHeldRangeAdd </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_collection_held_range.html">fiftyoneDegreesCollectionHeldRange</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>ranges</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t *</td>          <td class="c-table__cell"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>first</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>end</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Adds a stretch to a list with room for it. </p>
+<p>Nothing is added when the end is not after the first. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ranges</td><td>the list </td></tr>
+    <tr><td class="paramname">count</td><td>number of stretches in the list, which is increased </td></tr>
+    <tr><td class="paramname">first</td><td>key of the first unit </td></tr>
+    <tr><td class="paramname">end</td><td>key after the last unit </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga6df9ee1de07dac24468957d797d80297" name="ga6df9ee1de07dac24468957d797d80297"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga6df9ee1de07dac24468957d797d80297">&#9670;&#160;</a></span>fiftyoneDegreesCollectionHeldRangeAddWithin()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyoneDegreesCollectionHeldRangeAddWithin </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_collection_held_range.html">fiftyoneDegreesCollectionHeldRange</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>ranges</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t *</td>          <td class="c-table__cell"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>first</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>length</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>limit</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Adds a stretch cut to end at the limit of its collection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ranges</td><td>the list </td></tr>
+    <tr><td class="paramname">count</td><td>number of stretches in the list, which is increased </td></tr>
+    <tr><td class="paramname">first</td><td>key of the first unit </td></tr>
+    <tr><td class="paramname">length</td><td>number of units </td></tr>
+    <tr><td class="paramname">limit</td><td>key after the last unit of the collection </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga004b666a0e5bacb26502faff0a2949f7" name="ga004b666a0e5bacb26502faff0a2949f7"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga004b666a0e5bacb26502faff0a2949f7">&#9670;&#160;</a></span>fiftyoneDegreesCollectionHeldScan()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a> fiftyoneDegreesCollectionHeldScan </td>
+          <td>(</td>
+          <td class="c-table__cell">FILE *</td>          <td class="c-table__cell"><span class="paramname"><em>file</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_data.html#ga0c8186d9b9b7880309c27230bbb5e69d">byte</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint64_t</td>          <td class="c-table__cell"><span class="paramname"><em>position</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>recordBytes</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="#ga861de8664eeb588b9fbecec0504498ec">fiftyoneDegreesCollectionHeldScanMethod</a></td>          <td class="c-table__cell"><span class="paramname"><em>method</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">void *</td>          <td class="c-table__cell"><span class="paramname"><em>state</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Calls the method for each fixed size record in a stretch of the data file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>open on the data file </td></tr>
+    <tr><td class="paramname">buffer</td><td>of at least the scan buffer size </td></tr>
+    <tr><td class="paramname">position</td><td>in the data file of the first record </td></tr>
+    <tr><td class="paramname">count</td><td>number of records </td></tr>
+    <tr><td class="paramname">recordBytes</td><td>size of each record </td></tr>
+    <tr><td class="paramname">method</td><td>called for each record </td></tr>
+    <tr><td class="paramname">state</td><td>provided to the method </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status of reading the records </dd></dl>
+
+</div>
+</div>
+<a id="ga663bd538c8d67fb3f399b9aba3c5c6c8" name="ga663bd538c8d67fb3f399b9aba3c5c6c8"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga663bd538c8d67fb3f399b9aba3c5c6c8">&#9670;&#160;</a></span>fiftyoneDegreesCollectionHeldStringsAdd()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyoneDegreesCollectionHeldStringsAdd </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_collection_held_strings.html">fiftyoneDegreesCollectionHeldStrings</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>strings</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>offset</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>tag</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Records the offset of a string that is needed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strings</td><td>to record in </td></tr>
+    <tr><td class="paramname">offset</td><td>of the string </td></tr>
+    <tr><td class="paramname">tag</td><td>that the end method is given with the highest offset in a part </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaa540274e58fed26cabc7db2823c13482" name="gaa540274e58fed26cabc7db2823c13482"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaa540274e58fed26cabc7db2823c13482">&#9670;&#160;</a></span>fiftyoneDegreesCollectionHeldStringsFree()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyoneDegreesCollectionHeldStringsFree </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_collection_held_strings.html">fiftyoneDegreesCollectionHeldStrings</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>strings</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Frees everything held by the strings plan. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strings</td><td>to free </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gae9ff1d504e17fa79ed425fdb6fe6163a" name="gae9ff1d504e17fa79ed425fdb6fe6163a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gae9ff1d504e17fa79ed425fdb6fe6163a">&#9670;&#160;</a></span>fiftyoneDegreesCollectionHeldStringsFreeOffsets()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyoneDegreesCollectionHeldStringsFreeOffsets </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_collection_held_strings.html">fiftyoneDegreesCollectionHeldStrings</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>strings</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Frees the offsets recorded, which are not needed once the stretches are worked out. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strings</td><td>to free the offsets of </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaab4101d9f93f77664fa975b1083ad98c" name="gaab4101d9f93f77664fa975b1083ad98c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaab4101d9f93f77664fa975b1083ad98c">&#9670;&#160;</a></span>fiftyoneDegreesCollectionHeldStringsInit()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a> fiftyoneDegreesCollectionHeldStringsInit </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_collection_held_strings.html">fiftyoneDegreesCollectionHeldStrings</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>strings</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>bytes</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Prepares to record the offsets of the strings needed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strings</td><td>to prepare, which is set to hold nothing if this fails </td></tr>
+    <tr><td class="paramname">bytes</td><td>in the strings collection </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status of allocating what is needed </dd></dl>
+
+</div>
+</div>
+<a id="ga4c9efc9f057c0e30373783edc4c0e9d3" name="ga4c9efc9f057c0e30373783edc4c0e9d3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga4c9efc9f057c0e30373783edc4c0e9d3">&#9670;&#160;</a></span>fiftyoneDegreesCollectionHeldStringsPlan()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a> fiftyoneDegreesCollectionHeldStringsPlan </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_collection_held_strings.html">fiftyoneDegreesCollectionHeldStrings</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>strings</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="#gaba71d6e41b39c9ff758739f804df9dc3">fiftyoneDegreesCollectionHeldStringEnd</a></td>          <td class="c-table__cell"><span class="paramname"><em>end</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">void *</td>          <td class="c-table__cell"><span class="paramname"><em>state</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Works out the stretches of the strings to hold from the offsets recorded, which leaves on file any stretch long enough that holds no string needed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strings</td><td>the offsets recorded, which are set to the stretches to hold </td></tr>
+    <tr><td class="paramname">end</td><td>gets the offset after a string </td></tr>
+    <tr><td class="paramname">state</td><td>provided to the end method </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the status of working out the stretches </dd></dl>
 
 </div>
 </div>

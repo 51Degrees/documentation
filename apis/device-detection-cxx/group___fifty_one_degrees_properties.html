@@ -160,6 +160,8 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ga6372b04abacdf9820ca7c4361a8d22b0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Maps the available index to the index in the source data structure.  <br /></td></tr>
 <tr class="c-table__row memitem:gab259fe23491d4a3ca8fa169600265c35" id="r_gab259fe23491d4a3ca8fa169600265c35"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#gab259fe23491d4a3ca8fa169600265c35">fiftyoneDegreesPropertiesIsSetHeaderAvailable</a> (<a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available)</td></tr>
 <tr class="c-table__row memdesc:gab259fe23491d4a3ca8fa169600265c35"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check if the 'SetHeader' properties are included in the available required properties.  <br /></td></tr>
+<tr class="c-table__row memitem:ga05b694f0bdb2a1f30ca5c1abce4e4ff0" id="r_ga05b694f0bdb2a1f30ca5c1abce4e4ff0"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ga05b694f0bdb2a1f30ca5c1abce4e4ff0">fiftyoneDegreesPropertiesRequiredNamesFewerThan</a> (const <a class="el" href="structfiftyone_degrees_properties_required.html">fiftyoneDegreesPropertiesRequired</a> *properties, uint32_t total)</td></tr>
+<tr class="c-table__row memdesc:ga05b694f0bdb2a1f30ca5c1abce4e4ff0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Checks whether the properties required name some properties, and fewer than the data file has.  <br /></td></tr>
 <tr class="c-table__row memitem:gaf2a54e5938cbd505767930a64aba6fea" id="r_gaf2a54e5938cbd505767930a64aba6fea"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#gaf2a54e5938cbd505767930a64aba6fea">fiftyoneDegreesPropertiesFree</a> (<a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available)</td></tr>
 <tr class="c-table__row memdesc:gaf2a54e5938cbd505767930a64aba6fea"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Frees the memory and resources used by the properties results previously created using the <a class="el" href="#gabe42c377344e23c4ea1a8c4762098c37" title="Creates a properties result instance for use with future property operations.">fiftyoneDegreesPropertiesCreate</a> method.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
@@ -606,6 +608,41 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">bool whether 'SetHeader' properties are included </dd></dl>
+
+</div>
+</div>
+<a id="ga05b694f0bdb2a1f30ca5c1abce4e4ff0" name="ga05b694f0bdb2a1f30ca5c1abce4e4ff0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga05b694f0bdb2a1f30ca5c1abce4e4ff0">&#9670;&#160;</a></span>fiftyoneDegreesPropertiesRequiredNamesFewerThan()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool fiftyoneDegreesPropertiesRequiredNamesFewerThan </td>
+          <td>(</td>
+          <td class="c-table__cell">const <a class="el" href="structfiftyone_degrees_properties_required.html">fiftyoneDegreesPropertiesRequired</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>properties</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>total</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Checks whether the properties required name some properties, and fewer than the data file has. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">properties</td><td>the caller's required properties, or NULL for all </td></tr>
+    <tr><td class="paramname">total</td><td>number of properties in the data file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if some but not all of the properties are required </dd></dl>
 
 </div>
 </div>
