@@ -2,11 +2,7 @@
 
 [51degrees.com/json](https://51degrees.com/json) returns what 51Degrees finds for the request that asks for it: the IP address with its location and network, and the device, operating system, and browser that sent the request. It needs no Resource Key and no account.
 
-```
-curl https://51degrees.com/json
-```
-
-Open the same address in a browser to see the answer for that browser.
+Open it in a browser to see the answer for that browser. Crawlers of any kind are refused, and scripts such as curl count as crawlers.
 
 # Paste the answer into a support request
 
@@ -64,24 +60,17 @@ The `device` part describes what sent the request, from its headers.
 |-----|---------------|
 | `hardwarevendor`, `hardwaremodel` | The company that makes or sells the device, and the model name or number it uses. |
 | `devicetype` | The type of device, such as Desktop, SmartPhone, or Tablet. |
-| `releaseage` | Months since the device was released. |
+| `releaseyear`, `releaseage` | The year the device was released, and the months since. |
 | `platformname`, `platformversion` | The operating system and its version. |
-| `platformreleaseage` | Months since that operating system version was released. |
+| `platformreleaseyear`, `platformreleaseage` | The year that operating system version was released, and the months since. |
 | `browsername`, `browserversion` | The browser and its version. |
-| `browserreleaseage` | Months since that browser version was released. |
-| `iscrawler` | `true` when the request comes from software that says it runs without a person, such as a search engine crawler or a monitoring tool. |
+| `browserreleaseyear`, `browserreleaseage` | The year that browser version was released, and the months since. |
 
-Unknown, or 0 for an age, means the request did not carry enough to tell. A desktop computer, for example, does not say who made it. If the 51Degrees cloud service gives no answer, that part is `null`.
+Unknown, or a release year of 0, means the request did not carry enough to tell, and the age beside a release year of 0 is 0 too. A desktop computer, for example, does not say who made it. An age of 0 with a release year means the release was this month. If the 51Degrees cloud service gives no answer, that part is `null`.
 
 The [Property Dictionary](https://51degrees.com/developers/property-dictionary) describes each property in full.
 
 # Call it from code
-
-From a script or a terminal, use curl. It sends no browser User-Agent, so the device part reports `"browsername": "Unknown Crawler"` and `"iscrawler": true`.
-
-```
-curl https://51degrees.com/json
-```
 
 From a web page on any website, use `fetch`. The answer carries `Access-Control-Allow-Origin: *`, so browsers allow the call from any site.
 
