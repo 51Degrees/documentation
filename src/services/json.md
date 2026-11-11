@@ -12,7 +12,7 @@ The answer is indented JSON, so it can be copied as it is into a ticket, an emai
 
 # What it returns
 
-This is the answer 51degrees.com/json gave a computer at 51Degrees on 11 November 2026, for Edge 157 on Windows 11, with the IP address replaced by one reserved for documentation, and the town, position, and network's registered name replaced by examples. The data can't yet date Edge 157, and a desktop computer doesn't say who made it, so both release years are 0.
+This is the answer 51degrees.com/json gave a computer at 51Degrees on 11 November 2026, for Edge 157 on Windows 11, with the IP address replaced by one reserved for documentation, the town and position replaced by a position in Reading, and the network's registered name replaced by an example. The data can't yet date Edge 157, and a desktop computer doesn't say who made it, so both release years are 0.
 
 ```
 {
@@ -70,7 +70,7 @@ The `device` part describes what sent the request, from its headers.
 | `browsername`, `browserversion` | The browser and its version. |
 | `browserreleaseyear`, `browserreleaseage` | The year that browser version was released, and the months since. |
 
-Unknown, or a release year of 0, means the request did not carry enough to tell, and the age beside a release year of 0 is 0 too. A desktop computer, for example, does not say who made it. An age of 0 with a release year means the release was this month. If the 51Degrees cloud service gives no answer, that part is `null`.
+Unknown, or a release year of 0, means the request did not carry enough to tell, and the age beside a release year of 0 is 0 too. A desktop computer, for example, does not say who made it. A release year is also 0 where the data has no release date for a version it did identify, such as Edge 157 in the sample above. An age of 0 with a release year means the release was this month. If the 51Degrees cloud service gives no answer, that part is `null`.
 
 The [Property Dictionary](https://51degrees.com/developers/property-dictionary) describes each property in full.
 
