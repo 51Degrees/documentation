@@ -1,6 +1,8 @@
 @page Services_Json Your connection and device as JSON
 
-[51degrees.com/json](https://51degrees.com/json) returns what 51Degrees finds for the request that asks for it: the IP address with its location and network, and the device, operating system, and browser that sent the request. It needs no Resource Key and no account.
+[51degrees.com/json](https://51degrees.com/json) is for support. A customer opens it in the browser that is giving them trouble and pastes the answer into their ticket, so support has the details without asking for each in turn.
+
+It returns what 51Degrees finds for the request that asks for it: the IP address with its location and network, and the device, operating system, and browser that sent the request. It needs no Resource Key and no account.
 
 Open it in a browser to see the answer for that browser. Crawlers of any kind are refused, and scripts such as curl count as crawlers.
 
