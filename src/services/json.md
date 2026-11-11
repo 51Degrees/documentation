@@ -12,7 +12,7 @@ The answer is indented JSON, so it can be copied as it is into a ticket, an emai
 
 # What it returns
 
-This is an answer from a computer at 51Degrees on 11 November 2026, for Edge 157 on Windows 11, with the IP address replaced by one reserved for documentation. Answers now also give `releaseyear`, `platformreleaseyear`, and `browserreleaseyear` beside the release ages, as the table below describes.
+This is an answer from a computer at 51Degrees on 11 November 2026, for Edge 157 on Windows 11, with the IP address replaced by one reserved for documentation and the network's registered name by an example. Answers now also give `releaseyear`, `platformreleaseyear`, and `browserreleaseyear` beside the release ages, as the table below describes.
 
 ```
 {
@@ -25,7 +25,7 @@ This is an answer from a computer at 51Degrees on 11 November 2026, for Edge 157
     "latitude": 51.418,
     "longitude": -0.236,
     "locationconfidence": "High",
-    "registeredname": "UK-REDCENTRIC-20050331",
+    "registeredname": "EXAMPLE-NETWORK",
     "connectiontype": "Broadband"
   },
   "device": {
