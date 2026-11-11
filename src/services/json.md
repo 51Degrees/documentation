@@ -12,18 +12,18 @@ The answer is indented JSON, so it can be copied as it is into a ticket, an emai
 
 # What it returns
 
-This is an answer from a computer at 51Degrees on 11 November 2026, for Edge 157 on Windows 11, with the IP address replaced by one reserved for documentation and the network's registered name by an example. Answers now also give `releaseyear`, `platformreleaseyear`, and `browserreleaseyear` beside the release ages, as the table below describes.
+This is an answer from a computer at 51Degrees on 11 November 2026, for Edge 157 on Windows 11, with the IP address replaced by one reserved for documentation, and the town, position, and network's registered name replaced by examples. Answers now also give `releaseyear`, `platformreleaseyear`, and `browserreleaseyear` beside the release ages, as the table below describes.
 
 ```
 {
   "ip": {
     "ip": "192.0.2.10",
-    "town": "Greater London",
+    "town": "Reading",
     "region": "England",
     "country": "United Kingdom",
     "countrygeonameid": "2635167",
-    "latitude": 51.418,
-    "longitude": -0.236,
+    "latitude": 51.454,
+    "longitude": -0.978,
     "locationconfidence": "High",
     "registeredname": "EXAMPLE-NETWORK",
     "connectiontype": "Broadband"
@@ -73,12 +73,19 @@ The [Property Dictionary](https://51degrees.com/developers/property-dictionary) 
 
 # Call it from code
 
-From a web page on any website, use `fetch`. The answer carries `Access-Control-Allow-Origin: *`, so browsers allow the call from any site.
+From a web page on any website, use `fetch`. The answer carries `Access-Control-Allow-Origin: *`, so browsers allow the call from any site. A request that is throttled, or that comes from a crawler, is redirected to a page that doesn't allow calls from other sites, so the call fails rather than returning an answer. Catch that, and check the response before reading it.
 
 ```
-const response = await fetch('https://51degrees.com/json');
-const you = await response.json();
-console.log(you.device.browsername, you.device.browserversion, you.ip.country);
+try {
+  const response = await fetch('https://51degrees.com/json');
+  if (!response.ok || response.redirected) {
+    throw new Error('51degrees.com/json gave no answer');
+  }
+  const you = await response.json();
+  console.log(you.device.browsername, you.device.browserversion, you.ip.country);
+} catch (error) {
+  console.log('No answer from 51degrees.com/json', error);
+}
 ```
 
 The answer is always fresh, because it is sent with `Cache-Control: no-store`.
