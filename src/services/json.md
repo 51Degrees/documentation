@@ -12,20 +12,20 @@ The answer is indented JSON, so it can be copied as it is into a ticket, an emai
 
 # What it returns
 
-This is the answer for Chrome 157 on Windows 11. The IP address, its location, and its network name are replaced with example values, using an address reserved for documentation.
+This is an answer from a computer at 51Degrees on 11 November 2026, for Edge 157 on Windows 11, with the IP address replaced by one reserved for documentation. Answers now also give `releaseyear`, `platformreleaseyear`, and `browserreleaseyear` beside the release ages, as the table below describes.
 
 ```
 {
   "ip": {
     "ip": "192.0.2.10",
-    "town": "Manchester",
+    "town": "Greater London",
     "region": "England",
     "country": "United Kingdom",
     "countrygeonameid": "2635167",
-    "latitude": 53.4794,
-    "longitude": -2.2453,
+    "latitude": 51.418,
+    "longitude": -0.236,
     "locationconfidence": "High",
-    "registeredname": "TEST-NET-1",
+    "registeredname": "UK-REDCENTRIC-20050331",
     "connectiontype": "Broadband"
   },
   "device": {
@@ -36,10 +36,9 @@ This is the answer for Chrome 157 on Windows 11. The IP address, its location, a
     "platformname": "Windows",
     "platformversion": "11.0",
     "platformreleaseage": 65,
-    "browsername": "Chrome",
+    "browsername": "Edge (Chromium) for Windows",
     "browserversion": "157",
-    "browserreleaseage": 1,
-    "iscrawler": false
+    "browserreleaseage": 0
   }
 }
 ```
@@ -88,7 +87,7 @@ The answer is always fresh, because it is sent with `Cache-Control: no-store`.
 
 51degrees.com/json is throttled to prevent abuse, and the throttling can change. A request that is turned away does not get the JSON answer, so code that calls it should check the response before using it.
 
-For more requests, other IP addresses or User-Agents, or more properties, @ref Services_Configurator "create a Resource Key" and call the @ref Services_Cloud_Overview "cloud service" yourself. Moving from IPinfo? @ref IpIntelligence_Migration_IpInfo "From IPInfo" maps its fields to 51Degrees properties.
+For more requests, other IP addresses or User-Agents, or more properties, @ref Services_Configurator "create a Resource Key" and call the @ref Services_Cloud_Overview "cloud service" yourself.
 
 # What is sent to the cloud
 
