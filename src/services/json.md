@@ -93,12 +93,12 @@ console.log(you.device.browsername, you.device.browserversion, you.ip.country);
 
 The answer is always fresh, because it is sent with `Cache-Control: no-store`.
 
-# Limits
+# Throttling
 
-A caller whose @ref HumanConfidence_Index "Human Confidence" is High or Medium can make ten requests in any 20 minutes. Any other caller can make one, and that includes curl. A request over the limit is redirected (HTTP 302) to https://51degrees.com/contact-us.
+51degrees.com/json is throttled to prevent abuse, and the throttling can change. A request that is turned away does not get the JSON answer, so code that calls it should check the response before using it.
 
 For more requests, other IP addresses or User-Agents, or more properties, @ref Services_Configurator "create a Resource Key" and call the @ref Services_Cloud_Overview "cloud service" yourself. Moving from IPinfo? @ref IpIntelligence_Migration_IpInfo "From IPInfo" maps its fields to 51Degrees properties.
 
 # What is sent to the cloud
 
-To answer, 51degrees.com sends the IP address and headers of the request to the 51Degrees cloud service, leaving out cookies and authorization headers. It also counts the requests from each caller to apply the limits above.
+To answer, 51degrees.com sends the IP address and headers of the request to the 51Degrees cloud service, leaving out cookies and authorization headers. It also counts the requests from each caller, to throttle the page.
