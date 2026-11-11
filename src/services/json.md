@@ -4,7 +4,7 @@
 
 It returns what 51Degrees finds for the request that asks for it: the IP address with its location and network, and the device, operating system, and browser that sent the request. It needs no Resource Key and no account.
 
-Open it in a browser to see the answer for that browser. Crawlers of any kind are refused, and scripts such as curl count as crawlers.
+It only works in a real web browser. Open it in a browser to see the answer for that browser. Curl and other command-line tools are treated as crawlers, and crawlers of any kind are sent to [the AI notice](https://51degrees.com/ai-notice), which explains how to license the data, rather than given an answer.
 
 # Paste the answer into a support request
 
@@ -85,7 +85,7 @@ The answer is always fresh, because it is sent with `Cache-Control: no-store`.
 
 # Throttling
 
-51degrees.com/json is throttled to prevent abuse, and the throttling can change. A request that is turned away does not get the JSON answer, so code that calls it should check the response before using it.
+51degrees.com/json is throttled to prevent abuse, and the throttling can change. A request that is turned away, or that comes from a crawler, is redirected and does not get the JSON answer, so code that calls it should check the response before using it.
 
 For more requests, other IP addresses or User-Agents, or more properties, @ref Services_Configurator "create a Resource Key" and call the @ref Services_Cloud_Overview "cloud service" yourself.
 
