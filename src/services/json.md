@@ -12,7 +12,7 @@ The answer is indented JSON, so it can be copied as it is into a ticket, an emai
 
 # What it returns
 
-This is an answer from a computer at 51Degrees on 11 November 2026, for Edge 157 on Windows 11, with the IP address replaced by one reserved for documentation, and the town, position, and network's registered name replaced by examples. Answers now also give `releaseyear`, `platformreleaseyear`, and `browserreleaseyear` beside the release ages, as the table below describes.
+This is the answer 51degrees.com/json gave on 11 November 2026 for the Edge 157 browser string on Windows, sent without Client Hints, with the IP address replaced by one reserved for documentation, and the town, position, and network's registered name replaced by examples. Without Client Hints the browser string can't tell Windows 10 from Windows 11, and the data can't yet date Edge 157, so its release year is 0.
 
 ```
 {
@@ -32,12 +32,15 @@ This is an answer from a computer at 51Degrees on 11 November 2026, for Edge 157
     "hardwarevendor": "Unknown",
     "hardwaremodel": "Unknown",
     "devicetype": "Desktop",
+    "releaseyear": 0,
     "releaseage": 0,
     "platformname": "Windows",
-    "platformversion": "11.0",
-    "platformreleaseage": 65,
+    "platformversion": "10.0",
+    "platformreleaseyear": 2015,
+    "platformreleaseage": 136,
     "browsername": "Edge (Chromium) for Windows",
     "browserversion": "157",
+    "browserreleaseyear": 0,
     "browserreleaseage": 0
   }
 }
