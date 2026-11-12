@@ -22,7 +22,7 @@ What your tool calls a custom dimension varies. Matomo calls it a custom dimensi
 
 # Get the values into the page
 
-1. [Create a Resource Key from this link](https://configure.51degrees.com/AQRVdgJ-Hdo_5wU130g). It opens with the properties in the table, and the ones Human Confidence needs, already ticked. Add the License Key from your plan.
+1. [Create a Resource Key from this link](https://51degrees.com/configure/AQRVdgJ-Hdo_5wU130g). It opens with the properties in the table, and the ones Human Confidence needs, already ticked. Add the License Key from your plan.
 2. The key sits in your page where anyone can read it, so limit it to your own domains. Otherwise someone else could use it and spend your requests.
 3. Add the 51Degrees script after your analytics tag and pick up the values when it finishes.
 

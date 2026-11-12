@@ -16,7 +16,7 @@ If you'd rather see how much of your traffic is people before you change what an
 
 # Step 1. Create a Resource Key
 
-[Create a Resource Key from this link](https://configure.51degrees.com/AQRVdgJ-fPDE5gU130g). It opens with the properties Human Confidence needs already ticked. Add the License Key from your plan. A free License Key won't work, because Human Confidence starts at Pro.
+[Create a Resource Key from this link](https://51degrees.com/configure/AQRVdgJ-fPDE5gU130g). It opens with the properties Human Confidence needs already ticked. Add the License Key from your plan. A free License Key won't work, because Human Confidence starts at Pro.
 
 Don't add other properties to this key. Some properties carry a script of their own that the holding page has to run, and each of those slows it down.
 

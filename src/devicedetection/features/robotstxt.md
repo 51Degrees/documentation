@@ -117,7 +117,7 @@ The response is a standard 51Degrees Cloud JSON document, with the generated tex
 
 The Resource Key must include `robotstxt.plaintext`, `robotstxt.annotatedtext`, or both. If you use only a License Key, request the properties in the `values` parameter instead. Use `plaintext` in production and `annotatedtext` for internal review of the generated rules.
 
-Create a Resource Key that includes `robotstxt.plaintext` and `robotstxt.annotatedtext` at [configure.51degrees.com](https://configure.51degrees.com). Leave its domain list empty when your server makes the request, because a key limited to domains refuses requests that come from anywhere else.
+Create a Resource Key that includes `robotstxt.plaintext` and `robotstxt.annotatedtext` at [51degrees.com/configure](https://51degrees.com/configure). Leave its domain list empty when your server makes the request, because a key limited to domains refuses requests that come from anywhere else.
 
 # On-premise engine configuration
 

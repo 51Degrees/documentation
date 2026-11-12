@@ -1,6 +1,6 @@
 @page Services_Configurator Creating a Resource Key
 
-Access to the cloud service is controlled by a Resource Key, which you create for free at [configure.51degrees.com](https://configure.51degrees.com/). Paid properties and higher request limits come from a License Key, which comes with a subscription and is attached to the Resource Key when you create it, so the License Key itself never goes on a page. The difference between the two keys is set out on @ref Services_Cloud_ResourceKeys.
+Access to the cloud service is controlled by a Resource Key, which you create for free at [51degrees.com/configure](https://51degrees.com/configure/). Paid properties and higher request limits come from a License Key, which comes with a subscription and is attached to the Resource Key when you create it, so the License Key itself never goes on a page. The difference between the two keys is set out on @ref Services_Cloud_ResourceKeys.
 
 Choose the properties when you create a Resource Key. Its property list cannot be changed later. Create a new key if you need a different list.
 
@@ -13,7 +13,7 @@ For a comprehensive list of all available properties and their descriptions, see
 
 ## Step 1: Choose properties
 
-Open [configure.51degrees.com](https://configure.51degrees.com/). It shows the complete list of properties, broken down by category and by vendor. Choose whichever properties you need for the query you are planning.
+Open [51degrees.com/configure](https://51degrees.com/configure/). It shows the complete list of properties, broken down by category and by vendor. Choose whichever properties you need for the query you are planning.
 
 For example, if you intend to look up latitude and longitude data to get a country, using 51Degrees as the vendor, you can find the **Country** property by choosing **Location** on the left, then **location** again, then ticking **Country** with the 51D logo. Clicking on that **Country** key shows a description: "Country By 51Degrees: The name of the country that the supplied location is in." Descriptions are there to help you understand what each property means and whether you want to include it in your queries.
 
@@ -31,12 +31,12 @@ The Implement screen shows code examples with your new Resource Key already inse
 
 ![](images/configurator-implement-key.png)
 
-Follow these three steps at [configure.51degrees.com](https://configure.51degrees.com/) and take the Resource Key from the Resource Key section in Step 3.
+Follow these three steps at [51degrees.com/configure](https://51degrees.com/configure/) and take the Resource Key from the Resource Key section in Step 3.
 
 Make a note of that Resource Key and then continue following the @introduction.
 
 # Displaying details for an existing Resource Key
 
-If you have a Resource Key and need to establish which properties it has access to, you can construct a URL https://configure.51degrees.com/YOUR_RESOURCE_KEY. This will show Step 1 with the properties for this specific key already selected.
+If you have a Resource Key and need to establish which properties it has access to, you can construct a URL https://51degrees.com/configure/YOUR_RESOURCE_KEY. This will show Step 1 with the properties for this specific key already selected.
 
 Continuing to Steps 2 or 3 creates a new Resource Key. It does not edit the existing key, because Resource Keys cannot be changed.

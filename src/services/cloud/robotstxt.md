@@ -9,7 +9,7 @@ curl -s "https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.json?robotstxt.sea
 
 # Create a free Resource Key
 
-Create a Resource Key at [configure.51degrees.com](https://configure.51degrees.com) with the property `robotstxt.plaintext`. Add `robotstxt.annotatedtext` as well if you want a copy that explains each block. Both are on the free plan.
+Create a Resource Key at [51degrees.com/configure](https://51degrees.com/configure) with the property `robotstxt.plaintext`. Add `robotstxt.annotatedtext` as well if you want a copy that explains each block. Both are on the free plan.
 
 Leave the key's domain list empty. Your server or build job makes the request, not a browser, and a key limited to domains refuses requests that do not come from one of them.
 
