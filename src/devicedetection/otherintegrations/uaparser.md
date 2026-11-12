@@ -29,11 +29,11 @@ The packages are available via:
 ### Create a Resource Key
 
 Before integrating 51Degrees UAParser, you need to register and configure a 51Degrees Resource Key using the 
-[configure.51degrees.com](https://configure.51degrees.com/), where you choose the device 
+[51degrees.com/configure](https://51degrees.com/configure/), where you choose the device 
 properties you would like to get as a result of the call to UAParser. Follow the @configuratorexplanation for 
 more detail on how to create a Resource Key. 
 
-We recommend following this URL [https://configure.51degrees.com/S6fGMDKw](https://configure.51degrees.com/S6fGMDKw) 
+We recommend following this URL [https://51degrees.com/configure/S6fGMDKw](https://51degrees.com/configure/S6fGMDKw) 
 to create a Resource Key, as it contains the minimum recommended properties that you will need for the UAParser to work.
 
 The minimum recommended properties to include in your Resource Key are:

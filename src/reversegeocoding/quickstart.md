@@ -301,7 +301,7 @@ Having issues? Here are common problems and fixes:
 
 **"Resource Key not found" error:** Your Resource Key is invalid. Create a new one with the properties you need.
 
-**Properties missing from results:** Your Resource Key might not have access to location properties. Check what your key can access at https://configure.51degrees.com/YOUR_RESOURCE_KEY or create a new key with the right permissions.
+**Properties missing from results:** Your Resource Key might not have access to location properties. Check what your key can access at https://51degrees.com/configure/YOUR_RESOURCE_KEY or create a new key with the right permissions.
 
 ## Wrong evidence keys
 

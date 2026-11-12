@@ -40,7 +40,7 @@ Human Confidence comes from the 51Degrees cloud service. It isn't in the on-prem
 
 ## Quick start
 
-1. [Create a Resource Key from this link](https://configure.51degrees.com/AQRVdgJ-fPDE5gU130g). It opens with the properties Human Confidence needs already ticked. Add the License Key from your plan and create the key.
+1. [Create a Resource Key from this link](https://51degrees.com/configure/AQRVdgJ-fPDE5gU130g). It opens with the properties Human Confidence needs already ticked. Add the License Key from your plan and create the key.
 2. Open `https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.json` in a browser to check the key. You should see this. Unknown is expected until the script has run in a page.
    ```json
    "derived": {
