@@ -76,11 +76,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('md__r_e_a_d_m_
 <p>The examples resolve the location of the data file in the following order:</p>
 <ol type="1">
 <li>A path supplied as a command line argument to the example.</li>
-<li>The <code>51DEGREES_IPI_PATH</code> environment variable containing an explicit path to the data file.</li>
+<li>The <code>_51DEGREES_IPI_PATH</code> environment variable containing an explicit path to the data file. The name starts with an underscore because a POSIX shell cannot set a name that starts with a digit, so <code>export _51DEGREES_IPI_PATH=/path/to/file.ipi</code> works.</li>
 <li>A search of the parent folder structure for the example's default file in the <code>data/ip-intelligence</code> folder, where the scripts save the free data files. Most examples default to the free Lite data file. The performance and reload examples default to the far smaller free ASN data file, as any data file will do for them. When the file is missing there, the example runs the data repository's script to download it.</li>
 </ol>
 <p>On a free data file, the examples show the properties only the Enterprise data file has as needing it, with a link to ask for a copy. The country overlap example needs properties only the Enterprise data file has, so on a free data file it says which, gives the link and stops.</p>
-<p>Note that on Linux shells the <code>51DEGREES_IPI_PATH</code> variable name starts with a digit, so it must be set with the <code>env</code> command, for example <code>env 51DEGREES_IPI_PATH=/path/to/file.ipi ./GettingStarted</code>, rather than a plain <code>export</code>.</p>
 <h1>Building and testing</h1>
 <p>Cloning, building with CMake or Visual Studio, and running the tests are the same for every product in this repository, and are described in the repository README.</p>
 <h1>Memory and the required properties</h1>

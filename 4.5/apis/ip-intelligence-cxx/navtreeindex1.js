@@ -1,6 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html#ae76f7a44aa6bdd30513a451a86e08371":[3,0,0,22,4],
 "class_fiftyone_degrees_1_1_common_1_1_value_meta_data_key.html":[3,0,0,23],
 "class_fiftyone_degrees_1_1_common_1_1_value_meta_data_key.html#a3563841b0e44e56c45c48bc951aad9fe":[3,0,0,23,6],
 "class_fiftyone_degrees_1_1_common_1_1_value_meta_data_key.html#a5a1d05a1a464857e5a026b72f556cdff":[3,0,0,23,4],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "class_fiftyone_degrees_1_1_ip_intelligence_1_1_profile_meta_data.html#a47a47df8a954b62668384e3431b637b3":[3,0,2,16,3],
 "class_fiftyone_degrees_1_1_ip_intelligence_1_1_profile_meta_data.html#a4be63c9fd915b857dd8d3bd6e0eb3962":[3,0,2,16,4],
 "class_fiftyone_degrees_1_1_ip_intelligence_1_1_profile_meta_data.html#a5e6ceff5c040d2473e36af0b8b4ebca8":[3,0,2,16,1],
-"class_fiftyone_degrees_1_1_ip_intelligence_1_1_profile_meta_data.html#a7f023c68ee107e8df45d01b898be41e6":[3,0,2,16,2]
+"class_fiftyone_degrees_1_1_ip_intelligence_1_1_profile_meta_data.html#a7f023c68ee107e8df45d01b898be41e6":[3,0,2,16,2],
+"class_fiftyone_degrees_1_1_ip_intelligence_1_1_profile_meta_data_builder_ipi.html":[3,0,2,17]
 };

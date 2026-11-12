@@ -483,7 +483,7 @@ Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Returns true if populating the results walks the graph of each component they answer for, rather than leaving each walk to the first read of one of the component's properties. </p>
-<p>That is when the caller named the properties the data set was created with, as every graph the results need is then known before anything is read. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>That is when the caller named the properties the data set was created with, as every graph the results need is then known before anything is read. Names kept from the first data set of a caller that named none do not walk here. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dataSet</td><td>pointer to the data set the results are populated from </td></tr>
   </table>

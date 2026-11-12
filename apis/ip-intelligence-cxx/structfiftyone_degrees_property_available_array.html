@@ -87,11 +87,13 @@ uint32_t&#160;</td><td class="c-table__cell"><b>capacity</b></td></tr>
 <tr class="c-table__row memdesc:ad5009b422ab3c6c4357b1836a86480fe"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Pointer to the first item. <br /></td></tr>
 <tr class="c-table__row memitem:a376fc812677c8a4eee8412eda5f2568a" id="r_a376fc812677c8a4eee8412eda5f2568a"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a376fc812677c8a4eee8412eda5f2568a">allComponentsRequired</a></td></tr>
 <tr class="c-table__row memdesc:a376fc812677c8a4eee8412eda5f2568a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True if every component must be resolved whether or not it has an available property.  <br /></td></tr>
+<tr class="c-table__row memitem:a67729ef3872428ac307bacb043d51ff9" id="r_a67729ef3872428ac307bacb043d51ff9"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a67729ef3872428ac307bacb043d51ff9">namesFromDataSet</a></td></tr>
+<tr class="c-table__row memdesc:a67729ef3872428ac307bacb043d51ff9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True when the caller named no property, so the names are those of the first data set loaded.  <br /></td></tr>
 <tr class="c-table__row memitem:a97da144d7d85b6fa907dcdc7cd41c4ac" id="r_a97da144d7d85b6fa907dcdc7cd41c4ac"><td class="c-table__cell"><a id="a97da144d7d85b6fa907dcdc7cd41c4ac" name="a97da144d7d85b6fa907dcdc7cd41c4ac"></a>
 uint32_t&#160;</td><td class="c-table__cell"><b>namedCount</b></td></tr>
 <tr class="c-table__row memdesc:a97da144d7d85b6fa907dcdc7cd41c4ac"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Number of names the caller gave, which is the number of required property indexes when the caller named properties. <br /></td></tr>
 <tr class="c-table__row memitem:a1756064d7ae4f9bc27e2d561550c3185" id="r_a1756064d7ae4f9bc27e2d561550c3185"><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_property_named.html">fiftyoneDegreesPropertyNamed</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#a1756064d7ae4f9bc27e2d561550c3185">named</a></td></tr>
-<tr class="c-table__row memdesc:a1756064d7ae4f9bc27e2d561550c3185"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The names the caller gave, in the caller's order, or NULL when the caller named no property.  <br /></td></tr>
+<tr class="c-table__row memdesc:a1756064d7ae4f9bc27e2d561550c3185"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The names the caller gave, in the caller's order, or NULL when the caller named no property and this is the first data set.  <br /></td></tr>
 </table>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Field Documentation</h2>
 <a id="a376fc812677c8a4eee8412eda5f2568a" name="a376fc812677c8a4eee8412eda5f2568a"></a>
@@ -131,8 +133,29 @@ uint32_t&#160;</td><td class="c-table__cell"><b>namedCount</b></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>The names the caller gave, in the caller's order, or NULL when the caller named no property. </p>
+<p>The names the caller gave, in the caller's order, or NULL when the caller named no property and this is the first data set. </p>
 <p>A list created from an existing list is created from these names Add any members provided by the caller </p>
+
+</div>
+</div>
+<a id="a67729ef3872428ac307bacb043d51ff9" name="a67729ef3872428ac307bacb043d51ff9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a67729ef3872428ac307bacb043d51ff9">&#9670;&#160;</a></span>namesFromDataSet</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool fiftyoneDegreesPropertyAvailableArray::namesFromDataSet</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>True when the caller named no property, so the names are those of the first data set loaded. </p>
+<p>The data set then walks a component's graph at the first read of one of its properties, as when no names are held </p>
 
 </div>
 </div>

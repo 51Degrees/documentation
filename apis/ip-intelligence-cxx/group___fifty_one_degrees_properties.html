@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
 <div class="textblock"><p>Structures for properties which are available, or required. </p>
 <h2>Terms</h2>
-<p><b>Required <a class="el" href="group___fifty_one_degrees_synonyms.html#gac33ed2a033290cebf9ec90809d9bdf90" title="Synonym for fiftyoneDegreesProperty type.">Property</a> Index</b> : the 0 based index of the property in the names the caller gave when the data set was created, which is the index every read by position takes. A reload does not change it. A name the data does not have keeps its index, and reads as a property the data set does not have. When the caller named no property, it is the index of the property in the list of available properties, which a reload can change.</p>
+<p><b>Required <a class="el" href="group___fifty_one_degrees_synonyms.html#gac33ed2a033290cebf9ec90809d9bdf90" title="Synonym for fiftyoneDegreesProperty type.">Property</a> Index</b> : the 0 based index of the property in the names the caller gave when the data set was created, which is the index every read by position takes. A reload does not change it. A name the data does not have keeps its index, and reads as a property the data set does not have. When the caller named no property, the names are those of the first data set loaded, in the order of its list of available properties, and a reload keeps them, so a property that only a later data set holds gets no index.</p>
 <p><b>Available Index</b> : the 0 based index of the property in the list of available properties, which holds the properties the data has in ascending order of name. Not the same as the required property index when the caller named properties.</p>
 <p><b><a class="el" href="group___fifty_one_degrees_synonyms.html#gac33ed2a033290cebf9ec90809d9bdf90" title="Synonym for fiftyoneDegreesProperty type.">Property</a> Index</b> : the 0 based index of the property in the source used to create the required properties. Not the same as the required property index.</p>
 <p><b>Results</b> : the structure used to contain the data associated with the available required properties.</p>
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <ol type="1">
 <li>Separated string of property names. Valid separators include space, comma and pipe.</li>
 <li>An array of strings.</li>
-<li>Existing properties results from a previous creation operation. This method is used when a data set is being reloaded due to a change in the underlying data. The new results are created from the names the caller gave the first time, so a property the previous data did not have is available once the new data has it, and a caller that named no property gets every property of the new data.</li>
+<li>Existing properties results from a previous creation operation. This method is used when a data set is being reloaded due to a change in the underlying data. The new results are created from the names the caller gave the first time, so a property the previous data did not have is available once the new data has it. A caller that named no property gets every property of the new data, with the names of the first data set as its required property indexes.</li>
 </ol>
 <p>Creation also requires a method to retrieve the name of the properties from the underlying data source. A method pointer conforming to <a class="el" href="#ga28cd53614a9e57019eb816a827d34a68" title="Returns a string for the property at the index provided or NULL if there is no property available at ...">fiftyoneDegreesPropertiesGetMethod</a> must be provided to retrieve the property name string item for a given property index up to the maximum count. The call back is used to avoid any hard dependency between the data structure and the properties methods.</p>
 <p>Unlike standard collection item retrieval the properties methods will not know the underlying collection implement or reference from which the item was obtained from. Therefore the implementation of get MUST set the collection field of the collection item.</p>
@@ -151,7 +151,7 @@ Functions</h2></td></tr>
 <tr class="c-table__row memitem:ga1a886fe2de48e334a62451323edcd045" id="r_ga1a886fe2de48e334a62451323edcd045"><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_string.html">fiftyoneDegreesString</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga1a886fe2de48e334a62451323edcd045">fiftyoneDegreesPropertiesGetNameFromRequiredIndex</a> (<a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available, int requiredPropertyIndex)</td></tr>
 <tr class="c-table__row memdesc:ga1a886fe2de48e334a62451323edcd045"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the name as a string from the required property index.  <br /></td></tr>
 <tr class="c-table__row memitem:ga0ab71e725222d5f0a78596aef253ac37" id="r_ga0ab71e725222d5f0a78596aef253ac37"><td class="c-table__cell"><a class="el" href="#ga03b30c0e9db9adac3b925156d2cca8c2">FIFTYONE_DEGREES_PROPERTIES_INLINE</a>&#160;uint32_t&#160;</td><td class="c-table__cell"><a class="el" href="#ga0ab71e725222d5f0a78596aef253ac37">fiftyoneDegreesPropertiesGetRequiredPropertyCount</a> (const <a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available)</td></tr>
-<tr class="c-table__row memdesc:ga0ab71e725222d5f0a78596aef253ac37"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the number of required property indexes, which is the number of names the caller gave, or when the caller named no property, the number of available properties.  <br /></td></tr>
+<tr class="c-table__row memdesc:ga0ab71e725222d5f0a78596aef253ac37"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the number of required property indexes, which is the number of names the caller gave, or when the caller named no property, the number of properties the first data set loaded has.  <br /></td></tr>
 <tr class="c-table__row memitem:ga53b9a0b4371bd07ae7ce64c480185ec2" id="r_ga53b9a0b4371bd07ae7ce64c480185ec2"><td class="c-table__cell"><a class="el" href="#ga03b30c0e9db9adac3b925156d2cca8c2">FIFTYONE_DEGREES_PROPERTIES_INLINE</a>&#160;int&#160;</td><td class="c-table__cell"><a class="el" href="#ga53b9a0b4371bd07ae7ce64c480185ec2">fiftyoneDegreesPropertiesGetAvailableIndex</a> (const <a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available, int requiredPropertyIndex)</td></tr>
 <tr class="c-table__row memdesc:ga53b9a0b4371bd07ae7ce64c480185ec2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the available index of the property at the required property index.  <br /></td></tr>
 <tr class="c-table__row memitem:gaa001a2ce044140d9294b23c9fd762c47" id="r_gaa001a2ce044140d9294b23c9fd762c47"><td class="c-table__cell"><a class="el" href="#ga03b30c0e9db9adac3b925156d2cca8c2">FIFTYONE_DEGREES_PROPERTIES_INLINE</a>&#160;int&#160;</td><td class="c-table__cell"><a class="el" href="#gaa001a2ce044140d9294b23c9fd762c47">fiftyoneDegreesPropertiesGetAvailableIndexFromName</a> (<a class="el" href="#ga927d138aa1c8aa695f8014619ed8e4d3">fiftyoneDegreesPropertiesAvailable</a> *available, const char *propertyName)</td></tr>
@@ -333,7 +333,7 @@ Variables</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">available</td><td>properties instance </td></tr>
-    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names the caller gave, or when the caller named no property, in the available properties </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names the caller gave, or when the caller named no property, in the first data set loaded </td></tr>
   </table>
   </dd>
 </dl>
@@ -403,7 +403,7 @@ Variables</h2></td></tr>
 <p>A property the data set does not have gives the name the caller gave. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">available</td><td>properties instance </td></tr>
-    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names the caller gave, or when the caller named no property, in the available properties </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names the caller gave, or when the caller named no property, in the first data set loaded </td></tr>
   </table>
   </dd>
 </dl>
@@ -508,7 +508,7 @@ Variables</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">available</td><td>properties instance </td></tr>
-    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names the caller gave, or when the caller named no property, in the available properties </td></tr>
+    <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names the caller gave, or when the caller named no property, in the first data set loaded </td></tr>
   </table>
   </dd>
 </dl>
@@ -535,7 +535,7 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Gets the number of required property indexes, which is the number of names the caller gave, or when the caller named no property, the number of available properties. </p>
+<p>Gets the number of required property indexes, which is the number of names the caller gave, or when the caller named no property, the number of properties the first data set loaded has. </p>
 <p>Use it, rather than the count field, with <a class="el" href="#ga1a886fe2de48e334a62451323edcd045" title="Gets the name as a string from the required property index.">fiftyoneDegreesPropertiesGetNameFromRequiredIndex</a> and the reads that take a required property index. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">available</td><td>properties instance </td></tr>
@@ -570,7 +570,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Gets the required property index of the property named, which is its place in the names the caller gave, the first if the name was given more than once. </p>
-<p>When the caller named no property, it is the index of the property in the available properties. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>When the caller named no property, it is the place of the property in the first data set loaded. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">available</td><td>properties instance </td></tr>
     <tr><td class="paramname">propertyName</td><td>string containing the property name </td></tr>

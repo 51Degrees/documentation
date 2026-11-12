@@ -1,6 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html#afe33b5dc5745311c0887e177f47c85a3":[2,0,0,22,2],
 "class_fiftyone_degrees_1_1_common_1_1_value_meta_data_key.html":[2,0,0,23],
 "class_fiftyone_degrees_1_1_common_1_1_value_meta_data_key.html#a1317dc7a4337f21809870a12f4e55934":[2,0,0,23,2],
 "class_fiftyone_degrees_1_1_common_1_1_value_meta_data_key.html#a247a46bae37828691ef1240e94e44634":[2,0,0,23,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX1 =
 "class_fiftyone_degrees_1_1_examples_1_1_hash_1_1_strongly_typed.html#ae7a017752b1f39d97b8dd858481ee65f":[2,0,2,0,6,2],
 "examples.html":[3],
 "index.html":[],
-"md__r_e_a_d_m_e.html":[1]
+"md__r_e_a_d_m_e.html":[1],
+"namespace_fiftyone_degrees.html":[2,0]
 };

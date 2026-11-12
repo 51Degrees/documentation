@@ -991,7 +991,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">    uint16_t numberOfThreads = DEFAULT_NUMBER_OF_THREADS;</div>
 <div class="c-code__line">    <span class="c-code__keywordtype">int</span> iterations = DEFAULT_ITERATIONS;</div>
 <div class="c-code__line">    <span class="c-code__keywordtype">char</span> *outFile = NULL;</div>
-<div class="c-code__line">    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *envDataFilePath = getenv(<span class="c-code__stringliteral">&quot;51DEGREES_IPI_PATH&quot;</span>);</div>
+<div class="c-code__line">    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span> *envDataFilePath = getenv(<span class="c-code__stringliteral">&quot;_51DEGREES_IPI_PATH&quot;</span>);</div>
 <div class="c-code__line">    dataFilePath[0] = <span class="c-code__charliteral">&#39;\0&#39;</span>;</div>
 <div class="c-code__line">    evidenceFilePath[0] = <span class="c-code__charliteral">&#39;\0&#39;</span>;</div>
 <div class="c-code__line"> </div>
@@ -1083,12 +1083,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment">// An explicit data file path can be supplied in the 51DEGREES_IPI_PATH</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// An explicit data file path can be supplied in the _51DEGREES_IPI_PATH</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// environment variable, otherwise the parent folder structure is searched.</span></div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> (strlen(dataFilePath) == 0 &amp;&amp;</div>
 <div class="c-code__line">        envDataFilePath != NULL &amp;&amp; envDataFilePath[0] != <span class="c-code__charliteral">&#39;\0&#39;</span>) {</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> (strlen(envDataFilePath) &gt;= <span class="c-code__keyword">sizeof</span>(dataFilePath)) {</div>
-<div class="c-code__line">            printf(<span class="c-code__stringliteral">&quot;The data file path in the 51DEGREES_IPI_PATH &quot;</span></div>
+<div class="c-code__line">            printf(<span class="c-code__stringliteral">&quot;The data file path in the _51DEGREES_IPI_PATH &quot;</span></div>
 <div class="c-code__line">                <span class="c-code__stringliteral">&quot;environment variable is too long.\n&quot;</span>);</div>
 <div class="c-code__line"><span class="c-code__preprocessor">#ifndef TEST</span></div>
 <div class="c-code__line">            fgetc(stdin);</div>
@@ -1232,7 +1232,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_ip_intelligen
 <div class="ttc" id="astructfiftyone_degrees_key_value_pair_html_a46640c5ce3f89ad32686f1b86562b757"><div class="ttname"><a href="structfiftyone_degrees_key_value_pair.html#a46640c5ce3f89ad32686f1b86562b757">fiftyoneDegreesKeyValuePair::key</a></div><div class="ttdeci">const char * key</div><div class="ttdoc">pointer to the key string</div><div class="ttdef"><b>Definition</b> pair.h:34</div></div>
 <div class="ttc" id="astructfiftyone_degrees_key_value_pair_html_a51707019e68e09f713d963e02d1f4578"><div class="ttname"><a href="structfiftyone_degrees_key_value_pair.html#a51707019e68e09f713d963e02d1f4578">fiftyoneDegreesKeyValuePair::value</a></div><div class="ttdeci">const char * value</div><div class="ttdoc">pointer to the value string</div><div class="ttdef"><b>Definition</b> pair.h:36</div></div>
 <div class="ttc" id="astructfiftyone_degrees_key_value_pair_html_ab1625b8fdbd007a8bd8839fd1a8b6e3f"><div class="ttname"><a href="structfiftyone_degrees_key_value_pair.html#ab1625b8fdbd007a8bd8839fd1a8b6e3f">fiftyoneDegreesKeyValuePair::valueLength</a></div><div class="ttdeci">size_t valueLength</div><div class="ttdoc">number of characters in value</div><div class="ttdef"><b>Definition</b> pair.h:37</div></div>
-<div class="ttc" id="astructfiftyone_degrees_properties_required_html_a7044785e8c67e2d208ba1010ec355d5c"><div class="ttname"><a href="structfiftyone_degrees_properties_required.html#a7044785e8c67e2d208ba1010ec355d5c">fiftyoneDegreesPropertiesRequired::string</a></div><div class="ttdeci">const char * string</div><div class="ttdoc">Separated list of required properties or NULL if all properties are required.</div><div class="ttdef"><b>Definition</b> properties.h:234</div></div>
+<div class="ttc" id="astructfiftyone_degrees_properties_required_html_a7044785e8c67e2d208ba1010ec355d5c"><div class="ttname"><a href="structfiftyone_degrees_properties_required.html#a7044785e8c67e2d208ba1010ec355d5c">fiftyoneDegreesPropertiesRequired::string</a></div><div class="ttdeci">const char * string</div><div class="ttdoc">Separated list of required properties or NULL if all properties are required.</div><div class="ttdef"><b>Definition</b> properties.h:245</div></div>
 <div class="ttc" id="astructperformance_config_html"><div class="ttname"><a href="structperformance_config.html">performanceConfig</a></div><div class="ttdoc">Configuration to use when building the dataset for benchmarking.</div><div class="ttdef"><b>Definition</b> Performance.c:86</div></div>
 <div class="ttc" id="astructperformance_settings_html"><div class="ttname"><a href="structperformance_settings.html">performanceSettings</a></div><div class="ttdoc">Choices the command line can make.</div><div class="ttdef"><b>Definition</b> Performance.c:112</div></div>
 <div class="ttc" id="astructperformance_state_html"><div class="ttname"><a href="structperformance_state.html">performanceState</a></div><div class="ttdoc">Shared performance state.</div><div class="ttdef"><b>Definition</b> PerfIpi.c:117</div></div>

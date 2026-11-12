@@ -216,9 +216,9 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line">    <a id="_a13" name="_a13"></a><a class="code hl_enumeration" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a> status = <a id="_a14" name="_a14"></a><a class="code hl_enumvalue" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4">FIFTYONE_DEGREES_STATUS_SUCCESS</a>;</div>
 <div class="c-code__line">    <span class="c-code__keywordtype">char</span> dataFilePath[<a id="_a15" name="_a15"></a><a class="code hl_define" href="group___fifty_one_degrees_file.html#gaf3ee91aae926f0082ceb3bd0b291bee1">FIFTYONE_DEGREES_FILE_MAX_PATH</a>];</div>
 <div class="c-code__line">    <span class="c-code__keywordtype">char</span> ipAddressFilePath[<a class="code hl_define" href="group___fifty_one_degrees_file.html#gaf3ee91aae926f0082ceb3bd0b291bee1">FIFTYONE_DEGREES_FILE_MAX_PATH</a>];</div>
-<div class="c-code__line">    <span class="c-code__comment">// An explicit data file path can be supplied in the 51DEGREES_IPI_PATH</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// An explicit data file path can be supplied in the _51DEGREES_IPI_PATH</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// environment variable, otherwise the parent folder structure is searched.</span></div>
-<div class="c-code__line">    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>* envDataFilePath = getenv(<span class="c-code__stringliteral">&quot;51DEGREES_IPI_PATH&quot;</span>);</div>
+<div class="c-code__line">    <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">char</span>* envDataFilePath = getenv(<span class="c-code__stringliteral">&quot;_51DEGREES_IPI_PATH&quot;</span>);</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> (argc &gt; 1) {</div>
 <div class="c-code__line">        strcpy(dataFilePath, argv[1]);</div>
 <div class="c-code__line">    }</div>
