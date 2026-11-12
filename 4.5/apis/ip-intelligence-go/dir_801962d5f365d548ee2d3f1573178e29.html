@@ -68,28 +68,29 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dir_801962d5f3
 <h2 class="g-docs__section-heading">
 Directory dependency graph for ip-intelligence:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="dir_801962d5f365d548ee2d3f1573178e29_dep.svg" width="1084" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="dir_801962d5f365d548ee2d3f1573178e29_dep.svg" width="1272" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-subdirs" class="g-docs__section-heading"><a id="subdirs" name="subdirs"></a>
 Directories</h2></td></tr>
 <tr class="c-table__row memitem:common" id="r_common"><td class="c-table__cell"><span class="iconfolder"><div class="folder-icon"></div></span>&#160;</td><td class="c-table__cell"><a class="el" href="dir_f2e5adcc97eb21d9b336472bb96e9956.html">common</a></td></tr>
 <tr class="c-table__row memitem:getting_5Fstarted" id="r_getting_5Fstarted"><td class="c-table__cell"><span class="iconfolder"><div class="folder-icon"></div></span>&#160;</td><td class="c-table__cell"><a class="el" href="dir_43e23161e66f54b89083a9e6e9343557.html">getting_started</a></td></tr>
+<tr class="c-table__row memitem:getting_5Fstarted_5Fcloud" id="r_getting_5Fstarted_5Fcloud"><td class="c-table__cell"><span class="iconfolder"><div class="folder-icon"></div></span>&#160;</td><td class="c-table__cell"><a class="el" href="dir_29e3026ca4c31ef77df1e004bb86e0f4.html">getting_started_cloud</a></td></tr>
 <tr class="c-table__row memitem:offline_5Fprocessing" id="r_offline_5Fprocessing"><td class="c-table__cell"><span class="iconfolder"><div class="folder-icon"></div></span>&#160;</td><td class="c-table__cell"><a class="el" href="dir_c0a8c5f1f8fb6231ae01478f8e3d7bca.html">offline_processing</a></td></tr>
 <tr class="c-table__row memitem:performance" id="r_performance"><td class="c-table__cell"><span class="iconfolder"><div class="folder-icon"></div></span>&#160;</td><td class="c-table__cell"><a class="el" href="dir_53800279823c7c6564bd7b2748fe7a32.html">performance</a></td></tr>
 <tr class="c-table__row memitem:reload_5Ffrom_5Ffile" id="r_reload_5Ffrom_5Ffile"><td class="c-table__cell"><span class="iconfolder"><div class="folder-icon"></div></span>&#160;</td><td class="c-table__cell"><a class="el" href="dir_a5e6a5915c2e273a3cc1f6b4d2202dda.html">reload_from_file</a></td></tr>
 <tr class="c-table__row memitem:update_5Fpolling_5Finterval" id="r_update_5Fpolling_5Finterval"><td class="c-table__cell"><span class="iconfolder"><div class="folder-icon"></div></span>&#160;</td><td class="c-table__cell"><a class="el" href="dir_82acb60cbd31b813a6bfc42148b4781d.html">update_polling_interval</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
-<div class="textblock"><p><img src="https://51degrees.com/img/logo.png?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-go&amp;utm_content=examples-readme.md&amp;utm_term=51degrees-ip-intelligence-api-examples" alt="51Degrees" title="Data rewards the curious" class="inline"/> <b>IP Intelligence Go Examples</b></p>
+<div class="textblock"><p><img src="https://raw.githubusercontent.com/51Degrees/51degrees-go/main/.github/images/logo-160.png" alt="51Degrees" title="Data rewards the curious" class="inline"/> <b>IP Intelligence Go Examples</b></p>
 <h1>Introduction</h1>
 <p>This directory contains usage examples of the <a href="https://github.com/51Degrees/51degrees-go/tree/main/ip-intelligence">ip-intelligence-go</a> module.</p>
 <h1>Pre-requisites</h1>
-<p>To run these examples you will need a data file and example evidence. The examples use <code>51Degrees-EnterpriseIpiV41.ipi</code> and <code>20000_ipi_evidence_records.yml</code> unless <code>DATA_FILE</code> and <code>EVIDENCE_YAML</code> name other files, as shown below.</p>
+<p>The examples run with the free Lite data file, <code>51Degrees-LiteV41.ipi</code>, and the example evidence in <code>cxx/data/ip-intelligence/evidence.yml</code>, unless <code>_51DEGREES_IPI_PATH</code> and <code>_51DEGREES_EVIDENCE_YAML</code> name other files, as shown below. The Lite file has RegisteredCountry, RegisteredName and RegisteredOwner. The performance, reload and update examples use the free Asn data file, <code>51Degrees-IPIV4AsnIpiV41.ipi</code>, which has Asn and AsnName and is far smaller to download. The examples also show properties only the Enterprise data file has, as needing it, and say where to ask for a copy.</p>
 <p>The <a href="https://github.com/51Degrees/data">data</a> repository, which is the <code>cxx/data</code> submodule of this repository, links to the free Lite and Asn data files and holds example evidence in <code>cxx/data/ip-intelligence/evidence.yml</code>. To download the Lite and Asn files into <code>cxx/data/ip-intelligence</code>, run one of these from the repository root.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">sh cxx/data/get-data-files.sh ip-intelligence</div>
 </div><!-- fragment --><div class="c-code__block c-code__block--outline"><div class="c-code__line">./cxx/data/get-data-files.ps1 ip-intelligence</div>
-</div><!-- fragment --><p>When <code>DATA_FILE</code> names a file that the data repository links to and the file is missing, the examples download it by running the same script for that file.</p>
+</div><!-- fragment --><p>When <code>_51DEGREES_IPI_PATH</code> names a file that the data repository links to and the file is missing, the examples download it by running the same script for that file.</p>
 <h2>Software</h2>
 <p>The dependency library <code>ip-intelligence-go</code> uses CGO, so make sure <code>CGO_ENABLED=1</code> - this is the default, unless you override it.</p>
 <h2>Windows</h2>
@@ -118,17 +119,19 @@ Directories</h2></td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">update_polling_interval  </td><td class="c-table__cell">An example doing periodic polling for the updated data file  </td></tr>
 <tr class="c-table__row">
+<td class="c-table__cell">getting_started_cloud  </td><td class="c-table__cell">The getting started example using the 51Degrees cloud service and a Resource Key, rather than a data file  </td></tr>
+<tr class="c-table__row">
 <td class="c-table__cell">mixed/getting_started_console  </td><td class="c-table__cell">A command line example featuring both device detection and IP intelligence  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">mixed/getting_started_web  </td><td class="c-table__cell">A web example featuring both device detection and IP intelligence  </td></tr>
 </table>
-<p>The <code>mixed</code> examples intentionally combine Device Detection and IP Intelligence and live in their own Go module — see mixed/README.md for how to run them (they cannot be run with <code>go run</code> from the repository root).</p>
+<p>The <code>mixed</code> examples intentionally combine Device Detection and IP Intelligence and live in their own Go module. See mixed/README.md for how to run them, as they cannot be run with <code>go run</code> from the repository root.</p>
 <h1>Run examples</h1>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">go run ./example_dir</div>
 </div><!-- fragment --><p> For further details of how to run each example, please read more in the comment section located at the top of each example file.</p>
-<p>To provide a different path to a data file or evidence file use environment variables, e.g. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">DATA_FILE=&lt;path&gt;/51Degrees-EnterpriseIpiV41.ipi go run ./getting_started</div>
-<div class="c-code__line">DATA_FILE=&lt;path&gt;/51Degrees-EnterpriseIpiV41.ipi EVIDENCE_YAML=&lt;path&gt;/20000_ipi_evidence_records.yml go run ./offline_processing</div>
-<div class="c-code__line">DATA_FILE=&lt;path&gt;/51Degrees-EnterpriseIpiV41.ipi EVIDENCE_YAML=&lt;path&gt;/20000_ipi_evidence_records.yml go run ./update_polling_interval</div>
+<p>To provide a different path to a data file or evidence file use environment variables, e.g. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">_51DEGREES_IPI_PATH=&lt;path&gt;/51Degrees-EnterpriseIpiV41.ipi go run ./getting_started</div>
+<div class="c-code__line">_51DEGREES_IPI_PATH=&lt;path&gt;/51Degrees-EnterpriseIpiV41.ipi _51DEGREES_EVIDENCE_YAML=&lt;path&gt;/20000_ipi_evidence_records.yml go run ./offline_processing</div>
+<div class="c-code__line">_51DEGREES_IPI_PATH=&lt;path&gt;/51Degrees-EnterpriseIpiV41.ipi _51DEGREES_EVIDENCE_YAML=&lt;path&gt;/20000_ipi_evidence_records.yml go run ./update_polling_interval</div>
 </div><!-- fragment --> </div></div><!-- primary -->
 </div><!-- inner -->
 <div id="page-nav" class="page-nav-panel">

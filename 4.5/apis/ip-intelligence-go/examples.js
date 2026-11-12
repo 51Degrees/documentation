@@ -1,6 +1,7 @@
 var examples =
 [
     [ "getting_started/main.go", "getting_started_2main_8go-example.html", null ],
+    [ "getting_started_cloud/main.go", "getting_started_cloud_2main_8go-example.html", null ],
     [ "offline_processing/main.go", "offline_processing_2main_8go-example.html", null ],
     [ "performance/main.go", "performance_2main_8go-example.html", null ],
     [ "reload_from_file/main.go", "reload_from_file_2main_8go-example.html", null ],

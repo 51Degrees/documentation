@@ -151,8 +151,8 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line"><span class="c-code__comment"> * Copyright 2025 51 Degrees Mobile Experts Limited, Davidson House,</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * Forbury Square, Reading, Berkshire, United Kingdom RG1 3EU.</span></div>
 <div class="c-code__line"><span class="c-code__comment"> *</span></div>
-<div class="c-code__line"><span class="c-code__comment"> * This Original Work is licensed under the European Union Public Licence (EUPL)</span></div>
-<div class="c-code__line"><span class="c-code__comment"> * v.1.2 and is subject to its terms as set out below.</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * This Original Work is licensed under the European Union Public Licence</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * (EUPL) v.1.2 and is subject to its terms as set out below.</span></div>
 <div class="c-code__line"><span class="c-code__comment"> *</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * If a copy of the EUPL was not distributed with this file, You can obtain</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * one at https://opensource.org/licenses/EUPL-1.2.</span></div>
@@ -184,6 +184,10 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line">    &quot;github.com/51Degrees/51degrees-go/ip-intelligence/v4/ipi_onpremise&quot;</div>
 <div class="c-code__line">    &quot;github.com/goccy/go-yaml&quot;</div>
 <div class="c-code__line">)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment">// contactUs is where to ask for a copy of the Enterprise data file, which has</span></div>
+<div class="c-code__line"><span class="c-code__comment">// the properties the free data files leave out.</span></div>
+<div class="c-code__line">const contactUs = &quot;https:<span class="c-code__comment">//51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-go&amp;utm_content=examples-ip-intelligence-offline_processing-main.go&amp;utm_term=enterprise-data-file&quot;</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// PropertiesData represents a structured data type containing various property fields commonly associated with network or location data.</span></div>
 <div class="c-code__line">type PropertiesData struct {</div>
@@ -377,6 +381,10 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Run example</span></div>
 <div class="c-code__line">            runOfflineProcessing(engine, params)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> common.IsFreeDataFile(engine, common.Properties) {</div>
+<div class="c-code__line">                common.PrintEnterpriseNote(contactUs)</div>
+<div class="c-code__line">            }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__keywordflow">return</span> nil</div>
 <div class="c-code__line">        })</div>

@@ -1242,6 +1242,9 @@ input[type=text] {
 .l-docs-index .g-docs__primary p, .l-docs-index .g-docs__primary ul, .l-docs-index .g-docs__primary ol {
   margin: 0 0 1rem 0;
 }
+.l-docs-index .g-docs__primary li + li {
+  margin-top: 0.6944444444rem;
+}
 .l-docs-index .g-docs__primary a {
   transition: color 0.3s ease;
   color: #00AEEF;

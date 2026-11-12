@@ -106,7 +106,7 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line">    <span class="c-code__comment">// Enable automatic updates.</span></div>
 <div class="c-code__line">    ipi_onpremise.WithAutoUpdate(<span class="c-code__keyword">false</span>),</div>
 <div class="c-code__line">    <span class="c-code__comment">// Set only 1 parameter for getting data</span></div>
-<div class="c-code__line">    ipi_onpremise.WithProperties([]<span class="c-code__keywordtype">string</span>{<span class="c-code__stringliteral">&quot;RegisteredName&quot;</span>}),</div>
+<div class="c-code__line">    ipi_onpremise.WithProperties(performanceProperties),</div>
 <div class="c-code__line">)</div>
 </div><!-- fragment --><p> <br  />
  <b>WithConfigIpi</b> allows to configure the Ipi matching algorithm.</p>
@@ -119,7 +119,7 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">ipi_onpremise.WithAutoUpdate(<span class="c-code__keyword">false</span>),</div>
 </div><!-- fragment --><p> <br  />
  <b>WithProperties</b> configures an Engine with a comma-separated list of manager properties derived from the provided slice.te</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">ipi_onpremise.WithProperties([]<span class="c-code__keywordtype">string</span>{<span class="c-code__stringliteral">&quot;RegisteredName&quot;</span>}),</div>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">ipi_onpremise.WithProperties(performanceProperties),</div>
 </div><!-- fragment --><p> <br  />
  </p><h3>3. Run evidence processing with parameters and get the report as returned value</h3>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">report, err := runPerformance(engine, params)</div>
@@ -142,8 +142,8 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line"><span class="c-code__comment"> * Copyright 2025 51 Degrees Mobile Experts Limited, Davidson House,</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * Forbury Square, Reading, Berkshire, United Kingdom RG1 3EU.</span></div>
 <div class="c-code__line"><span class="c-code__comment"> *</span></div>
-<div class="c-code__line"><span class="c-code__comment"> * This Original Work is licensed under the European Union Public Licence (EUPL)</span></div>
-<div class="c-code__line"><span class="c-code__comment"> * v.1.2 and is subject to its terms as set out below.</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * This Original Work is licensed under the European Union Public Licence</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * (EUPL) v.1.2 and is subject to its terms as set out below.</span></div>
 <div class="c-code__line"><span class="c-code__comment"> *</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * If a copy of the EUPL was not distributed with this file, You can obtain</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * one at https://opensource.org/licenses/EUPL-1.2.</span></div>
@@ -180,11 +180,27 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line">    &quot;github.com/goccy/go-yaml&quot;</div>
 <div class="c-code__line">)</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment">// performanceProperties are the properties the example processes. The free</span></div>
+<div class="c-code__line"><span class="c-code__comment">// Asn data file it uses has AsnName, and the Lite and Enterprise data files</span></div>
+<div class="c-code__line"><span class="c-code__comment">// have RegisteredName, so the example runs with any of them.</span></div>
+<div class="c-code__line">var performanceProperties = []string{&quot;RegisteredName&quot;, &quot;AsnName&quot;}</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment">// hasValue reports whether the results have a value for one of the</span></div>
+<div class="c-code__line"><span class="c-code__comment">// properties the example processes.</span></div>
+<div class="c-code__line">func hasValue(result ipi_interop.Values) bool {</div>
+<div class="c-code__line">    for _, property := range performanceProperties {</div>
+<div class="c-code__line">        if _, found := result.GetValueByProperty(property); found {</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">true</span></div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">false</span></div>
+<div class="c-code__line">}</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// reportFile defines the default path and filename for storing performance test results.</span></div>
-<div class="c-code__line">const reportFile = &quot;performance_report.log&quot;</div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> reportFile = <span class="c-code__stringliteral">&quot;performance_report.log&quot;</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// iterationCount defines the fixed number of iterations to be used for processing or performance testing loops.</span></div>
-<div class="c-code__line">const iterationCount = 5 <span class="c-code__comment">// TODO: implement/remove</span></div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> iterationCount = 5 <span class="c-code__comment">// TODO: implement/remove</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// readYaml reads YAML data from a file, processes it line by line, and parses it into an IpEvidences collection.</span></div>
 <div class="c-code__line"><span class="c-code__comment">// It takes ExampleParams as input, retrieves the file path, and reads evidence records from the specified YAML file.</span></div>
@@ -194,12 +210,12 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Open the Evidence Records file for processing</span></div>
 <div class="c-code__line">    file, err := os.OpenFile(evidenceFilePath, os.O_RDONLY, 0444)</div>
-<div class="c-code__line">    if err != nil {</div>
-<div class="c-code__line">        return common.IpEvidences{}, err</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> err != nil {</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> common.IpEvidences{}, err</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    defer func() {</div>
-<div class="c-code__line">        if err := file.Close(); err != nil {</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> err := file.Close(); err != nil {</div>
 <div class="c-code__line">            log.Fatalf(<span class="c-code__stringliteral">&quot;Failed to close file \&quot;%s\&quot;.\n&quot;</span>, evidenceFilePath)</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }()</div>
@@ -210,11 +226,11 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line">    evidences := make(common.IpEvidences, 0)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Loop through the file and read each line</span></div>
-<div class="c-code__line">    <span class="c-code__keywordflow">for</span> scanner.Scan() {</div>
+<div class="c-code__line">    for scanner.Scan() {</div>
 <div class="c-code__line">        line := scanner.Text() <span class="c-code__comment">// Get the line as a string</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        var doc map[string]string</div>
-<div class="c-code__line">        if err := yaml.Unmarshal([]byte(line), &amp;doc); err != nil {</div>
+<div class="c-code__line">        var doc map[<span class="c-code__keywordtype">string</span>]<span class="c-code__keywordtype">string</span></div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> err := yaml.Unmarshal([]<span class="c-code__keywordtype">byte</span>(line), &amp;doc); err != nil {</div>
 <div class="c-code__line">            log.Printf(<span class="c-code__stringliteral">&quot;Failed to unmarshal line \&quot;%s\&quot;.\n&quot;</span>, line)</div>
 <div class="c-code__line">            continue</div>
 <div class="c-code__line">        }</div>
@@ -244,11 +260,9 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line">                log.Fatalln(err)</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__keywordflow">for</span> _, property := range []<span class="c-code__keywordtype">string</span>{<span class="c-code__stringliteral">&quot;RegisteredName&quot;</span>} {</div>
-<div class="c-code__line">                <span class="c-code__comment">// don&#39;t use the property in the current step, only processing data</span></div>
-<div class="c-code__line">                <span class="c-code__keywordflow">if</span> _, found := result.GetValueByProperty(property); !found {</div>
-<div class="c-code__line">                    log.Printf(<span class="c-code__stringliteral">&quot;Not found values for the next property %s for address %s&quot;</span>, property, ipAddress)</div>
-<div class="c-code__line">                }</div>
+<div class="c-code__line">            <span class="c-code__comment">// don&#39;t use the values in the current step, only processing data</span></div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> !hasValue(result) {</div>
+<div class="c-code__line">                log.Printf(<span class="c-code__stringliteral">&quot;No value found for address %s&quot;</span>, ipAddress)</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
@@ -308,8 +322,8 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line">            }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Access property to ensure full processing</span></div>
-<div class="c-code__line">            <span class="c-code__keywordflow">if</span> _, found := result.GetValueByProperty(<span class="c-code__stringliteral">&quot;RegisteredName&quot;</span>); !found {</div>
-<div class="c-code__line">                log.Printf(<span class="c-code__stringliteral">&quot;RegisteredName not found for IP %s&quot;</span>, ip)</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> !hasValue(result) {</div>
+<div class="c-code__line">                log.Printf(<span class="c-code__stringliteral">&quot;No value found for IP %s&quot;</span>, ip)</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line"> </div>
@@ -347,8 +361,8 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line">                    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">                    <span class="c-code__comment">// Access property to ensure full processing</span></div>
-<div class="c-code__line">                    <span class="c-code__keywordflow">if</span> _, found := result.GetValueByProperty(<span class="c-code__stringliteral">&quot;RegisteredName&quot;</span>); !found {</div>
-<div class="c-code__line">                        log.Printf(<span class="c-code__stringliteral">&quot;Thread %d: RegisteredName not found for IP %s&quot;</span>, threadID, ip)</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">if</span> !hasValue(result) {</div>
+<div class="c-code__line">                        log.Printf(<span class="c-code__stringliteral">&quot;Thread %d: no value found for IP %s&quot;</span>, threadID, ip)</div>
 <div class="c-code__line">                    }</div>
 <div class="c-code__line">                }</div>
 <div class="c-code__line">            }(t)</div>
@@ -391,7 +405,7 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line"> </div>
 <div class="c-code__line">    flag.Parse()</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    common.RunExample(</div>
+<div class="c-code__line">    common.RunExampleWithDataFile(common.AsnDataFile,</div>
 <div class="c-code__line">        func(params *common.ExampleParams) error {</div>
 <div class="c-code__line">            <span class="c-code__comment">// Determine number of threads - default to multi-threaded</span></div>
 <div class="c-code__line">            numThreads := runtime.NumCPU()</div>
@@ -417,7 +431,7 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line">                ipi_onpremise.WithAutoUpdate(<span class="c-code__keyword">false</span>),</div>
 <div class="c-code__line">                ipi_onpremise.WithTempDataCopy(<span class="c-code__keyword">false</span>),</div>
 <div class="c-code__line">                <span class="c-code__comment">// Set only 1 parameter for getting data</span></div>
-<div class="c-code__line">                ipi_onpremise.WithProperties([]<span class="c-code__keywordtype">string</span>{<span class="c-code__stringliteral">&quot;RegisteredName&quot;</span>}),</div>
+<div class="c-code__line">                ipi_onpremise.WithProperties(performanceProperties),</div>
 <div class="c-code__line">            )</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">if</span> err != nil {</div>
 <div class="c-code__line">                log.Fatalf(<span class="c-code__stringliteral">&quot;Failed to create engine: %v&quot;</span>, err)</div>

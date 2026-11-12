@@ -102,7 +102,7 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line">    <span class="c-code__comment">// File System Watcher is by default enabled</span></div>
 <div class="c-code__line">    ipi_onpremise.WithFileWatch(<span class="c-code__keyword">true</span>),</div>
 <div class="c-code__line">    <span class="c-code__comment">// Optional properties configuration</span></div>
-<div class="c-code__line">    ipi_onpremise.WithProperties(common.Properties),</div>
+<div class="c-code__line">    ipi_onpremise.WithProperties(common.NetworkProperties),</div>
 <div class="c-code__line">)</div>
 </div><!-- fragment --><p> <br  />
  <b>WithConfigIpi</b> allows to configure the Ipi matching algorithm.</p>
@@ -118,7 +118,7 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">ipi_onpremise.WithFileWatch(<span class="c-code__keyword">true</span>),</div>
 </div><!-- fragment --><p> <br  />
  <b>WithProperties</b> (Optional) Configures the list of properties to be returned. If not configured - all properties will be returned.</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">ipi_onpremise.WithProperties(common.Properties),</div>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">ipi_onpremise.WithProperties(common.NetworkProperties),</div>
 </div><!-- fragment --><p> <br  />
  </p><h3>Expected output:</h3>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">2025/06/23 11:46:08 Reloaded <span class="c-code__charliteral">&#39;2&#39;</span> times.</div>
@@ -133,8 +133,8 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line"><span class="c-code__comment"> * Copyright 2025 51 Degrees Mobile Experts Limited, Davidson House,</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * Forbury Square, Reading, Berkshire, United Kingdom RG1 3EU.</span></div>
 <div class="c-code__line"><span class="c-code__comment"> *</span></div>
-<div class="c-code__line"><span class="c-code__comment"> * This Original Work is licensed under the European Union Public Licence (EUPL)</span></div>
-<div class="c-code__line"><span class="c-code__comment"> * v.1.2 and is subject to its terms as set out below.</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * This Original Work is licensed under the European Union Public Licence</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * (EUPL) v.1.2 and is subject to its terms as set out below.</span></div>
 <div class="c-code__line"><span class="c-code__comment"> *</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * If a copy of the EUPL was not distributed with this file, You can obtain</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * one at https://opensource.org/licenses/EUPL-1.2.</span></div>
@@ -177,6 +177,10 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line">    iteration uint32</div>
 <div class="c-code__line">}</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment">// contactUs is where to ask for a copy of the Enterprise data file, which has</span></div>
+<div class="c-code__line"><span class="c-code__comment">// the properties the free data files leave out.</span></div>
+<div class="c-code__line">const contactUs = &quot;https:<span class="c-code__comment">//51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-go&amp;utm_content=examples-ip-intelligence-reload_from_file-main.go&amp;utm_term=enterprise-data-file&quot;</span></div>
+<div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// executeTest runs a test by processing an IP address through the engine and updating the report.</span></div>
 <div class="c-code__line">func executeTest(engine *ipi_onpremise.Engine, report *common.Report, ipAddress string, iteration uint32) {</div>
 <div class="c-code__line">    res, err := engine.Process(ipAddress)</div>
@@ -185,7 +189,7 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    var actual bytes.Buffer</div>
-<div class="c-code__line">    for _, property := range common.Properties {</div>
+<div class="c-code__line">    for _, property := range common.NetworkProperties {</div>
 <div class="c-code__line">        if property == &quot;Mcc&quot; {</div>
 <div class="c-code__line">            <span class="c-code__comment">// Only Mcc property has weight</span></div>
 <div class="c-code__line">            value, weight, found := res.GetValueWeightByProperty(property)</div>
@@ -370,7 +374,7 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// main is the entry point of the program, managing configuration, initializing the engine, and executing processing logic.</span></div>
 <div class="c-code__line">func main() {</div>
-<div class="c-code__line">    common.RunExample(</div>
+<div class="c-code__line">    common.RunExampleWithDataFile(common.AsnDataFile,</div>
 <div class="c-code__line">        func(params *common.ExampleParams) error {</div>
 <div class="c-code__line">            <span class="c-code__comment">//Create config</span></div>
 <div class="c-code__line">            config := ipi_interop.NewConfigIpi(ipi_interop.InMemory)</div>
@@ -388,7 +392,7 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line">                <span class="c-code__comment">// File System Watcher is by default enabled</span></div>
 <div class="c-code__line">                ipi_onpremise.WithFileWatch(true),</div>
 <div class="c-code__line">                <span class="c-code__comment">// Defined list of properties</span></div>
-<div class="c-code__line">                ipi_onpremise.WithProperties(common.Properties),</div>
+<div class="c-code__line">                ipi_onpremise.WithProperties(common.NetworkProperties),</div>
 <div class="c-code__line">            )</div>
 <div class="c-code__line">            if err != nil {</div>
 <div class="c-code__line">                log.Fatalf(<span class="c-code__stringliteral">&quot;Failed to create engine: %v&quot;</span>, err)</div>
@@ -399,6 +403,10 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Run example</span></div>
 <div class="c-code__line">            runReloadFromFile(engine, params)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> common.IsFreeDataFile(engine, common.NetworkProperties) {</div>
+<div class="c-code__line">                common.PrintEnterpriseOffer(contactUs)</div>
+<div class="c-code__line">            }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__keywordflow">return</span> nil</div>
 <div class="c-code__line">        })</div>

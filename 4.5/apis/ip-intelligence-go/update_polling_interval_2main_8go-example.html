@@ -84,8 +84,8 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
   </p>
 <h2>In detail, the example shows how to</h2>
 <h3>1. Specify config for engine:</h3>
-<p>This setting specifies the performance profile that will be used when initializing the C library.</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">config := ipi_interop.NewConfigIpi(ipi_interop.InMemory)</div>
+<p>This setting specifies the performance profile that will be used when initializing the C library. LowMemory reads the data file as it is needed, because updates download the Enterprise data file, which is several gigabytes.</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">config := ipi_interop.NewConfigIpi(ipi_interop.LowMemory)</div>
 </div><!-- fragment --><p> <br  />
  </p><h3>2. Initialization of the engine with the following parameters:</h3>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">//Create on-premise engine</span></div>
@@ -107,17 +107,19 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line">    <span class="c-code__comment">// WithAutoUpdate enables or disables auto update</span></div>
 <div class="c-code__line">    ipi_onpremise.WithAutoUpdate(<span class="c-code__keyword">true</span>),</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment">// Set the frequency in minutes that the pipeline should</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// check for updates to data files. A recommended</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// polling interval in a production environment is</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// around 30 minutes.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// Set the frequency in seconds that the pipeline should</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// check for updates to data files. The example checks every</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// few seconds so that an update can arrive while it waits</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// between its two sets of lookups. A recommended polling</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// interval in a production environment is around 30</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// minutes, which is 1800 seconds.</span></div>
 <div class="c-code__line">    ipi_onpremise.WithPollingInterval(3),</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment">// Set the max amount of time in seconds that should be</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// added to the polling interval. This is useful in datacenter</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// applications where multiple instances may be polling for</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// updates at the same time. A recommended amount in production</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// environments is 600 seconds.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// Set the maximum random time in seconds added to each polling</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// interval. A new time from 0 up to this maximum is drawn for</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// each interval, so that multiple instances in a datacenter do</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// not poll for updates at the same time. A recommended amount</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// in production environments is 600 seconds.</span></div>
 <div class="c-code__line">    ipi_onpremise.WithRandomization(1),</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Enable update on startup, the auto update system</span></div>
@@ -128,8 +130,9 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line">    <span class="c-code__comment">// Optionally provide your own file URL</span></div>
 <div class="c-code__line">    ipi_onpremise.WithDataUpdateUrl(<span class="c-code__stringliteral">&quot;&lt;custom URL&gt;&quot;</span>),</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment">// By default a temp copy should be created, unless you are using InMemory performance profile</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// ipi_onpremise.WithTempDataCopy(false),</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// LowMemory keeps the data file open, so the engine reads a</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// temp copy and an update can replace the original.</span></div>
+<div class="c-code__line">    ipi_onpremise.WithTempDataCopy(<span class="c-code__keyword">true</span>),</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// File System Watcher is by default enabled</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// ipi_onpremise.WithFileWatch(false),</span></div>
@@ -148,8 +151,8 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line"><span class="c-code__comment"> * Copyright 2025 51 Degrees Mobile Experts Limited, Davidson House,</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * Forbury Square, Reading, Berkshire, United Kingdom RG1 3EU.</span></div>
 <div class="c-code__line"><span class="c-code__comment"> *</span></div>
-<div class="c-code__line"><span class="c-code__comment"> * This Original Work is licensed under the European Union Public Licence (EUPL)</span></div>
-<div class="c-code__line"><span class="c-code__comment"> * v.1.2 and is subject to its terms as set out below.</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * This Original Work is licensed under the European Union Public Licence</span></div>
+<div class="c-code__line"><span class="c-code__comment"> * (EUPL) v.1.2 and is subject to its terms as set out below.</span></div>
 <div class="c-code__line"><span class="c-code__comment"> *</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * If a copy of the EUPL was not distributed with this file, You can obtain</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * one at https://opensource.org/licenses/EUPL-1.2.</span></div>
@@ -169,6 +172,7 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line"><span class="c-code__keyword">package </span>main</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">import (</div>
+<div class="c-code__line">    &quot;fmt&quot;</div>
 <div class="c-code__line">    &quot;log&quot;</div>
 <div class="c-code__line">    &quot;time&quot;</div>
 <div class="c-code__line"> </div>
@@ -177,85 +181,81 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line">    &quot;github.com/51Degrees/51degrees-go/ip-intelligence/v4/ipi_onpremise&quot;</div>
 <div class="c-code__line">)</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">func processEvidence(engine *ipi_onpremise.Engine, ipAddress string) {</div>
+<div class="c-code__line"><span class="c-code__comment">// contactUs is where to ask for a licence key and a copy of the Enterprise</span></div>
+<div class="c-code__line"><span class="c-code__comment">// data file, which automatic updates download.</span></div>
+<div class="c-code__line">const contactUs = &quot;https:<span class="c-code__comment">//51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-go&amp;utm_content=examples-ip-intelligence-update_polling_interval-main.go&amp;utm_term=licence-key&quot;</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment">// processEvidence logs each property&#39;s value for the address. With a free</span></div>
+<div class="c-code__line"><span class="c-code__comment">// data file, a property that only the Enterprise data file has values for is</span></div>
+<div class="c-code__line"><span class="c-code__comment">// logged as needing it.</span></div>
+<div class="c-code__line">func processEvidence(</div>
+<div class="c-code__line">    engine *ipi_onpremise.Engine,</div>
+<div class="c-code__line">    free bool,</div>
+<div class="c-code__line">    ipAddress string) {</div>
 <div class="c-code__line">    result, err := engine.Process(ipAddress)</div>
 <div class="c-code__line">    if err != nil {</div>
-<div class="c-code__line">        log.Printf(&quot;Error processing Getting Started Example: %v&quot;, err)</div>
+<div class="c-code__line">        log.Printf(&quot;Failed to process %s: %v&quot;, ipAddress, err)</div>
 <div class="c-code__line">        return</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    if value, found := result.GetValueByProperty(&quot;IpRangeStart&quot;); !found {</div>
-<div class="c-code__line">        log.Printf(<span class="c-code__stringliteral">&quot;IpRangeStart not found for address %s&quot;</span>, ipAddress)</div>
-<div class="c-code__line">    } <span class="c-code__keywordflow">else</span> {</div>
-<div class="c-code__line">        log.Printf(<span class="c-code__stringliteral">&quot;IpRangeStart: %+v\n&quot;</span>, value)</div>
-<div class="c-code__line">    }</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> value, found := result.GetValueByProperty(<span class="c-code__stringliteral">&quot;IpRangeEnd&quot;</span>); !found {</div>
-<div class="c-code__line">        log.Printf(<span class="c-code__stringliteral">&quot;IpRangeEnd not found for address %s&quot;</span>, ipAddress)</div>
-<div class="c-code__line">    } <span class="c-code__keywordflow">else</span> {</div>
-<div class="c-code__line">        log.Printf(<span class="c-code__stringliteral">&quot;IpRangeEnd: %+v\n&quot;</span>, value)</div>
-<div class="c-code__line">    }</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> value, found := result.GetValueByProperty(<span class="c-code__stringliteral">&quot;AccuracyRadiusMin&quot;</span>); !found {</div>
-<div class="c-code__line">        log.Printf(<span class="c-code__stringliteral">&quot;AccuracyRadiusMin not found for address %s&quot;</span>, ipAddress)</div>
-<div class="c-code__line">    } <span class="c-code__keywordflow">else</span> {</div>
-<div class="c-code__line">        log.Printf(<span class="c-code__stringliteral">&quot;AccuracyRadiusMin: %+v\n&quot;</span>, value)</div>
-<div class="c-code__line">    }</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> value, found := result.GetValueByProperty(<span class="c-code__stringliteral">&quot;AccuracyRadiusMax&quot;</span>); !found {</div>
-<div class="c-code__line">        log.Printf(<span class="c-code__stringliteral">&quot;AccuracyRadiusMax not found for address %s&quot;</span>, ipAddress)</div>
-<div class="c-code__line">    } <span class="c-code__keywordflow">else</span> {</div>
-<div class="c-code__line">        log.Printf(<span class="c-code__stringliteral">&quot;AccuracyRadiusMax: %+v\n&quot;</span>, value)</div>
-<div class="c-code__line">    }</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> value, found := result.GetValueByProperty(<span class="c-code__stringliteral">&quot;RegisteredCountry&quot;</span>); !found {</div>
-<div class="c-code__line">        log.Printf(<span class="c-code__stringliteral">&quot;RegisteredCountry not found for for address %s&quot;</span>, ipAddress)</div>
-<div class="c-code__line">    } <span class="c-code__keywordflow">else</span> {</div>
-<div class="c-code__line">        log.Printf(<span class="c-code__stringliteral">&quot;RegisteredCountry: %+v\n&quot;</span>, value)</div>
-<div class="c-code__line">    }</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> value, found := result.GetValueByProperty(<span class="c-code__stringliteral">&quot;RegisteredName&quot;</span>); !found {</div>
-<div class="c-code__line">        log.Printf(<span class="c-code__stringliteral">&quot;RegisteredName not found for for address %s&quot;</span>, ipAddress)</div>
-<div class="c-code__line">    } <span class="c-code__keywordflow">else</span> {</div>
-<div class="c-code__line">        log.Printf(<span class="c-code__stringliteral">&quot;RegisteredName: %+v\n&quot;</span>, value)</div>
-<div class="c-code__line">    }</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> value, found := result.GetValueByProperty(<span class="c-code__stringliteral">&quot;Longitude&quot;</span>); !found {</div>
-<div class="c-code__line">        log.Printf(<span class="c-code__stringliteral">&quot;Longitude not found for for address %s&quot;</span>, ipAddress)</div>
-<div class="c-code__line">    } <span class="c-code__keywordflow">else</span> {</div>
-<div class="c-code__line">        log.Printf(<span class="c-code__stringliteral">&quot;Longitude: %+v\n&quot;</span>, value)</div>
-<div class="c-code__line">    }</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> value, found := result.GetValueByProperty(<span class="c-code__stringliteral">&quot;Latitude&quot;</span>); !found {</div>
-<div class="c-code__line">        log.Printf(<span class="c-code__stringliteral">&quot;Latitude not found for for address %s&quot;</span>, ipAddress)</div>
-<div class="c-code__line">    } <span class="c-code__keywordflow">else</span> {</div>
-<div class="c-code__line">        log.Printf(<span class="c-code__stringliteral">&quot;Latitude: %+v\n&quot;</span>, value)</div>
-<div class="c-code__line">    }</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> value, found := result.GetValueByProperty(<span class="c-code__stringliteral">&quot;Areas&quot;</span>); !found {</div>
-<div class="c-code__line">        log.Printf(<span class="c-code__stringliteral">&quot;Areas not found for for address %s&quot;</span>, ipAddress)</div>
-<div class="c-code__line">    } <span class="c-code__keywordflow">else</span> {</div>
-<div class="c-code__line">        log.Printf(<span class="c-code__stringliteral">&quot;Areas: %+v\n&quot;</span>, value)</div>
-<div class="c-code__line">    }</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> value, weight, found := result.GetValueWeightByProperty(<span class="c-code__stringliteral">&quot;Mcc&quot;</span>); !found {</div>
-<div class="c-code__line">        log.Printf(<span class="c-code__stringliteral">&quot;Not found values for the next property %s for address %s&quot;</span>, <span class="c-code__stringliteral">&quot;Mcc&quot;</span>, ipAddress)</div>
-<div class="c-code__line">    } <span class="c-code__keywordflow">else</span> {</div>
-<div class="c-code__line">        log.Printf(<span class="c-code__stringliteral">&quot;Mcc: %+v:%.2f\n&quot;</span>, value, weight)</div>
+<div class="c-code__line">    log.Printf(&quot;IP address %s:&quot;, ipAddress)</div>
+<div class="c-code__line">    for _, property := range common.NetworkProperties {</div>
+<div class="c-code__line">        value, weight, found := result.GetValueWeightByProperty(property)</div>
+<div class="c-code__line">        switch {</div>
+<div class="c-code__line">        case found:</div>
+<div class="c-code__line">            log.Printf(&quot;%s: %+v (weight %.2f)&quot;, property, value, weight)</div>
+<div class="c-code__line">        case free &amp;&amp; !common.FreeProperties[property]:</div>
+<div class="c-code__line">            log.Printf(&quot;%s: %s&quot;, property, common.NeedsEnterprise)</div>
+<div class="c-code__line">        default:</div>
+<div class="c-code__line">            log.Printf(&quot;%s: no value for this address&quot;, property)</div>
+<div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">var evidences = common.IpEvidences{</div>
-<div class="c-code__line">    <span class="c-code__stringliteral">&quot;185.28.167.77&quot;</span>,</div>
-<div class="c-code__line">    <span class="c-code__stringliteral">&quot;fdaa:bbcc:ddee:0:995f:d63a:f2a1:f189&quot;</span>,</div>
-<div class="c-code__line">    <span class="c-code__stringliteral">&quot;145.23.184.233&quot;</span>,</div>
-<div class="c-code__line">    <span class="c-code__stringliteral">&quot;e58e:9ea7:1049:5a42:503d:c45c:f55a:0bd3&quot;</span>,</div>
+<div class="c-code__line">    &quot;185.28.167.77&quot;,</div>
+<div class="c-code__line">    &quot;fdaa:bbcc:ddee:0:995f:d63a:f2a1:f189&quot;,</div>
+<div class="c-code__line">    &quot;145.23.184.233&quot;,</div>
+<div class="c-code__line">    &quot;e58e:9ea7:1049:5a42:503d:c45c:f55a:0bd3&quot;,</div>
+<div class="c-code__line">}</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment">// runWithoutUpdates shows the data file the example has, once, when there is</span></div>
+<div class="c-code__line"><span class="c-code__comment">// neither a licence key nor an address to download updates from.</span></div>
+<div class="c-code__line">func runWithoutUpdates(params *common.ExampleParams) {</div>
+<div class="c-code__line">    engine, err := ipi_onpremise.New(</div>
+<div class="c-code__line">        ipi_onpremise.WithConfigIpi(ipi_interop.NewConfigIpi(ipi_interop.InMemory)),</div>
+<div class="c-code__line">        ipi_onpremise.WithDataFile(params.DataFile),</div>
+<div class="c-code__line">        ipi_onpremise.WithAutoUpdate(false),</div>
+<div class="c-code__line">        ipi_onpremise.WithTempDataCopy(false),</div>
+<div class="c-code__line">        ipi_onpremise.WithProperties(common.NetworkProperties),</div>
+<div class="c-code__line">    )</div>
+<div class="c-code__line">    if err != nil {</div>
+<div class="c-code__line">        log.Fatalf(&quot;Failed to create engine: %v&quot;, err)</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">    defer engine.Stop()</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    free := common.IsFreeDataFile(engine, common.NetworkProperties)</div>
+<div class="c-code__line">    processEvidence(engine, free, evidences[0])</div>
+<div class="c-code__line">    processEvidence(engine, free, evidences[1])</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    fmt.Printf(&quot;\nAutomatic updates download the Enterprise data file with a &quot;+</div>
+<div class="c-code__line">        &quot;licence key, which _51DEGREES_LICENSE_KEY gives, or from a copy &quot;+</div>
+<div class="c-code__line">        &quot;you host, whose address _51DEGREES_IPI_DATA_FILE_URL gives. &quot;+</div>
+<div class="c-code__line">        &quot;Contact us for a key and a copy at %s\n&quot;, contactUs)</div>
 <div class="c-code__line">}</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">func main() {</div>
-<div class="c-code__line">    common.RunExample(</div>
+<div class="c-code__line">    common.RunExampleWithDataFile(common.AsnDataFile,</div>
 <div class="c-code__line">        func(params *common.ExampleParams) error {</div>
-<div class="c-code__line">            config := ipi_interop.NewConfigIpi(ipi_interop.InMemory)</div>
+<div class="c-code__line">            if params.LicenseKey == &quot;&quot; &amp;&amp; params.DataFileUrl == &quot;&quot; {</div>
+<div class="c-code__line">                runWithoutUpdates(params)</div>
+<div class="c-code__line">                return nil</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">            <span class="c-code__comment">// LowMemory reads the data file as it is needed rather than</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// loading it all, because updates download the Enterprise data</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// file, which is several gigabytes.</span></div>
+<div class="c-code__line">            config := ipi_interop.NewConfigIpi(ipi_interop.LowMemory)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">//Create on-premise engine</span></div>
 <div class="c-code__line">            engine, err := ipi_onpremise.New(</div>
@@ -276,17 +276,19 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line">                <span class="c-code__comment">// Enable automatic updates.</span></div>
 <div class="c-code__line">                ipi_onpremise.WithAutoUpdate(true),</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">                <span class="c-code__comment">// Set the frequency in minutes that the pipeline should</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// check for updates to data files. A recommended</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// polling interval in a production environment is</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// around 30 minutes.</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// Set the frequency in seconds that the pipeline should</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// check for updates to data files. The example checks every</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// few seconds so that an update can arrive while it waits</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// between its two sets of lookups. A recommended polling</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// interval in a production environment is around 30</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// minutes, which is 1800 seconds.</span></div>
 <div class="c-code__line">                ipi_onpremise.WithPollingInterval(3),</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">                <span class="c-code__comment">// Set the max amount of time in seconds that should be</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// added to the polling interval. This is useful in datacenter</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// applications where multiple instances may be polling for</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// updates at the same time. A recommended amount in production</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// environments is 600 seconds.</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// Set the maximum random time in seconds added to each polling</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// interval. A new time from 0 up to this maximum is drawn for</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// each interval, so that multiple instances in a datacenter do</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// not poll for updates at the same time. A recommended amount</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// in production environments is 600 seconds.</span></div>
 <div class="c-code__line">                ipi_onpremise.WithRandomization(1),</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">                <span class="c-code__comment">// Enable update on startup, the auto update system</span></div>
@@ -297,8 +299,9 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line">                <span class="c-code__comment">// Optionally provide your own file URL</span></div>
 <div class="c-code__line">                ipi_onpremise.WithDataUpdateUrl(params.DataFileUrl),</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">                <span class="c-code__comment">// By default a temp copy should be created, unless you are using InMemory performance profile</span></div>
-<div class="c-code__line">                ipi_onpremise.WithTempDataCopy(false),</div>
+<div class="c-code__line">                <span class="c-code__comment">// LowMemory keeps the data file open, so the engine reads a</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// temp copy and an update can replace the original.</span></div>
+<div class="c-code__line">                ipi_onpremise.WithTempDataCopy(true),</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">                <span class="c-code__comment">// File System Watcher is by default enabled</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// ipi_onpremise.WithFileWatch(false),</span></div>
@@ -312,23 +315,29 @@ and connection properties. <a href="https://51degrees.com/contact-us">Contact us
 <div class="c-code__line">                <span class="c-code__comment">// Set properties for checking, default is [] = all properties</span></div>
 <div class="c-code__line">                ipi_onpremise.WithProperties([]string{}),</div>
 <div class="c-code__line">            )</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">if</span> err != nil {</div>
-<div class="c-code__line">                log.Fatalf(<span class="c-code__stringliteral">&quot;Failed to create engine: %v&quot;</span>, err)</div>
+<div class="c-code__line">            if err != nil {</div>
+<div class="c-code__line">                log.Fatalf(&quot;Failed to create engine: %v&quot;, err)</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            defer engine.Stop()</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">            free := common.IsFreeDataFile(engine, common.NetworkProperties)</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">//process before file has been updated</span></div>
-<div class="c-code__line">            processEvidence(engine, evidences[0])</div>
-<div class="c-code__line">            processEvidence(engine, evidences[1])</div>
+<div class="c-code__line">            processEvidence(engine, free, evidences[0])</div>
+<div class="c-code__line">            processEvidence(engine, free, evidences[1])</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            &lt;-time.After(30 * time.Second)</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__comment">//process after file has been updated</span></div>
-<div class="c-code__line">            processEvidence(engine, evidences[2])</div>
-<div class="c-code__line">            processEvidence(engine, evidences[3])</div>
+<div class="c-code__line">            <span class="c-code__comment">// The data file can have been replaced, so it is checked again</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// before the second pair of addresses.</span></div>
+<div class="c-code__line">            free = common.IsFreeDataFile(engine, common.NetworkProperties)</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__keywordflow">return</span> nil</div>
+<div class="c-code__line">            <span class="c-code__comment">//process after file has been updated</span></div>
+<div class="c-code__line">            processEvidence(engine, free, evidences[2])</div>
+<div class="c-code__line">            processEvidence(engine, free, evidences[3])</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">            return nil</div>
 <div class="c-code__line">        })</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --> </div><!-- primary -->
