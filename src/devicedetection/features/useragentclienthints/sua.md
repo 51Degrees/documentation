@@ -50,7 +50,7 @@ The device detection engine converts SUA evidence in its C layer. You do not nee
 
 # Related pages
 
-For more details on OpenRTB integration, see the [OpenRTB Mappings](@ref DeviceDetection_OtherIntegrations_OpenRTBMappings) page.
+For more details on OpenRTB integration, see the [OpenRTB Mappings](@ref Integrations_OpenRTBMappings) page.
 
 For alternative UA-CH approaches, see:
 - [JavaScript API](@ref DeviceDetection_Features_UACH_Javascript) - using `getHighEntropyValues()`
