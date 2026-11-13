@@ -167,6 +167,13 @@ var annotated =
         [ "DeviceDetectionTests", "classtests_1_1test__devicedetection_1_1_device_detection_tests.html", "classtests_1_1test__devicedetection_1_1_device_detection_tests" ],
         [ "DeviceDetectionCacheTests", "classtests_1_1test__devicedetection_1_1_device_detection_cache_tests.html", "classtests_1_1test__devicedetection_1_1_device_detection_cache_tests" ]
       ] ],
+      [ "test_environment_names", "namespacetests_1_1test__environment__names.html", [
+        [ "OldNameTests", "classtests_1_1test__environment__names_1_1_old_name_tests.html", "classtests_1_1test__environment__names_1_1_old_name_tests" ],
+        [ "KeyUtilsTests", "classtests_1_1test__environment__names_1_1_key_utils_tests.html", "classtests_1_1test__environment__names_1_1_key_utils_tests" ]
+      ] ],
+      [ "test_examples_without_settings", "namespacetests_1_1test__examples__without__settings.html", [
+        [ "ExamplesWithoutSettingsTests", "classtests_1_1test__examples__without__settings_1_1_examples_without_settings_tests.html", "classtests_1_1test__examples__without__settings_1_1_examples_without_settings_tests" ]
+      ] ],
       [ "test_hardwareprofile_cloud", "namespacetests_1_1test__hardwareprofile__cloud.html", [
         [ "_FakeCloudElementData", "classtests_1_1test__hardwareprofile__cloud_1_1___fake_cloud_element_data.html", "classtests_1_1test__hardwareprofile__cloud_1_1___fake_cloud_element_data" ],
         [ "_FakeFlowData", "classtests_1_1test__hardwareprofile__cloud_1_1___fake_flow_data.html", "classtests_1_1test__hardwareprofile__cloud_1_1___fake_flow_data" ],
@@ -179,11 +186,29 @@ var annotated =
         [ "OnPremiseGettingStartedWebTests", "classtests_1_1test__onpremisegettingstartedweb_1_1_on_premise_getting_started_web_tests.html", "classtests_1_1test__onpremisegettingstartedweb_1_1_on_premise_getting_started_web_tests" ],
         [ "OnPremiseGettingStartedWebConfigTests", "classtests_1_1test__onpremisegettingstartedweb_1_1_on_premise_getting_started_web_config_tests.html", "classtests_1_1test__onpremisegettingstartedweb_1_1_on_premise_getting_started_web_config_tests" ]
       ] ],
+      [ "test_performance_profile_default", "namespacetests_1_1test__performance__profile__default.html", [
+        [ "PerformanceProfileDefaultTests", "classtests_1_1test__performance__profile__default_1_1_performance_profile_default_tests.html", "classtests_1_1test__performance__profile__default_1_1_performance_profile_default_tests" ]
+      ] ],
       [ "test_properties", "namespacetests_1_1test__properties.html", [
         [ "PropertyTests", "classtests_1_1test__properties_1_1_property_tests.html", "classtests_1_1test__properties_1_1_property_tests" ]
       ] ],
+      [ "test_read_by_index", "namespacetests_1_1test__read__by__index.html", [
+        [ "ReadByIndexTests", "classtests_1_1test__read__by__index_1_1_read_by_index_tests.html", "classtests_1_1test__read__by__index_1_1_read_by_index_tests" ]
+      ] ],
       [ "test_swig", "namespacetests_1_1test__swig.html", [
         [ "SwigTests", "classtests_1_1test__swig_1_1_swig_tests.html", "classtests_1_1test__swig_1_1_swig_tests" ]
+      ] ],
+      [ "test_swig_data_index", "namespacetests_1_1test__swig__data__index.html", [
+        [ "Value", "classtests_1_1test__swig__data__index_1_1_value.html", "classtests_1_1test__swig__data__index_1_1_value" ],
+        [ "RecordingResults", "classtests_1_1test__swig__data__index_1_1_recording_results.html", "classtests_1_1test__swig__data__index_1_1_recording_results" ],
+        [ "FakeElement", "classtests_1_1test__swig__data__index_1_1_fake_element.html", "classtests_1_1test__swig__data__index_1_1_fake_element" ],
+        [ "SwigDataIndexTests", "classtests_1_1test__swig__data__index_1_1_swig_data_index_tests.html", "classtests_1_1test__swig__data__index_1_1_swig_data_index_tests" ]
+      ] ],
+      [ "test_update_matched_useragent", "namespacetests_1_1test__update__matched__useragent.html", [
+        [ "UpdateMatchedUserAgentTests", "classtests_1_1test__update__matched__useragent_1_1_update_matched_user_agent_tests.html", "classtests_1_1test__update__matched__useragent_1_1_update_matched_user_agent_tests" ]
+      ] ],
+      [ "test_web_example_configs", "namespacetests_1_1test__web__example__configs.html", [
+        [ "WebExampleConfigTests", "classtests_1_1test__web__example__configs_1_1_web_example_config_tests.html", "classtests_1_1test__web__example__configs_1_1_web_example_config_tests" ]
       ] ]
     ] ]
 ];

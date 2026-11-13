@@ -102,7 +102,7 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a1156ed2683a30e49c6e81e894cb7e65e" id="r_a1156ed2683a30e49c6e81e894cb7e65e"><td class="c-table__cell">DeviceDetectionOnPremisePipelineBuilder&#160;</td><td class="c-table__cell"><a class="el" href="#a1156ed2683a30e49c6e81e894cb7e65e">SetPerformanceProfile</a> (<a class="elRef" href="../../pipeline-dotnet/4.4/namespace_fifty_one_1_1_pipeline_1_1_engines.html#a7e8161b9ca37059040ff754ba3e668f1">PerformanceProfiles</a> profile)</td></tr>
 <tr class="c-table__row memdesc:a1156ed2683a30e49c6e81e894cb7e65e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the performance profile for the device detection engine.  <br /></td></tr>
 <tr class="c-table__row memitem:a12717722ca9e181ccd38d26b5cb95be5" id="r_a12717722ca9e181ccd38d26b5cb95be5"><td class="c-table__cell">DeviceDetectionOnPremisePipelineBuilder&#160;</td><td class="c-table__cell"><a class="el" href="#a12717722ca9e181ccd38d26b5cb95be5">SetConcurrency</a> (ushort concurrency)</td></tr>
-<tr class="c-table__row memdesc:a12717722ca9e181ccd38d26b5cb95be5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the expected number of concurrent operations using the engine.  <br /></td></tr>
+<tr class="c-table__row memdesc:a12717722ca9e181ccd38d26b5cb95be5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the expected number of operations that use the engine at the same time.  <br /></td></tr>
 <tr class="c-table__row memitem:a9ca32237bf952ee83ecfb3c77c2c4b57" id="r_a9ca32237bf952ee83ecfb3c77c2c4b57"><td class="c-table__cell">DeviceDetectionOnPremisePipelineBuilder&#160;</td><td class="c-table__cell"><a class="el" href="#a9ca32237bf952ee83ecfb3c77c2c4b57">SetDataUpdateUrl</a> (string url)</td></tr>
 <tr class="c-table__row memdesc:a9ca32237bf952ee83ecfb3c77c2c4b57"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Configure the engine to use the specified URL when looking for an updated data file.  <br /></td></tr>
 <tr class="c-table__row memitem:a4f50863eb26b67ac56ed339ec79f8bd3" id="r_a4f50863eb26b67ac56ed339ec79f8bd3"><td class="c-table__cell">DeviceDetectionOnPremisePipelineBuilder&#160;</td><td class="c-table__cell"><a class="el" href="#a4f50863eb26b67ac56ed339ec79f8bd3">SetDataUpdateUrl</a> (Uri url)</td></tr>
@@ -177,7 +177,7 @@ int&#160;</td><td class="c-table__cell"><a class="elRef" href="../../pipeline-do
 
 <p>Build and return a pipeline that can perform device detection. </p>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_match_metrics-_console_2_program_8cs-example.html#a10">OnPremise/MatchMetrics-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_getting_started-_console_2_program_8cs-example.html#a8">OnPremise/GettingStarted-Console/Program.cs</a>, <a class="el" href="_on_premise_2_match_metrics-_console_2_program_8cs-example.html#a10">OnPremise/MatchMetrics-Console/Program.cs</a>, and <a class="el" href="_on_premise_2_offline_processing-_console_2_program_8cs-example.html#a10">OnPremise/OfflineProcessing-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>
@@ -240,7 +240,7 @@ int&#160;</td><td class="c-table__cell"><a class="elRef" href="../../pipeline-do
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder instance. </dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_match_metrics-_console_2_program_8cs-example.html#a5">OnPremise/MatchMetrics-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_getting_started-_console_2_program_8cs-example.html#a5">OnPremise/GettingStarted-Console/Program.cs</a>, <a class="el" href="_on_premise_2_match_metrics-_console_2_program_8cs-example.html#a5">OnPremise/MatchMetrics-Console/Program.cs</a>, and <a class="el" href="_on_premise_2_offline_processing-_console_2_program_8cs-example.html#a7">OnPremise/OfflineProcessing-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>
@@ -264,11 +264,11 @@ int&#160;</td><td class="c-table__cell"><a class="elRef" href="../../pipeline-do
       </div>
 </div><div class="c-member__body">
 
-<p>Set the expected number of concurrent operations using the engine. </p>
-<p>This sets the concurrency of the internal caches to avoid excessive locking.</p>
+<p>Set the expected number of operations that use the engine at the same time. </p>
+<p>The native code uses it for every collection read from the data file. First, it sets the number of file handles in the pool, which is the concurrency up to a fixed maximum of 64, because a process can only have so many files open. An operation that has to read from the file when every handle is in use waits until another operation releases one. Second, it decides how each cache is split into parts, each with its own lock, which avoids excessive locking. An item in use cannot be removed from a cache, and any operation can need any part, so every part holds at least the concurrency in items. The number of parts is the concurrency, or fewer where needed so that every part holds that many items, and a cache that holds fewer items than the concurrency in total is made large enough to hold that many. No value stops the engine building. The concurrency has no effect when every collection is held in memory, for example with the MaxPerformance profile.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">concurrency</td><td>Expected concurrent accesses</td></tr>
+    <tr><td class="paramname">concurrency</td><td>The expected number of operations that use the engine at the same time. </td></tr>
   </table>
   </dd>
 </dl>
@@ -304,7 +304,7 @@ int&#160;</td><td class="c-table__cell"><a class="elRef" href="../../pipeline-do
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_match_metrics-_console_2_program_8cs-example.html#a6">OnPremise/MatchMetrics-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_getting_started-_console_2_program_8cs-example.html#a7">OnPremise/GettingStarted-Console/Program.cs</a>, <a class="el" href="_on_premise_2_match_metrics-_console_2_program_8cs-example.html#a6">OnPremise/MatchMetrics-Console/Program.cs</a>, and <a class="el" href="_on_premise_2_offline_processing-_console_2_program_8cs-example.html#a9">OnPremise/OfflineProcessing-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>
@@ -368,7 +368,7 @@ int&#160;</td><td class="c-table__cell"><a class="elRef" href="../../pipeline-do
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder. </dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_match_metrics-_console_2_program_8cs-example.html#a4">OnPremise/MatchMetrics-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_getting_started-_console_2_program_8cs-example.html#a6">OnPremise/GettingStarted-Console/Program.cs</a>, <a class="el" href="_on_premise_2_match_metrics-_console_2_program_8cs-example.html#a4">OnPremise/MatchMetrics-Console/Program.cs</a>, and <a class="el" href="_on_premise_2_offline_processing-_console_2_program_8cs-example.html#a8">OnPremise/OfflineProcessing-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>
@@ -564,6 +564,8 @@ int&#160;</td><td class="c-table__cell"><a class="elRef" href="../../pipeline-do
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder instance. </dd></dl>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_getting_started-_console_2_program_8cs-example.html#a2">OnPremise/GettingStarted-Console/Program.cs</a>, and <a class="el" href="_on_premise_2_offline_processing-_console_2_program_8cs-example.html#a5">OnPremise/OfflineProcessing-Console/Program.cs</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -628,6 +630,8 @@ int&#160;</td><td class="c-table__cell"><a class="elRef" href="../../pipeline-do
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder instance. </dd></dl>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_getting_started-_console_2_program_8cs-example.html#a4">OnPremise/GettingStarted-Console/Program.cs</a>, and <a class="el" href="_on_premise_2_offline_processing-_console_2_program_8cs-example.html#a6">OnPremise/OfflineProcessing-Console/Program.cs</a>.</dd>
+</dl>
 
 </div>
 </div>

@@ -97,18 +97,26 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a29ef4f7d65e58674c6932a9e1e9b5882"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Internal method to get properties for cloud engines from the cloud service.  <br /></td></tr>
 <tr class="c-table__row memitem:adfb184d9e2ba362fb008b22bc8f2b8f5" id="r_adfb184d9e2ba362fb008b22bc8f2b8f5"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#adfb184d9e2ba362fb008b22bc8f2b8f5">validate_response</a> (self, requests.Response cloud_response, check_for_error_messages=True)</td></tr>
 <tr class="c-table__row memdesc:adfb184d9e2ba362fb008b22bc8f2b8f5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Validate the JSON response from the cloud service.  <br /></td></tr>
+<tr class="c-table__row memitem:a2ee00ab3f6f67e7b814ce448e7c539ec" id="r_a2ee00ab3f6f67e7b814ce448e7c539ec"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a2ee00ab3f6f67e7b814ce448e7c539ec">masked</a> (self, text)</td></tr>
+<tr class="c-table__row memdesc:a2ee00ab3f6f67e7b814ce448e7c539ec"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Text from or about a cloud answer with the licence key in use shown only as its last four characters.  <br /></td></tr>
 <tr class="c-table__row memitem:ae521b889bb21b693cb18b2e0845ce9e4" id="r_ae521b889bb21b693cb18b2e0845ce9e4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ae521b889bb21b693cb18b2e0845ce9e4">make_cloud_request</a> (self, type, url, content=None)</td></tr>
 <tr class="c-table__row memdesc:ae521b889bb21b693cb18b2e0845ce9e4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">@type url: string  <br /></td></tr>
 <tr class="c-table__row memitem:a7991782fa963dccecc1a72f1ae123b90" id="r_a7991782fa963dccecc1a72f1ae123b90"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7991782fa963dccecc1a72f1ae123b90">process_internal</a> (self, flowdata)</td></tr>
 <tr class="c-table__row memdesc:a7991782fa963dccecc1a72f1ae123b90"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processing function for the <a class="el" href="classfiftyone__pipeline__cloudrequestengine_1_1cloudrequestengine_1_1_cloud_request_engine.html">CloudRequestEngine</a> Makes a request to the cloud service with the supplied resource key and evidence and returns a JSON object that is then parsed by cloud engines placed later in the pipeline.  <br /></td></tr>
+<tr class="c-table__row memitem:a0849042e6d3d31a7616ef7a7d184172f" id="r_a0849042e6d3d31a7616ef7a7d184172f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a0849042e6d3d31a7616ef7a7d184172f">is_cacheable</a> (self, data)</td></tr>
+<tr class="c-table__row memdesc:a0849042e6d3d31a7616ef7a7d184172f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A response whose JSON has a top-level member named fodid, in any case, holds a 51Did created for the one request that asked for it, so it is neither stored in the cache nor served from it.  <br /></td></tr>
 <tr class="c-table__row memitem:ab2e27371d745eb5931e95d3c3ac9fbaf" id="r_ab2e27371d745eb5931e95d3c3ac9fbaf"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab2e27371d745eb5931e95d3c3ac9fbaf">report_properties_not_covered</a> (self, result)</td></tr>
 <tr class="c-table__row memdesc:ab2e27371d745eb5931e95d3c3ac9fbaf"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Compare the properties a request asked for with the ones its answer carries, and warn once about any it left out.  <br /></td></tr>
 <tr class="c-table__row memitem:a3746b6392cfd2aeb46c17935ef44ab14" id="r_a3746b6392cfd2aeb46c17935ef44ab14"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a3746b6392cfd2aeb46c17935ef44ab14">get_content</a> (self, flowData)</td></tr>
 <tr class="c-table__row memdesc:a3746b6392cfd2aeb46c17935ef44ab14"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Generate the Content to send in the POST request.  <br /></td></tr>
+<tr class="c-table__row memitem:a21fa8f27543ab26a2c44dede6d2c6e74" id="r_a21fa8f27543ab26a2c44dede6d2c6e74"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a21fa8f27543ab26a2c44dede6d2c6e74">sendable_evidence</a> (self, evidence)</td></tr>
+<tr class="c-table__row memdesc:a21fa8f27543ab26a2c44dede6d2c6e74"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The evidence the engine sends, being every value in the flow data, whether an element accepted it or not, apart from the web request view.  <br /></td></tr>
 <tr class="c-table__row memitem:a3366e9cb929501f9626a85118ac8dbd3" id="r_a3366e9cb929501f9626a85118ac8dbd3"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a3366e9cb929501f9626a85118ac8dbd3">add_query_data</a> (self, query_data, all_evidence, evidence)</td></tr>
 <tr class="c-table__row memdesc:a3366e9cb929501f9626a85118ac8dbd3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add query data to the evidence.  <br /></td></tr>
 <tr class="c-table__row memitem:a349be65079a4b3cc195e952c7b5b40f0" id="r_a349be65079a4b3cc195e952c7b5b40f0"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a349be65079a4b3cc195e952c7b5b40f0">get_selected_evidence</a> (self, evidence, type)</td></tr>
 <tr class="c-table__row memdesc:a349be65079a4b3cc195e952c7b5b40f0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get evidence with specified prefix.  <br /></td></tr>
+<tr class="c-table__row memitem:a48f12df14b059ccdab9d82e8f625a66a" id="r_a48f12df14b059ccdab9d82e8f625a66a"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a48f12df14b059ccdab9d82e8f625a66a">other_prefix_rank</a> (self, key)</td></tr>
+<tr class="c-table__row memdesc:a48f12df14b059ccdab9d82e8f625a66a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The sort key of an evidence key that is not query, header or cookie evidence, where a lower one wins.  <br /></td></tr>
 <tr class="c-table__row memitem:ab05ea1e584884b1146a3e569984349f9" id="r_ab05ea1e584884b1146a3e569984349f9"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab05ea1e584884b1146a3e569984349f9">key_has_prefix</a> (self, itemKey, prefix)</td></tr>
 <tr class="c-table__row memdesc:ab05ea1e584884b1146a3e569984349f9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that the key of a KeyValuePair has the given prefix.  <br /></td></tr>
 <tr class="c-table__row inherit_header pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html">fiftyone_pipeline_engines.engine.Engine</a></h3></td></tr>
@@ -133,9 +141,9 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a44bb0edd021c4c590564ab9213200bdb pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_a44bb0edd021c4c590564ab9213200bdb"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a44bb0edd021c4c590564ab9213200bdb">__init__</a> (self)</td></tr>
 <tr class="c-table__row memdesc:a44bb0edd021c4c590564ab9213200bdb pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">List of Pipelines the <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a> has been added to.  <br /></td></tr>
 <tr class="c-table__row memitem:ad870f1ebf5441d563b950d22f739d66e pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_ad870f1ebf5441d563b950d22f739d66e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#ad870f1ebf5441d563b950d22f739d66e">filter_evidence</a> (self, flowdata)</td></tr>
-<tr class="c-table__row memdesc:ad870f1ebf5441d563b950d22f739d66e pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Filter FlowData evidence using the <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a>'s <a class="el" href="classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter.html" title="An EvidenceKeyFilter is attached to a FlowElement and is used to check if a specific evidence key is ...">EvidenceKeyFilter</a>.  <br /></td></tr>
+<tr class="c-table__row memdesc:ad870f1ebf5441d563b950d22f739d66e pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Filter FlowData evidence using the <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a>'s EvidenceKeyFilter.  <br /></td></tr>
 <tr class="c-table__row memitem:abd27d7810ba73ae7f460e41f60a838a2 pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_abd27d7810ba73ae7f460e41f60a838a2"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#abd27d7810ba73ae7f460e41f60a838a2">filter_evidence_key</a> (self, key)</td></tr>
-<tr class="c-table__row memdesc:abd27d7810ba73ae7f460e41f60a838a2 pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Filter FlowData.evidence using the flowElement's <a class="el" href="classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter.html" title="An EvidenceKeyFilter is attached to a FlowElement and is used to check if a specific evidence key is ...">EvidenceKeyFilter</a> with the property key of evidence of interest.  <br /></td></tr>
+<tr class="c-table__row memdesc:abd27d7810ba73ae7f460e41f60a838a2 pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Filter FlowData.evidence using the flowElement's EvidenceKeyFilter with the property key of evidence of interest.  <br /></td></tr>
 <tr class="c-table__row memitem:a7a8ee50d64418ed21fba58d137071ac7 pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_a7a8ee50d64418ed21fba58d137071ac7"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a7a8ee50d64418ed21fba58d137071ac7">get_properties</a> (self)</td></tr>
 <tr class="c-table__row memdesc:a7a8ee50d64418ed21fba58d137071ac7 pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#aab48c05219b1384dd62c6698c15d12d1">FlowElement.properties</a> of a <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a>.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
@@ -160,6 +168,7 @@ Public Attributes</h2></td></tr>
 <tr class="c-table__row memitem:a204eafca1dfafd1fbd3c6df369576c3f pub_attribs_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a204eafca1dfafd1fbd3c6df369576c3f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a204eafca1dfafd1fbd3c6df369576c3f">data_file</a> = data_file</td></tr>
 <tr class="c-table__row memitem:a0396e4bed172e18cc6846bdd48d7252f pub_attribs_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a0396e4bed172e18cc6846bdd48d7252f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a0396e4bed172e18cc6846bdd48d7252f">cache</a> = cache</td></tr>
 <tr class="c-table__row memitem:a15dd701f65716016830617f3b48a888d pub_attribs_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a15dd701f65716016830617f3b48a888d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a15dd701f65716016830617f3b48a888d">restricted_properties</a> = properties_list</td></tr>
+<tr class="c-table__row memitem:ac717dfff7c7cb04855fd6673c689bb59 pub_attribs_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_ac717dfff7c7cb04855fd6673c689bb59"><td class="c-table__cell">dict&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#ac717dfff7c7cb04855fd6673c689bb59">restricted_property_keys</a></td></tr>
 <tr class="c-table__row inherit_header pub_attribs_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Attributes inherited from <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html">fiftyone_pipeline_core.flowelement.FlowElement</a></h3></td></tr>
 <tr class="c-table__row memitem:a3a1e41ed484fb4d31b9e77adce3f73a9 pub_attribs_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_a3a1e41ed484fb4d31b9e77adce3f73a9"><td class="c-table__cell">list&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a3a1e41ed484fb4d31b9e77adce3f73a9">pipelines</a> = []</td></tr>
 <tr class="c-table__row memitem:aab48c05219b1384dd62c6698c15d12d1 pub_attribs_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_aab48c05219b1384dd62c6698c15d12d1"><td class="c-table__cell">dict&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#aab48c05219b1384dd62c6698c15d12d1">properties</a> = {}</td></tr>
@@ -198,7 +207,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Constructor for <a class="el" href="classfiftyone__pipeline__cloudrequestengine_1_1cloudrequestengine_1_1_cloud_request_engine.html">CloudRequestEngine</a>. </p>
 <p>@type settings: dict </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">settings</td><td>Settings should contain a resource_key or a license_key, and optionally 1) requested_properties, the fully qualified names of the properties to ask for, as a list or a comma separated string. Required with a license_key alone and refused with a resource_key, because the cloud service ignores the list whenever a resource key is present 2) a cloud_endpoint to overwrite the default baseurl 3) an cloud_request_origin to use when making requests</td></tr>
+    <tr><td class="paramname">settings</td><td>Settings should contain a resource_key or a license_key, and optionally 1) requested_properties, the fully qualified names of the properties to ask for, as a list or a comma separated string. Required with a license_key alone. Beside a resource_key the cloud service adds them to the properties the resource key carries 2) a cloud_endpoint to overwrite the default baseurl 3) an cloud_request_origin to use when making requests</td></tr>
   </table>
   </dd>
 </dl>
@@ -276,7 +285,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Add to the properties each request asks for, after the engine is built. </p>
-<p>The names are trimmed and lower-cased as the constructor does, so a name given in the case the documentation uses still matches the answer, and the credential rules are checked again, because a list only has meaning on a licence key alone and the constructor's check cannot see a list added later.</p>
+<p>The names are trimmed and lower-cased as the constructor does, so a name given in the case the documentation uses still matches the answer.</p>
 <p>@type names: list or string </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">names</td><td>the names to add, as a list or one comma separated string, each as "section.property" </td></tr>
@@ -375,8 +384,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Generate the Content to send in the POST request. </p>
-<p>The evidence keys e.g. 'query.' and 'header.' have an order of precedence. These are added to the evidence in reverse order, if there is conflict then the queryData value is overwritten.</p>
-<p>'query.' evidence should take precedence over all other evidence. If there are evidence keys other than 'query.' that conflict then this is unexpected so a warning will be logged.</p>
+<p>One name under several prefixes is sent once, with the value of the prefix that evidence.md ranks highest, being query, header, cookie, server, fiftyone and location, then any other prefix alphabetically. The groups are added lowest precedence first, so a later value replaces an earlier one, and a replacement by a key other than a query key is logged as a warning.</p>
+<p>The engine sends every evidence value in the flow data, including the values no element in the pipeline accepts, because what the cloud service uses changes over time and knowing about the other evidence is important to continued optimization. The reserved names and the web request view are left out.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname"></td><td>flowData: FlowData </td></tr>
@@ -525,6 +534,43 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a0849042e6d3d31a7616ef7a7d184172f" name="a0849042e6d3d31a7616ef7a7d184172f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0849042e6d3d31a7616ef7a7d184172f">&#9670;&#160;</a></span>is_cacheable()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_cloudrequestengine.cloudrequestengine.CloudRequestEngine.is_cacheable </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>data</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>A response whose JSON has a top-level member named fodid, in any case, holds a 51Did created for the one request that asked for it, so it is neither stored in the cache nor served from it. </p>
+<p>A fodid below the top level is not one, and a response that cannot be read as a JSON object is cached as before.</p>
+<p>@type data: ElementData </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>A response the engine has just made, or one found in the cache</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>@rtype: bool </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: False if the response holds a fodid </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#aa501672dba2df3eec445da9ae7306e97">fiftyone_pipeline_engines.engine.Engine</a>.</p>
+
+</div>
+</div>
 <a id="ab05ea1e584884b1146a3e569984349f9" name="ab05ea1e584884b1146a3e569984349f9"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab05ea1e584884b1146a3e569984349f9">&#9670;&#160;</a></span>key_has_prefix()</h2>
 
@@ -609,6 +655,69 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a2ee00ab3f6f67e7b814ce448e7c539ec" name="a2ee00ab3f6f67e7b814ce448e7c539ec"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2ee00ab3f6f67e7b814ce448e7c539ec">&#9670;&#160;</a></span>masked()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_cloudrequestengine.cloudrequestengine.CloudRequestEngine.masked </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>text</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Text from or about a cloud answer with the licence key in use shown only as its last four characters. </p>
+<p>The cloud service names the key in some of its errors, and a URL may carry it in its query. </p>
+
+</div>
+</div>
+<a id="a48f12df14b059ccdab9d82e8f625a66a" name="a48f12df14b059ccdab9d82e8f625a66a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a48f12df14b059ccdab9d82e8f625a66a">&#9670;&#160;</a></span>other_prefix_rank()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_cloudrequestengine.cloudrequestengine.CloudRequestEngine.other_prefix_rank </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>key</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The sort key of an evidence key that is not query, header or cookie evidence, where a lower one wins. </p>
+<p>server, fiftyone and location come first, in the order evidence.md lists them, then any other prefix alphabetically, all ignoring letter case.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The evidence key </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: A tuple that sorts higher precedence first </dd></dl>
+
+</div>
+</div>
 <a id="a7991782fa963dccecc1a72f1ae123b90" name="a7991782fa963dccecc1a72f1ae123b90"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7991782fa963dccecc1a72f1ae123b90">&#9670;&#160;</a></span>process_internal()</h2>
 
@@ -668,13 +777,48 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Compare the properties a request asked for with the ones its answer carries, and warn once about any it left out. </p>
-<p>The cloud service drops a property the licence key does not cover without naming it, whenever the request also asked for a property the key does cover, so the engine has to notice the difference itself. A property that is present but null counts as answered, because it carries a nullreason beside it saying why it has no value on this request, which is a different matter from entitlement. The answer cannot change while the key and the list stay the same, so each distinct list is reported once.</p>
+<p>With a licence key, the cloud service drops a property the licence key does not cover without naming it, whenever the request also asked for a property the key does cover, so the engine has to notice the difference itself. With a resource key and no licence key, a property no licence grants comes back as null with a reason, so a name left out is not a property, and the warning says that instead. A property that is present but null counts as answered, because it carries a nullreason beside it saying why it has no value on this request, which is a different matter from entitlement. The answer cannot change while the keys and the list stay the same, so each distinct list is reported once.</p>
 <p>@type result: string </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">result</td><td>the JSON text the cloud service answered with </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a21fa8f27543ab26a2c44dede6d2c6e74" name="a21fa8f27543ab26a2c44dede6d2c6e74"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a21fa8f27543ab26a2c44dede6d2c6e74">&#9670;&#160;</a></span>sendable_evidence()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_cloudrequestengine.cloudrequestengine.CloudRequestEngine.sendable_evidence </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>evidence</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The evidence the engine sends, being every value in the flow data, whether an element accepted it or not, apart from the web request view. </p>
+<p>The reserved names are left out by add_query_data, which warns as it does so. An accepted value wins over a set aside one of the same key.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">evidence</td><td>The flow data's Evidence </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: The evidence keys and values to send </dd></dl>
 
 </div>
 </div>

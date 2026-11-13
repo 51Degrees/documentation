@@ -11,6 +11,8 @@ var classfiftyone__pipeline__examples_1_1example__utils_1_1_example_utils =
     [ "get_value", "classfiftyone__pipeline__examples_1_1example__utils_1_1_example_utils.html#a1f48aeb9c7fccc37f7ff99d51e306612", null ],
     [ "get_value_or_unknown", "classfiftyone__pipeline__examples_1_1example__utils_1_1_example_utils.html#a65e0c8c1b9593c119ae870d44fca6b8f", null ],
     [ "name_values", "classfiftyone__pipeline__examples_1_1example__utils_1_1_example_utils.html#a1a5f71b20936989b10c27678cc7446f8", null ],
+    [ "CLOUD_ENDPOINT_ENV_VAR", "classfiftyone__pipeline__examples_1_1example__utils_1_1_example_utils.html#a5489afb794f852a8f36d5dfad9270b0d", null ],
+    [ "CLOUD_REQUEST_ORIGIN_ENV_VAR", "classfiftyone__pipeline__examples_1_1example__utils_1_1_example_utils.html#a76fdfb2dd003b0db84a071236c3c6a96", null ],
     [ "ENDPOINT_ENV_VAR", "classfiftyone__pipeline__examples_1_1example__utils_1_1_example_utils.html#ae87c5adc714a661fd7565b7837401e1c", null ],
     [ "LEGACY_LICENSE_KEY_ENV_VAR", "classfiftyone__pipeline__examples_1_1example__utils_1_1_example_utils.html#a5a0441f0a1d2f8cfbd6a9b9141a3ee11", null ],
     [ "LEGACY_RESOURCE_KEY_ENV_VAR", "classfiftyone__pipeline__examples_1_1example__utils_1_1_example_utils.html#a5c4f8a3c7935b506cb52bdd36f7fa0ca", null ],

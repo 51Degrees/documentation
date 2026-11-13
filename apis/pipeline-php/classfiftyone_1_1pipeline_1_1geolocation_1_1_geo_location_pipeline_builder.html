@@ -82,7 +82,7 @@ Collaboration diagram for fiftyone\pipeline\geolocation\GeoLocationPipelineBuild
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a8386128db9c0e8e3360bee0456012cf7" id="r_a8386128db9c0e8e3360bee0456012cf7"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8386128db9c0e8e3360bee0456012cf7">__construct</a> (array $settings)</td></tr>
-<tr class="c-table__row memdesc:a8386128db9c0e8e3360bee0456012cf7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">settings.cloudEndPoint custom endpoint for the cloud service settings.restrictedProperties (list of properties to restrict the results to) settings.cloudRequestOrigin value to use for the Origin header when sending requests to cloud.  <br /></td></tr>
+<tr class="c-table__row memdesc:a8386128db9c0e8e3360bee0456012cf7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">settings.resourceKey the cloud resource key settings.licenseKey a license key, sent in the request body.  <br /></td></tr>
 <tr class="c-table__row inherit_header pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder.html">fiftyone\pipeline\core\PipelineBuilder</a></h3></td></tr>
 <tr class="c-table__row memitem:a7a156205b0aa6922ef038cb8674b29bf pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_a7a156205b0aa6922ef038cb8674b29bf"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder.html#a7a156205b0aa6922ef038cb8674b29bf">add</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html">FlowElement</a> $flowElement)</td></tr>
 <tr class="c-table__row memdesc:a7a156205b0aa6922ef038cb8674b29bf pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add FlowElement to be used in Pipeline.  <br /></td></tr>
@@ -116,12 +116,20 @@ string&#160;</td><td class="c-table__cell"><b>$licenseKey</b></td></tr>
 <tr class="c-table__row inherit_header pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Data Fields inherited from <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder.html">fiftyone\pipeline\core\PipelineBuilder</a></h3></td></tr>
 <tr class="c-table__row memitem:afad6a8241242b48e3de672fe67446135 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_afad6a8241242b48e3de672fe67446135"><td class="c-table__cell">
 array&#160;</td><td class="c-table__cell"><b>$pipelines</b></td></tr>
-<tr class="c-table__row memitem:a683eeabfa5f86416319dda49ddb75d79 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_a683eeabfa5f86416319dda49ddb75d79"><td class="c-table__cell">
-bool&#160;</td><td class="c-table__cell"><b>$addJavaScriptBuilder</b></td></tr>
+<tr class="c-table__row memitem:a683eeabfa5f86416319dda49ddb75d79 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_a683eeabfa5f86416319dda49ddb75d79"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder.html#a683eeabfa5f86416319dda49ddb75d79">$addJavaScriptBuilder</a></td></tr>
+<tr class="c-table__row memdesc:a683eeabfa5f86416319dda49ddb75d79 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Adds the Sequence, JSON Bundler and JavaScript Builder elements together.  <br /></td></tr>
+<tr class="c-table__row memitem:a7c8d142deab584f4fc6b5a949dd12014 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_a7c8d142deab584f4fc6b5a949dd12014"><td class="c-table__cell">
+bool&#160;</td><td class="c-table__cell"><b>$addSequenceElement</b></td></tr>
+<tr class="c-table__row memitem:aeb637629abfbd5373def5229ad3f3768 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_aeb637629abfbd5373def5229ad3f3768"><td class="c-table__cell">
+bool&#160;</td><td class="c-table__cell"><b>$addJsonBundlerElement</b></td></tr>
+<tr class="c-table__row memitem:a4fed2d382ee5784cc8680c61af36018b pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_a4fed2d382ee5784cc8680c61af36018b"><td class="c-table__cell">
+bool&#160;</td><td class="c-table__cell"><b>$addJavaScriptBuilderElement</b></td></tr>
+<tr class="c-table__row memitem:aeb60f70aaee3d98e90a1ae658c62493d pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_aeb60f70aaee3d98e90a1ae658c62493d"><td class="c-table__cell">
+bool&#160;</td><td class="c-table__cell"><b>$addSetHeaderElement</b></td></tr>
 <tr class="c-table__row memitem:a84ef36aabf3465ca3dd2a497c5402a5d pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_a84ef36aabf3465ca3dd2a497c5402a5d"><td class="c-table__cell">
 array&#160;</td><td class="c-table__cell"><b>$javascriptBuilderSettings</b> = []</td></tr>
-<tr class="c-table__row memitem:a08e1b8ec44ec04a6e58beef8e68e1896 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_a08e1b8ec44ec04a6e58beef8e68e1896"><td class="c-table__cell">
-bool&#160;</td><td class="c-table__cell"><b>$useSetHeaderProperties</b></td></tr>
+<tr class="c-table__row memitem:a08e1b8ec44ec04a6e58beef8e68e1896 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_a08e1b8ec44ec04a6e58beef8e68e1896"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder.html#a08e1b8ec44ec04a6e58beef8e68e1896">$useSetHeaderProperties</a></td></tr>
+<tr class="c-table__row memdesc:a08e1b8ec44ec04a6e58beef8e68e1896 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Adds the Set Header element.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-inherited" class="g-docs__section-heading"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -151,10 +159,11 @@ array&#160;</td><td class="c-table__cell"><b>$settings</b> = []</td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>settings.cloudEndPoint custom endpoint for the cloud service settings.restrictedProperties (list of properties to restrict the results to) settings.cloudRequestOrigin value to use for the Origin header when sending requests to cloud. </p>
+<p>settings.resourceKey the cloud resource key settings.licenseKey a license key, sent in the request body. </p>
+<p>At least one of resourceKey and licenseKey is needed. settings.requestedProperties the fully qualified names of the properties to ask for, needed with a license key alone settings.cloudEndPoint custom endpoint for the cloud service settings.restrictedProperties (list of properties to restrict the results to) settings.cloudRequestOrigin value to use for the Origin header when sending requests to cloud.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">array{</td><td>resourceKey: string, cloudEndPoint?: string, restrictedProperties?: array&lt;string&gt;, cloudRequestOrigin?: string } $settings </td></tr>
+    <tr><td class="paramname">array{</td><td>resourceKey?: string, licenseKey?: string, requestedProperties?: array&lt;string&gt;|string, cloudEndPoint?: string, restrictedProperties?: array&lt;string&gt;, cloudRequestOrigin?: string } $settings </td></tr>
   </table>
   </dd>
 </dl>

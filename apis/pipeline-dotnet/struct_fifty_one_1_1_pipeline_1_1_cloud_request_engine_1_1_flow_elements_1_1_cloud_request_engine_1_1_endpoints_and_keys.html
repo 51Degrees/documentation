@@ -76,8 +76,9 @@ string&#160;</td><td class="c-table__cell"><b>DataEndpoint</b></td></tr>
 <tr class="c-table__row memdesc:ae658d4f7ee14057edf1863a7ebac0a18"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The URL for the cloud endpoint that will take the supplied evidence and return JSON formatted data. <br /></td></tr>
 <tr class="c-table__row memitem:ad60f32e9f59126fb712fe5c95e5cb83e" id="r_ad60f32e9f59126fb712fe5c95e5cb83e"><td class="c-table__cell">string&#160;</td><td class="c-table__cell"><a class="el" href="#ad60f32e9f59126fb712fe5c95e5cb83e">ResourceKey</a></td></tr>
 <tr class="c-table__row memdesc:ad60f32e9f59126fb712fe5c95e5cb83e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The resource key to use when making requests.  <br /></td></tr>
-<tr class="c-table__row memitem:a90a494274ef752ed2a6fb0b1fea51ce9" id="r_a90a494274ef752ed2a6fb0b1fea51ce9"><td class="c-table__cell">string&#160;</td><td class="c-table__cell"><a class="el" href="#a90a494274ef752ed2a6fb0b1fea51ce9">LicenseKey</a></td></tr>
-<tr class="c-table__row memdesc:a90a494274ef752ed2a6fb0b1fea51ce9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The license key to use when making requests.  <br /></td></tr>
+<tr class="c-table__row memitem:a90a494274ef752ed2a6fb0b1fea51ce9" id="r_a90a494274ef752ed2a6fb0b1fea51ce9"><td class="c-table__cell"><a id="a90a494274ef752ed2a6fb0b1fea51ce9" name="a90a494274ef752ed2a6fb0b1fea51ce9"></a>
+string&#160;</td><td class="c-table__cell"><b>LicenseKey</b></td></tr>
+<tr class="c-table__row memdesc:a90a494274ef752ed2a6fb0b1fea51ce9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The license key to use when making requests, either alone with RequestedProperties or beside a resource key to add the requested properties the license grants. <br /></td></tr>
 <tr class="c-table__row memitem:a25e85f94f693b7fcd2862f6e48983d31" id="r_a25e85f94f693b7fcd2862f6e48983d31"><td class="c-table__cell"><a id="a25e85f94f693b7fcd2862f6e48983d31" name="a25e85f94f693b7fcd2862f6e48983d31"></a>
 string&#160;</td><td class="c-table__cell"><b>PropertiesEndpoint</b></td></tr>
 <tr class="c-table__row memdesc:a25e85f94f693b7fcd2862f6e48983d31"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The URL for the cloud endpoint that will return meta-data on properties that will be populated when the data endpoint is called using the given resource key. <br /></td></tr>
@@ -89,30 +90,9 @@ string&#160;</td><td class="c-table__cell"><b>CloudRequestOrigin</b></td></tr>
 <tr class="c-table__row memdesc:abb6947a5ca4e7ac7f9706ac0278d76ea"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The value to use for the Origin header when making requests to cloud. <br /></td></tr>
 <tr class="c-table__row memitem:a9625030536d5c62ec9af17719f624d7f" id="r_a9625030536d5c62ec9af17719f624d7f"><td class="c-table__cell"><a id="a9625030536d5c62ec9af17719f624d7f" name="a9625030536d5c62ec9af17719f624d7f"></a>
 IList&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>RequestedProperties</b></td></tr>
-<tr class="c-table__row memdesc:a9625030536d5c62ec9af17719f624d7f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Not currently used. <br /></td></tr>
+<tr class="c-table__row memdesc:a9625030536d5c62ec9af17719f624d7f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The fully qualified names of the properties to ask for, sent as 'values' when the list is not empty. <br /></td></tr>
 </table>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
-<a id="a90a494274ef752ed2a6fb0b1fea51ce9" name="a90a494274ef752ed2a6fb0b1fea51ce9"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a90a494274ef752ed2a6fb0b1fea51ce9">&#9670;&#160;</a></span>LicenseKey</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">string FiftyOne.Pipeline.CloudRequestEngine.FlowElements.CloudRequestEngine.EndpointsAndKeys.LicenseKey</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>The license key to use when making requests. </p>
-<p>This parameter is obsolete, use resourceKey instead. </p>
-
-</div>
-</div>
 <a id="ad60f32e9f59126fb712fe5c95e5cb83e" name="ad60f32e9f59126fb712fe5c95e5cb83e"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad60f32e9f59126fb712fe5c95e5cb83e">&#9670;&#160;</a></span>ResourceKey</h2>
 
@@ -130,7 +110,7 @@ IList&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><b>Requested
 </div><div class="c-member__body">
 
 <p>The resource key to use when making requests. </p>
-<p>A resource key encapsulates details such as any license keys, the properties that should be returned and the domains that requests are permitted from. A new resource key can be generated for free at <a href="https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=comment&amp;amp;utm_campaign=51degrees-dotnet&amp;amp;utm_content=fiftyone.pipeline.cloudrequestengine-flowelements-cloudrequestengine.cs&amp;amp;utm_term=resourcekey">https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=comment&amp;amp;utm_campaign=51degrees-dotnet&amp;amp;utm_content=fiftyone.pipeline.cloudrequestengine-flowelements-cloudrequestengine.cs&amp;amp;utm_term=resourcekey</a> </p>
+<p>Leave it empty to authenticate with LicenseKey alone, which also needs RequestedProperties. A resource key encapsulates details such as any license keys, the properties that should be returned and the domains that requests are permitted from. A new resource key can be generated for free at <a href="https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=comment&amp;amp;utm_campaign=51degrees-dotnet&amp;amp;utm_content=fiftyone.pipeline.cloudrequestengine-flowelements-cloudrequestengine.cs&amp;amp;utm_term=resourcekey">https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=comment&amp;amp;utm_campaign=51degrees-dotnet&amp;amp;utm_content=fiftyone.pipeline.cloudrequestengine-flowelements-cloudrequestengine.cs&amp;amp;utm_term=resourcekey</a> </p>
 
 </div>
 </div>

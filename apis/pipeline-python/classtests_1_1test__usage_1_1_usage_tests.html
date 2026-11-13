@@ -87,6 +87,38 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a2ae972a67d3079a474009a40c91ae0f5" id="r_a2ae972a67d3079a474009a40c91ae0f5"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a2ae972a67d3079a474009a40c91ae0f5">startReceiver</a> (cls)</td></tr>
 <tr class="c-table__row memitem:a627112d250cb72ee805b0969f7e86d26" id="r_a627112d250cb72ee805b0969f7e86d26"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a627112d250cb72ee805b0969f7e86d26">stopReceiver</a> (cls)</td></tr>
 <tr class="c-table__row memitem:af3e3283d6e6b480f20c3863b01c2dc58" id="r_af3e3283d6e6b480f20c3863b01c2dc58"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#af3e3283d6e6b480f20c3863b01c2dc58">waitForUsageThreads</a> (self)</td></tr>
+<tr class="c-table__row memitem:a109e86736b61de98476f630285993ca2" id="r_a109e86736b61de98476f630285993ca2"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a109e86736b61de98476f630285993ca2">wait_for</a> (self, condition, message)</td></tr>
+<tr class="c-table__row memdesc:a109e86736b61de98476f630285993ca2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Wait for a condition, failing the test with the message if it is not met within 30 seconds.  <br /></td></tr>
+<tr class="c-table__row memitem:ab5728f506ec76022f71f8b8a514d997d" id="r_ab5728f506ec76022f71f8b8a514d997d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab5728f506ec76022f71f8b8a514d997d">back_off_pipeline</a> (self, **settings)</td></tr>
+<tr class="c-table__row memdesc:ab5728f506ec76022f71f8b8a514d997d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A pipeline whose usage sharing element sends each entry on its own.  <br /></td></tr>
+<tr class="c-table__row memitem:a5b8ddaee947ea8f0517ad4a80dcad4a5" id="r_a5b8ddaee947ea8f0517ad4a80dcad4a5"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a5b8ddaee947ea8f0517ad4a80dcad4a5">process_unique</a> (self, pipeline)</td></tr>
+<tr class="c-table__row memdesc:a5b8ddaee947ea8f0517ad4a80dcad4a5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process a request whose evidence no other request has, and return its client IP.  <br /></td></tr>
+<tr class="c-table__row memitem:a7a01333749798bd82603caa985541d47" id="r_a7a01333749798bd82603caa985541d47"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7a01333749798bd82603caa985541d47">fail_sends</a> (self, pipeline, count)</td></tr>
+<tr class="c-table__row memdesc:a7a01333749798bd82603caa985541d47"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process requests one at a time, waiting for each to be sent, so each is a separate failed send.  <br /></td></tr>
+<tr class="c-table__row memitem:aaa455f0b1cd8702b704a2f6358e108e0" id="r_aaa455f0b1cd8702b704a2f6358e108e0"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aaa455f0b1cd8702b704a2f6358e108e0">test_back_off_pauses_then_drains_queue</a> (self)</td></tr>
+<tr class="c-table__row memdesc:aaa455f0b1cd8702b704a2f6358e108e0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Ten failed sends pause sending for two seconds, the defaults.  <br /></td></tr>
+<tr class="c-table__row memitem:a1436b2ea4752f7bee5ed0e85459e47f5" id="r_a1436b2ea4752f7bee5ed0e85459e47f5"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a1436b2ea4752f7bee5ed0e85459e47f5">test_back_off_close_while_paused</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a1436b2ea4752f7bee5ed0e85459e47f5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Closing while paused returns at once rather than waiting for the pause to end, and sends nothing.  <br /></td></tr>
+<tr class="c-table__row memitem:a5a3577f55fb10f8ac7565404e404fd30" id="r_a5a3577f55fb10f8ac7565404e404fd30"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a5a3577f55fb10f8ac7565404e404fd30">test_back_off_delay_grows_to_maximum</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a5a3577f55fb10f8ac7565404e404fd30"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Each failed send after a pause multiplies the delay, and the delay stops growing at the maximum.  <br /></td></tr>
+<tr class="c-table__row memitem:aae6f6acf3e4fa65413974849c3e5c024" id="r_aae6f6acf3e4fa65413974849c3e5c024"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aae6f6acf3e4fa65413974849c3e5c024">test_back_off_full_queue_drops_new_evidence</a> (self)</td></tr>
+<tr class="c-table__row memdesc:aae6f6acf3e4fa65413974849c3e5c024"><td class="c-table__cell">&#160;</td><td class="c-table__cell">When the queue fills during a pause, new evidence is dropped and what was queued first is sent once sending resumes.  <br /></td></tr>
+<tr class="c-table__row memitem:ab933d45afe2fb31f8343ee0f33ef8d5a" id="r_ab933d45afe2fb31f8343ee0f33ef8d5a"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab933d45afe2fb31f8343ee0f33ef8d5a">test_full_queue_logs_without_a_message_per_entry</a> (self)</td></tr>
+<tr class="c-table__row memdesc:ab933d45afe2fb31f8343ee0f33ef8d5a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Entries discarded because the queue is full are logged, but not with a message for each entry discarded.  <br /></td></tr>
+<tr class="c-table__row memitem:a0638ea24f56644186c90bec1f1374a78" id="r_a0638ea24f56644186c90bec1f1374a78"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a0638ea24f56644186c90bec1f1374a78">test_failed_answer_logs_status_and_content</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a0638ea24f56644186c90bec1f1374a78"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A send answered with anything other than 200 logs the status code and the content of the answer.  <br /></td></tr>
+<tr class="c-table__row memitem:aefee8e399b6289324cb3a576d86a6592" id="r_aefee8e399b6289324cb3a576d86a6592"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aefee8e399b6289324cb3a576d86a6592">test_failed_send_prints_nothing</a> (self)</td></tr>
+<tr class="c-table__row memdesc:aefee8e399b6289324cb3a576d86a6592"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A send that cannot be made is logged and does not print.  <br /></td></tr>
+<tr class="c-table__row memitem:a5772530eef0a559f4dad0a001096d97c" id="r_a5772530eef0a559f4dad0a001096d97c"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a5772530eef0a559f4dad0a001096d97c">test_message_holds_up_to_twice_the_package_size</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a5772530eef0a559f4dad0a001096d97c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A message holds the requested package size or more entries, up to twice the package size, so a queue that filled during a pause drains in fewer messages.  <br /></td></tr>
+<tr class="c-table__row memitem:a9b866054d70ee1427e059eeeb5f94d42" id="r_a9b866054d70ee1427e059eeeb5f94d42"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a9b866054d70ee1427e059eeeb5f94d42">test_close_sends_fewer_entries_than_the_package_size</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a9b866054d70ee1427e059eeeb5f94d42"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Closing sends the entries still queued, even when there are fewer than the requested package size.  <br /></td></tr>
+<tr class="c-table__row memitem:a798fcb91f3aaa6f7ad46a5ca19239f60" id="r_a798fcb91f3aaa6f7ad46a5ca19239f60"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a798fcb91f3aaa6f7ad46a5ca19239f60">test_close_stops_sending_after_the_cleanup_bound</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a798fcb91f3aaa6f7ad46a5ca19239f60"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Closing stops after the five seconds the specification allows, rather than waiting for a service that does not answer, and logs a warning counting the entries it discarded.  <br /></td></tr>
+<tr class="c-table__row memitem:a575ff8a1e74896b46dd51b1ac9ce26d9" id="r_a575ff8a1e74896b46dd51b1ac9ce26d9"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a575ff8a1e74896b46dd51b1ac9ce26d9">test_minimum_entries_per_message_default</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a575ff8a1e74896b46dd51b1ac9ce26d9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default minimum entries per message is the 50 the specification gives, so no message is started before 50 entries are queued.  <br /></td></tr>
+<tr class="c-table__row memitem:a1fb946a5730a9dd19b3667654a92435e" id="r_a1fb946a5730a9dd19b3667654a92435e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a1fb946a5730a9dd19b3667654a92435e">test_back_off_invalid_settings</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a1fb946a5730a9dd19b3667654a92435e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Settings the pause cannot work with are rejected.  <br /></td></tr>
 <tr class="c-table__row memitem:a865c7c1c8fdd5ef554341b7f9b9a48ad" id="r_a865c7c1c8fdd5ef554341b7f9b9a48ad"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a865c7c1c8fdd5ef554341b7f9b9a48ad">test_data_received</a> (self)</td></tr>
 <tr class="c-table__row memdesc:a865c7c1c8fdd5ef554341b7f9b9a48ad"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that data is received from the share usage element.  <br /></td></tr>
 <tr class="c-table__row memitem:a6366d8d844bbc27bda3c5585e9fb9663" id="r_a6366d8d844bbc27bda3c5585e9fb9663"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a6366d8d844bbc27bda3c5585e9fb9663">test_data_correct</a> (self)</td></tr>
@@ -114,13 +146,124 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a01b274ced17975f62a69ad328c1b3078"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that small portion sharing is done correctly.  <br /></td></tr>
 <tr class="c-table__row memitem:ab9b1f6e9de13b34d414866c7ee8c23d6" id="r_ab9b1f6e9de13b34d414866c7ee8c23d6"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab9b1f6e9de13b34d414866c7ee8c23d6">test_includes_header</a> (self)</td></tr>
 <tr class="c-table__row memdesc:ab9b1f6e9de13b34d414866c7ee8c23d6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that XML characters are escaped correctly.  <br /></td></tr>
+<tr class="c-table__row memitem:a82f7ba3361a6eb8b6eeb6117a686bf60" id="r_a82f7ba3361a6eb8b6eeb6117a686bf60"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a82f7ba3361a6eb8b6eeb6117a686bf60">test_default_shares_only_accepted_evidence</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a82f7ba3361a6eb8b6eeb6117a686bf60"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that with no options the element shares headers and the 51Degrees cookies and parameters, and leaves out other cookies, the Cookie header, and other query string and form parameters.  <br /></td></tr>
+<tr class="c-table__row memitem:aaea8f5be567cfffef045ddc9a2cca9a9" id="r_aaea8f5be567cfffef045ddc9a2cca9a9"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aaea8f5be567cfffef045ddc9a2cca9a9">test_never_shared_evidence</a> (self)</td></tr>
+<tr class="c-table__row memdesc:aaea8f5be567cfffef045ddc9a2cca9a9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that the email address, the salt for hashed email identifiers, the query string and the path are not shared, though the rules for their prefixes would share them.  <br /></td></tr>
+<tr class="c-table__row memitem:a6de59752d6fdb2b806656e53f7faec1a" id="r_a6de59752d6fdb2b806656e53f7faec1a"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a6de59752d6fdb2b806656e53f7faec1a">test_share_all</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a6de59752d6fdb2b806656e53f7faec1a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that sharing all evidence shares what the other rules leave out, but not the evidence that is never shared.  <br /></td></tr>
+<tr class="c-table__row memitem:a7e7cab128b2e0f2bd75c1ddb5a8bdaa5" id="r_a7e7cab128b2e0f2bd75c1ddb5a8bdaa5"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7e7cab128b2e0f2bd75c1ddb5a8bdaa5">test_parameter_names_with_dots</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a7e7cab128b2e0f2bd75c1ddb5a8bdaa5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that a query string parameter whose name contains a dot is matched by its whole name against the parameters to share.  <br /></td></tr>
+<tr class="c-table__row memitem:a5caf9e0f7da49ffc03f285fe3535fd41" id="r_a5caf9e0f7da49ffc03f285fe3535fd41"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a5caf9e0f7da49ffc03f285fe3535fd41">test_empty_query_whitelist</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a5caf9e0f7da49ffc03f285fe3535fd41"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that an empty list of parameters to share shares only those starting 51D_, and that None shares every parameter.  <br /></td></tr>
+<tr class="c-table__row memitem:ac54f6defeb263e3482b2264158d822d6" id="r_ac54f6defeb263e3482b2264158d822d6"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ac54f6defeb263e3482b2264158d822d6">test_session_cookie</a> (self)</td></tr>
+<tr class="c-table__row memdesc:ac54f6defeb263e3482b2264158d822d6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that with session tracking on the tracker reads the session cookie, which the element does not accept as evidence, and that neither it nor any other ordinary cookie is shared.  <br /></td></tr>
+<tr class="c-table__row memitem:a339d5064cce9f1a4f0198c6e91a18840" id="r_a339d5064cce9f1a4f0198c6e91a18840"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a339d5064cce9f1a4f0198c6e91a18840">test_session_cookie_without_session_tracking</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a339d5064cce9f1a4f0198c6e91a18840"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that session tracking is off by default, and that naming the session cookie then has no effect.  <br /></td></tr>
+<tr class="c-table__row memitem:a34fd6245c423dfd6e121701678593c82" id="r_a34fd6245c423dfd6e121701678593c82"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a34fd6245c423dfd6e121701678593c82">test_session_tracking</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a34fd6245c423dfd6e121701678593c82"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that with session tracking on, evidence already shared is shared again for a new session but not for a repeat in the same session, and that the session cookie is not shared.  <br /></td></tr>
+<tr class="c-table__row memitem:a5a58796523117a7c8e76c1194f8f20ed" id="r_a5a58796523117a7c8e76c1194f8f20ed"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a5a58796523117a7c8e76c1194f8f20ed">test_ordinary_cookie_with_header_blacklist</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a5a58796523117a7c8e76c1194f8f20ed"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that an ordinary cookie is left out without an error when some headers are not to be shared.  <br /></td></tr>
+<tr class="c-table__row memitem:aa78337c2a6597ac077044ae3dbae0e21" id="r_aa78337c2a6597ac077044ae3dbae0e21"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aa78337c2a6597ac077044ae3dbae0e21">test_repeat_with_new_sequence_not_shared</a> (self)</td></tr>
+<tr class="c-table__row memdesc:aa78337c2a6597ac077044ae3dbae0e21"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that a request differing from one already shared only in its session id and sequence number is not shared again.  <br /></td></tr>
+<tr class="c-table__row memitem:a3326fc89decd7d5d312583dd7f0e5034" id="r_a3326fc89decd7d5d312583dd7f0e5034"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a3326fc89decd7d5d312583dd7f0e5034">test_evidence_without_a_prefix</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a3326fc89decd7d5d312583dd7f0e5034"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that evidence whose key has no prefix is shared without an error.  <br /></td></tr>
 <tr class="c-table__row memitem:a2339a41d886702c17048e6ac8475cabf" id="r_a2339a41d886702c17048e6ac8475cabf"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a2339a41d886702c17048e6ac8475cabf">test_zzz_timeout</a> (self)</td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="c-table__row memitem:a5614f0d5b6fe1c213036c403ef6a27f6" id="r_a5614f0d5b6fe1c213036c403ef6a27f6"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#a5614f0d5b6fe1c213036c403ef6a27f6">requests</a> = 0</td></tr>
+<tr class="c-table__row memitem:ae5b2fe2ad93835bf25970edf8e921a18" id="r_ae5b2fe2ad93835bf25970edf8e921a18"><td class="c-table__cell">list&#160;</td><td class="c-table__cell"><a class="el" href="#ae5b2fe2ad93835bf25970edf8e921a18">logs</a> = []</td></tr>
 <tr class="c-table__row memitem:a65571a95c490494c4e07a7f65a183ff4" id="r_a65571a95c490494c4e07a7f65a183ff4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a65571a95c490494c4e07a7f65a183ff4">receiver</a> = <a class="el" href="classtests_1_1test__usage_1_1_receiver_thread.html">ReceiverThread</a>(<a class="el" href="namespacetests_1_1test__usage.html#a8b8e18212c8dbe1ff466f3e864e0bf47">app</a>)</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="ab5728f506ec76022f71f8b8a514d997d" name="ab5728f506ec76022f71f8b8a514d997d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab5728f506ec76022f71f8b8a514d997d">&#9670;&#160;</a></span>back_off_pipeline()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.back_off_pipeline </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">**</td>          <td class="c-table__cell"><span class="paramname"><em>settings</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>A pipeline whose usage sharing element sends each entry on its own. </p>
+<p>The element is closed when the test ends. </p>
+
+</div>
+</div>
+<a id="a7a01333749798bd82603caa985541d47" name="a7a01333749798bd82603caa985541d47"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7a01333749798bd82603caa985541d47">&#9670;&#160;</a></span>fail_sends()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.fail_sends </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>pipeline</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>count</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Process requests one at a time, waiting for each to be sent, so each is a separate failed send. </p>
+
+</div>
+</div>
+<a id="a5b8ddaee947ea8f0517ad4a80dcad4a5" name="a5b8ddaee947ea8f0517ad4a80dcad4a5"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5b8ddaee947ea8f0517ad4a80dcad4a5">&#9670;&#160;</a></span>process_unique()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.process_unique </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>pipeline</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Process a request whose evidence no other request has, and return its client IP. </p>
+
+</div>
+</div>
 <a id="a26a9fae8a5aed210736f59b029abc95b" name="a26a9fae8a5aed210736f59b029abc95b"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a26a9fae8a5aed210736f59b029abc95b">&#9670;&#160;</a></span>setUp()</h2>
 
@@ -226,6 +369,122 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a1436b2ea4752f7bee5ed0e85459e47f5" name="a1436b2ea4752f7bee5ed0e85459e47f5"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1436b2ea4752f7bee5ed0e85459e47f5">&#9670;&#160;</a></span>test_back_off_close_while_paused()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_back_off_close_while_paused </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Closing while paused returns at once rather than waiting for the pause to end, and sends nothing. </p>
+
+</div>
+</div>
+<a id="a5a3577f55fb10f8ac7565404e404fd30" name="a5a3577f55fb10f8ac7565404e404fd30"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5a3577f55fb10f8ac7565404e404fd30">&#9670;&#160;</a></span>test_back_off_delay_grows_to_maximum()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_back_off_delay_grows_to_maximum </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Each failed send after a pause multiplies the delay, and the delay stops growing at the maximum. </p>
+
+</div>
+</div>
+<a id="aae6f6acf3e4fa65413974849c3e5c024" name="aae6f6acf3e4fa65413974849c3e5c024"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aae6f6acf3e4fa65413974849c3e5c024">&#9670;&#160;</a></span>test_back_off_full_queue_drops_new_evidence()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_back_off_full_queue_drops_new_evidence </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>When the queue fills during a pause, new evidence is dropped and what was queued first is sent once sending resumes. </p>
+
+</div>
+</div>
+<a id="a1fb946a5730a9dd19b3667654a92435e" name="a1fb946a5730a9dd19b3667654a92435e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1fb946a5730a9dd19b3667654a92435e">&#9670;&#160;</a></span>test_back_off_invalid_settings()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_back_off_invalid_settings </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Settings the pause cannot work with are rejected. </p>
+
+</div>
+</div>
+<a id="aaa455f0b1cd8702b704a2f6358e108e0" name="aaa455f0b1cd8702b704a2f6358e108e0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aaa455f0b1cd8702b704a2f6358e108e0">&#9670;&#160;</a></span>test_back_off_pauses_then_drains_queue()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_back_off_pauses_then_drains_queue </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Ten failed sends pause sending for two seconds, the defaults. </p>
+<p>Nothing is sent during the pause, the evidence processed during it is queued, and all of it is sent once the pause ends and the service answers, with no more requests processed. </p>
+
+</div>
+</div>
 <a id="adc93615430e0518accc62c0ad62d3edd" name="adc93615430e0518accc62c0ad62d3edd"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#adc93615430e0518accc62c0ad62d3edd">&#9670;&#160;</a></span>test_client_ip()</h2>
 
@@ -246,6 +505,52 @@ Public Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Check that the data received from the share usage element includes the client IP from the evidence. </p>
+
+</div>
+</div>
+<a id="a9b866054d70ee1427e059eeeb5f94d42" name="a9b866054d70ee1427e059eeeb5f94d42"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9b866054d70ee1427e059eeeb5f94d42">&#9670;&#160;</a></span>test_close_sends_fewer_entries_than_the_package_size()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_close_sends_fewer_entries_than_the_package_size </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Closing sends the entries still queued, even when there are fewer than the requested package size. </p>
+
+</div>
+</div>
+<a id="a798fcb91f3aaa6f7ad46a5ca19239f60" name="a798fcb91f3aaa6f7ad46a5ca19239f60"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a798fcb91f3aaa6f7ad46a5ca19239f60">&#9670;&#160;</a></span>test_close_stops_sending_after_the_cleanup_bound()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_close_stops_sending_after_the_cleanup_bound </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Closing stops after the five seconds the specification allows, rather than waiting for a service that does not answer, and logs a warning counting the entries it discarded. </p>
 
 </div>
 </div>
@@ -292,6 +597,144 @@ Public Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Check that data is received from the share usage element. </p>
+
+</div>
+</div>
+<a id="a82f7ba3361a6eb8b6eeb6117a686bf60" name="a82f7ba3361a6eb8b6eeb6117a686bf60"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a82f7ba3361a6eb8b6eeb6117a686bf60">&#9670;&#160;</a></span>test_default_shares_only_accepted_evidence()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_default_shares_only_accepted_evidence </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Check that with no options the element shares headers and the 51Degrees cookies and parameters, and leaves out other cookies, the Cookie header, and other query string and form parameters. </p>
+
+</div>
+</div>
+<a id="a5caf9e0f7da49ffc03f285fe3535fd41" name="a5caf9e0f7da49ffc03f285fe3535fd41"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5caf9e0f7da49ffc03f285fe3535fd41">&#9670;&#160;</a></span>test_empty_query_whitelist()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_empty_query_whitelist </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Check that an empty list of parameters to share shares only those starting 51D_, and that None shares every parameter. </p>
+
+</div>
+</div>
+<a id="a3326fc89decd7d5d312583dd7f0e5034" name="a3326fc89decd7d5d312583dd7f0e5034"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3326fc89decd7d5d312583dd7f0e5034">&#9670;&#160;</a></span>test_evidence_without_a_prefix()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_evidence_without_a_prefix </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Check that evidence whose key has no prefix is shared without an error. </p>
+
+</div>
+</div>
+<a id="a0638ea24f56644186c90bec1f1374a78" name="a0638ea24f56644186c90bec1f1374a78"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0638ea24f56644186c90bec1f1374a78">&#9670;&#160;</a></span>test_failed_answer_logs_status_and_content()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_failed_answer_logs_status_and_content </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>A send answered with anything other than 200 logs the status code and the content of the answer. </p>
+
+</div>
+</div>
+<a id="aefee8e399b6289324cb3a576d86a6592" name="aefee8e399b6289324cb3a576d86a6592"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aefee8e399b6289324cb3a576d86a6592">&#9670;&#160;</a></span>test_failed_send_prints_nothing()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_failed_send_prints_nothing </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>A send that cannot be made is logged and does not print. </p>
+
+</div>
+</div>
+<a id="ab933d45afe2fb31f8343ee0f33ef8d5a" name="ab933d45afe2fb31f8343ee0f33ef8d5a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab933d45afe2fb31f8343ee0f33ef8d5a">&#9670;&#160;</a></span>test_full_queue_logs_without_a_message_per_entry()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_full_queue_logs_without_a_message_per_entry </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Entries discarded because the queue is full are logged, but not with a message for each entry discarded. </p>
 
 </div>
 </div>
@@ -411,6 +854,121 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a5772530eef0a559f4dad0a001096d97c" name="a5772530eef0a559f4dad0a001096d97c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5772530eef0a559f4dad0a001096d97c">&#9670;&#160;</a></span>test_message_holds_up_to_twice_the_package_size()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_message_holds_up_to_twice_the_package_size </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>A message holds the requested package size or more entries, up to twice the package size, so a queue that filled during a pause drains in fewer messages. </p>
+
+</div>
+</div>
+<a id="a575ff8a1e74896b46dd51b1ac9ce26d9" name="a575ff8a1e74896b46dd51b1ac9ce26d9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a575ff8a1e74896b46dd51b1ac9ce26d9">&#9670;&#160;</a></span>test_minimum_entries_per_message_default()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_minimum_entries_per_message_default </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The default minimum entries per message is the 50 the specification gives, so no message is started before 50 entries are queued. </p>
+
+</div>
+</div>
+<a id="aaea8f5be567cfffef045ddc9a2cca9a9" name="aaea8f5be567cfffef045ddc9a2cca9a9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aaea8f5be567cfffef045ddc9a2cca9a9">&#9670;&#160;</a></span>test_never_shared_evidence()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_never_shared_evidence </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Check that the email address, the salt for hashed email identifiers, the query string and the path are not shared, though the rules for their prefixes would share them. </p>
+
+</div>
+</div>
+<a id="a5a58796523117a7c8e76c1194f8f20ed" name="a5a58796523117a7c8e76c1194f8f20ed"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5a58796523117a7c8e76c1194f8f20ed">&#9670;&#160;</a></span>test_ordinary_cookie_with_header_blacklist()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_ordinary_cookie_with_header_blacklist </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Check that an ordinary cookie is left out without an error when some headers are not to be shared. </p>
+
+</div>
+</div>
+<a id="a7e7cab128b2e0f2bd75c1ddb5a8bdaa5" name="a7e7cab128b2e0f2bd75c1ddb5a8bdaa5"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7e7cab128b2e0f2bd75c1ddb5a8bdaa5">&#9670;&#160;</a></span>test_parameter_names_with_dots()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_parameter_names_with_dots </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Check that a query string parameter whose name contains a dot is matched by its whole name against the parameters to share. </p>
+
+</div>
+</div>
 <a id="ab6a9a7204f1ae612f3a3147e229e9505" name="ab6a9a7204f1ae612f3a3147e229e9505"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab6a9a7204f1ae612f3a3147e229e9505">&#9670;&#160;</a></span>test_queue_cleared()</h2>
 
@@ -429,6 +987,29 @@ Public Attributes</h2></td></tr>
         </div>
       </div>
 </div><div class="c-member__body">
+
+</div>
+</div>
+<a id="aa78337c2a6597ac077044ae3dbae0e21" name="aa78337c2a6597ac077044ae3dbae0e21"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa78337c2a6597ac077044ae3dbae0e21">&#9670;&#160;</a></span>test_repeat_with_new_sequence_not_shared()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_repeat_with_new_sequence_not_shared </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Check that a request differing from one already shared only in its session id and sequence number is not shared again. </p>
 
 </div>
 </div>
@@ -475,6 +1056,99 @@ Public Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Check that session and sequence values are included. </p>
+
+</div>
+</div>
+<a id="ac54f6defeb263e3482b2264158d822d6" name="ac54f6defeb263e3482b2264158d822d6"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac54f6defeb263e3482b2264158d822d6">&#9670;&#160;</a></span>test_session_cookie()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_session_cookie </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Check that with session tracking on the tracker reads the session cookie, which the element does not accept as evidence, and that neither it nor any other ordinary cookie is shared. </p>
+
+</div>
+</div>
+<a id="a339d5064cce9f1a4f0198c6e91a18840" name="a339d5064cce9f1a4f0198c6e91a18840"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a339d5064cce9f1a4f0198c6e91a18840">&#9670;&#160;</a></span>test_session_cookie_without_session_tracking()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_session_cookie_without_session_tracking </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Check that session tracking is off by default, and that naming the session cookie then has no effect. </p>
+<p>The cookie is not kept, and evidence already shared is not shared again for a new session. </p>
+
+</div>
+</div>
+<a id="a34fd6245c423dfd6e121701678593c82" name="a34fd6245c423dfd6e121701678593c82"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a34fd6245c423dfd6e121701678593c82">&#9670;&#160;</a></span>test_session_tracking()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_session_tracking </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Check that with session tracking on, evidence already shared is shared again for a new session but not for a repeat in the same session, and that the session cookie is not shared. </p>
+
+</div>
+</div>
+<a id="a6de59752d6fdb2b806656e53f7faec1a" name="a6de59752d6fdb2b806656e53f7faec1a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6de59752d6fdb2b806656e53f7faec1a">&#9670;&#160;</a></span>test_share_all()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.test_share_all </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Check that sharing all evidence shares what the other rules leave out, but not the evidence that is never shared. </p>
 
 </div>
 </div>
@@ -568,6 +1242,38 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a109e86736b61de98476f630285993ca2" name="a109e86736b61de98476f630285993ca2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a109e86736b61de98476f630285993ca2">&#9670;&#160;</a></span>wait_for()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.wait_for </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>condition</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>message</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Wait for a condition, failing the test with the message if it is not met within 30 seconds. </p>
+
+</div>
+</div>
 <a id="af3e3283d6e6b480f20c3863b01c2dc58" name="af3e3283d6e6b480f20c3863b01c2dc58"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#af3e3283d6e6b480f20c3863b01c2dc58">&#9670;&#160;</a></span>waitForUsageThreads()</h2>
 
@@ -590,6 +1296,24 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="ae5b2fe2ad93835bf25970edf8e921a18" name="ae5b2fe2ad93835bf25970edf8e921a18"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae5b2fe2ad93835bf25970edf8e921a18">&#9670;&#160;</a></span>logs</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.UsageTests.logs = []</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
 <a id="a65571a95c490494c4e07a7f65a183ff4" name="a65571a95c490494c4e07a7f65a183ff4"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a65571a95c490494c4e07a7f65a183ff4">&#9670;&#160;</a></span>receiver</h2>
 
@@ -600,6 +1324,24 @@ Public Attributes</h2></td></tr>
           <table class="c-table c-table--article">
             <tr class="c-table__row">
               <td class="c-table__cell">tests.test_usage.UsageTests.receiver = <a class="el" href="classtests_1_1test__usage_1_1_receiver_thread.html">ReceiverThread</a>(<a class="el" href="namespacetests_1_1test__usage.html#a8b8e18212c8dbe1ff466f3e864e0bf47">app</a>)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a5614f0d5b6fe1c213036c403ef6a27f6" name="a5614f0d5b6fe1c213036c403ef6a27f6"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5614f0d5b6fe1c213036c403ef6a27f6">&#9670;&#160;</a></span>requests</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">int tests.test_usage.UsageTests.requests = 0</td>
             </tr>
           </table>
         </div>

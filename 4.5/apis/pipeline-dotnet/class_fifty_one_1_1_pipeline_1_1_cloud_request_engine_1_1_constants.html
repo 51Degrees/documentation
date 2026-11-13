@@ -69,9 +69,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fifty_on
 </div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="c-table__row memitem:aa8970c7df33d56237dfadd15392a350c" id="r_aa8970c7df33d56237dfadd15392a350c"><td class="c-table__cell"><a id="aa8970c7df33d56237dfadd15392a350c" name="aa8970c7df33d56237dfadd15392a350c"></a>
-const&#160;string&#160;</td><td class="c-table__cell"><b>FOD_CLOUD_API_URL</b> = &quot;FOD_CLOUD_API_URL&quot;</td></tr>
-<tr class="c-table__row memdesc:aa8970c7df33d56237dfadd15392a350c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">This is the environment variable key which can be used to specify the URL for the cloud service. <br /></td></tr>
+<tr class="c-table__row memitem:a9cdd91d4feb7b01d355a02ae529bac99" id="r_a9cdd91d4feb7b01d355a02ae529bac99"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a9cdd91d4feb7b01d355a02ae529bac99">CLOUD_ENDPOINT_ENV_VAR</a></td></tr>
+<tr class="c-table__row memdesc:a9cdd91d4feb7b01d355a02ae529bac99"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The environment variable that names the URL of the cloud service.  <br /></td></tr>
+<tr class="c-table__row memitem:aa8970c7df33d56237dfadd15392a350c" id="r_aa8970c7df33d56237dfadd15392a350c"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#aa8970c7df33d56237dfadd15392a350c">FOD_CLOUD_API_URL</a> = &quot;FOD_CLOUD_API_URL&quot;</td></tr>
+<tr class="c-table__row memdesc:aa8970c7df33d56237dfadd15392a350c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The old environment variable that names the URL of the cloud service, read only when CLOUD_ENDPOINT_ENV_VAR is unset or empty.  <br /></td></tr>
 <tr class="c-table__row memitem:adac18d8d6b124c4c11cd4b1adc38c4bc" id="r_adac18d8d6b124c4c11cd4b1adc38c4bc"><td class="c-table__cell"><a id="adac18d8d6b124c4c11cd4b1adc38c4bc" name="adac18d8d6b124c4c11cd4b1adc38c4bc"></a>
 const&#160;string&#160;</td><td class="c-table__cell"><b>CLOUD_URI_DEFAULT</b> = &quot;https://cloud.51degrees.com/api/v4/&quot;</td></tr>
 <tr class="c-table__row memdesc:adac18d8d6b124c4c11cd4b1adc38c4bc"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default URL and API path for the cloud service. <br /></td></tr>
@@ -130,6 +131,36 @@ const&#160;int&#160;</td><td class="c-table__cell"><b>CLOUD_REQUEST_FAILURES_TO_
 <tr class="c-table__row memdesc:af4110514243624dbbf91ab937406883c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default time period in seconds within which CLOUD_REQUEST_FAILURES_TO_ENTER_RECOVERY_DEFAULT failed requests must occur for <a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_cloud_request_engine.html">CloudRequestEngine</a> to enter its recovery period.  <br /></td></tr>
 </table>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="a9cdd91d4feb7b01d355a02ae529bac99" name="a9cdd91d4feb7b01d355a02ae529bac99"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9cdd91d4feb7b01d355a02ae529bac99">&#9670;&#160;</a></span>CLOUD_ENDPOINT_ENV_VAR</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const string FiftyOne.Pipeline.CloudRequestEngine.Constants.CLOUD_ENDPOINT_ENV_VAR</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                       =</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;_51DEGREES_CLOUD_ENDPOINT&quot;</span></div>
+</div><!-- fragment -->
+<p>The environment variable that names the URL of the cloud service. </p>
+
+</div>
+</div>
 <a id="afd327ff34d2054ecee5aeaa23817f475" name="afd327ff34d2054ecee5aeaa23817f475"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#afd327ff34d2054ecee5aeaa23817f475">&#9670;&#160;</a></span>CLOUD_REQUEST_EXPONENTIAL_BACKOFF_ENABLED_DEFAULT</h2>
 
@@ -330,6 +361,35 @@ const&#160;int&#160;</td><td class="c-table__cell"><b>CLOUD_REQUEST_FAILURES_TO_
 
 <p>Default timeout in seconds for a request to the cloud service. </p>
 <p>This bounds how long a caller thread blocks on a slow or unreachable cloud, so it is kept low. Because an occasional slow request that hits this timeout is counted as a failure, the recovery circuit breaker is deliberately insensitive (see <code>CLOUD_REQUEST_FAILURES_TO_ENTER_RECOVERY_DEFAULT</code> and <code>CLOUD_REQUEST_FAILURES_WINDOW_SECONDS_DEFAULT</code>) so that stray timeouts on a healthy cloud do not trip it; only a sustained high failure rate, which signals a real outage, does. </p>
+
+</div>
+</div>
+<a id="aa8970c7df33d56237dfadd15392a350c" name="aa8970c7df33d56237dfadd15392a350c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa8970c7df33d56237dfadd15392a350c">&#9670;&#160;</a></span>FOD_CLOUD_API_URL</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const string FiftyOne.Pipeline.CloudRequestEngine.Constants.FOD_CLOUD_API_URL = &quot;FOD_CLOUD_API_URL&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The old environment variable that names the URL of the cloud service, read only when CLOUD_ENDPOINT_ENV_VAR is unset or empty. </p>
+<p>Use CLOUD_ENDPOINT_ENV_VAR. </p>
 
 </div>
 </div>

@@ -100,7 +100,9 @@ FodId::fromBase64()}, {</dd>
 FodId::fromByteArray()}, {</dd>
 <dd>
 FodId::fromOwid()} and the constructor, raise for the same inputs and are kept for callers written against them. Both run the same checks.</dd></dl>
-<p>The cloud issues a 51Did in standard base64 with padding, and a page puts one in a link in the URL-safe alphabet without padding, so the base64 factories accept either form and {</p><dl class="c-list-definition section see"><dt class="c-list-definition__title">See also</dt><dd class="c-list-definition__desc">FodId::asBase64Url()} produces the URL-safe one.</dd></dl>
+<p>The cloud issues a 51Did in standard base64 with padding, and a page puts one in a link in the URL-safe alphabet without padding, so the base64 factories accept either form and {</p><dl class="c-list-definition section see"><dt class="c-list-definition__title">See also</dt><dd class="c-list-definition__desc">FodId::asBase64Url()} produces the URL-safe one. White space around the text is ignored, and a text with white space inside it, or with characters from both alphabets, is refused, as {</dd>
+<dd>
+FodId::toStandardBase64()} explains.</dd></dl>
 <p>The owid-php {</p><dl class="c-list-definition section see"><dt class="c-list-definition__title">See also</dt><dd class="c-list-definition__desc">Owid} is <code>final</code>, so this type <b>composes</b> an OWID (holds the envelope and delegates OWID-level concerns to it) rather than inheriting from it. An OWID only exists once it has been read or signed and its fields are read only, so the one handed in is held as it is. Reading a {</dd>
 <dd>
 FodId} does <b>not</b> verify the signature, and a parsed 51Did is not necessarily genuine. Call {</dd>
@@ -163,7 +165,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a9a3d868321a789ef73199daaa2bb42fe" id="r_a9a3d868321a789ef73199daaa2bb42fe"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a9a3d868321a789ef73199daaa2bb42fe">fromBase64</a> (string $base64)</td></tr>
 <tr class="c-table__row memdesc:a9a3d868321a789ef73199daaa2bb42fe"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Parses a 51Did from its base64-encoded OWID string, in either alphabet, with or without padding, and raises when the value is not one.  <br /></td></tr>
 <tr class="c-table__row memitem:a0a61ca0f19217c9606316f08d70cc947" id="r_a0a61ca0f19217c9606316f08d70cc947"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a0a61ca0f19217c9606316f08d70cc947">toStandardBase64</a> (string $value)</td></tr>
-<tr class="c-table__row memdesc:a0a61ca0f19217c9606316f08d70cc947"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Restores a string in either base64 alphabet to the standard alphabet with padding.  <br /></td></tr>
+<tr class="c-table__row memdesc:a0a61ca0f19217c9606316f08d70cc947"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Restores a string in either base64 alphabet to the standard alphabet with padding, or answers null when the string is refused.  <br /></td></tr>
 <tr class="c-table__row memitem:a904abf5fdca79f5eeba6f90b449739e7" id="r_a904abf5fdca79f5eeba6f90b449739e7"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a904abf5fdca79f5eeba6f90b449739e7">fromByteArray</a> (string $buffer)</td></tr>
 <tr class="c-table__row memdesc:a904abf5fdca79f5eeba6f90b449739e7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Parses a 51Did from the raw bytes of an OWID envelope and raises when the bytes are not one.  <br /></td></tr>
 <tr class="c-table__row memitem:a45a45c8a9f9ce7b225eb166c961d7d00" id="r_a45a45c8a9f9ce7b225eb166c961d7d00"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a45a45c8a9f9ce7b225eb166c961d7d00">fromOwid</a> (Owid $owid)</td></tr>
@@ -323,7 +325,7 @@ FodId::tryFromBase64()} read this form back.</dd></dl>
 <p>{</p><dl class="c-list-definition section see"><dt class="c-list-definition__title">See also</dt><dd class="c-list-definition__desc">FodId::tryFromBase64()} answers with a status for the same inputs and is the surface to use for values arriving from outside.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">OwidException</td><td>when the string is not valid base64 or not a valid OWID, with the message naming the OWID library's status. </td></tr>
+    <tr><td class="paramname">OwidException</td><td>when the string is not valid base64 in one alphabet, has white space inside it, or is not a valid OWID, with the message naming the OWID library's status. </td></tr>
     <tr><td class="paramname">InvalidArgumentException</td><td>when the envelope is sound and the payload does not fit a 51Did. </td></tr>
   </table>
   </dd>
@@ -584,8 +586,9 @@ SignatureStatus::InvalidKey}. </dd></dl>
 </table>
 </div><div class="c-member__body">
 
-<p>Restores a string in either base64 alphabet to the standard alphabet with padding. </p>
-<p>Leading and trailing whitespace is removed first, since a value read from a header, a file or a form often carries a newline and the padding has to be counted from the characters that remain. Then <code>-</code> becomes <code>+</code>, <code>_</code> becomes <code>/</code>, and <code>==</code> or <code>=</code> is added when the length modulo 4 is 2 or 3. A string already in the standard padded form is returned unchanged. </p>
+<p>Restores a string in either base64 alphabet to the standard alphabet with padding, or answers null when the string is refused. </p>
+<p>White space before and after the text is removed first, being every character with the Unicode White_Space property, since a value read from a header, a file or a form often carries a newline and the padding has to be counted from the characters that remain. Then <code>-</code> becomes <code>+</code>, <code>_</code> becomes <code>/</code>, and <code>==</code> or <code>=</code> is added when the length modulo 4 is 2 or 3. A string already in the standard padded form is returned unchanged apart from that trim.</p>
+<p>A string with white space inside it, or with a character from each alphabet such as both <code>+</code> and <code>-</code>, is refused, as the 51Did specification requires. The issuer writes neither, so either is a sign of a damaged value, such as a <code>+</code> that a form decoder turned into a space or a value converted only in part. A string that is not UTF-8 is refused too, as its bytes cannot all be in the alphabet. </p>
 
 </div>
 </div>
@@ -617,7 +620,9 @@ SignatureStatus::InvalidKey}. </dd></dl>
 </div><div class="c-member__body">
 
 <p>Reads a 51Did from its base64-encoded OWID string, answering rather than raising when the value is not one. </p>
-<p>The value may be anything at all, because it is external data, so a null, an empty string or a value of another type (for example the array PHP builds when a query string repeats a parameter with brackets) is reported by status rather than raised. A string in either alphabet is accepted, standard (<code>+</code> and <code>/</code>, as the cloud issues it) or URL-safe (<code>-</code> and <code>_</code>, as a page puts it in a link), with or without padding, and surrounding whitespace is removed, as the cloud's endpoints normalise the alphabet and the padding.</p>
+<p>The value may be anything at all, because it is external data, so a null, an empty string or a value of another type (for example the array PHP builds when a query string repeats a parameter with brackets) is reported by status rather than raised. A string in either alphabet is accepted, standard (<code>+</code> and <code>/</code>, as the cloud issues it) or URL-safe (<code>-</code> and <code>_</code>, as a page puts it in a link), with or without padding, and white space around it is ignored. A string with white space inside it, or with characters from both alphabets, gives {</p><dl class="c-list-definition section see"><dt class="c-list-definition__title">See also</dt><dd class="c-list-definition__desc">ParseStatus::InvalidBase64}, and one of white space alone gives {</dd>
+<dd>
+ParseStatus::MissingInput}.</dd></dl>
 <p>The result carries the OWID library's own status when the envelope could not be read, and a {</p><dl class="c-list-definition section see"><dt class="c-list-definition__title">See also</dt><dd class="c-list-definition__desc">FodIdParseStatus} when the envelope was sound and the payload does not fit a 51Did. Success says nothing about the signature.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

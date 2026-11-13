@@ -82,12 +82,15 @@ Collaboration diagram for fiftyone\pipeline\ipintelligence\translation\Countries
 Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a2f1350d39cc603813187c6f78cf18316" id="r_a2f1350d39cc603813187c6f78cf18316"><td class="c-table__cell"><a id="a2f1350d39cc603813187c6f78cf18316" name="a2f1350d39cc603813187c6f78cf18316"></a>
 &#160;</td><td class="c-table__cell"><b>__construct</b> (?string $translationsDir=null)</td></tr>
+<tr class="c-table__row memitem:a8aa70fcc46cf7473b64366955a8e5dd3" id="r_a8aa70fcc46cf7473b64366955a8e5dd3"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8aa70fcc46cf7473b64366955a8e5dd3">onRegistration</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_pipeline.html">Pipeline</a> $pipeline)</td></tr>
+<tr class="c-table__row memdesc:a8aa70fcc46cf7473b64366955a8e5dd3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Logs that a value was read from the deprecated environment variable, when one was and that has not been logged yet.  <br /></td></tr>
 <tr class="c-table__row memitem:ae6e1b855851912c8698b7299c7bc08a6" id="r_ae6e1b855851912c8698b7299c7bc08a6"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ae6e1b855851912c8698b7299c7bc08a6">processInternal</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html">FlowData</a> $flowData)</td></tr>
 <tr class="c-table__row memdesc:ae6e1b855851912c8698b7299c7bc08a6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process FlowData - this is process function is usually overridden by specific FlowElements to do their core work.  <br /></td></tr>
 <tr class="c-table__row inherit_header pub_methods_classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine.html">fiftyone\pipeline\translation\TranslationEngine</a></h3></td></tr>
-<tr class="c-table__row memitem:a738c408537507f950b9fb9e2c52bf059 pub_methods_classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine" id="r_a738c408537507f950b9fb9e2c52bf059"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine.html#a738c408537507f950b9fb9e2c52bf059">__construct</a> (string $elementDataKey, string $sourceElementDataKey, array $propertyMap, array $localeMaps, ?string $fixedLanguage=null, string $behavior=MissingTranslationBehavior::ORIGINAL)</td></tr>
+<tr class="c-table__row memitem:ac7f04e0a4775c5c8e7b9dc7d22d821c8 pub_methods_classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine" id="r_ac7f04e0a4775c5c8e7b9dc7d22d821c8"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine.html#ac7f04e0a4775c5c8e7b9dc7d22d821c8">__construct</a> (string|array $elementDataKey=[], ?string $sourceElementDataKey=null, array $propertyMap=[], array $localeMaps=[], ?string $fixedLanguage=null, string $missingTranslationBehavior=MissingTranslationBehavior::ORIGINAL, ?string $behavior=null)</td></tr>
+<tr class="c-table__row memdesc:ac7f04e0a4775c5c8e7b9dc7d22d821c8 pub_methods_classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Builds the engine from its arguments, or from the settings array that PipelineBuilder::buildFromConfig passes every element it builds from a configuration file.  <br /></td></tr>
 <tr class="c-table__row memitem:a61e711731abd40866200b74a6021d338 pub_methods_classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine" id="r_a61e711731abd40866200b74a6021d338"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine.html#a61e711731abd40866200b74a6021d338">getEvidenceKeyFilter</a> ()</td></tr>
-<tr class="c-table__row memdesc:a61e711731abd40866200b74a6021d338 pub_methods_classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Function for getting the FlowElement's EvidenceKeyFilter Used by the filterEvidence method.  <br /></td></tr>
+<tr class="c-table__row memdesc:a61e711731abd40866200b74a6021d338 pub_methods_classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The Evidence this element accepts.  <br /></td></tr>
 <tr class="c-table__row inherit_header pub_methods_classfiftyone_1_1pipeline_1_1engines_1_1_engine"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1_engine.html">fiftyone\pipeline\engines\Engine</a></h3></td></tr>
 <tr class="c-table__row memitem:a837399d0c933bb231ca88cd86ff494c0 pub_methods_classfiftyone_1_1pipeline_1_1engines_1_1_engine" id="r_a837399d0c933bb231ca88cd86ff494c0"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1_engine.html#a837399d0c933bb231ca88cd86ff494c0">getDataSourceTier</a> ()</td></tr>
 <tr class="c-table__row memdesc:a837399d0c933bb231ca88cd86ff494c0 pub_methods_classfiftyone_1_1pipeline_1_1engines_1_1_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the tier to which the current data source belongs.  <br /></td></tr>
@@ -107,8 +110,6 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a5ee79927c9f42568cdd2400bad878fe0 pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element" id="r_a5ee79927c9f42568cdd2400bad878fe0"><td class="c-table__cell">
 &#160;</td><td class="c-table__cell"><b>filterEvidenceKey</b> (string $key)</td></tr>
 <tr class="c-table__row memdesc:a5ee79927c9f42568cdd2400bad878fe0 pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Filter FlowData evidence using the FlowElement's EvidenceKeyFilter. <br /></td></tr>
-<tr class="c-table__row memitem:ac07908fe8937c430f073503f29d34ece pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element" id="r_ac07908fe8937c430f073503f29d34ece"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html#ac07908fe8937c430f073503f29d34ece">onRegistration</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_pipeline.html">Pipeline</a> $pipeline)</td></tr>
-<tr class="c-table__row memdesc:ac07908fe8937c430f073503f29d34ece pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Callback called when an engine is added to a pipeline.  <br /></td></tr>
 <tr class="c-table__row memitem:a67c6ab89736a0ede0526399a660192ea pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element" id="r_a67c6ab89736a0ede0526399a660192ea"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html#a67c6ab89736a0ede0526399a660192ea">getProperties</a> ()</td></tr>
 <tr class="c-table__row memdesc:a67c6ab89736a0ede0526399a660192ea pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get properties Usually overridden by specific FlowElements.  <br /></td></tr>
 <tr class="c-table__row memitem:a19340df19105ad67b20fe06ec261b5d9 pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element" id="r_a19340df19105ad67b20fe06ec261b5d9"><td class="c-table__cell">
@@ -121,6 +122,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="c-table__row memitem:a26cd51ed99403cf6e7361dd6a7f98d79 pub_attribs_classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine" id="r_a26cd51ed99403cf6e7361dd6a7f98d79"><td class="c-table__cell">
 string&#160;</td><td class="c-table__cell"><b>$dataKey</b></td></tr>
 <tr class="c-table__row memitem:aac24ad38ef5b48ccbc5ed34c22657664 pub_attribs_classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine" id="r_aac24ad38ef5b48ccbc5ed34c22657664"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine.html#aac24ad38ef5b48ccbc5ed34c22657664">EVIDENCE_KEYS</a></td></tr>
+<tr class="c-table__row memitem:ab201e54c02c861ef5aca3a972a621e3b pub_attribs_classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine" id="r_ab201e54c02c861ef5aca3a972a621e3b"><td class="c-table__cell">
+const&#160;</td><td class="c-table__cell"><b>DEFAULT_ELEMENT_DATA_KEY</b> = 'translation'</td></tr>
+<tr class="c-table__row memdesc:ab201e54c02c861ef5aca3a972a621e3b pub_attribs_classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The element data key of an engine built from settings, the key the .NET Translation Engine uses. <br /></td></tr>
 <tr class="c-table__row inherit_header pub_attribs_classfiftyone_1_1pipeline_1_1engines_1_1_engine"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Data Fields inherited from <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1_engine.html">fiftyone\pipeline\engines\Engine</a></h3></td></tr>
 <tr class="c-table__row memitem:ab3ad885da0a70f8e06c28cd7e1a123d2 pub_attribs_classfiftyone_1_1pipeline_1_1engines_1_1_engine" id="r_ab3ad885da0a70f8e06c28cd7e1a123d2"><td class="c-table__cell">
 array&#160;</td><td class="c-table__cell"><b>$restrictedProperties</b></td></tr>
@@ -136,9 +140,11 @@ array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
 <tr class="c-table__row memdesc:a3eb9d2a8a76e772c73f74d0b239afe54 pro_methods_classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Translate every mapped property and return the result keyed by lower-cased destination property name.  <br /></td></tr>
 <tr class="c-table__row memitem:addf7f913502b879e50615f7389ed8e01 pro_methods_classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine" id="r_addf7f913502b879e50615f7389ed8e01"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine.html#addf7f913502b879e50615f7389ed8e01">resolveTranslator</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html">FlowData</a> $flowData)</td></tr>
 <tr class="c-table__row memdesc:addf7f913502b879e50615f7389ed8e01 pro_methods_classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Resolve the translator and locale to use for this request.  <br /></td></tr>
-<tr class="c-table__row memitem:a6a24e3de1d88e4cbecef8c4d0b234121 pro_methods_classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine" id="r_a6a24e3de1d88e4cbecef8c4d0b234121"><td class="c-table__cell">
-&#160;</td><td class="c-table__cell"><b>getEvidenceValue</b> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html">FlowData</a> $flowData)</td></tr>
-<tr class="c-table__row memdesc:a6a24e3de1d88e4cbecef8c4d0b234121 pro_methods_classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read the first non-blank translation evidence value, in precedence order. <br /></td></tr>
+<tr class="c-table__row memitem:a6a24e3de1d88e4cbecef8c4d0b234121 pro_methods_classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine" id="r_a6a24e3de1d88e4cbecef8c4d0b234121"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine.html#a6a24e3de1d88e4cbecef8c4d0b234121">getEvidenceValue</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html">FlowData</a> $flowData)</td></tr>
+<tr class="c-table__row memdesc:a6a24e3de1d88e4cbecef8c4d0b234121 pro_methods_classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read the first non-blank translation evidence value, in precedence order.  <br /></td></tr>
+<tr class="c-table__row inherit_header pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1_engine"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Protected Member Functions inherited from <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1_engine.html">fiftyone\pipeline\engines\Engine</a></h3></td></tr>
+<tr class="c-table__row memitem:a6f78f12550fa666b15a3637399c5edf2 pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1_engine" id="r_a6f78f12550fa666b15a3637399c5edf2"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1_engine.html#a6f78f12550fa666b15a3637399c5edf2">holdsValueForOneRequest</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_element_data.html">ElementData</a> $data)</td></tr>
+<tr class="c-table__row memdesc:a6f78f12550fa666b15a3637399c5edf2 pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether a result holds a value created for the one request that asked for it, such as a 51Did.  <br /></td></tr>
 <tr class="c-table__row inherit_header pro_attribs_classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Protected Attributes inherited from <a class="el" href="classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine.html">fiftyone\pipeline\translation\TranslationEngine</a></h3></td></tr>
 <tr class="c-table__row memitem:a84b42c14e168caad93f7a765842c1457 pro_attribs_classfiftyone_1_1pipeline_1_1translation_1_1_translation_engine" id="r_a84b42c14e168caad93f7a765842c1457"><td class="c-table__cell">
 array&#160;</td><td class="c-table__cell"><b>$propertyMap</b></td></tr>
@@ -156,6 +162,31 @@ array&#160;</td><td class="c-table__cell"><b>$availableLocales</b> = []</td></tr
 <a class="el" href="classfiftyone_1_1pipeline_1_1translation_1_1_translator.html">Translator</a>&#160;</td><td class="c-table__cell"><b>$emptyTranslator</b></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a8aa70fcc46cf7473b64366955a8e5dd3" name="a8aa70fcc46cf7473b64366955a8e5dd3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8aa70fcc46cf7473b64366955a8e5dd3">&#9670;&#160;</a></span>onRegistration()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\ipintelligence\translation\CountriesTranslationEngine::onRegistration </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_pipeline.html">Pipeline</a></td>          <td class="c-table__cell"><span class="paramname"><em>$pipeline</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Logs that a value was read from the deprecated environment variable, when one was and that has not been logged yet. </p>
+
+<p>Reimplemented from <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html#ac07908fe8937c430f073503f29d34ece">fiftyone\pipeline\core\FlowElement</a>.</p>
+
+</div>
+</div>
 <a id="ae6e1b855851912c8698b7299c7bc08a6" name="ae6e1b855851912c8698b7299c7bc08a6"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae6e1b855851912c8698b7299c7bc08a6">&#9670;&#160;</a></span>processInternal()</h2>
 

@@ -83,12 +83,34 @@ Collaboration diagram for tests.test_cloudrequestengine.TestCloudRequestEngine:<
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a3f7d344b81af3146caba1ed4fa716585" id="r_a3f7d344b81af3146caba1ed4fa716585"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a3f7d344b81af3146caba1ed4fa716585">setUp</a> (self)</td></tr>
+<tr class="c-table__row memitem:af1b9e8755d8f1e9cdc624bf61e1587c3" id="r_af1b9e8755d8f1e9cdc624bf61e1587c3"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#af1b9e8755d8f1e9cdc624bf61e1587c3">new_engine</a> (self, **settings)</td></tr>
+<tr class="c-table__row memdesc:af1b9e8755d8f1e9cdc624bf61e1587c3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A cloud request engine with the test resource key, a mock HTTP client and any other settings given.  <br /></td></tr>
+<tr class="c-table__row memitem:a3996cbf2bcb89e54b091e86c818e4875" id="r_a3996cbf2bcb89e54b091e86c818e4875"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a3996cbf2bcb89e54b091e86c818e4875">old_name_reports</a> (self, caught)</td></tr>
+<tr class="c-table__row memdesc:a3996cbf2bcb89e54b091e86c818e4875"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The warnings in a recorded list that say the old endpoint variable is deprecated and name the one that replaces it.  <br /></td></tr>
 <tr class="c-table__row memitem:a8a0b70c56eb1c2e65878b6ad2dbe16fb" id="r_a8a0b70c56eb1c2e65878b6ad2dbe16fb"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8a0b70c56eb1c2e65878b6ad2dbe16fb">testConfigEndPoint_ExplicitSetting</a> (self)</td></tr>
 <tr class="c-table__row memdesc:a8a0b70c56eb1c2e65878b6ad2dbe16fb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that the explicitly setting the cloud endpoint via method interface take precedence over everything else.  <br /></td></tr>
 <tr class="c-table__row memitem:a325253e2d7222f8e0ec552b0a6846883" id="r_a325253e2d7222f8e0ec552b0a6846883"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a325253e2d7222f8e0ec552b0a6846883">testConfigEndPoint_EnvironmentVariableSetting</a> (self)</td></tr>
 <tr class="c-table__row memdesc:a325253e2d7222f8e0ec552b0a6846883"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that the setting the cloud endpoint via environment variable take precedence over the default value.  <br /></td></tr>
 <tr class="c-table__row memitem:ac96279e1b5dc872e319ee492e25f763d" id="r_ac96279e1b5dc872e319ee492e25f763d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ac96279e1b5dc872e319ee492e25f763d">testConfigEndPoint_DefaultSetting</a> (self)</td></tr>
 <tr class="c-table__row memdesc:ac96279e1b5dc872e319ee492e25f763d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that if nothing else is set the default value should be used.  <br /></td></tr>
+<tr class="c-table__row memitem:aef92c7d30ee0ba5c501c24c4f44e4383" id="r_aef92c7d30ee0ba5c501c24c4f44e4383"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aef92c7d30ee0ba5c501c24c4f44e4383">testConfigEndPoint_OldEnvironmentVariable</a> (self)</td></tr>
+<tr class="c-table__row memdesc:aef92c7d30ee0ba5c501c24c4f44e4383"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that the old name of the endpoint environment variable is still read when the new name is not set.  <br /></td></tr>
+<tr class="c-table__row memitem:ae29db270d36d7040ec5ee9a5126e8344" id="r_ae29db270d36d7040ec5ee9a5126e8344"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ae29db270d36d7040ec5ee9a5126e8344">testConfigEndPoint_OldEnvironmentVariable_NewNameEmpty</a> (self)</td></tr>
+<tr class="c-table__row memdesc:ae29db270d36d7040ec5ee9a5126e8344"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that the old name is read when the new name is set to an empty value, which counts as not set.  <br /></td></tr>
+<tr class="c-table__row memitem:a91125c9afcf44fdbb20193a75820cd3b" id="r_a91125c9afcf44fdbb20193a75820cd3b"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a91125c9afcf44fdbb20193a75820cd3b">testConfigEndPoint_OldEnvironmentVariable_Empty</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a91125c9afcf44fdbb20193a75820cd3b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that the default is used when the old name is set to an empty value and the new name is not set, with nothing reported.  <br /></td></tr>
+<tr class="c-table__row memitem:a1ff3a376153f20ca551fee216d1534ea" id="r_a1ff3a376153f20ca551fee216d1534ea"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a1ff3a376153f20ca551fee216d1534ea">testConfigEndPoint_NewEnvironmentVariableWins</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a1ff3a376153f20ca551fee216d1534ea"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that the new name wins when both names are set, and that the old name is not reported because it was not used.  <br /></td></tr>
+<tr class="c-table__row memitem:af3b6ccad938b9f3a5ee9c7f5e389904c" id="r_af3b6ccad938b9f3a5ee9c7f5e389904c"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#af3b6ccad938b9f3a5ee9c7f5e389904c">testConfigEndPoint_ExplicitSettingOverOldEnvironmentVariable</a> (self)</td></tr>
+<tr class="c-table__row memdesc:af3b6ccad938b9f3a5ee9c7f5e389904c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that the cloud_endpoint setting wins over the old name, and that the old name is not reported because it was not used.  <br /></td></tr>
+<tr class="c-table__row memitem:ad2066d6fd0b86901354ab827c0fed909" id="r_ad2066d6fd0b86901354ab827c0fed909"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad2066d6fd0b86901354ab827c0fed909">testConfigEndPoint_OldEnvironmentVariableReportedOnce</a> (self)</td></tr>
+<tr class="c-table__row memdesc:ad2066d6fd0b86901354ab827c0fed909"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that using the old name is reported as deprecated once, naming the new name, however many engines are built.  <br /></td></tr>
+<tr class="c-table__row memitem:ad008cedc11f811a777bd943274d6d9be" id="r_ad008cedc11f811a777bd943274d6d9be"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad008cedc11f811a777bd943274d6d9be">testOldEndPointConstant</a> (self)</td></tr>
+<tr class="c-table__row memdesc:ad008cedc11f811a777bd943274d6d9be"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that the constant the old name was held in is still there with its old value, as a plain attribute of its class, so that every way of reading it gives the old name.  <br /></td></tr>
+<tr class="c-table__row memitem:a7ca7ecbe342f6ecf22ec95b0bb7c3333" id="r_a7ca7ecbe342f6ecf22ec95b0bb7c3333"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7ca7ecbe342f6ecf22ec95b0bb7c3333">testConfigEndPoint_VariableTheOldConstantNames</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a7ca7ecbe342f6ecf22ec95b0bb7c3333"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that the engine reads the old name through the constant, as it did before, so that code which points the constant at another variable still decides what is read.  <br /></td></tr>
+<tr class="c-table__row memitem:a2fa2422e67af80475e52933caf60a9a9" id="r_a2fa2422e67af80475e52933caf60a9a9"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a2fa2422e67af80475e52933caf60a9a9">testEndPointConstant</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a2fa2422e67af80475e52933caf60a9a9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that the constant for the new name holds the new name.  <br /></td></tr>
 <tr class="c-table__row memitem:a8aaae5e37206666cc1afb46766d1400f" id="r_a8aaae5e37206666cc1afb46766d1400f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8aaae5e37206666cc1afb46766d1400f">test_evidence_precedence</a> (self, warn, evidence1, evidence2)</td></tr>
 <tr class="c-table__row memdesc:a8aaae5e37206666cc1afb46766d1400f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Test cloud request engine adds correct information to post request following the order of precedence when processing evidence and returns the response in the ElementData.  <br /></td></tr>
 <tr class="c-table__row memitem:a7736fa55b682df71449b85de7bf2293d" id="r_a7736fa55b682df71449b85de7bf2293d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7736fa55b682df71449b85de7bf2293d">test_get_selected_evidence</a> (self, evidence, ev_type, expected_value)</td></tr>
@@ -102,10 +124,66 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="c-table__row memitem:ae95594ef0685a7ee8891979ffe606344" id="r_ae95594ef0685a7ee8891979ffe606344"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#ae95594ef0685a7ee8891979ffe606344">testResourceKey</a> = &quot;resource_key&quot;</td></tr>
-<tr class="c-table__row memitem:a78762071f5c8b3e25e83c428385bcf6d" id="r_a78762071f5c8b3e25e83c428385bcf6d"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a78762071f5c8b3e25e83c428385bcf6d">testEndPoint</a> = &quot;http://testEndPoint/&quot;</td></tr>
-<tr class="c-table__row memitem:a8daa6d6b79777aa18d956dfc53611274" id="r_a8daa6d6b79777aa18d956dfc53611274"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a8daa6d6b79777aa18d956dfc53611274">testEnvVarEndPoint</a> = &quot;http://testEnvVarEndPoint/&quot;</td></tr>
+<tr class="c-table__row memitem:a1f7641267cf784b156a30204487715b4" id="r_a1f7641267cf784b156a30204487715b4"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a1f7641267cf784b156a30204487715b4">testEndPoint</a> = &quot;http://testEndPoint/&quot;</td></tr>
+<tr class="c-table__row memitem:ada7ae1423eac60e3cd18e6d7f97a4947" id="r_ada7ae1423eac60e3cd18e6d7f97a4947"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#ada7ae1423eac60e3cd18e6d7f97a4947">testEnvVarEndPoint</a> = &quot;http://testEnvVarEndPoint/&quot;</td></tr>
+<tr class="c-table__row memitem:a5a9aa6fc08485de5da18d80508968416" id="r_a5a9aa6fc08485de5da18d80508968416"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a5a9aa6fc08485de5da18d80508968416">testOldEnvVarEndPoint</a> = &quot;http://testOldEnvVarEndPoint/&quot;</td></tr>
+<tr class="c-table__row memitem:aa59cba6d83ec4bb889c13d2e74bff5b0" id="r_aa59cba6d83ec4bb889c13d2e74bff5b0"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#aa59cba6d83ec4bb889c13d2e74bff5b0">oldEndPointVariable</a> = &quot;FOD_CLOUD_API_URL&quot;</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="af1b9e8755d8f1e9cdc624bf61e1587c3" name="af1b9e8755d8f1e9cdc624bf61e1587c3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af1b9e8755d8f1e9cdc624bf61e1587c3">&#9670;&#160;</a></span>new_engine()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_cloudrequestengine.TestCloudRequestEngine.new_engine </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">**</td>          <td class="c-table__cell"><span class="paramname"><em>settings</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>A cloud request engine with the test resource key, a mock HTTP client and any other settings given. </p>
+
+</div>
+</div>
+<a id="a3996cbf2bcb89e54b091e86c818e4875" name="a3996cbf2bcb89e54b091e86c818e4875"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3996cbf2bcb89e54b091e86c818e4875">&#9670;&#160;</a></span>old_name_reports()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_cloudrequestengine.TestCloudRequestEngine.old_name_reports </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>caught</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The warnings in a recorded list that say the old endpoint variable is deprecated and name the one that replaces it. </p>
+
+</div>
+</div>
 <a id="a3f7d344b81af3146caba1ed4fa716585" name="a3f7d344b81af3146caba1ed4fa716585"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3f7d344b81af3146caba1ed4fa716585">&#9670;&#160;</a></span>setUp()</h2>
 
@@ -369,9 +447,216 @@ initialised and server is down
 
 </div>
 </div>
+<a id="af3b6ccad938b9f3a5ee9c7f5e389904c" name="af3b6ccad938b9f3a5ee9c7f5e389904c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af3b6ccad938b9f3a5ee9c7f5e389904c">&#9670;&#160;</a></span>testConfigEndPoint_ExplicitSettingOverOldEnvironmentVariable()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_cloudrequestengine.TestCloudRequestEngine.testConfigEndPoint_ExplicitSettingOverOldEnvironmentVariable </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Check that the cloud_endpoint setting wins over the old name, and that the old name is not reported because it was not used. </p>
+
+</div>
+</div>
+<a id="a1ff3a376153f20ca551fee216d1534ea" name="a1ff3a376153f20ca551fee216d1534ea"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1ff3a376153f20ca551fee216d1534ea">&#9670;&#160;</a></span>testConfigEndPoint_NewEnvironmentVariableWins()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_cloudrequestengine.TestCloudRequestEngine.testConfigEndPoint_NewEnvironmentVariableWins </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Check that the new name wins when both names are set, and that the old name is not reported because it was not used. </p>
+
+</div>
+</div>
+<a id="aef92c7d30ee0ba5c501c24c4f44e4383" name="aef92c7d30ee0ba5c501c24c4f44e4383"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aef92c7d30ee0ba5c501c24c4f44e4383">&#9670;&#160;</a></span>testConfigEndPoint_OldEnvironmentVariable()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_cloudrequestengine.TestCloudRequestEngine.testConfigEndPoint_OldEnvironmentVariable </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Check that the old name of the endpoint environment variable is still read when the new name is not set. </p>
+
+</div>
+</div>
+<a id="a91125c9afcf44fdbb20193a75820cd3b" name="a91125c9afcf44fdbb20193a75820cd3b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a91125c9afcf44fdbb20193a75820cd3b">&#9670;&#160;</a></span>testConfigEndPoint_OldEnvironmentVariable_Empty()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_cloudrequestengine.TestCloudRequestEngine.testConfigEndPoint_OldEnvironmentVariable_Empty </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Check that the default is used when the old name is set to an empty value and the new name is not set, with nothing reported. </p>
+
+</div>
+</div>
+<a id="ae29db270d36d7040ec5ee9a5126e8344" name="ae29db270d36d7040ec5ee9a5126e8344"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae29db270d36d7040ec5ee9a5126e8344">&#9670;&#160;</a></span>testConfigEndPoint_OldEnvironmentVariable_NewNameEmpty()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_cloudrequestengine.TestCloudRequestEngine.testConfigEndPoint_OldEnvironmentVariable_NewNameEmpty </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Check that the old name is read when the new name is set to an empty value, which counts as not set. </p>
+
+</div>
+</div>
+<a id="ad2066d6fd0b86901354ab827c0fed909" name="ad2066d6fd0b86901354ab827c0fed909"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad2066d6fd0b86901354ab827c0fed909">&#9670;&#160;</a></span>testConfigEndPoint_OldEnvironmentVariableReportedOnce()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_cloudrequestengine.TestCloudRequestEngine.testConfigEndPoint_OldEnvironmentVariableReportedOnce </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Check that using the old name is reported as deprecated once, naming the new name, however many engines are built. </p>
+
+</div>
+</div>
+<a id="a7ca7ecbe342f6ecf22ec95b0bb7c3333" name="a7ca7ecbe342f6ecf22ec95b0bb7c3333"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7ca7ecbe342f6ecf22ec95b0bb7c3333">&#9670;&#160;</a></span>testConfigEndPoint_VariableTheOldConstantNames()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_cloudrequestengine.TestCloudRequestEngine.testConfigEndPoint_VariableTheOldConstantNames </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Check that the engine reads the old name through the constant, as it did before, so that code which points the constant at another variable still decides what is read. </p>
+
+</div>
+</div>
+<a id="a2fa2422e67af80475e52933caf60a9a9" name="a2fa2422e67af80475e52933caf60a9a9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2fa2422e67af80475e52933caf60a9a9">&#9670;&#160;</a></span>testEndPointConstant()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_cloudrequestengine.TestCloudRequestEngine.testEndPointConstant </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Check that the constant for the new name holds the new name. </p>
+
+</div>
+</div>
+<a id="ad008cedc11f811a777bd943274d6d9be" name="ad008cedc11f811a777bd943274d6d9be"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad008cedc11f811a777bd943274d6d9be">&#9670;&#160;</a></span>testOldEndPointConstant()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_cloudrequestengine.TestCloudRequestEngine.testOldEndPointConstant </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Check that the constant the old name was held in is still there with its old value, as a plain attribute of its class, so that every way of reading it gives the old name. </p>
+
+</div>
+</div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
-<a id="a78762071f5c8b3e25e83c428385bcf6d" name="a78762071f5c8b3e25e83c428385bcf6d"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a78762071f5c8b3e25e83c428385bcf6d">&#9670;&#160;</a></span>testEndPoint</h2>
+<a id="aa59cba6d83ec4bb889c13d2e74bff5b0" name="aa59cba6d83ec4bb889c13d2e74bff5b0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa59cba6d83ec4bb889c13d2e74bff5b0">&#9670;&#160;</a></span>oldEndPointVariable</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -382,7 +667,7 @@ initialised and server is down
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">str tests.test_cloudrequestengine.TestCloudRequestEngine.testEndPoint = &quot;http://testEndPoint/&quot;</td>
+              <td class="c-table__cell">tests.test_cloudrequestengine.TestCloudRequestEngine.oldEndPointVariable = &quot;FOD_CLOUD_API_URL&quot;</td>
             </tr>
           </table>
         </div>
@@ -396,8 +681,8 @@ initialised and server is down
 
 </div>
 </div>
-<a id="a8daa6d6b79777aa18d956dfc53611274" name="a8daa6d6b79777aa18d956dfc53611274"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8daa6d6b79777aa18d956dfc53611274">&#9670;&#160;</a></span>testEnvVarEndPoint</h2>
+<a id="a1f7641267cf784b156a30204487715b4" name="a1f7641267cf784b156a30204487715b4"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1f7641267cf784b156a30204487715b4">&#9670;&#160;</a></span>testEndPoint</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -408,7 +693,59 @@ initialised and server is down
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">str tests.test_cloudrequestengine.TestCloudRequestEngine.testEnvVarEndPoint = &quot;http://testEnvVarEndPoint/&quot;</td>
+              <td class="c-table__cell">tests.test_cloudrequestengine.TestCloudRequestEngine.testEndPoint = &quot;http://testEndPoint/&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="ada7ae1423eac60e3cd18e6d7f97a4947" name="ada7ae1423eac60e3cd18e6d7f97a4947"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ada7ae1423eac60e3cd18e6d7f97a4947">&#9670;&#160;</a></span>testEnvVarEndPoint</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_cloudrequestengine.TestCloudRequestEngine.testEnvVarEndPoint = &quot;http://testEnvVarEndPoint/&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a5a9aa6fc08485de5da18d80508968416" name="a5a9aa6fc08485de5da18d80508968416"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5a9aa6fc08485de5da18d80508968416">&#9670;&#160;</a></span>testOldEnvVarEndPoint</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_cloudrequestengine.TestCloudRequestEngine.testOldEnvVarEndPoint = &quot;http://testOldEnvVarEndPoint/&quot;</td>
             </tr>
           </table>
         </div>

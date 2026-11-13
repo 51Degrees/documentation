@@ -1,5 +1,7 @@
 var classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine =
 [
+    [ "new_engine", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#af1b9e8755d8f1e9cdc624bf61e1587c3", null ],
+    [ "old_name_reports", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#a3996cbf2bcb89e54b091e86c818e4875", null ],
     [ "setUp", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#a3f7d344b81af3146caba1ed4fa716585", null ],
     [ "test_evidence_precedence", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#a8aaae5e37206666cc1afb46766d1400f", null ],
     [ "test_exception_on_server_down_without_suppression", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#a213e2474e0dc42ed5acbd9890edf0375", null ],
@@ -10,7 +12,18 @@ var classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine =
     [ "testConfigEndPoint_DefaultSetting", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#ac96279e1b5dc872e319ee492e25f763d", null ],
     [ "testConfigEndPoint_EnvironmentVariableSetting", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#a325253e2d7222f8e0ec552b0a6846883", null ],
     [ "testConfigEndPoint_ExplicitSetting", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#a8a0b70c56eb1c2e65878b6ad2dbe16fb", null ],
-    [ "testEndPoint", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#a78762071f5c8b3e25e83c428385bcf6d", null ],
-    [ "testEnvVarEndPoint", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#a8daa6d6b79777aa18d956dfc53611274", null ],
+    [ "testConfigEndPoint_ExplicitSettingOverOldEnvironmentVariable", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#af3b6ccad938b9f3a5ee9c7f5e389904c", null ],
+    [ "testConfigEndPoint_NewEnvironmentVariableWins", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#a1ff3a376153f20ca551fee216d1534ea", null ],
+    [ "testConfigEndPoint_OldEnvironmentVariable", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#aef92c7d30ee0ba5c501c24c4f44e4383", null ],
+    [ "testConfigEndPoint_OldEnvironmentVariable_Empty", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#a91125c9afcf44fdbb20193a75820cd3b", null ],
+    [ "testConfigEndPoint_OldEnvironmentVariable_NewNameEmpty", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#ae29db270d36d7040ec5ee9a5126e8344", null ],
+    [ "testConfigEndPoint_OldEnvironmentVariableReportedOnce", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#ad2066d6fd0b86901354ab827c0fed909", null ],
+    [ "testConfigEndPoint_VariableTheOldConstantNames", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#a7ca7ecbe342f6ecf22ec95b0bb7c3333", null ],
+    [ "testEndPointConstant", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#a2fa2422e67af80475e52933caf60a9a9", null ],
+    [ "testOldEndPointConstant", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#ad008cedc11f811a777bd943274d6d9be", null ],
+    [ "oldEndPointVariable", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#aa59cba6d83ec4bb889c13d2e74bff5b0", null ],
+    [ "testEndPoint", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#a1f7641267cf784b156a30204487715b4", null ],
+    [ "testEnvVarEndPoint", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#ada7ae1423eac60e3cd18e6d7f97a4947", null ],
+    [ "testOldEnvVarEndPoint", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#a5a9aa6fc08485de5da18d80508968416", null ],
     [ "testResourceKey", "classtests_1_1test__cloudrequestengine_1_1_test_cloud_request_engine.html#ae95594ef0685a7ee8891979ffe606344", null ]
 ];

@@ -122,6 +122,11 @@ The Enterprise data file has every property.
 <div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__devicedetection__examples_1_1example__utils.html">fiftyone_devicedetection_examples.example_utils</a> <span class="c-code__keyword">import</span> ExampleUtils</div>
 <div class="c-code__line"><span class="c-code__comment"># This example goes through a CSV of 20000 user agents and processes them, returning the time and information about the matches</span></div>
 <div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__devicedetection__onpremise_1_1devicedetection__onpremise__pipelinebuilder.html">fiftyone_devicedetection_onpremise.devicedetection_onpremise_pipelinebuilder</a> <span class="c-code__keyword">import</span> DeviceDetectionOnPremisePipelineBuilder</div>
+<div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__devicedetection__shared_1_1example__constants.html">fiftyone_devicedetection_shared.example_constants</a> <span class="c-code__keyword">import</span> UA_FILE_NAME</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment"># Where to ask for a copy of the Enterprise data file, tagged with this</span></div>
+<div class="c-code__line"><span class="c-code__comment"># example.</span></div>
+<div class="c-code__line">CONTACT_US = <span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-performance.py&amp;utm_term=enterprise-data-file&quot;</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment"># Here we make a function that processes a user agent</span></div>
 <div class="c-code__line"><span class="c-code__comment"># And returns if it is a mobile device</span></div>
@@ -221,11 +226,13 @@ The Enterprise data file has every property.
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> __name__ == <span class="c-code__stringliteral">&quot;__main__&quot;</span>:</div>
 <div class="c-code__line">    ap = argparse.ArgumentParser(description=<span class="c-code__stringliteral">&#39;Run detection benchmark.&#39;</span>)</div>
 <div class="c-code__line">    ap.add_argument(<span class="c-code__stringliteral">&#39;-d&#39;</span>, <span class="c-code__stringliteral">&#39;--data_file&#39;</span>, default=<span class="c-code__stringliteral">&#39;&#39;</span>, help=<span class="c-code__stringliteral">&#39;Path to data file&#39;</span>)</div>
-<div class="c-code__line">    ap.add_argument(<span class="c-code__stringliteral">&#39;-u&#39;</span>, <span class="c-code__stringliteral">&#39;--user_agents_file&#39;</span>, default=<span class="c-code__stringliteral">&#39;../../cxx/data/device-detection/20000 User Agents.csv&#39;</span>, help=<span class="c-code__stringliteral">&#39;Path to user agents evidence file&#39;</span>)</div>
+<div class="c-code__line">    ap.add_argument(<span class="c-code__stringliteral">&#39;-u&#39;</span>, <span class="c-code__stringliteral">&#39;--user_agents_file&#39;</span>, default=<span class="c-code__stringliteral">&#39;&#39;</span>, help=<span class="c-code__stringliteral">&#39;Path to user agents evidence file&#39;</span>)</div>
 <div class="c-code__line">    ap.add_argument(<span class="c-code__stringliteral">&#39;-j&#39;</span>, <span class="c-code__stringliteral">&#39;--json_output&#39;</span>, default=<span class="c-code__stringliteral">&#39;&#39;</span>, help=<span class="c-code__stringliteral">&#39;Output results in JSON format&#39;</span>)</div>
 <div class="c-code__line">    args = ap.parse_args()</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> args.data_file == <span class="c-code__stringliteral">&quot;&quot;</span>:</div>
 <div class="c-code__line">        args.data_file = ExampleUtils.find_file(<span class="c-code__stringliteral">&quot;51Degrees-LiteV4.1.hash&quot;</span>)</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> args.user_agents_file == <span class="c-code__stringliteral">&quot;&quot;</span>:</div>
+<div class="c-code__line">        args.user_agents_file = ExampleUtils.find_file(UA_FILE_NAME)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment"># First we read the contents of the 20000 user agents file as a list</span></div>
 <div class="c-code__line">    <span class="c-code__keyword">with</span> open(args.user_agents_file, newline=<span class="c-code__stringliteral">&#39;&#39;</span>) <span class="c-code__keyword">as</span> file:</div>
@@ -277,9 +284,23 @@ The Enterprise data file has every property.
 <div class="c-code__line">        final_result[<span class="c-code__stringliteral">&quot;notmobile&quot;</span>] += result[<span class="c-code__stringliteral">&quot;notmobile&quot;</span>]</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    print(<span class="c-code__stringliteral">&quot;Results&quot;</span>, final_result)</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment"># Say what the Enterprise data file adds when the benchmark ran on the</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># free Lite data file. The data file is opened with the low memory</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># profile, which reads little of it.</span></div>
+<div class="c-code__line">    <span class="c-code__keyword">with</span> DeviceDetectionOnPremisePipelineBuilder(</div>
+<div class="c-code__line">            data_file_path=args.data_file,</div>
+<div class="c-code__line">            licence_keys=<span class="c-code__stringliteral">&quot;&quot;</span>,</div>
+<div class="c-code__line">            performance_profile=<span class="c-code__stringliteral">&#39;LowMemory&#39;</span>,</div>
+<div class="c-code__line">            add_javascript_builder=<span class="c-code__keyword">False</span>,</div>
+<div class="c-code__line">            usage_sharing=<span class="c-code__keyword">False</span>,</div>
+<div class="c-code__line">            auto_update=<span class="c-code__keyword">False</span>).<a class="code hl_namespace" href="namespacebuild.html">build</a>() <span class="c-code__keyword">as</span> check:</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> ExampleUtils.is_lite_data_file(check.get_element(<span class="c-code__stringliteral">&quot;device&quot;</span>)):</div>
+<div class="c-code__line">            print(ExampleUtils.get_enterprise_offer(CONTACT_US))</div>
 <div class="ttc" id="anamespacebuild_html"><div class="ttname"><a href="namespacebuild.html">build</a></div><div class="ttdef"><b>Definition</b> onpremise/build/__init__.py:1</div></div>
 <div class="ttc" id="anamespacefiftyone__devicedetection__examples_1_1example__utils_html"><div class="ttname"><a href="namespacefiftyone__devicedetection__examples_1_1example__utils.html">fiftyone_devicedetection_examples.example_utils</a></div><div class="ttdef"><b>Definition</b> example_utils.py:1</div></div>
 <div class="ttc" id="anamespacefiftyone__devicedetection__onpremise_1_1devicedetection__onpremise__pipelinebuilder_html"><div class="ttname"><a href="namespacefiftyone__devicedetection__onpremise_1_1devicedetection__onpremise__pipelinebuilder.html">fiftyone_devicedetection_onpremise.devicedetection_onpremise_pipelinebuilder</a></div><div class="ttdef"><b>Definition</b> devicedetection_onpremise_pipelinebuilder.py:1</div></div>
+<div class="ttc" id="anamespacefiftyone__devicedetection__shared_1_1example__constants_html"><div class="ttname"><a href="namespacefiftyone__devicedetection__shared_1_1example__constants.html">fiftyone_devicedetection_shared.example_constants</a></div><div class="ttdef"><b>Definition</b> example_constants.py:1</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

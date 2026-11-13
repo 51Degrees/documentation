@@ -74,6 +74,11 @@ Classes</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="c-table__row memitem:a7309bc6a833f16ba4acb71f2db89fd7a" id="r_a7309bc6a833f16ba4acb71f2db89fd7a"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7309bc6a833f16ba4acb71f2db89fd7a">no_settings</a> (monkeypatch)</td></tr>
+<tr class="c-table__row memitem:a0129d557eed618032c47a705804fecd1" id="r_a0129d557eed618032c47a705804fecd1"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a0129d557eed618032c47a705804fecd1">test_setting_is_read_from_its_old_name_and_reported_once</a> (getter, name, old_name, no_settings, capsys)</td></tr>
+<tr class="c-table__row memitem:a5b19ef1355907c797bd5c518c04aac4b" id="r_a5b19ef1355907c797bd5c518c04aac4b"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a5b19ef1355907c797bd5c518c04aac4b">test_new_name_wins_and_nothing_is_printed</a> (getter, name, old_name, no_settings, capsys)</td></tr>
+<tr class="c-table__row memitem:a7701858eafcdaa1f67c76e577a5de481" id="r_a7701858eafcdaa1f67c76e577a5de481"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7701858eafcdaa1f67c76e577a5de481">test_neither_name_gives_an_empty_string</a> (getter, name, old_name, no_settings, capsys)</td></tr>
+<tr class="c-table__row memitem:a56a74dc2db73ee48523da2d3ae4c0815" id="r_a56a74dc2db73ee48523da2d3ae4c0815"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a56a74dc2db73ee48523da2d3ae4c0815">test_constants_hold_the_old_and_the_new_names</a> ()</td></tr>
 <tr class="c-table__row memitem:ac4e2968452d0c7730a5d268c3c225007" id="r_ac4e2968452d0c7730a5d268c3c225007"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ac4e2968452d0c7730a5d268c3c225007">test_raw_weighting_becomes_a_proportion</a> ()</td></tr>
 <tr class="c-table__row memitem:a85ef45b553fa4f7f53d7da9109673657" id="r_a85ef45b553fa4f7f53d7da9109673657"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a85ef45b553fa4f7f53d7da9109673657">test_entry_without_raw_weighting_is_unchanged</a> ()</td></tr>
 <tr class="c-table__row memitem:af39373bfa55ca56a02571ca3303da886" id="r_af39373bfa55ca56a02571ca3303da886"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#af39373bfa55ca56a02571ca3303da886">test_weighted_value_shows_each_entry_with_its_percentage</a> ()</td></tr>
@@ -81,8 +86,55 @@ Functions</h2></td></tr>
 <tr class="c-table__row memitem:a6ab7e323a0332895f2dbe714d786e8fe" id="r_a6ab7e323a0332895f2dbe714d786e8fe"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a6ab7e323a0332895f2dbe714d786e8fe">test_list_and_number_formats</a> ()</td></tr>
 <tr class="c-table__row memitem:a7a76dbde47be6405deef6cf15df680f8" id="r_a7a76dbde47be6405deef6cf15df680f8"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7a76dbde47be6405deef6cf15df680f8">test_each_reason_for_no_value_reads_differently</a> ()</td></tr>
 <tr class="c-table__row memitem:acf124ab0d45435c40a699ee3dad63cbf" id="r_acf124ab0d45435c40a699ee3dad63cbf"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#acf124ab0d45435c40a699ee3dad63cbf">test_value_or_unknown</a> ()</td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="c-table__row memitem:aebced6ef22694a30989060aecd3179f4" id="r_aebced6ef22694a30989060aecd3179f4"><td class="c-table__cell">list&#160;</td><td class="c-table__cell"><a class="el" href="#aebced6ef22694a30989060aecd3179f4">OLD_NAMES</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
+<a id="a7309bc6a833f16ba4acb71f2db89fd7a" name="a7309bc6a833f16ba4acb71f2db89fd7a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7309bc6a833f16ba4acb71f2db89fd7a">&#9670;&#160;</a></span>no_settings()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">no_settings </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>monkeypatch</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<pre class="fragment">None of the settings in the environment, and no old name reported
+as deprecated yet.</pre> 
+</div>
+</div>
+<a id="a56a74dc2db73ee48523da2d3ae4c0815" name="a56a74dc2db73ee48523da2d3ae4c0815"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a56a74dc2db73ee48523da2d3ae4c0815">&#9670;&#160;</a></span>test_constants_hold_the_old_and_the_new_names()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">test_constants_hold_the_old_and_the_new_names </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
 <a id="a7a76dbde47be6405deef6cf15df680f8" name="a7a76dbde47be6405deef6cf15df680f8"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7a76dbde47be6405deef6cf15df680f8">&#9670;&#160;</a></span>test_each_reason_for_no_value_reads_differently()</h2>
 
@@ -146,6 +198,86 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a7701858eafcdaa1f67c76e577a5de481" name="a7701858eafcdaa1f67c76e577a5de481"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7701858eafcdaa1f67c76e577a5de481">&#9670;&#160;</a></span>test_neither_name_gives_an_empty_string()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">test_neither_name_gives_an_empty_string </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>getter</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>old_name</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>no_settings</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>capsys</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a5b19ef1355907c797bd5c518c04aac4b" name="a5b19ef1355907c797bd5c518c04aac4b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5b19ef1355907c797bd5c518c04aac4b">&#9670;&#160;</a></span>test_new_name_wins_and_nothing_is_printed()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">test_new_name_wins_and_nothing_is_printed </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>getter</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>old_name</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>no_settings</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>capsys</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
 <a id="ac4e2968452d0c7730a5d268c3c225007" name="ac4e2968452d0c7730a5d268c3c225007"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac4e2968452d0c7730a5d268c3c225007">&#9670;&#160;</a></span>test_raw_weighting_becomes_a_proportion()</h2>
 
@@ -159,6 +291,46 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a0129d557eed618032c47a705804fecd1" name="a0129d557eed618032c47a705804fecd1"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0129d557eed618032c47a705804fecd1">&#9670;&#160;</a></span>test_setting_is_read_from_its_old_name_and_reported_once()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">test_setting_is_read_from_its_old_name_and_reported_once </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>getter</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>old_name</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>no_settings</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>capsys</em></span>&#160;)</td>
         </tr>
           </table>
         </div>
@@ -228,6 +400,32 @@ Functions</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>
+<a id="aebced6ef22694a30989060aecd3179f4" name="aebced6ef22694a30989060aecd3179f4"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aebced6ef22694a30989060aecd3179f4">&#9670;&#160;</a></span>OLD_NAMES</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">list test_example_utils.OLD_NAMES</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=  [</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;get_resource_key&quot;</span>, <span class="c-code__stringliteral">&quot;_51DEGREES_RESOURCE_KEY&quot;</span>, <span class="c-code__stringliteral">&quot;resource_key&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;get_license_key&quot;</span>, <span class="c-code__stringliteral">&quot;_51DEGREES_LICENSE_KEY&quot;</span>, <span class="c-code__stringliteral">&quot;license_key&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;get_cloud_endpoint&quot;</span>, <span class="c-code__stringliteral">&quot;_51DEGREES_CLOUD_ENDPOINT&quot;</span>, <span class="c-code__stringliteral">&quot;cloud_endpoint&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;get_cloud_request_origin&quot;</span>, <span class="c-code__stringliteral">&quot;_51DEGREES_CLOUD_REQUEST_ORIGIN&quot;</span>,</div>
+<div class="c-code__line">     <span class="c-code__stringliteral">&quot;cloud_request_origin&quot;</span>),</div>
+<div class="c-code__line">]</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- primary -->

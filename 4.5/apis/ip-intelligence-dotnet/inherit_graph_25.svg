@@ -11,11 +11,11 @@
 <!-- Node0 -->
 <g id="Node000000" class="node">
 <title>Node0</title>
-<g id="a_Node000000"><a xlink:href="class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_getting_started_on_premise.html" target="_top" xlink:title="End&#45;to&#45;end &quot;happy path&quot; tests for on&#45;premise IP Intelligence that go beyond the smoke tests in TestEx...">
+<g id="a_Node000000"><a xlink:href="class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_examples.html" target="_top" xlink:title="This test class ensures that the on&#45;premise examples execute successfully and, where practical,...">
 <polygon fill="white" stroke="#666666" points="166,-41 0,-41 0,0 166,0 166,-41"/>
 <text text-anchor="start" x="8" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">FiftyOne.IpIntelligence.</text>
 <text text-anchor="start" x="8" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">Example.Tests.OnPremise.Test</text>
-<text text-anchor="middle" x="83" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">GettingStartedOnPremise</text>
+<text text-anchor="middle" x="83" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Examples</text>
 </a>
 </g>
 </g>

@@ -1,6 +1,7 @@
 var class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_aspect_engine_base_2_g =
 [
     [ "AspectEngineBase", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_aspect_engine_base-2-g.html#a492ebaf160a1ce442f8255300f63c045", null ],
+    [ "CanCache", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_aspect_engine_base-2-g.html#a0f50076a7d3dcfbc683eeceaa3c1152d", null ],
     [ "ManagedResourcesCleanup", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_aspect_engine_base-2-g.html#a15dfff16412a6fd5f88b5a90786db30e", null ],
     [ "ProcessEngine", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_aspect_engine_base-2-g.html#a4bbea2fc7e5ebc719170b3d9f9e2d7f1", null ],
     [ "ProcessInternal", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_aspect_engine_base-2-g.html#a63f0a03aafa09038300abff939b1b21e", null ],

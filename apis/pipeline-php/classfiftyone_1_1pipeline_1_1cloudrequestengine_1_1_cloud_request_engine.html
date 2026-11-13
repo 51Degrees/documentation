@@ -80,9 +80,11 @@ Collaboration diagram for fiftyone\pipeline\cloudrequestengine\CloudRequestEngin
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:aefa02006680d5a6a11ee1025c629c5f1" id="r_aefa02006680d5a6a11ee1025c629c5f1"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aefa02006680d5a6a11ee1025c629c5f1">__construct</a> (array $settings)</td></tr>
-<tr class="c-table__row memdesc:aefa02006680d5a6a11ee1025c629c5f1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Settings should contain a resourceKey and optionally: 1) a cloudEndPoint to overwrite the default baseurl 2) a cloudRequestOrigin to use when sending requests to cloud.  <br /></td></tr>
+<tr class="c-table__row memdesc:aefa02006680d5a6a11ee1025c629c5f1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Settings should contain a resourceKey, a licenseKey or both, and optionally: 1) requestedProperties, the fully qualified names of the properties to ask for, as an array or one comma separated string.  <br /></td></tr>
+<tr class="c-table__row memitem:aaa0369d8475bd005b69406aaebd5599d" id="r_aaa0369d8475bd005b69406aaebd5599d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aaa0369d8475bd005b69406aaebd5599d">onRegistration</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_pipeline.html">Pipeline</a> $pipeline)</td></tr>
+<tr class="c-table__row memdesc:aaa0369d8475bd005b69406aaebd5599d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Logs, as a warning through the logger of the first pipeline the engine is added to, that the base URL came from the deprecated environment variable.  <br /></td></tr>
 <tr class="c-table__row memitem:a871d95f8ecfed155a0367791dae53a4d" id="r_a871d95f8ecfed155a0367791dae53a4d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a871d95f8ecfed155a0367791dae53a4d">getEvidenceKeyFilter</a> ()</td></tr>
-<tr class="c-table__row memdesc:a871d95f8ecfed155a0367791dae53a4d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Instance of EvidenceKeyFilter based on the evidence keys fetched from the cloud service by the private getEvidenceKeys() method.  <br /></td></tr>
+<tr class="c-table__row memdesc:a871d95f8ecfed155a0367791dae53a4d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Instance of EvidenceKeyFilter of the evidence keys the cloud service lists.  <br /></td></tr>
 <tr class="c-table__row memitem:ab0670f1c865f037bb8099f5ca4b65347" id="r_ab0670f1c865f037bb8099f5ca4b65347"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab0670f1c865f037bb8099f5ca4b65347">processInternal</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html">FlowData</a> $flowData)</td></tr>
 <tr class="c-table__row memdesc:ab0670f1c865f037bb8099f5ca4b65347"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Processing function for the CloudRequestEngine Makes a request to the cloud service with the supplied resource key and evidence and returns a JSON object that is then parsed by cloud engines placed later in the pipeline.  <br /></td></tr>
 <tr class="c-table__row memitem:a9875b407a29e4ff1d168ea2ee32ef268" id="r_a9875b407a29e4ff1d168ea2ee32ef268"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a9875b407a29e4ff1d168ea2ee32ef268">getContent</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html">FlowData</a> $flowData)</td></tr>
@@ -114,8 +116,6 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a5ee79927c9f42568cdd2400bad878fe0 pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element" id="r_a5ee79927c9f42568cdd2400bad878fe0"><td class="c-table__cell">
 &#160;</td><td class="c-table__cell"><b>filterEvidenceKey</b> (string $key)</td></tr>
 <tr class="c-table__row memdesc:a5ee79927c9f42568cdd2400bad878fe0 pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Filter FlowData evidence using the FlowElement's EvidenceKeyFilter. <br /></td></tr>
-<tr class="c-table__row memitem:ac07908fe8937c430f073503f29d34ece pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element" id="r_ac07908fe8937c430f073503f29d34ece"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html#ac07908fe8937c430f073503f29d34ece">onRegistration</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_pipeline.html">Pipeline</a> $pipeline)</td></tr>
-<tr class="c-table__row memdesc:ac07908fe8937c430f073503f29d34ece pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Callback called when an engine is added to a pipeline.  <br /></td></tr>
 <tr class="c-table__row memitem:a67c6ab89736a0ede0526399a660192ea pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element" id="r_a67c6ab89736a0ede0526399a660192ea"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html#a67c6ab89736a0ede0526399a660192ea">getProperties</a> ()</td></tr>
 <tr class="c-table__row memdesc:a67c6ab89736a0ede0526399a660192ea pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get properties Usually overridden by specific FlowElements.  <br /></td></tr>
 <tr class="c-table__row memitem:a19340df19105ad67b20fe06ec261b5d9 pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element" id="r_a19340df19105ad67b20fe06ec261b5d9"><td class="c-table__cell">
@@ -134,6 +134,10 @@ string&#160;</td><td class="c-table__cell"><b>$cloudRequestOrigin</b></td></tr>
 array&#160;</td><td class="c-table__cell"><b>$flowElementProperties</b> = []</td></tr>
 <tr class="c-table__row memitem:ac3905fbf7f84ba28dbb1f4e43d3f87e6" id="r_ac3905fbf7f84ba28dbb1f4e43d3f87e6"><td class="c-table__cell"><a id="ac3905fbf7f84ba28dbb1f4e43d3f87e6" name="ac3905fbf7f84ba28dbb1f4e43d3f87e6"></a>
 string&#160;</td><td class="c-table__cell"><b>$resourceKey</b></td></tr>
+<tr class="c-table__row memitem:ae6d204c2bbdb770b518a9d53c3fffef5" id="r_ae6d204c2bbdb770b518a9d53c3fffef5"><td class="c-table__cell"><a id="ae6d204c2bbdb770b518a9d53c3fffef5" name="ae6d204c2bbdb770b518a9d53c3fffef5"></a>
+string&#160;</td><td class="c-table__cell"><b>$licenseKey</b></td></tr>
+<tr class="c-table__row memitem:a32672ea33094d662bb8bb65f8d6dc4b1" id="r_a32672ea33094d662bb8bb65f8d6dc4b1"><td class="c-table__cell"><a id="a32672ea33094d662bb8bb65f8d6dc4b1" name="a32672ea33094d662bb8bb65f8d6dc4b1"></a>
+array&#160;</td><td class="c-table__cell"><b>$requestedProperties</b></td></tr>
 <tr class="c-table__row inherit_header pub_attribs_classfiftyone_1_1pipeline_1_1engines_1_1_engine"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Data Fields inherited from <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1_engine.html">fiftyone\pipeline\engines\Engine</a></h3></td></tr>
 <tr class="c-table__row memitem:ab3ad885da0a70f8e06c28cd7e1a123d2 pub_attribs_classfiftyone_1_1pipeline_1_1engines_1_1_engine" id="r_ab3ad885da0a70f8e06c28cd7e1a123d2"><td class="c-table__cell">
 array&#160;</td><td class="c-table__cell"><b>$restrictedProperties</b></td></tr>
@@ -144,6 +148,11 @@ string&#160;</td><td class="c-table__cell"><b>$dataKey</b></td></tr>
 array&#160;</td><td class="c-table__cell"><b>$properties</b> = []</td></tr>
 <tr class="c-table__row memitem:adb5dde466127681437071f5b5804da59 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_flow_element" id="r_adb5dde466127681437071f5b5804da59"><td class="c-table__cell">
 array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-methods" class="g-docs__section-heading"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:ac66def6370f6a3b261d5fe4315302928" id="r_ac66def6370f6a3b261d5fe4315302928"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ac66def6370f6a3b261d5fe4315302928">holdsValueForOneRequest</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_element_data.html">ElementData</a> $data)</td></tr>
+<tr class="c-table__row memdesc:ac66def6370f6a3b261d5fe4315302928"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A response whose JSON has a top-level member named fodid, in any case, holds a 51Did created for the one request.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="aefa02006680d5a6a11ee1025c629c5f1" name="aefa02006680d5a6a11ee1025c629c5f1"></a>
@@ -165,10 +174,11 @@ array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Settings should contain a resourceKey and optionally: 1) a cloudEndPoint to overwrite the default baseurl 2) a cloudRequestOrigin to use when sending requests to cloud. </p>
+<p>Settings should contain a resourceKey, a licenseKey or both, and optionally: 1) requestedProperties, the fully qualified names of the properties to ask for, as an array or one comma separated string. </p>
+<p>Required with a licenseKey on its own. Beside a resourceKey the cloud service adds them to the properties the resource key carries. 2) a cloudEndPoint to overwrite the default baseurl 3) a cloudRequestOrigin to use when sending requests to cloud.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">array{</td><td>resourceKey?: string, cloudEndPoint?: string, cloudRequestOrigin?: string, httpClient?: \fiftyone\pipeline\cloudrequestengine\HttpClient } $settings </td></tr>
+    <tr><td class="paramname">array{</td><td>resourceKey?: string, licenseKey?: string, requestedProperties?: array&lt;string&gt;|string, cloudEndPoint?: string, cloudRequestOrigin?: string, httpClient?: \fiftyone\pipeline\cloudrequestengine\HttpClient } $settings </td></tr>
   </table>
   </dd>
 </dl>
@@ -237,8 +247,8 @@ array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
 </div><div class="c-member__body">
 
 <p>Generate the Content to send in the POST request. </p>
-<p>The evidence keys e.g. 'query.' and 'header.' have an order of precedence. These are added to the evidence in reverse order, if there is conflict then the queryData value is overwritten.</p>
-<p>'query.' evidence should take precedence over all other evidence. If there are evidence keys other than 'query.' that conflict then this is unexpected so a warning will be logged.</p>
+<p>One name under several prefixes is sent once, with the value of the prefix that evidence.md ranks highest, being query, header, cookie, server, fiftyone and location, then any other prefix alphabetically. The groups are added lowest precedence first, so a later value replaces an earlier one, and a replacement by a key other than a query key is raised as a warning.</p>
+<p>Every Evidence value goes in, including a value no element in the Pipeline accepts, because what the cloud service uses changes over time. The reserved names, and any value under the web request view's key, are left out by addQueryData. The view itself is never in the Evidence values.</p>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">array&lt;string, int|string&gt; </dd></dl>
 
 </div>
@@ -286,7 +296,8 @@ array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Instance of EvidenceKeyFilter based on the evidence keys fetched from the cloud service by the private getEvidenceKeys() method. </p>
+<p>Instance of EvidenceKeyFilter of the evidence keys the cloud service lists. </p>
+<p>The keys are fetched the first time they are needed, which is when the first Evidence is set, so that the Evidence the cloud service uses is kept. A failed fetch leaves the list empty, and processInternal reports the failure. </p>
 
 <p>Reimplemented from <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html#a2c484d74a791319d03ad077006c1c5ad">fiftyone\pipeline\core\FlowElement</a>.</p>
 
@@ -327,6 +338,39 @@ array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
 
 </div>
 </div>
+<a id="ac66def6370f6a3b261d5fe4315302928" name="ac66def6370f6a3b261d5fe4315302928"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac66def6370f6a3b261d5fe4315302928">&#9670;&#160;</a></span>holdsValueForOneRequest()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\cloudrequestengine\CloudRequestEngine::holdsValueForOneRequest </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_element_data.html">ElementData</a></td>          <td class="c-table__cell"><span class="paramname"><em>$data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>A response whose JSON has a top-level member named fodid, in any case, holds a 51Did created for the one request. </p>
+
+<p>Reimplemented from <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1_engine.html#a6f78f12550fa666b15a3637399c5edf2">fiftyone\pipeline\engines\Engine</a>.</p>
+
+</div>
+</div>
 <a id="a02ef8d345a8925f00fcdebd2862969af" name="a02ef8d345a8925f00fcdebd2862969af"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a02ef8d345a8925f00fcdebd2862969af">&#9670;&#160;</a></span>keyHasPrefix()</h2>
 
@@ -359,6 +403,32 @@ array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">bool true if the key has the prefix </dd></dl>
+
+</div>
+</div>
+<a id="aaa0369d8475bd005b69406aaebd5599d" name="aaa0369d8475bd005b69406aaebd5599d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aaa0369d8475bd005b69406aaebd5599d">&#9670;&#160;</a></span>onRegistration()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\cloudrequestengine\CloudRequestEngine::onRegistration </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_pipeline.html">Pipeline</a></td>          <td class="c-table__cell"><span class="paramname"><em>$pipeline</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Logs, as a warning through the logger of the first pipeline the engine is added to, that the base URL came from the deprecated environment variable. </p>
+<p>Each engine logs it once, so a site that builds its pipeline in every request logs it in every request. </p>
+
+<p>Reimplemented from <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html#ac07908fe8937c430f073503f29d34ece">fiftyone\pipeline\core\FlowElement</a>.</p>
 
 </div>
 </div>

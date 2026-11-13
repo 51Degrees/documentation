@@ -102,7 +102,7 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a98696554aeeabdd8325e5d8fba768207" id="r_a98696554aeeabdd8325e5d8fba768207"><td class="c-table__cell">IpiOnPremisePipelineBuilder&#160;</td><td class="c-table__cell"><a class="el" href="#a98696554aeeabdd8325e5d8fba768207">SetPerformanceProfile</a> (PerformanceProfiles profile)</td></tr>
 <tr class="c-table__row memdesc:a98696554aeeabdd8325e5d8fba768207"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the performance profile for the IP intelligence engine.  <br /></td></tr>
 <tr class="c-table__row memitem:a986a8c1792f13b2f7b07c5e9ebeba1ad" id="r_a986a8c1792f13b2f7b07c5e9ebeba1ad"><td class="c-table__cell">IpiOnPremisePipelineBuilder&#160;</td><td class="c-table__cell"><a class="el" href="#a986a8c1792f13b2f7b07c5e9ebeba1ad">SetConcurrency</a> (ushort concurrency)</td></tr>
-<tr class="c-table__row memdesc:a986a8c1792f13b2f7b07c5e9ebeba1ad"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the expected number of concurrent operations using the engine.  <br /></td></tr>
+<tr class="c-table__row memdesc:a986a8c1792f13b2f7b07c5e9ebeba1ad"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the expected number of operations that use the engine at the same time.  <br /></td></tr>
 <tr class="c-table__row memitem:a174c6a4322e0edf356dad4f7be3f2515" id="r_a174c6a4322e0edf356dad4f7be3f2515"><td class="c-table__cell">IpiOnPremisePipelineBuilder&#160;</td><td class="c-table__cell"><a class="el" href="#a174c6a4322e0edf356dad4f7be3f2515">SetDataUpdateUrl</a> (string url)</td></tr>
 <tr class="c-table__row memdesc:a174c6a4322e0edf356dad4f7be3f2515"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Configure the engine to use the specified URL when looking for an updated data file.  <br /></td></tr>
 <tr class="c-table__row memitem:a70ed7b7c05da68dc54d4a7a92c80cec2" id="r_a70ed7b7c05da68dc54d4a7a92c80cec2"><td class="c-table__cell">IpiOnPremisePipelineBuilder&#160;</td><td class="c-table__cell"><a class="el" href="#a70ed7b7c05da68dc54d4a7a92c80cec2">SetDataUpdateUrl</a> (Uri url)</td></tr>
@@ -138,7 +138,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Build and return a pipeline that can perform IP intelligence. </p>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_update_data_file-_console_2_program_8cs-example.html#a10">OnPremise/UpdateDataFile-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_offline_processing-_console_2_program_8cs-example.html#a10">OnPremise/OfflineProcessing-Console/Program.cs</a>, <a class="el" href="_on_premise_2_suspicious-_console_2_program_8cs-example.html#a7">OnPremise/Suspicious-Console/Program.cs</a>, and <a class="el" href="_on_premise_2_update_data_file-_console_2_program_8cs-example.html#a11">OnPremise/UpdateDataFile-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>
@@ -171,7 +171,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder instance. </dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_update_data_file-_console_2_program_8cs-example.html#a7">OnPremise/UpdateDataFile-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_offline_processing-_console_2_program_8cs-example.html#a6">OnPremise/OfflineProcessing-Console/Program.cs</a>, <a class="el" href="_on_premise_2_suspicious-_console_2_program_8cs-example.html#a4">OnPremise/Suspicious-Console/Program.cs</a>, and <a class="el" href="_on_premise_2_update_data_file-_console_2_program_8cs-example.html#a8">OnPremise/UpdateDataFile-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>
@@ -195,11 +195,11 @@ Public Member Functions</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Set the expected number of concurrent operations using the engine. </p>
-<p>This sets the concurrency of the internal caches to avoid excessive locking.</p>
+<p>Set the expected number of operations that use the engine at the same time. </p>
+<p>The native code uses it for every collection read from the data file. First, it sets the number of file handles in the pool, which is the concurrency up to a fixed maximum of 64, because a process can only have so many files open. An operation that has to read from the file when every handle is in use waits until another operation releases one. Second, it decides how each cache is split into parts, each with its own lock, which avoids excessive locking. An item in use cannot be removed from a cache, and any operation can need any part, so every part holds at least the concurrency in items. The number of parts is the concurrency, or fewer where needed so that every part holds that many items, and a cache that holds fewer items than the concurrency in total is made large enough to hold that many. No value stops the engine building. The concurrency has no effect when every collection is held in memory, for example with the MaxPerformance profile.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">concurrency</td><td>Expected concurrent accesses</td></tr>
+    <tr><td class="paramname">concurrency</td><td>The expected number of operations that use the engine at the same time. </td></tr>
   </table>
   </dd>
 </dl>
@@ -235,7 +235,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_update_data_file-_console_2_program_8cs-example.html#a8">OnPremise/UpdateDataFile-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_offline_processing-_console_2_program_8cs-example.html#a8">OnPremise/OfflineProcessing-Console/Program.cs</a>, <a class="el" href="_on_premise_2_suspicious-_console_2_program_8cs-example.html#a6">OnPremise/Suspicious-Console/Program.cs</a>, and <a class="el" href="_on_premise_2_update_data_file-_console_2_program_8cs-example.html#a9">OnPremise/UpdateDataFile-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>
@@ -299,7 +299,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder. </dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_update_data_file-_console_2_program_8cs-example.html#a6">OnPremise/UpdateDataFile-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_offline_processing-_console_2_program_8cs-example.html#a7">OnPremise/OfflineProcessing-Console/Program.cs</a>, <a class="el" href="_on_premise_2_suspicious-_console_2_program_8cs-example.html#a5">OnPremise/Suspicious-Console/Program.cs</a>, and <a class="el" href="_on_premise_2_update_data_file-_console_2_program_8cs-example.html#a7">OnPremise/UpdateDataFile-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>
@@ -464,6 +464,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder instance. </dd></dl>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_offline_processing-_console_2_program_8cs-example.html#a4">OnPremise/OfflineProcessing-Console/Program.cs</a>, <a class="el" href="_on_premise_2_suspicious-_console_2_program_8cs-example.html#a2">OnPremise/Suspicious-Console/Program.cs</a>, and <a class="el" href="_on_premise_2_update_data_file-_console_2_program_8cs-example.html#a6">OnPremise/UpdateDataFile-Console/Program.cs</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -495,6 +497,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder instance. </dd></dl>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_offline_processing-_console_2_program_8cs-example.html#a9">OnPremise/OfflineProcessing-Console/Program.cs</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -526,6 +530,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder instance. </dd></dl>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_offline_processing-_console_2_program_8cs-example.html#a5">OnPremise/OfflineProcessing-Console/Program.cs</a>, and <a class="el" href="_on_premise_2_suspicious-_console_2_program_8cs-example.html#a3">OnPremise/Suspicious-Console/Program.cs</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -557,7 +563,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder instance. </dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_update_data_file-_console_2_program_8cs-example.html#a9">OnPremise/UpdateDataFile-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_update_data_file-_console_2_program_8cs-example.html#a10">OnPremise/UpdateDataFile-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>

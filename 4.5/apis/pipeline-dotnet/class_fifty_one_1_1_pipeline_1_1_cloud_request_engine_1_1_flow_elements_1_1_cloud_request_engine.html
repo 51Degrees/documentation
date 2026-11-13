@@ -117,6 +117,8 @@ void&#160;</td><td class="c-table__cell"><b>Dispose</b> ()</td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:aa6256afb6a60d0f8e2c82c780e954131" id="r_aa6256afb6a60d0f8e2c82c780e954131"><td class="c-table__cell">override&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#aa6256afb6a60d0f8e2c82c780e954131">ProcessEngine</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data, <a class="el" href="class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_data_1_1_cloud_request_data.html">CloudRequestData</a> aspectData)</td></tr>
 <tr class="c-table__row memdesc:aa6256afb6a60d0f8e2c82c780e954131"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Send evidence to the cloud and get back a JSON result.  <br /></td></tr>
+<tr class="c-table__row memitem:a48608dfc6fef03381f07c2979377e8ea" id="r_a48608dfc6fef03381f07c2979377e8ea"><td class="c-table__cell">override&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#a48608dfc6fef03381f07c2979377e8ea">CanCache</a> (<a class="el" href="class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_data_1_1_cloud_request_data.html">CloudRequestData</a> aspectData)</td></tr>
+<tr class="c-table__row memdesc:a48608dfc6fef03381f07c2979377e8ea"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A response with a top-level fodid member, in any letter case, holds a 51Did that the cloud service created for the one request, so it is never stored in the results cache or served from it.  <br /></td></tr>
 <tr class="c-table__row memitem:a69419ec08d44c69f5d52e06429294515" id="r_a69419ec08d44c69f5d52e06429294515"><td class="c-table__cell"><a id="a69419ec08d44c69f5d52e06429294515" name="a69419ec08d44c69f5d52e06429294515"></a>
 override&#160;void&#160;</td><td class="c-table__cell"><b>UnmanagedResourcesCleanup</b> ()</td></tr>
 <tr class="c-table__row memdesc:a69419ec08d44c69f5d52e06429294515"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Cleanup any unmanaged resources. <br /></td></tr>
@@ -125,6 +127,8 @@ override&#160;void&#160;</td><td class="c-table__cell"><b>UnmanagedResourcesClea
 <tr class="c-table__row memdesc:a4bbea2fc7e5ebc719170b3d9f9e2d7f1 pro_methods_class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_aspect_engine_base-2-g"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Extending classes must implement this method.  <br /></td></tr>
 <tr class="c-table__row memitem:a63f0a03aafa09038300abff939b1b21e pro_methods_class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_aspect_engine_base-2-g" id="r_a63f0a03aafa09038300abff939b1b21e"><td class="c-table__cell">override&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_aspect_engine_base-2-g.html#a63f0a03aafa09038300abff939b1b21e">ProcessInternal</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data)</td></tr>
 <tr class="c-table__row memdesc:a63f0a03aafa09038300abff939b1b21e pro_methods_class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_aspect_engine_base-2-g"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Implementation of method from the base class FlowElementBase&lt;T, TMeta&gt;.  <br /></td></tr>
+<tr class="c-table__row memitem:a0f50076a7d3dcfbc683eeceaa3c1152d pro_methods_class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_aspect_engine_base-2-g" id="r_a0f50076a7d3dcfbc683eeceaa3c1152d"><td class="c-table__cell">virtual&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_aspect_engine_base-2-g.html#a0f50076a7d3dcfbc683eeceaa3c1152d">CanCache</a> (T aspectData)</td></tr>
+<tr class="c-table__row memdesc:a0f50076a7d3dcfbc683eeceaa3c1152d pro_methods_class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_aspect_engine_base-2-g"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether a result may be stored in the results cache and served from it.  <br /></td></tr>
 <tr class="c-table__row memitem:a15dfff16412a6fd5f88b5a90786db30e pro_methods_class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_aspect_engine_base-2-g" id="r_a15dfff16412a6fd5f88b5a90786db30e"><td class="c-table__cell">
 override&#160;void&#160;</td><td class="c-table__cell"><b>ManagedResourcesCleanup</b> ()</td></tr>
 <tr class="c-table__row memdesc:a15dfff16412a6fd5f88b5a90786db30e pro_methods_class_fifty_one_1_1_pipeline_1_1_engines_1_1_flow_elements_1_1_aspect_engine_base-2-g"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Called by the base class when this instance is disposed. <br /></td></tr>
@@ -259,13 +263,13 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
     <tr><td class="paramname">logger</td><td>The logger for this instance </td></tr>
     <tr><td class="paramname">aspectDataFactory</td><td>A factory function to use when creating new CloudRequestData instances. </td></tr>
     <tr><td class="paramname">httpClient</td><td>The HttpClient instance to use when making requests </td></tr>
-    <tr><td class="paramname">licenseKey</td><td>The license key to use when making requests. This parameter is obsolete, use resourceKey instead. </td></tr>
+    <tr><td class="paramname">licenseKey</td><td>The license key to use when making requests. </td></tr>
     <tr><td class="paramname">resourceKey</td><td>The resource key to use when making requests. A resource key encapsulates details such as any license keys, the properties that should be returned and the domains that requests are permitted from. A new resource key can be generated for free at <a href="https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=comment&amp;amp;utm_campaign=51degrees-dotnet&amp;amp;utm_content=fiftyone.pipeline.cloudrequestengine-flowelements-cloudrequestengine.cs&amp;amp;utm_term=cloudrequestengine">https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=comment&amp;amp;utm_campaign=51degrees-dotnet&amp;amp;utm_content=fiftyone.pipeline.cloudrequestengine-flowelements-cloudrequestengine.cs&amp;amp;utm_term=cloudrequestengine</a> </td></tr>
     <tr><td class="paramname">dataEndpoint</td><td>The URL for the cloud endpoint that will take the supplied evidence and return JSON formatted data. </td></tr>
     <tr><td class="paramname">propertiesEndpoint</td><td>The URL for the cloud endpoint that will return meta-data on properties that will be populated when the data endpoint is called using the given resource key. </td></tr>
     <tr><td class="paramname">evidenceKeysEndpoint</td><td>The URL for the cloud endpoint that will return meta-data on the evidence that will be used when the data endpoint is called using the given resource key. </td></tr>
     <tr><td class="paramname">timeout</td><td>The timeout for HTTP requests in seconds. </td></tr>
-    <tr><td class="paramname">requestedProperties</td><td>Not currently used. </td></tr>
+    <tr><td class="paramname">requestedProperties</td><td>The properties to ask for, sent as 'values'. </td></tr>
     <tr><td class="paramname">cloudRequestOrigin</td><td>The value to use for the Origin header when making requests to cloud. </td></tr>
   </table>
   </dd>
@@ -344,6 +348,38 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a48608dfc6fef03381f07c2979377e8ea" name="a48608dfc6fef03381f07c2979377e8ea"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a48608dfc6fef03381f07c2979377e8ea">&#9670;&#160;</a></span>CanCache()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">override bool FiftyOne.Pipeline.CloudRequestEngine.FlowElements.CloudRequestEngine.CanCache </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_data_1_1_cloud_request_data.html">CloudRequestData</a></td>          <td class="c-table__cell"><span class="paramname"><em>aspectData</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>A response with a top-level fodid member, in any letter case, holds a 51Did that the cloud service created for the one request, so it is never stored in the results cache or served from it. </p>
+<p>Every other response is cached. The response is read without waiting, because under lazy loading this runs inside the processing task. </p>
+
+</div>
+</div>
 <a id="aa6256afb6a60d0f8e2c82c780e954131" name="aa6256afb6a60d0f8e2c82c780e954131"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa6256afb6a60d0f8e2c82c780e954131">&#9670;&#160;</a></span>ProcessEngine()</h2>
 

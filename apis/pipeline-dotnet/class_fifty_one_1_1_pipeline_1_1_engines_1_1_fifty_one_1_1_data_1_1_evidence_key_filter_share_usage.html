@@ -67,9 +67,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fifty_on
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
-<div class="textblock"><p>This filter is used by the ShareUsageElement. </p>
+<div class="textblock"><p>Decides which of the evidence the ShareUsageElement finds is shared. </p>
 <p>See the Specification</p>
-<p>As this filter is generally inclusive, it will often cause far more evidence to be passed into a pipeline than the engine-specific filters, which tend to be based on a list of values to include such as EvidenceKeyFilterWhitelist. </p>
+<p>This filter is not the element's ShareUsageBase.EvidenceKeyFilter, which accepts no evidence. It is generally inclusive, so as an element's filter it would put far more evidence into a pipeline than the elements need, and every cache key and ETag would depend on it. </p>
 </div><h2 class="g-docs__section-heading">
 Inheritance diagram for FiftyOne.Pipeline.Engines.FiftyOne.Data.EvidenceKeyFilterShareUsage:</h2>
 <div class="dyncontent">
@@ -91,6 +91,11 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a70d692285274672aa23190eb00a7e8ea"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check if the specified evidence key is included by this filter.  <br /></td></tr>
 <tr class="c-table__row memitem:a73b1e1e58c50ac07333bc62954669d42" id="r_a73b1e1e58c50ac07333bc62954669d42"><td class="c-table__cell">int?&#160;</td><td class="c-table__cell"><a class="el" href="#a73b1e1e58c50ac07333bc62954669d42">Order</a> (string key)</td></tr>
 <tr class="c-table__row memdesc:a73b1e1e58c50ac07333bc62954669d42"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Return the 'order of precedence of the specified evidence key.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-methods" class="g-docs__section-heading"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a3c438f49a21a814c120467872e001435" id="r_a3c438f49a21a814c120467872e001435"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a3c438f49a21a814c120467872e001435">IsIncludedSessionCookie</a> (string key)</td></tr>
+<tr class="c-table__row memdesc:a3c438f49a21a814c120467872e001435"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True if the key is the asp.net session cookie and the filter was given the setting to include the session.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="a97c9039eb7e90e3cf7b5e3139469af82" name="a97c9039eb7e90e3cf7b5e3139469af82"></a>
@@ -155,7 +160,7 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">blockedHttpHeaders</td><td>A list of the names of the HTTP headers that share usage should not send to 51Degrees. </td></tr>
     <tr><td class="paramname">includedQueryStringParams</td><td>A list of the names of query string parameters that share usage should send to 51Degrees. If this value is null, all query string parameters are shared. </td></tr>
-    <tr><td class="paramname">includeSession</td><td>If true then the asp.net session cookie will be included in the filter. </td></tr>
+    <tr><td class="paramname">includeSession</td><td>If true then the repeat tracker's filter, which derives from this one, keys on the asp.net session cookie. This filter does not share the cookie either way, because only cookies starting 51D_ are shared. </td></tr>
     <tr><td class="paramname">aspSessionCookieName</td><td>The name of the cookie that contains the asp.net session id. </td></tr>
   </table>
   </dd>
@@ -209,6 +214,44 @@ Public Member Functions</h2></td></tr>
 <p>Implements <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_evidence_key_filter.html#af6eb4f153fbcc25c5d8bed8a23bc4923">FiftyOne.Pipeline.Core.Data.IEvidenceKeyFilter</a>.</p>
 
 <p>Reimplemented in <a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_evidence_key_filter_share_usage_tracker.html#a72bbe595cada3654720abcda79da3aa8">FiftyOne.Pipeline.Engines.FiftyOne.Data.EvidenceKeyFilterShareUsageTracker</a>.</p>
+
+</div>
+</div>
+<a id="a3c438f49a21a814c120467872e001435" name="a3c438f49a21a814c120467872e001435"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3c438f49a21a814c120467872e001435">&#9670;&#160;</a></span>IsIncludedSessionCookie()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool FiftyOne.Pipeline.Engines.FiftyOne.Data.EvidenceKeyFilterShareUsage.IsIncludedSessionCookie </td>
+          <td>(</td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>True if the key is the asp.net session cookie and the filter was given the setting to include the session. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The evidence key.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">True for the session cookie when it is included.</dd></dl>
 
 </div>
 </div>

@@ -59,7 +59,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_evidence_key_filter_share_usage.html" target="_top" xlink:title="This filter is used by the ShareUsageElement.">
+<g id="a_Node000004"><a xlink:href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_evidence_key_filter_share_usage.html" target="_top" xlink:title="Decides which of the evidence the ShareUsageElement finds is shared.">
 <polygon fill="white" stroke="#666666" points="363,-41 190,-41 190,0 363,0 363,-41"/>
 <text text-anchor="start" x="198" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">FiftyOne.Pipeline.Engines.</text>
 <text text-anchor="start" x="198" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">FiftyOne.Data.EvidenceKeyFilter</text>

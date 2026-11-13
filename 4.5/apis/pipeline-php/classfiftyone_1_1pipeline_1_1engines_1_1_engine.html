@@ -93,7 +93,7 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:afedc1ecca656bedb53ebbe31970debf5 pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element" id="r_afedc1ecca656bedb53ebbe31970debf5"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html#afedc1ecca656bedb53ebbe31970debf5">__construct</a> ()</td></tr>
 <tr class="c-table__row memdesc:afedc1ecca656bedb53ebbe31970debf5 pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A default dummy constructor is needed for there are classes inheriting this class deeper than 1-level of inheritance and calling parent::__construct() in their explicit constructors.  <br /></td></tr>
 <tr class="c-table__row memitem:a2c484d74a791319d03ad077006c1c5ad pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element" id="r_a2c484d74a791319d03ad077006c1c5ad"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html#a2c484d74a791319d03ad077006c1c5ad">getEvidenceKeyFilter</a> ()</td></tr>
-<tr class="c-table__row memdesc:a2c484d74a791319d03ad077006c1c5ad pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Function for getting the FlowElement's EvidenceKeyFilter Used by the filterEvidence method.  <br /></td></tr>
+<tr class="c-table__row memdesc:a2c484d74a791319d03ad077006c1c5ad pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The Evidence this element accepts.  <br /></td></tr>
 <tr class="c-table__row memitem:af094ff714384825f1c35ad398dc4264f pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element" id="r_af094ff714384825f1c35ad398dc4264f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html#af094ff714384825f1c35ad398dc4264f">filterEvidence</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html">FlowData</a> $flowData)</td></tr>
 <tr class="c-table__row memdesc:af094ff714384825f1c35ad398dc4264f pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Filter FlowData evidence using the FlowElement's EvidenceKeyFilter.  <br /></td></tr>
 <tr class="c-table__row memitem:a5ee79927c9f42568cdd2400bad878fe0 pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element" id="r_a5ee79927c9f42568cdd2400bad878fe0"><td class="c-table__cell">
@@ -120,6 +120,11 @@ string&#160;</td><td class="c-table__cell"><b>$dataKey</b></td></tr>
 array&#160;</td><td class="c-table__cell"><b>$properties</b> = []</td></tr>
 <tr class="c-table__row memitem:adb5dde466127681437071f5b5804da59 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_flow_element" id="r_adb5dde466127681437071f5b5804da59"><td class="c-table__cell">
 array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-methods" class="g-docs__section-heading"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a6f78f12550fa666b15a3637399c5edf2" id="r_a6f78f12550fa666b15a3637399c5edf2"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a6f78f12550fa666b15a3637399c5edf2">holdsValueForOneRequest</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_element_data.html">ElementData</a> $data)</td></tr>
+<tr class="c-table__row memdesc:a6f78f12550fa666b15a3637399c5edf2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether a result holds a value created for the one request that asked for it, such as a 51Did.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="a837399d0c933bb231ca88cd86ff494c0" name="a837399d0c933bb231ca88cd86ff494c0"></a>
@@ -143,6 +148,40 @@ array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
 
 <p>Get the tier to which the current data source belongs. </p>
 <p>For 51Degrees this will usually be one of: Lite Premium Enterprise. </p>
+
+</div>
+</div>
+<a id="a6f78f12550fa666b15a3637399c5edf2" name="a6f78f12550fa666b15a3637399c5edf2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6f78f12550fa666b15a3637399c5edf2">&#9670;&#160;</a></span>holdsValueForOneRequest()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\engines\Engine::holdsValueForOneRequest </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_element_data.html">ElementData</a></td>          <td class="c-table__cell"><span class="paramname"><em>$data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Whether a result holds a value created for the one request that asked for it, such as a 51Did. </p>
+<p>A cache neither stores nor serves such a result. An engine whose results can hold one overrides this. </p>
+
+<p>Reimplemented in <a class="el" href="classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1_cloud_request_engine.html#ac66def6370f6a3b261d5fe4315302928">fiftyone\pipeline\cloudrequestengine\CloudRequestEngine</a>.</p>
 
 </div>
 </div>

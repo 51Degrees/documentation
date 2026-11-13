@@ -67,6 +67,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fifty_on
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a9262cc9390d6699854368ce463774645" id="r_a9262cc9390d6699854368ce463774645"><td class="c-table__cell">static&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a9262cc9390d6699854368ce463774645">FromEnvironment</a> (string name, params string[] oldNames)</td></tr>
+<tr class="c-table__row memdesc:a9262cc9390d6699854368ce463774645"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The value of an environment variable.  <br /></td></tr>
+<tr class="c-table__row memitem:abdd481171be8eba4baa33117f3071a4c" id="r_abdd481171be8eba4baa33117f3071a4c"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#abdd481171be8eba4baa33117f3071a4c">ReportOldName</a> (string oldName, string newName)</td></tr>
+<tr class="c-table__row memdesc:abdd481171be8eba4baa33117f3071a4c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Say once on the error stream that an old environment variable name supplied a value, and which name replaces it.  <br /></td></tr>
 <tr class="c-table__row memitem:a846e767230c1551375ba747556122e1f" id="r_a846e767230c1551375ba747556122e1f"><td class="c-table__cell">static&#160;<a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_example_options.html">ExampleOptions</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a846e767230c1551375ba747556122e1f">ParseOptions</a> (string[] args)</td></tr>
 <tr class="c-table__row memdesc:a846e767230c1551375ba747556122e1f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Parse the command line arguments passed to the example to get the common options.  <br /></td></tr>
 <tr class="c-table__row memitem:a70f509af4cb7b91228edbf0ef7234b21" id="r_a70f509af4cb7b91228edbf0ef7234b21"><td class="c-table__cell">static&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a70f509af4cb7b91228edbf0ef7234b21">FindFile</a> (string filename, DirectoryInfo dir=null)</td></tr>
@@ -76,26 +80,39 @@ Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a638905b0d959dd8804be539e11ea54af" id="r_a638905b0d959dd8804be539e11ea54af"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a638905b0d959dd8804be539e11ea54af">LogDataFileInfo</a> (<a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_data_file_info.html">DataFileInfo</a> info, ILogger logger)</td></tr>
 <tr class="c-table__row memdesc:a638905b0d959dd8804be539e11ea54af"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Display information about the data file and log warnings if specific requirements are not met.  <br /></td></tr>
 <tr class="c-table__row memitem:ac4585fbd11b8455e273d204a65c95c7c" id="r_ac4585fbd11b8455e273d204a65c95c7c"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#ac4585fbd11b8455e273d204a65c95c7c">LogDataFileStandardWarnings</a> (<a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_data_file_info.html">DataFileInfo</a> info, ILogger logger)</td></tr>
-<tr class="c-table__row memdesc:ac4585fbd11b8455e273d204a65c95c7c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Display information about the data file and log warnings if specific requirements are not met.  <br /></td></tr>
+<tr class="c-table__row memdesc:ac4585fbd11b8455e273d204a65c95c7c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Log a warning if the data file is old.  <br /></td></tr>
 <tr class="c-table__row memitem:a0ed130cb284075300e1a3dfed27b9f51" id="r_a0ed130cb284075300e1a3dfed27b9f51"><td class="c-table__cell">static&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#a0ed130cb284075300e1a3dfed27b9f51">IsInvalidKey</a> (string key)</td></tr>
 <tr class="c-table__row memdesc:a0ed130cb284075300e1a3dfed27b9f51"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Checks if the supplied 51Degrees resource key / license key is invalid.  <br /></td></tr>
 <tr class="c-table__row memitem:a23f7882665165f318d435773dd5697ac" id="r_a23f7882665165f318d435773dd5697ac"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a23f7882665165f318d435773dd5697ac">GetKeyFromEnv</a> (string envVarName, Action&lt; string &gt; setValue)</td></tr>
 <tr class="c-table__row memdesc:a23f7882665165f318d435773dd5697ac"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Checks if an environment variable exists with the key name provided and then runs the action with the value, or an empty string if the key does not exist.  <br /></td></tr>
 <tr class="c-table__row memitem:ae9dc31bebf3557a949d03e26ad4de87a" id="r_ae9dc31bebf3557a949d03e26ad4de87a"><td class="c-table__cell">static&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#ae9dc31bebf3557a949d03e26ad4de87a">GetResourceKeyFromEnv</a> ()</td></tr>
-<tr class="c-table__row memdesc:ae9dc31bebf3557a949d03e26ad4de87a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the resource key from the environment.  <br /></td></tr>
+<tr class="c-table__row memdesc:ae9dc31bebf3557a949d03e26ad4de87a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the resource key from the '_51DEGREES_RESOURCE_KEY' environment variable.  <br /></td></tr>
 <tr class="c-table__row memitem:a436dbfd8b71e00d2a259e7dcbe2b712c" id="r_a436dbfd8b71e00d2a259e7dcbe2b712c"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a436dbfd8b71e00d2a259e7dcbe2b712c">GetResourceKeyFromEnv</a> (Action&lt; string &gt; setValue)</td></tr>
 <tr class="c-table__row memdesc:a436dbfd8b71e00d2a259e7dcbe2b712c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the resource key from the environment and run the action with the value, or an empty string if no resource key is set.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="c-table__row memitem:ad13dc3c5eb208fceffd0dfeb707487be" id="r_ad13dc3c5eb208fceffd0dfeb707487be"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#ad13dc3c5eb208fceffd0dfeb707487be">CLOUD_RESOURCE_KEY_ENV_VAR</a> = &quot;51DEGREES_RESOURCE_KEY&quot;</td></tr>
-<tr class="c-table__row memdesc:ad13dc3c5eb208fceffd0dfeb707487be"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default environment variable key used to get the resource key to use when running cloud examples.  <br /></td></tr>
-<tr class="c-table__row memitem:a0cdf6c98e0047b9ae8dac4e00fd0226f" id="r_a0cdf6c98e0047b9ae8dac4e00fd0226f"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a0cdf6c98e0047b9ae8dac4e00fd0226f">LEGACY_CLOUD_RESOURCE_KEY_ENV_VAR</a> = &quot;RESOURCE_KEY&quot;</td></tr>
-<tr class="c-table__row memdesc:a0cdf6c98e0047b9ae8dac4e00fd0226f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The legacy environment variable key used to get the resource key to use when running cloud examples.  <br /></td></tr>
-<tr class="c-table__row memitem:ad5153d4fd887b1ecb4fa64abdfe66f6f" id="r_ad5153d4fd887b1ecb4fa64abdfe66f6f"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#ad5153d4fd887b1ecb4fa64abdfe66f6f">LEGACY_SUPER_RESOURCE_KEY_ENV_VAR</a> = &quot;SUPER_RESOURCE_KEY&quot;</td></tr>
-<tr class="c-table__row memdesc:ad5153d4fd887b1ecb4fa64abdfe66f6f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The legacy environment variable key used by other 51Degrees repositories to get the resource key.  <br /></td></tr>
-<tr class="c-table__row memitem:a9459f4d52849ecfe1e105c96c708dc8f" id="r_a9459f4d52849ecfe1e105c96c708dc8f"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a9459f4d52849ecfe1e105c96c708dc8f">CLOUD_END_POINT_ENV_VAR</a> = &quot;51D_CLOUD_ENDPOINT&quot;</td></tr>
-<tr class="c-table__row memdesc:a9459f4d52849ecfe1e105c96c708dc8f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default environment variable key used to get the end point URL to use when running cloud examples.  <br /></td></tr>
+<tr class="c-table__row memitem:a6a32efbdaa6fa3b8125d293b494d1d98" id="r_a6a32efbdaa6fa3b8125d293b494d1d98"><td class="c-table__cell"><a id="a6a32efbdaa6fa3b8125d293b494d1d98" name="a6a32efbdaa6fa3b8125d293b494d1d98"></a>
+const&#160;string&#160;</td><td class="c-table__cell"><b>RESOURCE_KEY_ENV_VAR</b> = &quot;_51DEGREES_RESOURCE_KEY&quot;</td></tr>
+<tr class="c-table__row memdesc:a6a32efbdaa6fa3b8125d293b494d1d98"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default environment variable key used to get the resource key to use when running cloud examples. <br /></td></tr>
+<tr class="c-table__row memitem:ad13dc3c5eb208fceffd0dfeb707487be" id="r_ad13dc3c5eb208fceffd0dfeb707487be"><td class="c-table__cell"><a id="ad13dc3c5eb208fceffd0dfeb707487be" name="ad13dc3c5eb208fceffd0dfeb707487be"></a>
+const&#160;string&#160;</td><td class="c-table__cell"><b>CLOUD_RESOURCE_KEY_ENV_VAR</b> = &quot;51DEGREES_RESOURCE_KEY&quot;</td></tr>
+<tr class="c-table__row memdesc:ad13dc3c5eb208fceffd0dfeb707487be"><td class="c-table__cell">&#160;</td><td class="c-table__cell">An old environment variable for the resource key, read only when RESOURCE_KEY_ENV_VAR is not set. <br /></td></tr>
+<tr class="c-table__row memitem:a0cdf6c98e0047b9ae8dac4e00fd0226f" id="r_a0cdf6c98e0047b9ae8dac4e00fd0226f"><td class="c-table__cell"><a id="a0cdf6c98e0047b9ae8dac4e00fd0226f" name="a0cdf6c98e0047b9ae8dac4e00fd0226f"></a>
+const&#160;string&#160;</td><td class="c-table__cell"><b>LEGACY_CLOUD_RESOURCE_KEY_ENV_VAR</b> = &quot;RESOURCE_KEY&quot;</td></tr>
+<tr class="c-table__row memdesc:a0cdf6c98e0047b9ae8dac4e00fd0226f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">An old environment variable for the resource key, read only when RESOURCE_KEY_ENV_VAR is not set. <br /></td></tr>
+<tr class="c-table__row memitem:ad5153d4fd887b1ecb4fa64abdfe66f6f" id="r_ad5153d4fd887b1ecb4fa64abdfe66f6f"><td class="c-table__cell"><a id="ad5153d4fd887b1ecb4fa64abdfe66f6f" name="ad5153d4fd887b1ecb4fa64abdfe66f6f"></a>
+const&#160;string&#160;</td><td class="c-table__cell"><b>LEGACY_SUPER_RESOURCE_KEY_ENV_VAR</b> = &quot;SUPER_RESOURCE_KEY&quot;</td></tr>
+<tr class="c-table__row memdesc:ad5153d4fd887b1ecb4fa64abdfe66f6f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">An old environment variable for the resource key, read only when RESOURCE_KEY_ENV_VAR is not set. <br /></td></tr>
+<tr class="c-table__row memitem:a43a5cc7d5b696518237f8c4dc8311906" id="r_a43a5cc7d5b696518237f8c4dc8311906"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a43a5cc7d5b696518237f8c4dc8311906">CLOUD_ENDPOINT_ENV_VAR</a> = &quot;_51DEGREES_CLOUD_ENDPOINT&quot;</td></tr>
+<tr class="c-table__row memdesc:a43a5cc7d5b696518237f8c4dc8311906"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default environment variable key used to get the end point URL to use when running cloud examples.  <br /></td></tr>
+<tr class="c-table__row memitem:a9459f4d52849ecfe1e105c96c708dc8f" id="r_a9459f4d52849ecfe1e105c96c708dc8f"><td class="c-table__cell"><a id="a9459f4d52849ecfe1e105c96c708dc8f" name="a9459f4d52849ecfe1e105c96c708dc8f"></a>
+const&#160;string&#160;</td><td class="c-table__cell"><b>CLOUD_END_POINT_ENV_VAR</b> = &quot;51D_CLOUD_ENDPOINT&quot;</td></tr>
+<tr class="c-table__row memdesc:a9459f4d52849ecfe1e105c96c708dc8f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">An old environment variable for the end point URL, read only when CLOUD_ENDPOINT_ENV_VAR is not set. <br /></td></tr>
+<tr class="c-table__row memitem:a1b277c7667ce92fae1c027356075acd6" id="r_a1b277c7667ce92fae1c027356075acd6"><td class="c-table__cell">static&#160;readonly&#160;string[]&#160;</td><td class="c-table__cell"><a class="el" href="#a1b277c7667ce92fae1c027356075acd6">OLD_CLOUD_END_POINT_ENV_VARS</a></td></tr>
+<tr class="c-table__row memdesc:a1b277c7667ce92fae1c027356075acd6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The old names of CLOUD_ENDPOINT_ENV_VAR, read in this order only when that variable is not set.  <br /></td></tr>
+<tr class="c-table__row memitem:ac54c7472e4b859c330f163d4401af6a5" id="r_ac54c7472e4b859c330f163d4401af6a5"><td class="c-table__cell">static&#160;readonly&#160;string[]&#160;</td><td class="c-table__cell"><a class="el" href="#ac54c7472e4b859c330f163d4401af6a5">OLD_CLOUD_RESOURCE_KEY_ENV_VARS</a></td></tr>
+<tr class="c-table__row memdesc:ac54c7472e4b859c330f163d4401af6a5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The old names of RESOURCE_KEY_ENV_VAR, read in this order only when that variable is not set.  <br /></td></tr>
 <tr class="c-table__row memitem:a07b058b2a64a0bc543f2efd6e9c89e79" id="r_a07b058b2a64a0bc543f2efd6e9c89e79"><td class="c-table__cell"><a id="a07b058b2a64a0bc543f2efd6e9c89e79" name="a07b058b2a64a0bc543f2efd6e9c89e79"></a>
 const&#160;int&#160;</td><td class="c-table__cell"><b>DataFileAgeWarning</b> = 30</td></tr>
 <tr class="c-table__row memdesc:a07b058b2a64a0bc543f2efd6e9c89e79"><td class="c-table__cell">&#160;</td><td class="c-table__cell">If data file is older than this number of days then a warning will be displayed. <br /></td></tr>
@@ -135,7 +152,7 @@ const&#160;int&#160;</td><td class="c-table__cell"><b>DataFileAgeWarning</b> = 3
 </div><div class="c-member__body">
 
 <p>Get the path to an IP Intelligence data file. </p>
-<p>The environment variables are checked first for an explicit path. The aligned variable named by Constants.IP_INTELLIGENCE_DATA_FILE_ENV_VAR takes precedence over the legacy variable named by Constants.LEGACY_IP_INTELLIGENCE_DATA_FILE_ENV_VAR. If neither is set, the folder hierarchy is searched for the supplied file name using FindFile(string, DirectoryInfo).</p>
+<p>The variable named by Constants.IPI_PATH_ENV_VAR is checked first for an explicit path. If it is not set, the folder hierarchy is searched for the supplied file name using FindFile(string, DirectoryInfo).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>The data file name to search for when no environment variable supplies an explicit path. </td></tr>
@@ -144,7 +161,7 @@ const&#160;int&#160;</td><td class="c-table__cell"><b>DataFileAgeWarning</b> = 3
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The path to the data file, or null if no file could be found. </dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_mixed_2_getting_started-_console_2_program_8cs-example.html#a4">OnPremise/Mixed/GettingStarted-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_mixed_2_getting_started-_console_2_program_8cs-example.html#a5">OnPremise/Mixed/GettingStarted-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>
@@ -190,8 +207,52 @@ const&#160;int&#160;</td><td class="c-table__cell"><b>DataFileAgeWarning</b> = 3
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The path to the file, or null if it could not be found. </dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_mixed_2_getting_started-_console_2_program_8cs-example.html#a3">OnPremise/Mixed/GettingStarted-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_mixed_2_getting_started-_console_2_program_8cs-example.html#a4">OnPremise/Mixed/GettingStarted-Console/Program.cs</a>.</dd>
 </dl>
+
+</div>
+</div>
+<a id="a9262cc9390d6699854368ce463774645" name="a9262cc9390d6699854368ce463774645"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9262cc9390d6699854368ce463774645">&#9670;&#160;</a></span>FromEnvironment()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">string FiftyOne.IpIntelligence.Examples.ExampleUtils.FromEnvironment </td>
+          <td>(</td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">params string[]</td>          <td class="c-table__cell"><span class="paramname"><em>oldNames</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The value of an environment variable. </p>
+<p>When it is not set, the value of the first of its old names that is set, with each old name reported once on the error stream as deprecated.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The variable's name.</td></tr>
+    <tr><td class="paramname">oldNames</td><td>The names the variable had before, in the order they are tried. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The value, or what <em>name</em>  holds when no old name is set either. </dd></dl>
 
 </div>
 </div>
@@ -264,8 +325,7 @@ const&#160;int&#160;</td><td class="c-table__cell"><b>DataFileAgeWarning</b> = 3
 </table>
 </div><div class="c-member__body">
 
-<p>Get the resource key from the environment. </p>
-<p>The aligned '51DEGREES_RESOURCE_KEY' variable is checked first, followed by the legacy 'RESOURCE_KEY' and 'SUPER_RESOURCE_KEY' variables.</p>
+<p>Get the resource key from the '_51DEGREES_RESOURCE_KEY' environment variable. </p>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The resource key, or null if no environment variable is set. </dd></dl>
 
 </div>
@@ -298,7 +358,6 @@ const&#160;int&#160;</td><td class="c-table__cell"><b>DataFileAgeWarning</b> = 3
 </div><div class="c-member__body">
 
 <p>Get the resource key from the environment and run the action with the value, or an empty string if no resource key is set. </p>
-<p>The aligned '51DEGREES_RESOURCE_KEY' variable is checked first, followed by the legacy 'RESOURCE_KEY' and 'SUPER_RESOURCE_KEY' variables.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">setValue</td><td></td></tr>
@@ -420,7 +479,8 @@ const&#160;int&#160;</td><td class="c-table__cell"><b>DataFileAgeWarning</b> = 3
 </table>
 </div><div class="c-member__body">
 
-<p>Display information about the data file and log warnings if specific requirements are not met. </p>
+<p>Log a warning if the data file is old. </p>
+<p>An example run on a free data file says what the Enterprise data file adds in its own output.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">engine</td><td></td></tr>
@@ -475,9 +535,8 @@ const&#160;int&#160;</td><td class="c-table__cell"><b>DataFileAgeWarning</b> = 3
 
 </div>
 </div>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
-<a id="a9459f4d52849ecfe1e105c96c708dc8f" name="a9459f4d52849ecfe1e105c96c708dc8f"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9459f4d52849ecfe1e105c96c708dc8f">&#9670;&#160;</a></span>CLOUD_END_POINT_ENV_VAR</h2>
+<a id="abdd481171be8eba4baa33117f3071a4c" name="abdd481171be8eba4baa33117f3071a4c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#abdd481171be8eba4baa33117f3071a4c">&#9670;&#160;</a></span>ReportOldName()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -488,7 +547,50 @@ const&#160;int&#160;</td><td class="c-table__cell"><b>DataFileAgeWarning</b> = 3
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">const string FiftyOne.IpIntelligence.Examples.ExampleUtils.CLOUD_END_POINT_ENV_VAR = &quot;51D_CLOUD_ENDPOINT&quot;</td>
+              <td class="c-table__cell">void FiftyOne.IpIntelligence.Examples.ExampleUtils.ReportOldName </td>
+          <td>(</td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>oldName</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>newName</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Say once on the error stream that an old environment variable name supplied a value, and which name replaces it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">oldName</td><td>The old name that was read.</td></tr>
+    <tr><td class="paramname">newName</td><td>The name that replaces it.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="a43a5cc7d5b696518237f8c4dc8311906" name="a43a5cc7d5b696518237f8c4dc8311906"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a43a5cc7d5b696518237f8c4dc8311906">&#9670;&#160;</a></span>CLOUD_ENDPOINT_ENV_VAR</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const string FiftyOne.IpIntelligence.Examples.ExampleUtils.CLOUD_ENDPOINT_ENV_VAR = &quot;_51DEGREES_CLOUD_ENDPOINT&quot;</td>
             </tr>
           </table>
         </div>
@@ -502,35 +604,6 @@ const&#160;int&#160;</td><td class="c-table__cell"><b>DataFileAgeWarning</b> = 3
 
 <p>The default environment variable key used to get the end point URL to use when running cloud examples. </p>
 <p>Can be used to override the appsettings.json configuration for testing custom end points. </p>
-
-</div>
-</div>
-<a id="ad13dc3c5eb208fceffd0dfeb707487be" name="ad13dc3c5eb208fceffd0dfeb707487be"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad13dc3c5eb208fceffd0dfeb707487be">&#9670;&#160;</a></span>CLOUD_RESOURCE_KEY_ENV_VAR</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">const string FiftyOne.IpIntelligence.Examples.ExampleUtils.CLOUD_RESOURCE_KEY_ENV_VAR = &quot;51DEGREES_RESOURCE_KEY&quot;</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="c-member__body">
-
-<p>The default environment variable key used to get the resource key to use when running cloud examples. </p>
-<p>This aligned name is checked first, before any legacy variable names. </p>
 
 </div>
 </div>
@@ -581,8 +654,8 @@ const&#160;int&#160;</td><td class="c-table__cell"><b>DataFileAgeWarning</b> = 3
 
 </div>
 </div>
-<a id="a0cdf6c98e0047b9ae8dac4e00fd0226f" name="a0cdf6c98e0047b9ae8dac4e00fd0226f"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0cdf6c98e0047b9ae8dac4e00fd0226f">&#9670;&#160;</a></span>LEGACY_CLOUD_RESOURCE_KEY_ENV_VAR</h2>
+<a id="a1b277c7667ce92fae1c027356075acd6" name="a1b277c7667ce92fae1c027356075acd6"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1b277c7667ce92fae1c027356075acd6">&#9670;&#160;</a></span>OLD_CLOUD_END_POINT_ENV_VARS</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -593,7 +666,7 @@ const&#160;int&#160;</td><td class="c-table__cell"><b>DataFileAgeWarning</b> = 3
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">const string FiftyOne.IpIntelligence.Examples.ExampleUtils.LEGACY_CLOUD_RESOURCE_KEY_ENV_VAR = &quot;RESOURCE_KEY&quot;</td>
+              <td class="c-table__cell">readonly string [] FiftyOne.IpIntelligence.Examples.ExampleUtils.OLD_CLOUD_END_POINT_ENV_VARS</td>
             </tr>
           </table>
         </div>
@@ -604,14 +677,18 @@ const&#160;int&#160;</td><td class="c-table__cell"><b>DataFileAgeWarning</b> = 3
   </tr>
 </table>
 </div><div class="c-member__body">
-
-<p>The legacy environment variable key used to get the resource key to use when running cloud examples. </p>
-<p>Retained for backwards compatibility and checked when CLOUD_RESOURCE_KEY_ENV_VAR is not set. </p>
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                                           = <span class="c-code__keyword">new</span> <span class="c-code__keywordtype">string</span>[]</div>
+<div class="c-code__line">{</div>
+<div class="c-code__line">    <a class="code hl_variable" href="#a9459f4d52849ecfe1e105c96c708dc8f">CLOUD_END_POINT_ENV_VAR</a>,</div>
+<div class="c-code__line">}</div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_example_utils_html_a9459f4d52849ecfe1e105c96c708dc8f"><div class="ttname"><a href="#a9459f4d52849ecfe1e105c96c708dc8f">FiftyOne.IpIntelligence.Examples.ExampleUtils.CLOUD_END_POINT_ENV_VAR</a></div><div class="ttdeci">const string CLOUD_END_POINT_ENV_VAR</div><div class="ttdoc">An old environment variable for the end point URL, read only when CLOUD_ENDPOINT_ENV_VAR is not set.</div><div class="ttdef"><b>Definition</b> Examples/ExampleUtils.cs:79</div></div>
+</div><!-- fragment -->
+<p>The old names of CLOUD_ENDPOINT_ENV_VAR, read in this order only when that variable is not set. </p>
 
 </div>
 </div>
-<a id="ad5153d4fd887b1ecb4fa64abdfe66f6f" name="ad5153d4fd887b1ecb4fa64abdfe66f6f"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad5153d4fd887b1ecb4fa64abdfe66f6f">&#9670;&#160;</a></span>LEGACY_SUPER_RESOURCE_KEY_ENV_VAR</h2>
+<a id="ac54c7472e4b859c330f163d4401af6a5" name="ac54c7472e4b859c330f163d4401af6a5"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac54c7472e4b859c330f163d4401af6a5">&#9670;&#160;</a></span>OLD_CLOUD_RESOURCE_KEY_ENV_VARS</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -622,7 +699,7 @@ const&#160;int&#160;</td><td class="c-table__cell"><b>DataFileAgeWarning</b> = 3
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">const string FiftyOne.IpIntelligence.Examples.ExampleUtils.LEGACY_SUPER_RESOURCE_KEY_ENV_VAR = &quot;SUPER_RESOURCE_KEY&quot;</td>
+              <td class="c-table__cell">readonly string [] FiftyOne.IpIntelligence.Examples.ExampleUtils.OLD_CLOUD_RESOURCE_KEY_ENV_VARS</td>
             </tr>
           </table>
         </div>
@@ -633,9 +710,17 @@ const&#160;int&#160;</td><td class="c-table__cell"><b>DataFileAgeWarning</b> = 3
   </tr>
 </table>
 </div><div class="c-member__body">
-
-<p>The legacy environment variable key used by other 51Degrees repositories to get the resource key. </p>
-<p>Retained for backwards compatibility and checked last. </p>
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                                              = <span class="c-code__keyword">new</span> <span class="c-code__keywordtype">string</span>[]</div>
+<div class="c-code__line">{</div>
+<div class="c-code__line">    <a class="code hl_variable" href="#ad13dc3c5eb208fceffd0dfeb707487be">CLOUD_RESOURCE_KEY_ENV_VAR</a>,</div>
+<div class="c-code__line">    <a class="code hl_variable" href="#a0cdf6c98e0047b9ae8dac4e00fd0226f">LEGACY_CLOUD_RESOURCE_KEY_ENV_VAR</a>,</div>
+<div class="c-code__line">    <a class="code hl_variable" href="#ad5153d4fd887b1ecb4fa64abdfe66f6f">LEGACY_SUPER_RESOURCE_KEY_ENV_VAR</a>,</div>
+<div class="c-code__line">}</div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_example_utils_html_a0cdf6c98e0047b9ae8dac4e00fd0226f"><div class="ttname"><a href="#a0cdf6c98e0047b9ae8dac4e00fd0226f">FiftyOne.IpIntelligence.Examples.ExampleUtils.LEGACY_CLOUD_RESOURCE_KEY_ENV_VAR</a></div><div class="ttdeci">const string LEGACY_CLOUD_RESOURCE_KEY_ENV_VAR</div><div class="ttdoc">An old environment variable for the resource key, read only when RESOURCE_KEY_ENV_VAR is not set.</div><div class="ttdef"><b>Definition</b> Examples/ExampleUtils.cs:56</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_example_utils_html_ad13dc3c5eb208fceffd0dfeb707487be"><div class="ttname"><a href="#ad13dc3c5eb208fceffd0dfeb707487be">FiftyOne.IpIntelligence.Examples.ExampleUtils.CLOUD_RESOURCE_KEY_ENV_VAR</a></div><div class="ttdeci">const string CLOUD_RESOURCE_KEY_ENV_VAR</div><div class="ttdoc">An old environment variable for the resource key, read only when RESOURCE_KEY_ENV_VAR is not set.</div><div class="ttdef"><b>Definition</b> Examples/ExampleUtils.cs:48</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_example_utils_html_ad5153d4fd887b1ecb4fa64abdfe66f6f"><div class="ttname"><a href="#ad5153d4fd887b1ecb4fa64abdfe66f6f">FiftyOne.IpIntelligence.Examples.ExampleUtils.LEGACY_SUPER_RESOURCE_KEY_ENV_VAR</a></div><div class="ttdeci">const string LEGACY_SUPER_RESOURCE_KEY_ENV_VAR</div><div class="ttdoc">An old environment variable for the resource key, read only when RESOURCE_KEY_ENV_VAR is not set.</div><div class="ttdef"><b>Definition</b> Examples/ExampleUtils.cs:64</div></div>
+</div><!-- fragment -->
+<p>The old names of RESOURCE_KEY_ENV_VAR, read in this order only when that variable is not set. </p>
 
 </div>
 </div>

@@ -126,6 +126,22 @@ The Enterprise data file has every property.
 <div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__devicedetection__shared_1_1example__constants.html">fiftyone_devicedetection_shared.example_constants</a> <span class="c-code__keyword">import</span> EVIDENCE_FILE_NAME</div>
 <div class="c-code__line"><span class="c-code__keyword">from</span> ruamel.yaml <span class="c-code__keyword">import</span> YAML</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment"># Where to ask for a copy of the Enterprise data file, tagged with this</span></div>
+<div class="c-code__line"><span class="c-code__comment"># example.</span></div>
+<div class="c-code__line">CONTACT_US = <span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-offlineprocessing.py&amp;utm_term=enterprise-data-file&quot;</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment"># The properties only the Enterprise data file has, which are recorded as</span></div>
+<div class="c-code__line"><span class="c-code__comment"># needing it when the data file in use does not have them.</span></div>
+<div class="c-code__line">ENTERPRISE_PROPERTIES = [</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;tac&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;devicetype&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;hardwarevendor&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;hardwarename&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;hardwaremodel&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;nativedevice&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;nativename&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;nativemodel&quot;</span>]</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">class </span>OfflineProcessing():</div>
 <div class="c-code__line">    <span class="c-code__keyword">def </span>run(self, data_file, evidence_yaml, logger, output):</div>
 <div class="c-code__line">        <span class="c-code__stringliteral">&quot;&quot;&quot;!</span></div>
@@ -135,6 +151,8 @@ The Enterprise data file has every property.
 <div class="c-code__line"><span class="c-code__stringliteral">        @param evidence_yaml: File containing the yaml representation of the evidence to process</span></div>
 <div class="c-code__line"><span class="c-code__stringliteral">        @param logger: Logger to use within the pipeline</span></div>
 <div class="c-code__line"><span class="c-code__stringliteral">        @param output: Output file to write results to</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">        @return: True when the data file lacks properties that only the</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">        Enterprise data file has</span></div>
 <div class="c-code__line"><span class="c-code__stringliteral">        &quot;&quot;&quot;</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment"># In this example, we use the DeviceDetectionPipelineBuilder</span></div>
@@ -175,7 +193,12 @@ The Enterprise data file has every property.
 <div class="c-code__line">            <span class="c-code__comment"># and some evidence files contain them in user-agent strings.</span></div>
 <div class="c-code__line">            content = evidence_yaml.read().replace(<span class="c-code__stringliteral">&#39;\t&#39;</span>, <span class="c-code__stringliteral">&#39; &#39;</span>)</div>
 <div class="c-code__line">            yaml_data = yaml.load_all(content)</div>
-<div class="c-code__line">        </div>
+<div class="c-code__line">            <span class="c-code__comment"># The properties only the Enterprise data file has that the data</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># file in use lacks, found once rather than for every record.</span></div>
+<div class="c-code__line">            engine = pipeline.get_element(<span class="c-code__stringliteral">&quot;device&quot;</span>)</div>
+<div class="c-code__line">            missing = [name <span class="c-code__keywordflow">for</span> name <span class="c-code__keywordflow">in</span> ENTERPRISE_PROPERTIES</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">if</span> <span class="c-code__keywordflow">not</span> ExampleUtils.has_property(engine, name)]</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__keywordflow">try</span>:</div>
 <div class="c-code__line">                <span class="c-code__comment"># Keep going as long as we have more document records.</span></div>
 <div class="c-code__line">                <span class="c-code__keywordflow">for</span> evidence <span class="c-code__keywordflow">in</span> yaml_data:</div>
@@ -193,18 +216,25 @@ The Enterprise data file has every property.
 <div class="c-code__line">                        <span class="c-code__comment"># Keys already have header. prefix in the YAML file</span></div>
 <div class="c-code__line">                        headers[key] = str(evidence[key])</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">                    self.analyseEvidence(headers, pipeline, output, yaml)</div>
+<div class="c-code__line">                    self.analyseEvidence(</div>
+<div class="c-code__line">                        headers, pipeline, output, yaml, missing)</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">except</span> BaseException <span class="c-code__keyword">as</span> err:</div>
 <div class="c-code__line">                <span class="c-code__comment"># We can&#39;t read the evidence values, so cant write them to the output. Will just</span></div>
 <div class="c-code__line">                <span class="c-code__comment"># have to skip this entry.</span></div>
 <div class="c-code__line">                logger.log(<span class="c-code__stringliteral">&quot;error&quot;</span>, err)</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> missing:</div>
+<div class="c-code__line">                <span class="c-code__comment"># A comment keeps the output a valid YAML stream.</span></div>
+<div class="c-code__line">                print(<span class="c-code__stringliteral">&quot;# &quot;</span> + ExampleUtils.get_enterprise_note(CONTACT_US),</div>
+<div class="c-code__line">                      file = output)</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment"># write the yaml document end marker</span></div>
 <div class="c-code__line">            print(<span class="c-code__stringliteral">&quot;...&quot;</span>, file = output)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            ExampleUtils.check_data_file(pipeline, logger)</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span> len(missing) &gt; 0</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__keyword">def </span>analyseEvidence(self, evidence, pipeline, output, yaml):</div>
+<div class="c-code__line">    <span class="c-code__keyword">def </span>analyseEvidence(self, evidence, pipeline, output, yaml, missing):</div>
 <div class="c-code__line">        <span class="c-code__comment"># FlowData is a data structure that is used to convey information required for</span></div>
 <div class="c-code__line">        <span class="c-code__comment"># detection and the results of the detection through the pipeline.</span></div>
 <div class="c-code__line">        <span class="c-code__comment"># Information required for detection is called &quot;evidence&quot; and usually consists</span></div>
@@ -232,14 +262,12 @@ The Enterprise data file has every property.
 <div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.platformversion&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;platformversion&quot;</span>)</div>
 <div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.browsername&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;browsername&quot;</span>)</div>
 <div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.browserversion&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;browserversion&quot;</span>)</div>
-<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.tac&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;tac&quot;</span>)</div>
-<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.devicetype&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;devicetype&quot;</span>)</div>
-<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.hardwarevendor&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;hardwarevendor&quot;</span>)</div>
-<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.hardwarename&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;hardwarename&quot;</span>)</div>
-<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.hardwaremodel&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;hardwaremodel&quot;</span>)</div>
-<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.nativedevice&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;nativedevice&quot;</span>)</div>
-<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.nativename&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;nativename&quot;</span>)</div>
-<div class="c-code__line">            values[<span class="c-code__stringliteral">&quot;device.nativemodel&quot;</span>] = ExampleUtils.get_human_readable(device, <span class="c-code__stringliteral">&quot;nativemodel&quot;</span>)</div>
+<div class="c-code__line">            <span class="c-code__comment"># The value of a property the data file does not have is not</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># read.</span></div>
+<div class="c-code__line">            <span class="c-code__keywordflow">for</span> property <span class="c-code__keywordflow">in</span> ENTERPRISE_PROPERTIES:</div>
+<div class="c-code__line">                values[<span class="c-code__stringliteral">&quot;device.&quot;</span> + property] = (</div>
+<div class="c-code__line">                    ExampleUtils.NEEDS_ENTERPRISE <span class="c-code__keywordflow">if</span> property <span class="c-code__keywordflow">in</span> missing</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">else</span> ExampleUtils.get_human_readable(device, property))</div>
 <div class="c-code__line">            <span class="c-code__comment"># DeviceId is a unique identifier for the combination of hardware, operating</span></div>
 <div class="c-code__line">            <span class="c-code__comment"># system, browser and crawler that has been detected.</span></div>
 <div class="c-code__line">            <span class="c-code__comment"># Our device detection solution uses machine learning to find the optimal</span></div>
@@ -262,9 +290,9 @@ The Enterprise data file has every property.
 <div class="c-code__line">    <span class="c-code__comment"># a command line parameter.</span></div>
 <div class="c-code__line">    <span class="c-code__comment">#</span></div>
 <div class="c-code__line">    <span class="c-code__comment"># Note that the Lite data file is only used for illustration, and has</span></div>
-<div class="c-code__line">    <span class="c-code__comment"># limited accuracy and capabilities.</span></div>
-<div class="c-code__line">    <span class="c-code__comment"># Find out about the Enterprise data file on our pricing page:</span></div>
-<div class="c-code__line">    <span class="c-code__comment"># https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-offlineprocessing.py&amp;utm_term=main</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># a small number of Properties.</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># Contact us for a copy of the Enterprise data file:</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-offlineprocessing.py&amp;utm_term=main</span></div>
 <div class="c-code__line">    data_file = argv[0] <span class="c-code__keywordflow">if</span> len(argv) &gt; 0 <span class="c-code__keywordflow">else</span> ExampleUtils.find_file(LITE_DATAFILE_NAME)</div>
 <div class="c-code__line">    <span class="c-code__comment"># This file contains the 20,000 most commonly seen combinations of header values </span></div>
 <div class="c-code__line">    <span class="c-code__comment"># that are relevant to device detection. For example, User-Agent and UA-CH headers.</span></div>
@@ -279,9 +307,11 @@ The Enterprise data file has every property.
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> (data_file != <span class="c-code__keywordtype">None</span>):</div>
 <div class="c-code__line">        <span class="c-code__keyword">with</span> open(output_file, <span class="c-code__stringliteral">&quot;w&quot;</span>) <span class="c-code__keyword">as</span> output:</div>
 <div class="c-code__line">            <span class="c-code__keyword">with</span> open(evidence_file, <span class="c-code__stringliteral">&quot;r&quot;</span>) <span class="c-code__keyword">as</span> input:</div>
-<div class="c-code__line">                OfflineProcessing().run(data_file, input, logger, output)</div>
-<div class="c-code__line">        logger.log(<span class="c-code__stringliteral">&quot;info&quot;</span>,</div>
-<div class="c-code__line">            f<span class="c-code__stringliteral">&quot;Processing complete. See results in: &#39;{output_file}&#39;&quot;</span>)</div>
+<div class="c-code__line">                needs_enterprise = OfflineProcessing().run(</div>
+<div class="c-code__line">                    data_file, input, logger, output)</div>
+<div class="c-code__line">        print(f<span class="c-code__stringliteral">&quot;Processing complete. See results in: &#39;{output_file}&#39;&quot;</span>)</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> needs_enterprise:</div>
+<div class="c-code__line">            print(ExampleUtils.get_enterprise_note(CONTACT_US))</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">else</span>:</div>
 <div class="c-code__line">        logger.log(<span class="c-code__stringliteral">&quot;error&quot;</span>,</div>
 <div class="c-code__line">            <span class="c-code__stringliteral">&quot;Failed to find a device detection data file. Make sure the &quot;</span> +</div>

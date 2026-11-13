@@ -121,22 +121,22 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:ab633254ee15cf1e3fa73b88dadf69501" id="r_ab633254ee15cf1e3fa73b88dadf69501"><td class="c-table__cell"><a class="el" href="#ada8af9ec46363e32ebe720f751d480a9">ShareUsageBuilderBase</a>&lt;&#160;T&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ab633254ee15cf1e3fa73b88dadf69501">SetTrackSession</a> (bool track)</td></tr>
 <tr class="c-table__row memdesc:ab633254ee15cf1e3fa73b88dadf69501"><td class="c-table__cell">&#160;</td><td class="c-table__cell">If set to true, the configured session cookie will be used to identify user sessions.  <br /></td></tr>
 <tr class="c-table__row memitem:ad3310d5316375c52e9a5b059a8c11d65" id="r_ad3310d5316375c52e9a5b059a8c11d65"><td class="c-table__cell"><a class="el" href="#ada8af9ec46363e32ebe720f751d480a9">ShareUsageBuilderBase</a>&lt;&#160;T&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ad3310d5316375c52e9a5b059a8c11d65">SetFailuresToEnterRecovery</a> (int failuresToEnterRecovery)</td></tr>
-<tr class="c-table__row memdesc:ad3310d5316375c52e9a5b059a8c11d65"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the number of failures required to enter recovery mode.  <br /></td></tr>
+<tr class="c-table__row memdesc:ad3310d5316375c52e9a5b059a8c11d65"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the number of failed sends within the failures window that pauses sending.  <br /></td></tr>
 <tr class="c-table__row memitem:aa3cf90f16dd6016291367e53c7826bef" id="r_aa3cf90f16dd6016291367e53c7826bef"><td class="c-table__cell"><a class="el" href="#ada8af9ec46363e32ebe720f751d480a9">ShareUsageBuilderBase</a>&lt;&#160;T&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#aa3cf90f16dd6016291367e53c7826bef">SetFailuresWindowSeconds</a> (int failuresWindowSeconds)</td></tr>
-<tr class="c-table__row memdesc:aa3cf90f16dd6016291367e53c7826bef"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the time window in seconds for tracking failures.  <br /></td></tr>
+<tr class="c-table__row memdesc:aa3cf90f16dd6016291367e53c7826bef"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the time in seconds over which failed sends are counted.  <br /></td></tr>
 <tr class="c-table__row memitem:a139535e431eb93cbfc6df62cb50f9559" id="r_a139535e431eb93cbfc6df62cb50f9559"><td class="c-table__cell"><a class="el" href="#ada8af9ec46363e32ebe720f751d480a9">ShareUsageBuilderBase</a>&lt;&#160;T&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a139535e431eb93cbfc6df62cb50f9559">SetInitialRecoveryDelaySeconds</a> (double initialDelaySeconds)</td></tr>
-<tr class="c-table__row memdesc:a139535e431eb93cbfc6df62cb50f9559"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the initial delay in seconds for exponential backoff recovery strategy.  <br /></td></tr>
+<tr class="c-table__row memdesc:a139535e431eb93cbfc6df62cb50f9559"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the length in seconds of the first pause after failed sends.  <br /></td></tr>
 <tr class="c-table__row memitem:ab2a4f819d7368303f55ed2f3efa13b2b" id="r_ab2a4f819d7368303f55ed2f3efa13b2b"><td class="c-table__cell"><a class="el" href="#ada8af9ec46363e32ebe720f751d480a9">ShareUsageBuilderBase</a>&lt;&#160;T&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ab2a4f819d7368303f55ed2f3efa13b2b">SetMaxRecoveryDelaySeconds</a> (double maxDelaySeconds)</td></tr>
-<tr class="c-table__row memdesc:ab2a4f819d7368303f55ed2f3efa13b2b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the maximum delay in seconds for exponential backoff recovery strategy.  <br /></td></tr>
+<tr class="c-table__row memdesc:ab2a4f819d7368303f55ed2f3efa13b2b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the longest a pause can be, in seconds.  <br /></td></tr>
 <tr class="c-table__row memitem:acc45c9e1dc79f7b6ef69f48ca70306d1" id="r_acc45c9e1dc79f7b6ef69f48ca70306d1"><td class="c-table__cell"><a class="el" href="#ada8af9ec46363e32ebe720f751d480a9">ShareUsageBuilderBase</a>&lt;&#160;T&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#acc45c9e1dc79f7b6ef69f48ca70306d1">SetRecoveryMultiplier</a> (double multiplier)</td></tr>
-<tr class="c-table__row memdesc:acc45c9e1dc79f7b6ef69f48ca70306d1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the multiplier for exponential backoff recovery strategy.  <br /></td></tr>
+<tr class="c-table__row memdesc:acc45c9e1dc79f7b6ef69f48ca70306d1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set what the pause is multiplied by each time the send tried when a pause ends fails.  <br /></td></tr>
 <tr class="c-table__row memitem:af8f4e1d6363d7558ba0568ab9a3bd41d" id="r_af8f4e1d6363d7558ba0568ab9a3bd41d"><td class="c-table__cell">T&#160;</td><td class="c-table__cell"><a class="el" href="#af8f4e1d6363d7558ba0568ab9a3bd41d">Build</a> ()</td></tr>
 <tr class="c-table__row memdesc:af8f4e1d6363d7558ba0568ab9a3bd41d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Create the ShareUsageElement.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-methods" class="g-docs__section-heading"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:af8eaa1d999e5479d4922ccb7aeda7aea" id="r_af8eaa1d999e5479d4922ccb7aeda7aea"><td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_i_recovery_strategy.html">IRecoveryStrategy</a>&#160;</td><td class="c-table__cell"><a class="el" href="#af8eaa1d999e5479d4922ccb7aeda7aea">CreateRecoveryStrategy</a> ()</td></tr>
-<tr class="c-table__row memdesc:af8eaa1d999e5479d4922ccb7aeda7aea"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Create the appropriate recovery strategy based on current configuration.  <br /></td></tr>
+<tr class="c-table__row memdesc:af8eaa1d999e5479d4922ccb7aeda7aea"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Not used.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-properties" class="g-docs__section-heading"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -182,27 +182,25 @@ List&lt;&#160;KeyValuePair&lt;&#160;string,&#160;string&#160;&gt;&#160;&gt;&#160
 <tr class="c-table__row memitem:a134976a605a36aa799f20993f4429c72" id="r_a134976a605a36aa799f20993f4429c72"><td class="c-table__cell"><a id="a134976a605a36aa799f20993f4429c72" name="a134976a605a36aa799f20993f4429c72"></a>
 bool&#160;</td><td class="c-table__cell"><b>ShareAllEvidence</b> = Constants.SHARE_USAGE_DEFAULT_SHARE_ALL_EVIDENCE<code> [get]</code></td></tr>
 <tr class="c-table__row memdesc:a134976a605a36aa799f20993f4429c72"><td class="c-table__cell">&#160;</td><td class="c-table__cell">If set to true then all evidence values will be shared. <br /></td></tr>
-<tr class="c-table__row memitem:a17a55b2b2ef1f9ba50d253e53c12ae29" id="r_a17a55b2b2ef1f9ba50d253e53c12ae29"><td class="c-table__cell"><a id="a17a55b2b2ef1f9ba50d253e53c12ae29" name="a17a55b2b2ef1f9ba50d253e53c12ae29"></a>
-double&#160;</td><td class="c-table__cell"><b>RecoverySeconds</b> = <a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html#ab6cd0ba9d244767616dfdccca56eb953">Constants.SHARE_USAGE_RECOVERY_SECONDS_DEFAULT</a><code> [get]</code></td></tr>
-<tr class="c-table__row memdesc:a17a55b2b2ef1f9ba50d253e53c12ae29"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Recovery seconds for linear strategies. <br /></td></tr>
-<tr class="c-table__row memitem:ac6300e15ae18746972c5901b4c7055ff" id="r_ac6300e15ae18746972c5901b4c7055ff"><td class="c-table__cell"><a id="ac6300e15ae18746972c5901b4c7055ff" name="ac6300e15ae18746972c5901b4c7055ff"></a>
-bool&#160;</td><td class="c-table__cell"><b>UseExponentialBackoff</b> = <a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html#ad5a9f42a31c1847accaa7c9a065a8756">Constants.SHARE_USAGE_EXPONENTIAL_BACKOFF_ENABLED_DEFAULT</a><code> [get]</code></td></tr>
-<tr class="c-table__row memdesc:ac6300e15ae18746972c5901b4c7055ff"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Enable exponential backoff recovery strategy instead of simple recovery. <br /></td></tr>
+<tr class="c-table__row memitem:a17a55b2b2ef1f9ba50d253e53c12ae29" id="r_a17a55b2b2ef1f9ba50d253e53c12ae29"><td class="c-table__cell">double&#160;</td><td class="c-table__cell"><a class="el" href="#a17a55b2b2ef1f9ba50d253e53c12ae29">RecoverySeconds</a> = <a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html#ab6cd0ba9d244767616dfdccca56eb953">Constants.SHARE_USAGE_RECOVERY_SECONDS_DEFAULT</a><code> [get]</code></td></tr>
+<tr class="c-table__row memdesc:a17a55b2b2ef1f9ba50d253e53c12ae29"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Not used.  <br /></td></tr>
+<tr class="c-table__row memitem:ac6300e15ae18746972c5901b4c7055ff" id="r_ac6300e15ae18746972c5901b4c7055ff"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ac6300e15ae18746972c5901b4c7055ff">UseExponentialBackoff</a> = <a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html#ad5a9f42a31c1847accaa7c9a065a8756">Constants.SHARE_USAGE_EXPONENTIAL_BACKOFF_ENABLED_DEFAULT</a><code> [get]</code></td></tr>
+<tr class="c-table__row memdesc:ac6300e15ae18746972c5901b4c7055ff"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Not used.  <br /></td></tr>
 <tr class="c-table__row memitem:ac0eafa04acd61a63c9144847f5bd3816" id="r_ac0eafa04acd61a63c9144847f5bd3816"><td class="c-table__cell"><a id="ac0eafa04acd61a63c9144847f5bd3816" name="ac0eafa04acd61a63c9144847f5bd3816"></a>
 int&#160;</td><td class="c-table__cell"><b>FailuresToEnterRecovery</b> = <a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html#afb0006295e7ad4bc80108d7bd8b8b0fb">Constants.SHARE_USAGE_FAILURES_TO_ENTER_RECOVERY_DEFAULT</a><code> [get]</code></td></tr>
-<tr class="c-table__row memdesc:ac0eafa04acd61a63c9144847f5bd3816"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Number of failures required to enter recovery mode. <br /></td></tr>
+<tr class="c-table__row memdesc:ac0eafa04acd61a63c9144847f5bd3816"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The number of failed sends within the failures window that pauses sending. <br /></td></tr>
 <tr class="c-table__row memitem:a972095dbe4c44c183b2a80a9222cfd4e" id="r_a972095dbe4c44c183b2a80a9222cfd4e"><td class="c-table__cell"><a id="a972095dbe4c44c183b2a80a9222cfd4e" name="a972095dbe4c44c183b2a80a9222cfd4e"></a>
 int&#160;</td><td class="c-table__cell"><b>FailuresWindowSeconds</b> = <a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html#a2187681470e11e2443f251a42f8df0e4">Constants.SHARE_USAGE_FAILURES_WINDOW_SECONDS_DEFAULT</a><code> [get]</code></td></tr>
-<tr class="c-table__row memdesc:a972095dbe4c44c183b2a80a9222cfd4e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Time window in seconds for tracking failures. <br /></td></tr>
+<tr class="c-table__row memdesc:a972095dbe4c44c183b2a80a9222cfd4e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The time in seconds over which failed sends are counted. <br /></td></tr>
 <tr class="c-table__row memitem:aab0c752382aaaa6ad470b2ceb5fb6e6c" id="r_aab0c752382aaaa6ad470b2ceb5fb6e6c"><td class="c-table__cell"><a id="aab0c752382aaaa6ad470b2ceb5fb6e6c" name="aab0c752382aaaa6ad470b2ceb5fb6e6c"></a>
 double&#160;</td><td class="c-table__cell"><b>InitialRecoveryDelaySeconds</b> = <a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html#aee50b93b917d311f985349379c712f61">Constants.SHARE_USAGE_EXPONENTIAL_BACKOFF_INITIAL_DELAY_SECONDS_DEFAULT</a><code> [get]</code></td></tr>
-<tr class="c-table__row memdesc:aab0c752382aaaa6ad470b2ceb5fb6e6c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initial delay in seconds for exponential backoff recovery strategy. <br /></td></tr>
+<tr class="c-table__row memdesc:aab0c752382aaaa6ad470b2ceb5fb6e6c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The length in seconds of the first pause after failed sends. <br /></td></tr>
 <tr class="c-table__row memitem:abd1dde04212d5022b724cbeffba51920" id="r_abd1dde04212d5022b724cbeffba51920"><td class="c-table__cell"><a id="abd1dde04212d5022b724cbeffba51920" name="abd1dde04212d5022b724cbeffba51920"></a>
 double&#160;</td><td class="c-table__cell"><b>MaxRecoveryDelaySeconds</b> = <a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html#af0da16116b9f4e17c98f650833beaebe">Constants.SHARE_USAGE_EXPONENTIAL_BACKOFF_MAX_DELAY_SECONDS_DEFAULT</a><code> [get]</code></td></tr>
-<tr class="c-table__row memdesc:abd1dde04212d5022b724cbeffba51920"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Maximum delay in seconds for exponential backoff recovery strategy. <br /></td></tr>
+<tr class="c-table__row memdesc:abd1dde04212d5022b724cbeffba51920"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The longest a pause can be, in seconds. <br /></td></tr>
 <tr class="c-table__row memitem:acc9bc8df0e3da26dcbd2d4168cdaa65f" id="r_acc9bc8df0e3da26dcbd2d4168cdaa65f"><td class="c-table__cell"><a id="acc9bc8df0e3da26dcbd2d4168cdaa65f" name="acc9bc8df0e3da26dcbd2d4168cdaa65f"></a>
 double&#160;</td><td class="c-table__cell"><b>RecoveryMultiplier</b> = <a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html#a4b444dc0046b70cc5b20fc1ceeee9232">Constants.SHARE_USAGE_EXPONENTIAL_BACKOFF_MULTIPLIER_DEFAULT</a><code> [get]</code></td></tr>
-<tr class="c-table__row memdesc:acc9bc8df0e3da26dcbd2d4168cdaa65f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Multiplier for exponential backoff recovery strategy. <br /></td></tr>
+<tr class="c-table__row memdesc:acc9bc8df0e3da26dcbd2d4168cdaa65f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">What the pause is multiplied by each time the send tried when a pause ends fails. <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="af8f4e1d6363d7558ba0568ab9a3bd41d" name="af8f4e1d6363d7558ba0568ab9a3bd41d"></a>
@@ -264,7 +262,8 @@ double&#160;</td><td class="c-table__cell"><b>RecoveryMultiplier</b> = <a class=
 </table>
 </div><div class="c-member__body">
 
-<p>Create the appropriate recovery strategy based on current configuration. </p>
+<p>Not used. </p>
+<p>Usage sharing pauses sending with its own back-off, set by the failures, delay and multiplier settings.</p>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The configured recovery strategy</dd></dl>
 
 </div>
@@ -409,10 +408,11 @@ double&#160;</td><td class="c-table__cell"><b>RecoveryMultiplier</b> = <a class=
       </div>
 </div><div class="c-member__body">
 
-<p>Set the number of failures required to enter recovery mode. </p>
+<p>Set the number of failed sends within the failures window that pauses sending. </p>
+<p>Usage data is still queued while sending is paused, up to the maximum queue size.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">failuresToEnterRecovery</td><td>Number of failures within the window to trigger recovery. </td></tr>
+    <tr><td class="paramname">failuresToEnterRecovery</td><td>The number of failed sends, from 1 to 100. </td></tr>
   </table>
   </dd>
 </dl>
@@ -439,10 +439,10 @@ double&#160;</td><td class="c-table__cell"><b>RecoveryMultiplier</b> = <a class=
       </div>
 </div><div class="c-member__body">
 
-<p>Set the time window in seconds for tracking failures. </p>
+<p>Set the time in seconds over which failed sends are counted. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">failuresWindowSeconds</td><td>Time window in seconds for failure tracking. </td></tr>
+    <tr><td class="paramname">failuresWindowSeconds</td><td>The time in seconds, 1 or more. </td></tr>
   </table>
   </dd>
 </dl>
@@ -603,10 +603,10 @@ double&#160;</td><td class="c-table__cell"><b>RecoveryMultiplier</b> = <a class=
       </div>
 </div><div class="c-member__body">
 
-<p>Set the initial delay in seconds for exponential backoff recovery strategy. </p>
+<p>Set the length in seconds of the first pause after failed sends. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">initialDelaySeconds</td><td>Initial delay in seconds for the first failure. </td></tr>
+    <tr><td class="paramname">initialDelaySeconds</td><td>The length in seconds, more than 0. </td></tr>
   </table>
   </dd>
 </dl>
@@ -664,10 +664,10 @@ double&#160;</td><td class="c-table__cell"><b>RecoveryMultiplier</b> = <a class=
       </div>
 </div><div class="c-member__body">
 
-<p>Set the maximum delay in seconds for exponential backoff recovery strategy. </p>
+<p>Set the longest a pause can be, in seconds. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">maxDelaySeconds</td><td>Maximum delay in seconds to cap the exponential growth. </td></tr>
+    <tr><td class="paramname">maxDelaySeconds</td><td>The length in seconds, more than 0. </td></tr>
   </table>
   </dd>
 </dl>
@@ -724,10 +724,11 @@ double&#160;</td><td class="c-table__cell"><b>RecoveryMultiplier</b> = <a class=
       </div>
 </div><div class="c-member__body">
 
-<p>Set the multiplier for exponential backoff recovery strategy. </p>
+<p>Set what the pause is multiplied by each time the send tried when a pause ends fails. </p>
+<p>2 doubles the pause each time.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">multiplier</td><td>Exponential multiplier (typically 2.0 for doubling). </td></tr>
+    <tr><td class="paramname">multiplier</td><td>The multiplier, 1 or more. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1122,6 +1123,35 @@ double&#160;</td><td class="c-table__cell"><b>RecoveryMultiplier</b> = <a class=
 
 </div>
 </div>
+<a id="a17a55b2b2ef1f9ba50d253e53c12ae29" name="a17a55b2b2ef1f9ba50d253e53c12ae29"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a17a55b2b2ef1f9ba50d253e53c12ae29">&#9670;&#160;</a></span>RecoverySeconds</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">double FiftyOne.Pipeline.Engines.FiftyOne.FlowElements.ShareUsageBuilderBase&lt; T &gt;.RecoverySeconds = <a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html#ab6cd0ba9d244767616dfdccca56eb953">Constants.SHARE_USAGE_RECOVERY_SECONDS_DEFAULT</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Not used. </p>
+<p>Usage sharing pauses for the initial recovery delay, multiplied after each failed send that follows a pause. </p>
+
+</div>
+</div>
 <a id="a766e9ad804b143eb9764797e757f8f79" name="a766e9ad804b143eb9764797e757f8f79"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a766e9ad804b143eb9764797e757f8f79">&#9670;&#160;</a></span>RepeatEvidenceInterval</h2>
 
@@ -1206,6 +1236,35 @@ double&#160;</td><td class="c-table__cell"><b>RecoveryMultiplier</b> = <a class=
 
 <p>Controls whether session tracking is enabled or disabled. </p>
 <p>If enabled, requests from a single user session will only be shared once. </p>
+
+</div>
+</div>
+<a id="ac6300e15ae18746972c5901b4c7055ff" name="ac6300e15ae18746972c5901b4c7055ff"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac6300e15ae18746972c5901b4c7055ff">&#9670;&#160;</a></span>UseExponentialBackoff</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool FiftyOne.Pipeline.Engines.FiftyOne.FlowElements.ShareUsageBuilderBase&lt; T &gt;.UseExponentialBackoff = <a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html#ad5a9f42a31c1847accaa7c9a065a8756">Constants.SHARE_USAGE_EXPONENTIAL_BACKOFF_ENABLED_DEFAULT</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Not used. </p>
+<p>Usage sharing always multiplies the pause after each failed send that follows a pause. </p>
 
 </div>
 </div>

@@ -80,6 +80,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a22afc3b91762d4352fe09fadbbdf4614" id="r_a22afc3b91762d4352fe09fadbbdf4614"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a22afc3b91762d4352fe09fadbbdf4614">get_no_profiles_message</a> ()</td></tr>
 <tr class="c-table__row memdesc:a22afc3b91762d4352fe09fadbbdf4614"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The line printed when a lookup returned no device profiles at all.  <br /></td></tr>
 <tr class="c-table__row memitem:a7e4f03ae295425ac814254c70eb707a9" id="r_a7e4f03ae295425ac814254c70eb707a9"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7e4f03ae295425ac814254c70eb707a9">get_resource_key</a> ()</td></tr>
+<tr class="c-table__row memitem:ad603fb2168650d3a17c430a82353d6de" id="r_ad603fb2168650d3a17c430a82353d6de"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad603fb2168650d3a17c430a82353d6de">get_license_key</a> ()</td></tr>
+<tr class="c-table__row memdesc:ad603fb2168650d3a17c430a82353d6de"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The licence key from the environment, or an empty string.  <br /></td></tr>
 <tr class="c-table__row memitem:ab624067f966c330094a3f46518ffe231" id="r_ab624067f966c330094a3f46518ffe231"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab624067f966c330094a3f46518ffe231">get_missing_resource_key_message</a> ()</td></tr>
 <tr class="c-table__row memdesc:ab624067f966c330094a3f46518ffe231"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The message shown when no resource key is set, naming the variable that was wanted rather than leaving the reader to guess.  <br /></td></tr>
 <tr class="c-table__row memitem:ae523a7f870bae19cedcf076b12e58a27" id="r_ae523a7f870bae19cedcf076b12e58a27"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ae523a7f870bae19cedcf076b12e58a27">get_data_file_path</a> ()</td></tr>
@@ -88,7 +90,18 @@ Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a87e613b755d409576cb748b8d2b64444" id="r_a87e613b755d409576cb748b8d2b64444"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a87e613b755d409576cb748b8d2b64444">get_data_file_date</a> (engine)</td></tr>
 <tr class="c-table__row memitem:ad71766942b17c4a14408e6a997e6656a" id="r_ad71766942b17c4a14408e6a997e6656a"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad71766942b17c4a14408e6a997e6656a">data_file_is_old</a> (engine)</td></tr>
 <tr class="c-table__row memitem:ae1b61e878d801b9495207b309994e500" id="r_ae1b61e878d801b9495207b309994e500"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ae1b61e878d801b9495207b309994e500">get_data_file_tier</a> (engine)</td></tr>
+<tr class="c-table__row memitem:a2014fe5398fdf0507bfbff98c1982279" id="r_a2014fe5398fdf0507bfbff98c1982279"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a2014fe5398fdf0507bfbff98c1982279">is_lite_data_file</a> (engine)</td></tr>
+<tr class="c-table__row memdesc:a2014fe5398fdf0507bfbff98c1982279"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True when the engine uses the free Lite data file.  <br /></td></tr>
+<tr class="c-table__row memitem:a39e79874680318ffa58f93bc4c920f70" id="r_a39e79874680318ffa58f93bc4c920f70"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a39e79874680318ffa58f93bc4c920f70">has_property</a> (engine, name)</td></tr>
+<tr class="c-table__row memdesc:a39e79874680318ffa58f93bc4c920f70"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True when the engine's data file has the property.  <br /></td></tr>
+<tr class="c-table__row memitem:a50baa4356998625d03283b58e3320444" id="r_a50baa4356998625d03283b58e3320444"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a50baa4356998625d03283b58e3320444">get_enterprise_value</a> (engine, device, property)</td></tr>
+<tr class="c-table__row memdesc:a50baa4356998625d03283b58e3320444"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Format a property for display, or say that it needs the Enterprise data file when the engine's data file does not have it.  <br /></td></tr>
+<tr class="c-table__row memitem:a9e3123a9726f2fea7195e74dff07b522" id="r_a9e3123a9726f2fea7195e74dff07b522"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a9e3123a9726f2fea7195e74dff07b522">get_enterprise_note</a> (contact_us)</td></tr>
+<tr class="c-table__row memdesc:a9e3123a9726f2fea7195e74dff07b522"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Where to ask for a copy of the Enterprise data file, written after an example has shown properties that the data file in use does not have.  <br /></td></tr>
+<tr class="c-table__row memitem:ab15c6b3db039df966ffee9446de8b349" id="r_ab15c6b3db039df966ffee9446de8b349"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab15c6b3db039df966ffee9446de8b349">get_enterprise_offer</a> (contact_us)</td></tr>
+<tr class="c-table__row memdesc:ab15c6b3db039df966ffee9446de8b349"><td class="c-table__cell">&#160;</td><td class="c-table__cell">What the Enterprise data file adds and where to ask for a copy, written after an example that shows no properties has run on the free Lite data file.  <br /></td></tr>
 <tr class="c-table__row memitem:a581c9595b1843b89ac561f8405a85d10" id="r_a581c9595b1843b89ac561f8405a85d10"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a581c9595b1843b89ac561f8405a85d10">check_data_file</a> (pipeline, logger)</td></tr>
+<tr class="c-table__row memdesc:a581c9595b1843b89ac561f8405a85d10"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Log the data file in use, and a warning if it is old.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -96,10 +109,15 @@ Static Public Attributes</h2></td></tr>
 <tr class="c-table__row memitem:a6ee88046cddd830a21bea29583db4dbd" id="r_a6ee88046cddd830a21bea29583db4dbd"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#a6ee88046cddd830a21bea29583db4dbd">DATA_FILE_AGE_WARNING</a> = 30</td></tr>
 <tr class="c-table__row memitem:a2a034f0316ef9771e1c368416bee33e7" id="r_a2a034f0316ef9771e1c368416bee33e7"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a2a034f0316ef9771e1c368416bee33e7">RESOURCE_KEY_ENV_VAR</a> = &quot;_51DEGREES_RESOURCE_KEY&quot;</td></tr>
 <tr class="c-table__row memitem:ae77e98e744abca31aa19ca99497a5e6f" id="r_ae77e98e744abca31aa19ca99497a5e6f"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#ae77e98e744abca31aa19ca99497a5e6f">LEGACY_RESOURCE_KEY_ENV_VAR</a> = &quot;resource_key&quot;</td></tr>
+<tr class="c-table__row memitem:a8c30f3400fba254638c429b4f17e3761" id="r_a8c30f3400fba254638c429b4f17e3761"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a8c30f3400fba254638c429b4f17e3761">LICENSE_KEY_ENV_VAR</a> = &quot;_51DEGREES_LICENSE_KEY&quot;</td></tr>
+<tr class="c-table__row memitem:a2e1ba29bee0835621203f05ec3ef07ab" id="r_a2e1ba29bee0835621203f05ec3ef07ab"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a2e1ba29bee0835621203f05ec3ef07ab">LEGACY_LICENSE_KEY_ENV_VAR</a> = &quot;license_key&quot;</td></tr>
+<tr class="c-table__row memitem:aa9b18089da05cd34697296d431a6e9e1" id="r_aa9b18089da05cd34697296d431a6e9e1"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#aa9b18089da05cd34697296d431a6e9e1">CLOUD_ENDPOINT_ENV_VAR</a> = &quot;_51DEGREES_CLOUD_ENDPOINT&quot;</td></tr>
 <tr class="c-table__row memitem:af919b8b681fe43c574cbeeb7b35815d7" id="r_af919b8b681fe43c574cbeeb7b35815d7"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#af919b8b681fe43c574cbeeb7b35815d7">ENDPOINT_ENV_VAR</a> = &quot;cloud_endpoint&quot;</td></tr>
+<tr class="c-table__row memitem:a5e676a5750d18391b4ed6489bde4da82" id="r_a5e676a5750d18391b4ed6489bde4da82"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a5e676a5750d18391b4ed6489bde4da82">DD_PATH_ENV_VAR</a> = &quot;_51DEGREES_DD_PATH&quot;</td></tr>
 <tr class="c-table__row memitem:a5611baa235d7ab24a65923d032a8bd55" id="r_a5611baa235d7ab24a65923d032a8bd55"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a5611baa235d7ab24a65923d032a8bd55">DATA_FILE_ENV_VAR</a> = &quot;51DEGREES_DD_PATH&quot;</td></tr>
 <tr class="c-table__row memitem:a93ef113934a3e3857411e5b468659276" id="r_a93ef113934a3e3857411e5b468659276"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a93ef113934a3e3857411e5b468659276">DATA_FOLDER</a> = os.path.join(&quot;cxx&quot;, &quot;data&quot;, &quot;device-detection&quot;)</td></tr>
 <tr class="c-table__row memitem:a2244cc292663420bd94b123b61256728" id="r_a2244cc292663420bd94b123b61256728"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a2244cc292663420bd94b123b61256728">DOWNLOAD_SOURCE</a> = &quot;examples-51degrees-python&quot;</td></tr>
+<tr class="c-table__row memitem:ae7651482f880ff8b06b6f6aa5d3df9e9" id="r_ae7651482f880ff8b06b6f6aa5d3df9e9"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#ae7651482f880ff8b06b6f6aa5d3df9e9">NEEDS_ENTERPRISE</a> = &quot;needs the Enterprise data file&quot;</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="a581c9595b1843b89ac561f8405a85d10" name="a581c9595b1843b89ac561f8405a85d10"></a>
@@ -132,6 +150,9 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="c-member__body">
+
+<p>Log the data file in use, and a warning if it is old. </p>
+<p>An example run on the free Lite data file says what the Enterprise data file adds in its own output. </p>
 
 </div>
 </div>
@@ -338,6 +359,110 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a9e3123a9726f2fea7195e74dff07b522" name="a9e3123a9726f2fea7195e74dff07b522"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9e3123a9726f2fea7195e74dff07b522">&#9670;&#160;</a></span>get_enterprise_note()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_devicedetection_examples.example_utils.ExampleUtils.get_enterprise_note </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>contact_us</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Where to ask for a copy of the Enterprise data file, written after an example has shown properties that the data file in use does not have. </p>
+<p>The link is tagged with the example's file, so that an enquiry can be traced to the example. </p>
+
+</div>
+</div>
+<a id="ab15c6b3db039df966ffee9446de8b349" name="ab15c6b3db039df966ffee9446de8b349"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab15c6b3db039df966ffee9446de8b349">&#9670;&#160;</a></span>get_enterprise_offer()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_devicedetection_examples.example_utils.ExampleUtils.get_enterprise_offer </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>contact_us</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>What the Enterprise data file adds and where to ask for a copy, written after an example that shows no properties has run on the free Lite data file. </p>
+
+</div>
+</div>
+<a id="a50baa4356998625d03283b58e3320444" name="a50baa4356998625d03283b58e3320444"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a50baa4356998625d03283b58e3320444">&#9670;&#160;</a></span>get_enterprise_value()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_devicedetection_examples.example_utils.ExampleUtils.get_enterprise_value </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>engine</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>device</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>property</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Format a property for display, or say that it needs the Enterprise data file when the engine's data file does not have it. </p>
+<p>The value is only read when the data file has the property. </p>
+
+</div>
+</div>
 <a id="a30c81bf9bb3ad202d42ab1f0812f10d8" name="a30c81bf9bb3ad202d42ab1f0812f10d8"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a30c81bf9bb3ad202d42ab1f0812f10d8">&#9670;&#160;</a></span>get_human_readable()</h2>
 
@@ -371,6 +496,38 @@ Static Public Attributes</h2></td></tr>
 
 <p>Format a property value for display. </p>
 <p>A property can be unavailable for three reasons, and each one reads differently so the person running the example can tell them apart. The property may have a value, it may have no value with the cloud service giving a reason (most often that the resource key is not entitled to it), or it may not be in the results at all. </p>
+
+</div>
+</div>
+<a id="ad603fb2168650d3a17c430a82353d6de" name="ad603fb2168650d3a17c430a82353d6de"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad603fb2168650d3a17c430a82353d6de">&#9670;&#160;</a></span>get_license_key()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_devicedetection_examples.example_utils.ExampleUtils.get_license_key </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The licence key from the environment, or an empty string. </p>
+<p>The old name is also read in upper case, as it was before. </p>
 
 </div>
 </div>
@@ -526,6 +683,73 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a39e79874680318ffa58f93bc4c920f70" name="a39e79874680318ffa58f93bc4c920f70"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a39e79874680318ffa58f93bc4c920f70">&#9670;&#160;</a></span>has_property()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_devicedetection_examples.example_utils.ExampleUtils.has_property </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>engine</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>name</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>True when the engine's data file has the property. </p>
+<p>The Lite data file leaves out the properties only the Enterprise data file has, such as HardwareVendor, HardwareName and DeviceType. The data file's own list is read, because the engine's properties are only those it was built to give. </p>
+
+</div>
+</div>
+<a id="a2014fe5398fdf0507bfbff98c1982279" name="a2014fe5398fdf0507bfbff98c1982279"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2014fe5398fdf0507bfbff98c1982279">&#9670;&#160;</a></span>is_lite_data_file()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_devicedetection_examples.example_utils.ExampleUtils.is_lite_data_file </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>engine</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>True when the engine uses the free Lite data file. </p>
+
+</div>
+</div>
 <a id="a82c006d33afc7610303763fbb9dc84a5" name="a82c006d33afc7610303763fbb9dc84a5"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a82c006d33afc7610303763fbb9dc84a5">&#9670;&#160;</a></span>set_data_file_in_config()</h2>
 
@@ -593,6 +817,32 @@ Static Public Attributes</h2></td></tr>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="aa9b18089da05cd34697296d431a6e9e1" name="aa9b18089da05cd34697296d431a6e9e1"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa9b18089da05cd34697296d431a6e9e1">&#9670;&#160;</a></span>CLOUD_ENDPOINT_ENV_VAR</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">str fiftyone_devicedetection_examples.example_utils.ExampleUtils.CLOUD_ENDPOINT_ENV_VAR = &quot;_51DEGREES_CLOUD_ENDPOINT&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
 <a id="a6ee88046cddd830a21bea29583db4dbd" name="a6ee88046cddd830a21bea29583db4dbd"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6ee88046cddd830a21bea29583db4dbd">&#9670;&#160;</a></span>DATA_FILE_AGE_WARNING</h2>
 
@@ -658,6 +908,32 @@ Static Public Attributes</h2></td></tr>
           <table class="c-table c-table--article">
             <tr class="c-table__row">
               <td class="c-table__cell">fiftyone_devicedetection_examples.example_utils.ExampleUtils.DATA_FOLDER = os.path.join(&quot;cxx&quot;, &quot;data&quot;, &quot;device-detection&quot;)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a5e676a5750d18391b4ed6489bde4da82" name="a5e676a5750d18391b4ed6489bde4da82"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5e676a5750d18391b4ed6489bde4da82">&#9670;&#160;</a></span>DD_PATH_ENV_VAR</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">str fiftyone_devicedetection_examples.example_utils.ExampleUtils.DD_PATH_ENV_VAR = &quot;_51DEGREES_DD_PATH&quot;</td>
             </tr>
           </table>
         </div>
@@ -749,6 +1025,32 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a2e1ba29bee0835621203f05ec3ef07ab" name="a2e1ba29bee0835621203f05ec3ef07ab"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2e1ba29bee0835621203f05ec3ef07ab">&#9670;&#160;</a></span>LEGACY_LICENSE_KEY_ENV_VAR</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">str fiftyone_devicedetection_examples.example_utils.ExampleUtils.LEGACY_LICENSE_KEY_ENV_VAR = &quot;license_key&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
 <a id="ae77e98e744abca31aa19ca99497a5e6f" name="ae77e98e744abca31aa19ca99497a5e6f"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae77e98e744abca31aa19ca99497a5e6f">&#9670;&#160;</a></span>LEGACY_RESOURCE_KEY_ENV_VAR</h2>
 
@@ -762,6 +1064,58 @@ Static Public Attributes</h2></td></tr>
           <table class="c-table c-table--article">
             <tr class="c-table__row">
               <td class="c-table__cell">str fiftyone_devicedetection_examples.example_utils.ExampleUtils.LEGACY_RESOURCE_KEY_ENV_VAR = &quot;resource_key&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a8c30f3400fba254638c429b4f17e3761" name="a8c30f3400fba254638c429b4f17e3761"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8c30f3400fba254638c429b4f17e3761">&#9670;&#160;</a></span>LICENSE_KEY_ENV_VAR</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">str fiftyone_devicedetection_examples.example_utils.ExampleUtils.LICENSE_KEY_ENV_VAR = &quot;_51DEGREES_LICENSE_KEY&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="ae7651482f880ff8b06b6f6aa5d3df9e9" name="ae7651482f880ff8b06b6f6aa5d3df9e9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae7651482f880ff8b06b6f6aa5d3df9e9">&#9670;&#160;</a></span>NEEDS_ENTERPRISE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">str fiftyone_devicedetection_examples.example_utils.ExampleUtils.NEEDS_ENTERPRISE = &quot;needs the Enterprise data file&quot;</td>
             </tr>
           </table>
         </div>

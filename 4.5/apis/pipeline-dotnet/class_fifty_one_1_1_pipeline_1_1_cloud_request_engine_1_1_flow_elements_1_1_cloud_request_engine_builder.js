@@ -15,6 +15,7 @@ var class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_
     [ "SetLicenseKey", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine_builder.html#af78f052ce183e3c95fcbe228ed3b44df", null ],
     [ "SetPropertiesEndpoint", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine_builder.html#a54e74d89f0e11475f9e6ae1d94198f01", null ],
     [ "SetRecoverySeconds", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine_builder.html#a69e717355b5d9e4f0a46261a2988cb0a", null ],
+    [ "SetRequestedProperties", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine_builder.html#aa362a7bb671b453be80e8a002e12b1a1", null ],
     [ "SetResourceKey", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine_builder.html#a6d1adde56e228898b0f45ad2b0e7024c", null ],
     [ "SetTimeOutSeconds", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine_builder.html#a43f74108950201b7f3ccd58562087ec9", null ],
     [ "SetUseExponentialBackoff", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine_builder.html#ad4f2c8d44a427c866bdfaa82440a5f09", null ]

@@ -11,11 +11,11 @@
 <!-- Node0 -->
 <g id="Node000000" class="node">
 <title>Node0</title>
-<g id="a_Node000000"><a xlink:href="class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_cloud_1_1_test_cloud_web_example.html" target="_top" xlink:title="Runs the Cloud GettingStarted&#45;Web example in&#45;process (via its Program.Run entry point,...">
+<g id="a_Node000000"><a xlink:href="class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_cloud_1_1_test_cloud_mixed_web_example.html" target="_top" xlink:title="Runs the combined (device detection + IP intelligence) Cloud GettingStarted&#45;Web example in&#45;process ag...">
 <polygon fill="white" stroke="#666666" points="168,-41 0,-41 0,0 168,0 168,-41"/>
 <text text-anchor="start" x="8" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">FiftyOne.IpIntelligence.</text>
 <text text-anchor="start" x="8" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">Example.Tests.Cloud.TestCloud</text>
-<text text-anchor="middle" x="84" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">WebExample</text>
+<text text-anchor="middle" x="84" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">MixedWebExample</text>
 </a>
 </g>
 </g>

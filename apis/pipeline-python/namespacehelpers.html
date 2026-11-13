@@ -70,11 +70,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('namespacehelpe
 <div class="textblock"><pre class="fragment">Helpers the example tests share.</pre> </div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="c-table__row memitem:a797ed46539c20be6f5165c474ad39c6e" id="r_a797ed46539c20be6f5165c474ad39c6e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a797ed46539c20be6f5165c474ad39c6e">credentials</a> (keys)</td></tr>
 <tr class="c-table__row memitem:a5b635dd25a400a0492636661f04362db" id="r_a5b635dd25a400a0492636661f04362db"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a5b635dd25a400a0492636661f04362db">cell_after</a> (page, label)</td></tr>
 <tr class="c-table__row memitem:a807b54c75f71b79bbfd59c59a9e02d75" id="r_a807b54c75f71b79bbfd59c59a9e02d75"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a807b54c75f71b79bbfd59c59a9e02d75">country_options</a> (page)</td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="c-table__row memitem:a25b781c4747df7cf606fc9dcc857ab1c" id="r_a25b781c4747df7cf606fc9dcc857ab1c"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a25b781c4747df7cf606fc9dcc857ab1c">NO_KEY</a></td></tr>
 <tr class="c-table__row memitem:a4a01af2b857b550b1809ac19ff89581d" id="r_a4a01af2b857b550b1809ac19ff89581d"><td class="c-table__cell">list&#160;</td><td class="c-table__cell"><a class="el" href="#a4a01af2b857b550b1809ac19ff89581d">KEYS</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
@@ -126,6 +128,28 @@ or None when the page has no such row.
 <pre class="fragment">The (code, name) pairs of the country list on the page.</pre> 
 </div>
 </div>
+<a id="a797ed46539c20be6f5165c474ad39c6e" name="a797ed46539c20be6f5165c474ad39c6e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a797ed46539c20be6f5165c474ad39c6e">&#9670;&#160;</a></span>credentials()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">credentials </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>keys</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<pre class="fragment">The keyword arguments from KEYS, failing the test when they hold a
+resource key that is not set.</pre> 
+</div>
+</div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>
 <a id="a4a01af2b857b550b1809ac19ff89581d" name="a4a01af2b857b550b1809ac19ff89581d"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4a01af2b857b550b1809ac19ff89581d">&#9670;&#160;</a></span>KEYS</h2>
@@ -144,14 +168,8 @@ or None when the page has no such row.
 </div><div class="c-member__body">
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=  [</div>
 <div class="c-code__line">    pytest.param(</div>
-<div class="c-code__line">        {<span class="c-code__stringliteral">&quot;resource_key&quot;</span>: ExampleUtils.get_resource_key()},</div>
-<div class="c-code__line">        id=<span class="c-code__stringliteral">&quot;resource key&quot;</span>,</div>
-<div class="c-code__line">        marks=pytest.mark.skipif(</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">not</span> ExampleUtils.get_resource_key(),</div>
-<div class="c-code__line">            reason=f<span class="c-code__stringliteral">&quot;Set {ExampleUtils.RESOURCE_KEY_ENV_VAR} to a resource &quot;</span></div>
-<div class="c-code__line">                   <span class="c-code__stringliteral">&quot;key carrying device detection and IP intelligence &quot;</span></div>
-<div class="c-code__line">                   <span class="c-code__stringliteral">&quot;properties to run the cloud tests with a resource &quot;</span></div>
-<div class="c-code__line">                   <span class="c-code__stringliteral">&quot;key.&quot;</span>)),</div>
+<div class="c-code__line">        {<span class="c-code__stringliteral">&quot;resource_key&quot;</span>: find_resource_key()},</div>
+<div class="c-code__line">        id=<span class="c-code__stringliteral">&quot;resource key&quot;</span>),</div>
 <div class="c-code__line">    pytest.param(</div>
 <div class="c-code__line">        {<span class="c-code__stringliteral">&quot;license_key&quot;</span>: ExampleUtils.get_license_key()},</div>
 <div class="c-code__line">        id=<span class="c-code__stringliteral">&quot;licence key&quot;</span>,</div>
@@ -162,6 +180,28 @@ or None when the page has no such row.
 <div class="c-code__line">                   <span class="c-code__stringliteral">&quot;properties to run the cloud tests with a licence &quot;</span></div>
 <div class="c-code__line">                   <span class="c-code__stringliteral">&quot;key.&quot;</span>)),</div>
 <div class="c-code__line">]</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a25b781c4747df7cf606fc9dcc857ab1c" name="a25b781c4747df7cf606fc9dcc857ab1c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a25b781c4747df7cf606fc9dcc857ab1c">&#9670;&#160;</a></span>NO_KEY</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">helpers.NO_KEY</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=  no_resource_key(</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;the device, ip and countrynamestranslated products&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;device detection and IP Intelligence properties, and the translated &quot;</span></div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;country names&quot;</span>, several=<span class="c-code__keyword">True</span>)</div>
 </div><!-- fragment -->
 </div>
 </div>

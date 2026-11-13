@@ -73,6 +73,11 @@ Static Public Attributes</h2></td></tr>
 <tr class="c-table__row memitem:afe539bd740bbeff494dc3393349d44b1" id="r_afe539bd740bbeff494dc3393349d44b1"><td class="c-table__cell"><a id="afe539bd740bbeff494dc3393349d44b1" name="afe539bd740bbeff494dc3393349d44b1"></a>
 const&#160;string&#160;</td><td class="c-table__cell"><b>ENTERPRISE_IPI_DATA_FILE_NAME</b> = &quot;51Degrees-EnterpriseIpiV41.ipi&quot;</td></tr>
 <tr class="c-table__row memdesc:afe539bd740bbeff494dc3393349d44b1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default name of the paid-for enterprise IP Intelligence data file. <br /></td></tr>
+<tr class="c-table__row memitem:ae2bd08c955e3072c8f4e820b275bfcad" id="r_ae2bd08c955e3072c8f4e820b275bfcad"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#ae2bd08c955e3072c8f4e820b275bfcad">LITE_IPI_DATA_FILE_NAME</a> = &quot;51Degrees-LiteV41.ipi&quot;</td></tr>
+<tr class="c-table__row memdesc:ae2bd08c955e3072c8f4e820b275bfcad"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The free IP Intelligence data file with the registration properties, which the examples that show location or registration properties use by default.  <br /></td></tr>
+<tr class="c-table__row memitem:a6adb0b0d4af0174491f9ae4ae456bba5" id="r_a6adb0b0d4af0174491f9ae4ae456bba5"><td class="c-table__cell"><a id="a6adb0b0d4af0174491f9ae4ae456bba5" name="a6adb0b0d4af0174491f9ae4ae456bba5"></a>
+const&#160;string&#160;</td><td class="c-table__cell"><b>ASN_IPI_DATA_FILE_NAME</b> = &quot;51Degrees-IPIV4AsnIpiV41.ipi&quot;</td></tr>
+<tr class="c-table__row memdesc:a6adb0b0d4af0174491f9ae4ae456bba5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The free IP Intelligence data file with Asn and AsnName, which the performance and update examples use by default because it is far smaller to download than the Lite file. <br /></td></tr>
 <tr class="c-table__row memitem:a486372e302dcbdaace2d9f8c0ee11c8e" id="r_a486372e302dcbdaace2d9f8c0ee11c8e"><td class="c-table__cell"><a id="a486372e302dcbdaace2d9f8c0ee11c8e" name="a486372e302dcbdaace2d9f8c0ee11c8e"></a>
 const&#160;string&#160;</td><td class="c-table__cell"><b>YAML_EVIDENCE_FILE_NAME</b> = &quot;evidence.yml&quot;</td></tr>
 <tr class="c-table__row memdesc:a486372e302dcbdaace2d9f8c0ee11c8e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Name of the file to use for the test evidence. <br /></td></tr>
@@ -82,10 +87,17 @@ const&#160;string&#160;</td><td class="c-table__cell"><b>GEOIP_COMPARISON_EVIDEN
 <tr class="c-table__row memitem:a597a46ebf359d012e2c2c35ffc2fc766" id="r_a597a46ebf359d012e2c2c35ffc2fc766"><td class="c-table__cell"><a id="a597a46ebf359d012e2c2c35ffc2fc766" name="a597a46ebf359d012e2c2c35ffc2fc766"></a>
 const&#160;string&#160;</td><td class="c-table__cell"><b>LICENSE_KEY_ENV_VAR</b> = &quot;IPINTELLIGENCELICENSEKEY_DOTNET&quot;</td></tr>
 <tr class="c-table__row memdesc:a597a46ebf359d012e2c2c35ffc2fc766"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Environment variable key for the license key file to use for the tests. <br /></td></tr>
-<tr class="c-table__row memitem:a4f35f9ae08cbf43ee9df4aaa7912c206" id="r_a4f35f9ae08cbf43ee9df4aaa7912c206"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a4f35f9ae08cbf43ee9df4aaa7912c206">IP_INTELLIGENCE_DATA_FILE_ENV_VAR</a> = &quot;51DEGREES_IPI_PATH&quot;</td></tr>
-<tr class="c-table__row memdesc:a4f35f9ae08cbf43ee9df4aaa7912c206"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Environment variable key used to supply an explicit path to the IP Intelligence data file.  <br /></td></tr>
-<tr class="c-table__row memitem:a28bc635971f8655500cf40ddf139a031" id="r_a28bc635971f8655500cf40ddf139a031"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a28bc635971f8655500cf40ddf139a031">LEGACY_IP_INTELLIGENCE_DATA_FILE_ENV_VAR</a> = &quot;IPINTELLIGENCEDATAFILE&quot;</td></tr>
-<tr class="c-table__row memdesc:a28bc635971f8655500cf40ddf139a031"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Legacy environment variable key used to supply an explicit path to the IP Intelligence data file.  <br /></td></tr>
+<tr class="c-table__row memitem:af8b89607aa8e921eabc2e7040b335c34" id="r_af8b89607aa8e921eabc2e7040b335c34"><td class="c-table__cell"><a id="af8b89607aa8e921eabc2e7040b335c34" name="af8b89607aa8e921eabc2e7040b335c34"></a>
+const&#160;string&#160;</td><td class="c-table__cell"><b>IPI_PATH_ENV_VAR</b> = &quot;_51DEGREES_IPI_PATH&quot;</td></tr>
+<tr class="c-table__row memdesc:af8b89607aa8e921eabc2e7040b335c34"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Environment variable key used to supply an explicit path to the IP Intelligence data file. <br /></td></tr>
+<tr class="c-table__row memitem:a4f35f9ae08cbf43ee9df4aaa7912c206" id="r_a4f35f9ae08cbf43ee9df4aaa7912c206"><td class="c-table__cell"><a id="a4f35f9ae08cbf43ee9df4aaa7912c206" name="a4f35f9ae08cbf43ee9df4aaa7912c206"></a>
+const&#160;string&#160;</td><td class="c-table__cell"><b>IP_INTELLIGENCE_DATA_FILE_ENV_VAR</b> = &quot;51DEGREES_IPI_PATH&quot;</td></tr>
+<tr class="c-table__row memdesc:a4f35f9ae08cbf43ee9df4aaa7912c206"><td class="c-table__cell">&#160;</td><td class="c-table__cell">An old environment variable for the path to the IP Intelligence data file, read only when IPI_PATH_ENV_VAR is not set. <br /></td></tr>
+<tr class="c-table__row memitem:a28bc635971f8655500cf40ddf139a031" id="r_a28bc635971f8655500cf40ddf139a031"><td class="c-table__cell"><a id="a28bc635971f8655500cf40ddf139a031" name="a28bc635971f8655500cf40ddf139a031"></a>
+const&#160;string&#160;</td><td class="c-table__cell"><b>LEGACY_IP_INTELLIGENCE_DATA_FILE_ENV_VAR</b> = &quot;IPINTELLIGENCEDATAFILE&quot;</td></tr>
+<tr class="c-table__row memdesc:a28bc635971f8655500cf40ddf139a031"><td class="c-table__cell">&#160;</td><td class="c-table__cell">An old environment variable for the path to the IP Intelligence data file, read only when IPI_PATH_ENV_VAR is not set. <br /></td></tr>
+<tr class="c-table__row memitem:af9b5b80653309b0739bd62922f28f7dd" id="r_af9b5b80653309b0739bd62922f28f7dd"><td class="c-table__cell">static&#160;readonly&#160;string[]&#160;</td><td class="c-table__cell"><a class="el" href="#af9b5b80653309b0739bd62922f28f7dd">OLD_IP_INTELLIGENCE_DATA_FILE_ENV_VARS</a></td></tr>
+<tr class="c-table__row memdesc:af9b5b80653309b0739bd62922f28f7dd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The old names of IPI_PATH_ENV_VAR, read in this order only when that variable is not set.  <br /></td></tr>
 <tr class="c-table__row memitem:a98ebc55707116e1523948617bd86e054" id="r_a98ebc55707116e1523948617bd86e054"><td class="c-table__cell"><a id="a98ebc55707116e1523948617bd86e054" name="a98ebc55707116e1523948617bd86e054"></a>
 const&#160;string&#160;</td><td class="c-table__cell"><b>EVIDENCE_FILE_ENV_VAR</b> = &quot;EVIDENCEFILE&quot;</td></tr>
 <tr class="c-table__row memdesc:a98ebc55707116e1523948617bd86e054"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Environment variable key for the evidence file to use for the tests. <br /></td></tr>
@@ -103,8 +115,8 @@ static&#160;string[]&#160;</td><td class="c-table__cell"><b>AllUrls</b><code> [g
 <tr class="c-table__row memdesc:ae57c252ee1e88e980e3699e63bdf9f12"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The URLs that the web server should listen on. <br /></td></tr>
 </table>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
-<a id="a4f35f9ae08cbf43ee9df4aaa7912c206" name="a4f35f9ae08cbf43ee9df4aaa7912c206"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4f35f9ae08cbf43ee9df4aaa7912c206">&#9670;&#160;</a></span>IP_INTELLIGENCE_DATA_FILE_ENV_VAR</h2>
+<a id="ae2bd08c955e3072c8f4e820b275bfcad" name="ae2bd08c955e3072c8f4e820b275bfcad"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae2bd08c955e3072c8f4e820b275bfcad">&#9670;&#160;</a></span>LITE_IPI_DATA_FILE_NAME</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -115,7 +127,7 @@ static&#160;string[]&#160;</td><td class="c-table__cell"><b>AllUrls</b><code> [g
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">const string FiftyOne.IpIntelligence.Examples.Constants.IP_INTELLIGENCE_DATA_FILE_ENV_VAR = &quot;51DEGREES_IPI_PATH&quot;</td>
+              <td class="c-table__cell">const string FiftyOne.IpIntelligence.Examples.Constants.LITE_IPI_DATA_FILE_NAME = &quot;51Degrees-LiteV41.ipi&quot;</td>
             </tr>
           </table>
         </div>
@@ -127,37 +139,8 @@ static&#160;string[]&#160;</td><td class="c-table__cell"><b>AllUrls</b><code> [g
 </table>
 </div><div class="c-member__body">
 
-<p>Environment variable key used to supply an explicit path to the IP Intelligence data file. </p>
-<p>This aligned name is checked first, before any legacy variable names. </p>
-
-</div>
-</div>
-<a id="a28bc635971f8655500cf40ddf139a031" name="a28bc635971f8655500cf40ddf139a031"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a28bc635971f8655500cf40ddf139a031">&#9670;&#160;</a></span>LEGACY_IP_INTELLIGENCE_DATA_FILE_ENV_VAR</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">const string FiftyOne.IpIntelligence.Examples.Constants.LEGACY_IP_INTELLIGENCE_DATA_FILE_ENV_VAR = &quot;IPINTELLIGENCEDATAFILE&quot;</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="c-member__body">
-
-<p>Legacy environment variable key used to supply an explicit path to the IP Intelligence data file. </p>
-<p>Retained for backwards compatibility and checked when IP_INTELLIGENCE_DATA_FILE_ENV_VAR is not set. </p>
+<p>The free IP Intelligence data file with the registration properties, which the examples that show location or registration properties use by default. </p>
+<p>The data repository links it, and the examples download it when it is missing. </p>
 
 </div>
 </div>
@@ -218,6 +201,41 @@ static&#160;string[]&#160;</td><td class="c-table__cell"><b>AllUrls</b><code> [g
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                             =</div>
 <div class="c-code__line">PortsFromEnvironment(<span class="c-code__stringliteral">&quot;_51DEGREES_EXAMPLE_HTTPS_PORTS&quot;</span>, <span class="c-code__keyword">new</span> <span class="c-code__keywordtype">int</span>[] { 5001, 5002 })</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="af9b5b80653309b0739bd62922f28f7dd" name="af9b5b80653309b0739bd62922f28f7dd"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af9b5b80653309b0739bd62922f28f7dd">&#9670;&#160;</a></span>OLD_IP_INTELLIGENCE_DATA_FILE_ENV_VARS</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">readonly string [] FiftyOne.IpIntelligence.Examples.Constants.OLD_IP_INTELLIGENCE_DATA_FILE_ENV_VARS</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                                                     = <span class="c-code__keyword">new</span> <span class="c-code__keywordtype">string</span>[]</div>
+<div class="c-code__line">{</div>
+<div class="c-code__line">    <a class="code hl_variable" href="#a4f35f9ae08cbf43ee9df4aaa7912c206">IP_INTELLIGENCE_DATA_FILE_ENV_VAR</a>,</div>
+<div class="c-code__line">    <a class="code hl_variable" href="#a28bc635971f8655500cf40ddf139a031">LEGACY_IP_INTELLIGENCE_DATA_FILE_ENV_VAR</a>,</div>
+<div class="c-code__line">}</div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_constants_html_a28bc635971f8655500cf40ddf139a031"><div class="ttname"><a href="#a28bc635971f8655500cf40ddf139a031">FiftyOne.IpIntelligence.Examples.Constants.LEGACY_IP_INTELLIGENCE_DATA_FILE_ENV_VAR</a></div><div class="ttdeci">const string LEGACY_IP_INTELLIGENCE_DATA_FILE_ENV_VAR</div><div class="ttdoc">An old environment variable for the path to the IP Intelligence data file, read only when IPI_PATH_EN...</div><div class="ttdef"><b>Definition</b> Examples/Constants.cs:89</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_constants_html_a4f35f9ae08cbf43ee9df4aaa7912c206"><div class="ttname"><a href="#a4f35f9ae08cbf43ee9df4aaa7912c206">FiftyOne.IpIntelligence.Examples.Constants.IP_INTELLIGENCE_DATA_FILE_ENV_VAR</a></div><div class="ttdeci">const string IP_INTELLIGENCE_DATA_FILE_ENV_VAR</div><div class="ttdoc">An old environment variable for the path to the IP Intelligence data file, read only when IPI_PATH_EN...</div><div class="ttdef"><b>Definition</b> Examples/Constants.cs:80</div></div>
+</div><!-- fragment -->
+<p>The old names of IPI_PATH_ENV_VAR, read in this order only when that variable is not set. </p>
+
 </div>
 </div>
 </div><!-- primary -->

@@ -26,6 +26,7 @@ var NAVTREE =
 [
   [ "51Degrees Device Detection On-Premise PHP", "index.html", [
     [ "General Docs", "/documentation/4.5/index.html", null ],
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Classes", "annotated.html", "annotated" ],
     [ "Examples", "examples.html", "examples" ]
   ] ]

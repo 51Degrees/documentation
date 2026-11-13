@@ -67,10 +67,132 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:afcb8b8940552286f9825f98cad56a638" id="r_afcb8b8940552286f9825f98cad56a638"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#afcb8b8940552286f9825f98cad56a638">javascriptResponse</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html">FlowData</a> $flowData, ?array $server=null, int $maxAgeSeconds=self::CLIENT_SIDE_MAX_AGE_SECONDS)</td></tr>
+<tr class="c-table__row memdesc:afcb8b8940552286f9825f98cad56a638"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Answer a request for the client-side JavaScript with the JavaScript the Pipeline's JavaScript Builder Element writes, and the cache headers of the web integration specification.  <br /></td></tr>
+<tr class="c-table__row memitem:a0d6fd4026e82a05887714b88425ff8f9" id="r_a0d6fd4026e82a05887714b88425ff8f9"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a0d6fd4026e82a05887714b88425ff8f9">jsonResponse</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html">FlowData</a> $flowData, ?array $server=null, int $maxAgeSeconds=self::CLIENT_SIDE_MAX_AGE_SECONDS)</td></tr>
+<tr class="c-table__row memdesc:a0d6fd4026e82a05887714b88425ff8f9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Answer a request from the client-side JavaScript with the JSON the Pipeline's JSON Builder Element writes, in the same way as javascriptResponse().  <br /></td></tr>
 <tr class="c-table__row memitem:ab2f8fb9bbd3823476b38d061e59557ef" id="r_ab2f8fb9bbd3823476b38d061e59557ef"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#ab2f8fb9bbd3823476b38d061e59557ef">setResponseHeader</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html">FlowData</a> $flowData)</td></tr>
 <tr class="c-table__row memdesc:ab2f8fb9bbd3823476b38d061e59557ef"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set response headers in the response object (e.g.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="c-table__row memitem:a2ca4e76a75847d8d4743ad84addf69d9" id="r_a2ca4e76a75847d8d4743ad84addf69d9"><td class="c-table__cell"><a id="a2ca4e76a75847d8d4743ad84addf69d9" name="a2ca4e76a75847d8d4743ad84addf69d9"></a>
+const&#160;</td><td class="c-table__cell"><b>CLIENT_SIDE_MAX_AGE_SECONDS</b> = 1800</td></tr>
+<tr class="c-table__row memdesc:a2ca4e76a75847d8d4743ad84addf69d9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">How long a browser may keep a client-side response, unless the caller gives another time. <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="afcb8b8940552286f9825f98cad56a638" name="afcb8b8940552286f9825f98cad56a638"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#afcb8b8940552286f9825f98cad56a638">&#9670;&#160;</a></span>javascriptResponse()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\core\Utils::javascriptResponse </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html">FlowData</a></td>          <td class="c-table__cell"><span class="paramname"><em>$flowData</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">?array</td>          <td class="c-table__cell"><span class="paramname"><em>$server</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>$maxAgeSeconds</em></span><span class="paramdefsep"> = </span><span class="paramdefval">self::CLIENT_SIDE_MAX_AGE_SECONDS</span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Answer a request for the client-side JavaScript with the JavaScript the Pipeline's JavaScript Builder Element writes, and the cache headers of the web integration specification. </p>
+<p>The FlowData holds the request's Evidence and has not been processed, because the ETag is a hash of the Evidence the request supplied, and processing adds Evidence, such as the session id the Sequence Element gives a request without one. The ETag is weak, W/"...", because the response can change while the Evidence does not, for example when the data file is updated.</p>
+<p>A request whose If-None-Match header matches the ETag, by the weak comparison of RFC 9110 section 13.1.2, is not processed. It gets a 304 when it is a GET or HEAD and a 412 otherwise. An If-None-Match that is neither "*" nor a list of entity tags matches nothing. Any other request is processed and gets a 200 with Cache-Control 'max-age=1800, private', or the max age given, and the ETag, or 'private, no-cache' and no ETag when processing recorded errors.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">\fiftyone\pipeline\core\FlowData</td><td class="paramname">$flowData</td><td>The request's FlowData, with its Evidence set and not yet processed </td></tr>
+    <tr><td class="paramtype"></td><td class="paramname">null|array&lt;string,mixed&gt;</td><td>$server The request's server values, $_SERVER when not given </td></tr>
+    <tr><td class="paramtype">int</td><td class="paramname">$maxAgeSeconds</td><td>How long a browser may keep the response </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>LogicException When the FlowData has been processed </p>
+
+</div>
+</div>
+<a id="a0d6fd4026e82a05887714b88425ff8f9" name="a0d6fd4026e82a05887714b88425ff8f9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0d6fd4026e82a05887714b88425ff8f9">&#9670;&#160;</a></span>jsonResponse()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\core\Utils::jsonResponse </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html">FlowData</a></td>          <td class="c-table__cell"><span class="paramname"><em>$flowData</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">?array</td>          <td class="c-table__cell"><span class="paramname"><em>$server</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>$maxAgeSeconds</em></span><span class="paramdefsep"> = </span><span class="paramdefval">self::CLIENT_SIDE_MAX_AGE_SECONDS</span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Answer a request from the client-side JavaScript with the JSON the Pipeline's JSON Builder Element writes, in the same way as javascriptResponse(). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">\fiftyone\pipeline\core\FlowData</td><td class="paramname">$flowData</td><td>The request's FlowData, with its Evidence set and not yet processed </td></tr>
+    <tr><td class="paramtype"></td><td class="paramname">null|array&lt;string,mixed&gt;</td><td>$server The request's server values, $_SERVER when not given </td></tr>
+    <tr><td class="paramtype">int</td><td class="paramname">$maxAgeSeconds</td><td>How long a browser may keep the response </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>LogicException When the FlowData has been processed </p>
+
+</div>
+</div>
 <a id="ab2f8fb9bbd3823476b38d061e59557ef" name="ab2f8fb9bbd3823476b38d061e59557ef"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab2f8fb9bbd3823476b38d061e59557ef">&#9670;&#160;</a></span>setResponseHeader()</h2>
 

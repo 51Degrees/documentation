@@ -87,6 +87,8 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a8fca0a3a0537773bc14fa5b7ebf7279e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add a cache to an engine @type cashe: Cache.  <br /></td></tr>
 <tr class="c-table__row memitem:a590c7edef7b575fae02471b6f54dd2b4" id="r_a590c7edef7b575fae02471b6f54dd2b4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a590c7edef7b575fae02471b6f54dd2b4">set_restricted_properties</a> (self, properties_list)</td></tr>
 <tr class="c-table__row memdesc:a590c7edef7b575fae02471b6f54dd2b4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add a subset of properties.  <br /></td></tr>
+<tr class="c-table__row memitem:aa501672dba2df3eec445da9ae7306e97" id="r_aa501672dba2df3eec445da9ae7306e97"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aa501672dba2df3eec445da9ae7306e97">is_cacheable</a> (self, data)</td></tr>
+<tr class="c-table__row memdesc:aa501672dba2df3eec445da9ae7306e97"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether a result may be stored in the cache and served from it.  <br /></td></tr>
 <tr class="c-table__row memitem:a9d186f20091539afd22a08f28f387805" id="r_a9d186f20091539afd22a08f28f387805"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a9d186f20091539afd22a08f28f387805">in_cache</a> (self, flowdata)</td></tr>
 <tr class="c-table__row memdesc:a9d186f20091539afd22a08f28f387805"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A method to check if a flowdata's evidence is in the cache.  <br /></td></tr>
 <tr class="c-table__row memitem:a33b6757ea1c9e08cd1f1ae487cb47cb1" id="r_a33b6757ea1c9e08cd1f1ae487cb47cb1"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a33b6757ea1c9e08cd1f1ae487cb47cb1">refresh</a> (self, identifier)</td></tr>
@@ -102,11 +104,11 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a44bb0edd021c4c590564ab9213200bdb pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_a44bb0edd021c4c590564ab9213200bdb"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a44bb0edd021c4c590564ab9213200bdb">__init__</a> (self)</td></tr>
 <tr class="c-table__row memdesc:a44bb0edd021c4c590564ab9213200bdb pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">List of Pipelines the <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a> has been added to.  <br /></td></tr>
 <tr class="c-table__row memitem:a9f6d0d676d9e46c751a330b758bf005a pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_a9f6d0d676d9e46c751a330b758bf005a"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a9f6d0d676d9e46c751a330b758bf005a">get_evidence_key_filter</a> (self)</td></tr>
-<tr class="c-table__row memdesc:a9f6d0d676d9e46c751a330b758bf005a pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Filter FlowData evidence using the <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a>'s <a class="el" href="classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter.html" title="An EvidenceKeyFilter is attached to a FlowElement and is used to check if a specific evidence key is ...">EvidenceKeyFilter</a>.  <br /></td></tr>
+<tr class="c-table__row memdesc:a9f6d0d676d9e46c751a330b758bf005a pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The evidence this element accepts.  <br /></td></tr>
 <tr class="c-table__row memitem:ad870f1ebf5441d563b950d22f739d66e pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_ad870f1ebf5441d563b950d22f739d66e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#ad870f1ebf5441d563b950d22f739d66e">filter_evidence</a> (self, flowdata)</td></tr>
-<tr class="c-table__row memdesc:ad870f1ebf5441d563b950d22f739d66e pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Filter FlowData evidence using the <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a>'s <a class="el" href="classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter.html" title="An EvidenceKeyFilter is attached to a FlowElement and is used to check if a specific evidence key is ...">EvidenceKeyFilter</a>.  <br /></td></tr>
+<tr class="c-table__row memdesc:ad870f1ebf5441d563b950d22f739d66e pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Filter FlowData evidence using the <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a>'s EvidenceKeyFilter.  <br /></td></tr>
 <tr class="c-table__row memitem:abd27d7810ba73ae7f460e41f60a838a2 pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_abd27d7810ba73ae7f460e41f60a838a2"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#abd27d7810ba73ae7f460e41f60a838a2">filter_evidence_key</a> (self, key)</td></tr>
-<tr class="c-table__row memdesc:abd27d7810ba73ae7f460e41f60a838a2 pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Filter FlowData.evidence using the flowElement's <a class="el" href="classfiftyone__pipeline__core_1_1evidence__keyfilter_1_1_evidence_key_filter.html" title="An EvidenceKeyFilter is attached to a FlowElement and is used to check if a specific evidence key is ...">EvidenceKeyFilter</a> with the property key of evidence of interest.  <br /></td></tr>
+<tr class="c-table__row memdesc:abd27d7810ba73ae7f460e41f60a838a2 pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Filter FlowData.evidence using the flowElement's EvidenceKeyFilter with the property key of evidence of interest.  <br /></td></tr>
 <tr class="c-table__row memitem:a540ed3394206666a4bb903b4043a8e7e pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_a540ed3394206666a4bb903b4043a8e7e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a540ed3394206666a4bb903b4043a8e7e">process_internal</a> (self, flowdata)</td></tr>
 <tr class="c-table__row memdesc:a540ed3394206666a4bb903b4043a8e7e pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The method behind FlowElement.Process - it is called by the <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a683ea183b45834f94a4f4784676f8d65" title="Function for getting the FlowElement&#39;s EvidenceKeyFilter Used by the filterEvidence method.">process()</a> function.  <br /></td></tr>
 <tr class="c-table__row memitem:a7a8ee50d64418ed21fba58d137071ac7 pub_methods_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_a7a8ee50d64418ed21fba58d137071ac7"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a7a8ee50d64418ed21fba58d137071ac7">get_properties</a> (self)</td></tr>
@@ -117,6 +119,7 @@ Public Attributes</h2></td></tr>
 <tr class="c-table__row memitem:a204eafca1dfafd1fbd3c6df369576c3f" id="r_a204eafca1dfafd1fbd3c6df369576c3f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a204eafca1dfafd1fbd3c6df369576c3f">data_file</a> = data_file</td></tr>
 <tr class="c-table__row memitem:a0396e4bed172e18cc6846bdd48d7252f" id="r_a0396e4bed172e18cc6846bdd48d7252f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a0396e4bed172e18cc6846bdd48d7252f">cache</a> = cache</td></tr>
 <tr class="c-table__row memitem:a15dd701f65716016830617f3b48a888d" id="r_a15dd701f65716016830617f3b48a888d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a15dd701f65716016830617f3b48a888d">restricted_properties</a> = properties_list</td></tr>
+<tr class="c-table__row memitem:ac717dfff7c7cb04855fd6673c689bb59" id="r_ac717dfff7c7cb04855fd6673c689bb59"><td class="c-table__cell">dict&#160;</td><td class="c-table__cell"><a class="el" href="#ac717dfff7c7cb04855fd6673c689bb59">restricted_property_keys</a></td></tr>
 <tr class="c-table__row inherit_header pub_attribs_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Attributes inherited from <a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html">fiftyone_pipeline_core.flowelement.FlowElement</a></h3></td></tr>
 <tr class="c-table__row memitem:a3a1e41ed484fb4d31b9e77adce3f73a9 pub_attribs_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_a3a1e41ed484fb4d31b9e77adce3f73a9"><td class="c-table__cell">list&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#a3a1e41ed484fb4d31b9e77adce3f73a9">pipelines</a> = []</td></tr>
 <tr class="c-table__row memitem:aab48c05219b1384dd62c6698c15d12d1 pub_attribs_classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element" id="r_aab48c05219b1384dd62c6698c15d12d1"><td class="c-table__cell">dict&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html#aab48c05219b1384dd62c6698c15d12d1">properties</a> = {}</td></tr>
@@ -209,6 +212,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>A method to check if a flowdata's evidence is in the cache. </p>
+<p>An entry the engine may not serve, because it holds a value created for the one request that asked for it, counts as a miss and is left where it is, so the engine processes the flowdata as if nothing was there.</p>
 <p>@type FlowData: FlowData </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">FlowData</td><td></td></tr>
@@ -216,6 +220,43 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <p>@rtype: bool </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: True or false: a flowdata's evidence is in the cache </dd></dl>
+
+</div>
+</div>
+<a id="aa501672dba2df3eec445da9ae7306e97" name="aa501672dba2df3eec445da9ae7306e97"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa501672dba2df3eec445da9ae7306e97">&#9670;&#160;</a></span>is_cacheable()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_engines.engine.Engine.is_cacheable </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>data</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Whether a result may be stored in the cache and served from it. </p>
+<p>A result that holds a value created for the one request that asked for it must not be, so an engine whose results can hold one overrides this.</p>
+<p>@type data: ElementData </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>A result the engine has just made, or one found in the cache</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>@rtype: bool </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: True if the result may be stored and served </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classfiftyone__pipeline__cloudrequestengine_1_1cloudrequestengine_1_1_cloud_request_engine.html#a0849042e6d3d31a7616ef7a7d184172f">fiftyone_pipeline_cloudrequestengine.cloudrequestengine.CloudRequestEngine</a>.</p>
 
 </div>
 </div>
@@ -469,6 +510,26 @@ Additional Inherited Members</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
+</div>
+</div>
+<a id="ac717dfff7c7cb04855fd6673c689bb59" name="ac717dfff7c7cb04855fd6673c689bb59"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac717dfff7c7cb04855fd6673c689bb59">&#9670;&#160;</a></span>restricted_property_keys</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">dict fiftyone_pipeline_engines.engine.Engine.restricted_property_keys</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=  {</div>
+<div class="c-code__line">            name.lower() <span class="c-code__keywordflow">for</span> name <span class="c-code__keywordflow">in</span> properties_list}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- primary -->

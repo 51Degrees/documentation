@@ -90,6 +90,8 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a166370b19d93658658324ca434bda724"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor.  <br /></td></tr>
 <tr class="c-table__row memitem:aa7d299c1b774cac1a76b89e52bcf2237" id="r_aa7d299c1b774cac1a76b89e52bcf2237"><td class="c-table__cell"><a class="el" href="#a12d7e6d207837c2ee59cca7c118c0fc5">FiftyOnePipelineBuilder</a>&#160;</td><td class="c-table__cell"><a class="el" href="#aa7d299c1b774cac1a76b89e52bcf2237">SetShareUsage</a> (bool enabled)</td></tr>
 <tr class="c-table__row memdesc:aa7d299c1b774cac1a76b89e52bcf2237"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set share usage enabled/disabled.  <br /></td></tr>
+<tr class="c-table__row memitem:a2e6dcc8b58780d11de57f68e6023e294" id="r_a2e6dcc8b58780d11de57f68e6023e294"><td class="c-table__cell"><a class="el" href="#a12d7e6d207837c2ee59cca7c118c0fc5">FiftyOnePipelineBuilder</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a2e6dcc8b58780d11de57f68e6023e294">SetSequenceElement</a> (bool enabled)</td></tr>
+<tr class="c-table__row memdesc:a2e6dcc8b58780d11de57f68e6023e294"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set whether the sequence element is added when the pipeline does not already have one.  <br /></td></tr>
 <tr class="c-table__row inherit_header pub_methods_class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_pipeline_builder"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_pipeline_builder.html">FiftyOne.Pipeline.Core.FlowElements.PipelineBuilder</a></h3></td></tr>
 <tr class="c-table__row memitem:ab426c8eff6d11dba48d3a6ed05b88f76 pub_methods_class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_pipeline_builder" id="r_ab426c8eff6d11dba48d3a6ed05b88f76"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_pipeline_builder.html#ab426c8eff6d11dba48d3a6ed05b88f76">PipelineBuilder</a> (ILoggerFactory loggerFactory)</td></tr>
 <tr class="c-table__row memdesc:ab426c8eff6d11dba48d3a6ed05b88f76 pub_methods_class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_pipeline_builder"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Create a new PipelineBuilder instance.  <br /></td></tr>
@@ -226,6 +228,37 @@ ILoggerFactory&#160;</td><td class="c-table__cell"><b>LoggerFactory</b><code> [g
 <p>Called just before the pipeline is built. </p>
 
 <p>Reimplemented from <a class="el" href="class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_pipeline_builder_base-1-g.html#aa76f517fd95a416d5e6ea6393b1f7f94">FiftyOne.Pipeline.Core.FlowElements.PipelineBuilderBase&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a2e6dcc8b58780d11de57f68e6023e294" name="a2e6dcc8b58780d11de57f68e6023e294"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2e6dcc8b58780d11de57f68e6023e294">&#9670;&#160;</a></span>SetSequenceElement()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#a12d7e6d207837c2ee59cca7c118c0fc5">FiftyOnePipelineBuilder</a> FiftyOne.Pipeline.Engines.FiftyOne.FlowElements.FiftyOnePipelineBuilder.SetSequenceElement </td>
+          <td>(</td>
+          <td class="c-table__cell">bool</td>          <td class="c-table__cell"><span class="paramname"><em>enabled</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Set whether the sequence element is added when the pipeline does not already have one. </p>
+<p>Defaults to enabled.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enabled</td><td>true to add the sequence element. False to leave it out. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder instance. </dd></dl>
 
 </div>
 </div>

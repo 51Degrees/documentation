@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fifty_on
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
 <div class="textblock"><p>This test class ensures that the on-premise examples execute successfully and, where practical, produce the output a user would expect. </p>
-<p>These are integration tests: each example builds a real on-premise IP Intelligence engine against the enterprise data file. They therefore require the data file to be present (located automatically, or via the <code>51DEGREES_IPI_PATH</code> environment variable) and are comparatively slow. They go beyond pure smoke testing by asserting on the example output (expected section headers, echoed IPv4 evidence and known property names) rather than just that the example does not crash. </p>
+<p>These are integration tests: each example builds a real on-premise IP Intelligence engine against the enterprise data file. They therefore require the data file to be present (located automatically, or via the <code>_51DEGREES_IPI_PATH</code> environment variable) and are comparatively slow. They go beyond pure smoke testing by asserting on the example output (expected section headers, echoed IPv4 evidence and known property names) rather than just that the example does not crash. </p>
 </div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -121,7 +121,7 @@ TestContext&#160;</td><td class="c-table__cell"><b>TestContext</b><code> [get, s
 </div><div class="c-member__body">
 
 <p>Test the Comparison <a class="el" href="namespace_fifty_one_1_1_ip_intelligence_1_1_example.html">Example</a>. </p>
-<p>Asserts the comparison wrote a non-empty report for the GeoIP truth evidence rather than just completing. </p>
+<p>Runs the example over the first records of the GeoIP truth evidence and asserts the report has the comparison columns and at least one compared record. </p>
 
 </div>
 </div>

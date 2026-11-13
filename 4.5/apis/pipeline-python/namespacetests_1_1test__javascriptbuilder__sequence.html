@@ -66,10 +66,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('namespacetests
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">The script must parse whatever the pipeline holds. The sequence is written
-into the script as bare code and the session id inside quotes, and a pipeline
-built without a SequenceElement, for example from a configuration file that
-does not list one, passes the query string's values, or nothing at all,
-straight to the builder.
+into the script as bare code and the session id inside quotes, and both come
+from the SequenceElement, so every pipeline here has one. A pipeline without
+a SequenceElement renders sequence 1 and an empty session id, which
+test_javascriptbuilder_no_sequence.py covers.
 
 The script is checked with "node --check", which needs Node on the path.
 Every GitHub hosted runner has it.
@@ -80,7 +80,7 @@ Classes</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="c-table__row memitem:a9a45ca03740d021c6fe471526673280e" id="r_a9a45ca03740d021c6fe471526673280e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a9a45ca03740d021c6fe471526673280e">_render</a> (evidence=None, minify=False, sequence_element=False)</td></tr>
+<tr class="c-table__row memitem:abe5fb776a747e03bc119a140742ec9ba" id="r_abe5fb776a747e03bc119a140742ec9ba"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#abe5fb776a747e03bc119a140742ec9ba">_render</a> (evidence=None, minify=False, sequence_element=True)</td></tr>
 <tr class="c-table__row memitem:ac21021678a09c5b7aec29460e89060a6" id="r_ac21021678a09c5b7aec29460e89060a6"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ac21021678a09c5b7aec29460e89060a6">_line</a> (script, name)</td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
@@ -121,8 +121,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a9a45ca03740d021c6fe471526673280e" name="a9a45ca03740d021c6fe471526673280e"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9a45ca03740d021c6fe471526673280e">&#9670;&#160;</a></span>_render()</h2>
+<a id="abe5fb776a747e03bc119a140742ec9ba" name="abe5fb776a747e03bc119a140742ec9ba"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#abe5fb776a747e03bc119a140742ec9ba">&#9670;&#160;</a></span>_render()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -145,7 +145,7 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>sequence_element</em></span><span class="paramdefsep"> = </span><span class="paramdefval">False</span>&#160;)</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>sequence_element</em></span><span class="paramdefsep"> = </span><span class="paramdefval">True</span>&#160;)</td>
         </tr>
           </table>
         </div>
@@ -156,8 +156,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="c-member__body">
-<pre class="fragment">Render the script. With sequence_element False the pipeline has only
-the JSON bundler and the JavaScript builder.</pre> 
+<pre class="fragment">Render the script. The JSON builder fails without a sequence number,
+so the pipeline always has the SequenceElement.</pre> 
 </div>
 </div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>

@@ -79,14 +79,18 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ad982cecc9b60ea9e2a775693dff0e1cf"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a piece of evidence by key.  <br /></td></tr>
 <tr class="c-table__row memitem:ad5a8564c12f27339a0f1d097f077dc7d" id="r_ad5a8564c12f27339a0f1d097f077dc7d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad5a8564c12f27339a0f1d097f077dc7d">get_all</a> (self)</td></tr>
 <tr class="c-table__row memdesc:ad5a8564c12f27339a0f1d097f077dc7d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get all evidence.  <br /></td></tr>
+<tr class="c-table__row memitem:a3e1ee10993bdd5dafc134962ce26e2a3" id="r_a3e1ee10993bdd5dafc134962ce26e2a3"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a3e1ee10993bdd5dafc134962ce26e2a3">get_unaccepted</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a3e1ee10993bdd5dafc134962ce26e2a3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The evidence <a class="el" href="#a2d116bcae042e7c8ab970403e0c07332" title="Filter evidence using filter_evidence_key and filter_evidence methods of each FlowElement in the pipe...">filter()</a> set aside, being the keys no FlowElement in the pipeline accepts and the web request itself.  <br /></td></tr>
 <tr class="c-table__row memitem:a2d116bcae042e7c8ab970403e0c07332" id="r_a2d116bcae042e7c8ab970403e0c07332"><td class="c-table__cell">None&#160;</td><td class="c-table__cell"><a class="el" href="#a2d116bcae042e7c8ab970403e0c07332">filter</a> (self)</td></tr>
 <tr class="c-table__row memdesc:a2d116bcae042e7c8ab970403e0c07332"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Filter evidence using <code>filter_evidence_key</code> and <code>filter_evidence</code> methods of each FlowElement in the pipeline.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="c-table__row memitem:a982ecf2eb82aa66bba055ffe10050793" id="r_a982ecf2eb82aa66bba055ffe10050793"><td class="c-table__cell">dict&#160;</td><td class="c-table__cell"><a class="el" href="#a982ecf2eb82aa66bba055ffe10050793">evidence</a> = {}</td></tr>
+<tr class="c-table__row memitem:a862486fff71efd250b713ee4c14434d9" id="r_a862486fff71efd250b713ee4c14434d9"><td class="c-table__cell">dict&#160;</td><td class="c-table__cell"><a class="el" href="#a862486fff71efd250b713ee4c14434d9">evidence</a> = {}</td></tr>
+<tr class="c-table__row memitem:a5132a8dbdcfda738c5394738bef8c758" id="r_a5132a8dbdcfda738c5394738bef8c758"><td class="c-table__cell">dict&#160;</td><td class="c-table__cell"><a class="el" href="#a5132a8dbdcfda738c5394738bef8c758">keys</a> = {}</td></tr>
 <tr class="c-table__row memitem:a0fbdff63e48b9f233d16103080c325f3" id="r_a0fbdff63e48b9f233d16103080c325f3"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a0fbdff63e48b9f233d16103080c325f3">evidence_filtered</a> = False</td></tr>
 <tr class="c-table__row memitem:afd34afcb4b2ece25d019d5aabe9c361e" id="r_afd34afcb4b2ece25d019d5aabe9c361e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#afd34afcb4b2ece25d019d5aabe9c361e">flowdata</a> = flowdata</td></tr>
+<tr class="c-table__row memitem:a7a3cc4f61bd4025061a0f2b2d4ea938d" id="r_a7a3cc4f61bd4025061a0f2b2d4ea938d"><td class="c-table__cell">dict&#160;</td><td class="c-table__cell"><a class="el" href="#a7a3cc4f61bd4025061a0f2b2d4ea938d">unaccepted</a> = {}</td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="a88d5dd1192f0b9e96c50061705876f14" name="a88d5dd1192f0b9e96c50061705876f14"></a>
@@ -220,6 +224,7 @@ Public Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Filter evidence using <code>filter_evidence_key</code> and <code>filter_evidence</code> methods of each FlowElement in the pipeline. </p>
+<p>The keys that do not pass, and the web request under HTTP_REQUEST_KEY, move to <a class="el" href="#a3e1ee10993bdd5dafc134962ce26e2a3" title="The evidence filter() set aside, being the keys no FlowElement in the pipeline accepts and the web re...">get_unaccepted()</a>. </p>
 
 </div>
 </div>
@@ -277,13 +282,12 @@ Public Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get all evidence. </p>
-<p>@rtype: dict </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Returns everything in this <a class="el" href="#a982ecf2eb82aa66bba055ffe10050793">Evidence.evidence</a> </dd></dl>
+<p>@rtype: dict </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: Returns everything in this <a class="el" href="#a862486fff71efd250b713ee4c14434d9">Evidence.evidence</a> </dd></dl>
 
 </div>
 </div>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
-<a id="a982ecf2eb82aa66bba055ffe10050793" name="a982ecf2eb82aa66bba055ffe10050793"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a982ecf2eb82aa66bba055ffe10050793">&#9670;&#160;</a></span>evidence</h2>
+<a id="a3e1ee10993bdd5dafc134962ce26e2a3" name="a3e1ee10993bdd5dafc134962ce26e2a3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3e1ee10993bdd5dafc134962ce26e2a3">&#9670;&#160;</a></span>get_unaccepted()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -291,7 +295,33 @@ Public Attributes</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">dict fiftyone_pipeline_core.evidence.Evidence.evidence = {}</td>
+              <td class="c-table__cell">fiftyone_pipeline_core.evidence.Evidence.get_unaccepted </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The evidence <a class="el" href="#a2d116bcae042e7c8ab970403e0c07332" title="Filter evidence using filter_evidence_key and filter_evidence methods of each FlowElement in the pipe...">filter()</a> set aside, being the keys no FlowElement in the pipeline accepts and the web request itself. </p>
+<p>The usage sharing element accepts no evidence, and shares what it finds here and in <a class="el" href="#ad5a8564c12f27339a0f1d097f077dc7d" title="Get all evidence.">get_all()</a>.</p>
+<p>@rtype: dict </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: The evidence set aside, empty until <a class="el" href="#a2d116bcae042e7c8ab970403e0c07332" title="Filter evidence using filter_evidence_key and filter_evidence methods of each FlowElement in the pipe...">filter()</a> runs </dd></dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="a862486fff71efd250b713ee4c14434d9" name="a862486fff71efd250b713ee4c14434d9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a862486fff71efd250b713ee4c14434d9">&#9670;&#160;</a></span>evidence</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_core.evidence.Evidence.evidence = {}</td>
             </tr>
           </table>
         </div>
@@ -328,6 +358,42 @@ Public Attributes</h2></td></tr>
           <table class="c-table c-table--article">
             <tr class="c-table__row">
               <td class="c-table__cell">fiftyone_pipeline_core.evidence.Evidence.flowdata = flowdata</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a5132a8dbdcfda738c5394738bef8c758" name="a5132a8dbdcfda738c5394738bef8c758"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5132a8dbdcfda738c5394738bef8c758">&#9670;&#160;</a></span>keys</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">dict fiftyone_pipeline_core.evidence.Evidence.keys = {}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a7a3cc4f61bd4025061a0f2b2d4ea938d" name="a7a3cc4f61bd4025061a0f2b2d4ea938d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7a3cc4f61bd4025061a0f2b2d4ea938d">&#9670;&#160;</a></span>unaccepted</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">dict fiftyone_pipeline_core.evidence.Evidence.unaccepted = {}</td>
             </tr>
           </table>
         </div>

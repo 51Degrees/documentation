@@ -94,12 +94,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('client_side_ev
 <div class="c-code__line"></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__pipeline__core_1_1pipelinebuilder.html">fiftyone_pipeline_core.pipelinebuilder</a> <span class="c-code__keyword">import</span> PipelineBuilder</div>
-<div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__pipeline__core_1_1web.html">fiftyone_pipeline_core.web</a> <span class="c-code__keyword">import</span> webevidence</div>
+<div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__pipeline__core_1_1web.html">fiftyone_pipeline_core.web</a> <span class="c-code__keyword">import</span> json_response, webevidence</div>
 <div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__pipeline__core_1_1basiclist__evidence__keyfilter.html">fiftyone_pipeline_core.basiclist_evidence_keyfilter</a> <span class="c-code__keyword">import</span> BasicListEvidenceKeyFilter</div>
 <div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__pipeline__core_1_1flowelement.html">fiftyone_pipeline_core.flowelement</a> <span class="c-code__keyword">import</span> FlowElement</div>
 <div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__pipeline__core_1_1elementdata__dictionary.html">fiftyone_pipeline_core.elementdata_dictionary</a> <span class="c-code__keyword">import</span> ElementDataDictionary</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__keyword">import</span> json</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment"># Function to get star sign from month and day</span></div>
 <div class="c-code__line"><span class="c-code__keyword">def </span>getStarSign(month, day):</div>
@@ -231,26 +230,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('client_side_ev
 <div class="c-code__line"> </div>
 <div class="c-code__line">app = Flask(__name__)</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__comment"># Make a route that returns back JSON encded properties for client side scripts to pick up</span></div>
+<div class="c-code__line"><span class="c-code__comment"># Make a route that returns back JSON encoded properties for client side scripts to pick</span></div>
+<div class="c-code__line"><span class="c-code__comment"># up. json_response processes the request and sets the cache headers, so a browser keeps</span></div>
+<div class="c-code__line"><span class="c-code__comment"># a good answer for 30 minutes and never keeps one made while processing failed.</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__preprocessor">@app.route(&#39;/json&#39;, methods=[&#39;POST&#39;])</span></div>
 <div class="c-code__line"><span class="c-code__keyword">def </span>jsonroute():</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment"># Create the flowdata object for the JSON route</span></div>
-<div class="c-code__line">    flowdata = myPipeline.create_flowdata()</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment"># Add any information from the request (headers, cookies and additional </span></div>
-<div class="c-code__line">    <span class="c-code__comment"># client side provided information)</span></div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">    flowdata.evidence.add_from_dict(webevidence(request))</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment"># Process the flowdata</span></div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">    flowdata.process()</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment"># Return the JSON from the JSONBundler engine</span></div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__keywordflow">return</span> json.dumps(flowdata.jsonbundler.json)</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> json_response(myPipeline, request)</div>
 <div class="c-code__line">    </div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__preprocessor">@app.route(&#39;/&#39;)</span></div>

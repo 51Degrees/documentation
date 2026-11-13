@@ -65,7 +65,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
-<div class="textblock"><p>replace characters that cause problems in XML with the "Replacement character" </p>
+<div class="textblock"><p>Makes an Evidence value fit in the usage sharing XML. </p>
+<p>The value is cut to SHARE_USAGE_MAX_EVIDENCE_LENGTH characters (code points, so a character is never split), a character XML 1.0 does not allow is written as a backslash, "x" and its code in four lower-case hexadecimal digits, and the markup characters are written as entities. <code><a class="el" href="#a6ff1fb6c93e129842633a8cb8c94add2">escaped</a></code> and <code><a class="el" href="#a2dd633441cbc797b88bc34928e1874d5">truncated</a></code> say what changed. </p>
 </div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -75,7 +76,7 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="c-table__row memitem:ad8c61cc3c9dbbdbc6c02fbbb50bfac8f" id="r_ad8c61cc3c9dbbdbc6c02fbbb50bfac8f"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#ad8c61cc3c9dbbdbc6c02fbbb50bfac8f">result</a> = &quot;&quot;</td></tr>
-<tr class="c-table__row memitem:aa0e460deadf552e93b6a5d5f258d30a7" id="r_aa0e460deadf552e93b6a5d5f258d30a7"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#aa0e460deadf552e93b6a5d5f258d30a7">replaced</a> = False</td></tr>
+<tr class="c-table__row memitem:a6ff1fb6c93e129842633a8cb8c94add2" id="r_a6ff1fb6c93e129842633a8cb8c94add2"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a6ff1fb6c93e129842633a8cb8c94add2">escaped</a> = False</td></tr>
 <tr class="c-table__row memitem:a2dd633441cbc797b88bc34928e1874d5" id="r_a2dd633441cbc797b88bc34928e1874d5"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a2dd633441cbc797b88bc34928e1874d5">truncated</a> = False</td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
@@ -131,8 +132,8 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
-<a id="aa0e460deadf552e93b6a5d5f258d30a7" name="aa0e460deadf552e93b6a5d5f258d30a7"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa0e460deadf552e93b6a5d5f258d30a7">&#9670;&#160;</a></span>replaced</h2>
+<a id="a6ff1fb6c93e129842633a8cb8c94add2" name="a6ff1fb6c93e129842633a8cb8c94add2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6ff1fb6c93e129842633a8cb8c94add2">&#9670;&#160;</a></span>escaped</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -140,7 +141,7 @@ Public Attributes</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">bool fiftyone_pipeline_engines_fiftyone.share_usage.ReplacedString.replaced = False</td>
+              <td class="c-table__cell">bool fiftyone_pipeline_engines_fiftyone.share_usage.ReplacedString.escaped = False</td>
             </tr>
           </table>
         </div>

@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 </div><h2 class="g-docs__section-heading">
 Collaboration diagram for fiftyone\pipeline\core\Evidence:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classfiftyone_1_1pipeline_1_1core_1_1_evidence__coll__graph.svg" width="366" height="383"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classfiftyone_1_1pipeline_1_1core_1_1_evidence__coll__graph.svg" width="540" height="383"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
@@ -77,15 +77,23 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:ad1bb6524156df26459b3f053ac258090" id="r_ad1bb6524156df26459b3f053ac258090"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad1bb6524156df26459b3f053ac258090">__construct</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html">FlowData</a> $flowData)</td></tr>
 <tr class="c-table__row memdesc:ad1bb6524156df26459b3f053ac258090"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Evidence container constructor.  <br /></td></tr>
 <tr class="c-table__row memitem:a3a00a946bafce73ca4a93fde9c2e6012" id="r_a3a00a946bafce73ca4a93fde9c2e6012"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a3a00a946bafce73ca4a93fde9c2e6012">set</a> (string $key, $value)</td></tr>
-<tr class="c-table__row memdesc:a3a00a946bafce73ca4a93fde9c2e6012"><td class="c-table__cell">&#160;</td><td class="c-table__cell">If a flow element can use the key then add the key value pair to the evidence collection.  <br /></td></tr>
+<tr class="c-table__row memdesc:a3a00a946bafce73ca4a93fde9c2e6012"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add the key value pair to the evidence collection where a flow element can use the key, and to the unaccepted collection where none can, so that a Cloud Request Engine can still send it.  <br /></td></tr>
 <tr class="c-table__row memitem:a38c2e3e9f94a6fd27e22fda72e1fff4c" id="r_a38c2e3e9f94a6fd27e22fda72e1fff4c"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a38c2e3e9f94a6fd27e22fda72e1fff4c">setArray</a> ($array)</td></tr>
 <tr class="c-table__row memdesc:a38c2e3e9f94a6fd27e22fda72e1fff4c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Helper function to set multiple pieces of evidence from an array.  <br /></td></tr>
 <tr class="c-table__row memitem:aa8dd92407c3aabb1b60424239489d304" id="r_aa8dd92407c3aabb1b60424239489d304"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aa8dd92407c3aabb1b60424239489d304">setFromWebRequest</a> (?array $server=null, ?array $cookies=null, ?array $query=null)</td></tr>
 <tr class="c-table__row memdesc:aa8dd92407c3aabb1b60424239489d304"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Extract evidence from a web request No argument version automatically reads from current request using the $_SERVER, $_COOKIE, $_GET and $_POST globals.  <br /></td></tr>
 <tr class="c-table__row memitem:a7bfdef99c38adab1e7558f4bb9be32ee" id="r_a7bfdef99c38adab1e7558f4bb9be32ee"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7bfdef99c38adab1e7558f4bb9be32ee">get</a> (string $key)</td></tr>
-<tr class="c-table__row memdesc:a7bfdef99c38adab1e7558f4bb9be32ee"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a piece of evidence by key.  <br /></td></tr>
+<tr class="c-table__row memdesc:a7bfdef99c38adab1e7558f4bb9be32ee"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a piece of evidence by key, in any letter case.  <br /></td></tr>
 <tr class="c-table__row memitem:ae074e48714629becdc4393ae22838a13" id="r_ae074e48714629becdc4393ae22838a13"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ae074e48714629becdc4393ae22838a13">getAll</a> ()</td></tr>
-<tr class="c-table__row memdesc:ae074e48714629becdc4393ae22838a13"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get all evidence.  <br /></td></tr>
+<tr class="c-table__row memdesc:ae074e48714629becdc4393ae22838a13"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get all evidence, apart from the web request that get() returns under server.http-request.  <br /></td></tr>
+<tr class="c-table__row memitem:acdb50d5fee6434e310f15c0ce8a1dfac" id="r_acdb50d5fee6434e310f15c0ce8a1dfac"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#acdb50d5fee6434e310f15c0ce8a1dfac">getAllIncludingUnaccepted</a> ()</td></tr>
+<tr class="c-table__row memdesc:acdb50d5fee6434e310f15c0ce8a1dfac"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Every value set on this Flow Data, both the values an element accepts and the values none does, apart from the web request that get() returns under server.http-request.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="c-table__row memitem:ab689e671c6d508bb97e36b12d5d2246d" id="r_ab689e671c6d508bb97e36b12d5d2246d"><td class="c-table__cell"><a id="ab689e671c6d508bb97e36b12d5d2246d" name="ab689e671c6d508bb97e36b12d5d2246d"></a>
+const&#160;</td><td class="c-table__cell"><b>HTTP_REQUEST_KEY</b> = 'server.http-request'</td></tr>
+<tr class="c-table__row memdesc:ab689e671c6d508bb97e36b12d5d2246d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The key the web request is held under. <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-static-methods" class="g-docs__section-heading"><a id="pro-static-methods" name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
@@ -110,6 +118,11 @@ Protected Attributes</h2></td></tr>
 <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html">FlowData</a>&#160;</td><td class="c-table__cell"><b>$flowData</b></td></tr>
 <tr class="c-table__row memitem:af294853d3854ca3657df1aa957c51585" id="r_af294853d3854ca3657df1aa957c51585"><td class="c-table__cell"><a id="af294853d3854ca3657df1aa957c51585" name="af294853d3854ca3657df1aa957c51585"></a>
 array&#160;</td><td class="c-table__cell"><b>$evidence</b> = []</td></tr>
+<tr class="c-table__row memitem:a495431869a450479496990301693b8de" id="r_a495431869a450479496990301693b8de"><td class="c-table__cell"><a id="a495431869a450479496990301693b8de" name="a495431869a450479496990301693b8de"></a>
+array&#160;</td><td class="c-table__cell"><b>$unaccepted</b> = []</td></tr>
+<tr class="c-table__row memitem:ab4e46b0e7dc906ed6cb22e2cb2e5a761" id="r_ab4e46b0e7dc906ed6cb22e2cb2e5a761"><td class="c-table__cell"><a id="ab4e46b0e7dc906ed6cb22e2cb2e5a761" name="ab4e46b0e7dc906ed6cb22e2cb2e5a761"></a>
+<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_http_request.html">HttpRequest</a>&#160;</td><td class="c-table__cell"><b>$httpRequest</b> = null</td></tr>
+<tr class="c-table__row memdesc:ab4e46b0e7dc906ed6cb22e2cb2e5a761"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The web request, kept apart from the values above so that it never reaches an element's filter, a cache key or a request to the cloud. <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="ad1bb6524156df26459b3f053ac258090" name="ad1bb6524156df26459b3f053ac258090"></a>
@@ -193,8 +206,8 @@ array&#160;</td><td class="c-table__cell"><b>$evidence</b> = []</td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Get a piece of evidence by key. </p>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">null|int|string </dd></dl>
+<p>Get a piece of evidence by key, in any letter case. </p>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">null|int|string|HttpRequest </dd></dl>
 
 </div>
 </div>
@@ -217,7 +230,33 @@ array&#160;</td><td class="c-table__cell"><b>$evidence</b> = []</td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Get all evidence. </p>
+<p>Get all evidence, apart from the web request that get() returns under server.http-request. </p>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">array&lt;string, int|string&gt; </dd></dl>
+
+</div>
+</div>
+<a id="acdb50d5fee6434e310f15c0ce8a1dfac" name="acdb50d5fee6434e310f15c0ce8a1dfac"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#acdb50d5fee6434e310f15c0ce8a1dfac">&#9670;&#160;</a></span>getAllIncludingUnaccepted()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\core\Evidence::getAllIncludingUnaccepted </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Every value set on this Flow Data, both the values an element accepts and the values none does, apart from the web request that get() returns under server.http-request. </p>
+<p>A Cloud Request Engine sends this, as the Processing section of the cloud request engine specification requires. No other reader wants it, because an unaccepted value is one no element in the Pipeline asked for.</p>
+<p>The unaccepted values come first. The request keeps the last value given for a field, so where an unaccepted value and an accepted one give the same field, the accepted value is sent.</p>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">array&lt;string, int|string&gt; </dd></dl>
 
 </div>
@@ -452,7 +491,8 @@ array&#160;</td><td class="c-table__cell"><b>$evidence</b> = []</td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>If a flow element can use the key then add the key value pair to the evidence collection. </p>
+<p>Add the key value pair to the evidence collection where a flow element can use the key, and to the unaccepted collection where none can, so that a Cloud Request Engine can still send it. </p>
+<p>A key is held in one collection or the other and never in both.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramtype">int&#160;|&#160;string</td><td class="paramname">$value</td><td></td></tr>

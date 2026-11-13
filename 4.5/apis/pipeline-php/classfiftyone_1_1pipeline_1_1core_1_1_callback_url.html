@@ -66,13 +66,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
 <div class="textblock"><p>The callback URL the client script posts to for updated JSON. </p>
-<p>The protocol and host usually come from the request, and the script holds the URL in a single-quoted string, so the URL is checked before it is written into the script. A URL that is not valid is refused. In the user information, in anything after the host and port, and in the endpoint, the bytes a URL cannot hold or that could end the string or the script are percent-encoded.</p>
+<p>The protocol and host usually come from the request, and the script holds the URL in a single-quoted string, so the URL is checked before it is written into the script. A URL that is not valid, including one whose protocol is not http or https, is refused. In anything after the authority, and in the endpoint, the bytes a URL cannot hold or that could end the string or the script are percent-encoded.</p>
 <dl class="c-list-definition section see"><dt class="c-list-definition__title">See also</dt><dd class="c-list-definition__desc"><a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/pipeline-elements/javascript-builder.md#callback-url">https://github.com/51Degrees/specifications/blob/main/pipeline-specification/pipeline-elements/javascript-builder.md#callback-url</a> </dd></dl>
 </div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a22ba3d0b9693340ca4118e5d52784422" id="r_a22ba3d0b9693340ca4118e5d52784422"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a22ba3d0b9693340ca4118e5d52784422">of</a> ($protocol, $host, $endpoint)</td></tr>
 <tr class="c-table__row memdesc:a22ba3d0b9693340ca4118e5d52784422"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Builds the callback URL from its parts and checks it.  <br /></td></tr>
+<tr class="c-table__row memitem:a5da63f490a1d542f222feaf69cd70b24" id="r_a5da63f490a1d542f222feaf69cd70b24"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a5da63f490a1d542f222feaf69cd70b24">isScheme</a> ($protocol)</td></tr>
+<tr class="c-table__row memdesc:a5da63f490a1d542f222feaf69cd70b24"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether the protocol is http or https, ignoring the case of its ASCII letters only, so that no letter outside ASCII can stand in for an ASCII one.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -84,6 +86,43 @@ string&#160;</td><td class="c-table__cell"><b>$url</b></td></tr>
 <tr class="c-table__row memdesc:ac505eff7a685ea243130b349bd6f9cf0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The URL to write into the script when it is valid, and otherwise the URL as it was built, for the log. <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a5da63f490a1d542f222feaf69cd70b24" name="a5da63f490a1d542f222feaf69cd70b24"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5da63f490a1d542f222feaf69cd70b24">&#9670;&#160;</a></span>isScheme()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\core\CallbackUrl::isScheme </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>$protocol</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Whether the protocol is http or https, ignoring the case of its ASCII letters only, so that no letter outside ASCII can stand in for an ASCII one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">mixed</td><td class="paramname">$protocol</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a22ba3d0b9693340ca4118e5d52784422" name="a22ba3d0b9693340ca4118e5d52784422"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a22ba3d0b9693340ca4118e5d52784422">&#9670;&#160;</a></span>of()</h2>
 
@@ -121,16 +160,16 @@ string&#160;</td><td class="c-table__cell"><b>$url</b></td></tr>
 </div><div class="c-member__body">
 
 <p>Builds the callback URL from its parts and checks it. </p>
-<p>One slash separates the host and the endpoint, being added when neither has one and removed when both do. The protocol and the host are written in lower case and the rest as given, apart from the percent-encoding.</p>
+<p>One slash separates the host and the endpoint, being added when neither has one and removed when both do. The protocol and the host are written in lower case and the rest as given, apart from the percent-encoding. The host value holds no '?', '#' or '@'.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramtype">mixed</td><td class="paramname">$protocol</td><td>The protocol, such as https </td></tr>
-    <tr><td class="paramtype">mixed</td><td class="paramname">$host</td><td>The host, which can start with user information and end with a port, a path, a query or a fragment </td></tr>
+    <tr><td class="paramtype">mixed</td><td class="paramname">$protocol</td><td>The protocol, http or https in any case </td></tr>
+    <tr><td class="paramtype">mixed</td><td class="paramname">$host</td><td>The host, which can end with a port and a path </td></tr>
     <tr><td class="paramtype">mixed</td><td class="paramname">$endpoint</td><td>The endpoint </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">null|self The callback URL, or null when the protocol, host or endpoint is not set </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">null|self The callback URL, or null when the protocol, host or endpoint is not set. The URL of an invalid one is as it was built, for the log, with '***' in place of everything in the host before its last '@'. </dd></dl>
 
 </div>
 </div>

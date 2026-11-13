@@ -122,9 +122,9 @@ override&#160;void&#160;</td><td class="c-table__cell"><b>ManagedResourcesCleanu
 <tr class="c-table__row memitem:a8de38b88f4481ae6e3f7da4d8aced3fd" id="r_a8de38b88f4481ae6e3f7da4d8aced3fd"><td class="c-table__cell">virtual&#160;Dictionary&lt;&#160;string,&#160;string&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a8de38b88f4481ae6e3f7da4d8aced3fd">GetParameters</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data)</td></tr>
 <tr class="c-table__row memdesc:a8de38b88f4481ae6e3f7da4d8aced3fd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Generate any required parameters for the JSON request.  <br /></td></tr>
 <tr class="c-table__row memitem:a5183095be2e3c61712696639a377c2a8" id="r_a5183095be2e3c61712696639a377c2a8"><td class="c-table__cell">virtual&#160;int&#160;</td><td class="c-table__cell"><a class="el" href="#a5183095be2e3c61712696639a377c2a8">GetSequence</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data)</td></tr>
-<tr class="c-table__row memdesc:a5183095be2e3c61712696639a377c2a8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the sequence evidence if it exists.  <br /></td></tr>
+<tr class="c-table__row memdesc:a5183095be2e3c61712696639a377c2a8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the sequence from the Sequence Element's data.  <br /></td></tr>
 <tr class="c-table__row memitem:a549a62753dda7faf1fa06f45283858e5" id="r_a549a62753dda7faf1fa06f45283858e5"><td class="c-table__cell">virtual&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a549a62753dda7faf1fa06f45283858e5">GetSessionId</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data)</td></tr>
-<tr class="c-table__row memdesc:a549a62753dda7faf1fa06f45283858e5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the session-id evidence if it exists.  <br /></td></tr>
+<tr class="c-table__row memdesc:a549a62753dda7faf1fa06f45283858e5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the session id from the Sequence Element's data.  <br /></td></tr>
 <tr class="c-table__row memitem:a8ccfc00de6415ce732b3de915f3333e2" id="r_a8ccfc00de6415ce732b3de915f3333e2"><td class="c-table__cell">virtual&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#a8ccfc00de6415ce732b3de915f3333e2">RenderUserPrompt</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data)</td></tr>
 <tr class="c-table__row memdesc:a8ccfc00de6415ce732b3de915f3333e2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Decide whether the rendered script carries the block that asks the visitor's preference platform for an answer, which is what a 51Did is created from.  <br /></td></tr>
 <tr class="c-table__row memitem:ab58dd2940b3fa4046eca367be76a800b" id="r_ab58dd2940b3fa4046eca367be76a800b"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ab58dd2940b3fa4046eca367be76a800b">BuildJavaScript</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data, Func&lt; <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_data_1_1_i_java_script_builder_element_data.html">IJavaScriptBuilderElementData</a> &gt; javascriptBuilderElementDataProvider, string jsonObject, string sessionId, int sequence, bool supportsPromises, bool supportsFetch, string url, string parameters)</td></tr>
@@ -133,6 +133,8 @@ override&#160;void&#160;</td><td class="c-table__cell"><b>ManagedResourcesCleanu
 <tr class="c-table__row memdesc:ad1149450ccccdd5449f1ddad6e1b2751"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Delegates to IFlowData.GetOrAdd&lt;T&gt;(string, Func&lt;IPipeline, T&gt;).  <br /></td></tr>
 <tr class="c-table__row memitem:a84a8fcfc8bcdc8af8580be67c2af98e8" id="r_a84a8fcfc8bcdc8af8580be67c2af98e8"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a84a8fcfc8bcdc8af8580be67c2af98e8">BuildJavaScript</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data, Func&lt; <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_data_1_1_i_java_script_builder_element_data.html">IJavaScriptBuilderElementData</a> &gt; javascriptBuilderElementDataProvider, string jsonObject, string sessionId, int sequence, bool supportsPromises, bool supportsFetch, Uri url, string parameters)</td></tr>
 <tr class="c-table__row memdesc:a84a8fcfc8bcdc8af8580be67c2af98e8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the JavaScript content and add it to the supplied IFlowData instance.  <br /></td></tr>
+<tr class="c-table__row memitem:a6ce6b60c4c8e58c5d86fd9e8bb9db103" id="r_a6ce6b60c4c8e58c5d86fd9e8bb9db103"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a6ce6b60c4c8e58c5d86fd9e8bb9db103">BuildJavaScript</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data, Func&lt; <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_data_1_1_i_java_script_builder_element_data.html">IJavaScriptBuilderElementData</a> &gt; javascriptBuilderElementDataProvider, string jsonObject, string sessionId, int sequence, bool supportsPromises, bool supportsFetch, string protocol, string host, string endpoint, string parameters)</td></tr>
+<tr class="c-table__row memdesc:a6ce6b60c4c8e58c5d86fd9e8bb9db103"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the JavaScript content and add it to the supplied IFlowData instance, with a callback URL built from the protocol, host and endpoint.  <br /></td></tr>
 <tr class="c-table__row memitem:a351df2b421a6d7866726232d40ecf665" id="r_a351df2b421a6d7866726232d40ecf665"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a351df2b421a6d7866726232d40ecf665">BuildJavaScript</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data, string jsonObject, string sessionId, int sequence, bool supportsPromises, bool supportsFetch, Uri url, string parameters)</td></tr>
 <tr class="c-table__row memdesc:a351df2b421a6d7866726232d40ecf665"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the JavaScript content and add it to the supplied IFlowData instance.  <br /></td></tr>
 <tr class="c-table__row memitem:a85fb9aa06f31aa2cd462dcb4a33ffdc0" id="r_a85fb9aa06f31aa2cd462dcb4a33ffdc0"><td class="c-table__cell"><a id="a85fb9aa06f31aa2cd462dcb4a33ffdc0" name="a85fb9aa06f31aa2cd462dcb4a33ffdc0"></a>
@@ -266,14 +268,14 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
     <tr><td class="paramname">objectName</td><td>The default name of the object instantiated by the client JavaScript. Null means the default name, fod. Anything else must be a valid JavaScript identifier, see IsValidObjectName(string). </td></tr>
     <tr><td class="paramname">enableCookies</td><td>Set whether the client JavaScript stored results of client side processing in cookies. </td></tr>
     <tr><td class="paramname">minify</td><td>If true, the resulting JavaScript will be minified </td></tr>
-    <tr><td class="paramname">host</td><td>The host that the client JavaScript should query for updates. If null or blank then the host from the request will be used </td></tr>
-    <tr><td class="paramname">protocol</td><td>The protocol (HTTP or HTTPS) that the client JavaScript will use when querying for updates. If null or blank then the protocol from the request will be used </td></tr>
+    <tr><td class="paramname">host</td><td>The host that the client JavaScript should query for updates. If null or empty then the host from the request will be used </td></tr>
+    <tr><td class="paramname">protocol</td><td>The protocol, http or https, that the client JavaScript will use when querying for updates. If null or empty then the protocol from the request will be used </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions_1_1_pipeline_configuration_exception.html" title="Exception that is thrown when the configuration options provided to PipelineBuilder are invalid See t...">PipelineConfigurationException</a></td><td>Thrown if <em>objectName</em>  is not null and is not a valid JavaScript identifier. </td></tr>
+    <tr><td class="paramname"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_core_1_1_exceptions_1_1_pipeline_configuration_exception.html" title="Exception that is thrown when the configuration options provided to PipelineBuilder are invalid See t...">PipelineConfigurationException</a></td><td>Thrown if <em>objectName</em>  is not null and is not a valid JavaScript identifier, or if <em>protocol</em>  is set and is neither http nor https. </td></tr>
   </table>
   </dd>
 </dl>
@@ -281,8 +283,112 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a6ce6b60c4c8e58c5d86fd9e8bb9db103" name="a6ce6b60c4c8e58c5d86fd9e8bb9db103"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6ce6b60c4c8e58c5d86fd9e8bb9db103">&#9670;&#160;</a></span>BuildJavaScript() <span class="c-member__count">[1/4]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void FiftyOne.Pipeline.JavaScriptBuilder.FlowElement.JavaScriptBuilderElement.BuildJavaScript </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a></td>          <td class="c-table__cell"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">Func&lt; <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_java_script_builder_1_1_data_1_1_i_java_script_builder_element_data.html">IJavaScriptBuilderElementData</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>javascriptBuilderElementDataProvider</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>jsonObject</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>sessionId</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>sequence</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">bool</td>          <td class="c-table__cell"><span class="paramname"><em>supportsPromises</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">bool</td>          <td class="c-table__cell"><span class="paramname"><em>supportsFetch</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>protocol</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>host</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>endpoint</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>parameters</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Build the JavaScript content and add it to the supplied IFlowData instance, with a callback URL built from the protocol, host and endpoint. </p>
+<p>The protocol and host usually come from the request, so the URL is checked against the rules in the specification</p>
+<p>before the script holds it. A URL that fails them is logged as an error the first time, and the script is built without callback functionality, as it is when the protocol, host or endpoint is not set. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The IFlowData instance to populate with the resulting JavaScriptBuilderElementData and additional evidence source </td></tr>
+    <tr><td class="paramname">javascriptBuilderElementDataProvider</td><td>Defines a destination for JavaScriptBuilderElementData to be set into. </td></tr>
+    <tr><td class="paramname">jsonObject</td><td>The JSON data object to include in the JavaScript. </td></tr>
+    <tr><td class="paramname">sessionId</td><td>The session Id to use in the JavaScript response. </td></tr>
+    <tr><td class="paramname">sequence</td><td>The sequence value to use in the JavaScript response. </td></tr>
+    <tr><td class="paramname">supportsPromises</td><td>True to build JavaScript that uses promises. False to build JavaScript that does not use promises. </td></tr>
+    <tr><td class="paramname">supportsFetch</td><td>True to build JavaScript that makes use of the fetch API. Otherwise, the template will fall back to using XMLHttpRequest. </td></tr>
+    <tr><td class="paramname">protocol</td><td>The protocol of the callback URL, http or https in any case. </td></tr>
+    <tr><td class="paramname">host</td><td>The host of the callback URL, which can start with user information and end with a port, a path, a query or a fragment. </td></tr>
+    <tr><td class="paramname">endpoint</td><td>The endpoint of the callback URL, joined to the host with one '/'. </td></tr>
+    <tr><td class="paramname">parameters</td><td>The parameters to append to the URL</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentNullException</td><td>Thrown if the supplied flow data is null. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ab58dd2940b3fa4046eca367be76a800b" name="ab58dd2940b3fa4046eca367be76a800b"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab58dd2940b3fa4046eca367be76a800b">&#9670;&#160;</a></span>BuildJavaScript() <span class="c-member__count">[1/3]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab58dd2940b3fa4046eca367be76a800b">&#9670;&#160;</a></span>BuildJavaScript() <span class="c-member__count">[2/4]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -372,7 +478,7 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
 </div>
 </div>
 <a id="a84a8fcfc8bcdc8af8580be67c2af98e8" name="a84a8fcfc8bcdc8af8580be67c2af98e8"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a84a8fcfc8bcdc8af8580be67c2af98e8">&#9670;&#160;</a></span>BuildJavaScript() <span class="c-member__count">[2/3]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a84a8fcfc8bcdc8af8580be67c2af98e8">&#9670;&#160;</a></span>BuildJavaScript() <span class="c-member__count">[3/4]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -458,11 +564,12 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
   </table>
   </dd>
 </dl>
+<p>The URL is written into the script as it is given, apart from percent-encoding each character that could end the string the script holds it in, and is not checked. A subclass that builds its URL from the request uses the overload that takes the protocol, host and endpoint instead. </p>
 
 </div>
 </div>
 <a id="a351df2b421a6d7866726232d40ecf665" name="a351df2b421a6d7866726232d40ecf665"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a351df2b421a6d7866726232d40ecf665">&#9670;&#160;</a></span>BuildJavaScript() <span class="c-member__count">[3/3]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a351df2b421a6d7866726232d40ecf665">&#9670;&#160;</a></span>BuildJavaScript() <span class="c-member__count">[4/4]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -733,8 +840,8 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
 </table>
 </div><div class="c-member__body">
 
-<p>Get the sequence evidence if it exists. </p>
-<p>The sequence is written into the script as a number, so anything other than a positive 32 bit integer, written as an integer or as a string of digits, gives 1. With no Sequence Element in the pipeline there is usually no sequence evidence, which also gives 1. </p>
+<p>Get the sequence from the Sequence Element's data. </p>
+<p>With no Sequence Element in the pipeline there is no such data, and the sequence is 1 whatever the request asked for. The sequence is written into the script as a number, so anything other than a positive 32 bit integer, written as an integer or as a string of digits, gives 1 as well. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td></td></tr>
@@ -772,8 +879,8 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
 </table>
 </div><div class="c-member__body">
 
-<p>Get the session-id evidence if it exists. </p>
-<p>The session id is written into the script inside quotes, so a session id that fails JavaScriptResource.IsValidSessionId(string) gives an empty string. This applies whether the Sequence Element created the session id or the request carried it. </p>
+<p>Get the session id from the Sequence Element's data. </p>
+<p>With no Sequence Element in the pipeline there is no such data, and the session id is empty whatever the request asked for. The session id is written into the script inside quotes, so one that fails JavaScriptResource.IsValidSessionId(string) is empty as well. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td></td></tr>
@@ -1054,8 +1161,8 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
 <div class="c-code__line">            <a class="code hl_namespace" href="namespace_fifty_one_1_1_pipeline_1_1_engines.html">Engines</a>.<a class="code hl_namespace" href="namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one.html">FiftyOne</a>.<a class="code hl_class" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html">Constants</a>.<a class="code hl_variable" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html#a0b5a33b4ff582198f2e7918162dff388">EVIDENCE_SESSIONID</a>,</div>
 <div class="c-code__line">        }</div>
 <div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants_html"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html">FiftyOne.Pipeline.Engines.FiftyOne.Constants</a></div><div class="ttdoc">Constants used by 51Degrees Aspect Engines.</div><div class="ttdef"><b>Definition</b> Engines.FiftyOne/Constants.cs:37</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants_html_a0b5a33b4ff582198f2e7918162dff388"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html#a0b5a33b4ff582198f2e7918162dff388">FiftyOne.Pipeline.Engines.FiftyOne.Constants.EVIDENCE_SESSIONID</a></div><div class="ttdeci">const string EVIDENCE_SESSIONID</div><div class="ttdoc">session id evidence constant.</div><div class="ttdef"><b>Definition</b> Engines.FiftyOne/Constants.cs:169</div></div>
-<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants_html_add241ad31ffb1d1f102fde59f0422ec0"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html#add241ad31ffb1d1f102fde59f0422ec0">FiftyOne.Pipeline.Engines.FiftyOne.Constants.EVIDENCE_SEQUENCE</a></div><div class="ttdeci">const string EVIDENCE_SEQUENCE</div><div class="ttdoc">Sequence evidence constant.</div><div class="ttdef"><b>Definition</b> Engines.FiftyOne/Constants.cs:184</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants_html_a0b5a33b4ff582198f2e7918162dff388"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html#a0b5a33b4ff582198f2e7918162dff388">FiftyOne.Pipeline.Engines.FiftyOne.Constants.EVIDENCE_SESSIONID</a></div><div class="ttdeci">const string EVIDENCE_SESSIONID</div><div class="ttdoc">session id evidence constant.</div><div class="ttdef"><b>Definition</b> Engines.FiftyOne/Constants.cs:182</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants_html_add241ad31ffb1d1f102fde59f0422ec0"><div class="ttname"><a href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_constants.html#add241ad31ffb1d1f102fde59f0422ec0">FiftyOne.Pipeline.Engines.FiftyOne.Constants.EVIDENCE_SEQUENCE</a></div><div class="ttdeci">const string EVIDENCE_SEQUENCE</div><div class="ttdoc">Sequence evidence constant.</div><div class="ttdef"><b>Definition</b> Engines.FiftyOne/Constants.cs:197</div></div>
 <div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_html"><div class="ttname"><a href="namespace_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one.html">FiftyOne.Pipeline.Engines.FiftyOne</a></div><div class="ttdef"><b>Definition</b> FiftyOneDataFileConfiguration.cs:27</div></div>
 <div class="ttc" id="anamespace_fifty_one_1_1_pipeline_1_1_engines_html"><div class="ttname"><a href="namespace_fifty_one_1_1_pipeline_1_1_engines.html">FiftyOne.Pipeline.Engines</a></div><div class="ttdef"><b>Definition</b> DataKeyedCacheBase.cs:30</div></div>
 </div><!-- fragment -->

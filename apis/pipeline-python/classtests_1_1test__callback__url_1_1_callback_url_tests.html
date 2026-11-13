@@ -85,6 +85,15 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a6845cbd1758a3ff6efbb609b57734d8c" id="r_a6845cbd1758a3ff6efbb609b57734d8c"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a6845cbd1758a3ff6efbb609b57734d8c">test_missing_when_a_part_is_empty</a> (self)</td></tr>
 <tr class="c-table__row memitem:a8f74d54a72c4a3c70377513dee6f910e" id="r_a8f74d54a72c4a3c70377513dee6f910e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8f74d54a72c4a3c70377513dee6f910e">test_accepts_the_host</a> (self, host, expected)</td></tr>
 <tr class="c-table__row memitem:aad541aaddc3f8db6b998e7ec2c2412f4" id="r_aad541aaddc3f8db6b998e7ec2c2412f4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aad541aaddc3f8db6b998e7ec2c2412f4">test_refuses_the_host</a> (self, host)</td></tr>
+<tr class="c-table__row memitem:ab93a6071d8b667fe3dacce418222849e" id="r_ab93a6071d8b667fe3dacce418222849e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab93a6071d8b667fe3dacce418222849e">test_refuses_the_zone_or_the_text_after_the_bracket</a> (self, host)</td></tr>
+<tr class="c-table__row memitem:ac471f838b6d8aabaff0502a2e3a85a42" id="r_ac471f838b6d8aabaff0502a2e3a85a42"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ac471f838b6d8aabaff0502a2e3a85a42">test_checks_the_port_by_its_value</a> (self)</td></tr>
+<tr class="c-table__row memitem:a8abf78382c3abc69ac173d83ff0eed83" id="r_a8abf78382c3abc69ac173d83ff0eed83"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8abf78382c3abc69ac173d83ff0eed83">test_encodes_the_characters_rule_8_lists</a> (self)</td></tr>
+<tr class="c-table__row memitem:ab75f108bd8e60adcae0ea03c488330c4" id="r_ab75f108bd8e60adcae0ea03c488330c4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab75f108bd8e60adcae0ea03c488330c4">test_refuses_the_zone_identifier</a> (self, host)</td></tr>
+<tr class="c-table__row memitem:a19a0ff0dc154ac45ed4f91fba9833549" id="r_a19a0ff0dc154ac45ed4f91fba9833549"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a19a0ff0dc154ac45ed4f91fba9833549">test_refuses_the_user_information</a> (self, host)</td></tr>
+<tr class="c-table__row memitem:a6e3213759c66c2545287fadb53558ddd" id="r_a6e3213759c66c2545287fadb53558ddd"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a6e3213759c66c2545287fadb53558ddd">test_refuses_the_query_or_fragment</a> (self, host)</td></tr>
+<tr class="c-table__row memitem:ab26da9b4203dca2fe1763f6b4aadaa36" id="r_ab26da9b4203dca2fe1763f6b4aadaa36"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab26da9b4203dca2fe1763f6b4aadaa36">test_refuses_a_name_ending_in_a_number</a> (self, host)</td></tr>
+<tr class="c-table__row memitem:a5e16b94f452d0dcd3a2a254db88f6a28" id="r_a5e16b94f452d0dcd3a2a254db88f6a28"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a5e16b94f452d0dcd3a2a254db88f6a28">test_refuses_the_empty_port</a> (self, host)</td></tr>
+<tr class="c-table__row memitem:a583552a9e357f4eb5e5ad6b93694bfc4" id="r_a583552a9e357f4eb5e5ad6b93694bfc4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a583552a9e357f4eb5e5ad6b93694bfc4">test_the_logged_url_holds_no_user_information</a> (self, host, logged)</td></tr>
 <tr class="c-table__row memitem:ad19df7b2d284274569fc1de8dbc09873" id="r_ad19df7b2d284274569fc1de8dbc09873"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad19df7b2d284274569fc1de8dbc09873">test_the_invalid_url_is_the_one_built</a> (self)</td></tr>
 <tr class="c-table__row memitem:ada00719325038c5d392c1759da23544c" id="r_ada00719325038c5d392c1759da23544c"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ada00719325038c5d392c1759da23544c">test_checks_the_scheme</a> (self)</td></tr>
 <tr class="c-table__row memitem:afceb03f65c2ad92f9ca01ba3cf027fdc" id="r_afceb03f65c2ad92f9ca01ba3cf027fdc"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#afceb03f65c2ad92f9ca01ba3cf027fdc">test_nothing_given_can_end_the_string</a> (self, host)</td></tr>
@@ -144,6 +153,28 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ac471f838b6d8aabaff0502a2e3a85a42" name="ac471f838b6d8aabaff0502a2e3a85a42"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac471f838b6d8aabaff0502a2e3a85a42">&#9670;&#160;</a></span>test_checks_the_port_by_its_value()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_callback_url.CallbackUrlTests.test_checks_the_port_by_its_value </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<pre class="fragment">A port goes by its value, so leading zeros are allowed, and a
+port too long to read is refused rather than read as small enough.</pre> 
+</div>
+</div>
 <a id="ada00719325038c5d392c1759da23544c" name="ada00719325038c5d392c1759da23544c"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ada00719325038c5d392c1759da23544c">&#9670;&#160;</a></span>test_checks_the_scheme()</h2>
 
@@ -162,7 +193,9 @@ Public Member Functions</h2></td></tr>
         </div>
       </div>
 </div><div class="c-member__body">
-
+<pre class="fragment">Only http and https, ignoring the case of ASCII letters only, so
+a letter outside ASCII that a case-insensitive comparison can match
+to an ASCII one, such as the long s, is refused.</pre> 
 </div>
 </div>
 <a id="a56557e74af0cb7a8a9369651103b2ed6" name="a56557e74af0cb7a8a9369651103b2ed6"></a>
@@ -184,6 +217,29 @@ Public Member Functions</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
+</div>
+</div>
+<a id="a8abf78382c3abc69ac173d83ff0eed83" name="a8abf78382c3abc69ac173d83ff0eed83"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8abf78382c3abc69ac173d83ff0eed83">&#9670;&#160;</a></span>test_encodes_the_characters_rule_8_lists()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_callback_url.CallbackUrlTests.test_encodes_the_characters_rule_8_lists </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<pre class="fragment">Each character rule 8 lists, after the host and in the endpoint,
+and a '%' without two hexadecimal digits after it, even at the
+end.</pre> 
 </div>
 </div>
 <a id="a9115cac17f9cde4b74e06a35809b8964" name="a9115cac17f9cde4b74e06a35809b8964"></a>
@@ -254,6 +310,59 @@ Public Member Functions</h2></td></tr>
 wherever in the URL it was given.</pre> 
 </div>
 </div>
+<a id="ab26da9b4203dca2fe1763f6b4aadaa36" name="ab26da9b4203dca2fe1763f6b4aadaa36"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab26da9b4203dca2fe1763f6b4aadaa36">&#9670;&#160;</a></span>test_refuses_a_name_ending_in_a_number()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_callback_url.CallbackUrlTests.test_refuses_a_name_ending_in_a_number </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>host</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<pre class="fragment">Rule 4 reads a name whose last label is a number as an IPv4
+address written as four decimal numbers, each starting with 0 only
+when it is 0 alone.</pre> 
+</div>
+</div>
+<a id="a5e16b94f452d0dcd3a2a254db88f6a28" name="a5e16b94f452d0dcd3a2a254db88f6a28"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5e16b94f452d0dcd3a2a254db88f6a28">&#9670;&#160;</a></span>test_refuses_the_empty_port()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_callback_url.CallbackUrlTests.test_refuses_the_empty_port </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>host</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<pre class="fragment">Rule 5 refuses a port that is present but empty, so a protocol
+written into the host gives the host "https" with an empty port.</pre> 
+</div>
+</div>
 <a id="aad541aaddc3f8db6b998e7ec2c2412f4" name="aad541aaddc3f8db6b998e7ec2c2412f4"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#aad541aaddc3f8db6b998e7ec2c2412f4">&#9670;&#160;</a></span>test_refuses_the_host()</h2>
 
@@ -305,6 +414,109 @@ wherever in the URL it was given.</pre>
 A-labels, and anything else outside ASCII is refused.</pre> 
 </div>
 </div>
+<a id="a6e3213759c66c2545287fadb53558ddd" name="a6e3213759c66c2545287fadb53558ddd"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6e3213759c66c2545287fadb53558ddd">&#9670;&#160;</a></span>test_refuses_the_query_or_fragment()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_callback_url.CallbackUrlTests.test_refuses_the_query_or_fragment </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>host</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<pre class="fragment">Rule 2 refuses a '?' or '#' anywhere in the host value.</pre> 
+</div>
+</div>
+<a id="a19a0ff0dc154ac45ed4f91fba9833549" name="a19a0ff0dc154ac45ed4f91fba9833549"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a19a0ff0dc154ac45ed4f91fba9833549">&#9670;&#160;</a></span>test_refuses_the_user_information()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_callback_url.CallbackUrlTests.test_refuses_the_user_information </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>host</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<pre class="fragment">Rule 3 refuses an '@' anywhere in the host value.</pre> 
+</div>
+</div>
+<a id="ab75f108bd8e60adcae0ea03c488330c4" name="ab75f108bd8e60adcae0ea03c488330c4"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab75f108bd8e60adcae0ea03c488330c4">&#9670;&#160;</a></span>test_refuses_the_zone_identifier()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_callback_url.CallbackUrlTests.test_refuses_the_zone_identifier </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>host</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<pre class="fragment">Rule 4 refuses an IPv6 zone identifier.</pre> 
+</div>
+</div>
+<a id="ab93a6071d8b667fe3dacce418222849e" name="ab93a6071d8b667fe3dacce418222849e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab93a6071d8b667fe3dacce418222849e">&#9670;&#160;</a></span>test_refuses_the_zone_or_the_text_after_the_bracket()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_callback_url.CallbackUrlTests.test_refuses_the_zone_or_the_text_after_the_bracket </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>host</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<pre class="fragment">Inside the brackets only an IPv6 address, optionally followed by
+'%25' and a zone of unreserved characters, and after them only a
+port. The zone check is what keeps a quote out of the script for a
+bracketed host.</pre> 
+</div>
+</div>
 <a id="a3db5a8f3c896653f3cec18308317e812" name="a3db5a8f3c896653f3cec18308317e812"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3db5a8f3c896653f3cec18308317e812">&#9670;&#160;</a></span>test_the_endpoint_is_encoded()</h2>
 
@@ -345,6 +557,37 @@ A-labels, and anything else outside ASCII is refused.</pre>
       </div>
 </div><div class="c-member__body">
 
+</div>
+</div>
+<a id="a583552a9e357f4eb5e5ad6b93694bfc4" name="a583552a9e357f4eb5e5ad6b93694bfc4"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a583552a9e357f4eb5e5ad6b93694bfc4">&#9670;&#160;</a></span>test_the_logged_url_holds_no_user_information()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_callback_url.CallbackUrlTests.test_the_logged_url_holds_no_user_information </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>host</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>logged</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<pre class="fragment">Rule 6 shows *** in place of everything in the host before its
+last '@', wherever in the host value that '@' is.</pre> 
 </div>
 </div>
 <a id="a3d620079cec1f8c3d7616d5d3f2061c3" name="a3d620079cec1f8c3d7616d5d3f2061c3"></a>

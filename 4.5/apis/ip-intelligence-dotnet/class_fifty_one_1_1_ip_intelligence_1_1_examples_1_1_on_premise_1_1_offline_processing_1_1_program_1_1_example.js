@@ -1,4 +1,5 @@
 var class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_offline_processing_1_1_program_1_1_example =
 [
-    [ "Run", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_offline_processing_1_1_program_1_1_example.html#aa1ab74d5a0e3b75da49f10c3755eb50c", null ]
+    [ "Run", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_offline_processing_1_1_program_1_1_example.html#aa1ab74d5a0e3b75da49f10c3755eb50c", null ],
+    [ "NeedsEnterprise", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_offline_processing_1_1_program_1_1_example.html#a96439d885a164930ab6f3feb596da77c", null ]
 ];

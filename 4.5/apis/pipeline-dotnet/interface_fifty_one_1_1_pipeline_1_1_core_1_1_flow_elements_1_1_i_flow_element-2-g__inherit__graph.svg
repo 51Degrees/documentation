@@ -157,7 +157,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_sequence_element.html" target="_top" xlink:title="Sequence element establishes session and sequence evidence in the pipeline.">
+<g id="a_Node000006"><a xlink:href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_sequence_element.html" target="_top" xlink:title="Sequence element establishes session and sequence evidence in the pipeline, and holds the same two va...">
 <polygon fill="white" stroke="#666666" points="909,-323 730,-323 730,-282 909,-282 909,-323"/>
 <text text-anchor="start" x="738" y="-311" font-family="Helvetica,sans-Serif" font-size="10.00">FiftyOne.Pipeline.Engines.</text>
 <text text-anchor="start" x="738" y="-300" font-family="Helvetica,sans-Serif" font-size="10.00">FiftyOne.FlowElements.Sequence</text>

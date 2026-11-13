@@ -70,7 +70,104 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('namespacefifty
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-nested-classes" class="g-docs__section-heading"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="c-table__row memitem:CloudRequestEngine" id="r_CloudRequestEngine"><td class="c-table__cell">class &#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone__pipeline__cloudrequestengine_1_1cloudrequestengine_1_1_cloud_request_engine.html">CloudRequestEngine</a></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="c-table__row memitem:ad671f0c8ac3a06a139f42761bea7398b" id="r_ad671f0c8ac3a06a139f42761bea7398b"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad671f0c8ac3a06a139f42761bea7398b">_endpoint_from_environment</a> ()</td></tr>
+<tr class="c-table__row memdesc:ad671f0c8ac3a06a139f42761bea7398b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The cloud end point the environment gives, or None when it gives none.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="c-table__row memitem:ab06ad7b334a5fcaa41b9dd4cd0a1d54d" id="r_ab06ad7b334a5fcaa41b9dd4cd0a1d54d"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ab06ad7b334a5fcaa41b9dd4cd0a1d54d">_old_endpoint_reported</a> = False</td></tr>
+<tr class="c-table__row memitem:a106d2e372b0b15f63f661acc9e0ce364" id="r_a106d2e372b0b15f63f661acc9e0ce364"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a106d2e372b0b15f63f661acc9e0ce364">_old_endpoint_lock</a> = threading.Lock()</td></tr>
 </table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
+<a id="ad671f0c8ac3a06a139f42761bea7398b" name="ad671f0c8ac3a06a139f42761bea7398b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad671f0c8ac3a06a139f42761bea7398b">&#9670;&#160;</a></span>_endpoint_from_environment()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">_endpoint_from_environment </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The cloud end point the environment gives, or None when it gives none. </p>
+<p><a class="el" href="classfiftyone__pipeline__cloudrequestengine_1_1constants_1_1_constants.html#ae3d58f5839e6e1e4265aa786d95dbd8e">Constants.CLOUD_ENDPOINT</a> is read first. When it is unset or empty the variable <a class="el" href="classfiftyone__pipeline__cloudrequestengine_1_1constants_1_1_constants.html#a3a9d5b9c22b26d1becec0854192ac3c2">Constants.FOD_CLOUD_API_URL</a> names is read, which is the old name, and the first use of it is reported as deprecated. The report is a FutureWarning, which Python shows by default, because the people who set the variable are the ones running the application.</p>
+<p>@rtype: string </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: the end point, or None </dd></dl>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>
+<a id="a106d2e372b0b15f63f661acc9e0ce364" name="a106d2e372b0b15f63f661acc9e0ce364"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a106d2e372b0b15f63f661acc9e0ce364">&#9670;&#160;</a></span>_old_endpoint_lock</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_cloudrequestengine.cloudrequestengine._old_endpoint_lock = threading.Lock()</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="ab06ad7b334a5fcaa41b9dd4cd0a1d54d" name="ab06ad7b334a5fcaa41b9dd4cd0a1d54d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab06ad7b334a5fcaa41b9dd4cd0a1d54d">&#9670;&#160;</a></span>_old_endpoint_reported</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool fiftyone_pipeline_cloudrequestengine.cloudrequestengine._old_endpoint_reported = False</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
 </div><!-- primary -->
 </div><!-- inner -->
 <div id="page-nav" class="page-nav-panel">

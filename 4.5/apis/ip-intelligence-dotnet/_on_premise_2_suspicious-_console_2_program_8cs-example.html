@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <li>How to combine diversity values with other network related values to assess the likelihood of an IP address being something suspicious.</li>
 </ol>
 <p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-dotnet/blob/main/examples/ip-intelligence/OnPremise/Suspicious-Console/Program.cs">GitHub</a>.</p>
-<p>This example requires an enterprise IP Intelligence data file (.ipi). To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-suspicious-console-program.cs&amp;utm_term=program">contact us</a>.</p>
+<p>This example requires an enterprise IP Intelligence data file (.ipi), as the properties it combines are only in that file. Run with the free Lite data file, which it uses by default, it says which properties it needs and where to ask for a copy, and stops. To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-suspicious-console-program.cs&amp;utm_term=program">contact us</a>.</p>
 <p>Required NuGet Dependencies:</p><ul>
 <li><a href="https://www.nuget.org/packages/FiftyOne.IpIntelligence/">FiftyOne.IpIntelligence</a></li>
 </ul>
@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"><span class="c-code__comment"> * such notice(s) shall fulfill the requirements of that article.</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * ********************************************************************* */</span></div>
 <div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">using </span><a class="code hl_namespace" href="namespace_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements.html">FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements</a>;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Core.FlowElements;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>FiftyOne.Pipeline.Engines;</div>
 <div class="c-code__line"><span class="c-code__keyword">using </span>Microsoft.Extensions.Logging;</div>
@@ -111,6 +112,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">{</div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>Example : ExampleBase</div>
 <div class="c-code__line">    {</div>
+<div class="c-code__line">        <span class="c-code__keyword">private</span> <span class="c-code__keyword">const</span> <span class="c-code__keywordtype">string</span> ContactUs = <span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-ip-intelligence-onpremise-suspicious-console-program.cs&amp;utm_term=enterprise-data-file&quot;</span>;</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">        <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> readonly IReadOnlyList&lt;string&gt; EnterpriseProperties = <span class="c-code__keyword">new</span>[]</div>
+<div class="c-code__line">        {</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;IsCellular&quot;</span>,</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;HardwareDiversity&quot;</span>,</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;BrowserDiversity&quot;</span>,</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;LocationConfidence&quot;</span>,</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;IsHosted&quot;</span>,</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;CountryCode&quot;</span>,</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;HumanProbability&quot;</span></div>
+<div class="c-code__line">        };</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__keyword">public</span> <span class="c-code__keywordtype">void</span> Run(<span class="c-code__keywordtype">string</span> dataFile, ILoggerFactory loggerFactory, TextWriter output)</div>
 <div class="c-code__line">        {</div>
 <div class="c-code__line">            <span class="c-code__comment">// In this example, we use the IpiPipelineBuilder and configure it</span></div>
@@ -118,24 +132,33 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">            <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-suspicious-console-program.cs&amp;utm_term=run</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Note that we wrap the creation of a pipeline in a using to control its life cycle</span></div>
-<div class="c-code__line">            <span class="c-code__keyword">using</span> (var pipeline = <span class="c-code__keyword">new</span> IpiPipelineBuilder()</div>
-<div class="c-code__line">                .UseOnPremise(dataFile, <span class="c-code__keyword">null</span>, <span class="c-code__keyword">false</span>)</div>
+<div class="c-code__line">            <span class="c-code__keyword">using</span> (var pipeline = <span class="c-code__keyword">new</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="class_fifty_one_1_1_ip_intelligence_1_1_ipi_pipeline_builder.html">IpiPipelineBuilder</a>()</div>
+<div class="c-code__line">                .<a id="a1" name="a1"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_ipi_pipeline_builder.html#ad920b2c94710f454fda9e3f873420950">UseOnPremise</a>(dataFile, <span class="c-code__keyword">null</span>, <span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                <span class="c-code__comment">// Use the LowMemory profile so the (multi-gigabyte) IP Intelligence</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// data file is paged from disk rather than loaded entirely into RAM.</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// See the documentation for more detail on this and other</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// configuration options.</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-suspicious-console-program.cs&amp;utm_term=run</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-suspicious-console-program.cs&amp;utm_term=run</span></div>
-<div class="c-code__line">                .SetPerformanceProfile(PerformanceProfiles.LowMemory)</div>
+<div class="c-code__line">                .<a id="a2" name="a2"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder.html#a98696554aeeabdd8325e5d8fba768207">SetPerformanceProfile</a>(PerformanceProfiles.LowMemory)</div>
 <div class="c-code__line">                <span class="c-code__comment">// inhibit sharing usage for this example, usually this should be set to &quot;true&quot;</span></div>
-<div class="c-code__line">                .SetShareUsage(<span class="c-code__keyword">false</span>)</div>
+<div class="c-code__line">                .<a id="a3" name="a3"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder.html#a50a041ce1ad7be4428a4fe6f874ef63c">SetShareUsage</a>(<span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                <span class="c-code__comment">// inhibit auto-update of the data file for this test</span></div>
-<div class="c-code__line">                .SetAutoUpdate(<span class="c-code__keyword">false</span>)</div>
-<div class="c-code__line">                .SetDataUpdateOnStartUp(<span class="c-code__keyword">false</span>)</div>
-<div class="c-code__line">                .SetDataFileSystemWatcher(<span class="c-code__keyword">false</span>)</div>
-<div class="c-code__line">                .Build())</div>
+<div class="c-code__line">                .<a id="a4" name="a4"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder.html#a75bc7d9800029d78c8f8bbc0db71f78a">SetAutoUpdate</a>(<span class="c-code__keyword">false</span>)</div>
+<div class="c-code__line">                .<a id="a5" name="a5"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder.html#a545d6d6a4ce899eeaf4f1dbe374a6e16">SetDataUpdateOnStartUp</a>(<span class="c-code__keyword">false</span>)</div>
+<div class="c-code__line">                .<a id="a6" name="a6"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder.html#a0b69fac2b72561db2a17e6da736e2ae6">SetDataFileSystemWatcher</a>(<span class="c-code__keyword">false</span>)</div>
+<div class="c-code__line">                .<a id="a7" name="a7"></a><a class="code hl_function" href="class_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder.html#aef31e941c2052b1633f6c742980a7f12">Build</a>())</div>
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                ExampleUtils.CheckDataFile(pipeline, loggerFactory.CreateLogger&lt;Program&gt;());</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">if</span> (ExampleUtils.LacksEnterpriseProperties(</div>
+<div class="c-code__line">                    pipeline.GetElement&lt;<a id="_a8" name="_a8"></a><a class="code hl_class" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">IpiOnPremiseEngine</a>&gt;(),</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;Judging whether an IP address is suspicious&quot;</span>,</div>
+<div class="c-code__line">                    EnterpriseProperties,</div>
+<div class="c-code__line">                    output,</div>
+<div class="c-code__line">                    ContactUs))</div>
+<div class="c-code__line">                {</div>
+<div class="c-code__line">                    <span class="c-code__keywordflow">return</span>;</div>
+<div class="c-code__line">                }</div>
 <div class="c-code__line">                <span class="c-code__keywordflow">foreach</span> (var evidence <span class="c-code__keywordflow">in</span> <a class="code hl_namespace" href="namespace_examples.html">Examples</a>.ExampleUtils.EvidenceValues)</div>
 <div class="c-code__line">                {</div>
 <div class="c-code__line">                    AnalyseEvidence(evidence, pipeline, output);</div>
@@ -217,16 +240,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> Main(<span class="c-code__keywordtype">string</span>[] args)</div>
+<div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> Main(<span class="c-code__keywordtype">string</span>[] args)</div>
 <div class="c-code__line">    {</div>
-<div class="c-code__line">        <span class="c-code__comment">// Use the supplied path for the data file or find the lite file that is included</span></div>
-<div class="c-code__line">        <span class="c-code__comment">// in the repository.</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// Use the supplied path for the data file or find the free Lite file that the</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// data repository links, downloading it when it is missing.</span></div>
 <div class="c-code__line">        var dataFile = args.Length &gt; 0 ? args[0] :</div>
 <div class="c-code__line">        <span class="c-code__comment">// In this example, by default, the 51degrees IP Intelligence data file needs to be somewhere in the</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// project space, or you may specify another file as a command line parameter.</span></div>
 <div class="c-code__line">        <span class="c-code__comment">//</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// For testing, contact us to obtain an enterprise data file: https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-onpremise-suspicious-console-program.cs&amp;utm_term=main</span></div>
-<div class="c-code__line">        <a class="code hl_namespace" href="namespace_examples.html">Examples</a>.ExampleUtils.FindDataFile(Constants.ENTERPRISE_IPI_DATA_FILE_NAME);</div>
+<div class="c-code__line">        <a class="code hl_namespace" href="namespace_examples.html">Examples</a>.ExampleUtils.FindDataFile(Constants.LITE_IPI_DATA_FILE_NAME);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        File.WriteAllText(<span class="c-code__stringliteral">&quot;Metadata_DataFileName.txt&quot;</span>, dataFile);</div>
 <div class="c-code__line"> </div>
@@ -241,17 +264,28 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">        <span class="c-code__keywordflow">else</span></div>
 <div class="c-code__line">        {</div>
 <div class="c-code__line">            logger.LogError(<span class="c-code__stringliteral">&quot;Failed to find a IP Intelligence data file. Make sure the &quot;</span> +</div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;Enterprise data file is in cxx/data/ip-intelligence. A different &quot;</span> +</div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;file can be specified by supplying the full path as a command &quot;</span> +</div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;line argument&quot;</span>);</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;submodules have been fetched by running &quot;</span> +</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;`git submodule update --init --recursive`, so that the free Lite &quot;</span> +</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;file can be downloaded. A different file can be specified by &quot;</span> +</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;supplying the full path as a command line argument&quot;</span>);</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment">// Dispose the logger to ensure any messages get flushed</span></div>
 <div class="c-code__line">        loggerFactory.Dispose();</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_html"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements.IpiOnPremiseEngine</a></div><div class="ttdoc">IP intelligence engine.</div><div class="ttdef"><b>Definition</b> IpiOnPremiseEngine.cs:46</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder_html_a0b69fac2b72561db2a17e6da736e2ae6"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder.html#a0b69fac2b72561db2a17e6da736e2ae6">FiftyOne.IpIntelligence.IpiOnPremisePipelineBuilder.SetDataFileSystemWatcher</a></div><div class="ttdeci">IpiOnPremisePipelineBuilder SetDataFileSystemWatcher(bool enabled)</div><div class="ttdoc">The DataUpdateService has the ability to watch a file on disk and refresh the engine as soon as that ...</div><div class="ttdef"><b>Definition</b> IpiOnPremisePipelineBuilder.cs:449</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder_html_a50a041ce1ad7be4428a4fe6f874ef63c"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder.html#a50a041ce1ad7be4428a4fe6f874ef63c">FiftyOne.IpIntelligence.IpiOnPremisePipelineBuilder.SetShareUsage</a></div><div class="ttdeci">IpiOnPremisePipelineBuilder SetShareUsage(bool enabled)</div><div class="ttdoc">Set share usage enabled/disabled.</div><div class="ttdef"><b>Definition</b> IpiOnPremisePipelineBuilder.cs:167</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder_html_a545d6d6a4ce899eeaf4f1dbe374a6e16"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder.html#a545d6d6a4ce899eeaf4f1dbe374a6e16">FiftyOne.IpIntelligence.IpiOnPremisePipelineBuilder.SetDataUpdateOnStartUp</a></div><div class="ttdeci">IpiOnPremisePipelineBuilder SetDataUpdateOnStartUp(bool enabled)</div><div class="ttdoc">Enable/Disable update on startup.</div><div class="ttdef"><b>Definition</b> IpiOnPremisePipelineBuilder.cs:224</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder_html_a75bc7d9800029d78c8f8bbc0db71f78a"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder.html#a75bc7d9800029d78c8f8bbc0db71f78a">FiftyOne.IpIntelligence.IpiOnPremisePipelineBuilder.SetAutoUpdate</a></div><div class="ttdeci">IpiOnPremisePipelineBuilder SetAutoUpdate(bool enabled)</div><div class="ttdoc">Enable/Disable auto update.</div><div class="ttdef"><b>Definition</b> IpiOnPremisePipelineBuilder.cs:203</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder_html_a98696554aeeabdd8325e5d8fba768207"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder.html#a98696554aeeabdd8325e5d8fba768207">FiftyOne.IpIntelligence.IpiOnPremisePipelineBuilder.SetPerformanceProfile</a></div><div class="ttdeci">IpiOnPremisePipelineBuilder SetPerformanceProfile(PerformanceProfiles profile)</div><div class="ttdoc">Set the performance profile for the IP intelligence engine.</div><div class="ttdef"><b>Definition</b> IpiOnPremisePipelineBuilder.cs:323</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder_html_aef31e941c2052b1633f6c742980a7f12"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_ipi_on_premise_pipeline_builder.html#aef31e941c2052b1633f6c742980a7f12">FiftyOne.IpIntelligence.IpiOnPremisePipelineBuilder.Build</a></div><div class="ttdeci">override IPipeline Build()</div><div class="ttdoc">Build and return a pipeline that can perform IP intelligence.</div><div class="ttdef"><b>Definition</b> IpiOnPremisePipelineBuilder.cs:459</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_ipi_pipeline_builder_html"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_ipi_pipeline_builder.html">FiftyOne.IpIntelligence.IpiPipelineBuilder</a></div><div class="ttdoc">Builder used to create a Pipeline with a IP intelligence engine.</div><div class="ttdef"><b>Definition</b> IpiPipelineBuilder.cs:34</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_ipi_pipeline_builder_html_ad920b2c94710f454fda9e3f873420950"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_ipi_pipeline_builder.html#ad920b2c94710f454fda9e3f873420950">FiftyOne.IpIntelligence.IpiPipelineBuilder.UseOnPremise</a></div><div class="ttdeci">IpiOnPremisePipelineBuilder UseOnPremise(string datafile, bool createTempDataCopy)</div><div class="ttdoc">Use a 51Degrees on-premise IP intelligence engine to perform IP intelligence.</div><div class="ttdef"><b>Definition</b> IpiPipelineBuilder.cs:160</div></div>
 <div class="ttc" id="anamespace_examples_html"><div class="ttname"><a href="namespace_examples.html">Examples</a></div><div class="ttdef"><b>Definition</b> Calculations.cs:34</div></div>
-<div class="ttc" id="anamespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_suspicious_html"><div class="ttname"><a href="namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_suspicious.html">FiftyOne.IpIntelligence.Examples.OnPremise.Suspicious</a></div><div class="ttdef"><b>Definition</b> OnPremise/Suspicious-Console/Program.cs:31</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_html"><div class="ttname"><a href="namespace_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements.html">FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements</a></div><div class="ttdef"><b>Definition</b> IpiOnPremiseEngine.cs:39</div></div>
+<div class="ttc" id="anamespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_suspicious_html"><div class="ttname"><a href="namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_suspicious.html">FiftyOne.IpIntelligence.Examples.OnPremise.Suspicious</a></div><div class="ttdef"><b>Definition</b> OnPremise/Suspicious-Console/Program.cs:32</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

@@ -109,8 +109,8 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a0017be8046b3c1eabbe75a336249b816" id="r_a0017be8046b3c1eabbe75a336249b816"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a0017be8046b3c1eabbe75a336249b816">isValidObjectName</a> ($name)</td></tr>
 <tr class="c-table__row memdesc:a0017be8046b3c1eabbe75a336249b816"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether a name can be used as the client side object's name.  <br /></td></tr>
-<tr class="c-table__row memitem:ad6dcc780399b236f2b38003e0ff1dcef" id="r_ad6dcc780399b236f2b38003e0ff1dcef"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#ad6dcc780399b236f2b38003e0ff1dcef">parseSequence</a> ($value)</td></tr>
-<tr class="c-table__row memdesc:ad6dcc780399b236f2b38003e0ff1dcef"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A sequence as a positive 32 bit integer, or null when the value cannot be used as one.  <br /></td></tr>
+<tr class="c-table__row memitem:a5825d9eebc13b15a24963ccf5595607c" id="r_a5825d9eebc13b15a24963ccf5595607c"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a5825d9eebc13b15a24963ccf5595607c">parseSequence</a> ($value, int $max=self::MAX_SEQUENCE)</td></tr>
+<tr class="c-table__row memdesc:a5825d9eebc13b15a24963ccf5595607c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A sequence as a whole number, or a string of the digits 0 to 9 only, from 1 up to $max, or null when the value cannot be used as one.  <br /></td></tr>
 <tr class="c-table__row memitem:a2e1a6f96fc9225419dcca7a358d51aca" id="r_a2e1a6f96fc9225419dcca7a358d51aca"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a2e1a6f96fc9225419dcca7a358d51aca">getSequence</a> ($value)</td></tr>
 <tr class="c-table__row memdesc:a2e1a6f96fc9225419dcca7a358d51aca"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The sequence to render into the script.  <br /></td></tr>
 <tr class="c-table__row memitem:ac3dc806557c9521d4e9ebf40b63a07ec" id="r_ac3dc806557c9521d4e9ebf40b63a07ec"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#ac3dc806557c9521d4e9ebf40b63a07ec">getSessionId</a> ($value)</td></tr>
@@ -119,8 +119,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="c-table__row memitem:ad686049a9a24912d39013a8ba26777da" id="r_ad686049a9a24912d39013a8ba26777da"><td class="c-table__cell"><a id="ad686049a9a24912d39013a8ba26777da" name="ad686049a9a24912d39013a8ba26777da"></a>
-const&#160;</td><td class="c-table__cell"><b>MAX_SEQUENCE</b> = 2147483647</td></tr>
-<tr class="c-table__row memdesc:ad686049a9a24912d39013a8ba26777da"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The largest sequence, which is the largest 32 bit signed integer. <br /></td></tr>
+const&#160;</td><td class="c-table__cell"><b>MAX_SEQUENCE</b> = 2147483646</td></tr>
+<tr class="c-table__row memdesc:ad686049a9a24912d39013a8ba26777da"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The largest sequence the SequenceElement counts from, so that adding one stays within a 32 bit signed integer. <br /></td></tr>
 <tr class="c-table__row memitem:a381e9014055ef25b53978758a412f142" id="r_a381e9014055ef25b53978758a412f142"><td class="c-table__cell"><a id="a381e9014055ef25b53978758a412f142" name="a381e9014055ef25b53978758a412f142"></a>
 array&#160;</td><td class="c-table__cell"><b>$settings</b></td></tr>
 <tr class="c-table__row memitem:a457a580c52861218b58fc2b3dfccfbd1" id="r_a457a580c52861218b58fc2b3dfccfbd1"><td class="c-table__cell"><a id="a457a580c52861218b58fc2b3dfccfbd1" name="a457a580c52861218b58fc2b3dfccfbd1"></a>
@@ -156,7 +156,7 @@ array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
 </div><div class="c-member__body">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">array&lt;string,mixed&gt;</td><td>$settings 'objName' is the name of the client side object, 'fod' when absent or null. The page request can ask for a different name with the 'query.fod-js-object-name' evidence. A name must be a JavaScript identifier (ASCII letters, digits, '_' and '$', not starting with a digit) and not a reserved word. An invalid 'objName', the empty string included, throws an \InvalidArgumentException, and an invalid requested name is ignored with a warning logged. </td></tr>
+    <tr><td class="paramname">array&lt;string,mixed&gt;</td><td>$settings 'objName' is the name of the client side object, 'fod' when absent or null. The page request can ask for a different name with the 'query.fod-js-object-name' evidence. A name must be a JavaScript identifier (ASCII letters, digits, '_' and '$', not starting with a digit) and not a reserved word. An invalid 'objName', the empty string included, throws an \InvalidArgumentException, and an invalid requested name is ignored with a warning logged. 'protocol', when set, must be http or https in any case of its ASCII letters, or the constructor throws an \InvalidArgumentException. Left out, the 'header.protocol' evidence is used, or https when there is none. </td></tr>
   </table>
   </dd>
 </dl>
@@ -217,10 +217,10 @@ array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
 </div><div class="c-member__body">
 
 <p>The sequence to render into the script. </p>
-<p>The template writes the sequence as bare code (var sequence = ...;), so anything other than a whole number would stop the script parsing, or change what it does. A pipeline without a SequenceElement passes the query string's value, or nothing at all, straight through, and the pipeline specification requires 1 in that case. This builder goes a little further than the specification currently says and renders 1 for any value that is not a positive 32 bit integer, because the script counts its own requests up from this number and cannot use zero or a negative one.</p>
+<p>The template writes the sequence as bare code (var sequence = ...;), so anything other than a whole number would stop the script parsing, or change what it does. The value is the SequenceElement's sequence when parseSequence can use it, up to the largest sequence the SequenceElement gives, and 1 otherwise, because the script counts its own requests up from this number and cannot use zero or a negative one.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramtype">mixed</td><td class="paramname">$value</td><td>The query.sequence evidence, or null </td></tr>
+    <tr><td class="paramtype">mixed</td><td class="paramname">$value</td><td>The SequenceElement's sequence, or null </td></tr>
   </table>
   </dd>
 </dl>
@@ -255,10 +255,10 @@ array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
 </div><div class="c-member__body">
 
 <p>The session id to render into the script. </p>
-<p>The template writes the session id inside quotes without any escaping, so a session id that is not 1 to 64 ASCII letters, digits and hyphens is rendered as an empty string, whether it came from the SequenceElement or from the query string, as the pipeline specification says.</p>
+<p>The template writes the session id inside quotes without any escaping, so a session id that is not 1 to 64 ASCII letters, digits and hyphens is rendered as an empty string, as the pipeline specification says.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramtype">mixed</td><td class="paramname">$value</td><td>The query.session-id evidence, or null </td></tr>
+    <tr><td class="paramtype">mixed</td><td class="paramname">$value</td><td>The SequenceElement's session id, or null </td></tr>
   </table>
   </dd>
 </dl>
@@ -303,8 +303,8 @@ array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
 
 </div>
 </div>
-<a id="ad6dcc780399b236f2b38003e0ff1dcef" name="ad6dcc780399b236f2b38003e0ff1dcef"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad6dcc780399b236f2b38003e0ff1dcef">&#9670;&#160;</a></span>parseSequence()</h2>
+<a id="a5825d9eebc13b15a24963ccf5595607c" name="a5825d9eebc13b15a24963ccf5595607c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5825d9eebc13b15a24963ccf5595607c">&#9670;&#160;</a></span>parseSequence()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -317,8 +317,12 @@ array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
             <tr class="c-table__row">
               <td class="c-table__cell">fiftyone\pipeline\core\JavascriptBuilderElement::parseSequence </td>
           <td>(</td>
-          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>$value</em></span></td><td>)</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>$value</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
           <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>$max</em></span><span class="paramdefsep"> = </span><span class="paramdefval">self::MAX_SEQUENCE</span>&#160;)</td>
         </tr>
           </table>
         </div>
@@ -330,10 +334,12 @@ array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
 </table>
 </div><div class="c-member__body">
 
-<p>A sequence as a positive 32 bit integer, or null when the value cannot be used as one. </p>
+<p>A sequence as a whole number, or a string of the digits 0 to 9 only, from 1 up to $max, or null when the value cannot be used as one. </p>
+<p>A sign or white space gives null. So does 0, which the SequenceElement then counts as absent, giving 1 as a sequence of 0 does.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramtype">mixed</td><td class="paramname">$value</td><td>The query.sequence evidence, or null </td></tr>
+    <tr><td class="paramtype">int</td><td class="paramname">$max</td><td>The largest usable sequence </td></tr>
   </table>
   </dd>
 </dl>

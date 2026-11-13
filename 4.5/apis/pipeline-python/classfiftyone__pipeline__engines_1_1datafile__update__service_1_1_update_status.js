@@ -10,5 +10,7 @@ var classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_update_sta
     [ "AUTO_UPDATE_NEW_FILE_CANT_RENAME", "classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_update_status.html#ac6c3ba29983310e2ef7493f97b539b10", null ],
     [ "AUTO_UPDATE_NOT_NEEDED", "classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_update_status.html#a4c91e0ecd85c1bb7eea7a1a86a61c36e", null ],
     [ "AUTO_UPDATE_REFRESH_FAILED", "classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_update_status.html#ad452671e045983e0206943448bd86831", null ],
-    [ "AUTO_UPDATE_SUCCESS", "classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_update_status.html#ad1cf9dde4e544acffae07321df0cf3f5", null ]
+    [ "AUTO_UPDATE_SUCCESS", "classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_update_status.html#ad1cf9dde4e544acffae07321df0cf3f5", null ],
+    [ "AUTO_UPDATE_TEMP_PATH_NOT_SET", "classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_update_status.html#a4cbd3a3df9ba194e9b00d037c698cbbb", null ],
+    [ "AUTO_UPDATE_UNKNOWN_ERROR", "classfiftyone__pipeline__engines_1_1datafile__update__service_1_1_update_status.html#a4b664f0f23d23bee6ac8fd753ecc429d", null ]
 ];

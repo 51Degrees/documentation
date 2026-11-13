@@ -68,8 +68,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2man
 <p>This example shows how to get the device detection engine to refresh its internal data structures when a new data file is available. This can be done asynchronously, without the need to restart the machine.</p>
 <p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-php/blob/main/device-detection/onpremise/examples/onpremise/manualDataUpdate.php">GitHub</a>.</p>
 <p>In this example we create an on premise 51Degrees device detection pipeline. In order to do this you will need a copy of the 51Degrees on-premise library and need to make the following additions to your php.ini file</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line"><a id="_a0" name="_a0"></a><a class="code hl_class" href="class_fifty_one_degrees_hash_engine.html">FiftyOneDegreesHashEngine</a>.data_file = <span class="c-code__comment">// location of the data file</span></div>
-<div class="ttc" id="aclass_fifty_one_degrees_hash_engine_html"><div class="ttname"><a href="class_fifty_one_degrees_hash_engine.html">FiftyOneDegreesHashEngine</a></div><div class="ttdef"><b>Definition</b> FiftyOneDegreesHashEngine.php:29</div></div>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">FiftyOneDegreesHashEngine.data_file = <span class="c-code__comment">// location of the data file</span></div>
 </div><!-- fragment --><p>When running under a process manager such as Apache MPM or php-fpm, the engine must load the whole data file into memory. This is now enforced automatically (the MaxPerformance profile is always used), so no extra configuration is required. More details can be found in <a href="https://github.com/51Degrees/51degrees-php/blob/main/device-detection/onpremise/readme.md">README</a>.</p>
 <p>Under process managers, refreshing internal data will not work as it is required to be performed on both main process and child processes. There is not a proven solution to do so yet, so we recommend a full server restart to be performed instead.</p>
 <p>Expected output:</p>
@@ -108,8 +107,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2man
 <div class="c-code__line"> </div>
 <div class="c-code__line">require __DIR__ . <span class="c-code__stringliteral">&#39;/../../vendor/autoload.php&#39;</span>;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">use <a id="_a1" name="_a1"></a><a class="code hl_classRef" href="../../pipeline-php/4.5/classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder.html">fiftyone\pipeline\core\PipelineBuilder</a>;</div>
-<div class="c-code__line">use <a id="_a2" name="_a2"></a><a class="code hl_classRef" href="../../pipeline-php/4.5/classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_on_premise.html">fiftyone\pipeline\devicedetection\DeviceDetectionOnPremise</a>;</div>
+<div class="c-code__line">use <a id="_a0" name="_a0"></a><a class="code hl_classRef" href="../../pipeline-php/4.5/classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder.html">fiftyone\pipeline\core\PipelineBuilder</a>;</div>
+<div class="c-code__line">use <a id="_a1" name="_a1"></a><a class="code hl_classRef" href="../../pipeline-php/4.5/classfiftyone_1_1pipeline_1_1devicedetection_1_1_device_detection_on_premise.html">fiftyone\pipeline\devicedetection\DeviceDetectionOnPremise</a>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">$deviceEngine = <span class="c-code__keyword">new</span> DeviceDetectionOnPremise();</div>
 <div class="c-code__line"> </div>

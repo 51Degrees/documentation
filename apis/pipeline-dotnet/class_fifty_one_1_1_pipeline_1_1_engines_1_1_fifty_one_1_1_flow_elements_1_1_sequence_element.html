@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_fifty_on
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
-<div class="textblock"><p>Sequence element establishes session and sequence evidence in the pipeline. </p>
+<div class="textblock"><p>Sequence element establishes session and sequence evidence in the pipeline, and holds the same two values as element data. </p>
 <p>See the Specification</p>
 </div><h2 class="g-docs__section-heading">
 Inheritance diagram for FiftyOne.Pipeline.Engines.FiftyOne.FlowElements.SequenceElement:</h2>
@@ -84,6 +84,8 @@ Collaboration diagram for FiftyOne.Pipeline.Engines.FiftyOne.FlowElements.Sequen
 Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:ab24f5e49c0476cd2ef04dc5ff275cddf" id="r_ab24f5e49c0476cd2ef04dc5ff275cddf"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab24f5e49c0476cd2ef04dc5ff275cddf">SequenceElement</a> (ILogger&lt; <a class="el" href="class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g.html#ac11cd8f14a068fb28c5b4ec117bf224f">FlowElementBase</a>&lt; <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_data.html">IElementData</a>, <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_property_meta_data.html">IElementPropertyMetaData</a> &gt; &gt; logger)</td></tr>
 <tr class="c-table__row memdesc:ab24f5e49c0476cd2ef04dc5ff275cddf"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor.  <br /></td></tr>
+<tr class="c-table__row memitem:a7158870dd433e67486382edadd6cd29c" id="r_a7158870dd433e67486382edadd6cd29c"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7158870dd433e67486382edadd6cd29c">SequenceElement</a> (ILogger&lt; <a class="el" href="class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g.html#ac11cd8f14a068fb28c5b4ec117bf224f">FlowElementBase</a>&lt; <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_data.html">IElementData</a>, <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_property_meta_data.html">IElementPropertyMetaData</a> &gt; &gt; logger, ILogger&lt; <a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_sequence_data.html">SequenceData</a> &gt; dataLogger)</td></tr>
+<tr class="c-table__row memdesc:a7158870dd433e67486382edadd6cd29c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor.  <br /></td></tr>
 <tr class="c-table__row inherit_header pub_methods_class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g.html">FiftyOne.Pipeline.Core.FlowElements.FlowElementBase&lt; T, TMeta &gt;</a></h3></td></tr>
 <tr class="c-table__row memitem:ac11cd8f14a068fb28c5b4ec117bf224f pub_methods_class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g" id="r_ac11cd8f14a068fb28c5b4ec117bf224f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g.html#ac11cd8f14a068fb28c5b4ec117bf224f">FlowElementBase</a> (ILogger&lt; FlowElementBase&lt; T, TMeta &gt; &gt; logger)</td></tr>
 <tr class="c-table__row memdesc:ac11cd8f14a068fb28c5b4ec117bf224f pub_methods_class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor.  <br /></td></tr>
@@ -109,7 +111,7 @@ Protected Member Functions</h2></td></tr>
 override&#160;void&#160;</td><td class="c-table__cell"><b>ManagedResourcesCleanup</b> ()</td></tr>
 <tr class="c-table__row memdesc:a15ea8b94d889c5d4c80951eccb726b01"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Called when the element is disposed. <br /></td></tr>
 <tr class="c-table__row memitem:a67aebcb3a624b34cfc7d8f6516a65a93" id="r_a67aebcb3a624b34cfc7d8f6516a65a93"><td class="c-table__cell">override&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a67aebcb3a624b34cfc7d8f6516a65a93">ProcessInternal</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data)</td></tr>
-<tr class="c-table__row memdesc:a67aebcb3a624b34cfc7d8f6516a65a93"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process method checks for presence of a session id and sequence number.  <br /></td></tr>
+<tr class="c-table__row memdesc:a67aebcb3a624b34cfc7d8f6516a65a93"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process method checks for a session id and a sequence number in the evidence.  <br /></td></tr>
 <tr class="c-table__row memitem:abe930f3ef524295cd3abfefe23e1a6c4" id="r_abe930f3ef524295cd3abfefe23e1a6c4"><td class="c-table__cell">override&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#abe930f3ef524295cd3abfefe23e1a6c4">UnmanagedResourcesCleanup</a> ()</td></tr>
 <tr class="c-table__row memdesc:abe930f3ef524295cd3abfefe23e1a6c4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Called as part of object disposal.  <br /></td></tr>
 <tr class="c-table__row inherit_header pro_methods_class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Protected Member Functions inherited from <a class="el" href="class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g.html">FiftyOne.Pipeline.Core.FlowElements.FlowElementBase&lt; T, TMeta &gt;</a></h3></td></tr>
@@ -158,7 +160,7 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="ab24f5e49c0476cd2ef04dc5ff275cddf" name="ab24f5e49c0476cd2ef04dc5ff275cddf"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab24f5e49c0476cd2ef04dc5ff275cddf">&#9670;&#160;</a></span>SequenceElement()</h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab24f5e49c0476cd2ef04dc5ff275cddf">&#9670;&#160;</a></span>SequenceElement() <span class="c-member__count">[1/2]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -180,6 +182,40 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">logger</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7158870dd433e67486382edadd6cd29c" name="a7158870dd433e67486382edadd6cd29c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7158870dd433e67486382edadd6cd29c">&#9670;&#160;</a></span>SequenceElement() <span class="c-member__count">[2/2]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">FiftyOne.Pipeline.Engines.FiftyOne.FlowElements.SequenceElement.SequenceElement </td>
+          <td>(</td>
+          <td class="c-table__cell">ILogger&lt; <a class="el" href="class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g.html#ac11cd8f14a068fb28c5b4ec117bf224f">FlowElementBase</a>&lt; <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_data.html">IElementData</a>, <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_property_meta_data.html">IElementPropertyMetaData</a> &gt; &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>logger</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">ILogger&lt; <a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_sequence_data.html">SequenceData</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>dataLogger</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td></td></tr>
+    <tr><td class="paramname">dataLogger</td><td>Used for logging by the element data this element creates. </td></tr>
   </table>
   </dd>
 </dl>
@@ -214,8 +250,8 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
 </table>
 </div><div class="c-member__body">
 
-<p>Process method checks for presence of a session id and sequence number. </p>
-<p>If they do not exist then they are initialized in evidence. If they do exist in evidence then the sequence number is incremented and added back to the evidence.</p>
+<p>Process method checks for a session id and a sequence number in the evidence. </p>
+<p>A value that is absent or not valid is made new, as a new id or as 1. A valid sequence number is incremented. Both values are written to the evidence and to the element data.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>The IFlowData instance to process. </td></tr>

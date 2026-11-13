@@ -87,6 +87,10 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a9f7e217f312c36ece3eb6d2f0582fd8e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add a cache to an engine.  <br /></td></tr>
 <tr class="c-table__row memitem:a3b01565c7621870aefb7f71a286a6927" id="r_a3b01565c7621870aefb7f71a286a6927"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a3b01565c7621870aefb7f71a286a6927">refreshData</a> (?string $fileName_or_data=null, ?int $length=null)</td></tr>
 <tr class="c-table__row memdesc:a3b01565c7621870aefb7f71a286a6927"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Ask the engine to start using the specified data file for detections.  <br /></td></tr>
+<tr class="c-table__row memitem:a4b53b39cca32908847847bb7701653e7" id="r_a4b53b39cca32908847847bb7701653e7"><td class="c-table__cell">&amp;&#160;</td><td class="c-table__cell"><a class="el" href="#a4b53b39cca32908847847bb7701653e7">__get</a> (string $name)</td></tr>
+<tr class="c-table__row memdesc:a4b53b39cca32908847847bb7701653e7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Builds the table of every property when it is first read.  <br /></td></tr>
+<tr class="c-table__row memitem:ab07c48b8fc0c5c52d860aac92a66a3ad" id="r_ab07c48b8fc0c5c52d860aac92a66a3ad"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab07c48b8fc0c5c52d860aac92a66a3ad">findProperty</a> (string $name)</td></tr>
+<tr class="c-table__row memdesc:ab07c48b8fc0c5c52d860aac92a66a3ad"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The metadata a read needs of a property, holding at least its name, type and category, or null when the engine has no property of that name.  <br /></td></tr>
 <tr class="c-table__row inherit_header pub_methods_classfiftyone_1_1pipeline_1_1engines_1_1_engine"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1_engine.html">fiftyone\pipeline\engines\Engine</a></h3></td></tr>
 <tr class="c-table__row memitem:a837399d0c933bb231ca88cd86ff494c0 pub_methods_classfiftyone_1_1pipeline_1_1engines_1_1_engine" id="r_a837399d0c933bb231ca88cd86ff494c0"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1_engine.html#a837399d0c933bb231ca88cd86ff494c0">getDataSourceTier</a> ()</td></tr>
 <tr class="c-table__row memdesc:a837399d0c933bb231ca88cd86ff494c0 pub_methods_classfiftyone_1_1pipeline_1_1engines_1_1_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the tier to which the current data source belongs.  <br /></td></tr>
@@ -128,6 +132,12 @@ string&#160;</td><td class="c-table__cell"><b>$dataKey</b></td></tr>
 array&#160;</td><td class="c-table__cell"><b>$properties</b> = []</td></tr>
 <tr class="c-table__row memitem:adb5dde466127681437071f5b5804da59 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_flow_element" id="r_adb5dde466127681437071f5b5804da59"><td class="c-table__cell">
 array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-inherited" class="g-docs__section-heading"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="c-table__row inherit_header pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1_engine"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Protected Member Functions inherited from <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1_engine.html">fiftyone\pipeline\engines\Engine</a></h3></td></tr>
+<tr class="c-table__row memitem:a6f78f12550fa666b15a3637399c5edf2 pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1_engine" id="r_a6f78f12550fa666b15a3637399c5edf2"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1_engine.html#a6f78f12550fa666b15a3637399c5edf2">holdsValueForOneRequest</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_element_data.html">ElementData</a> $data)</td></tr>
+<tr class="c-table__row memdesc:a6f78f12550fa666b15a3637399c5edf2 pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether a result holds a value created for the one request that asked for it, such as a 51Did.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="a2c13984163ab4c866bae03020855c3fe" name="a2c13984163ab4c866bae03020855c3fe"></a>
@@ -157,6 +167,55 @@ array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a4b53b39cca32908847847bb7701653e7" name="a4b53b39cca32908847847bb7701653e7"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4b53b39cca32908847847bb7701653e7">&#9670;&#160;</a></span>__get()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">&amp; fiftyone\pipeline\devicedetection\DeviceDetectionOnPremise::__get </td>
+          <td>(</td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>$name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Builds the table of every property when it is first read. </p>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">mixed </dd></dl>
+
+</div>
+</div>
+<a id="ab07c48b8fc0c5c52d860aac92a66a3ad" name="ab07c48b8fc0c5c52d860aac92a66a3ad"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab07c48b8fc0c5c52d860aac92a66a3ad">&#9670;&#160;</a></span>findProperty()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\devicedetection\DeviceDetectionOnPremise::findProperty </td>
+          <td>(</td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>$name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The metadata a read needs of a property, holding at least its name, type and category, or null when the engine has no property of that name. </p>
+<p>Until the table of every property is built, a property the engine was built with is looked up on its own in native code, so a request pays only for the properties it reads.</p>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">null|array&lt;string, mixed&gt; </dd></dl>
+
+</div>
+</div>
 <a id="a41ece599e577a1add9c15c49f056f993" name="a41ece599e577a1add9c15c49f056f993"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a41ece599e577a1add9c15c49f056f993">&#9670;&#160;</a></span>getEvidenceKeyFilter()</h2>
 

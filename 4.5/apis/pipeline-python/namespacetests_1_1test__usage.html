@@ -74,6 +74,8 @@ Classes</h2></td></tr>
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="c-table__row memitem:a7c9f420ffaecd938d5934b8a93e69b47" id="r_a7c9f420ffaecd938d5934b8a93e69b47"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7c9f420ffaecd938d5934b8a93e69b47">server</a> ()</td></tr>
+<tr class="c-table__row memitem:a5fc277625f502f2e8eb33d917356678b" id="r_a5fc277625f502f2e8eb33d917356678b"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a5fc277625f502f2e8eb33d917356678b">client_ips</a> (received)</td></tr>
+<tr class="c-table__row memdesc:a5fc277625f502f2e8eb33d917356678b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The client IPs in the usage data received.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -81,10 +83,40 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:a89c866c8f23f2af8491baac3654bfcef" id="r_a89c866c8f23f2af8491baac3654bfcef"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#a89c866c8f23f2af8491baac3654bfcef">testPort</a> = 5000</td></tr>
 <tr class="c-table__row memitem:a4fd8e8a948aac9edca0b767e5c84a368" id="r_a4fd8e8a948aac9edca0b767e5c84a368"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a4fd8e8a948aac9edca0b767e5c84a368">testEndpoint</a> = f&quot;http://{<a class="el" href="#a9c3a181dcced83b3742ea5f5fe46cc3c">testHost</a>}:{<a class="el" href="#a89c866c8f23f2af8491baac3654bfcef">testPort</a>}&quot;</td></tr>
 <tr class="c-table__row memitem:a49d78c774d802ebad85958c1b7f35c1a" id="r_a49d78c774d802ebad85958c1b7f35c1a"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a49d78c774d802ebad85958c1b7f35c1a">shareUsageVersion</a> = &quot;1.1&quot;</td></tr>
+<tr class="c-table__row memitem:a5b234de5219e044bf58a669ae2db27a9" id="r_a5b234de5219e044bf58a669ae2db27a9"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#a5b234de5219e044bf58a669ae2db27a9">CLEANUP_BOUND_SECONDS</a> = 5</td></tr>
+<tr class="c-table__row memitem:af6dc40ae5f51f9149fa538a4bb3104c4" id="r_af6dc40ae5f51f9149fa538a4bb3104c4"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#af6dc40ae5f51f9149fa538a4bb3104c4">MINIMUM_ENTRIES_PER_MESSAGE</a> = 50</td></tr>
 <tr class="c-table__row memitem:a8b8e18212c8dbe1ff466f3e864e0bf47" id="r_a8b8e18212c8dbe1ff466f3e864e0bf47"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8b8e18212c8dbe1ff466f3e864e0bf47">app</a> = Flask(__name__)</td></tr>
 <tr class="c-table__row memitem:aa838603f4c1d4d8294f2178661f72ad8" id="r_aa838603f4c1d4d8294f2178661f72ad8"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aa838603f4c1d4d8294f2178661f72ad8">received</a></td></tr>
+<tr class="c-table__row memitem:ace920eb0e01d7b27cc1e00c9ca9d27ce" id="r_ace920eb0e01d7b27cc1e00c9ca9d27ce"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ace920eb0e01d7b27cc1e00c9ca9d27ce">attempts</a></td></tr>
+<tr class="c-table__row memitem:a9afa9f2e8651e33568f03a1a47c57de7" id="r_a9afa9f2e8651e33568f03a1a47c57de7"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a9afa9f2e8651e33568f03a1a47c57de7">status</a></td></tr>
+<tr class="c-table__row memitem:a2ad538c3d2ee7a531f0bf1c25d0f6bfe" id="r_a2ad538c3d2ee7a531f0bf1c25d0f6bfe"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a2ad538c3d2ee7a531f0bf1c25d0f6bfe">body</a></td></tr>
+<tr class="c-table__row memitem:adaa59a3cc1cdc230531864be75c32fb5" id="r_adaa59a3cc1cdc230531864be75c32fb5"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#adaa59a3cc1cdc230531864be75c32fb5">delay</a></td></tr>
+<tr class="c-table__row memitem:a101ed479d67e456cf83c62a9b33a2374" id="r_a101ed479d67e456cf83c62a9b33a2374"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a101ed479d67e456cf83c62a9b33a2374">delay_release</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
+<a id="a5fc277625f502f2e8eb33d917356678b" name="a5fc277625f502f2e8eb33d917356678b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5fc277625f502f2e8eb33d917356678b">&#9670;&#160;</a></span>client_ips()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">client_ips </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>received</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The client IPs in the usage data received. </p>
+
+</div>
+</div>
 <a id="a7c9f420ffaecd938d5934b8a93e69b47" name="a7c9f420ffaecd938d5934b8a93e69b47"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7c9f420ffaecd938d5934b8a93e69b47">&#9670;&#160;</a></span>server()</h2>
 
@@ -125,6 +157,114 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ace920eb0e01d7b27cc1e00c9ca9d27ce" name="ace920eb0e01d7b27cc1e00c9ca9d27ce"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ace920eb0e01d7b27cc1e00c9ca9d27ce">&#9670;&#160;</a></span>attempts</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.attempts</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a2ad538c3d2ee7a531f0bf1c25d0f6bfe" name="a2ad538c3d2ee7a531f0bf1c25d0f6bfe"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2ad538c3d2ee7a531f0bf1c25d0f6bfe">&#9670;&#160;</a></span>body</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.body</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a5b234de5219e044bf58a669ae2db27a9" name="a5b234de5219e044bf58a669ae2db27a9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5b234de5219e044bf58a669ae2db27a9">&#9670;&#160;</a></span>CLEANUP_BOUND_SECONDS</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">int tests.test_usage.CLEANUP_BOUND_SECONDS = 5</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="adaa59a3cc1cdc230531864be75c32fb5" name="adaa59a3cc1cdc230531864be75c32fb5"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adaa59a3cc1cdc230531864be75c32fb5">&#9670;&#160;</a></span>delay</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.delay</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a101ed479d67e456cf83c62a9b33a2374" name="a101ed479d67e456cf83c62a9b33a2374"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a101ed479d67e456cf83c62a9b33a2374">&#9670;&#160;</a></span>delay_release</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.delay_release</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="af6dc40ae5f51f9149fa538a4bb3104c4" name="af6dc40ae5f51f9149fa538a4bb3104c4"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af6dc40ae5f51f9149fa538a4bb3104c4">&#9670;&#160;</a></span>MINIMUM_ENTRIES_PER_MESSAGE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">int tests.test_usage.MINIMUM_ENTRIES_PER_MESSAGE = 50</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
 <a id="aa838603f4c1d4d8294f2178661f72ad8" name="aa838603f4c1d4d8294f2178661f72ad8"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa838603f4c1d4d8294f2178661f72ad8">&#9670;&#160;</a></span>received</h2>
 
@@ -153,6 +293,24 @@ Variables</h2></td></tr>
           <table class="c-table c-table--article">
             <tr class="c-table__row">
               <td class="c-table__cell">str tests.test_usage.shareUsageVersion = &quot;1.1&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a9afa9f2e8651e33568f03a1a47c57de7" name="a9afa9f2e8651e33568f03a1a47c57de7"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9afa9f2e8651e33568f03a1a47c57de7">&#9670;&#160;</a></span>status</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_usage.status</td>
             </tr>
           </table>
         </div>

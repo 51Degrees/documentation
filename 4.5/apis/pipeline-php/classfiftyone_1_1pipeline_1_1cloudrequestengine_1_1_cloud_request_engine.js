@@ -6,6 +6,8 @@ var classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1_cloud_request_engine =
     [ "getEngineProperties", "classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1_cloud_request_engine.html#ae8f4db17242281a9220cc083b7541d73", null ],
     [ "getEvidenceKeyFilter", "classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1_cloud_request_engine.html#a871d95f8ecfed155a0367791dae53a4d", null ],
     [ "getSelectedEvidence", "classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1_cloud_request_engine.html#aff0520409f94af48193265d090dbd12b", null ],
+    [ "holdsValueForOneRequest", "classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1_cloud_request_engine.html#ac66def6370f6a3b261d5fe4315302928", null ],
     [ "keyHasPrefix", "classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1_cloud_request_engine.html#a02ef8d345a8925f00fcdebd2862969af", null ],
+    [ "onRegistration", "classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1_cloud_request_engine.html#aaa0369d8475bd005b69406aaebd5599d", null ],
     [ "processInternal", "classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1_cloud_request_engine.html#ab0670f1c865f037bb8099f5ca4b65347", null ]
 ];

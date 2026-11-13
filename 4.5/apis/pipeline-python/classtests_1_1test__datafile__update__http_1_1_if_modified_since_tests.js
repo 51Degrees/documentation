@@ -1,0 +1,6 @@
+var classtests_1_1test__datafile__update__http_1_1_if_modified_since_tests =
+[
+    [ "testLastModifiedTimeIsUsedWithoutPublishedDate", "classtests_1_1test__datafile__update__http_1_1_if_modified_since_tests.html#a877f43679af854b0c96c2b3f73ae88c4", null ],
+    [ "testNoHeaderWhenDisabled", "classtests_1_1test__datafile__update__http_1_1_if_modified_since_tests.html#a46d0c2cb07a1df4095c8ee3b84ac0bb9", null ],
+    [ "testPublishedDateIsSentAsHttpDate", "classtests_1_1test__datafile__update__http_1_1_if_modified_since_tests.html#aed4c9543e93739126e47da6022de5a39", null ]
+];

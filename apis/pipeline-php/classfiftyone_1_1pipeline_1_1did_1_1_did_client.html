@@ -115,9 +115,11 @@ Data Fields</h2></td></tr>
 <tr class="c-table__row memitem:a0993c822c446c6a757ac98842cd0555f" id="r_a0993c822c446c6a757ac98842cd0555f"><td class="c-table__cell"><a id="a0993c822c446c6a757ac98842cd0555f" name="a0993c822c446c6a757ac98842cd0555f"></a>
 const&#160;</td><td class="c-table__cell"><b>DEFAULT_ENDPOINT</b> = 'https://cloud.51degrees.com/api/v4/'</td></tr>
 <tr class="c-table__row memdesc:a0993c822c446c6a757ac98842cd0555f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The cloud API base used when no endpoint is given or set. <br /></td></tr>
-<tr class="c-table__row memitem:a2c0e75f0dc9277013f8b5f72a4c4c8b0" id="r_a2c0e75f0dc9277013f8b5f72a4c4c8b0"><td class="c-table__cell"><a id="a2c0e75f0dc9277013f8b5f72a4c4c8b0" name="a2c0e75f0dc9277013f8b5f72a4c4c8b0"></a>
-const&#160;</td><td class="c-table__cell"><b>ENDPOINT_VARIABLE</b> = 'FOD_CLOUD_API_URL'</td></tr>
-<tr class="c-table__row memdesc:a2c0e75f0dc9277013f8b5f72a4c4c8b0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The environment variable read for the API base when the constructor argument is absent, the same one the cloud request engine honours. <br /></td></tr>
+<tr class="c-table__row memitem:a5cd88c1d59ffb3cbb98e772e47c66ae7" id="r_a5cd88c1d59ffb3cbb98e772e47c66ae7"><td class="c-table__cell"><a id="a5cd88c1d59ffb3cbb98e772e47c66ae7" name="a5cd88c1d59ffb3cbb98e772e47c66ae7"></a>
+const&#160;</td><td class="c-table__cell"><b>CLOUD_ENDPOINT_VARIABLE</b> = '_51DEGREES_CLOUD_ENDPOINT'</td></tr>
+<tr class="c-table__row memdesc:a5cd88c1d59ffb3cbb98e772e47c66ae7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The environment variable read for the API base when the constructor argument is absent, the same one the cloud request engine honours. <br /></td></tr>
+<tr class="c-table__row memitem:a2c0e75f0dc9277013f8b5f72a4c4c8b0" id="r_a2c0e75f0dc9277013f8b5f72a4c4c8b0"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a2c0e75f0dc9277013f8b5f72a4c4c8b0">ENDPOINT_VARIABLE</a> = 'FOD_CLOUD_API_URL'</td></tr>
+<tr class="c-table__row memdesc:a2c0e75f0dc9277013f8b5f72a4c4c8b0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The environment variable read for the API base when {.  <br /></td></tr>
 <tr class="c-table__row memitem:a5860fc9e82696628f4bd11e6d5ab7af2" id="r_a5860fc9e82696628f4bd11e6d5ab7af2"><td class="c-table__cell"><a id="a5860fc9e82696628f4bd11e6d5ab7af2" name="a5860fc9e82696628f4bd11e6d5ab7af2"></a>
 const&#160;</td><td class="c-table__cell"><b>PACKAGE_NAME</b> = '51degrees/fiftyone.pipeline.did'</td></tr>
 <tr class="c-table__row memdesc:a5860fc9e82696628f4bd11e6d5ab7af2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The Composer package name, sent in the User-Agent. <br /></td></tr>
@@ -166,7 +168,7 @@ const&#160;</td><td class="c-table__cell"><b>PACKAGE_NAME</b> = '51degrees/fifty
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$resourceKey</td><td>The page's resource key, public by nature. </td></tr>
     <tr><td class="paramtype">string&#160;|&#160;null</td><td class="paramname">$licenceKey</td><td>The account's licence key, server side only, needed to redeem where the account holds licence keys. </td></tr>
-    <tr><td class="paramtype">string&#160;|&#160;null</td><td class="paramname">$endpoint</td><td>The API base including <code>/api/v4/</code>. When null the <code>FOD_CLOUD_API_URL</code> environment variable is read, then {</td></tr>
+    <tr><td class="paramtype">string&#160;|&#160;null</td><td class="paramname">$endpoint</td><td>The API base including <code>/api/v4/</code>. When null the <code>_51DEGREES_CLOUD_ENDPOINT</code> environment variable is read, then the deprecated <code>FOD_CLOUD_API_URL</code>, then {</td></tr>
   </table>
   </dd>
 </dl>
@@ -454,6 +456,29 @@ SignatureCheck::Invalid} says it was examined and did not. The other three say t
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Field Documentation</h2>
+<a id="a2c0e75f0dc9277013f8b5f72a4c4c8b0" name="a2c0e75f0dc9277013f8b5f72a4c4c8b0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2c0e75f0dc9277013f8b5f72a4c4c8b0">&#9670;&#160;</a></span>ENDPOINT_VARIABLE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const fiftyone\pipeline\did\DidClient::ENDPOINT_VARIABLE = 'FOD_CLOUD_API_URL'</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The environment variable read for the API base when {. </p>
+<dl class="c-list-definition section see"><dt class="c-list-definition__title">See also</dt><dd class="c-list-definition__desc">DidClient::CLOUD_ENDPOINT_VARIABLE} is not set or is empty.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated</a></b></dt><dd>use {</dd></dl>
+<dl class="c-list-definition section see"><dt class="c-list-definition__title">See also</dt><dd class="c-list-definition__desc">DidClient::CLOUD_ENDPOINT_VARIABLE} </dd></dl>
+
+</div>
+</div>
 <a id="a1c5eed34c7702159880489797dc3f531" name="a1c5eed34c7702159880489797dc3f531"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1c5eed34c7702159880489797dc3f531">&#9670;&#160;</a></span>KEY_LIST_MAX_AGE_SECONDS</h2>
 

@@ -5,6 +5,7 @@ var class_fifty_one_1_1_pipeline_1_1_core_1_1_constants =
     [ "EVIDENCE_HEADER_USERAGENT_KEY", "class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html#a3e8432001576ed5b37be69f8c8172d76", null ],
     [ "EVIDENCE_HOST_KEY", "class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html#a99865e2d607f563886abb9ad920356c9", null ],
     [ "EVIDENCE_HTTPHEADER_PREFIX", "class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html#a11cdd5ca9524b18b0f00ee24b023198d", null ],
+    [ "EVIDENCE_HTTPREQUEST_KEY", "class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html#a9698f106e8efba83d8bc1fa673cfc7e7", null ],
     [ "EVIDENCE_PROTOCOL", "class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html#a2b3a7f6330ba79fe8763be9863940f24", null ],
     [ "EVIDENCE_QUERY_PREFIX", "class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html#a32bb39460f8b70ffd6e756439c2b2f21", null ],
     [ "EVIDENCE_QUERY_USERAGENT_KEY", "class_fifty_one_1_1_pipeline_1_1_core_1_1_constants.html#a4b78cba9b67e2d63dd8d873bca9a95d4", null ],

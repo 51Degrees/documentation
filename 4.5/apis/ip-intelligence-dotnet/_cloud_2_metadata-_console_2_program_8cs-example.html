@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_metad
 <p>In addition, the evidence keys that are accepted by the service are listed. These are the keys that, when added to the evidence collection in flow data, could have some impact on the result that is returned.</p>
 <p>Bear in mind that this is a list of ALL evidence keys accepted by all products offered by the cloud. If you are only using a single product (for example - device detection) then not all of these keys will be relevant.</p>
 <p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-dotnet/blob/main/examples/ip-intelligence/Cloud/Metadata-Console/Program.cs">GitHub</a>.</p>
-<p>To run this example, create a Resource Key for free at <a href="https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=51degrees-dotnet&amp;amp;utm_content=examples-cloud-metadata-console-program.cs&amp;amp;utm_term=header">https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=51degrees-dotnet&amp;amp;utm_content=examples-cloud-metadata-console-program.cs&amp;amp;utm_term=header</a> and supply it as the first command-line argument or via the 51DEGREES_RESOURCE_KEY environment variable. By default the pipeline talks to cloud.51degrees.com; set 51D_CLOUD_ENDPOINT to point at a self-hosted Cloud service instead.</p>
+<p>To run this example, create a Resource Key for free at <a href="https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=51degrees-dotnet&amp;amp;utm_content=examples-cloud-metadata-console-program.cs&amp;amp;utm_term=header">https://configure.51degrees.com?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=51degrees-dotnet&amp;amp;utm_content=examples-cloud-metadata-console-program.cs&amp;amp;utm_term=header</a> and supply it as the first command-line argument or via the _51DEGREES_RESOURCE_KEY environment variable. By default the pipeline talks to cloud.51degrees.com; set _51DEGREES_CLOUD_ENDPOINT to point at a self-hosted Cloud service instead.</p>
 <p>Required NuGet Dependencies:</p><ul>
 <li><a href="https://www.nuget.org/packages/FiftyOne.IpIntelligence/">FiftyOne.IpIntelligence</a></li>
 <li><a href="https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console/">Microsoft.Extensions.Logging.Console</a></li>
@@ -119,8 +119,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_metad
 <div class="c-code__line"> </div>
 <div class="c-code__line">                <span class="c-code__comment">// Optional custom cloud endpoint via env var. If unset, the SDK</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// defaults to cloud.51degrees.com.</span></div>
-<div class="c-code__line">                var cloudEndPoint = Environment.GetEnvironmentVariable(</div>
-<div class="c-code__line">                    ExampleUtils.CLOUD_END_POINT_ENV_VAR);</div>
+<div class="c-code__line">                var cloudEndPoint = ExampleUtils.FromEnvironment(</div>
+<div class="c-code__line">                    ExampleUtils.CLOUD_ENDPOINT_ENV_VAR,</div>
+<div class="c-code__line">                    ExampleUtils.OLD_CLOUD_END_POINT_ENV_VARS);</div>
 <div class="c-code__line">                <span class="c-code__keywordflow">if</span> (<span class="c-code__keywordtype">string</span>.IsNullOrWhiteSpace(cloudEndPoint) == <span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">                {</div>
 <div class="c-code__line">                    builder.SetEndPoint(cloudEndPoint);</div>
@@ -205,7 +206,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_cloud_2_metad
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                logger.LogError($<span class="c-code__stringliteral">&quot;No resource key specified in the configuration file &quot;</span> +</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;&#39;appsettings.json&#39; or the environment variable &quot;</span> +</div>
-<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;&#39;{ExampleUtils.CLOUD_RESOURCE_KEY_ENV_VAR}&#39;. The 51Degrees Cloud service is &quot;</span> +</div>
+<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;&#39;{ExampleUtils.RESOURCE_KEY_ENV_VAR}&#39;. The 51Degrees Cloud service is &quot;</span> +</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;accessed using a &#39;ResourceKey&#39;. For more information see &quot;</span> +</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/_services__cloud__resource_keys.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-cloud-metadata-console-program.cs&amp;utm_term=resource-key-required. &quot;</span> +</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;A resource key with the properties required by this example can be &quot;</span> +</div>

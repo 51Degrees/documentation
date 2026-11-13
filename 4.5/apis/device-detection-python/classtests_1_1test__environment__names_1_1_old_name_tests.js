@@ -1,0 +1,11 @@
+var classtests_1_1test__environment__names_1_1_old_name_tests =
+[
+    [ "printed", "classtests_1_1test__environment__names_1_1_old_name_tests.html#ad1f505d98aef8f95de92f769303f757c", null ],
+    [ "setUp", "classtests_1_1test__environment__names_1_1_old_name_tests.html#a5ab64c542ceed0ef5e905644ba9d9b79", null ],
+    [ "test_constants_hold_the_old_and_the_new_names", "classtests_1_1test__environment__names_1_1_old_name_tests.html#a82af0db5ec49c8f056e9a5773cfda2d9", null ],
+    [ "test_each_setting_is_read_from_its_old_name", "classtests_1_1test__environment__names_1_1_old_name_tests.html#a9202219c77dd958c8281547511248471", null ],
+    [ "test_licence_key_is_read_from_the_old_name_in_upper_case", "classtests_1_1test__environment__names_1_1_old_name_tests.html#a75d7724fc6b6aec368fdd342a90871b4", null ],
+    [ "test_neither_name_gives_nothing", "classtests_1_1test__environment__names_1_1_old_name_tests.html#a9408e5f3042ab8a9348e2322489b35ed", null ],
+    [ "test_new_name_wins_and_nothing_is_printed", "classtests_1_1test__environment__names_1_1_old_name_tests.html#a9dd085efd1776808d8e5c3a902917efa", null ],
+    [ "test_old_name_is_reported_once", "classtests_1_1test__environment__names_1_1_old_name_tests.html#a7dd841af7afe909dcb356a25b6a7acdb", null ]
+];

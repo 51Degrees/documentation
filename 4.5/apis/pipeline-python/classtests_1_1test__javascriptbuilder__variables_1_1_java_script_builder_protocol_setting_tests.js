@@ -1,0 +1,5 @@
+var classtests_1_1test__javascriptbuilder__variables_1_1_java_script_builder_protocol_setting_tests =
+[
+    [ "test_invalid_configured_protocol_is_refused", "classtests_1_1test__javascriptbuilder__variables_1_1_java_script_builder_protocol_setting_tests.html#a03d07b9234d9ba461a8a9694e6c817a7", null ],
+    [ "test_valid_configured_protocol_is_accepted", "classtests_1_1test__javascriptbuilder__variables_1_1_java_script_builder_protocol_setting_tests.html#ae6f80aefe2441e2a937ae2442b663ae5", null ]
+];

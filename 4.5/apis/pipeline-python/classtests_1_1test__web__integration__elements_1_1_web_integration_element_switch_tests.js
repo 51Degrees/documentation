@@ -1,0 +1,11 @@
+var classtests_1_1test__web__integration__elements_1_1_web_integration_element_switch_tests =
+[
+    [ "testAllElementsAreAddedByDefaultWithSequenceFirst", "classtests_1_1test__web__integration__elements_1_1_web_integration_element_switch_tests.html#a008849f54dbfe5536c75bfc05ba3e194", null ],
+    [ "testEverySwitchOff", "classtests_1_1test__web__integration__elements_1_1_web_integration_element_switch_tests.html#a349472e89aa79cdddfc25bf55f119487", null ],
+    [ "testExistingJavaScriptSwitchStillDropsThreeElements", "classtests_1_1test__web__integration__elements_1_1_web_integration_element_switch_tests.html#a001deaa81db6167c192579d485ccb442", null ],
+    [ "testExistingSetHeaderSwitchStillDropsSetHeaders", "classtests_1_1test__web__integration__elements_1_1_web_integration_element_switch_tests.html#af2faeff4eadaca36fe5703c6aa1a1f0d", null ],
+    [ "testJavaScriptBuilderSwitch", "classtests_1_1test__web__integration__elements_1_1_web_integration_element_switch_tests.html#a452c6a36d8b3fc37ad710637074f9c2c", null ],
+    [ "testJsonBuilderSwitch", "classtests_1_1test__web__integration__elements_1_1_web_integration_element_switch_tests.html#a5e61176c21c15f8199903253463fdaa2", null ],
+    [ "testSequenceSwitch", "classtests_1_1test__web__integration__elements_1_1_web_integration_element_switch_tests.html#a50ff0ae86dec95e3a0f8100cd29faac6", null ],
+    [ "testSetHeadersSwitch", "classtests_1_1test__web__integration__elements_1_1_web_integration_element_switch_tests.html#afb381694e6371e0d662f0e06d1663b4d", null ]
+];

@@ -1,0 +1,28 @@
+var classtests_1_1test__web__client__side_1_1_client_side_cache_tests =
+[
+    [ "if_none_match_cases", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#a1e966b9ba0c8d4ca07afd7ab9f60a12d", null ],
+    [ "responses", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#a40f9801cddc5bb1b908a94771e3e5529", null ],
+    [ "setUp", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#a81505c9c293001f0d61235548de7ca2c", null ],
+    [ "tearDown", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#ae2e07e6c725360e7231936a3480078a2", null ],
+    [ "test_a_failed_response_is_replaced_once_processing_works", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#a5850438ce8f41927d01d46dbfbe16166", null ],
+    [ "test_a_good_copy_is_kept_while_processing_fails", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#ac254cb23324e2f4d3e294b9b6d3c9f4f", null ],
+    [ "test_a_good_response_may_be_kept_by_the_browser_alone", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#a8fe2342d85b3209d510a1c79861249b9", null ],
+    [ "test_a_post_with_a_matching_etag_is_refused", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#a391ccefb3fbb36a3cf4f968dd6ebb265", null ],
+    [ "test_a_response_to_a_failed_request_carries_no_etag", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#af26eb8cbbc5371dd4e41a81bcd4f6067", null ],
+    [ "test_if_none_match_fields_are_one_list", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#a1ad2f430dd92b8dfff9ad2046f5c4780", null ],
+    [ "test_if_none_match_on_a_get_is_compared_weakly", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#a659845119bc50da872820e43682e7372", null ],
+    [ "test_if_none_match_on_a_post_is_compared_weakly", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#ae02c948d8a00e511aeafabb06442b657", null ],
+    [ "test_revalidation_with_the_etag_is_answered_not_modified", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#a1955e4ce480a6ef74585882e0b70be59", null ],
+    [ "test_the_content_length_is_the_length_of_what_was_sent", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#a1091a49cab7958aa5894b06dc4c10850", null ],
+    [ "test_the_content_type_says_which_endpoint_answered", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#a3cf743161aaa6802f2158ae58b87c9eb", null ],
+    [ "test_the_etag_follows_the_evidence", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#ab344709ef5b3e4b34e577e747c339cfd", null ],
+    [ "test_the_etag_is_the_same_from_two_pipelines", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#a2e33cd88b1bd109077e5f67ffc91d5af", null ],
+    [ "test_the_etag_is_the_same_in_every_process", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#a9020ff4998f64f7606582c4b905c8d2c", null ],
+    [ "test_the_max_age_can_be_set", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#a916f4188f38abb4b42a061e442a411af", null ],
+    [ "test_the_session_id_the_sequence_element_adds_is_not_in_the_etag", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#a6d9a384f63c5dd373613a2bd01f28f6f", null ],
+    [ "test_the_web_request_value_is_not_in_the_etag", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#acec2d047b43d158c610c173c71b54344", null ],
+    [ "test_vary_falls_back_to_the_request_for_a_filter_that_cannot_list", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#a6c50bc39db052ccf4ce1ff70dccf5fe4", null ],
+    [ "test_vary_leaves_out_the_headers_a_browser_revalidates_with", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#a55fe779065887be9fd068b630a5f652b", null ],
+    [ "test_vary_names_a_header_the_request_did_not_carry", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#adad635f1eceee6a4e566afb33240e98a", null ],
+    [ "client", "classtests_1_1test__web__client__side_1_1_client_side_cache_tests.html#a24adb0306ad58bc2711482c33901c583", null ]
+];

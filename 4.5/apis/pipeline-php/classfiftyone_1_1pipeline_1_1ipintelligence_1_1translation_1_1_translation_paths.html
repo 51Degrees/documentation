@@ -71,6 +71,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:aa62f70c76694d116e2c8a8a5ad6306a2" id="r_aa62f70c76694d116e2c8a8a5ad6306a2"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#aa62f70c76694d116e2c8a8a5ad6306a2">resolveTranslationsDir</a> ()</td></tr>
 <tr class="c-table__row memdesc:aa62f70c76694d116e2c8a8a5ad6306a2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Find the Translations directory.  <br /></td></tr>
+<tr class="c-table__row memitem:a2be074bc92ea3e4b8d5101b7036b14b6" id="r_a2be074bc92ea3e4b8d5101b7036b14b6"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a2be074bc92ea3e4b8d5101b7036b14b6">reportDeprecatedVariable</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_pipeline.html">Pipeline</a> $pipeline)</td></tr>
+<tr class="c-table__row memdesc:a2be074bc92ea3e4b8d5101b7036b14b6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Logs, as a warning through the pipeline's logger, that a value was read from the deprecated environment variable.  <br /></td></tr>
 <tr class="c-table__row memitem:a6652e24aaad48823403c4e5913d2989a" id="r_a6652e24aaad48823403c4e5913d2989a"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a6652e24aaad48823403c4e5913d2989a">loadCountriesLocaleMaps</a> (string $translationsDir)</td></tr>
 <tr class="c-table__row memdesc:a6652e24aaad48823403c4e5913d2989a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Load the countries.  <br /></td></tr>
 <tr class="c-table__row memitem:ab8ce62151418b82cbd93a6e326f802ae" id="r_ab8ce62151418b82cbd93a6e326f802ae"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#ab8ce62151418b82cbd93a6e326f802ae">loadAllCountries</a> (string $translationsDir)</td></tr>
@@ -143,6 +145,38 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a2be074bc92ea3e4b8d5101b7036b14b6" name="a2be074bc92ea3e4b8d5101b7036b14b6"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2be074bc92ea3e4b8d5101b7036b14b6">&#9670;&#160;</a></span>reportDeprecatedVariable()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\ipintelligence\translation\TranslationPaths::reportDeprecatedVariable </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_pipeline.html">Pipeline</a></td>          <td class="c-table__cell"><span class="paramname"><em>$pipeline</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Logs, as a warning through the pipeline's logger, that a value was read from the deprecated environment variable. </p>
+<p>It is logged once for each time PHP runs the script, by the first translation engine added to a pipeline after the variable was read. </p>
+
+</div>
+</div>
 <a id="aa62f70c76694d116e2c8a8a5ad6306a2" name="aa62f70c76694d116e2c8a8a5ad6306a2"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa62f70c76694d116e2c8a8a5ad6306a2">&#9670;&#160;</a></span>resolveTranslationsDir()</h2>
 
@@ -171,7 +205,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Find the Translations directory. </p>
-<p>Searches the ip-intelligence folder of the data submodule inside the cxx submodule at the repository root, then the IPINTELLIGENCEDATAFILE directory as a fallback. </p>
+<p>Searches the ip-intelligence folder of the data submodule inside the cxx submodule at the repository root, then the _51DEGREES_IPI_PATH directory as a fallback. </p>
 
 </div>
 </div>

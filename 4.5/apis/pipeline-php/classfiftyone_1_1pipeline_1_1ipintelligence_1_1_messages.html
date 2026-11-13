@@ -69,6 +69,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 Data Fields</h2></td></tr>
 <tr class="c-table__row memitem:abd6b07411dca73ed25418494966c45f2" id="r_abd6b07411dca73ed25418494966c45f2"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#abd6b07411dca73ed25418494966c45f2">CACHE_ERROR</a></td></tr>
 <tr class="c-table__row memitem:aaeea1c94658c51e589f6b44eec232867" id="r_aaeea1c94658c51e589f6b44eec232867"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#aaeea1c94658c51e589f6b44eec232867">INVALID_PERFORMANCE_PROFILE</a></td></tr>
+<tr class="c-table__row memitem:a63704204f41521110dfbfc1f4597a364" id="r_a63704204f41521110dfbfc1f4597a364"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a63704204f41521110dfbfc1f4597a364">PERFORMANCE_PROFILE_ERROR</a></td></tr>
+<tr class="c-table__row memitem:a4e112771d2afd4c089f4e6c861144e30" id="r_a4e112771d2afd4c089f4e6c861144e30"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a4e112771d2afd4c089f4e6c861144e30">NO_STARTUP_ENGINE</a></td></tr>
+<tr class="c-table__row memitem:aef42653b8a5d6a4298f9a9ba603a8b67" id="r_aef42653b8a5d6a4298f9a9ba603a8b67"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#aef42653b8a5d6a4298f9a9ba603a8b67">DATA_FILE_SETTING_REFUSED</a></td></tr>
 <tr class="c-table__row memitem:a45961d81430090ed5ad96051efe1cda4" id="r_a45961d81430090ed5ad96051efe1cda4"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a45961d81430090ed5ad96051efe1cda4">DATA_FILE_NOT_FOUND</a></td></tr>
 <tr class="c-table__row memitem:acf73aad0a5a45962a79bcfea169df07d" id="r_acf73aad0a5a45962a79bcfea169df07d"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#acf73aad0a5a45962a79bcfea169df07d">DATA_FILE_EXTENSION_ERROR</a></td></tr>
 <tr class="c-table__row memitem:a0067e6904f1265a71a3d778a5e516245" id="r_a0067e6904f1265a71a3d778a5e516245"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a0067e6904f1265a71a3d778a5e516245">GLOBAL_ENGINE_SETTINGS_REJECTED</a></td></tr>
@@ -138,6 +141,31 @@ Data Fields</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="aef42653b8a5d6a4298f9a9ba603a8b67" name="aef42653b8a5d6a4298f9a9ba603a8b67"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aef42653b8a5d6a4298f9a9ba603a8b67">&#9670;&#160;</a></span>DATA_FILE_SETTING_REFUSED</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const fiftyone\pipeline\ipintelligence\Messages::DATA_FILE_SETTING_REFUSED</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                   =</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&#39;The &quot;dataFile&quot; setting builds a new IP intelligence engine from the &#39;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&#39;data file every time, so under a web server the data file would be &#39;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&#39;loaded on every request, and it is refused outside the command &#39;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&#39;line. Set FiftyOneDegreesIpIntelligenceEngine.data_file in php.ini &#39;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&#39;to the data file and leave the &quot;dataFile&quot; setting out, so that PHP &#39;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&#39;builds the engine once, when it starts.&#39;</span></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a6d74e16f57ef2b9709db8b1be2f51cfb" name="a6d74e16f57ef2b9709db8b1be2f51cfb"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6d74e16f57ef2b9709db8b1be2f51cfb">&#9670;&#160;</a></span>ENGINE_CLOSED</h2>
 
@@ -200,9 +228,9 @@ Data Fields</h2></td></tr>
 <div class="c-code__line"><span class="c-code__stringliteral">&#39;The shared global IP intelligence engine is built once at module &#39;</span> .</div>
 <div class="c-code__line"><span class="c-code__stringliteral">&#39;load from the FiftyOneDegreesIpIntelligenceEngine.* php.ini &#39;</span> .</div>
 <div class="c-code__line"><span class="c-code__stringliteral">&#39;settings and cannot be reconfigured per instance, so these &#39;</span> .</div>
-<div class="c-code__line"><span class="c-code__stringliteral">&#39;setting(s) would have no effect: %s. Either configure them through &#39;</span> .</div>
-<div class="c-code__line"><span class="c-code__stringliteral">&#39;php.ini (data_file, performance_profile, required_properties) or &#39;</span> .</div>
-<div class="c-code__line"><span class="c-code__stringliteral">&#39;supply a &quot;dataFile&quot; setting to build a dedicated engine.&#39;</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">&#39;setting(s) would have no effect: %s. Remove them, and set the data &#39;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&#39;file and the required properties in php.ini (data_file, &#39;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&#39;required_properties).&#39;</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -223,6 +251,57 @@ Data Fields</h2></td></tr>
 </div><div class="c-member__body">
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                     =</div>
 <div class="c-code__line"><span class="c-code__stringliteral">&quot;&#39;%s&#39; is not a valid performance profile. Valid profiles are: %s.&quot;</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4e112771d2afd4c089f4e6c861144e30" name="a4e112771d2afd4c089f4e6c861144e30"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4e112771d2afd4c089f4e6c861144e30">&#9670;&#160;</a></span>NO_STARTUP_ENGINE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const fiftyone\pipeline\ipintelligence\Messages::NO_STARTUP_ENGINE</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                           =</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&#39;No IP intelligence engine was built when PHP started. Set &#39;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&#39;FiftyOneDegreesIpIntelligenceEngine.data_file in php.ini to the &#39;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&#39;path of an .ipi data file, so that PHP builds the engine once when &#39;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&#39;it starts. See OnPremise.md.&#39;</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a63704204f41521110dfbfc1f4597a364" name="a63704204f41521110dfbfc1f4597a364"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a63704204f41521110dfbfc1f4597a364">&#9670;&#160;</a></span>PERFORMANCE_PROFILE_ERROR</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const fiftyone\pipeline\ipintelligence\Messages::PERFORMANCE_PROFILE_ERROR</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                   =</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;The IP intelligence engine the extension builds when PHP starts can &quot;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;only run with the in-memory &#39;MaxPerformance&#39; performance profile, &quot;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;but &#39;%s&#39; was configured. PHP is typically run under a process &quot;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;manager (Apache MPM prefork, php-fpm) that forks the worker process &quot;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;after that engine is built, and any other profile keeps the data &quot;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;file open and shares those file handles across the fork, which &quot;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;corrupts the results. Remove the &quot;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;&#39;FiftyOneDegreesIpIntelligenceEngine.performance_profile&#39; setting, &quot;</span> .</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;or set it to &#39;MaxPerformance&#39;.&quot;</span></div>
 </div><!-- fragment -->
 </div>
 </div>

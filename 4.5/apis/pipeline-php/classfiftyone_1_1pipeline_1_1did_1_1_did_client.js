@@ -10,6 +10,7 @@ var classfiftyone_1_1pipeline_1_1did_1_1_did_client =
     [ "verify", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#aef3b02ce406984f70ef5b65491a78496", null ],
     [ "verifySignature", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#a15833a4a5f160ed2b944c91abad5ac0a", null ],
     [ "verifySignatureDetailed", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#afa7ecf3cd5cd58e264f49361abcb2f76", null ],
+    [ "CLOUD_ENDPOINT_VARIABLE", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#a5cd88c1d59ffb3cbb98e772e47c66ae7", null ],
     [ "DEFAULT_ENDPOINT", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#a0993c822c446c6a757ac98842cd0555f", null ],
     [ "ENDPOINT_VARIABLE", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#a2c0e75f0dc9277013f8b5f72a4c4c8b0", null ],
     [ "KEY_LIST_MAX_AGE_SECONDS", "classfiftyone_1_1pipeline_1_1did_1_1_did_client.html#a1c5eed34c7702159880489797dc3f531", null ],

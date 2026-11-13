@@ -82,8 +82,8 @@ Collaboration diagram for fiftyone\pipeline\ipintelligence\IpIntelligenceOnPremi
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="c-table__row memitem:aea219d30bbb7a87d1291da7c8b318464" id="r_aea219d30bbb7a87d1291da7c8b318464"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aea219d30bbb7a87d1291da7c8b318464">__construct</a> (array $settings)</td></tr>
-<tr class="c-table__row memdesc:aea219d30bbb7a87d1291da7c8b318464"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The settings are passed straight through to IpIntelligenceOnPremise.  <br /></td></tr>
+<tr class="c-table__row memitem:aa8dbfbe31cf1cfc4d16026e0d825d845" id="r_aa8dbfbe31cf1cfc4d16026e0d825d845"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aa8dbfbe31cf1cfc4d16026e0d825d845">__construct</a> (array $settings=[])</td></tr>
+<tr class="c-table__row memdesc:aa8dbfbe31cf1cfc4d16026e0d825d845"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The settings are passed straight through to IpIntelligenceOnPremise.  <br /></td></tr>
 <tr class="c-table__row inherit_header pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder.html">fiftyone\pipeline\core\PipelineBuilder</a></h3></td></tr>
 <tr class="c-table__row memitem:a7a156205b0aa6922ef038cb8674b29bf pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_a7a156205b0aa6922ef038cb8674b29bf"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder.html#a7a156205b0aa6922ef038cb8674b29bf">add</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html">FlowElement</a> $flowElement)</td></tr>
 <tr class="c-table__row memdesc:a7a156205b0aa6922ef038cb8674b29bf pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add FlowElement to be used in Pipeline.  <br /></td></tr>
@@ -109,12 +109,20 @@ Additional Inherited Members</h2></td></tr>
 <tr class="c-table__row inherit_header pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Data Fields inherited from <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder.html">fiftyone\pipeline\core\PipelineBuilder</a></h3></td></tr>
 <tr class="c-table__row memitem:afad6a8241242b48e3de672fe67446135 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_afad6a8241242b48e3de672fe67446135"><td class="c-table__cell">
 array&#160;</td><td class="c-table__cell"><b>$pipelines</b></td></tr>
-<tr class="c-table__row memitem:a683eeabfa5f86416319dda49ddb75d79 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_a683eeabfa5f86416319dda49ddb75d79"><td class="c-table__cell">
-bool&#160;</td><td class="c-table__cell"><b>$addJavaScriptBuilder</b></td></tr>
+<tr class="c-table__row memitem:a683eeabfa5f86416319dda49ddb75d79 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_a683eeabfa5f86416319dda49ddb75d79"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder.html#a683eeabfa5f86416319dda49ddb75d79">$addJavaScriptBuilder</a></td></tr>
+<tr class="c-table__row memdesc:a683eeabfa5f86416319dda49ddb75d79 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Adds the Sequence, JSON Bundler and JavaScript Builder elements together.  <br /></td></tr>
+<tr class="c-table__row memitem:a7c8d142deab584f4fc6b5a949dd12014 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_a7c8d142deab584f4fc6b5a949dd12014"><td class="c-table__cell">
+bool&#160;</td><td class="c-table__cell"><b>$addSequenceElement</b></td></tr>
+<tr class="c-table__row memitem:aeb637629abfbd5373def5229ad3f3768 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_aeb637629abfbd5373def5229ad3f3768"><td class="c-table__cell">
+bool&#160;</td><td class="c-table__cell"><b>$addJsonBundlerElement</b></td></tr>
+<tr class="c-table__row memitem:a4fed2d382ee5784cc8680c61af36018b pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_a4fed2d382ee5784cc8680c61af36018b"><td class="c-table__cell">
+bool&#160;</td><td class="c-table__cell"><b>$addJavaScriptBuilderElement</b></td></tr>
+<tr class="c-table__row memitem:aeb60f70aaee3d98e90a1ae658c62493d pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_aeb60f70aaee3d98e90a1ae658c62493d"><td class="c-table__cell">
+bool&#160;</td><td class="c-table__cell"><b>$addSetHeaderElement</b></td></tr>
 <tr class="c-table__row memitem:a84ef36aabf3465ca3dd2a497c5402a5d pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_a84ef36aabf3465ca3dd2a497c5402a5d"><td class="c-table__cell">
 array&#160;</td><td class="c-table__cell"><b>$javascriptBuilderSettings</b> = []</td></tr>
-<tr class="c-table__row memitem:a08e1b8ec44ec04a6e58beef8e68e1896 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_a08e1b8ec44ec04a6e58beef8e68e1896"><td class="c-table__cell">
-bool&#160;</td><td class="c-table__cell"><b>$useSetHeaderProperties</b></td></tr>
+<tr class="c-table__row memitem:a08e1b8ec44ec04a6e58beef8e68e1896 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_a08e1b8ec44ec04a6e58beef8e68e1896"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder.html#a08e1b8ec44ec04a6e58beef8e68e1896">$useSetHeaderProperties</a></td></tr>
+<tr class="c-table__row memdesc:a08e1b8ec44ec04a6e58beef8e68e1896 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Adds the Set Header element.  <br /></td></tr>
 <tr class="c-table__row inherit_header pro_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Protected Attributes inherited from <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder.html">fiftyone\pipeline\core\PipelineBuilder</a></h3></td></tr>
 <tr class="c-table__row memitem:ae18d0c94d0db491f642bc56071211f32 pro_attribs_classfiftyone_1_1pipeline_1_1core_1_1_pipeline_builder" id="r_ae18d0c94d0db491f642bc56071211f32"><td class="c-table__cell">
 array&#160;</td><td class="c-table__cell"><b>$flowElements</b> = []</td></tr>
@@ -122,8 +130,8 @@ array&#160;</td><td class="c-table__cell"><b>$flowElements</b> = []</td></tr>
 array&#160;</td><td class="c-table__cell"><b>$settings</b> = []</td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
-<a id="aea219d30bbb7a87d1291da7c8b318464" name="aea219d30bbb7a87d1291da7c8b318464"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aea219d30bbb7a87d1291da7c8b318464">&#9670;&#160;</a></span>__construct()</h2>
+<a id="aa8dbfbe31cf1cfc4d16026e0d825d845" name="aa8dbfbe31cf1cfc4d16026e0d825d845"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa8dbfbe31cf1cfc4d16026e0d825d845">&#9670;&#160;</a></span>__construct()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -133,7 +141,7 @@ array&#160;</td><td class="c-table__cell"><b>$settings</b> = []</td></tr>
             <tr class="c-table__row">
               <td class="c-table__cell">fiftyone\pipeline\ipintelligence\IpIntelligenceOnPremisePipelineBuilder::__construct </td>
           <td>(</td>
-          <td class="c-table__cell">array</td>          <td class="c-table__cell"><span class="paramname"><em>$settings</em></span></td><td>)</td>
+          <td class="c-table__cell">array</td>          <td class="c-table__cell"><span class="paramname"><em>$settings</em></span><span class="paramdefsep"> = </span><span class="paramdefval">[]</span></td><td>)</td>
           <td></td>
         </tr>
           </table>
@@ -142,13 +150,14 @@ array&#160;</td><td class="c-table__cell"><b>$settings</b> = []</td></tr>
 </div><div class="c-member__body">
 
 <p>The settings are passed straight through to IpIntelligenceOnPremise. </p>
+<p>With none, the pipeline uses the engine the extension builds once, when PHP starts, from the FiftyOneDegreesIpIntelligenceEngine.data_file php.ini setting. A "dataFile" setting, for command-line tools only, builds a new engine from the data file every time, and is refused outside the command line, as IpIntelligenceOnPremise describes.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">array&lt;string,mixed&gt;</td><td>$settings dataFile - (required, unless the global engine is used) path to the .ipi data file. performanceProfile - (optional) one of Constants::PERFORMANCE_PROFILES, defaulting to Constants::DEFAULT_PERFORMANCE_PROFILE. restrictedProperties- (optional) list of properties to populate. concurrency - (optional) expected concurrent accesses.</td></tr>
+    <tr><td class="paramname">array&lt;string,mixed&gt;</td><td>$settings </td></tr>
   </table>
   </dd>
 </dl>
-<p>Omitting "dataFile" reuses the shared global engine when one exists; see IpIntelligenceOnPremise for what that rejects. </p><dl class="exception"><dt>Exceptions</dt><dd>
+<dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"></td><td></td></tr>
   </table>

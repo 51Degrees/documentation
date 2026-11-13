@@ -69,11 +69,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:acc54f2a32474a5f9aaf03fb7fefcb2da" id="r_acc54f2a32474a5f9aaf03fb7fefcb2da"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#acc54f2a32474a5f9aaf03fb7fefcb2da">run</a> (self, data_file, evidence_yaml, logger, output)</td></tr>
 <tr class="c-table__row memdesc:acc54f2a32474a5f9aaf03fb7fefcb2da"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process a YAML representation of evidence - and create a YAML output containing the processed evidence.  <br /></td></tr>
-<tr class="c-table__row memitem:a73452d5a6fc3b847a143d9bfdb2518a1" id="r_a73452d5a6fc3b847a143d9bfdb2518a1"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a73452d5a6fc3b847a143d9bfdb2518a1">analyseEvidence</a> (self, evidence, pipeline, output, yaml)</td></tr>
+<tr class="c-table__row memitem:aa21ad0b2285a89a7cdf4c9c58b346154" id="r_aa21ad0b2285a89a7cdf4c9c58b346154"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aa21ad0b2285a89a7cdf4c9c58b346154">analyseEvidence</a> (self, evidence, pipeline, output, yaml, missing)</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
-<a id="a73452d5a6fc3b847a143d9bfdb2518a1" name="a73452d5a6fc3b847a143d9bfdb2518a1"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a73452d5a6fc3b847a143d9bfdb2518a1">&#9670;&#160;</a></span>analyseEvidence()</h2>
+<a id="aa21ad0b2285a89a7cdf4c9c58b346154" name="aa21ad0b2285a89a7cdf4c9c58b346154"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa21ad0b2285a89a7cdf4c9c58b346154">&#9670;&#160;</a></span>analyseEvidence()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -103,7 +103,12 @@ Public Member Functions</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>yaml</em></span>&#160;)</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>yaml</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>missing</em></span>&#160;)</td>
         </tr>
           </table>
         </div>
@@ -160,6 +165,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">: True when the data file lacks properties that only the Enterprise data file has </dd></dl>
 
 </div>
 </div>

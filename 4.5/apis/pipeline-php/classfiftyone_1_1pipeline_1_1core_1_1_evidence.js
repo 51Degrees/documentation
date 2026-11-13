@@ -4,6 +4,7 @@ var classfiftyone_1_1pipeline_1_1core_1_1_evidence =
     [ "asPhpGivesIt", "classfiftyone_1_1pipeline_1_1core_1_1_evidence.html#a42c853fbd377287accbc711fccba8e35", null ],
     [ "get", "classfiftyone_1_1pipeline_1_1core_1_1_evidence.html#a7bfdef99c38adab1e7558f4bb9be32ee", null ],
     [ "getAll", "classfiftyone_1_1pipeline_1_1core_1_1_evidence.html#ae074e48714629becdc4393ae22838a13", null ],
+    [ "getAllIncludingUnaccepted", "classfiftyone_1_1pipeline_1_1core_1_1_evidence.html#acdb50d5fee6434e310f15c0ce8a1dfac", null ],
     [ "isDottedName", "classfiftyone_1_1pipeline_1_1core_1_1_evidence.html#a32a4ac3e6c0ee3aa308a0b5358b98d98", null ],
     [ "isFormEncodedPost", "classfiftyone_1_1pipeline_1_1core_1_1_evidence.html#acabf6d72d4afbd64616b27d71397f608", null ],
     [ "maxInputVars", "classfiftyone_1_1pipeline_1_1core_1_1_evidence.html#a2a1bda86673397ba9200fdcd73478fac", null ],
@@ -12,5 +13,7 @@ var classfiftyone_1_1pipeline_1_1core_1_1_evidence =
     [ "rawBody", "classfiftyone_1_1pipeline_1_1core_1_1_evidence.html#a701949516bae91df6d9a8e89150075e7", null ],
     [ "set", "classfiftyone_1_1pipeline_1_1core_1_1_evidence.html#a3a00a946bafce73ca4a93fde9c2e6012", null ],
     [ "setArray", "classfiftyone_1_1pipeline_1_1core_1_1_evidence.html#a38c2e3e9f94a6fd27e22fda72e1fff4c", null ],
-    [ "setFromWebRequest", "classfiftyone_1_1pipeline_1_1core_1_1_evidence.html#aa8dd92407c3aabb1b60424239489d304", null ]
+    [ "setFromWebRequest", "classfiftyone_1_1pipeline_1_1core_1_1_evidence.html#aa8dd92407c3aabb1b60424239489d304", null ],
+    [ "$httpRequest", "classfiftyone_1_1pipeline_1_1core_1_1_evidence.html#ab4e46b0e7dc906ed6cb22e2cb2e5a761", null ],
+    [ "HTTP_REQUEST_KEY", "classfiftyone_1_1pipeline_1_1core_1_1_evidence.html#ab689e671c6d508bb97e36b12d5d2246d", null ]
 ];

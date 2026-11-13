@@ -79,10 +79,12 @@ Collaboration diagram for fiftyone_devicedetection_onpremise.devicedetection_onp
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="c-table__row memitem:add1f159001eda1b500e0ebd309f6631d" id="r_add1f159001eda1b500e0ebd309f6631d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#add1f159001eda1b500e0ebd309f6631d">__init__</a> (self, data_file_path=None, data=None, auto_update=None, cache=None, restricted_properties=None, licence_keys=None, download=True, max_matched_useragent_length=None, drift=None, difference=None, allow_unmatched=None, file_system_watcher=False, polling_interval=30, update_time_maximum_randomisation=10, create_temp_data_copy=True, update_matched_useragent=False, performance_profile=&quot;LowMemory&quot;, reuse_temp_file=False, concurrency=multiprocessing.cpu_count(), update_on_start=False, data_update_url=&quot;https://distributor.51degrees.com/api/v2/download&quot;, use_predictive_graph=None, use_performance_graph=None, data_update_use_url_formatter=True, data_update_verify_md5=True, data_update_product_type=None, **kwargs)</td></tr>
-<tr class="c-table__row memdesc:add1f159001eda1b500e0ebd309f6631d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for the DeviceDetection On Premise <a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html">Engine</a>.  <br /></td></tr>
+<tr class="c-table__row memitem:a46d4fa64e5254d633c5d673ad53bf530" id="r_a46d4fa64e5254d633c5d673ad53bf530"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a46d4fa64e5254d633c5d673ad53bf530">__init__</a> (self, data_file_path=None, data=None, auto_update=None, cache=None, restricted_properties=None, licence_keys=None, download=True, max_matched_useragent_length=None, drift=None, difference=None, allow_unmatched=None, file_system_watcher=False, polling_interval=30, update_time_maximum_randomisation=10, create_temp_data_copy=True, update_matched_useragent=None, performance_profile=&quot;Balanced&quot;, reuse_temp_file=False, concurrency=multiprocessing.cpu_count(), update_on_start=False, data_update_url=&quot;https://distributor.51degrees.com/api/v2/download&quot;, use_predictive_graph=None, use_performance_graph=None, data_update_use_url_formatter=True, data_update_verify_md5=True, data_update_product_type=None, **kwargs)</td></tr>
+<tr class="c-table__row memdesc:a46d4fa64e5254d633c5d673ad53bf530"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for the DeviceDetection On Premise <a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html">Engine</a>.  <br /></td></tr>
 <tr class="c-table__row memitem:a64f284c7c9fd78e0cd4462f9abdefc2a" id="r_a64f284c7c9fd78e0cd4462f9abdefc2a"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a64f284c7c9fd78e0cd4462f9abdefc2a">init_engine</a> (self)</td></tr>
 <tr class="c-table__row memdesc:a64f284c7c9fd78e0cd4462f9abdefc2a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Function for initialising the engine, wrapped like this so that an engine can be initialised once the datafile is retrieved if update_on_start is set to true.  <br /></td></tr>
+<tr class="c-table__row memitem:a7f0a6c5e1c4c46f72625b2f3a462986d" id="r_a7f0a6c5e1c4c46f72625b2f3a462986d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7f0a6c5e1c4c46f72625b2f3a462986d">read_property_indexes</a> (self)</td></tr>
+<tr class="c-table__row memdesc:a7f0a6c5e1c4c46f72625b2f3a462986d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The index of each property the engine was built with, keyed by its name in lower case.  <br /></td></tr>
 <tr class="c-table__row memitem:a8b1c092e0c3e7ce90b55a1deca67fdfe" id="r_a8b1c092e0c3e7ce90b55a1deca67fdfe"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8b1c092e0c3e7ce90b55a1deca67fdfe">get_metric_properties</a> (self)</td></tr>
 <tr class="c-table__row memitem:a25c45a8b0d8e535d6adeda2ed8b11910" id="r_a25c45a8b0d8e535d6adeda2ed8b11910"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a25c45a8b0d8e535d6adeda2ed8b11910">get_evidence_key_filter</a> (self)</td></tr>
 <tr class="c-table__row memdesc:a25c45a8b0d8e535d6adeda2ed8b11910"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns evidence key filter for the on premise engine.  <br /></td></tr>
@@ -99,6 +101,7 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a0d5c73d6a07685aa5c6c0ff87383a3d8 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a0d5c73d6a07685aa5c6c0ff87383a3d8"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a0d5c73d6a07685aa5c6c0ff87383a3d8">__init__</a> (self, <a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a204eafca1dfafd1fbd3c6df369576c3f">data_file</a>=None)</td></tr>
 <tr class="c-table__row memitem:a8fca0a3a0537773bc14fa5b7ebf7279e pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a8fca0a3a0537773bc14fa5b7ebf7279e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a8fca0a3a0537773bc14fa5b7ebf7279e">set_cache</a> (self, <a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a0396e4bed172e18cc6846bdd48d7252f">cache</a>)</td></tr>
 <tr class="c-table__row memitem:a590c7edef7b575fae02471b6f54dd2b4 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a590c7edef7b575fae02471b6f54dd2b4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a590c7edef7b575fae02471b6f54dd2b4">set_restricted_properties</a> (self, properties_list)</td></tr>
+<tr class="c-table__row memitem:aa501672dba2df3eec445da9ae7306e97 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_aa501672dba2df3eec445da9ae7306e97"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#aa501672dba2df3eec445da9ae7306e97">is_cacheable</a> (self, data)</td></tr>
 <tr class="c-table__row memitem:a9d186f20091539afd22a08f28f387805 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a9d186f20091539afd22a08f28f387805"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a9d186f20091539afd22a08f28f387805">in_cache</a> (self, flowdata)</td></tr>
 <tr class="c-table__row memitem:a33b6757ea1c9e08cd1f1ae487cb47cb1 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a33b6757ea1c9e08cd1f1ae487cb47cb1"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a33b6757ea1c9e08cd1f1ae487cb47cb1">refresh</a> (self, identifier)</td></tr>
 <tr class="c-table__row memitem:a1753c81a9469244593de5ace9145c773 pub_methods_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a1753c81a9469244593de5ace9145c773"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a1753c81a9469244593de5ace9145c773">process</a> (self, flowdata)</td></tr>
@@ -110,20 +113,23 @@ Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="c-table__row memitem:a27b48697d7f824fc64d148ad1304cc72" id="r_a27b48697d7f824fc64d148ad1304cc72"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a27b48697d7f824fc64d148ad1304cc72">datakey</a> = &quot;device&quot;</td></tr>
 <tr class="c-table__row memitem:a8943bf999dda804f0577f56ff427eff9" id="r_a8943bf999dda804f0577f56ff427eff9"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8943bf999dda804f0577f56ff427eff9">data</a> = data</td></tr>
+<tr class="c-table__row memitem:aebc014697d1d98f4e59199ad92430bdd" id="r_aebc014697d1d98f4e59199ad92430bdd"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aebc014697d1d98f4e59199ad92430bdd">build_property_names</a> = list(restricted_properties_vector)</td></tr>
 <tr class="c-table__row memitem:accfb54a5f90dc638a6a8eb330fb1e46e" id="r_accfb54a5f90dc638a6a8eb330fb1e46e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#accfb54a5f90dc638a6a8eb330fb1e46e">config</a> = config</td></tr>
 <tr class="c-table__row memitem:a8931f614fb1b370b9018d517d256a39f" id="r_a8931f614fb1b370b9018d517d256a39f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8931f614fb1b370b9018d517d256a39f">properties_list</a> = properties_list</td></tr>
 <tr class="c-table__row memitem:a9c50259381b6a3539c2b31a482f9b52a" id="r_a9c50259381b6a3539c2b31a482f9b52a"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a9c50259381b6a3539c2b31a482f9b52a">data_file_path</a> = data_file_path</td></tr>
 <tr class="c-table__row memitem:a3a00db1a0babcc2d45681086c1d40262" id="r_a3a00db1a0babcc2d45681086c1d40262"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a3a00db1a0babcc2d45681086c1d40262">engine</a> = engine</td></tr>
+<tr class="c-table__row memitem:af769e91df3487a9ebdeff8f4ea728f65" id="r_af769e91df3487a9ebdeff8f4ea728f65"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#af769e91df3487a9ebdeff8f4ea728f65">property_indexes</a> = self.read_property_indexes()</td></tr>
 <tr class="c-table__row memitem:a7c05a13474b607b57fee58e05ca62b83" id="r_a7c05a13474b607b57fee58e05ca62b83"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7c05a13474b607b57fee58e05ca62b83">evidence_keys_list</a> = evidence_keys_list</td></tr>
 <tr class="c-table__row memitem:a0de4f0eed1baea384d743e97294c09bf" id="r_a0de4f0eed1baea384d743e97294c09bf"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a0de4f0eed1baea384d743e97294c09bf">properties</a> = properties</td></tr>
 <tr class="c-table__row inherit_header pub_attribs_classfiftyone__pipeline__engines_1_1engine_1_1_engine"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Attributes inherited from <a class="el"  href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html">fiftyone_pipeline_engines::engine::Engine</a></h3></td></tr>
 <tr class="c-table__row memitem:a204eafca1dfafd1fbd3c6df369576c3f pub_attribs_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a204eafca1dfafd1fbd3c6df369576c3f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a204eafca1dfafd1fbd3c6df369576c3f">data_file</a></td></tr>
 <tr class="c-table__row memitem:a0396e4bed172e18cc6846bdd48d7252f pub_attribs_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a0396e4bed172e18cc6846bdd48d7252f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a0396e4bed172e18cc6846bdd48d7252f">cache</a></td></tr>
 <tr class="c-table__row memitem:a15dd701f65716016830617f3b48a888d pub_attribs_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_a15dd701f65716016830617f3b48a888d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a15dd701f65716016830617f3b48a888d">restricted_properties</a></td></tr>
+<tr class="c-table__row memitem:ac717dfff7c7cb04855fd6673c689bb59 pub_attribs_classfiftyone__pipeline__engines_1_1engine_1_1_engine" id="r_ac717dfff7c7cb04855fd6673c689bb59"><td class="c-table__cell">dict&#160;</td><td class="c-table__cell"><a class="elRef" href="../pipeline-python/classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#ac717dfff7c7cb04855fd6673c689bb59">restricted_property_keys</a></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
-<a id="add1f159001eda1b500e0ebd309f6631d" name="add1f159001eda1b500e0ebd309f6631d"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#add1f159001eda1b500e0ebd309f6631d">&#9670;&#160;</a></span>__init__()</h2>
+<a id="a46d4fa64e5254d633c5d673ad53bf530" name="a46d4fa64e5254d633c5d673ad53bf530"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a46d4fa64e5254d633c5d673ad53bf530">&#9670;&#160;</a></span>__init__()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -213,12 +219,12 @@ Public Attributes</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>update_matched_useragent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">False</span>, </td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>update_matched_useragent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">None</span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>performance_profile</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;LowMemory&quot;</span>, </td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>performance_profile</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;Balanced&quot;</span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
@@ -283,13 +289,13 @@ Public Attributes</h2></td></tr>
     <tr><td class="paramname">auto_update</td><td>whether to automatically update the datafile when required @type restricted_properties: list </td></tr>
     <tr><td class="paramname">restricted_properties</td><td>List of property keys to limit the engine to @type license_keys: string </td></tr>
     <tr><td class="paramname">licence_keys</td><td>licencekeys to use for the data file update service @type download: bool </td></tr>
-    <tr><td class="paramname">download</td><td>whether to download the datafile or keep it in memory when it is returned from the datafile update service @type max_matched_useragents_length : int </td></tr>
-    <tr><td class="paramname">Number</td><td>of characters to consider in the matched User-Agent. Ignored if update_matched_useragent is false @type update_matched_useragent: </td></tr>
-    <tr><td class="paramname"></td><td>update_matched_useragent: True if the detection should record the matched characters from the target User-Agent @type drift: int </td></tr>
+    <tr><td class="paramname">download</td><td>whether to download the datafile or keep it in memory when it is returned from the datafile update service @type max_matched_useragent_length: int </td></tr>
+    <tr><td class="paramname">max_matched_useragent_length</td><td>Limit in bytes on the length of a single header such as User-Agent, of a pseudo header including the separators between its values, and of the matched User-Agent. A value longer than the limit is ignored and detection moves on to the next header. The limit applies whether or not update_matched_useragent is on. Left unset, the native default of 500 applies. A larger limit raises the memory each set of results holds. @type update_matched_useragent: bool </td></tr>
+    <tr><td class="paramname">update_matched_useragent</td><td>True if the detection should record the matched characters from the target User-Agent, which the UserAgents property returns. On by default, as the native code sets it. Set it to False when UserAgents is not needed, which saves recording the characters. @type drift: int </td></tr>
     <tr><td class="paramname">drift</td><td>Set maximum drift in hash position to allow when processing HTTP headers @type difference: int </td></tr>
     <tr><td class="paramname">difference</td><td>set the maximum difference to allow when processing HTTP headers. The difference is the difference in hash value between the hash that was found, and the hash that is being searched for. By default this is 0. @type allow_unmatched : bool </td></tr>
     <tr><td class="paramname">allow_unmatched</td><td>True if there should be at least one matched node in order for the results to be considered valid. By default, this is false @type performance_profile: string </td></tr>
-    <tr><td class="paramname">performance_profile</td><td>options are: LowMemory, MaxPerformance, Balanced, BalancedTemp, HighPerformance @type reuse_temp_file: bool </td></tr>
+    <tr><td class="paramname">performance_profile</td><td>options are: LowMemory, MaxPerformance, Balanced, BalancedTemp, HighPerformance. Balanced by default, as in the native code. @type reuse_temp_file: bool </td></tr>
     <tr><td class="paramname">reuse_temp_file</td><td>Indicates that an existing temp file may be used. This should be selected if multiple instances wish to use the same file to prevent high disk usage. @type concurrency: int </td></tr>
     <tr><td class="paramname">concurrency</td><td>defaults to the number of cpus in the machine @type update_on_start : bool </td></tr>
     <tr><td class="paramname">update_on_start</td><td>: When this is set to true the datafile is updated / downloaded immediately on initialization. This is useful if no initial datafile is present. @type file_system_watcher: bool </td></tr>
@@ -481,6 +487,30 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a7f0a6c5e1c4c46f72625b2f3a462986d" name="a7f0a6c5e1c4c46f72625b2f3a462986d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7f0a6c5e1c4c46f72625b2f3a462986d">&#9670;&#160;</a></span>read_property_indexes()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_devicedetection_onpremise.devicedetection_onpremise.DeviceDetectionOnPremise.read_property_indexes </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The index of each property the engine was built with, keyed by its name in lower case. </p>
+<p>The native code gives a property the place of its name among the names the engine was built with, the first place where a name is given twice. An engine built with no names takes the names the native code gives after the first load, which are every property in that data set sorted by name and which a reload does not change. </p>
+
+</div>
+</div>
 <a id="a5e815ddacaab5b1893f7e034ad0d04d3" name="a5e815ddacaab5b1893f7e034ad0d04d3"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5e815ddacaab5b1893f7e034ad0d04d3">&#9670;&#160;</a></span>set_cache()</h2>
 
@@ -510,6 +540,24 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="aebc014697d1d98f4e59199ad92430bdd" name="aebc014697d1d98f4e59199ad92430bdd"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aebc014697d1d98f4e59199ad92430bdd">&#9670;&#160;</a></span>build_property_names</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_devicedetection_onpremise.devicedetection_onpremise.DeviceDetectionOnPremise.build_property_names = list(restricted_properties_vector)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
 <a id="accfb54a5f90dc638a6a8eb330fb1e46e" name="accfb54a5f90dc638a6a8eb330fb1e46e"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#accfb54a5f90dc638a6a8eb330fb1e46e">&#9670;&#160;</a></span>config</h2>
 
@@ -646,6 +694,24 @@ Public Attributes</h2></td></tr>
           <table class="c-table c-table--article">
             <tr class="c-table__row">
               <td class="c-table__cell">fiftyone_devicedetection_onpremise.devicedetection_onpremise.DeviceDetectionOnPremise.properties_list = properties_list</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="af769e91df3487a9ebdeff8f4ea728f65" name="af769e91df3487a9ebdeff8f4ea728f65"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af769e91df3487a9ebdeff8f4ea728f65">&#9670;&#160;</a></span>property_indexes</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_devicedetection_onpremise.devicedetection_onpremise.DeviceDetectionOnPremise.property_indexes = self.read_property_indexes()</td>
             </tr>
           </table>
         </div>

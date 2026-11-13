@@ -58,11 +58,13 @@ var annotated =
         [ "Example", "namespace_fifty_one_1_1_device_detection_1_1_example.html", [
           [ "Tests", "namespace_fifty_one_1_1_device_detection_1_1_example_1_1_tests.html", [
             [ "Cloud", "namespace_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_cloud.html", [
+              [ "OldEnvironmentNamesTests", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_cloud_1_1_old_environment_names_tests.html", null ],
               [ "PmpWebTemplateTests", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_cloud_1_1_pmp_web_template_tests.html", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_cloud_1_1_pmp_web_template_tests" ],
               [ "TestExamples", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_cloud_1_1_test_examples.html", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_cloud_1_1_test_examples" ]
             ] ],
             [ "OnPremise", "namespace_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_on_premise.html", [
-              [ "TestExamples", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_on_premise_1_1_test_examples.html", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_on_premise_1_1_test_examples" ]
+              [ "TestExamples", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_on_premise_1_1_test_examples.html", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_on_premise_1_1_test_examples" ],
+              [ "TestExamplesWithoutSettings", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_on_premise_1_1_test_examples_without_settings.html", null ]
             ] ],
             [ "Shared", "namespace_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_shared.html", [
               [ "SeleniumProcessCleanup", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_shared_1_1_selenium_process_cleanup.html", null ],
@@ -85,6 +87,7 @@ var annotated =
                 [ "GettingStartedFirefoxTest", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_cloud_1_1_getting_started_firefox_test.html", null ],
                 [ "GettingStartedSeleniumTest", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_cloud_1_1_getting_started_selenium_test.html", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_cloud_1_1_getting_started_selenium_test" ],
                 [ "GettingStartedTest", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_cloud_1_1_getting_started_test.html", null ],
+                [ "LiveCloudKeyOldNamesTests", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_cloud_1_1_live_cloud_key_old_names_tests.html", null ],
                 [ "Parameters", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_cloud_1_1_parameters.html", "class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_cloud_1_1_parameters" ]
               ] ],
               [ "OnPremise", "namespace_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_on_premise.html", [

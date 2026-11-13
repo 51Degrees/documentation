@@ -1,7 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,27,236,53"/>
-<area shape="rect" id="Node000001" href="$class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_builder_base-1-g.html" title="Builder for the IpiOnPremiseEngine." alt="" coords="284,5,525,75"/>
-<area shape="poly" id="edge58_Node000000_Node000001" title=" " alt="" coords="250,37,284,37,284,43,250,43"/>
-<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine_builder.html" title="Builder for the IpiOnPremiseEngine." alt="" coords="573,13,815,67"/>
-<area shape="poly" id="edge59_Node000001_Node000002" title=" " alt="" coords="539,37,573,37,573,43,539,43"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,13,147,38"/>
+<area shape="rect" id="Node000001" href="$class_fifty_one_1_1_ip_intelligence_1_1_cloud_1_1_data_1_1_ip_data_cloud.html" title="A data class that makes working with IP data from cloud services easier for the user." alt="" coords="195,5,373,45"/>
+<area shape="poly" id="edge56_Node000000_Node000001" title=" " alt="" coords="160,23,195,23,195,28,160,28"/>
 </map>

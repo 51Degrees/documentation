@@ -104,8 +104,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">      {</div>
 <div class="c-code__line">        &quot;BuilderName&quot;: &quot;IpiOnPremiseEngineBuilder&quot;,</div>
 <div class="c-code__line">        &quot;BuildParameters&quot;: {</div>
-<div class="c-code__line">          //Make sure this data file is in the cxx/data/ip-intelligence directory</div>
-<div class="c-code__line">          &quot;DataFile&quot;: &quot;51Degrees-EnterpriseIpiV41.ipi&quot;,</div>
+<div class="c-code__line">          // The free Lite data file, which the example downloads to the</div>
+<div class="c-code__line">          // cxx/data/ip-intelligence directory when it is missing. Name the</div>
+<div class="c-code__line">          // Enterprise data file here for the location properties.</div>
+<div class="c-code__line">          &quot;DataFile&quot;: &quot;51Degrees-LiteV41.ipi&quot;,</div>
 <div class="c-code__line">          &quot;CreateTempDataCopy&quot;: false,</div>
 <div class="c-code__line">          &quot;AutoUpdate&quot;: false,</div>
 <div class="c-code__line">          &quot;PerformanceProfile&quot;: &quot;LowMemory&quot;,</div>
@@ -180,7 +182,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__keyword">public</span> IActionResult Index()</div>
 <div class="c-code__line">        {</div>
-<div class="c-code__line">            <span class="c-code__comment">// Log warnings if the data file is too old or the &#39;Lite&#39; file is being used.</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// Log a warning if the data file is too old.</span></div>
 <div class="c-code__line">            <span class="c-code__keywordflow">if</span>(_checkedDataFile == <span class="c-code__keyword">false</span>)</div>
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                ExampleUtils.CheckDataFile(_provider.GetFlowData().Pipeline, _logger);</div>
@@ -211,7 +213,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_model_1_1_index_model_html"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_model_1_1_index_model.html">FiftyOne.IpIntelligence.Examples.OnPremise.GettingStartedWeb.Model.IndexModel</a></div><div class="ttdef"><b>Definition</b> OnPremise/GettingStarted-Web/Model/IndexModel.cs:34</div></div>
+<div class="ttc" id="aclass_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_model_1_1_index_model_html"><div class="ttname"><a href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_model_1_1_index_model.html">FiftyOne.IpIntelligence.Examples.OnPremise.GettingStartedWeb.Model.IndexModel</a></div><div class="ttdef"><b>Definition</b> OnPremise/GettingStarted-Web/Model/IndexModel.cs:35</div></div>
 <div class="ttc" id="anamespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_controllers_html"><div class="ttname"><a href="namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_controllers.html">FiftyOne.IpIntelligence.Examples.OnPremise.GettingStartedWeb.Controllers</a></div><div class="ttdef"><b>Definition</b> OnPremise/GettingStarted-Web/Controllers/HomeController.cs:30</div></div>
 <div class="ttc" id="anamespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_model_html"><div class="ttname"><a href="namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_model.html">FiftyOne.IpIntelligence.Examples.OnPremise.GettingStartedWeb.Model</a></div><div class="ttdef"><b>Definition</b> OnPremise/GettingStarted-Web/Model/EvidenceModel.cs:24</div></div>
 </div><!-- fragment --><h2>View</h2>
@@ -254,8 +256,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">            days old. A more recent data file may be needed to correctly perform detection. The latest</div>
 <div class="c-code__line">            lite data file is downloaded by the scripts in the</div>
 <div class="c-code__line">            &lt;a href=&quot;https://github.com/51Degrees/data&quot;&gt;data&lt;/a&gt;</div>
-<div class="c-code__line">            repository on GitHub. Find out about the Enterprise data file, which includes automatic</div>
-<div class="c-code__line">            daily updates, on our &lt;a href=&quot;https://51degrees.com/pricing?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=51degrees-dotnet&amp;amp;utm_content=examples-onpremise-gettingstarted-web-views-home-index.cshtml&amp;amp;utm_term=ip-intelligence-web-integration-example&quot;&gt;pricing page&lt;/a&gt;.</div>
+<div class="c-code__line">            repository on GitHub. &lt;a href=&quot;https://51degrees.com/contact-us?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=51degrees-dotnet&amp;amp;utm_content=examples-onpremise-gettingstarted-web-views-home-index.cshtml&amp;amp;utm_term=ip-intelligence-web-integration-example&quot;&gt;Contact us&lt;/a&gt;</div>
+<div class="c-code__line">            about the Enterprise data file, which includes automatic daily updates.</div>
 <div class="c-code__line">        &lt;/div&gt;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">    &lt;h2 class=&quot;c-eg-page__title&quot;&gt;IP intelligence web integration example&lt;/h2&gt;</div>
@@ -411,7 +413,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">        &lt;/div&gt;</div>
 <div class="c-code__line">    &lt;/div&gt;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    @if (Model.Engine.DataSourceTier == &quot;Lite&quot;)</div>
+<div class="c-code__line">    @if (Model.FreeDataFile)</div>
 <div class="c-code__line">    {</div>
 <div class="c-code__line">        &lt;div class=&quot;c-eg-message&quot;&gt;</div>
 <div class="c-code__line">            &lt;p class=&quot;c-eg-message__text&quot;&gt;Need more on-premise properties and features? &lt;a href=&quot;https://51degrees.com/contact-us?utm_source=code&amp;amp;utm_medium=example&amp;amp;utm_campaign=51degrees-dotnet&amp;amp;utm_content=examples-onpremise-gettingstarted-web-views-home-index.cshtml&amp;amp;utm_term=on-premise-properties&quot;&gt;Contact us&lt;/a&gt; to explore the options.&lt;/p&gt;</div>
@@ -427,10 +429,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"> </div>
 <div class="c-code__line">&lt;script&gt;</div>
 <div class="c-code__line">    window.onload = function () {</div>
+<div class="c-code__line">        // A free data file has no location, so there is nothing to map.</div>
 <div class="c-code__line">        fodExamples.initLocationMap({</div>
-<div class="c-code__line">            areasWkt: &#39;@Html.Raw(Model.Areas?.Replace(&quot;&#39;&quot;, &quot;\\&#39;&quot;) ?? &quot;&quot;)&#39;,</div>
-<div class="c-code__line">            latitude: &#39;@Model.Latitude&#39;,</div>
-<div class="c-code__line">            longitude: &#39;@Model.Longitude&#39;</div>
+<div class="c-code__line">            areasWkt: &#39;@Html.Raw(Model.FreeDataFile ? &quot;&quot; : Model.Areas?.Replace(&quot;&#39;&quot;, &quot;\\&#39;&quot;) ?? &quot;&quot;)&#39;,</div>
+<div class="c-code__line">            latitude: &#39;@(Model.FreeDataFile ? &quot;&quot; : Model.Latitude)&#39;,</div>
+<div class="c-code__line">            longitude: &#39;@(Model.FreeDataFile ? &quot;&quot; : Model.Longitude)&#39;</div>
 <div class="c-code__line">        });</div>
 <div class="c-code__line">    };</div>
 <div class="c-code__line">&lt;/script&gt;</div>

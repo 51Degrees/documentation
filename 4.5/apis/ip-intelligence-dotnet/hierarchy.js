@@ -144,6 +144,7 @@ var hierarchy =
     [ "FiftyOne.IpIntelligence.Examples.OnPremise.Metrics.Program.KeyFactory", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_metrics_1_1_program_1_1_key_factory.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.OnPremise.GettingStartedAPI.Tests.LocalMockingTest", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_a_p_i_1_1_tests_1_1_local_mocking_test.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.OnPremise.GettingStartedAPI.Tests.NativeEngineLoadTests", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_a_p_i_1_1_te238a80fcffcee3327327f931f4b856bf.html", null ],
+    [ "FiftyOne.IpIntelligence.Example.Tests.Cloud.OldEnvironmentNamesTests", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_cloud_1_1_old_environment_names_tests.html", null ],
     [ "OnPremiseIpiEngineBase", null, [
       [ "FiftyOne.IpIntelligence.Engine.OnPremise.FlowElements.IpiOnPremiseEngine", "class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html", null ]
     ] ],
@@ -209,6 +210,7 @@ var hierarchy =
     [ "FiftyOne.IpIntelligence.Example.Tests.OnPremise.TestCompareBadTruths", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_compare_bad_truths.html", null ],
     [ "FiftyOne.IpIntelligence.Example.Tests.OnPremise.TestCompareOddIps", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_compare_odd_ips.html", null ],
     [ "FiftyOne.IpIntelligence.Example.Tests.OnPremise.TestExamples", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_examples.html", null ],
+    [ "FiftyOne.IpIntelligence.Example.Tests.OnPremise.TestExamplesWithoutSettings", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_examples_without_settings.html", null ],
     [ "FiftyOne.IpIntelligence.Example.Tests.OnPremise.TestGettingStartedOnPremise", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_getting_started_on_premise.html", null ],
     [ "FiftyOne.IpIntelligence.Examples.OnPremise.Compare.Program.Truth", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html", null ]
 ];

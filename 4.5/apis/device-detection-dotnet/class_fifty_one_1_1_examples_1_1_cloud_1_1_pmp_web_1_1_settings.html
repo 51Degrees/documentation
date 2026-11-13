@@ -85,13 +85,19 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="c-table__row memitem:a789cf36ee0c372a5a762f8ce1088ad50" id="r_a789cf36ee0c372a5a762f8ce1088ad50"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a789cf36ee0c372a5a762f8ce1088ad50">RESOURCE_KEY_ENV_VAR</a> = &quot;51DEGREES_RESOURCE_KEY&quot;</td></tr>
-<tr class="c-table__row memdesc:a789cf36ee0c372a5a762f8ce1088ad50"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The resource key the pages and the pipeline use.  <br /></td></tr>
+<tr class="c-table__row memitem:adf58d3fe625b1c7508f51263c10a6aea" id="r_adf58d3fe625b1c7508f51263c10a6aea"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#adf58d3fe625b1c7508f51263c10a6aea">RESOURCE_KEY_VARIABLE</a> = &quot;_51DEGREES_RESOURCE_KEY&quot;</td></tr>
+<tr class="c-table__row memdesc:adf58d3fe625b1c7508f51263c10a6aea"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The resource key the pages and the pipeline use.  <br /></td></tr>
+<tr class="c-table__row memitem:a789cf36ee0c372a5a762f8ce1088ad50" id="r_a789cf36ee0c372a5a762f8ce1088ad50"><td class="c-table__cell"><a id="a789cf36ee0c372a5a762f8ce1088ad50" name="a789cf36ee0c372a5a762f8ce1088ad50"></a>
+const&#160;string&#160;</td><td class="c-table__cell"><b>RESOURCE_KEY_ENV_VAR</b> = &quot;51DEGREES_RESOURCE_KEY&quot;</td></tr>
+<tr class="c-table__row memdesc:a789cf36ee0c372a5a762f8ce1088ad50"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The old name of RESOURCE_KEY_VARIABLE, read only when neither that variable nor CI_RESOURCE_KEY_ENV_VAR is set. <br /></td></tr>
 <tr class="c-table__row memitem:abc680c6049e4cf8bfbd11c9f73090d2c" id="r_abc680c6049e4cf8bfbd11c9f73090d2c"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#abc680c6049e4cf8bfbd11c9f73090d2c">CI_RESOURCE_KEY_ENV_VAR</a></td></tr>
-<tr class="c-table__row memdesc:abc680c6049e4cf8bfbd11c9f73090d2c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The name continuous integration sets a resource key carrying the 51Did product in, read only when RESOURCE_KEY_ENV_VAR is not set.  <br /></td></tr>
+<tr class="c-table__row memdesc:abc680c6049e4cf8bfbd11c9f73090d2c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The name continuous integration sets a resource key carrying the 51Did product in, read only when RESOURCE_KEY_VARIABLE is not set.  <br /></td></tr>
+<tr class="c-table__row memitem:a9ca4ee2a63d32f24e7e491834b01de30" id="r_a9ca4ee2a63d32f24e7e491834b01de30"><td class="c-table__cell"><a id="a9ca4ee2a63d32f24e7e491834b01de30" name="a9ca4ee2a63d32f24e7e491834b01de30"></a>
+const&#160;string&#160;</td><td class="c-table__cell"><b>CLOUD_ENDPOINT_VARIABLE</b> = &quot;_51DEGREES_CLOUD_ENDPOINT&quot;</td></tr>
+<tr class="c-table__row memdesc:a9ca4ee2a63d32f24e7e491834b01de30"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The cloud the pages load the PMP and the client script from, and the pipeline asks. <br /></td></tr>
 <tr class="c-table__row memitem:a676d27f03285e32332cf0ff91e595112" id="r_a676d27f03285e32332cf0ff91e595112"><td class="c-table__cell"><a id="a676d27f03285e32332cf0ff91e595112" name="a676d27f03285e32332cf0ff91e595112"></a>
 const&#160;string&#160;</td><td class="c-table__cell"><b>CLOUD_ENDPOINT_ENV_VAR</b> = &quot;51DEGREES_CLOUD_ENDPOINT&quot;</td></tr>
-<tr class="c-table__row memdesc:a676d27f03285e32332cf0ff91e595112"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The cloud the pages load the PMP and the client script from, and the pipeline asks. <br /></td></tr>
+<tr class="c-table__row memdesc:a676d27f03285e32332cf0ff91e595112"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The old name of CLOUD_ENDPOINT_VARIABLE, read only when that variable is not set. <br /></td></tr>
 <tr class="c-table__row memitem:a4f848b0b24643cd7400379dc2b2d0499" id="r_a4f848b0b24643cd7400379dc2b2d0499"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a4f848b0b24643cd7400379dc2b2d0499">DEFAULT_CLOUD_ENDPOINT</a></td></tr>
 <tr class="c-table__row memdesc:a4f848b0b24643cd7400379dc2b2d0499"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The cloud used when no endpoint variable is set.  <br /></td></tr>
 <tr class="c-table__row memitem:ab85ed83ceb2a6ec0beb858b010786038" id="r_ab85ed83ceb2a6ec0beb858b010786038"><td class="c-table__cell"><a id="ab85ed83ceb2a6ec0beb858b010786038" name="ab85ed83ceb2a6ec0beb858b010786038"></a>
@@ -251,7 +257,7 @@ string&#160;</td><td class="c-table__cell"><b>CloudEndpointVariable</b><code> [g
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                        =</div>
 <div class="c-code__line"><span class="c-code__stringliteral">&quot;_51DEGREES_RESOURCE_KEY_51DID&quot;</span></div>
 </div><!-- fragment -->
-<p>The name continuous integration sets a resource key carrying the 51Did product in, read only when RESOURCE_KEY_ENV_VAR is not set. </p>
+<p>The name continuous integration sets a resource key carrying the 51Did product in, read only when RESOURCE_KEY_VARIABLE is not set. </p>
 
 </div>
 </div>
@@ -285,8 +291,8 @@ string&#160;</td><td class="c-table__cell"><b>CloudEndpointVariable</b><code> [g
 
 </div>
 </div>
-<a id="a789cf36ee0c372a5a762f8ce1088ad50" name="a789cf36ee0c372a5a762f8ce1088ad50"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a789cf36ee0c372a5a762f8ce1088ad50">&#9670;&#160;</a></span>RESOURCE_KEY_ENV_VAR</h2>
+<a id="adf58d3fe625b1c7508f51263c10a6aea" name="adf58d3fe625b1c7508f51263c10a6aea"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adf58d3fe625b1c7508f51263c10a6aea">&#9670;&#160;</a></span>RESOURCE_KEY_VARIABLE</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -297,7 +303,7 @@ string&#160;</td><td class="c-table__cell"><b>CloudEndpointVariable</b><code> [g
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">const string FiftyOne.Examples.Cloud.PmpWeb.Settings.RESOURCE_KEY_ENV_VAR = &quot;51DEGREES_RESOURCE_KEY&quot;</td>
+              <td class="c-table__cell">const string FiftyOne.Examples.Cloud.PmpWeb.Settings.RESOURCE_KEY_VARIABLE = &quot;_51DEGREES_RESOURCE_KEY&quot;</td>
             </tr>
           </table>
         </div>

@@ -79,22 +79,25 @@ Files</h2></td></tr>
 <tr class="c-table__row memitem:setup_2Epy" id="r_setup_2Epy"><td class="c-table__cell"><span class="icondoc"><div class="doc-icon"></div></span>&#160;</td><td class="c-table__cell"><a class="el" href="fiftyone__devicedetection__examples_2setup_8py.html">setup.py</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
-<div class="textblock"><p><img src="https://51degrees.com/img/logo.png?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-readme.md&amp;utm_term=51degrees-device-detection-engines-examples" alt="51Degrees" title="THE Fastest and Most Accurate Device Detection" class="inline"/> <b>v4 Device Detection Python</b></p>
-<p><a href="https://51degrees.com/device-detection-python/index.html?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-readme.md&amp;utm_term=51degrees-device-detection-engines-examples" title="Developer Documentation">Developer Documentation</a> | <a href="https://51degrees.com/resources/property-dictionary?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-readme.md&amp;utm_term=51degrees-device-detection-engines-examples" title="View all available properties and values">Available Properties</a></p>
+<div class="textblock"><p><img src="https://raw.githubusercontent.com/51Degrees/51degrees-python/main/.github/images/logo-160.png" alt="51Degrees" title="Data rewards the curious" class="inline"/> <b>v4 Device Detection Python</b></p>
+<p><a href="https://51degrees.com/documentation/_device_detection__quickstart.html?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-readme.md&amp;utm_term=51degrees-device-detection-engines-examples" title="Developer Documentation">Developer Documentation</a> | <a href="https://51degrees.com/resources/property-dictionary?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-readme.md&amp;utm_term=51degrees-device-detection-engines-examples" title="View all available properties and values">Available Properties</a></p>
 <h1>Introduction</h1>
 <p>This project contains examples for the 51Degrees device detection engines contained in this repository. Then you will be able to run the examples directly:</p>
 <h1>Examples</h1>
 <p>Any of the examples in this project can be run by calling python directly. For example, to run the cloud getting started example:</p>
 <p><code>python -m <a class="el" href="namespacefiftyone__devicedetection__examples_1_1cloud_1_1gettingstarted__console.html">fiftyone_devicedetection_examples.cloud.gettingstarted_console</a></code></p>
+<p>The on-premise examples use the free Lite data file by default. The data repository, at <code>cxx/data</code>, links to it, and an example downloads it the first time it is missing, so the examples run from a fresh clone with no settings. Where an example shows a property that only the Enterprise data file has, such as HardwareVendor, HardwareName or DeviceType, it shows the property as needing the Enterprise data file and gives a link to <a href="https://51degrees.com/contact-us?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-readme.md&amp;utm_term=enterprise-data-file">contact us</a> about a copy. Supply the path to an Enterprise data file as the first command line argument to see every property.</p>
+<p>The data file update example needs a licence key, and the hardware profile examples need the TAC data file or its CSV export, so without them each one says what it needs and where to ask for it, and stops.</p>
 <h1>Tests</h1>
 <p>To run the tests use:</p>
 <p><code>python -m unittest discover -s <a class="elRef" href="../pipeline-python/namespacetests.html">tests</a> -p test*.py -b</code></p>
-<p>Cloud tests will only run with a valid 51Degrees resource key (see above) set as a resource_key operating system environment variable.</p>
-<p>For example, use following command to set resource_key on Linux: <code>export resource_key=MY-RESOURCE-KEY</code></p>
-<p>On Microsoft Windows use: <code>$env:resource_key = "MY-RESOURCE-KEY"</code></p>
+<p>The tests in <code><a class="el" href="test__examples__without__settings_8py.html">tests/test_examples_without_settings.py</a></code> run the on-premise examples as they run from a fresh clone, with no licence key, and check that each one finishes on the free Lite data file and gives the link to ask for the Enterprise data file.</p>
+<p>The cloud tests need a valid 51Degrees resource key (see above), and fail without one. They read it from the environment variable <code>_51DEGREES_RESOURCE_KEY</code>, then <code>_51DEGREES_RESOURCE_KEY_BESPOKE</code>.</p>
+<p>For example, use following command to set the resource key on Linux: <code>export _51DEGREES_RESOURCE_KEY=MY-RESOURCE-KEY</code></p>
+<p>On Microsoft Windows use: <code>$env:_51DEGREES_RESOURCE_KEY = "MY-RESOURCE-KEY"</code></p>
 <p>As the performance and offline processing tests take longer than the others, there is another environment variable flag to run those:</p>
-<p>Linux: <code>export run_performance_tests=true</code></p>
-<p>Microsoft Windows: <code>$env:run_performance_tests = "true"</code> </p>
+<p>Linux: <code>export _51DEGREES_RUN_PERFORMANCE_TESTS=true</code></p>
+<p>Microsoft Windows: <code>$env:_51DEGREES_RUN_PERFORMANCE_TESTS = "true"</code> </p>
 </div></div><!-- primary -->
 </div><!-- inner -->
 <div id="page-nav" class="page-nav-panel">

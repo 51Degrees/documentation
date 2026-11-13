@@ -94,6 +94,12 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a3a8a9e1cedb3147778c965030d4655b2 pub_methods_class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_evidence_key_filter_share_usage"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor.  <br /></td></tr>
 <tr class="c-table__row memitem:a73b1e1e58c50ac07333bc62954669d42 pub_methods_class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_evidence_key_filter_share_usage" id="r_a73b1e1e58c50ac07333bc62954669d42"><td class="c-table__cell">int?&#160;</td><td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_evidence_key_filter_share_usage.html#a73b1e1e58c50ac07333bc62954669d42">Order</a> (string key)</td></tr>
 <tr class="c-table__row memdesc:a73b1e1e58c50ac07333bc62954669d42 pub_methods_class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_evidence_key_filter_share_usage"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Return the 'order of precedence of the specified evidence key.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-inherited" class="g-docs__section-heading"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="c-table__row inherit_header pro_methods_class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_evidence_key_filter_share_usage"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Protected Member Functions inherited from <a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_evidence_key_filter_share_usage.html">FiftyOne.Pipeline.Engines.FiftyOne.Data.EvidenceKeyFilterShareUsage</a></h3></td></tr>
+<tr class="c-table__row memitem:a3c438f49a21a814c120467872e001435 pro_methods_class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_evidence_key_filter_share_usage" id="r_a3c438f49a21a814c120467872e001435"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_evidence_key_filter_share_usage.html#a3c438f49a21a814c120467872e001435">IsIncludedSessionCookie</a> (string key)</td></tr>
+<tr class="c-table__row memdesc:a3c438f49a21a814c120467872e001435 pro_methods_class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_evidence_key_filter_share_usage"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True if the key is the asp.net session cookie and the filter was given the setting to include the session.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="ad96943d81fbfd70682255770e9958869" name="ad96943d81fbfd70682255770e9958869"></a>
@@ -158,7 +164,7 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">blockedHttpHeaders</td><td>A list of the names of the HTTP headers that share usage should not send to 51Degrees. </td></tr>
     <tr><td class="paramname">includedQueryStringParams</td><td>A list of the names of query string parameters that share usage should send to 51Degrees. If this value is null, all query string parameters are shared. </td></tr>
-    <tr><td class="paramname">includeSession</td><td>If true then the asp.net session cookie will be included in the filter. </td></tr>
+    <tr><td class="paramname">includeSession</td><td>If true then the asp.net session cookie is part of the key, so the same evidence from two sessions is not a repeat. </td></tr>
     <tr><td class="paramname">aspSessionCookieName</td><td>The name of the cookie that contains the asp.net session id. </td></tr>
   </table>
   </dd>

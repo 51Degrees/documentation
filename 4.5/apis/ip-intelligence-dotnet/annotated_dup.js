@@ -50,6 +50,7 @@ var annotated_dup =
         [ "Example", "namespace_fifty_one_1_1_ip_intelligence_1_1_example.html", [
           [ "Tests", "namespace_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests.html", [
             [ "Cloud", "namespace_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_cloud.html", [
+              [ "OldEnvironmentNamesTests", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_cloud_1_1_old_environment_names_tests.html", null ],
               [ "TestCloudExamples", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_cloud_1_1_test_cloud_examples.html", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_cloud_1_1_test_cloud_examples" ],
               [ "TestCloudMixedWebExample", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_cloud_1_1_test_cloud_mixed_web_example.html", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_cloud_1_1_test_cloud_mixed_web_example" ],
               [ "TestCloudWebExample", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_cloud_1_1_test_cloud_web_example.html", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_cloud_1_1_test_cloud_web_example" ]
@@ -60,6 +61,7 @@ var annotated_dup =
               [ "TestCompareBadTruths", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_compare_bad_truths.html", null ],
               [ "TestCompareOddIps", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_compare_odd_ips.html", null ],
               [ "TestExamples", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_examples.html", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_examples" ],
+              [ "TestExamplesWithoutSettings", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_examples_without_settings.html", null ],
               [ "TestGettingStartedOnPremise", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_getting_started_on_premise.html", "class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_getting_started_on_premise" ]
             ] ]
           ] ]
@@ -115,7 +117,7 @@ var annotated_dup =
             ] ],
             [ "OnPremise", "namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise.html", [
               [ "GettingStartedConsole", "namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise_1_1_getting_started_console.html", [
-                [ "Constants", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise_1_1_getting_started_console_1_1_constants.html", null ],
+                [ "Constants", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise_1_1_getting_started_console_1_1_constants.html", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise_1_1_getting_started_console_1_1_constants" ],
                 [ "Program", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise_1_1_getting_started_console_1_1_program.html", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise_1_1_getting_started_console_1_1_program" ]
               ] ],
               [ "GettingStartedWeb", "namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_mixed_1_1_on_premise_1_1_getting_started_web.html", [
@@ -152,7 +154,7 @@ var annotated_dup =
               ] ],
               [ "Model", "namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_model.html", [
                 [ "EvidenceModel", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_model_1_1_evidence_model.html", null ],
-                [ "IndexModel", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_model_1_1_index_model.html", null ]
+                [ "IndexModel", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_model_1_1_index_model.html", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_model_1_1_index_model" ]
               ] ],
               [ "Pages", "namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_pages.html", [
                 [ "IndexModel", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_getting_started_web_1_1_pages_1_1_index_model.html", null ]
@@ -189,7 +191,7 @@ var annotated_dup =
           ] ],
           [ "Constants", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_constants.html", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_constants" ],
           [ "DataExtensions", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_data_extensions.html", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_data_extensions" ],
-          [ "DataFileInfo", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_data_file_info.html", null ],
+          [ "DataFileInfo", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_data_file_info.html", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_data_file_info" ],
           [ "ExampleBase", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_example_base.html", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_example_base" ],
           [ "ExampleOptions", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_example_options.html", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_example_options" ],
           [ "ExampleUtils", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_example_utils.html", "class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_example_utils" ],

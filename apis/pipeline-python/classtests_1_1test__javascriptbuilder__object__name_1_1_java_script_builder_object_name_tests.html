@@ -85,6 +85,8 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a8ba1f971200b4abde938f4caa29be056" id="r_a8ba1f971200b4abde938f4caa29be056"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8ba1f971200b4abde938f4caa29be056">test_valid_name_is_used</a> (self, _, settings, evidence)</td></tr>
 <tr class="c-table__row memitem:a2c8a37c5f957685c998bc918843a68a6" id="r_a2c8a37c5f957685c998bc918843a68a6"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a2c8a37c5f957685c998bc918843a68a6">test_valid_name_from_evidence_minified</a> (self)</td></tr>
 <tr class="c-table__row memitem:a835d9c02fbbc02dd83eab318af82b3ca" id="r_a835d9c02fbbc02dd83eab318af82b3ca"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a835d9c02fbbc02dd83eab318af82b3ca">test_invalid_name_from_evidence_is_ignored</a> (self, _, name, check_text)</td></tr>
+<tr class="c-table__row memitem:a288099c876f6431409f307c84d9c7ce5" id="r_a288099c876f6431409f307c84d9c7ce5"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a288099c876f6431409f307c84d9c7ce5">test_refused_window_name_from_evidence_is_ignored</a> (self, name)</td></tr>
+<tr class="c-table__row memitem:a149c64e0a32207d33927e9a436cd6cdd" id="r_a149c64e0a32207d33927e9a436cd6cdd"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a149c64e0a32207d33927e9a436cd6cdd">test_allowed_window_name_from_evidence_is_used</a> (self, name)</td></tr>
 <tr class="c-table__row memitem:a8ccdd6e6b31940f4c02f8c6313e20899" id="r_a8ccdd6e6b31940f4c02f8c6313e20899"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8ccdd6e6b31940f4c02f8c6313e20899">test_invalid_name_from_evidence_uses_configured_name</a> (self)</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
@@ -173,6 +175,32 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a149c64e0a32207d33927e9a436cd6cdd" name="a149c64e0a32207d33927e9a436cd6cdd"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a149c64e0a32207d33927e9a436cd6cdd">&#9670;&#160;</a></span>test_allowed_window_name_from_evidence_is_used()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_javascriptbuilder_object_name.JavaScriptBuilderObjectNameTests.test_allowed_window_name_from_evidence_is_used </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>name</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<pre class="fragment">A name the specification allows is declared and the script
+parses.</pre> 
+</div>
+</div>
 <a id="a835d9c02fbbc02dd83eab318af82b3ca" name="a835d9c02fbbc02dd83eab318af82b3ca"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a835d9c02fbbc02dd83eab318af82b3ca">&#9670;&#160;</a></span>test_invalid_name_from_evidence_is_ignored()</h2>
 
@@ -229,6 +257,33 @@ parses and runs, and a warning is logged.</pre>
       </div>
 </div><div class="c-member__body">
 <pre class="fragment">The fallback is the configured name, not always 'fod'.</pre> 
+</div>
+</div>
+<a id="a288099c876f6431409f307c84d9c7ce5" name="a288099c876f6431409f307c84d9c7ce5"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a288099c876f6431409f307c84d9c7ce5">&#9670;&#160;</a></span>test_refused_window_name_from_evidence_is_ignored()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">tests.test_javascriptbuilder_object_name.JavaScriptBuilderObjectNameTests.test_refused_window_name_from_evidence_is_ignored </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>name</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<pre class="fragment">A requested name the specification refuses is not declared. The
+configured name is used, the script parses and runs, and a warning
+is logged.</pre> 
 </div>
 </div>
 <a id="a2c8a37c5f957685c998bc918843a68a6" name="a2c8a37c5f957685c998bc918843a68a6"></a>

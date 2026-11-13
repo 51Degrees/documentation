@@ -101,7 +101,6 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2csv
 <div class="c-code__line"><span class="c-code__keyword">import</span> sys</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__devicedetection__examples_1_1example__utils.html">fiftyone_devicedetection_examples.example_utils</a> <span class="c-code__keyword">import</span> ExampleUtils</div>
-<div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespaceRef" href="../pipeline-python/namespacefiftyone__pipeline__core_1_1logger.html">fiftyone_pipeline_core.logger</a> <span class="c-code__keyword">import</span> Logger</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment"># CSV file name to search for</span></div>
 <div class="c-code__line">CSV_FILE_NAME = <span class="c-code__stringliteral">&quot;51Degrees-Tac-HardwarePlatform.csv&quot;</span></div>
@@ -112,6 +111,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2csv
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment"># Columns whose values are pipe-delimited lists</span></div>
 <div class="c-code__line">MULTI_VALUE_COLUMNS = [<span class="c-code__stringliteral">&quot;TAC&quot;</span>, <span class="c-code__stringliteral">&quot;HardwareName&quot;</span>, <span class="c-code__stringliteral">&quot;NativeName&quot;</span>, <span class="c-code__stringliteral">&quot;NativeModel&quot;</span>]</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment"># Where to ask for a copy of the hardware profile export, tagged with this</span></div>
+<div class="c-code__line"><span class="c-code__comment"># example.</span></div>
+<div class="c-code__line">CONTACT_US = <span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-csv_profile_metadata.py&amp;utm_term=enterprise-data-file&quot;</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">def </span>flush_print(*args, **kwargs):</div>
@@ -171,21 +174,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2csv
 <div class="c-code__line">    output_file = <span class="c-code__keywordtype">None</span> <span class="c-code__keywordflow">if</span> output_arg == <span class="c-code__stringliteral">&quot;-&quot;</span> <span class="c-code__keywordflow">else</span> output_arg</div>
 <div class="c-code__line">    limit = int(argv[2]) <span class="c-code__keywordflow">if</span> len(argv) &gt; 2 <span class="c-code__keywordflow">else</span> <span class="c-code__keywordtype">None</span></div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    logger = Logger(min_level=<span class="c-code__stringliteral">&quot;info&quot;</span>)</div>
 <div class="c-code__line">    output_func = flush_print <span class="c-code__keywordflow">if</span> output_file <span class="c-code__keywordflow">else</span> stderr_print</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> csv_file <span class="c-code__keywordflow">is</span> <span class="c-code__keywordflow">not</span> <span class="c-code__keywordtype">None</span>:</div>
 <div class="c-code__line">        run(csv_file, output_file, output_func, limit)</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">else</span>:</div>
-<div class="c-code__line">        logger.log(<span class="c-code__stringliteral">&quot;error&quot;</span>,</div>
-<div class="c-code__line">            <span class="c-code__stringliteral">&quot;Failed to find the CSV data file. &quot;</span></div>
-<div class="c-code__line">            <span class="c-code__stringliteral">&quot;Please provide the path to 51Degrees-Tac-HardwarePlatform.csv as the first argument.&quot;</span>)</div>
+<div class="c-code__line">        <span class="c-code__comment"># The export is not one of the free data files, so the example says</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># what it needs and where to ask for it, and stops.</span></div>
+<div class="c-code__line">        print(f<span class="c-code__stringliteral">&quot;Listing the hardware profiles needs the {CSV_FILE_NAME} &quot;</span></div>
+<div class="c-code__line">              <span class="c-code__stringliteral">&quot;export, which is not one of the free data files. Give its &quot;</span></div>
+<div class="c-code__line">              <span class="c-code__stringliteral">&quot;path as the first command line argument, or contact us for a &quot;</span></div>
+<div class="c-code__line">              f<span class="c-code__stringliteral">&quot;copy at {CONTACT_US}&quot;</span>)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> __name__ == <span class="c-code__stringliteral">&quot;__main__&quot;</span>:</div>
 <div class="c-code__line">    main(sys.argv[1:])</div>
 <div class="ttc" id="anamespacefiftyone__devicedetection__examples_1_1example__utils_html"><div class="ttname"><a href="namespacefiftyone__devicedetection__examples_1_1example__utils.html">fiftyone_devicedetection_examples.example_utils</a></div><div class="ttdef"><b>Definition</b> example_utils.py:1</div></div>
-<div class="ttc" id="anamespacefiftyone__pipeline__core_1_1logger_html"><div class="ttname"><a href="../pipeline-python/namespacefiftyone__pipeline__core_1_1logger.html">fiftyone_pipeline_core::logger</a></div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

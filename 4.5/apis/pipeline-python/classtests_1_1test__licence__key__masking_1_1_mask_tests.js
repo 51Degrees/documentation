@@ -1,0 +1,9 @@
+var classtests_1_1test__licence__key__masking_1_1_mask_tests =
+[
+    [ "test_a_key_in_a_url_is_masked", "classtests_1_1test__licence__key__masking_1_1_mask_tests.html#a08d3279e6604e5014b6e6de405fae681", null ],
+    [ "test_every_key_of_a_list_is_masked", "classtests_1_1test__licence__key__masking_1_1_mask_tests.html#a5283ebbbf452ba4eff8c4624d8b07cbd", null ],
+    [ "test_four_or_fewer_characters_are_replaced_entirely", "classtests_1_1test__licence__key__masking_1_1_mask_tests.html#a13f390d50c79d1c277fb874644c9d78e", null ],
+    [ "test_last_four_characters_are_shown", "classtests_1_1test__licence__key__masking_1_1_mask_tests.html#a25f4be12b6e1d17353c20c3a2098f114", null ],
+    [ "test_other_spellings_of_the_parameter_are_masked", "classtests_1_1test__licence__key__masking_1_1_mask_tests.html#a4dca3dc50dffcbcbcbc853d9aa5c770b", null ],
+    [ "test_text_without_a_key_is_unchanged", "classtests_1_1test__licence__key__masking_1_1_mask_tests.html#aba04963e8334c87d8af07e90855bd593", null ]
+];

@@ -38,9 +38,11 @@ var NAVTREEHIDESYNC = true;
 var NAVTREEINDEX =
 [
 "/documentation/4.5/index.html",
-"classfiftyone__pipeline__core_1_1sequenceelement_1_1_sequence_element_evidence_key_filter.html#aafa5ba9af14f10a689ce964eb8c42121",
-"classtests_1_1test__callback__url_1_1_callback_url_tests.html",
-"classtests_1_1test__usage_1_1_usage_tests.html#a2339a41d886702c17048e6ac8475cabf"
+"classfiftyone__pipeline__core_1_1pipelinebuilder_1_1_pipeline_builder.html#a3b46fd475e8ee3790213e62cde9325e5",
+"classfiftyone__pipeline__examples_1_1example__utils_1_1_example_utils.html",
+"classtests_1_1test__core_1_1_core_tests.html#aec44c0c18911651e19b605c8eb644d79",
+"classtests_1_1test__javascriptbuilder__no__sequence_1_1_stand_in_json_builder.html",
+"classtests_1_1test__usage_1_1_usage_tests.html#a82f7ba3361a6eb8b6eeb6117a686bf60"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

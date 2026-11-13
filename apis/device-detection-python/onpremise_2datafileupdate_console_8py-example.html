@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2dat
 <li>Daily auto-update</li>
 </ul>
 <h2>License Key</h2>
-<p>In order to test this example you will need a 51Degrees Enterprise license which can be purchased from our <a href="https://51degrees.com/pricing/annual?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-datafileupdate_console.py&amp;utm_term=top">pricing page</a>. Look for our "Bigger" or "Biggest" options.</p>
+<p>Updating the data file needs a 51Degrees licence key for the Enterprise data file. Without one, the example shows the free Lite data file and says where to ask for a key. Contact us for a key at <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-datafileupdate_console.py&amp;utm_term=top">https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-datafileupdate_console.py&amp;utm_term=top</a></p>
 <h1>Data Files</h1>
 <p>You can find out more about data files, licenses etc. at our <a href="https://51degrees.com/resources/faqs?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-datafileupdate_console.py&amp;utm_term=top">FAQ page</a></p>
 <h2>Enterprise Data File</h2>
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2dat
 <h3>Manual Download</h3>
 <p>If you prefer to download files yourself, you may do so here: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">https://distributor.51degrees.com/api/v2/download?LicenseKeys=&lt;your_license_key&gt;&amp;Type=27&amp;Download=<span class="c-code__keyword">True</span>&amp;Product=22</div>
 </div><!-- fragment --><h2>Lite Data File</h2>
-<p>Lite data files (free-to-use, limited capabilities, no license key required) are created roughly once a month and cannot be updated using auto-update, they may be downloaded with the scripts in the <a href="https://github.com/51Degrees/data">data</a> repository on GitHub.</p>
+<p>Lite data files (free-to-use, with a small number of Properties, no license key required) are created roughly once a month and cannot be updated using auto-update, they may be downloaded with the scripts in the <a href="https://github.com/51Degrees/data">data</a> repository on GitHub.</p>
 <h1>Update on Start-Up</h1>
 <p>You can configure the pipeline builder to download an Enterprise data file on start-up. </p><h2>Pre-Requisites</h2>
 <ul>
@@ -190,10 +190,19 @@ from the 51Degrees <a href="https://51degrees.com/pricing">pricing page</a>.</p>
 <div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__devicedetection__shared_1_1key__utils.html">fiftyone_devicedetection_shared.key_utils</a> <span class="c-code__keyword">import</span> KeyUtils</div>
 <div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespaceRef" href="../pipeline-python/namespacefiftyone__pipeline__core_1_1logger.html">fiftyone_pipeline_core.logger</a> <span class="c-code__keyword">import</span> Logger</div>
 <div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__devicedetection__shared_1_1example__constants.html">fiftyone_devicedetection_shared.example_constants</a> <span class="c-code__keyword">import</span> ENTERPRISE_DATAFILE_NAME</div>
+<div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__devicedetection__shared_1_1example__constants.html">fiftyone_devicedetection_shared.example_constants</a> <span class="c-code__keyword">import</span> LITE_DATAFILE_NAME</div>
 <div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespaceRef" href="../pipeline-python/namespacefiftyone__pipeline__engines_1_1datafile__update__service.html">fiftyone_pipeline_engines.datafile_update_service</a> <span class="c-code__keyword">import</span> DataFileUpdateService</div>
 <div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespaceRef" href="../pipeline-python/namespacefiftyone__pipeline__engines_1_1datafile__update__service.html">fiftyone_pipeline_engines.datafile_update_service</a> <span class="c-code__keyword">import</span> UpdateStatus</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">UPDATE_EXAMPLE_LICENSE_KEY_NAME = <span class="c-code__stringliteral">&quot;license_key&quot;</span></div>
+<div class="c-code__line"><span class="c-code__comment"># The environment variable checked for the licence key when none is given</span></div>
+<div class="c-code__line"><span class="c-code__comment"># on the command line.</span></div>
+<div class="c-code__line">UPDATE_EXAMPLE_LICENSE_KEY_VARIABLE = ExampleUtils.LICENSE_KEY_ENV_VAR</div>
+<div class="c-code__line"><span class="c-code__comment"># Deprecated. Use UPDATE_EXAMPLE_LICENSE_KEY_VARIABLE. The name that</span></div>
+<div class="c-code__line"><span class="c-code__comment"># variable had before, read when the new one is not set.</span></div>
+<div class="c-code__line">UPDATE_EXAMPLE_LICENSE_KEY_NAME = ExampleUtils.LEGACY_LICENSE_KEY_ENV_VAR</div>
+<div class="c-code__line"><span class="c-code__comment"># Where to ask for a licence key and a copy of the Enterprise data file, tagged with this</span></div>
+<div class="c-code__line"><span class="c-code__comment"># example.</span></div>
+<div class="c-code__line">CONTACT_US = <span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-datafileupdate_console.py&amp;utm_term=licence-key&quot;</span></div>
 <div class="c-code__line">DEFAULT_DATA_FILENAME = os.path.expanduser(<span class="c-code__stringliteral">&quot;~&quot;</span>) + os.path.sep +  ENTERPRISE_DATAFILE_NAME</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"> </div>
@@ -211,21 +220,42 @@ from the 51Degrees <a href="https://51degrees.com/pricing">pricing page</a>.</p>
 <div class="c-code__line">        super().clear()</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">class </span>DataFileUpdateConsole():</div>
+<div class="c-code__line">    <span class="c-code__keyword">def </span>explain_license_key(self, data_file, output):</div>
+<div class="c-code__line">        <span class="c-code__comment"># Without a licence key the example cannot download a data file, so</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># it shows the data file it would start from, the free Lite file</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># unless another is given, and says what an update needs.</span></div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> <span class="c-code__keywordflow">not</span> data_file:</div>
+<div class="c-code__line">            data_file = ExampleUtils.find_file(LITE_DATAFILE_NAME)</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> data_file <span class="c-code__keywordflow">and</span> os.path.isfile(data_file):</div>
+<div class="c-code__line">            pipeline = DeviceDetectionPipelineBuilder(</div>
+<div class="c-code__line">                data_file_path = data_file,</div>
+<div class="c-code__line">                performance_profile = <span class="c-code__stringliteral">&quot;LowMemory&quot;</span>,</div>
+<div class="c-code__line">                usage_sharing = <span class="c-code__keyword">False</span>,</div>
+<div class="c-code__line">                auto_update = <span class="c-code__keyword">False</span>,</div>
+<div class="c-code__line">                licence_keys = <span class="c-code__stringliteral">&quot;&quot;</span>).<a class="code hl_namespace" href="namespacebuild.html">build</a>()</div>
+<div class="c-code__line">            <span class="c-code__keyword">with</span> pipeline:</div>
+<div class="c-code__line">                engine = pipeline.get_element(<span class="c-code__stringliteral">&quot;device&quot;</span>)</div>
+<div class="c-code__line">                output(f<span class="c-code__stringliteral">&quot;The data file in use is the &quot;</span></div>
+<div class="c-code__line">                    f<span class="c-code__stringliteral">&quot;&#39;{ExampleUtils.get_data_file_tier(engine)}&#39; file published on &quot;</span></div>
+<div class="c-code__line">                    f<span class="c-code__stringliteral">&quot;{ExampleUtils.get_data_file_date(engine):%Y-%m-%d}, at &quot;</span></div>
+<div class="c-code__line">                    f<span class="c-code__stringliteral">&quot;&#39;{data_file}&#39;.&quot;</span>)</div>
+<div class="c-code__line">        output(<span class="c-code__stringliteral">&quot;&quot;</span>)</div>
+<div class="c-code__line">        output(<span class="c-code__stringliteral">&quot;Updating the data file downloads the Enterprise data file, &quot;</span></div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;which needs a licence key. Give the key as the first command line &quot;</span></div>
+<div class="c-code__line">            f<span class="c-code__stringliteral">&quot;argument, or in the environment variable &quot;</span></div>
+<div class="c-code__line">            f<span class="c-code__stringliteral">&quot;&#39;{UPDATE_EXAMPLE_LICENSE_KEY_VARIABLE}&#39;. Contact us for a key and a &quot;</span></div>
+<div class="c-code__line">            f<span class="c-code__stringliteral">&quot;copy at {CONTACT_US}&quot;</span>)</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">def </span>run(self, data_file, license_key, interactive, logger, output):</div>
 <div class="c-code__line">        logger.log(<span class="c-code__stringliteral">&quot;info&quot;</span>, <span class="c-code__stringliteral">&quot;Starting example&quot;</span>)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment"># try to find a license key</span></div>
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> <span class="c-code__keywordflow">not</span> license_key:</div>
-<div class="c-code__line">            license_key = KeyUtils.get_named_key(UPDATE_EXAMPLE_LICENSE_KEY_NAME)</div>
+<div class="c-code__line">            license_key = ExampleUtils.get_license_key()</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> <span class="c-code__keywordflow">not</span> license_key:</div>
-<div class="c-code__line">            logger.log(<span class="c-code__stringliteral">&quot;error&quot;</span>,</div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;In order to test this example you will need a 51Degrees Enterprise &quot;</span></div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;license which can be obtained on a trial basis or purchased from our\n&quot;</span></div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;pricing page https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-datafileupdate_console.py&amp;utm_term=license-key-required. You must supply the license &quot;</span></div>
-<div class="c-code__line">                <span class="c-code__stringliteral">&quot;key as an argument to this program, or as an environment or system variable &quot;</span></div>
-<div class="c-code__line">                f<span class="c-code__stringliteral">&quot;named &#39;{UPDATE_EXAMPLE_LICENSE_KEY_NAME}&#39;&quot;</span>)</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">raise</span> Exception(<span class="c-code__stringliteral">&quot;No license key available&quot;</span>)</div>
+<div class="c-code__line">            self.explain_license_key(data_file, output)</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment"># work out where the downloaded file will be put, directory must exist</span></div>
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> (data_file != <span class="c-code__keywordtype">None</span>):</div>
@@ -307,7 +337,7 @@ from the 51Degrees <a href="https://51degrees.com/pricing">pricing page</a>.</p>
 <div class="c-code__line">            <span class="c-code__comment"># to notify when update complete</span></div>
 <div class="c-code__line">            data_file_update_service = update_service,</div>
 <div class="c-code__line">            <span class="c-code__comment"># For automatic updates to work you will need to provide a license key.</span></div>
-<div class="c-code__line">            <span class="c-code__comment"># A license key can be obtained with a subscription from https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-datafileupdate_console.py&amp;utm_term=run</span></div>
+<div class="c-code__line">            <span class="c-code__comment"># Contact us for a licence key at https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-datafileupdate_console.py&amp;utm_term=run</span></div>
 <div class="c-code__line">            licence_keys = license_key,</div>
 <div class="c-code__line">            <span class="c-code__comment"># Enable update on startup, the auto update system</span></div>
 <div class="c-code__line">            <span class="c-code__comment"># will be used to check for an update before the</span></div>
@@ -353,6 +383,9 @@ from the 51Degrees <a href="https://51degrees.com/pricing">pricing page</a>.</p>
 <div class="c-code__line">                    output(f<span class="c-code__stringliteral">&quot;Update on file modification complete, status: {update_event.status}&quot;</span>)</div>
 <div class="c-code__line">                <span class="c-code__keywordflow">else</span>:</div>
 <div class="c-code__line">                    output(<span class="c-code__stringliteral">&quot;Update on file modification timed out&quot;</span>)</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">elif</span> update_event.status == UpdateStatus.AUTO_UPDATE_NOT_NEEDED:</div>
+<div class="c-code__line">                output(<span class="c-code__stringliteral">&quot;The data file is already the latest published, &quot;</span></div>
+<div class="c-code__line">                       <span class="c-code__stringliteral">&quot;so there is nothing to download&quot;</span>)</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">else</span>:</div>
 <div class="c-code__line">                logger.log(<span class="c-code__stringliteral">&quot;error&quot;</span>, <span class="c-code__stringliteral">&quot;Auto update was not successful, abandoning example&quot;</span>)</div>
 <div class="c-code__line">                error_message = f<span class="c-code__stringliteral">&quot;Auto update failed: {update_event.status}&quot;</span></div>

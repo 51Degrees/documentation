@@ -1,0 +1,10 @@
+var classtests_1_1test__share__usage__accepts__no__evidence_1_1_share_usage_accepts_no_evidence_tests =
+[
+    [ "test_a_key_in_both_places_is_shared_once_with_the_evidence_value", "classtests_1_1test__share__usage__accepts__no__evidence_1_1_share_usage_accepts_no_evidence_tests.html#a54bf75159dd7fff29db6735b57375e22", null ],
+    [ "test_a_repeat_is_told_apart_by_what_would_be_shared", "classtests_1_1test__share__usage__accepts__no__evidence_1_1_share_usage_accepts_no_evidence_tests.html#a4ad70e8f4489f3821c73658c17f32e24", null ],
+    [ "test_a_revalidation_has_the_same_accepted_evidence", "classtests_1_1test__share__usage__accepts__no__evidence_1_1_share_usage_accepts_no_evidence_tests.html#a4465f72531ec8c7eae0ccedfcd324b08", null ],
+    [ "test_evidence_added_by_hand_is_shared_as_before", "classtests_1_1test__share__usage__accepts__no__evidence_1_1_share_usage_accepts_no_evidence_tests.html#a6fd95c855ddfa1321aebf95305db5fb9", null ],
+    [ "test_the_method_is_shared_and_the_path_and_cookie_header_are_not", "classtests_1_1test__share__usage__accepts__no__evidence_1_1_share_usage_accepts_no_evidence_tests.html#a43cf0683e6eb519e9bae0f31e41b8354", null ],
+    [ "test_the_pipeline_accepts_no_header_for_usage_sharing", "classtests_1_1test__share__usage__accepts__no__evidence_1_1_share_usage_accepts_no_evidence_tests.html#a29cb35aa679817e3ef3a9216e9bf1b6e", null ],
+    [ "test_the_web_request_is_shared_by_the_same_rules", "classtests_1_1test__share__usage__accepts__no__evidence_1_1_share_usage_accepts_no_evidence_tests.html#a52043602fe6a72b97fac5b40ccb7706f", null ]
+];

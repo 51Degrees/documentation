@@ -80,6 +80,8 @@ Collaboration diagram for fiftyone\pipeline\core\SetHeaderElement:</h2>
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a55f5e379e628ed81a68fe35d3e2aa614" id="r_a55f5e379e628ed81a68fe35d3e2aa614"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a55f5e379e628ed81a68fe35d3e2aa614">getEvidenceKeyFilter</a> ()</td></tr>
+<tr class="c-table__row memdesc:a55f5e379e628ed81a68fe35d3e2aa614"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The element reads only the element data of the elements before it, so it accepts no Evidence.  <br /></td></tr>
 <tr class="c-table__row memitem:ad5dd0ee73f96f5eb2cf53c9671eb153b" id="r_ad5dd0ee73f96f5eb2cf53c9671eb153b"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad5dd0ee73f96f5eb2cf53c9671eb153b">processInternal</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html">FlowData</a> $flowData)</td></tr>
 <tr class="c-table__row memdesc:ad5dd0ee73f96f5eb2cf53c9671eb153b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add the response header dictionary to the FlowData.  <br /></td></tr>
 <tr class="c-table__row memitem:a686f57e84e2f158a7e9a56bfc24590b1" id="r_a686f57e84e2f158a7e9a56bfc24590b1"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a686f57e84e2f158a7e9a56bfc24590b1">getSetHeaderPropertiesPipeline</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_pipeline.html">Pipeline</a> $pipeline)</td></tr>
@@ -93,8 +95,6 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:afedc1ecca656bedb53ebbe31970debf5 pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A default dummy constructor is needed for there are classes inheriting this class deeper than 1-level of inheritance and calling parent::__construct() in their explicit constructors.  <br /></td></tr>
 <tr class="c-table__row memitem:a10174b44cd661f225aa88eb7a552849d pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element" id="r_a10174b44cd661f225aa88eb7a552849d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html#a10174b44cd661f225aa88eb7a552849d">process</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html">FlowData</a> $flowData)</td></tr>
 <tr class="c-table__row memdesc:a10174b44cd661f225aa88eb7a552849d pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">General wrapper function that calls a FlowElement's processInternal method.  <br /></td></tr>
-<tr class="c-table__row memitem:a2c484d74a791319d03ad077006c1c5ad pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element" id="r_a2c484d74a791319d03ad077006c1c5ad"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html#a2c484d74a791319d03ad077006c1c5ad">getEvidenceKeyFilter</a> ()</td></tr>
-<tr class="c-table__row memdesc:a2c484d74a791319d03ad077006c1c5ad pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Function for getting the FlowElement's EvidenceKeyFilter Used by the filterEvidence method.  <br /></td></tr>
 <tr class="c-table__row memitem:af094ff714384825f1c35ad398dc4264f pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element" id="r_af094ff714384825f1c35ad398dc4264f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html#af094ff714384825f1c35ad398dc4264f">filterEvidence</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html">FlowData</a> $flowData)</td></tr>
 <tr class="c-table__row memdesc:af094ff714384825f1c35ad398dc4264f pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Filter FlowData evidence using the FlowElement's EvidenceKeyFilter.  <br /></td></tr>
 <tr class="c-table__row memitem:a5ee79927c9f42568cdd2400bad878fe0 pub_methods_classfiftyone_1_1pipeline_1_1core_1_1_flow_element" id="r_a5ee79927c9f42568cdd2400bad878fe0"><td class="c-table__cell">
@@ -121,6 +121,31 @@ array&#160;</td><td class="c-table__cell"><b>$properties</b> = []</td></tr>
 array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a55f5e379e628ed81a68fe35d3e2aa614" name="a55f5e379e628ed81a68fe35d3e2aa614"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a55f5e379e628ed81a68fe35d3e2aa614">&#9670;&#160;</a></span>getEvidenceKeyFilter()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\core\SetHeaderElement::getEvidenceKeyFilter </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The element reads only the element data of the elements before it, so it accepts no Evidence. </p>
+
+<p>Reimplemented from <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html#a2c484d74a791319d03ad077006c1c5ad">fiftyone\pipeline\core\FlowElement</a>.</p>
+
+</div>
+</div>
 <a id="a99b536d379276eb0fdb00ceac538f0dd" name="a99b536d379276eb0fdb00ceac538f0dd"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a99b536d379276eb0fdb00ceac538f0dd">&#9670;&#160;</a></span>getPropertyValue()</h2>
 

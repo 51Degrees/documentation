@@ -114,6 +114,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ae45d7f48e7816c52fb6ef40d5b6d67a1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor.  <br /></td></tr>
 <tr class="c-table__row memitem:ad9d8a1618da34bc46d8cafeb8b961bcf" id="r_ad9d8a1618da34bc46d8cafeb8b961bcf"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad9d8a1618da34bc46d8cafeb8b961bcf">ShareUsageBase</a> (ILogger&lt; ShareUsageBase &gt; logger, <a class="el" href="#a537bbeb20eab8fe1c430727230d15e48">HttpClient</a> httpClient, double sharePercentage, int minimumEntriesPerMessage, int maximumQueueSize, int addTimeout, int takeTimeout, int repeatEvidenceIntervalMinutes, bool trackSession, string shareUsageUrl, List&lt; string &gt; blockedHttpHeaders, List&lt; string &gt; includedQueryStringParameters, List&lt; KeyValuePair&lt; string, string &gt; &gt; ignoreDataEvidenceFilter, string aspSessionCookieName, <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_engines_1_1_trackers_1_1_i_tracker.html">ITracker</a> tracker, bool shareAllEvidence, <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_facade_1_1_i_fail_handler.html">IFailHandler</a> failHandler=null)</td></tr>
 <tr class="c-table__row memdesc:ad9d8a1618da34bc46d8cafeb8b961bcf"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor.  <br /></td></tr>
+<tr class="c-table__row memitem:af77538505be669739487b75dc09cc429" id="r_af77538505be669739487b75dc09cc429"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#af77538505be669739487b75dc09cc429">ShareUsageBase</a> (ILogger&lt; ShareUsageBase &gt; logger, <a class="el" href="#a537bbeb20eab8fe1c430727230d15e48">HttpClient</a> httpClient, double sharePercentage, int minimumEntriesPerMessage, int maximumQueueSize, int addTimeout, int takeTimeout, int repeatEvidenceIntervalMinutes, bool trackSession, string shareUsageUrl, List&lt; string &gt; blockedHttpHeaders, List&lt; string &gt; includedQueryStringParameters, List&lt; KeyValuePair&lt; string, string &gt; &gt; ignoreDataEvidenceFilter, string aspSessionCookieName, <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_engines_1_1_trackers_1_1_i_tracker.html">ITracker</a> tracker, bool shareAllEvidence, int failuresToEnterRecovery, int failuresWindowSeconds, double initialRecoveryDelaySeconds, double maxRecoveryDelaySeconds, double recoveryMultiplier)</td></tr>
+<tr class="c-table__row memdesc:af77538505be669739487b75dc09cc429"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor.  <br /></td></tr>
 <tr class="c-table__row memitem:a0f2b57c1677dec2ecdac7909d331d4b7" id="r_a0f2b57c1677dec2ecdac7909d331d4b7"><td class="c-table__cell">override&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a0f2b57c1677dec2ecdac7909d331d4b7">ProcessInternal</a> (<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_flow_data.html">IFlowData</a> data)</td></tr>
 <tr class="c-table__row memdesc:a0f2b57c1677dec2ecdac7909d331d4b7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process the data.  <br /></td></tr>
 <tr class="c-table__row memitem:a6e785097428e5ef6bc3fe8d30e6b9d1a" id="r_a6e785097428e5ef6bc3fe8d30e6b9d1a"><td class="c-table__cell"><a id="a6e785097428e5ef6bc3fe8d30e6b9d1a" name="a6e785097428e5ef6bc3fe8d30e6b9d1a"></a>
@@ -124,6 +126,8 @@ override&#160;void&#160;</td><td class="c-table__cell"><b>UnmanagedResourcesClea
 <tr class="c-table__row memdesc:abdba7baed23eef85f0e64d81c6dec594"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Clean up any unmanaged resources. <br /></td></tr>
 <tr class="c-table__row memitem:a6ccab984f02f55b033166d19f0159482" id="r_a6ccab984f02f55b033166d19f0159482"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a6ccab984f02f55b033166d19f0159482">TrySendData</a> ()</td></tr>
 <tr class="c-table__row memdesc:a6ccab984f02f55b033166d19f0159482"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Attempt to send the data to the remote service.  <br /></td></tr>
+<tr class="c-table__row memitem:a9b075c323638444684d9d4ee1f49a062" id="r_a9b075c323638444684d9d4ee1f49a062"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a9b075c323638444684d9d4ee1f49a062">RecordSendFailure</a> ()</td></tr>
+<tr class="c-table__row memdesc:a9b075c323638444684d9d4ee1f49a062"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Called by BuildAndSendXmlAsync when the remote service does not accept a message, so that the failure counts towards pausing sends.  <br /></td></tr>
 <tr class="c-table__row memitem:acb163e128ed81a2cac1d492fcb933eeb" id="r_acb163e128ed81a2cac1d492fcb933eeb"><td class="c-table__cell"><a id="acb163e128ed81a2cac1d492fcb933eeb" name="acb163e128ed81a2cac1d492fcb933eeb"></a>
 Task&#160;</td><td class="c-table__cell"><b>BuildAndSendXmlAsync</b> ()</td></tr>
 <tr class="c-table__row memdesc:acb163e128ed81a2cac1d492fcb933eeb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Abstract method to build XML from queued data and send it to the remote service. <br /></td></tr>
@@ -172,7 +176,7 @@ Uri&#160;</td><td class="c-table__cell"><b>ShareUsageUri</b><code> [get]</code><
 <tr class="c-table__row memitem:a360d2598ccf139d588e8b54f49d84ca9" id="r_a360d2598ccf139d588e8b54f49d84ca9"><td class="c-table__cell">override&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a360d2598ccf139d588e8b54f49d84ca9">ElementDataKey</a><code> [get]</code></td></tr>
 <tr class="c-table__row memdesc:a360d2598ccf139d588e8b54f49d84ca9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The data key for this element.  <br /></td></tr>
 <tr class="c-table__row memitem:aa6b084f968077d0b6105ff7c671fa503" id="r_aa6b084f968077d0b6105ff7c671fa503"><td class="c-table__cell">override&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_evidence_key_filter.html">IEvidenceKeyFilter</a>&#160;</td><td class="c-table__cell"><a class="el" href="#aa6b084f968077d0b6105ff7c671fa503">EvidenceKeyFilter</a><code> [get]</code></td></tr>
-<tr class="c-table__row memdesc:aa6b084f968077d0b6105ff7c671fa503"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the evidence key filter for this element.  <br /></td></tr>
+<tr class="c-table__row memdesc:aa6b084f968077d0b6105ff7c671fa503"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the evidence key filter for this element, which accepts no evidence, so caching, the ETag and the Vary header never depend on usage sharing.  <br /></td></tr>
 <tr class="c-table__row memitem:aac69026b64ba0f808bb5cff18eca701a" id="r_aac69026b64ba0f808bb5cff18eca701a"><td class="c-table__cell"><a id="aac69026b64ba0f808bb5cff18eca701a" name="aac69026b64ba0f808bb5cff18eca701a"></a>
 string&#160;</td><td class="c-table__cell"><b>HostAddress</b><code> [get]</code></td></tr>
 <tr class="c-table__row memdesc:aac69026b64ba0f808bb5cff18eca701a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the IP address of the machine that this code is running on. <br /></td></tr>
@@ -202,7 +206,7 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="a5fd1fd4f14d065adf8eaced0b73788cd" name="a5fd1fd4f14d065adf8eaced0b73788cd"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5fd1fd4f14d065adf8eaced0b73788cd">&#9670;&#160;</a></span>ShareUsageBase() <span class="c-member__count">[1/3]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5fd1fd4f14d065adf8eaced0b73788cd">&#9670;&#160;</a></span>ShareUsageBase() <span class="c-member__count">[1/4]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -316,7 +320,7 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
 </div>
 </div>
 <a id="ae45d7f48e7816c52fb6ef40d5b6d67a1" name="ae45d7f48e7816c52fb6ef40d5b6d67a1"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae45d7f48e7816c52fb6ef40d5b6d67a1">&#9670;&#160;</a></span>ShareUsageBase() <span class="c-member__count">[2/3]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae45d7f48e7816c52fb6ef40d5b6d67a1">&#9670;&#160;</a></span>ShareUsageBase() <span class="c-member__count">[2/4]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -436,7 +440,7 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
 </div>
 </div>
 <a id="ad9d8a1618da34bc46d8cafeb8b961bcf" name="ad9d8a1618da34bc46d8cafeb8b961bcf"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad9d8a1618da34bc46d8cafeb8b961bcf">&#9670;&#160;</a></span>ShareUsageBase() <span class="c-member__count">[3/3]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad9d8a1618da34bc46d8cafeb8b961bcf">&#9670;&#160;</a></span>ShareUsageBase() <span class="c-member__count">[3/4]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -574,6 +578,169 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
 
 </div>
 </div>
+<a id="af77538505be669739487b75dc09cc429" name="af77538505be669739487b75dc09cc429"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af77538505be669739487b75dc09cc429">&#9670;&#160;</a></span>ShareUsageBase() <span class="c-member__count">[4/4]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">FiftyOne.Pipeline.Engines.FiftyOne.FlowElements.ShareUsageBase.ShareUsageBase </td>
+          <td>(</td>
+          <td class="c-table__cell">ILogger&lt; ShareUsageBase &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>logger</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="#a537bbeb20eab8fe1c430727230d15e48">HttpClient</a></td>          <td class="c-table__cell"><span class="paramname"><em>httpClient</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">double</td>          <td class="c-table__cell"><span class="paramname"><em>sharePercentage</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>minimumEntriesPerMessage</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>maximumQueueSize</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>addTimeout</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>takeTimeout</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>repeatEvidenceIntervalMinutes</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">bool</td>          <td class="c-table__cell"><span class="paramname"><em>trackSession</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>shareUsageUrl</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">List&lt; string &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>blockedHttpHeaders</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">List&lt; string &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>includedQueryStringParameters</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">List&lt; KeyValuePair&lt; string, string &gt; &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>ignoreDataEvidenceFilter</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>aspSessionCookieName</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="interface_fifty_one_1_1_pipeline_1_1_engines_1_1_trackers_1_1_i_tracker.html">ITracker</a></td>          <td class="c-table__cell"><span class="paramname"><em>tracker</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">bool</td>          <td class="c-table__cell"><span class="paramname"><em>shareAllEvidence</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>failuresToEnterRecovery</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>failuresWindowSeconds</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">double</td>          <td class="c-table__cell"><span class="paramname"><em>initialRecoveryDelaySeconds</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">double</td>          <td class="c-table__cell"><span class="paramname"><em>maxRecoveryDelaySeconds</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">double</td>          <td class="c-table__cell"><span class="paramname"><em>recoveryMultiplier</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td>The logger to use. </td></tr>
+    <tr><td class="paramname">httpClient</td><td>HttpClient to use when sending request data. </td></tr>
+    <tr><td class="paramname">sharePercentage</td><td>The approximate proportion of requests to share. 1 = 100%, 0.5 = 50%, etc. </td></tr>
+    <tr><td class="paramname">minimumEntriesPerMessage</td><td>The minimum number of request entries per message sent to 51Degrees. </td></tr>
+    <tr><td class="paramname">maximumQueueSize</td><td>The maximum number of items to hold in the queue at one time. This must be larger than minimum entries. </td></tr>
+    <tr><td class="paramname">addTimeout</td><td>The timeout in milliseconds to allow when attempting to add an item to the queue. If this timeout is exceeded then the item is not shared. </td></tr>
+    <tr><td class="paramname">takeTimeout</td><td>The timeout in milliseconds to allow when attempting to take an item to the queue. </td></tr>
+    <tr><td class="paramname">repeatEvidenceIntervalMinutes</td><td>The interval (in minutes) which is used to decide if repeat evidence is old enough to consider a new session. </td></tr>
+    <tr><td class="paramname">trackSession</td><td>Set if the tracker should consider sessions in share usage. </td></tr>
+    <tr><td class="paramname">shareUsageUrl</td><td>The URL to send data to </td></tr>
+    <tr><td class="paramname">blockedHttpHeaders</td><td>A list of the names of the HTTP headers that share usage should not send to 51Degrees. </td></tr>
+    <tr><td class="paramname">includedQueryStringParameters</td><td>A list of the names of query string parameters that share usage should send to 51Degrees. If this value is null, all query string parameters are shared. </td></tr>
+    <tr><td class="paramname">ignoreDataEvidenceFilter</td><td></td></tr>
+    <tr><td class="paramname">aspSessionCookieName</td><td>The name of the cookie that contains the asp.net session id. </td></tr>
+    <tr><td class="paramname">tracker</td><td>The ITracker to use to determine if a given IFlowData instance should be shared or not. </td></tr>
+    <tr><td class="paramname">shareAllEvidence</td><td>If true, all evidence will be shared and the blockedHttpHeaders and includedQueryStringParameters parameters will be ignored. </td></tr>
+    <tr><td class="paramname">failuresToEnterRecovery</td><td>The number of failed sends within the failures window that pauses sending. </td></tr>
+    <tr><td class="paramname">failuresWindowSeconds</td><td>The time in seconds over which failed sends are counted. </td></tr>
+    <tr><td class="paramname">initialRecoveryDelaySeconds</td><td>The length in seconds of the first pause. </td></tr>
+    <tr><td class="paramname">maxRecoveryDelaySeconds</td><td>The longest a pause can be, in seconds. </td></tr>
+    <tr><td class="paramname">recoveryMultiplier</td><td>What the pause is multiplied by each time the send tried when a pause ends fails. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentNullException</td><td>Thrown if certain arguments are null. </td></tr>
+    <tr><td class="paramname">ArgumentException</td><td>Thrown if certain argument values are invalid. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="a2ae5600f41e92007416f1f5671cae65e" name="a2ae5600f41e92007416f1f5671cae65e"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2ae5600f41e92007416f1f5671cae65e">&#9670;&#160;</a></span>AddPipeline()</h2>
@@ -698,6 +865,38 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
 
 </div>
 </div>
+<a id="a9b075c323638444684d9d4ee1f49a062" name="a9b075c323638444684d9d4ee1f49a062"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9b075c323638444684d9d4ee1f49a062">&#9670;&#160;</a></span>RecordSendFailure()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void FiftyOne.Pipeline.Engines.FiftyOne.FlowElements.ShareUsageBase.RecordSendFailure </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Called by BuildAndSendXmlAsync when the remote service does not accept a message, so that the failure counts towards pausing sends. </p>
+<p>An exception thrown from BuildAndSendXmlAsync counts without this being called. </p>
+
+</div>
+</div>
 <a id="a6ccab984f02f55b033166d19f0159482" name="a6ccab984f02f55b033166d19f0159482"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6ccab984f02f55b033166d19f0159482">&#9670;&#160;</a></span>TrySendData()</h2>
 
@@ -726,7 +925,7 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
 </div><div class="c-member__body">
 
 <p>Attempt to send the data to the remote service. </p>
-<p>This only happens if there is not a task already running. </p>
+<p>This only happens if there is not a task already running. The task sends until fewer than the minimum entries per message are queued, waiting out any pause after failed sends first. </p>
 
 </div>
 </div>
@@ -919,7 +1118,8 @@ IReadOnlyList&lt;&#160;<a class="el" href="interface_fifty_one_1_1_pipeline_1_1_
 </table>
 </div><div class="c-member__body">
 
-<p>Get the evidence key filter for this element. </p>
+<p>Get the evidence key filter for this element, which accepts no evidence, so caching, the ETag and the Vary header never depend on usage sharing. </p>
+<p>The element shares what it finds instead, being the evidence and the values of the web request that a web integration adds as Core.Constants.EVIDENCE_HTTPREQUEST_KEY. See the Specification</p>
 
 <p>Implements <a class="el" href="interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html#adb75b93ad11e75720ea21aa9916e83b7">FiftyOne.Pipeline.Core.FlowElements.IFlowElement</a>.</p>
 

@@ -82,20 +82,20 @@ Directory dependency graph for pmp-web:</h2>
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Variable  </td><td class="c-table__cell">What it holds  </td><td class="c-table__cell">Also read when it is not set  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>51DEGREES_RESOURCE_KEY</code>  </td><td class="c-table__cell">A resource key that includes the 51Did properties. Required.  </td><td class="c-table__cell"><code>_51DEGREES_RESOURCE_KEY_51DID</code>  </td></tr>
+<td class="c-table__cell"><code>_51DEGREES_RESOURCE_KEY</code>  </td><td class="c-table__cell">A resource key that includes the 51Did properties. Required.  </td><td class="c-table__cell"><code>_51DEGREES_RESOURCE_KEY_51DID</code>  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>51DEGREES_CLOUD_ENDPOINT</code>  </td><td class="c-table__cell">The cloud the pages load from and the pipeline asks, given with or without the <code>/api/v4/</code> path, for example <code><a href="https://cloud.51degrees.com/api/v4/">https://cloud.51degrees.com/api/v4/</a></code>. The default is <code><a href="https://cloud.51degrees.com">https://cloud.51degrees.com</a></code>.  </td><td class="c-table__cell">nothing  </td></tr>
+<td class="c-table__cell"><code>_51DEGREES_CLOUD_ENDPOINT</code>  </td><td class="c-table__cell">The cloud the pages load from and the pipeline asks, given with or without the <code>/api/v4/</code> path, for example <code><a href="https://cloud.51degrees.com/api/v4/">https://cloud.51degrees.com/api/v4/</a></code>. The default is <code><a href="https://cloud.51degrees.com">https://cloud.51degrees.com</a></code>.  </td><td class="c-table__cell">nothing  </td></tr>
 </table>
-<p>The first column holds the names a developer sets. The resource key's second name is the one continuous integration sets. It starts with an underscore because a shell cannot export a name that starts with a digit, and it ends with the product the demo needs, being the 51Did. No licence key is read, because the resource key has to carry the 51Did product itself.</p>
+<p>The first column holds the names a developer sets. The resource key's second name is the one continuous integration sets, and it ends with the product the demo needs, being the 51Did. No licence key is read, because the resource key has to carry the 51Did product itself.</p>
 <p>The address the demo listens on comes from <code>ASPNETCORE_URLS</code>, which is how any ASP.NET Core application is started. Without it the demo listens on <code><a href="http://localhost:5000">http://localhost:5000</a></code>.</p>
 <p>A resource key can be created at <a href="https://configure.51degrees.com/YldpCKbW?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-cloud-pmp-web-readme.md&amp;utm_term=running-it">https://configure.51degrees.com/YldpCKbW?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-dotnet&amp;utm_content=examples-cloud-pmp-web-readme.md&amp;utm_term=running-it</a>, which opens the Configurator with a list of properties already chosen. The key has to carry the 51Did properties, which is what makes the cloud include the part of the client script that asks the visitor how their data may be used, and the pages and the browser tests read <code>fodid.idprobglobal</code> from the answer. The key also has to carry <code>ThirdPartyCookiesEnabled</code> and <code>ThirdPartyCookiesEnabledJavaScript</code>, because without them the PMP never tests the third party cookie and the second card never appears. The demo never writes the resource key or the cloud address to the console.</p>
-<p>On Linux and macOS the variable names that start with a digit have to be set with the env command, because POSIX shells do not accept them in a plain assignment.</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">env 51DEGREES_RESOURCE_KEY=&lt;your resource key&gt; \</div>
-<div class="c-code__line">    ASPNETCORE_URLS=http://localhost:5180 \</div>
-<div class="c-code__line">    dotnet run -c Release</div>
+<p>On Linux and macOS run these.</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">export _51DEGREES_RESOURCE_KEY=&lt;your resource key&gt;</div>
+<div class="c-code__line">export ASPNETCORE_URLS=http://localhost:5180</div>
+<div class="c-code__line">dotnet run -c Release</div>
 </div><!-- fragment --><p>In PowerShell the same is done like this.</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">${env:51DEGREES_RESOURCE_KEY} = &#39;&lt;your resource key&gt;&#39;</div>
-<div class="c-code__line">${env:ASPNETCORE_URLS} = &#39;http://localhost:5180&#39;</div>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">$env:_51DEGREES_RESOURCE_KEY = &#39;&lt;your resource key&gt;&#39;</div>
+<div class="c-code__line">$env:ASPNETCORE_URLS = &#39;http://localhost:5180&#39;</div>
 <div class="c-code__line">dotnet run -c Release</div>
 </div><!-- fragment --><p>Then open <a href="http://localhost:5180">http://localhost:5180</a> for a list of the pages.</p>
 <h1>The pages</h1>

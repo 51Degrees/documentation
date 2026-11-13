@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Abstract base class for Flow Elements." alt="" coords="652,221,856,275"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="947,5,1148,45"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="773,207,795,170,825,129,861,89,903,55,946,36,948,41,905,60,864,92,829,132,800,173,778,210"/>
-<area shape="rect" id="Node000006" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_sequence_element.html" title="Sequence element establishes session and sequence evidence in the pipeline." alt="" coords="928,70,1167,125"/>
+<area shape="rect" id="Node000006" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_sequence_element.html" title="Sequence element establishes session and sequence evidence in the pipeline, and holds the same two va..." alt="" coords="928,70,1167,125"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="794,209,844,170,903,134,930,122,932,127,905,138,847,174,797,213"/>
 <area shape="rect" id="Node000007" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_flow_elements_1_1_set_headers_element.html" title="This element is used to determine the values for HTTP headers that other elements in the pipeline wan..." alt="" coords="922,149,1173,203"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="869,217,935,201,936,206,870,222"/>

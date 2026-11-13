@@ -67,13 +67,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
-<div class="textblock"><dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="onpremise_2getting_started_console_8php-example.html#_a1">onpremise/gettingStartedConsole.php</a>, <a class="el" href="onpremise_2getting_started_web_8php-example.html#_a0">onpremise/gettingStartedWeb.php</a>, <a class="el" href="onpremise_2match_metrics_8php-example.html#_a1">onpremise/matchMetrics.php</a>, <a class="el" href="onpremise_2metadata_console_8php-example.html#_a1">onpremise/metadataConsole.php</a>, and <a class="el" href="onpremise_2user_agent_client_hints-_web_8php-example.html#_a4">onpremise/userAgentClientHints-Web.php</a>.</dd>
+<div class="textblock"><dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="onpremise_2getting_started_console_8php-example.html#_a1">onpremise/gettingStartedConsole.php</a>, <a class="el" href="onpremise_2getting_started_web_8php-example.html#_a0">onpremise/gettingStartedWeb.php</a>, <a class="el" href="onpremise_2match_metrics_8php-example.html#_a1">onpremise/matchMetrics.php</a>, <a class="el" href="onpremise_2metadata_console_8php-example.html#_a1">onpremise/metadataConsole.php</a>, and <a class="el" href="onpremise_2user_agent_client_hints-_web_8php-example.html#_a3">onpremise/userAgentClientHints-Web.php</a>.</dd>
 </dl>
 </div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a525ef3f0cd30b796be38bade7ea452c2" id="r_a525ef3f0cd30b796be38bade7ea452c2"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a525ef3f0cd30b796be38bade7ea452c2">useDataFileFromEnv</a> ($engine, $logger)</td></tr>
-<tr class="c-table__row memdesc:a525ef3f0cd30b796be38bade7ea452c2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Use the data file named by the 51DEGREES_DD_PATH environment variable, when it is set, in place of the one set in php.ini.  <br /></td></tr>
+<tr class="c-table__row memdesc:a525ef3f0cd30b796be38bade7ea452c2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Use the data file named by the _51DEGREES_DD_PATH environment variable, when it is set, in place of the one set in php.ini.  <br /></td></tr>
 <tr class="c-table__row memitem:aedb278f432ea7213290eda8206dfda9a" id="r_aedb278f432ea7213290eda8206dfda9a"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#aedb278f432ea7213290eda8206dfda9a">downloadMissingDataFile</a> ($path)</td></tr>
 <tr class="c-table__row memdesc:aedb278f432ea7213290eda8206dfda9a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Download a free data file that is missing, with the data repository's script, when the file's link is in the folder where it goes.  <br /></td></tr>
 <tr class="c-table__row memitem:a5acdc682c2d994243c91f1a23536ee80" id="r_a5acdc682c2d994243c91f1a23536ee80"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a5acdc682c2d994243c91f1a23536ee80">getDataFileCommand</a> ($path)</td></tr>
@@ -88,6 +88,16 @@ static&#160;</td><td class="c-table__cell"><b>dataFileIsOld</b> ($engine)</td></
 static&#160;</td><td class="c-table__cell"><b>getDataFileTier</b> ($engine)</td></tr>
 <tr class="c-table__row memitem:a45d80c2604023eccc203e66e4106a3df" id="r_a45d80c2604023eccc203e66e4106a3df"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a45d80c2604023eccc203e66e4106a3df">checkDataFile</a> ($engine, $logger)</td></tr>
 <tr class="c-table__row memdesc:a45d80c2604023eccc203e66e4106a3df"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the 'engine' element within the pipeline that performs device detection.  <br /></td></tr>
+<tr class="c-table__row memitem:a5f8bdf4c74ddc4fbf2c4383148626324" id="r_a5f8bdf4c74ddc4fbf2c4383148626324"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a5f8bdf4c74ddc4fbf2c4383148626324">isLiteDataFile</a> ($engine)</td></tr>
+<tr class="c-table__row memdesc:a5f8bdf4c74ddc4fbf2c4383148626324"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True when the engine uses the free Lite data file.  <br /></td></tr>
+<tr class="c-table__row memitem:ad85c5fb91e407e1887a8c37ed6a58575" id="r_ad85c5fb91e407e1887a8c37ed6a58575"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#ad85c5fb91e407e1887a8c37ed6a58575">hasProperty</a> ($engine, $name)</td></tr>
+<tr class="c-table__row memdesc:ad85c5fb91e407e1887a8c37ed6a58575"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True when the engine's data file has the property.  <br /></td></tr>
+<tr class="c-table__row memitem:aabe344ec5a354b03b855dc401c48f351" id="r_aabe344ec5a354b03b855dc401c48f351"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#aabe344ec5a354b03b855dc401c48f351">getEnterpriseValue</a> ($engine, $device, $name)</td></tr>
+<tr class="c-table__row memdesc:aabe344ec5a354b03b855dc401c48f351"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Format a property for display, or say that it needs the Enterprise data file when the engine's data file does not have it.  <br /></td></tr>
+<tr class="c-table__row memitem:a13f997c9723f57dc1ed7462e33cde972" id="r_a13f997c9723f57dc1ed7462e33cde972"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a13f997c9723f57dc1ed7462e33cde972">getEnterpriseNote</a> ($contactUs)</td></tr>
+<tr class="c-table__row memdesc:a13f997c9723f57dc1ed7462e33cde972"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Where to ask for a copy of the Enterprise data file, written after an example has shown properties that the data file in use does not have.  <br /></td></tr>
+<tr class="c-table__row memitem:a7b59c1bed72fb1a9ebfa4d1b531de183" id="r_a7b59c1bed72fb1a9ebfa4d1b531de183"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a7b59c1bed72fb1a9ebfa4d1b531de183">getEnterpriseOffer</a> ($contactUs)</td></tr>
+<tr class="c-table__row memdesc:a7b59c1bed72fb1a9ebfa4d1b531de183"><td class="c-table__cell">&#160;</td><td class="c-table__cell">What the Enterprise data file adds and where to ask for a copy, written after an example that shows no properties has run on the free Lite data file.  <br /></td></tr>
 <tr class="c-table__row memitem:ab74c4f5762060c336d9441d64db54eee" id="r_ab74c4f5762060c336d9441d64db54eee"><td class="c-table__cell"><a id="ab74c4f5762060c336d9441d64db54eee" name="ab74c4f5762060c336d9441d64db54eee"></a>
 static&#160;</td><td class="c-table__cell"><b>getHumanReadable</b> ($device, $name)</td></tr>
 <tr class="c-table__row memitem:a7f6f3da46fe283fc9143f09d0eb23268" id="r_a7f6f3da46fe283fc9143f09d0eb23268"><td class="c-table__cell"><a id="a7f6f3da46fe283fc9143f09d0eb23268" name="a7f6f3da46fe283fc9143f09d0eb23268"></a>
@@ -97,10 +107,14 @@ static&#160;</td><td class="c-table__cell"><b>containsAcceptCh</b> ()</td></tr>
 Data Fields</h2></td></tr>
 <tr class="c-table__row memitem:acfbb53f4e3484d08f098d055db6e8931" id="r_acfbb53f4e3484d08f098d055db6e8931"><td class="c-table__cell"><a id="acfbb53f4e3484d08f098d055db6e8931" name="acfbb53f4e3484d08f098d055db6e8931"></a>
 const&#160;</td><td class="c-table__cell"><b>DATA_FILE_AGE_WARNING</b> = 30</td></tr>
-<tr class="c-table__row memitem:a71234aff3efb06f6eeccf71ab87fb555" id="r_a71234aff3efb06f6eeccf71ab87fb555"><td class="c-table__cell"><a id="a71234aff3efb06f6eeccf71ab87fb555" name="a71234aff3efb06f6eeccf71ab87fb555"></a>
-const&#160;</td><td class="c-table__cell"><b>DATA_FILE_ENV_VAR</b> = '51DEGREES_DD_PATH'</td></tr>
+<tr class="c-table__row memitem:a96e7f9aece691397ee82b2dad37a9117" id="r_a96e7f9aece691397ee82b2dad37a9117"><td class="c-table__cell"><a id="a96e7f9aece691397ee82b2dad37a9117" name="a96e7f9aece691397ee82b2dad37a9117"></a>
+const&#160;</td><td class="c-table__cell"><b>DD_PATH_VARIABLE</b> = '_51DEGREES_DD_PATH'</td></tr>
+<tr class="c-table__row memitem:a71234aff3efb06f6eeccf71ab87fb555" id="r_a71234aff3efb06f6eeccf71ab87fb555"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a71234aff3efb06f6eeccf71ab87fb555">DATA_FILE_ENV_VAR</a> = '51DEGREES_DD_PATH'</td></tr>
+<tr class="c-table__row memdesc:a71234aff3efb06f6eeccf71ab87fb555"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Environment variable read for the data file when DD_PATH_VARIABLE is not set or is empty.  <br /></td></tr>
 <tr class="c-table__row memitem:ae7dec651169d3c43ce5d2766be7907f1" id="r_ae7dec651169d3c43ce5d2766be7907f1"><td class="c-table__cell"><a id="ae7dec651169d3c43ce5d2766be7907f1" name="ae7dec651169d3c43ce5d2766be7907f1"></a>
 const&#160;</td><td class="c-table__cell"><b>DATA_DOWNLOAD_SOURCE</b> = 'examples-51degrees-php'</td></tr>
+<tr class="c-table__row memitem:a8f2080499a0b558bda67d7c382728e3f" id="r_a8f2080499a0b558bda67d7c382728e3f"><td class="c-table__cell"><a id="a8f2080499a0b558bda67d7c382728e3f" name="a8f2080499a0b558bda67d7c382728e3f"></a>
+const&#160;</td><td class="c-table__cell"><b>NEEDS_ENTERPRISE</b> = 'needs the Enterprise data file'</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="a45d80c2604023eccc203e66e4106a3df" name="a45d80c2604023eccc203e66e4106a3df"></a>
@@ -222,6 +236,209 @@ const&#160;</td><td class="c-table__cell"><b>DATA_DOWNLOAD_SOURCE</b> = 'example
 
 </div>
 </div>
+<a id="a13f997c9723f57dc1ed7462e33cde972" name="a13f997c9723f57dc1ed7462e33cde972"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a13f997c9723f57dc1ed7462e33cde972">&#9670;&#160;</a></span>getEnterpriseNote()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\devicedetection\examples\onpremise\classes\ExampleUtils::getEnterpriseNote </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>$contactUs</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Where to ask for a copy of the Enterprise data file, written after an example has shown properties that the data file in use does not have. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$contactUs</td><td>The contact page, tagged with the example's file, so that an enquiry can be traced to the example </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7b59c1bed72fb1a9ebfa4d1b531de183" name="a7b59c1bed72fb1a9ebfa4d1b531de183"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7b59c1bed72fb1a9ebfa4d1b531de183">&#9670;&#160;</a></span>getEnterpriseOffer()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\devicedetection\examples\onpremise\classes\ExampleUtils::getEnterpriseOffer </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>$contactUs</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>What the Enterprise data file adds and where to ask for a copy, written after an example that shows no properties has run on the free Lite data file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$contactUs</td><td>The contact page, tagged with the example's file </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aabe344ec5a354b03b855dc401c48f351" name="aabe344ec5a354b03b855dc401c48f351"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aabe344ec5a354b03b855dc401c48f351">&#9670;&#160;</a></span>getEnterpriseValue()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\devicedetection\examples\onpremise\classes\ExampleUtils::getEnterpriseValue </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>$engine</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>$device</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>$name</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Format a property for display, or say that it needs the Enterprise data file when the engine's data file does not have it. </p>
+<p>The value is only read when the data file has the property.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">mixed</td><td class="paramname">$engine</td><td>The device detection engine </td></tr>
+    <tr><td class="paramtype">mixed</td><td class="paramname">$device</td><td>The device results </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$name</td><td>The property name, in lower case </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad85c5fb91e407e1887a8c37ed6a58575" name="ad85c5fb91e407e1887a8c37ed6a58575"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad85c5fb91e407e1887a8c37ed6a58575">&#9670;&#160;</a></span>hasProperty()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\devicedetection\examples\onpremise\classes\ExampleUtils::hasProperty </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>$engine</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>$name</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>True when the engine's data file has the property. </p>
+<p>The Lite data file leaves out the properties only the Enterprise data file has, such as HardwareVendor, HardwareName and DeviceType. The data file's own list is read, so the answer follows a data file loaded with refreshData.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">mixed</td><td class="paramname">$engine</td><td>The device detection engine </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$name</td><td>The property name, in any case </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5f8bdf4c74ddc4fbf2c4383148626324" name="a5f8bdf4c74ddc4fbf2c4383148626324"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5f8bdf4c74ddc4fbf2c4383148626324">&#9670;&#160;</a></span>isLiteDataFile()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone\pipeline\devicedetection\examples\onpremise\classes\ExampleUtils::isLiteDataFile </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>$engine</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>True when the engine uses the free Lite data file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">mixed</td><td class="paramname">$engine</td><td>The device detection engine </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a525ef3f0cd30b796be38bade7ea452c2" name="a525ef3f0cd30b796be38bade7ea452c2"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a525ef3f0cd30b796be38bade7ea452c2">&#9670;&#160;</a></span>useDataFileFromEnv()</h2>
 
@@ -253,7 +470,7 @@ const&#160;</td><td class="c-table__cell"><b>DATA_DOWNLOAD_SOURCE</b> = 'example
 </table>
 </div><div class="c-member__body">
 
-<p>Use the data file named by the 51DEGREES_DD_PATH environment variable, when it is set, in place of the one set in php.ini. </p>
+<p>Use the data file named by the _51DEGREES_DD_PATH environment variable, when it is set, in place of the one set in php.ini. </p>
 <p>The engine is created once, when PHP starts, from the FiftyOneDegreesHashEngine.data_file setting in php.ini, so that setting must still name a data file that exists. When the environment variable names a different file, the engine is reloaded from that file. The reload lasts for the life of the PHP process, so each process reloads once and later requests find the engine already using the file. A free file from cxx/data that has not been downloaded yet is downloaded first.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -262,6 +479,29 @@ const&#160;</td><td class="c-table__cell"><b>DATA_DOWNLOAD_SOURCE</b> = 'example
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Field Documentation</h2>
+<a id="a71234aff3efb06f6eeccf71ab87fb555" name="a71234aff3efb06f6eeccf71ab87fb555"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a71234aff3efb06f6eeccf71ab87fb555">&#9670;&#160;</a></span>DATA_FILE_ENV_VAR</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const fiftyone\pipeline\devicedetection\examples\onpremise\classes\ExampleUtils::DATA_FILE_ENV_VAR = '51DEGREES_DD_PATH'</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Environment variable read for the data file when DD_PATH_VARIABLE is not set or is empty. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated</a></b></dt><dd>use {</dd></dl>
+<dl class="c-list-definition section see"><dt class="c-list-definition__title">See also</dt><dd class="c-list-definition__desc">ExampleUtils::DD_PATH_VARIABLE} </dd></dl>
 
 </div>
 </div>

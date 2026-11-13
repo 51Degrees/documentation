@@ -123,6 +123,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2pro
 <div class="c-code__line">    print(*args, **kwargs, file=sys.stderr, flush=<span class="c-code__keyword">True</span>)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment"># Where to ask for a copy of the Enterprise data file, tagged with this</span></div>
+<div class="c-code__line"><span class="c-code__comment"># example.</span></div>
+<div class="c-code__line">CONTACT_US = <span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=fiftyone_devicedetection_examples-src-fiftyone_devicedetection_examples-onpremise-profile_metadata_console.py&amp;utm_term=enterprise-data-file&quot;</span></div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">class </span>ProfileMetadataConsole():</div>
 <div class="c-code__line">    <span class="c-code__comment"># Properties we want to extract from each hardware profile</span></div>
 <div class="c-code__line">    <span class="c-code__comment"># Note: TAC, HardwareName, NativeName, NativeModel are multi-value properties (string[])</span></div>
@@ -261,9 +266,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2pro
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> data_file <span class="c-code__keywordflow">is</span> <span class="c-code__keywordflow">not</span> <span class="c-code__keywordtype">None</span>:</div>
 <div class="c-code__line">        ProfileMetadataConsole().run(data_file, output_file, logger, output_func, limit)</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">else</span>:</div>
-<div class="c-code__line">        logger.log(<span class="c-code__stringliteral">&quot;error&quot;</span>,</div>
-<div class="c-code__line">            <span class="c-code__stringliteral">&quot;Failed to find a device detection data file. &quot;</span> +</div>
-<div class="c-code__line">            <span class="c-code__stringliteral">&quot;Please provide the path to a TAC-HashV41.hash file as the first argument.&quot;</span>)</div>
+<div class="c-code__line">        <span class="c-code__comment"># Only the Enterprise data file has the properties the example lists,</span></div>
+<div class="c-code__line">        <span class="c-code__comment"># so without one it says so and where to ask for one, and stops.</span></div>
+<div class="c-code__line">        print(<span class="c-code__stringliteral">&quot;Listing the hardware profiles needs the TAC, HardwareVendor &quot;</span></div>
+<div class="c-code__line">              <span class="c-code__stringliteral">&quot;and HardwareName properties, which only the Enterprise data &quot;</span></div>
+<div class="c-code__line">              <span class="c-code__stringliteral">&quot;file has. Give the path to an Enterprise data file as the &quot;</span></div>
+<div class="c-code__line">              <span class="c-code__stringliteral">&quot;first command line argument, or contact us for a copy at &quot;</span></div>
+<div class="c-code__line">              f<span class="c-code__stringliteral">&quot;{CONTACT_US}&quot;</span>)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> __name__ == <span class="c-code__stringliteral">&quot;__main__&quot;</span>:</div>

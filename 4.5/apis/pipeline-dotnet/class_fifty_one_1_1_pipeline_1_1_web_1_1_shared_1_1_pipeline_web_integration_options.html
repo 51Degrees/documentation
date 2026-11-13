@@ -87,6 +87,15 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="c-table__cell"><b>PipelineOptions</b> ()</td></tr>
 <tr class="c-table__row memdesc:a74efef6c2793abe45a14a4ab70d37ef5 pub_methods_class_fifty_one_1_1_pipeline_1_1_core_1_1_configuration_1_1_pipeline_options"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default constructor. <br /></td></tr>
 </table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="c-table__row memitem:a9a7838db16f69230d5d816fcf262eaed" id="r_a9a7838db16f69230d5d816fcf262eaed"><td class="c-table__cell"><a id="a9a7838db16f69230d5d816fcf262eaed" name="a9a7838db16f69230d5d816fcf262eaed"></a>
+const&#160;string&#160;</td><td class="c-table__cell"><b>DefaultJavaScriptPath</b> = &quot;/51Degrees.core.js&quot;</td></tr>
+<tr class="c-table__row memdesc:a9a7838db16f69230d5d816fcf262eaed"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default value of JavaScriptPath. <br /></td></tr>
+<tr class="c-table__row memitem:aa3c6b0b87618ff0e1c133ecd6d8b3461" id="r_aa3c6b0b87618ff0e1c133ecd6d8b3461"><td class="c-table__cell"><a id="aa3c6b0b87618ff0e1c133ecd6d8b3461" name="aa3c6b0b87618ff0e1c133ecd6d8b3461"></a>
+const&#160;string&#160;</td><td class="c-table__cell"><b>DefaultJsonPath</b> = &quot;/51dpipeline/json&quot;</td></tr>
+<tr class="c-table__row memdesc:aa3c6b0b87618ff0e1c133ecd6d8b3461"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default value of JsonPath. <br /></td></tr>
+</table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-properties" class="g-docs__section-heading"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="c-table__row memitem:ad6849437e0299dd6decd543e77874123" id="r_ad6849437e0299dd6decd543e77874123"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ad6849437e0299dd6decd543e77874123">ClientSideEvidenceEnabled</a><code> [get, set]</code></td></tr>
@@ -95,6 +104,14 @@ Properties</h2></td></tr>
 <tr class="c-table__row memdesc:a0bf4ca32a05937122510d26bf91ffaac"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Flag to enable/disable the use of the async attribute for the client side script.  <br /></td></tr>
 <tr class="c-table__row memitem:a7e4a74cc8e70d52ddf6990acd4e61ff2" id="r_a7e4a74cc8e70d52ddf6990acd4e61ff2"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a7e4a74cc8e70d52ddf6990acd4e61ff2">UseSetHeaderProperties</a><code> [get, set]</code></td></tr>
 <tr class="c-table__row memdesc:a7e4a74cc8e70d52ddf6990acd4e61ff2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Flag to enable/disable a feature that will automatically set the values of HTTP headers in the response in order to request additional information.  <br /></td></tr>
+<tr class="c-table__row memitem:a68a87d83e6a07900e72721e6e9275af5" id="r_a68a87d83e6a07900e72721e6e9275af5"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a68a87d83e6a07900e72721e6e9275af5">SequenceElementEnabled</a><code> [get, set]</code></td></tr>
+<tr class="c-table__row memdesc:a68a87d83e6a07900e72721e6e9275af5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True to add the Sequence Element to the <a class="el" href="namespace_fifty_one_1_1_pipeline.html">Pipeline</a> when it is not already in the configured elements.  <br /></td></tr>
+<tr class="c-table__row memitem:a2acb43503781492c1c942917268dd534" id="r_a2acb43503781492c1c942917268dd534"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a2acb43503781492c1c942917268dd534">SetHeadersElementEnabled</a><code> [get, set]</code></td></tr>
+<tr class="c-table__row memdesc:a2acb43503781492c1c942917268dd534"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True to add the Set Headers Element to the <a class="el" href="namespace_fifty_one_1_1_pipeline.html">Pipeline</a> when it is not already in the configured elements.  <br /></td></tr>
+<tr class="c-table__row memitem:a05e84d978a50dced6dfff83f364e66f7" id="r_a05e84d978a50dced6dfff83f364e66f7"><td class="c-table__cell">string&#160;</td><td class="c-table__cell"><a class="el" href="#a05e84d978a50dced6dfff83f364e66f7">JavaScriptPath</a><code> [get, set]</code></td></tr>
+<tr class="c-table__row memdesc:a05e84d978a50dced6dfff83f364e66f7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The path of the request that is answered with the client-side JavaScript.  <br /></td></tr>
+<tr class="c-table__row memitem:af11cd9bae18cf7193fa349513b1adbd8" id="r_af11cd9bae18cf7193fa349513b1adbd8"><td class="c-table__cell">string&#160;</td><td class="c-table__cell"><a class="el" href="#af11cd9bae18cf7193fa349513b1adbd8">JsonPath</a><code> [get, set]</code></td></tr>
+<tr class="c-table__row memdesc:af11cd9bae18cf7193fa349513b1adbd8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The path of the request that is answered with the client-side JSON.  <br /></td></tr>
 <tr class="c-table__row inherit_header properties_class_fifty_one_1_1_pipeline_1_1_core_1_1_configuration_1_1_pipeline_options"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Properties inherited from <a class="el" href="class_fifty_one_1_1_pipeline_1_1_core_1_1_configuration_1_1_pipeline_options.html">FiftyOne.Pipeline.Core.Configuration.PipelineOptions</a></h3></td></tr>
 <tr class="c-table__row memitem:a32450c85c7b96d4138518be440cf7f61 properties_class_fifty_one_1_1_pipeline_1_1_core_1_1_configuration_1_1_pipeline_options" id="r_a32450c85c7b96d4138518be440cf7f61"><td class="c-table__cell">IList&lt;&#160;<a class="el" href="class_fifty_one_1_1_pipeline_1_1_core_1_1_configuration_1_1_element_options.html">ElementOptions</a>&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_pipeline_1_1_core_1_1_configuration_1_1_pipeline_options.html#a32450c85c7b96d4138518be440cf7f61">Elements</a><code> [get, set]</code></td></tr>
 <tr class="c-table__row memdesc:a32450c85c7b96d4138518be440cf7f61 properties_class_fifty_one_1_1_pipeline_1_1_core_1_1_configuration_1_1_pipeline_options"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="namespace_fifty_one_1_1_pipeline_1_1_core_1_1_configuration.html">Configuration</a> information for the IFlowElements that the <a class="el" href="namespace_fifty_one_1_1_pipeline.html">Pipeline</a> will contain.  <br /></td></tr>
@@ -129,7 +146,123 @@ Properties</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>True if client-side properties should be enabled. </p>
-<p>If enabled (and the JavaScriptBundlerElement added to the <a class="el" href="namespace_fifty_one_1_1_pipeline.html">Pipeline</a>), a client-side JavaScript file will be served at the URL *&zwj;/51Degrees.core.js. </p>
+<p>If enabled (and the JavaScriptBundlerElement added to the <a class="el" href="namespace_fifty_one_1_1_pipeline.html">Pipeline</a>), a client-side JavaScript file will be served at the path JavaScriptPath. </p>
+
+</div>
+</div>
+<a id="a05e84d978a50dced6dfff83f364e66f7" name="a05e84d978a50dced6dfff83f364e66f7"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a05e84d978a50dced6dfff83f364e66f7">&#9670;&#160;</a></span>JavaScriptPath</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">string FiftyOne.Pipeline.Web.Shared.PipelineWebIntegrationOptions.JavaScriptPath</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The path of the request that is answered with the client-side JavaScript. </p>
+<p>A request whose path ends with this value is intercepted. A blank value gives the default, which is /51Degrees.core.js. </p>
+
+</div>
+</div>
+<a id="af11cd9bae18cf7193fa349513b1adbd8" name="af11cd9bae18cf7193fa349513b1adbd8"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af11cd9bae18cf7193fa349513b1adbd8">&#9670;&#160;</a></span>JsonPath</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">string FiftyOne.Pipeline.Web.Shared.PipelineWebIntegrationOptions.JsonPath</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The path of the request that is answered with the client-side JSON. </p>
+<p>A request whose path ends with this value is intercepted. When the web integration adds the JavaScript Builder Element itself, the script calls back to this path. A JavaScript Builder Element listed in the configured elements needs its Endpoint set to the same value. A blank value gives the default, which is /51dpipeline/json. </p>
+
+</div>
+</div>
+<a id="a68a87d83e6a07900e72721e6e9275af5" name="a68a87d83e6a07900e72721e6e9275af5"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a68a87d83e6a07900e72721e6e9275af5">&#9670;&#160;</a></span>SequenceElementEnabled</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool FiftyOne.Pipeline.Web.Shared.PipelineWebIntegrationOptions.SequenceElementEnabled</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>True to add the Sequence Element to the <a class="el" href="namespace_fifty_one_1_1_pipeline.html">Pipeline</a> when it is not already in the configured elements. </p>
+<p>If false, the web integration does not add it. The JSON Builder Element needs the sequence, so set ClientSideEvidenceEnabled to false as well, or list the Sequence Element in the elements. Defaults to true. </p>
+
+</div>
+</div>
+<a id="a2acb43503781492c1c942917268dd534" name="a2acb43503781492c1c942917268dd534"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2acb43503781492c1c942917268dd534">&#9670;&#160;</a></span>SetHeadersElementEnabled</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool FiftyOne.Pipeline.Web.Shared.PipelineWebIntegrationOptions.SetHeadersElementEnabled</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>True to add the Set Headers Element to the <a class="el" href="namespace_fifty_one_1_1_pipeline.html">Pipeline</a> when it is not already in the configured elements. </p>
+<p>If false, the web integration does not add it. This differs from UseSetHeaderProperties, which stops the headers being written to the response. Defaults to true. </p>
 
 </div>
 </div>

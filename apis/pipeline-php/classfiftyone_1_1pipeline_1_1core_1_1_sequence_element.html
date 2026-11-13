@@ -107,6 +107,7 @@ Public Member Functions</h2></td></tr>
 Data Fields</h2></td></tr>
 <tr class="c-table__row memitem:a88680ac4607aabc68e2f783f88499ebc" id="r_a88680ac4607aabc68e2f783f88499ebc"><td class="c-table__cell"><a id="a88680ac4607aabc68e2f783f88499ebc" name="a88680ac4607aabc68e2f783f88499ebc"></a>
 string&#160;</td><td class="c-table__cell"><b>$dataKey</b> = 'sequence'</td></tr>
+<tr class="c-table__row memitem:a1f289c718fe77ff880f0aa2f8fb6080e" id="r_a1f289c718fe77ff880f0aa2f8fb6080e"><td class="c-table__cell">array&#160;</td><td class="c-table__cell"><a class="el" href="#a1f289c718fe77ff880f0aa2f8fb6080e">$properties</a></td></tr>
 <tr class="c-table__row inherit_header pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_flow_element"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Data Fields inherited from <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html">fiftyone\pipeline\core\FlowElement</a></h3></td></tr>
 <tr class="c-table__row memitem:a031d79b6013a73fe22a04700556d4186 pub_attribs_classfiftyone_1_1pipeline_1_1core_1_1_flow_element" id="r_a031d79b6013a73fe22a04700556d4186"><td class="c-table__cell">
 string&#160;</td><td class="c-table__cell"><b>$dataKey</b></td></tr>
@@ -161,9 +162,33 @@ array&#160;</td><td class="c-table__cell"><b>$pipelines</b> = []</td></tr>
 </div><div class="c-member__body">
 
 <p>The SequenceElement stores session data for requests for JavaScript. </p>
+<p>It writes the session id and sequence to Evidence, under query.session-id and query.sequence, and to its Element Data, under session-id and sequence. </p>
 
 <p>Reimplemented from <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1_flow_element.html#aaee01c777a74e29bc51bd507389752b8">fiftyone\pipeline\core\FlowElement</a>.</p>
 
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Field Documentation</h2>
+<a id="a1f289c718fe77ff880f0aa2f8fb6080e" name="a1f289c718fe77ff880f0aa2f8fb6080e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1f289c718fe77ff880f0aa2f8fb6080e">&#9670;&#160;</a></span>$properties</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">array fiftyone\pipeline\core\SequenceElement::$properties</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                         = [</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&#39;session-id&#39;</span> =&gt; [<span class="c-code__stringliteral">&#39;name&#39;</span> =&gt; <span class="c-code__stringliteral">&#39;session-id&#39;</span>, <span class="c-code__stringliteral">&#39;type&#39;</span> =&gt; <span class="c-code__stringliteral">&#39;string&#39;</span>],</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&#39;sequence&#39;</span> =&gt; [<span class="c-code__stringliteral">&#39;name&#39;</span> =&gt; <span class="c-code__stringliteral">&#39;sequence&#39;</span>, <span class="c-code__stringliteral">&#39;type&#39;</span> =&gt; <span class="c-code__stringliteral">&#39;int&#39;</span>],</div>
+<div class="c-code__line">]</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- primary -->

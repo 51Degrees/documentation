@@ -3,6 +3,7 @@ var class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_
     [ "EndpointsAndKeys", "struct_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine_1_1_endpoints_and_keys.html", "struct_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine_1_1_endpoints_and_keys" ],
     [ "CloudRequestEngine", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine.html#a3075df4f4d7e037dce112b33c37fedd0", null ],
     [ "CloudRequestEngine", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine.html#a1d39ad97a4b477648e55718e75df4bc0", null ],
+    [ "CanCache", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine.html#a48608dfc6fef03381f07c2979377e8ea", null ],
     [ "ProcessEngine", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine.html#aa6256afb6a60d0f8e2c82c780e954131", null ],
     [ "UnmanagedResourcesCleanup", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine.html#a69419ec08d44c69f5d52e06429294515", null ],
     [ "WarmUp", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_request_engine.html#a1e658f423c39aebb74976f125c4e41d1", null ],

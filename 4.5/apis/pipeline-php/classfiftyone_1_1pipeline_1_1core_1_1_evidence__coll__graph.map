@@ -1,12 +1,15 @@
 <map id="fiftyone\pipeline\core\Evidence" name="fiftyone\pipeline\core\Evidence">
-<area shape="rect" id="Node000001" title="Storage of evidence on a FlowData object." alt="" coords="5,337,164,377"/>
-<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html" title=" " alt="" coords="111,227,269,267"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,276,103,292,92,314,88,337,82,336,87,313,99,289,118,272"/>
-<area shape="rect" id="Node000005" href="$classfiftyone_1_1pipeline_1_1core_1_1_evidence.html" title="Storage of evidence on a FlowData object." alt="" coords="201,337,360,377"/>
-<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="183,280,183,297,188,312,200,325,214,335,211,339,196,329,184,315,178,298,178,280"/>
-<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1core_1_1_pipeline.html" title="Pipeline holding a list of FlowElements for processing, can create FlowData that will be passed throu..." alt="" coords="111,116,269,156"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="193,170,193,226,187,226,187,170"/>
-<area shape="rect" id="Node000004" href="$classfiftyone_1_1pipeline_1_1core_1_1_logger.html" title="Logging for a Pipeline." alt="" coords="111,5,269,45"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="193,59,193,116,187,116,187,59"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="276,324,272,307,264,292,251,279,236,269,239,265,255,275,268,289,277,305,281,323"/>
+<area shape="rect" id="Node000001" title="Storage of evidence on a FlowData object." alt="" coords="29,337,188,377"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1core_1_1_flow_data.html" title=" " alt="" coords="300,227,459,267"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="331,275,246,316,176,340,174,335,244,311,329,270"/>
+<area shape="rect" id="Node000005" href="$classfiftyone_1_1pipeline_1_1core_1_1_evidence.html" title="Storage of evidence on a FlowData object." alt="" coords="300,337,459,377"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="379,281,378,291,378,313,380,337,375,337,373,313,373,291,373,280"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1core_1_1_pipeline.html" title="Pipeline holding a list of FlowElements for processing, can create FlowData that will be passed throu..." alt="" coords="300,116,459,156"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="382,170,382,226,377,226,377,170"/>
+<area shape="rect" id="Node000004" href="$classfiftyone_1_1pipeline_1_1core_1_1_logger.html" title="Logging for a Pipeline." alt="" coords="300,5,459,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="382,59,382,116,377,116,377,59"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="440,327,453,312,456,300,451,289,425,269,428,265,455,286,461,299,458,315,444,331"/>
+<area shape="rect" id="Node000006" href="$classfiftyone_1_1pipeline_1_1core_1_1_http_request.html" title="A read&#45;only view of a web request, held in Evidence under server.http&#45;request." alt="" coords="5,227,164,267"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="38,276,23,294,21,303,24,312,35,325,50,335,47,339,32,329,20,315,16,303,18,292,34,273"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="110,276,129,297,145,311,182,328,222,340,300,352,299,357,221,345,180,333,142,316,125,301,106,279"/>
 </map>

@@ -89,6 +89,9 @@ Functions</h2></td></tr>
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="c-table__row memitem:a5da6a69b1c55f463ee28ad833d5b34c8" id="r_a5da6a69b1c55f463ee28ad833d5b34c8"><td class="c-table__cell">list&#160;</td><td class="c-table__cell"><a class="el" href="#a5da6a69b1c55f463ee28ad833d5b34c8">EXCLUDED_PARAMETERS</a> = [&quot;query.session-id&quot;, &quot;query.sequence&quot;]</td></tr>
+<tr class="c-table__row memitem:a35e7b7c2d9b47efea7064a3c9217736d" id="r_a35e7b7c2d9b47efea7064a3c9217736d"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a35e7b7c2d9b47efea7064a3c9217736d">SEQUENCE_ELEMENT_DATA_KEY</a> = &quot;sequence&quot;</td></tr>
+<tr class="c-table__row memitem:a317a1fafa58b163698b8fb3b49a2ea4d" id="r_a317a1fafa58b163698b8fb3b49a2ea4d"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a317a1fafa58b163698b8fb3b49a2ea4d">SESSION_ID_NAME</a> = &quot;session-id&quot;</td></tr>
+<tr class="c-table__row memitem:a9906fe8aa0f86351d589ea75deff90ed" id="r_a9906fe8aa0f86351d589ea75deff90ed"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a9906fe8aa0f86351d589ea75deff90ed">SEQUENCE_NAME</a> = &quot;sequence&quot;</td></tr>
 <tr class="c-table__row memitem:a7296281029dce40c9656d8ea7e0c4669" id="r_a7296281029dce40c9656d8ea7e0c4669"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7296281029dce40c9656d8ea7e0c4669">OBJECT_NAME_PATTERN</a> = re.compile(r&quot;[A-Za-z_$][A-Za-z0-9_$]*&quot;)</td></tr>
 <tr class="c-table__row memitem:a403ec987ba69fcc6b42d716631d67749" id="r_a403ec987ba69fcc6b42d716631d67749"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a403ec987ba69fcc6b42d716631d67749">RESERVED_WORDS</a></td></tr>
 <tr class="c-table__row memitem:a35d417c4584f298b3e8c04e9422aa807" id="r_a35d417c4584f298b3e8c04e9422aa807"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#a35d417c4584f298b3e8c04e9422aa807">DEFAULT_SEQUENCE</a> = 1</td></tr>
@@ -118,10 +121,10 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>The sequence to render into the script. </p>
-<p>The template writes the sequence as bare code (var sequence = ...;), so anything other than a whole number would stop the script parsing, or change what it does. A pipeline without a SequenceElement passes the query string's value, or nothing at all, straight through. As the pipeline specification says, a value that is not a positive 32 bit integer becomes 1.</p>
+<p>The template writes the sequence as bare code (var sequence = ...;), so anything other than a whole number would stop the script parsing, or change what it does. As the pipeline specification says, a value that is not a positive 32 bit integer becomes 1.</p>
 <p>@type value: object </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>The query.sequence evidence, or None @rtype: int </td></tr>
+    <tr><td class="paramname">value</td><td>The SequenceElement's sequence, or None @rtype: int </td></tr>
   </table>
   </dd>
 </dl>
@@ -149,10 +152,10 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>The session id to render into the script. </p>
-<p>The template writes the session id inside quotes without any escaping. As the pipeline specification says, a session id that is not 1 to 64 ASCII letters, digits and hyphens is rendered as an empty string, whether it came from the SequenceElement or from the query string.</p>
+<p>The template writes the session id inside quotes without any escaping. As the pipeline specification says, a session id that is not 1 to 64 ASCII letters, digits and hyphens is rendered as an empty string.</p>
 <p>@type value: object </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>The query.session-id evidence, or None @rtype: str </td></tr>
+    <tr><td class="paramname">value</td><td>The SequenceElement's session id, or None @rtype: str </td></tr>
   </table>
   </dd>
 </dl>
@@ -212,7 +215,7 @@ Variables</h2></td></tr>
 <p>A sequence as a positive 32 bit integer. </p>
 <p>@type value: object </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>The query.sequence evidence, or None @rtype: int </td></tr>
+    <tr><td class="paramname">value</td><td>A sequence value, from Evidence or Element Data, or None @rtype: int </td></tr>
   </table>
   </dd>
 </dl>
@@ -365,8 +368,53 @@ Variables</h2></td></tr>
 <div class="c-code__line">    <span class="c-code__stringliteral">&quot;package&quot;</span>, <span class="c-code__stringliteral">&quot;private&quot;</span>, <span class="c-code__stringliteral">&quot;protected&quot;</span>, <span class="c-code__stringliteral">&quot;public&quot;</span>, <span class="c-code__stringliteral">&quot;return&quot;</span>, <span class="c-code__stringliteral">&quot;static&quot;</span>,</div>
 <div class="c-code__line">    <span class="c-code__stringliteral">&quot;super&quot;</span>, <span class="c-code__stringliteral">&quot;switch&quot;</span>, <span class="c-code__stringliteral">&quot;this&quot;</span>, <span class="c-code__stringliteral">&quot;throw&quot;</span>, <span class="c-code__stringliteral">&quot;true&quot;</span>, <span class="c-code__stringliteral">&quot;try&quot;</span>, <span class="c-code__stringliteral">&quot;typeof&quot;</span>, <span class="c-code__stringliteral">&quot;var&quot;</span>,</div>
 <div class="c-code__line">    <span class="c-code__stringliteral">&quot;void&quot;</span>, <span class="c-code__stringliteral">&quot;while&quot;</span>, <span class="c-code__stringliteral">&quot;with&quot;</span>, <span class="c-code__stringliteral">&quot;yield&quot;</span>,</div>
-<div class="c-code__line">    <span class="c-code__stringliteral">&quot;Infinity&quot;</span>, <span class="c-code__stringliteral">&quot;NaN&quot;</span>, <span class="c-code__stringliteral">&quot;undefined&quot;</span>, <span class="c-code__stringliteral">&quot;fiftyoneDegreesManager&quot;</span>])</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;Infinity&quot;</span>, <span class="c-code__stringliteral">&quot;NaN&quot;</span>, <span class="c-code__stringliteral">&quot;undefined&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;eval&quot;</span>, <span class="c-code__stringliteral">&quot;arguments&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;window&quot;</span>, <span class="c-code__stringliteral">&quot;document&quot;</span>, <span class="c-code__stringliteral">&quot;top&quot;</span>, <span class="c-code__stringliteral">&quot;name&quot;</span>, <span class="c-code__stringliteral">&quot;status&quot;</span>, <span class="c-code__stringliteral">&quot;history&quot;</span>, <span class="c-code__stringliteral">&quot;navigator&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;closed&quot;</span>, <span class="c-code__stringliteral">&quot;location&quot;</span>, <span class="c-code__stringliteral">&quot;frameElement&quot;</span>, <span class="c-code__stringliteral">&quot;isSecureContext&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;crossOriginIsolated&quot;</span>, <span class="c-code__stringliteral">&quot;trustedTypes&quot;</span>, <span class="c-code__stringliteral">&quot;crypto&quot;</span>, <span class="c-code__stringliteral">&quot;indexedDB&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;localStorage&quot;</span>, <span class="c-code__stringliteral">&quot;sessionStorage&quot;</span>, <span class="c-code__stringliteral">&quot;caches&quot;</span>, <span class="c-code__stringliteral">&quot;cookieStore&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;speechSynthesis&quot;</span>, <span class="c-code__stringliteral">&quot;styleMedia&quot;</span>, <span class="c-code__stringliteral">&quot;crashReport&quot;</span>, <span class="c-code__stringliteral">&quot;credentialless&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;customElements&quot;</span>, <span class="c-code__stringliteral">&quot;documentPictureInPicture&quot;</span>, <span class="c-code__stringliteral">&quot;fence&quot;</span>, <span class="c-code__stringliteral">&quot;launchQueue&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;originAgentCluster&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;fiftyoneDegreesManager&quot;</span>])</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="a35e7b7c2d9b47efea7064a3c9217736d" name="a35e7b7c2d9b47efea7064a3c9217736d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a35e7b7c2d9b47efea7064a3c9217736d">&#9670;&#160;</a></span>SEQUENCE_ELEMENT_DATA_KEY</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">str fiftyone_pipeline_core.javascriptbuilder.SEQUENCE_ELEMENT_DATA_KEY = &quot;sequence&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a9906fe8aa0f86351d589ea75deff90ed" name="a9906fe8aa0f86351d589ea75deff90ed"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9906fe8aa0f86351d589ea75deff90ed">&#9670;&#160;</a></span>SEQUENCE_NAME</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">str fiftyone_pipeline_core.javascriptbuilder.SEQUENCE_NAME = &quot;sequence&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
 </div>
 </div>
 <a id="ad5c0e58b0fdca832d0c7e4c85476afee" name="ad5c0e58b0fdca832d0c7e4c85476afee"></a>
@@ -379,6 +427,24 @@ Variables</h2></td></tr>
           <table class="c-table c-table--article">
             <tr class="c-table__row">
               <td class="c-table__cell">fiftyone_pipeline_core.javascriptbuilder.SEQUENCE_PATTERN = re.compile(r&quot;[ \t\n\r\f\v]*\+?([0-9]+)[ \t\n\r\f\v]*&quot;)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a317a1fafa58b163698b8fb3b49a2ea4d" name="a317a1fafa58b163698b8fb3b49a2ea4d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a317a1fafa58b163698b8fb3b49a2ea4d">&#9670;&#160;</a></span>SESSION_ID_NAME</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">str fiftyone_pipeline_core.javascriptbuilder.SESSION_ID_NAME = &quot;session-id&quot;</td>
             </tr>
           </table>
         </div>

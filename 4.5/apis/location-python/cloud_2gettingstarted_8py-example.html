@@ -117,11 +117,33 @@ You can create a Resource Key at
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment"># You need to create a resource key at https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=examples-cloud-gettingstarted.py&amp;utm_term=top</span></div>
 <div class="c-code__line"><span class="c-code__comment"># and paste it into the code, replacing !!YOUR_RESOURCE_KEY!! below.</span></div>
-<div class="c-code__line"><span class="c-code__comment"># Alternatively, add a resource_key environment variable</span></div>
+<div class="c-code__line"><span class="c-code__comment"># Alternatively, add a _51DEGREES_RESOURCE_KEY environment variable.</span></div>
+<div class="c-code__line"><span class="c-code__comment"># resource_key is the old name of that variable. It is deprecated, and is</span></div>
+<div class="c-code__line"><span class="c-code__comment"># read only when _51DEGREES_RESOURCE_KEY is not set.</span></div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> os</div>
-<div class="c-code__line"><span class="c-code__keywordflow">if</span> <span class="c-code__stringliteral">&quot;resource_key&quot;</span> <span class="c-code__keywordflow">in</span> os.environ:</div>
-<div class="c-code__line">    resource_key = os.environ[<span class="c-code__stringliteral">&quot;resource_key&quot;</span>]</div>
-<div class="c-code__line"><span class="c-code__keywordflow">else</span>:</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> sys</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">def </span>read_environment(name, old_name):</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;&quot;&quot;The value of the environment variable name, or None when it has</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    none. When name is unset or empty the name the variable had before is</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    read, and using it prints that the old name is deprecated.&quot;&quot;&quot;</span></div>
+<div class="c-code__line">    value = os.environ.get(name)</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> value:</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> value</div>
+<div class="c-code__line">    value = os.environ.get(old_name)</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> <span class="c-code__keywordflow">not</span> value:</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> <span class="c-code__keywordtype">None</span></div>
+<div class="c-code__line">    print(</div>
+<div class="c-code__line">        f<span class="c-code__stringliteral">&quot;The {old_name} environment variable is deprecated and {name} &quot;</span></div>
+<div class="c-code__line">        f<span class="c-code__stringliteral">&quot;replaces it. The value was read from {old_name} because {name} &quot;</span></div>
+<div class="c-code__line">        f<span class="c-code__stringliteral">&quot;is not set, so set {name} to the same value.&quot;</span>,</div>
+<div class="c-code__line">        file=sys.stderr)</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> value</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">resource_key = read_environment(<span class="c-code__stringliteral">&quot;_51DEGREES_RESOURCE_KEY&quot;</span>, <span class="c-code__stringliteral">&quot;resource_key&quot;</span>)</div>
+<div class="c-code__line"><span class="c-code__keywordflow">if</span> <span class="c-code__keywordflow">not</span> resource_key:</div>
 <div class="c-code__line">    resource_key = <span class="c-code__stringliteral">&quot;!!YOUR_RESOURCE_KEY!!&quot;</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> resource_key == <span class="c-code__stringliteral">&quot;!!YOUR_RESOURCE_KEY!!&quot;</span>:</div>

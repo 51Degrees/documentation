@@ -88,11 +88,11 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:accd5c77daceb0f7140e1ac2a90ccc75d" id="r_accd5c77daceb0f7140e1ac2a90ccc75d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#accd5c77daceb0f7140e1ac2a90ccc75d">test_cloud_metadata_console</a> (self)</td></tr>
 <tr class="c-table__row memitem:a04ae5e4d64b878c6f2e82cb857c9e1ba" id="r_a04ae5e4d64b878c6f2e82cb857c9e1ba"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a04ae5e4d64b878c6f2e82cb857c9e1ba">test_cloud_configurator_console</a> (self)</td></tr>
 <tr class="c-table__row memitem:a4f4e40170e4485d775cf4fd9b009789c" id="r_a4f4e40170e4485d775cf4fd9b009789c"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a4f4e40170e4485d775cf4fd9b009789c">test_cloud_failuretomatch</a> (self)</td></tr>
-<tr class="c-table__row memdesc:a4f4e40170e4485d775cf4fd9b009789c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The failure to match example is a script rather than a class, so it is run as one.  <br /></td></tr>
+<tr class="c-table__row memdesc:a4f4e40170e4485d775cf4fd9b009789c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The failure to match example is a script rather than a class, so it is run as one, with the resource key in its environment.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="c-table__row memitem:a5abd4802200da66e04615920038a35be" id="r_a5abd4802200da66e04615920038a35be"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a5abd4802200da66e04615920038a35be">resource_key</a> = <a class="el" href="classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#a7e4f03ae295425ac814254c70eb707a9">ExampleUtils.get_resource_key</a>()</td></tr>
+<tr class="c-table__row memitem:a5abd4802200da66e04615920038a35be" id="r_a5abd4802200da66e04615920038a35be"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a5abd4802200da66e04615920038a35be">resource_key</a> = find_resource_key()</td></tr>
 <tr class="c-table__row memitem:a8e2bb03a663b4b3864ba3283d498f623" id="r_a8e2bb03a663b4b3864ba3283d498f623"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8e2bb03a663b4b3864ba3283d498f623">logger</a> = <a class="elRef" href="../pipeline-python/classfiftyone__pipeline__core_1_1logger_1_1_logger.html">Logger</a>()</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
@@ -212,8 +212,7 @@ Public Attributes</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>The failure to match example is a script rather than a class, so it is run as one. </p>
-<p>It is run with the current resource key variable only, because it read the older name alone and told anyone using the current one that no key was set. </p>
+<p>The failure to match example is a script rather than a class, so it is run as one, with the resource key in its environment. </p>
 
 </div>
 </div>
@@ -329,7 +328,7 @@ Public Attributes</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">tests.test_cloudexamples.DeviceDetectionExampleTests.resource_key = <a class="el" href="classfiftyone__devicedetection__examples_1_1example__utils_1_1_example_utils.html#a7e4f03ae295425ac814254c70eb707a9">ExampleUtils.get_resource_key</a>()</td>
+              <td class="c-table__cell">tests.test_cloudexamples.DeviceDetectionExampleTests.resource_key = find_resource_key()</td>
             </tr>
           </table>
         </div>

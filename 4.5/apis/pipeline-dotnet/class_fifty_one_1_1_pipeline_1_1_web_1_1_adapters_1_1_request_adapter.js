@@ -1,5 +1,6 @@
 var class_fifty_one_1_1_pipeline_1_1_web_1_1_adapters_1_1_request_adapter =
 [
     [ "RequestAdapter", "class_fifty_one_1_1_pipeline_1_1_web_1_1_adapters_1_1_request_adapter.html#a4ea8f8f238f0860133355f8d130eb667", null ],
-    [ "GetHeaderValue", "class_fifty_one_1_1_pipeline_1_1_web_1_1_adapters_1_1_request_adapter.html#a65f7f14c4338b112ecb44152d6634f4b", null ]
+    [ "GetHeaderValue", "class_fifty_one_1_1_pipeline_1_1_web_1_1_adapters_1_1_request_adapter.html#a65f7f14c4338b112ecb44152d6634f4b", null ],
+    [ "Method", "class_fifty_one_1_1_pipeline_1_1_web_1_1_adapters_1_1_request_adapter.html#a7984144df8d054d99a0b6d6f920cc610", null ]
 ];

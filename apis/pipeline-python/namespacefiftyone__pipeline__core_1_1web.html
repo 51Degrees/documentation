@@ -69,12 +69,348 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('namespacefifty
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="c-table__row memitem:a2921958ed0a510d676c87d01fd7c68c9" id="r_a2921958ed0a510d676c87d01fd7c68c9"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a2921958ed0a510d676c87d01fd7c68c9">request_line_path</a> (request)</td></tr>
+<tr class="c-table__row memdesc:a2921958ed0a510d676c87d01fd7c68c9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The path of the request line as the server received it, when the server says what that was, and otherwise the path Flask decoded.  <br /></td></tr>
 <tr class="c-table__row memitem:a439e55aaa772b47745c514ded42fc1c3" id="r_a439e55aaa772b47745c514ded42fc1c3"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a439e55aaa772b47745c514ded42fc1c3">webevidence</a> (request)</td></tr>
-<tr class="c-table__row memdesc:a439e55aaa772b47745c514ded42fc1c3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get evidence from a web request (gets headers, cookies, query parameters and the fields of a posted form).  <br /></td></tr>
+<tr class="c-table__row memdesc:a439e55aaa772b47745c514ded42fc1c3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get evidence from a web request (gets headers, cookies, session values, query parameters and the fields of a posted form, and the request itself as server.http-request).  <br /></td></tr>
 <tr class="c-table__row memitem:aa2aebd04f101460b511f7cb290fc19ce" id="r_aa2aebd04f101460b511f7cb290fc19ce"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aa2aebd04f101460b511f7cb290fc19ce">set_response_header</a> (flowData, response)</td></tr>
 <tr class="c-table__row memdesc:aa2aebd04f101460b511f7cb290fc19ce"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set UACH response header in web response (sets Accept-CH header in response).  <br /></td></tr>
+<tr class="c-table__row memitem:af84fc5f68941e61c15f9e7fd488091eb" id="r_af84fc5f68941e61c15f9e7fd488091eb"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#af84fc5f68941e61c15f9e7fd488091eb">javascript_response</a> (pipeline, request, max_age_seconds=<a class="el" href="#a81fa931bce002febaecb17e6caebec25">CLIENT_SIDE_MAX_AGE_SECONDS</a>)</td></tr>
+<tr class="c-table__row memdesc:af84fc5f68941e61c15f9e7fd488091eb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process a request for the client-side JavaScript and answer with the JavaScript the pipeline's JavaScriptBuilder writes, with the cache headers the web integration specification sets.  <br /></td></tr>
+<tr class="c-table__row memitem:a5bbe019a1b3bc8753f85a74e0934e139" id="r_a5bbe019a1b3bc8753f85a74e0934e139"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a5bbe019a1b3bc8753f85a74e0934e139">json_response</a> (pipeline, request, max_age_seconds=<a class="el" href="#a81fa931bce002febaecb17e6caebec25">CLIENT_SIDE_MAX_AGE_SECONDS</a>)</td></tr>
+<tr class="c-table__row memdesc:a5bbe019a1b3bc8753f85a74e0934e139"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process a request from the client-side JavaScript and answer with the JSON the pipeline's JSONBundler writes, with the same cache headers as javascript_response.  <br /></td></tr>
+<tr class="c-table__row memitem:a0cde1135375232bbbf0bec28b373bbd1" id="r_a0cde1135375232bbbf0bec28b373bbd1"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a0cde1135375232bbbf0bec28b373bbd1">_client_side_response</a> (pipeline, request, content, content_type, max_age_seconds)</td></tr>
+<tr class="c-table__row memitem:a6f749e078d103e03314d89a302eaca2c" id="r_a6f749e078d103e03314d89a302eaca2c"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a6f749e078d103e03314d89a302eaca2c">_uses</a> (pipeline, key)</td></tr>
+<tr class="c-table__row memitem:abf6f87b50da40b8120ddbb6cb4cced72" id="r_abf6f87b50da40b8120ddbb6cb4cced72"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#abf6f87b50da40b8120ddbb6cb4cced72">_opaque_tag</a> (pipeline, evidence)</td></tr>
+<tr class="c-table__row memitem:a0671893ba952a033faffeed73b10b2b0" id="r_a0671893ba952a033faffeed73b10b2b0"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a0671893ba952a033faffeed73b10b2b0">_if_none_match_matches</a> (if_none_match, opaque_tag)</td></tr>
+<tr class="c-table__row memitem:a67f4734173e0025e203bde2c26acdacc" id="r_a67f4734173e0025e203bde2c26acdacc"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a67f4734173e0025e203bde2c26acdacc">_entity_tags</a> (value)</td></tr>
+<tr class="c-table__row memitem:a9d69413a45b8783b24734de777d06c07" id="r_a9d69413a45b8783b24734de777d06c07"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a9d69413a45b8783b24734de777d06c07">_vary</a> (pipeline, request)</td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="c-table__row memitem:a81fa931bce002febaecb17e6caebec25" id="r_a81fa931bce002febaecb17e6caebec25"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#a81fa931bce002febaecb17e6caebec25">CLIENT_SIDE_MAX_AGE_SECONDS</a> = 1800</td></tr>
+<tr class="c-table__row memitem:a0a6f1be0bfdb5ce8c09b114ca21ad706" id="r_a0a6f1be0bfdb5ce8c09b114ca21ad706"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a0a6f1be0bfdb5ce8c09b114ca21ad706">_CACHE_CONTROL_AFTER_ERRORS</a> = &quot;private, no-cache&quot;</td></tr>
+<tr class="c-table__row memitem:a64b8f459b5734bf5f17f965feb6d5659" id="r_a64b8f459b5734bf5f17f965feb6d5659"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a64b8f459b5734bf5f17f965feb6d5659">_REVALIDATION_HEADERS</a></td></tr>
+<tr class="c-table__row memitem:a9ccd4b601cefce08e92c43ceea0ef377" id="r_a9ccd4b601cefce08e92c43ceea0ef377"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a9ccd4b601cefce08e92c43ceea0ef377">_ENTITY_TAG</a> = re.compile(r'(W/)?&quot;([\x21\x23-\x7e\x80-\xff]*)&quot;')</td></tr>
+<tr class="c-table__row memitem:a72fda8f1babea93037d778dbb82c8a2a" id="r_a72fda8f1babea93037d778dbb82c8a2a"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a72fda8f1babea93037d778dbb82c8a2a">_FIELD_NAME</a> = re.compile(r&quot;[!#$%&amp;'*+.^_`|~0-9a-z-]+\Z&quot;)</td></tr>
+<tr class="c-table__row memitem:a074d1297c06fcb121ff251a205d42d3e" id="r_a074d1297c06fcb121ff251a205d42d3e"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a074d1297c06fcb121ff251a205d42d3e">_OWS</a> = &quot; \t&quot;</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
+<a id="a0cde1135375232bbbf0bec28b373bbd1" name="a0cde1135375232bbbf0bec28b373bbd1"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0cde1135375232bbbf0bec28b373bbd1">&#9670;&#160;</a></span>_client_side_response()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">_client_side_response </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>pipeline</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>content</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>content_type</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>max_age_seconds</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a67f4734173e0025e203bde2c26acdacc" name="a67f4734173e0025e203bde2c26acdacc"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a67f4734173e0025e203bde2c26acdacc">&#9670;&#160;</a></span>_entity_tags()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">_entity_tags </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a0671893ba952a033faffeed73b10b2b0" name="a0671893ba952a033faffeed73b10b2b0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0671893ba952a033faffeed73b10b2b0">&#9670;&#160;</a></span>_if_none_match_matches()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">_if_none_match_matches </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>if_none_match</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>opaque_tag</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="abf6f87b50da40b8120ddbb6cb4cced72" name="abf6f87b50da40b8120ddbb6cb4cced72"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#abf6f87b50da40b8120ddbb6cb4cced72">&#9670;&#160;</a></span>_opaque_tag()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">_opaque_tag </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>pipeline</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>evidence</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a6f749e078d103e03314d89a302eaca2c" name="a6f749e078d103e03314d89a302eaca2c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6f749e078d103e03314d89a302eaca2c">&#9670;&#160;</a></span>_uses()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">_uses </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>pipeline</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>key</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a9d69413a45b8783b24734de777d06c07" name="a9d69413a45b8783b24734de777d06c07"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9d69413a45b8783b24734de777d06c07">&#9670;&#160;</a></span>_vary()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">_vary </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>pipeline</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>request</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="af84fc5f68941e61c15f9e7fd488091eb" name="af84fc5f68941e61c15f9e7fd488091eb"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af84fc5f68941e61c15f9e7fd488091eb">&#9670;&#160;</a></span>javascript_response()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">javascript_response </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>pipeline</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>max_age_seconds</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#a81fa931bce002febaecb17e6caebec25">CLIENT_SIDE_MAX_AGE_SECONDS</a></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Process a request for the client-side JavaScript and answer with the JavaScript the pipeline's JavaScriptBuilder writes, with the cache headers the web integration specification sets. </p>
+<p>The ETag is a weak entity tag, W/"...", hashed from the evidence the request supplied that the pipeline's elements accept. A GET or HEAD request whose If-None-Match header matches it, by the weak comparison of RFC 9110 section 13.1.2, gets a 304 without being processed, so a browser keeps a good copy while processing fails. A request by any other method whose If-None-Match matches, such as a POST to the JSON endpoint, gets 412 Precondition Failed. An If-None-Match that is neither "*" nor a list of entity tags matches nothing. Otherwise the response carries 'Cache-Control: max-age=1800, private', or the max age given, and the ETag, or 'Cache-Control: private, no-cache' and no ETag when processing recorded errors. Both carry a Vary header naming the headers the pipeline's elements accept, whether or not the request carried them.</p>
+<p>@type pipeline: Pipeline </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pipeline</td><td>A pipeline holding the JavaScriptBuilder @type request: Request </td></tr>
+    <tr><td class="paramname">request</td><td>The request for the JavaScript @type max_age_seconds: int </td></tr>
+    <tr><td class="paramname">max_age_seconds</td><td>How long the browser may keep the response @rtype Response </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The response to send </dd></dl>
+
+</div>
+</div>
+<a id="a5bbe019a1b3bc8753f85a74e0934e139" name="a5bbe019a1b3bc8753f85a74e0934e139"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5bbe019a1b3bc8753f85a74e0934e139">&#9670;&#160;</a></span>json_response()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">json_response </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>pipeline</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>request</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>max_age_seconds</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#a81fa931bce002febaecb17e6caebec25">CLIENT_SIDE_MAX_AGE_SECONDS</a></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Process a request from the client-side JavaScript and answer with the JSON the pipeline's JSONBundler writes, with the same cache headers as javascript_response. </p>
+<p>@type pipeline: Pipeline </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pipeline</td><td>A pipeline holding the JSONBundler @type request: Request </td></tr>
+    <tr><td class="paramname">request</td><td>The request from the client-side JavaScript @type max_age_seconds: int </td></tr>
+    <tr><td class="paramname">max_age_seconds</td><td>How long the browser may keep the response @rtype Response </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The response to send </dd></dl>
+
+</div>
+</div>
+<a id="a2921958ed0a510d676c87d01fd7c68c9" name="a2921958ed0a510d676c87d01fd7c68c9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2921958ed0a510d676c87d01fd7c68c9">&#9670;&#160;</a></span>request_line_path()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">request_line_path </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>request</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The path of the request line as the server received it, when the server says what that was, and otherwise the path Flask decoded. </p>
+
+</div>
+</div>
 <a id="aa2aebd04f101460b511f7cb290fc19ce" name="aa2aebd04f101460b511f7cb290fc19ce"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa2aebd04f101460b511f7cb290fc19ce">&#9670;&#160;</a></span>set_response_header()</h2>
 
@@ -129,7 +465,7 @@ Functions</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Get evidence from a web request (gets headers, cookies, query parameters and the fields of a posted form). </p>
+<p>Get evidence from a web request (gets headers, cookies, session values, query parameters and the fields of a posted form, and the request itself as server.http-request). </p>
 <p>@type request: Request </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">request</td><td>A Request object @rtype dict </td></tr>
@@ -137,6 +473,158 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">A dictionary of web evidence that can be using in flowdata.evidence.add_from_dict() </dd></dl>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>
+<a id="a0a6f1be0bfdb5ce8c09b114ca21ad706" name="a0a6f1be0bfdb5ce8c09b114ca21ad706"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0a6f1be0bfdb5ce8c09b114ca21ad706">&#9670;&#160;</a></span>_CACHE_CONTROL_AFTER_ERRORS</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">str fiftyone_pipeline_core.web._CACHE_CONTROL_AFTER_ERRORS = &quot;private, no-cache&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a9ccd4b601cefce08e92c43ceea0ef377" name="a9ccd4b601cefce08e92c43ceea0ef377"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9ccd4b601cefce08e92c43ceea0ef377">&#9670;&#160;</a></span>_ENTITY_TAG</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_core.web._ENTITY_TAG = re.compile(r'(W/)?&quot;([\x21\x23-\x7e\x80-\xff]*)&quot;')</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a72fda8f1babea93037d778dbb82c8a2a" name="a72fda8f1babea93037d778dbb82c8a2a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a72fda8f1babea93037d778dbb82c8a2a">&#9670;&#160;</a></span>_FIELD_NAME</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_core.web._FIELD_NAME = re.compile(r&quot;[!#$%&amp;'*+.^_`|~0-9a-z-]+\Z&quot;)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a074d1297c06fcb121ff251a205d42d3e" name="a074d1297c06fcb121ff251a205d42d3e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a074d1297c06fcb121ff251a205d42d3e">&#9670;&#160;</a></span>_OWS</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">str fiftyone_pipeline_core.web._OWS = &quot; \t&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a64b8f459b5734bf5f17f965feb6d5659" name="a64b8f459b5734bf5f17f965feb6d5659"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a64b8f459b5734bf5f17f965feb6d5659">&#9670;&#160;</a></span>_REVALIDATION_HEADERS</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_core.web._REVALIDATION_HEADERS</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=  frozenset((</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;cache-control&quot;</span>, <span class="c-code__stringliteral">&quot;if-match&quot;</span>, <span class="c-code__stringliteral">&quot;if-modified-since&quot;</span>, <span class="c-code__stringliteral">&quot;if-none-match&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;if-range&quot;</span>, <span class="c-code__stringliteral">&quot;if-unmodified-since&quot;</span>, <span class="c-code__stringliteral">&quot;pragma&quot;</span>))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a81fa931bce002febaecb17e6caebec25" name="a81fa931bce002febaecb17e6caebec25"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a81fa931bce002febaecb17e6caebec25">&#9670;&#160;</a></span>CLIENT_SIDE_MAX_AGE_SECONDS</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">int fiftyone_pipeline_core.web.CLIENT_SIDE_MAX_AGE_SECONDS = 1800</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
 
 </div>
 </div>

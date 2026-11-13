@@ -3,6 +3,7 @@ var classfiftyone__pipeline__engines_1_1engine_1_1_engine =
     [ "__init__", "classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a0d5c73d6a07685aa5c6c0ff87383a3d8", null ],
     [ "close", "classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#aa9212c13330326a4ea9aa44253746e91", null ],
     [ "in_cache", "classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a9d186f20091539afd22a08f28f387805", null ],
+    [ "is_cacheable", "classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#aa501672dba2df3eec445da9ae7306e97", null ],
     [ "on_registration", "classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#aaf9b874db8b7ca0424d769cfaa3d7f92", null ],
     [ "process", "classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a1753c81a9469244593de5ace9145c773", null ],
     [ "refresh", "classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a33b6757ea1c9e08cd1f1ae487cb47cb1", null ],
@@ -11,5 +12,6 @@ var classfiftyone__pipeline__engines_1_1engine_1_1_engine =
     [ "set_restricted_properties", "classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a590c7edef7b575fae02471b6f54dd2b4", null ],
     [ "cache", "classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a0396e4bed172e18cc6846bdd48d7252f", null ],
     [ "data_file", "classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a204eafca1dfafd1fbd3c6df369576c3f", null ],
-    [ "restricted_properties", "classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a15dd701f65716016830617f3b48a888d", null ]
+    [ "restricted_properties", "classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#a15dd701f65716016830617f3b48a888d", null ],
+    [ "restricted_property_keys", "classfiftyone__pipeline__engines_1_1engine_1_1_engine.html#ac717dfff7c7cb04855fd6673c689bb59", null ]
 ];

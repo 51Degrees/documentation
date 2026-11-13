@@ -1,6 +1,8 @@
 var classfiftyone__pipeline__core_1_1jsonbundler_1_1_j_s_o_n_bundler_element =
 [
     [ "__init__", "classfiftyone__pipeline__core_1_1jsonbundler_1_1_j_s_o_n_bundler_element.html#a7d297fa6ff6484675b5b4f2788aaed46", null ],
+    [ "get_evidence_key_filter", "classfiftyone__pipeline__core_1_1jsonbundler_1_1_j_s_o_n_bundler_element.html#af438aba2bf9baf883c7b771b81391a0a", null ],
     [ "process_internal", "classfiftyone__pipeline__core_1_1jsonbundler_1_1_j_s_o_n_bundler_element.html#a73eba77d4eabe9b1669255d329667dd1", null ],
+    [ "record_json", "classfiftyone__pipeline__core_1_1jsonbundler_1_1_j_s_o_n_bundler_element.html#a74998c4f3d5c48b217dba29ae10fc02b", null ],
     [ "property_cache", "classfiftyone__pipeline__core_1_1jsonbundler_1_1_j_s_o_n_bundler_element.html#a11d2a08b83d6397f41d50871f1811318", null ]
 ];

@@ -75,6 +75,24 @@ Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a7ffec4a076501cd92f7861dfb5ffebbc"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Display information about the data file and log warnings if specific requirements are not met.  <br /></td></tr>
 <tr class="c-table__row memitem:a25025e5b27eecdb51127d1dcd1c5040e" id="r_a25025e5b27eecdb51127d1dcd1c5040e"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a25025e5b27eecdb51127d1dcd1c5040e">CheckDataFile</a> (<a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">IpiOnPremiseEngine</a> engine, ILogger logger)</td></tr>
 <tr class="c-table__row memdesc:a25025e5b27eecdb51127d1dcd1c5040e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Display information about the data file and log warnings if specific requirements are not met.  <br /></td></tr>
+<tr class="c-table__row memitem:afa80121fb1dbaa159d9d874f581aba67" id="r_afa80121fb1dbaa159d9d874f581aba67"><td class="c-table__cell">static&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#afa80121fb1dbaa159d9d874f581aba67">HasProperty</a> (<a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">IpiOnPremiseEngine</a> engine, string name)</td></tr>
+<tr class="c-table__row memdesc:afa80121fb1dbaa159d9d874f581aba67"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Reports whether the engine's data file has the property.  <br /></td></tr>
+<tr class="c-table__row memitem:acf4beff9c3a02f98b1f9a04787ce578b" id="r_acf4beff9c3a02f98b1f9a04787ce578b"><td class="c-table__cell">static&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#acf4beff9c3a02f98b1f9a04787ce578b">IsFreeDataFile</a> (<a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">IpiOnPremiseEngine</a> engine)</td></tr>
+<tr class="c-table__row memdesc:acf4beff9c3a02f98b1f9a04787ce578b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Reports whether the engine uses one of the free data files, which have only the registration properties (Lite) or Asn and AsnName (Asn).  <br /></td></tr>
+<tr class="c-table__row memitem:a918596152fec5a871d61555bce6c4992" id="r_a918596152fec5a871d61555bce6c4992"><td class="c-table__cell">static&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#a918596152fec5a871d61555bce6c4992">LacksEnterpriseProperties</a> (string dataFile, string purpose, IReadOnlyList&lt; string &gt; properties, TextWriter output, string contactUs)</td></tr>
+<tr class="c-table__row memdesc:a918596152fec5a871d61555bce6c4992"><td class="c-table__cell">&#160;</td><td class="c-table__cell">For an example that needs properties only the Enterprise data file has, reports when the data file has none of them, and then says so and where to ask for a copy of the Enterprise data file.  <br /></td></tr>
+<tr class="c-table__row memitem:abe3e35af0f57c7432797d2c0ca2dd12d" id="r_abe3e35af0f57c7432797d2c0ca2dd12d"><td class="c-table__cell"><a id="abe3e35af0f57c7432797d2c0ca2dd12d" name="abe3e35af0f57c7432797d2c0ca2dd12d"></a>
+static&#160;bool&#160;</td><td class="c-table__cell"><b>LacksEnterpriseProperties</b> (<a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">IpiOnPremiseEngine</a> engine, string purpose, IReadOnlyList&lt; string &gt; properties, TextWriter output, string contactUs)</td></tr>
+<tr class="c-table__row memdesc:abe3e35af0f57c7432797d2c0ca2dd12d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">As the overload that takes a data file, for an engine the example has already built. <br /></td></tr>
+<tr class="c-table__row memitem:a0d8ce0bc1c9149403ec740846df3bba7" id="r_a0d8ce0bc1c9149403ec740846df3bba7"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a0d8ce0bc1c9149403ec740846df3bba7">WriteEnterpriseNote</a> (TextWriter output, string contactUs)</td></tr>
+<tr class="c-table__row memdesc:a0d8ce0bc1c9149403ec740846df3bba7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Writes, after an example has shown properties that the data file in use does not have, where to ask for a copy of the Enterprise data file.  <br /></td></tr>
+<tr class="c-table__row memitem:aa4136b9c6da1312701c0fe0daab4d79a" id="r_aa4136b9c6da1312701c0fe0daab4d79a"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#aa4136b9c6da1312701c0fe0daab4d79a">WriteEnterpriseOffer</a> (TextWriter output, string contactUs)</td></tr>
+<tr class="c-table__row memdesc:aa4136b9c6da1312701c0fe0daab4d79a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Writes, after an example that shows no properties has run on a free data file, what the Enterprise data file adds and where to ask for a copy.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="c-table__row memitem:a26e27ef3ed51c51f6974dd231a3612d8" id="r_a26e27ef3ed51c51f6974dd231a3612d8"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a26e27ef3ed51c51f6974dd231a3612d8">NEEDS_ENTERPRISE</a> = &quot;needs the Enterprise data file&quot;</td></tr>
+<tr class="c-table__row memdesc:a26e27ef3ed51c51f6974dd231a3612d8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Shown in place of a value for a property that the data file in use does not have.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="a25025e5b27eecdb51127d1dcd1c5040e" name="a25025e5b27eecdb51127d1dcd1c5040e"></a>
@@ -237,6 +255,250 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="afa80121fb1dbaa159d9d874f581aba67" name="afa80121fb1dbaa159d9d874f581aba67"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#afa80121fb1dbaa159d9d874f581aba67">&#9670;&#160;</a></span>HasProperty()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool FiftyOne.IpIntelligence.Examples.OnPremise.ExampleUtils.HasProperty </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">IpiOnPremiseEngine</a></td>          <td class="c-table__cell"><span class="paramname"><em>engine</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>name</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Reports whether the engine's data file has the property. </p>
+<p>A free data file leaves out the properties only the Enterprise data file has. </p>
+
+</div>
+</div>
+<a id="acf4beff9c3a02f98b1f9a04787ce578b" name="acf4beff9c3a02f98b1f9a04787ce578b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#acf4beff9c3a02f98b1f9a04787ce578b">&#9670;&#160;</a></span>IsFreeDataFile()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool FiftyOne.IpIntelligence.Examples.OnPremise.ExampleUtils.IsFreeDataFile </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">IpiOnPremiseEngine</a></td>          <td class="c-table__cell"><span class="paramname"><em>engine</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Reports whether the engine uses one of the free data files, which have only the registration properties (Lite) or Asn and AsnName (Asn). </p>
+<p>The tier cannot tell them apart, as every IP Intelligence file reports the same one. The Enterprise data file adds the range, location and connection properties, IpRangeStart among them. </p>
+
+</div>
+</div>
+<a id="a918596152fec5a871d61555bce6c4992" name="a918596152fec5a871d61555bce6c4992"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a918596152fec5a871d61555bce6c4992">&#9670;&#160;</a></span>LacksEnterpriseProperties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool FiftyOne.IpIntelligence.Examples.OnPremise.ExampleUtils.LacksEnterpriseProperties </td>
+          <td>(</td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>dataFile</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>purpose</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">IReadOnlyList&lt; string &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>properties</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">TextWriter</td>          <td class="c-table__cell"><span class="paramname"><em>output</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>contactUs</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>For an example that needs properties only the Enterprise data file has, reports when the data file has none of them, and then says so and where to ask for a copy of the Enterprise data file. </p>
+<p>The data file is opened with the low memory profile, which reads little of it.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataFile</td><td>The data file the example would use. </td></tr>
+    <tr><td class="paramname">purpose</td><td>What the example does, as the start of a sentence, for example "Comparing known locations with IP Intelligence". </td></tr>
+    <tr><td class="paramname">properties</td><td>The properties the example needs. </td></tr>
+    <tr><td class="paramname">output</td><td>Where to write the explanation. </td></tr>
+    <tr><td class="paramname">contactUs</td><td>The link to the contact page, tagged with the example's file so that an enquiry can be traced to the example. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">True when the data file has none of the properties, so the example has nothing to show. </dd></dl>
+
+</div>
+</div>
+<a id="a0d8ce0bc1c9149403ec740846df3bba7" name="a0d8ce0bc1c9149403ec740846df3bba7"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0d8ce0bc1c9149403ec740846df3bba7">&#9670;&#160;</a></span>WriteEnterpriseNote()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void FiftyOne.IpIntelligence.Examples.OnPremise.ExampleUtils.WriteEnterpriseNote </td>
+          <td>(</td>
+          <td class="c-table__cell">TextWriter</td>          <td class="c-table__cell"><span class="paramname"><em>output</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>contactUs</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Writes, after an example has shown properties that the data file in use does not have, where to ask for a copy of the Enterprise data file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td></td></tr>
+    <tr><td class="paramname">contactUs</td><td>The link to the contact page, tagged with the example's file so that an enquiry can be traced to the example. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa4136b9c6da1312701c0fe0daab4d79a" name="aa4136b9c6da1312701c0fe0daab4d79a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa4136b9c6da1312701c0fe0daab4d79a">&#9670;&#160;</a></span>WriteEnterpriseOffer()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void FiftyOne.IpIntelligence.Examples.OnPremise.ExampleUtils.WriteEnterpriseOffer </td>
+          <td>(</td>
+          <td class="c-table__cell">TextWriter</td>          <td class="c-table__cell"><span class="paramname"><em>output</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">string</td>          <td class="c-table__cell"><span class="paramname"><em>contactUs</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Writes, after an example that shows no properties has run on a free data file, what the Enterprise data file adds and where to ask for a copy. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td></td></tr>
+    <tr><td class="paramname">contactUs</td><td>The link to the contact page, tagged with the example's file so that an enquiry can be traced to the example. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="a26e27ef3ed51c51f6974dd231a3612d8" name="a26e27ef3ed51c51f6974dd231a3612d8"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a26e27ef3ed51c51f6974dd231a3612d8">&#9670;&#160;</a></span>NEEDS_ENTERPRISE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const string FiftyOne.IpIntelligence.Examples.OnPremise.ExampleUtils.NEEDS_ENTERPRISE = &quot;needs the Enterprise data file&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Shown in place of a value for a property that the data file in use does not have. </p>
+<p>Every property the examples ask for is in the Enterprise data file. </p>
 
 </div>
 </div>

@@ -80,7 +80,8 @@ Directories</h2></td></tr>
 <tr class="c-table__row memitem:Examples_2EOnPremise" id="r_Examples_2EOnPremise"><td class="c-table__cell"><span class="iconfolder"><div class="folder-icon"></div></span>&#160;</td><td class="c-table__cell"><a class="el" href="dir_be57a6b718fbd76f2a9496248557f7d1.html">Examples.OnPremise</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
-<div class="textblock"><p>This repository contains the examples for [<a href="https://github.com/51Degrees/51degrees-dotnet/tree/main/ip-intelligence">ip-intelligence-dotnet</a>].</p>
+<div class="textblock"><p><img src="https://raw.githubusercontent.com/51Degrees/51degrees-dotnet/main/.github/images/logo-160.png" alt="51Degrees" title="Data rewards the curious" class="inline"/></p>
+<p>This repository contains the examples for [<a href="https://github.com/51Degrees/51degrees-dotnet/tree/main/ip-intelligence">ip-intelligence-dotnet</a>].</p>
 <p>Projects can be found in the <code>Examples/</code> folder. Currently, only on-premise examples are available. See below for a list of examples.</p>
 <h1>Cloud (coming soon)</h1>
 <p>Cloud examples will be added once the Cloud service for IP Intelligence becomes available.</p>
@@ -96,7 +97,7 @@ Directories</h2></td></tr>
 <h1>On-premise data file</h1>
 <p>The on-premise examples need an IP Intelligence data file. The examples locate the file in the following order:</p>
 <ol type="1">
-<li>The "51DEGREES_IPI_PATH" environment variable, which can be set to an explicit path to the data file. The legacy "IPINTELLIGENCEDATAFILE" environment variable is also still supported, and is checked after "51DEGREES_IPI_PATH".</li>
+<li>The "_51DEGREES_IPI_PATH" environment variable, which can be set to an explicit path to the data file.</li>
 <li>The data submodule of this repository, <code>cxx/data</code>. When an example asks for a free 'Lite' file that is missing, it downloads the file there with the data repository's script, and prints the command it runs.</li>
 <li>A search of the folder hierarchy, walking up from the working directory, for the expected data file name.</li>
 </ol>
@@ -141,6 +142,7 @@ Directories</h2></td></tr>
 <td class="c-table__cell"><b>Mixed/GettingStarted-Web</b>  </td><td class="c-table__cell"><b>.NET 10.0</b>  </td><td class="c-table__cell"><b>Combined Device Detection and IP Intelligence ASP.NET Core project.</b>  </td></tr>
 </table>
 <p><code>Compare-Console</code>, <code>Metrics-Console</code> and <code>Suspicious-Console</code> need an enterprise data file, because the free lite file does not carry the location data they analyse. <code>LocationAnalysis-Console</code> runs against the lite file too, reporting the properties it does not carry as <code>NotAvailable</code>.</p>
+<p><code>Compare-Console</code> takes the data file, the truth CSV file, the output path and the performance profile, all optional and in that order. The profile defaults to <code>LowMemory</code>, which keeps the data file on disk. Pass <code>MaxPerformance</code> for speed where the machine has as much free RAM as the data file is large.</p>
 <p><code>Metrics-Console</code> samples the address ranges in the data file rather than visiting every address. Optional command line arguments follow the data file and output path:</p>
 <table class="c-table">
 <tr class="c-table__row--heading">
@@ -152,17 +154,17 @@ Directories</h2></td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Range percentage  </td><td class="c-table__cell">1  </td><td class="c-table__cell">Proportion of the ranges in the data file to include.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">Performance profile  </td><td class="c-table__cell">MaxPerformance  </td><td class="c-table__cell">Profile the engine is built with.  </td></tr>
+<td class="c-table__cell">Performance profile  </td><td class="c-table__cell">LowMemory  </td><td class="c-table__cell">Profile the engine is built with. Pass MaxPerformance for speed.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">Max profiles without range  </td><td class="c-table__cell">100000  </td><td class="c-table__cell">Give up scanning once this many profiles in a row carry no range. 0 scans the whole file.  </td></tr>
 </table>
 <p>The per-range cap is what makes a run finish at all: a single IPv6 range holds more addresses than could ever be enumerated, so the sample percentage on its own does not limit the work.</p>
-<p>The last two arguments are what make a run over a whole enterprise data file take minutes rather than hours.</p>
+<p>Choosing <code>MaxPerformance</code> and the last argument are what make a run over a whole enterprise data file take minutes rather than hours.</p>
 <p>The data file holds two kinds of network profile: the ranges the example needs are on registration profiles carrying <code>IpRangeStart</code>, <code>IpRangeEnd</code> and who the range is registered to, and those are followed by a much larger set of location profiles carrying the geographic detail but no range at all. Once the scan has left the registration profiles there are no more ranges to find, so it stops rather than reading through the rest. Measured on an enterprise file, that is 601,443 ranges in the first 603,531 profiles followed by 993,628 profiles that can add nothing.</p>
-<p><code>MaxPerformance</code> holds the data file in memory instead of paging it from disk, which the scan is far more sensitive to than detection is - reading a profile's values measured 166 a second against 2,013 under the two profiles. It needs as much free RAM as the data file is large, so drop to <code>Balanced</code> or <code>LowMemory</code> where that is not available.</p>
+<p><code>LowMemory</code>, the default, pages the data file from disk, so the example runs on a machine with less free RAM than the data file is large. <code>MaxPerformance</code> holds the data file in memory instead. Reading a profile's values measured 166 a second under <code>LowMemory</code> against 2,013 under <code>MaxPerformance</code>, so the scan is far more sensitive to the profile than detection is. Pass <code>MaxPerformance</code> for speed where the machine has as much free RAM as the data file is large.</p>
 <p>Lower the range percentage on top of these when an approximate analysis is enough. Discarding a range before its values are read takes almost all of its cost with it.</p>
 <h1>Cloud</h1>
-<p>A resource key configured with the properties needed to run the cloud examples can be created for free <a href="https://configure.51degrees.com/1QWJwHxl?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-dotnet&amp;utm_content=readme.md&amp;utm_term=cloud">here</a>. To use the resource key in the examples it can be supplied as an environment variable called "51DEGREES_RESOURCE_KEY". The legacy environment variable names "RESOURCE_KEY" and "SUPER_RESOURCE_KEY" are still supported, with the aligned "51DEGREES_RESOURCE_KEY" name checked first.</p>
+<p>A resource key configured with the properties needed to run the cloud examples can be created for free <a href="https://configure.51degrees.com/1QWJwHxl?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-dotnet&amp;utm_content=readme.md&amp;utm_term=cloud">here</a>. To use the resource key in the examples it can be supplied as an environment variable called "_51DEGREES_RESOURCE_KEY".</p>
 <ul>
 <li>In order to test cloud examples against a custom endpoint - you need to launch <code>OnPremise/Mixed/GettingStarted-API</code> example and keep it running while launching other examples. Depending on the IDE you use this can be either done conveniently from the IDE, or just using <code>dotnet run</code> in the <code>OnPremise/Mixed/GettingStarted-API</code> directory from the command line. <br  />
 </li>
@@ -188,7 +190,7 @@ Directories</h2></td></tr>
 <h2>Mixed <a class="el" href="namespace_examples.html">Examples</a></h2>
 <p>The <b>Mixed examples</b> demonstrate how to combine Device Detection and IP Intelligence engines within a single application:</p>
 <ul>
-<li><b>Mixed/GettingStarted-Console</b>: A console application that processes both device detection (from User-Agent / User-Agent Client Hints) and IP intelligence (from IP address) in parallel using the 51Degrees Pipeline API.</li>
+<li><b>Mixed/GettingStarted-Console</b>: A console application that processes both device detection (from User-Agent / User-Agent Client Hints) and IP intelligence (from IP address), one after the other, using the 51Degrees Pipeline API.</li>
 <li><b>Mixed/GettingStarted-Web</b>: An ASP.NET Core web application featuring:<ul>
 <li>Combined device detection and IP intelligence results in a two-column layout</li>
 <li>IP address lookup functionality with custom IP input</li>
@@ -218,10 +220,10 @@ Directories</h2></td></tr>
 <h2>Test prerequisites</h2>
 <p>The example tests are integration tests and need the same inputs the examples do:</p>
 <ul>
-<li><b>Cloud example tests</b> require a resource key in the <code>51DEGREES_RESOURCE_KEY</code> environment variable (see the CloudCloud</li>
+<li><b>Cloud example tests</b> require a resource key in the <code>_51DEGREES_RESOURCE_KEY</code> environment variable (see the CloudCloud</li>
 </ul>
 <p>section). Without it these tests fail with a message explaining how to obtain one.</p><ul>
-<li><b>On-premise example tests</b> require the enterprise IP Intelligence data file (located automatically, or via <code>51DEGREES_IPI_PATH</code>) and the <b>Mixed</b> examples additionally require a device detection data file. When a required data file is absent, those tests report <b>inconclusive</b> rather than failing, so the gap is visible without being masked as a regression. </li>
+<li><b>On-premise example tests</b> require the enterprise IP Intelligence data file (located automatically, or via <code>_51DEGREES_IPI_PATH</code>) and the <b>Mixed</b> examples additionally require a device detection data file. When a required data file is absent, those tests report <b>inconclusive</b> rather than failing, so the gap is visible without being masked as a regression. </li>
 </ul>
 </div></div><!-- primary -->
 </div><!-- inner -->

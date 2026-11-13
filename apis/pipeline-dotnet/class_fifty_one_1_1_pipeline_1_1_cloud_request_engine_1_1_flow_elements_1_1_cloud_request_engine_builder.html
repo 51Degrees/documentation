@@ -94,7 +94,9 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a6d1adde56e228898b0f45ad2b0e7024c" id="r_a6d1adde56e228898b0f45ad2b0e7024c"><td class="c-table__cell"><a class="el" href="#af7582544f252c5bd8f297438a7effcb1">CloudRequestEngineBuilder</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a6d1adde56e228898b0f45ad2b0e7024c">SetResourceKey</a> (string resourceKey)</td></tr>
 <tr class="c-table__row memdesc:a6d1adde56e228898b0f45ad2b0e7024c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The resource key to query the endpoint with.  <br /></td></tr>
 <tr class="c-table__row memitem:af78f052ce183e3c95fcbe228ed3b44df" id="r_af78f052ce183e3c95fcbe228ed3b44df"><td class="c-table__cell"><a class="el" href="#af7582544f252c5bd8f297438a7effcb1">CloudRequestEngineBuilder</a>&#160;</td><td class="c-table__cell"><a class="el" href="#af78f052ce183e3c95fcbe228ed3b44df">SetLicenseKey</a> (string licenseKey)</td></tr>
-<tr class="c-table__row memdesc:af78f052ce183e3c95fcbe228ed3b44df"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The license key to query the endpoint with.  <br /></td></tr>
+<tr class="c-table__row memdesc:af78f052ce183e3c95fcbe228ed3b44df"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The license key to authenticate with.  <br /></td></tr>
+<tr class="c-table__row memitem:aa362a7bb671b453be80e8a002e12b1a1" id="r_aa362a7bb671b453be80e8a002e12b1a1"><td class="c-table__cell"><a class="el" href="#af7582544f252c5bd8f297438a7effcb1">CloudRequestEngineBuilder</a>&#160;</td><td class="c-table__cell"><a class="el" href="#aa362a7bb671b453be80e8a002e12b1a1">SetRequestedProperties</a> (List&lt; string &gt; properties)</td></tr>
+<tr class="c-table__row memdesc:aa362a7bb671b453be80e8a002e12b1a1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The properties to ask the cloud service for, as fully qualified names such as 'device.ismobile', sent as 'values'.  <br /></td></tr>
 <tr class="c-table__row memitem:a43f74108950201b7f3ccd58562087ec9" id="r_a43f74108950201b7f3ccd58562087ec9"><td class="c-table__cell"><a class="el" href="#af7582544f252c5bd8f297438a7effcb1">CloudRequestEngineBuilder</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a43f74108950201b7f3ccd58562087ec9">SetTimeOutSeconds</a> (int timeout)</td></tr>
 <tr class="c-table__row memdesc:a43f74108950201b7f3ccd58562087ec9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Timeout in seconds for the request to the endpoint.  <br /></td></tr>
 <tr class="c-table__row memitem:a5ee94941ca8987dc5ec8e29d0abb9a33" id="r_a5ee94941ca8987dc5ec8e29d0abb9a33"><td class="c-table__cell"><a class="el" href="#af7582544f252c5bd8f297438a7effcb1">CloudRequestEngineBuilder</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a5ee94941ca8987dc5ec8e29d0abb9a33">SetFailuresToEnterRecovery</a> (int failuresToEnterRecovery)</td></tr>
@@ -556,14 +558,15 @@ Additional Inherited Members</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>The license key to query the endpoint with. </p>
+<p>The license key to authenticate with. </p>
+<p>A license key alone needs the properties wanted, named with SetRequestedProperties. Beside a resource key it adds the requested properties the license grants to what the resource key carries. Leading and trailing white space is ignored.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">licenseKey</td><td></td></tr>
+    <tr><td class="paramname">licenseKey</td><td>The license key to use when making requests to the cloud service </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder </dd></dl>
 
 </div>
 </div>
@@ -627,6 +630,43 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="aa362a7bb671b453be80e8a002e12b1a1" name="aa362a7bb671b453be80e8a002e12b1a1"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa362a7bb671b453be80e8a002e12b1a1">&#9670;&#160;</a></span>SetRequestedProperties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#af7582544f252c5bd8f297438a7effcb1">CloudRequestEngineBuilder</a> FiftyOne.Pipeline.CloudRequestEngine.FlowElements.CloudRequestEngineBuilder.SetRequestedProperties </td>
+          <td>(</td>
+          <td class="c-table__cell">List&lt; string &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>properties</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The properties to ask the cloud service for, as fully qualified names such as 'device.ismobile', sent as 'values'. </p>
+<p>Required with a license key alone. Beside a resource key the cloud service adds them to the properties the resource key carries. Names are trimmed and sent as given, and a name given again in another letter case is sent once. The properties set with <code>SetProperties</code> are not sent.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">properties</td><td>The fully qualified property names to ask for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentNullException</td><td>Thrown if a required parameter is null. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a6d1adde56e228898b0f45ad2b0e7024c" name="a6d1adde56e228898b0f45ad2b0e7024c"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6d1adde56e228898b0f45ad2b0e7024c">&#9670;&#160;</a></span>SetResourceKey()</h2>
 
@@ -647,6 +687,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>The resource key to query the endpoint with. </p>
+<p>Either a resource key or a license key must be supplied.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">resourceKey</td><td>The resource key to use when making requests to the cloud service </td></tr>

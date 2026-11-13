@@ -1,7 +1,12 @@
 var class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_trackers_1_1_share_usage_tracker =
 [
     [ "ShareUsageTracker", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_trackers_1_1_share_usage_tracker.html#a3bf2f6164608596b1ddbacd2c68c76b1", null ],
+    [ "Dispose", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_trackers_1_1_share_usage_tracker.html#a3977d995a97bfd1bea8286204e006b9c", null ],
+    [ "GenerateKey", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_trackers_1_1_share_usage_tracker.html#a58ae30e6dbd1677bb836d6557b6c3056", null ],
     [ "GetFilter", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_trackers_1_1_share_usage_tracker.html#af69ced95dae49c46471b8c4164e37b95", null ],
     [ "Match", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_trackers_1_1_share_usage_tracker.html#a7be1082aa9feb31dfcf8d69bb8ed3ae0", null ],
-    [ "NewValue", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_trackers_1_1_share_usage_tracker.html#a4e6f5f4ea09f8e9b124b6bebde23814a", null ]
+    [ "NewValue", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_trackers_1_1_share_usage_tracker.html#a4e6f5f4ea09f8e9b124b6bebde23814a", null ],
+    [ "Put", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_trackers_1_1_share_usage_tracker.html#aa797e6b6d06ec5187d0e29887dd12a90", null ],
+    [ "Track", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_trackers_1_1_share_usage_tracker.html#a929268858669d35d682bc7ed2195fdbe", null ],
+    [ "this[IFlowData data]", "class_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_trackers_1_1_share_usage_tracker.html#a945b451171e140e78d281033fd334b4e", null ]
 ];

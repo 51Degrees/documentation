@@ -1,5 +1,7 @@
 <map id="FiftyOne.Pipeline.Web.Adapters.RequestAdapter" name="FiftyOne.Pipeline.Web.Adapters.RequestAdapter">
-<area shape="rect" id="Node000001" title="Adapter class that is used to translate requests from common services into the appropriate calls for ..." alt="" coords="5,93,236,133"/>
-<area shape="rect" id="Node000002" href="$interface_fifty_one_1_1_pipeline_1_1_web_1_1_shared_1_1_adapters_1_1_i_request_adapter.html" title="Interface for an adapter class that can be used to translate requests from common services into the a..." alt="" coords="12,5,229,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,59,123,93,118,93,118,59"/>
+<area shape="rect" id="Node000001" title="Adapter class that is used to translate requests from common services into the appropriate calls for ..." alt="" coords="295,37,525,77"/>
+<area shape="rect" id="Node000002" href="$interface_fifty_one_1_1_pipeline_1_1_web_1_1_shared_1_1_adapters_1_1_i_request_adapter.html" title="Interface for an adapter class that can be used to translate requests from common services into the a..." alt="" coords="17,5,235,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="249,36,295,42,294,47,248,42"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,69,247,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="260,72,294,68,295,73,261,77"/>
 </map>

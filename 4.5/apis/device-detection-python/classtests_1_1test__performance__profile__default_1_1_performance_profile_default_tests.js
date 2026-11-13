@@ -1,0 +1,8 @@
+var classtests_1_1test__performance__profile__default_1_1_performance_profile_default_tests =
+[
+    [ "_engine_settings", "classtests_1_1test__performance__profile__default_1_1_performance_profile_default_tests.html#a862b9cdc3688a96a96940e43addcabe8", null ],
+    [ "test_balanced_and_low_memory_differ", "classtests_1_1test__performance__profile__default_1_1_performance_profile_default_tests.html#a09bb8162356bc521a085e3029f4cce5d", null ],
+    [ "test_builder_defaults_use_balanced", "classtests_1_1test__performance__profile__default_1_1_performance_profile_default_tests.html#a5c62e4db089d26ffa68ac6bb0e088e76", null ],
+    [ "test_each_named_profile_is_used", "classtests_1_1test__performance__profile__default_1_1_performance_profile_default_tests.html#ad46c6ad896ffaa980bcfcdad3270a670", null ],
+    [ "test_engine_defaults_use_balanced", "classtests_1_1test__performance__profile__default_1_1_performance_profile_default_tests.html#a5459acbe770a133538b7514eae1caeea", null ]
+];

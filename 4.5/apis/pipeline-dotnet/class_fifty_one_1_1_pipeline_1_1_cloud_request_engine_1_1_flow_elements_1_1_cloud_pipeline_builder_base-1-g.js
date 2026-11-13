@@ -11,6 +11,7 @@ var class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_
     [ "SetJSONEndpoint", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_pipeline_builder_base-1-g.html#a13b8dc82db3e3c3c925eed183172b871", null ],
     [ "SetLicenseKey", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_pipeline_builder_base-1-g.html#abe21bc14ac6a8fe6a810b547c60e38ca", null ],
     [ "SetPropertiesEndpoint", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_pipeline_builder_base-1-g.html#afac47c14366f62dd1412922fea84a0ee", null ],
+    [ "SetRequestedProperties", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_pipeline_builder_base-1-g.html#a4f022ccf75032a2b3524eed34a065697", null ],
     [ "SetResourceKey", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_pipeline_builder_base-1-g.html#a32ac922f39f7928def950c107c6da794", null ],
     [ "CloudRequestOrigin", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_pipeline_builder_base-1-g.html#a6f88285dfc1e4a4079f413de3d37665a", null ],
     [ "CloudRequestTimeoutSeconds", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_pipeline_builder_base-1-g.html#a3c587c012a2da6751c0ea26346d923d3", null ],
@@ -19,6 +20,7 @@ var class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_
     [ "JsonEndpoint", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_pipeline_builder_base-1-g.html#a97d6c20784c323898bcde0126a79d300", null ],
     [ "LicenceKey", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_pipeline_builder_base-1-g.html#a7f67caa9b53951700b5d90001a9f645e", null ],
     [ "PropertiesEndpoint", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_pipeline_builder_base-1-g.html#a3bf059a4c8dda61ab73d6f1050231dd7", null ],
+    [ "RequestedProperties", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_pipeline_builder_base-1-g.html#a23de9c0957862f1d17e2e16450abf307", null ],
     [ "ResourceKey", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_pipeline_builder_base-1-g.html#a307d05f48cf1c1509cff8377ff0634c4", null ],
     [ "Url", "class_fifty_one_1_1_pipeline_1_1_cloud_request_engine_1_1_flow_elements_1_1_cloud_pipeline_builder_base-1-g.html#acf7cbb0fbb9df8206aa8c3bf9f0628b2", null ]
 ];

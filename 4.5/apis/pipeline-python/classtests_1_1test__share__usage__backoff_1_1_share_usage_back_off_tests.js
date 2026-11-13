@@ -1,0 +1,10 @@
+var classtests_1_1test__share__usage__backoff_1_1_share_usage_back_off_tests =
+[
+    [ "test_failed_send_after_pause_multiplies_delay", "classtests_1_1test__share__usage__backoff_1_1_share_usage_back_off_tests.html#ae285d7be2d46b37bd29651e1657798f8", null ],
+    [ "test_failures_outside_window_do_not_count", "classtests_1_1test__share__usage__backoff_1_1_share_usage_back_off_tests.html#a9b180649c83f0fff295024b8d43c359d", null ],
+    [ "test_invalid_settings_are_rejected", "classtests_1_1test__share__usage__backoff_1_1_share_usage_back_off_tests.html#a16595fc9785dd28b8abf67adcf706bdc", null ],
+    [ "test_maximum_below_initial_limits_first_pause", "classtests_1_1test__share__usage__backoff_1_1_share_usage_back_off_tests.html#adec53be42816888e2b1d84fc7422ba10", null ],
+    [ "test_pauses_after_failures_within_window", "classtests_1_1test__share__usage__backoff_1_1_share_usage_back_off_tests.html#a37c98d257921910fc335cc6a6819dba4", null ],
+    [ "test_success_ends_back_off", "classtests_1_1test__share__usage__backoff_1_1_share_usage_back_off_tests.html#a31c427d45bfabbd69341c3d62010524a", null ],
+    [ "test_successes_between_failures_do_not_reset", "classtests_1_1test__share__usage__backoff_1_1_share_usage_back_off_tests.html#aa4a38465e494818d3c518e54552ef4b7", null ]
+];

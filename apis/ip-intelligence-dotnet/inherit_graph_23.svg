@@ -11,11 +11,11 @@
 <!-- Node0 -->
 <g id="Node000000" class="node">
 <title>Node0</title>
-<g id="a_Node000000"><a xlink:href="class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_compare_odd_ips.html" target="_top" xlink:title="Checks that the IP address values System.Net.IPAddress accepts but which are not ordinary addresses,...">
+<g id="a_Node000000"><a xlink:href="class_fifty_one_1_1_ip_intelligence_1_1_example_1_1_tests_1_1_on_premise_1_1_test_compare_bad_truths.html" target="_top" xlink:title="Checks that a truth record the Compare example can not read or compare is logged and skipped,...">
 <polygon fill="white" stroke="#666666" points="166,-41 0,-41 0,0 166,0 166,-41"/>
 <text text-anchor="start" x="8" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">FiftyOne.IpIntelligence.</text>
 <text text-anchor="start" x="8" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">Example.Tests.OnPremise.Test</text>
-<text text-anchor="middle" x="83" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">CompareOddIps</text>
+<text text-anchor="middle" x="83" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">CompareBadTruths</text>
 </a>
 </g>
 </g>

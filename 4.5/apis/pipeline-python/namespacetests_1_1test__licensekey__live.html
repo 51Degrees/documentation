@@ -72,12 +72,12 @@ Classes</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="c-table__row memitem:a7f702d83d7d0421a8dc5f9c001ec4e40" id="r_a7f702d83d7d0421a8dc5f9c001ec4e40"><td class="c-table__cell">tuple&#160;</td><td class="c-table__cell"><a class="el" href="#a7f702d83d7d0421a8dc5f9c001ec4e40">LICENSE_KEY</a></td></tr>
+<tr class="c-table__row memitem:a0a3246708f88b01ba6077e07101197af" id="r_a0a3246708f88b01ba6077e07101197af"><td class="c-table__cell">str&#160;</td><td class="c-table__cell"><a class="el" href="#a0a3246708f88b01ba6077e07101197af">LICENSE_KEY</a></td></tr>
 <tr class="c-table__row memitem:af56e10934c42a2ff1d9a1d0d89e928d0" id="r_af56e10934c42a2ff1d9a1d0d89e928d0"><td class="c-table__cell">tuple&#160;</td><td class="c-table__cell"><a class="el" href="#af56e10934c42a2ff1d9a1d0d89e928d0">USER_AGENT</a></td></tr>
 </table>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>
-<a id="a7f702d83d7d0421a8dc5f9c001ec4e40" name="a7f702d83d7d0421a8dc5f9c001ec4e40"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7f702d83d7d0421a8dc5f9c001ec4e40">&#9670;&#160;</a></span>LICENSE_KEY</h2>
+<a id="a0a3246708f88b01ba6077e07101197af" name="a0a3246708f88b01ba6077e07101197af"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0a3246708f88b01ba6077e07101197af">&#9670;&#160;</a></span>LICENSE_KEY</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -85,16 +85,14 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">tuple tests.test_licensekey_live.LICENSE_KEY</td>
+              <td class="c-table__cell">str tests.test_licensekey_live.LICENSE_KEY</td>
             </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
-<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=  (</div>
-<div class="c-code__line">    os.environ.get(<span class="c-code__stringliteral">&quot;license_key&quot;</span>)</div>
-<div class="c-code__line">    <span class="c-code__keywordflow">or</span> os.environ.get(<span class="c-code__stringliteral">&quot;_51DEGREES_LICENSE_KEY&quot;</span>)</div>
-<div class="c-code__line">    <span class="c-code__keywordflow">or</span> <span class="c-code__stringliteral">&quot;&quot;</span>).strip()</div>
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=  read_environment(</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;_51DEGREES_LICENSE_KEY&quot;</span>, <span class="c-code__stringliteral">&quot;license_key&quot;</span>) <span class="c-code__keywordflow">or</span> <span class="c-code__stringliteral">&quot;&quot;</span></div>
 </div><!-- fragment -->
 </div>
 </div>

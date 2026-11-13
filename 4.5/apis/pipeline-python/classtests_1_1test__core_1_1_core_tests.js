@@ -12,6 +12,7 @@ var classtests_1_1test__core_1_1_core_tests =
     [ "testErrors_dont_suppress_exception", "classtests_1_1test__core_1_1_core_tests.html#ab2724907de9b2367ceb2ed4135fa2e4e", null ],
     [ "testEvidence", "classtests_1_1test__core_1_1_core_tests.html#a46f440ae4db9492ebd55d9d358af997d", null ],
     [ "testEvidenceKeyFilter", "classtests_1_1test__core_1_1_core_tests.html#ab7aef71dfe9d213b97b3c02d5d40a524", null ],
+    [ "testEvidenceKeyFilterRemovesKeys", "classtests_1_1test__core_1_1_core_tests.html#aa84d4983846dfba386afbad38e724e02", null ],
     [ "testGet", "classtests_1_1test__core_1_1_core_tests.html#a90489bfb5d770f3a3964c7901b723f80", null ],
     [ "testGetFromElement", "classtests_1_1test__core_1_1_core_tests.html#aec44c0c18911651e19b605c8eb644d79", null ],
     [ "testGetWhere", "classtests_1_1test__core_1_1_core_tests.html#a9c7ea53cffd77370cfe6f6dac8957eaa", null ],

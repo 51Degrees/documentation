@@ -448,18 +448,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// Use the command line argument if provided. Otherwise, an explicit data file</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// path supplied in an environment variable takes precedence over the value in</span></div>
-<div class="c-code__line">            <span class="c-code__comment">// the configuration file. The aligned &#39;51DEGREES_IPI_PATH&#39; variable is checked</span></div>
-<div class="c-code__line">            <span class="c-code__comment">// first, followed by the legacy &#39;IPINTELLIGENCEDATAFILE&#39; variable.</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// the configuration file. The variable is &#39;_51DEGREES_IPI_PATH&#39;.</span></div>
 <div class="c-code__line">            var dataFile = dataFileOverride;</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">if</span> (<span class="c-code__keywordtype">string</span>.IsNullOrWhiteSpace(dataFile))</div>
 <div class="c-code__line">            {</div>
-<div class="c-code__line">                dataFile = Environment.GetEnvironmentVariable(</div>
-<div class="c-code__line">                    <a class="code hl_namespace" href="namespace_examples.html">Examples</a>.Constants.IP_INTELLIGENCE_DATA_FILE_ENV_VAR);</div>
-<div class="c-code__line">            }</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (<span class="c-code__keywordtype">string</span>.IsNullOrWhiteSpace(dataFile))</div>
-<div class="c-code__line">            {</div>
-<div class="c-code__line">                dataFile = Environment.GetEnvironmentVariable(</div>
-<div class="c-code__line">                    <a class="code hl_namespace" href="namespace_examples.html">Examples</a>.Constants.LEGACY_IP_INTELLIGENCE_DATA_FILE_ENV_VAR);</div>
+<div class="c-code__line">                dataFile = <a class="code hl_namespace" href="namespace_examples.html">Examples</a>.ExampleUtils.FromEnvironment(</div>
+<div class="c-code__line">                    <a class="code hl_namespace" href="namespace_examples.html">Examples</a>.Constants.IPI_PATH_ENV_VAR,</div>
+<div class="c-code__line">                    <a class="code hl_namespace" href="namespace_examples.html">Examples</a>.Constants.OLD_IP_INTELLIGENCE_DATA_FILE_ENV_VARS);</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">if</span> (<span class="c-code__keywordtype">string</span>.IsNullOrWhiteSpace(dataFile))</div>
 <div class="c-code__line">            {</div>
@@ -470,7 +465,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_on_premise_2_
 <div class="c-code__line">            {</div>
 <div class="c-code__line">                <span class="c-code__keywordflow">throw</span> <span class="c-code__keyword">new</span> Exception($<span class="c-code__stringliteral">&quot;A data file must be specified as a command line &quot;</span> +</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;argument, in the appsettings.json file, or in the &quot;</span> +</div>
-<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;&#39;{Examples.Constants.IP_INTELLIGENCE_DATA_FILE_ENV_VAR}&#39; environment &quot;</span> +</div>
+<div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;&#39;{Examples.Constants.IPI_PATH_ENV_VAR}&#39; environment &quot;</span> +</div>
 <div class="c-code__line">                    $<span class="c-code__stringliteral">&quot;variable.&quot;</span>);</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">            <span class="c-code__comment">// The data file location provided in the configuration may be using an absolute or</span></div>

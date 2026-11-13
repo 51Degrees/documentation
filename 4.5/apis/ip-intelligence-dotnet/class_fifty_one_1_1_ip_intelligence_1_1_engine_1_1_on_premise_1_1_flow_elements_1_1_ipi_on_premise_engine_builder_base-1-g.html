@@ -99,7 +99,7 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:af90c4b070b99aad12b32f9e0639bdda1" id="r_af90c4b070b99aad12b32f9e0639bdda1"><td class="c-table__cell">override&#160;<a class="el" href="#a67695e28bb8a5312452e28fc99979d79">IpiOnPremiseEngineBuilderBase</a>&lt;&#160;TEngine&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#af90c4b070b99aad12b32f9e0639bdda1">SetPerformanceProfile</a> (PerformanceProfiles profile)</td></tr>
 <tr class="c-table__row memdesc:af90c4b070b99aad12b32f9e0639bdda1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the performance profile to use when constructing the data set.  <br /></td></tr>
 <tr class="c-table__row memitem:affa4b21ec07868988caec526480fb482" id="r_affa4b21ec07868988caec526480fb482"><td class="c-table__cell">override&#160;<a class="el" href="#a67695e28bb8a5312452e28fc99979d79">IpiOnPremiseEngineBuilderBase</a>&lt;&#160;TEngine&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#affa4b21ec07868988caec526480fb482">SetConcurrency</a> (ushort concurrency)</td></tr>
-<tr class="c-table__row memdesc:affa4b21ec07868988caec526480fb482"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the expected number of concurrent operations using the engine.  <br /></td></tr>
+<tr class="c-table__row memdesc:affa4b21ec07868988caec526480fb482"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the expected number of operations that use the engine at the same time.  <br /></td></tr>
 <tr class="c-table__row memitem:afc168536c80cc87f1bc86ead394422d2" id="r_afc168536c80cc87f1bc86ead394422d2"><td class="c-table__cell">override&#160;<a class="el" href="#a67695e28bb8a5312452e28fc99979d79">IpiOnPremiseEngineBuilderBase</a>&lt;&#160;TEngine&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#afc168536c80cc87f1bc86ead394422d2">SetCache</a> (CacheConfiguration cacheConfig)</td></tr>
 <tr class="c-table__row memdesc:afc168536c80cc87f1bc86ead394422d2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Not supported, because this engine cannot have a results cache.  <br /></td></tr>
 <tr class="c-table__row memitem:a4837bc92b831bb417eb3890473161229" id="r_a4837bc92b831bb417eb3890473161229"><td class="c-table__cell">override&#160;<a class="el" href="#a67695e28bb8a5312452e28fc99979d79">IpiOnPremiseEngineBuilderBase</a>&lt;&#160;TEngine&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a4837bc92b831bb417eb3890473161229">SetCacheSize</a> (int cacheSize)</td></tr>
@@ -358,16 +358,16 @@ override&#160;string&#160;</td><td class="c-table__cell"><b>DefaultDataDownloadT
       </div>
 </div><div class="c-member__body">
 
-<p>Set the expected number of concurrent operations using the engine. </p>
-<p>This sets the concurrency of the internal caches to avoid excessive locking.</p>
+<p>Set the expected number of operations that use the engine at the same time. </p>
+<p>The native code uses it for every collection read from the data file. First, it sets the number of file handles in the pool, which is the concurrency up to a fixed maximum of 64, because a process can only have so many files open. An operation that has to read from the file when every handle is in use waits until another operation releases one. Second, it decides how each cache is split into parts, each with its own lock, which avoids excessive locking. An item in use cannot be removed from a cache, and any operation can need any part, so every part holds at least the concurrency in items. The number of parts is the concurrency, or fewer where needed so that every part holds that many items, and a cache that holds fewer items than the concurrency in total is made large enough to hold that many. No value stops the engine building. The concurrency has no effect when every collection is held in memory, for example with the MaxPerformance profile.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">concurrency</td><td>Expected concurrent accesses</td></tr>
+    <tr><td class="paramname">concurrency</td><td>The expected number of operations that use the engine at the same time. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder</dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a25">OnPremise/Compare-Console/Program.cs</a>, <a class="el" href="_on_premise_2_metrics-_console_2_program_8cs-example.html#a34">OnPremise/Metrics-Console/Program.cs</a>, and <a class="el" href="_performance-_console_2_program_8cs-example.html#a3">Performance-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a26">OnPremise/Compare-Console/Program.cs</a>, <a class="el" href="_on_premise_2_metrics-_console_2_program_8cs-example.html#a34">OnPremise/Metrics-Console/Program.cs</a>, and <a class="el" href="_performance-_console_2_program_8cs-example.html#a5">Performance-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>
@@ -429,7 +429,7 @@ override&#160;string&#160;</td><td class="c-table__cell"><b>DefaultDataDownloadT
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">This builder</dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a24">OnPremise/Compare-Console/Program.cs</a>, <a class="el" href="_on_premise_2_getting_started-_console_2_program_8cs-example.html#a1">OnPremise/GettingStarted-Console/Program.cs</a>, <a class="el" href="_on_premise_2_location_analysis-_console_2_program_8cs-example.html#a9">OnPremise/LocationAnalysis-Console/Program.cs</a>, <a class="el" href="_on_premise_2_metadata-_console_2_program_8cs-example.html#a1">OnPremise/Metadata-Console/Program.cs</a>, <a class="el" href="_on_premise_2_metrics-_console_2_program_8cs-example.html#a33">OnPremise/Metrics-Console/Program.cs</a>, <a class="el" href="_on_premise_2_mixed_2_getting_started-_console_2_program_8cs-example.html#a1">OnPremise/Mixed/GettingStarted-Console/Program.cs</a>, and <a class="el" href="_performance-_console_2_program_8cs-example.html#a2">Performance-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a25">OnPremise/Compare-Console/Program.cs</a>, <a class="el" href="_on_premise_2_getting_started-_console_2_program_8cs-example.html#a2">OnPremise/GettingStarted-Console/Program.cs</a>, <a class="el" href="_on_premise_2_location_analysis-_console_2_program_8cs-example.html#a9">OnPremise/LocationAnalysis-Console/Program.cs</a>, <a class="el" href="_on_premise_2_metadata-_console_2_program_8cs-example.html#a1">OnPremise/Metadata-Console/Program.cs</a>, <a class="el" href="_on_premise_2_metrics-_console_2_program_8cs-example.html#a33">OnPremise/Metrics-Console/Program.cs</a>, <a class="el" href="_on_premise_2_mixed_2_getting_started-_console_2_program_8cs-example.html#a2">OnPremise/Mixed/GettingStarted-Console/Program.cs</a>, and <a class="el" href="_performance-_console_2_program_8cs-example.html#a4">Performance-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>

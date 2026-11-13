@@ -92,18 +92,39 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2web_8py
 <div class="c-code__line"></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespace" href="namespacefiftyone__location_1_1location__pipelinebuilder.html">fiftyone_location.location_pipelinebuilder</a> <span class="c-code__keyword">import</span> LocationPipelineBuilder</div>
-<div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespaceRef" href="../pipeline-python/namespacefiftyone__pipeline__core_1_1web.html">fiftyone_pipeline_core.web</a> <span class="c-code__keyword">import</span> webevidence</div>
-<div class="c-code__line"><span class="c-code__keyword">import</span> json</div>
+<div class="c-code__line"><span class="c-code__keyword">from</span> <a class="code hl_namespaceRef" href="../pipeline-python/namespacefiftyone__pipeline__core_1_1web.html">fiftyone_pipeline_core.web</a> <span class="c-code__keyword">import</span> json_response, webevidence</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment"># First create the location pipeline with the desired settings.</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment"># You need to create a resource key at https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-python&amp;utm_content=examples-cloud-web.py&amp;utm_term=top</span></div>
 <div class="c-code__line"><span class="c-code__comment"># and paste it into the code, replacing !!YOUR_RESOURCE_KEY!! below.</span></div>
-<div class="c-code__line"><span class="c-code__comment"># Alternatively, add a resource_key environment variable</span></div>
+<div class="c-code__line"><span class="c-code__comment"># Alternatively, add a _51DEGREES_RESOURCE_KEY environment variable.</span></div>
+<div class="c-code__line"><span class="c-code__comment"># resource_key is the old name of that variable. It is deprecated, and is</span></div>
+<div class="c-code__line"><span class="c-code__comment"># read only when _51DEGREES_RESOURCE_KEY is not set.</span></div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> os</div>
-<div class="c-code__line"><span class="c-code__keywordflow">if</span> <span class="c-code__stringliteral">&quot;resource_key&quot;</span> <span class="c-code__keywordflow">in</span> os.environ:</div>
-<div class="c-code__line">    resource_key = os.environ[<span class="c-code__stringliteral">&quot;resource_key&quot;</span>]</div>
-<div class="c-code__line"><span class="c-code__keywordflow">else</span>:</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> sys</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">def </span>read_environment(name, old_name):</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;&quot;&quot;The value of the environment variable name, or None when it has</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    none. When name is unset or empty the name the variable had before is</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">    read, and using it prints that the old name is deprecated.&quot;&quot;&quot;</span></div>
+<div class="c-code__line">    value = os.environ.get(name)</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> value:</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> value</div>
+<div class="c-code__line">    value = os.environ.get(old_name)</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> <span class="c-code__keywordflow">not</span> value:</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> <span class="c-code__keywordtype">None</span></div>
+<div class="c-code__line">    print(</div>
+<div class="c-code__line">        f<span class="c-code__stringliteral">&quot;The {old_name} environment variable is deprecated and {name} &quot;</span></div>
+<div class="c-code__line">        f<span class="c-code__stringliteral">&quot;replaces it. The value was read from {old_name} because {name} &quot;</span></div>
+<div class="c-code__line">        f<span class="c-code__stringliteral">&quot;is not set, so set {name} to the same value.&quot;</span>,</div>
+<div class="c-code__line">        file=sys.stderr)</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span> value</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">resource_key = read_environment(<span class="c-code__stringliteral">&quot;_51DEGREES_RESOURCE_KEY&quot;</span>, <span class="c-code__stringliteral">&quot;resource_key&quot;</span>)</div>
+<div class="c-code__line"><span class="c-code__keywordflow">if</span> <span class="c-code__keywordflow">not</span> resource_key:</div>
 <div class="c-code__line">    resource_key = <span class="c-code__stringliteral">&quot;!!YOUR_RESOURCE_KEY!!&quot;</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> resource_key == <span class="c-code__stringliteral">&quot;!!YOUR_RESOURCE_KEY!!&quot;</span>:</div>
@@ -128,24 +149,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2web_8py
 <div class="c-code__line">    app = Flask(__name__)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment"># First we make a JSON route that will be called from the client side and will return</span></div>
-<div class="c-code__line">    <span class="c-code__comment"># a JSON encoded property database using any additional evidence provided by the client</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># a JSON encoded property database using any additional evidence provided by the client.</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># json_response processes the request and sets the cache headers, so a browser keeps a</span></div>
+<div class="c-code__line">    <span class="c-code__comment"># good answer for 30 minutes and never keeps one made while processing failed.</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__preprocessor">@app.route(&#39;/json&#39;, methods=[&#39;POST&#39;])</span></div>
 <div class="c-code__line">    <span class="c-code__keyword">def </span>jsonroute():</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        <span class="c-code__comment"># Create the flowData object for the JSON route</span></div>
-<div class="c-code__line">        flowData = pipeline.create_flowdata()</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">        <span class="c-code__comment"># Add any information from the request (headers, cookies and additional</span></div>
-<div class="c-code__line">        <span class="c-code__comment"># client side provided information)</span></div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">        flowData.evidence.add_from_dict(webevidence(request))</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">        <span class="c-code__comment"># Process the flowData</span></div>
-<div class="c-code__line">        flowData.process()</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">        <span class="c-code__comment"># Return the JSON from the JSONBundler engine</span></div>
-<div class="c-code__line">        <span class="c-code__keywordflow">return</span> json.dumps(flowData.jsonbundler.json)</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> json_response(pipeline, request)</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment"># Helper function to get a property value if it exists and return</span></div>
 <div class="c-code__line">    <span class="c-code__comment"># the reason why if it doesn&#39;t</span></div>

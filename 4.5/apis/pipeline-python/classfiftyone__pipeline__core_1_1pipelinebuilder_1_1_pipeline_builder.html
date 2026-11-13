@@ -82,6 +82,7 @@ Collaboration diagram for fiftyone_pipeline_core.pipelinebuilder.PipelineBuilder
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a5c26d46da177d7835afc36329f919c04" id="r_a5c26d46da177d7835afc36329f919c04"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a5c26d46da177d7835afc36329f919c04">__init__</a> (self, settings={})</td></tr>
+<tr class="c-table__row memitem:adf78fb126288b926db5bad9274de5121" id="r_adf78fb126288b926db5bad9274de5121"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#adf78fb126288b926db5bad9274de5121">get_sequence_elements</a> (self)</td></tr>
 <tr class="c-table__row memitem:a3b46fd475e8ee3790213e62cde9325e5" id="r_a3b46fd475e8ee3790213e62cde9325e5"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a3b46fd475e8ee3790213e62cde9325e5">get_javascript_elements</a> (self)</td></tr>
 <tr class="c-table__row memitem:abfc1e6bc08954a1bdb3359f98589f1ac" id="r_abfc1e6bc08954a1bdb3359f98589f1ac"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#abfc1e6bc08954a1bdb3359f98589f1ac">get_setheader_elements</a> (self)</td></tr>
 <tr class="c-table__row memitem:aae8f68cc3ff751bc63457ae0ee5df653" id="r_aae8f68cc3ff751bc63457ae0ee5df653"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aae8f68cc3ff751bc63457ae0ee5df653">add</a> (self, flow_element)</td></tr>
@@ -91,11 +92,15 @@ Public Member Functions</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="c-table__row memitem:aa36afe690afcd86e9c03c89a6cb5a748" id="r_aa36afe690afcd86e9c03c89a6cb5a748"><td class="c-table__cell">list&#160;</td><td class="c-table__cell"><a class="el" href="#aa36afe690afcd86e9c03c89a6cb5a748">flow_elements</a> = []</td></tr>
+<tr class="c-table__row memitem:a3b4e833371e7f54198617507dd1a5367" id="r_a3b4e833371e7f54198617507dd1a5367"><td class="c-table__cell">list&#160;</td><td class="c-table__cell"><a class="el" href="#a3b4e833371e7f54198617507dd1a5367">flow_elements</a> = []</td></tr>
 <tr class="c-table__row memitem:a5a56e1d1f2a39364dc18ae41b5b50be7" id="r_a5a56e1d1f2a39364dc18ae41b5b50be7"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a5a56e1d1f2a39364dc18ae41b5b50be7">logger</a> = <a class="el" href="classfiftyone__pipeline__core_1_1logger_1_1_logger.html">Logger</a>()</td></tr>
 <tr class="c-table__row memitem:a492867cf08d70629b08d6e40ef3ffa47" id="r_a492867cf08d70629b08d6e40ef3ffa47"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a492867cf08d70629b08d6e40ef3ffa47">add_javaScriptbuilder</a> = settings[&quot;add_javascript_builder&quot;]</td></tr>
+<tr class="c-table__row memitem:a5010bf6c3ff9c05ff4989eef96e74546" id="r_a5010bf6c3ff9c05ff4989eef96e74546"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a5010bf6c3ff9c05ff4989eef96e74546">add_sequence_element</a> = settings.get(&quot;add_sequence_element&quot;, True)</td></tr>
+<tr class="c-table__row memitem:a615d30418f0a87583dc6e9f53b0a778c" id="r_a615d30418f0a87583dc6e9f53b0a778c"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a615d30418f0a87583dc6e9f53b0a778c">add_json_builder_element</a></td></tr>
+<tr class="c-table__row memitem:aab5684ff0d0652aea6f1e1193b693f03" id="r_aab5684ff0d0652aea6f1e1193b693f03"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aab5684ff0d0652aea6f1e1193b693f03">add_javascript_builder_element</a></td></tr>
+<tr class="c-table__row memitem:ab7375fdda3b8aa90f14e635a7e4be53a" id="r_ab7375fdda3b8aa90f14e635a7e4be53a"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab7375fdda3b8aa90f14e635a7e4be53a">add_set_header_element</a></td></tr>
 <tr class="c-table__row memitem:ac572743a7447e4a59a40410aa7669716" id="r_ac572743a7447e4a59a40410aa7669716"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ac572743a7447e4a59a40410aa7669716">javascriptbuilder_settings</a> = settings[&quot;javascript_builder_settings&quot;]</td></tr>
-<tr class="c-table__row memitem:ac481cd14f8149bf6bc840152ff63bbb9" id="r_ac481cd14f8149bf6bc840152ff63bbb9"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ac481cd14f8149bf6bc840152ff63bbb9">use_setheader_properties</a> = settings[&quot;use_setheader_properties&quot;]</td></tr>
+<tr class="c-table__row memitem:a934d35b096cb4bc5bc0dc3393eff3fb3" id="r_a934d35b096cb4bc5bc0dc3393eff3fb3"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a934d35b096cb4bc5bc0dc3393eff3fb3">use_setheader_properties</a> = settings[&quot;use_setheader_properties&quot;]</td></tr>
 <tr class="c-table__row memitem:adf1720db7616a8328a771ff3ddfc93d9" id="r_adf1720db7616a8328a771ff3ddfc93d9"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#adf1720db7616a8328a771ff3ddfc93d9">data_file_update_service</a> = settings[&quot;data_file_update_service&quot;]</td></tr>
 <tr class="c-table__row memitem:aad532bbe2d7784e3011bcbdd06406c0c" id="r_aad532bbe2d7784e3011bcbdd06406c0c"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#aad532bbe2d7784e3011bcbdd06406c0c">suppress_process_exceptions</a> = settings[&quot;suppress_process_exceptions&quot;]</td></tr>
 <tr class="c-table__row memitem:a85d3af1f41d10e64aff434034527de72" id="r_a85d3af1f41d10e64aff434034527de72"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#a85d3af1f41d10e64aff434034527de72">auto_close_elements</a> = settings[&quot;auto_close_elements&quot;]</td></tr>
@@ -131,12 +136,23 @@ Protected Member Functions</h2></td></tr>
 <pre class="fragment">Pipeline Builder constructor.
 @type settings: dictionary
 @param settings : settings for the pipeline builder including:
-`add_javascript_builder (Bool)` - Whether to add the JavaScriptBuilder to the pipeline
-(default true)
+`add_javascript_builder (Bool)` - Whether to add the JavaScriptBuilder, with the
+JSONBundler and SequenceElement it works with, to the pipeline (default true).
+Set to False to add none of the three.
+`add_sequence_element (Bool)` - Whether to add the SequenceElement, as the first
+element of the pipeline (default true)
+`add_json_builder_element (Bool)` - Whether to add the JSONBundler (default true).
+The JavaScriptBuilder reads its output, so a pipeline that keeps the
+JavaScriptBuilder needs a JSONBundler, added here or by the caller.
+`add_javascript_builder_element (Bool)` - Whether to add the JavaScriptBuilder
+alone (default true)
 `javascript_builder_settings (dict)` - Settings for the JavaScriptBuilder engine 
 @rtype: PipelineBuilder
 `use_setheader_properties (Bool)` - Whether to add the SetHeaderElement to the pipeline
 (default true)
+`add_set_header_element (Bool)` - Whether to add the SetHeaderElement alone
+(default true). It is added only when this and use_setheader_properties
+are both true.
 `suppress_process_exceptions (Bool)` - If False (the default) the first error thrown
 while processing is re-raised from flow_data.process(); if True, errors are stored on
 flow_data.errors and process() returns normally. Recommended True for web apps so a
@@ -374,10 +390,37 @@ and the error is raised.
         </div>
       </div>
 </div><div class="c-member__body">
-<pre class="fragment">Adds the JavaScriptBuilder, JSONBundler and SequenceElement to the pipeline if
-If add_javascript_builder is set to true (the default)
+<pre class="fragment">The JSONBundler and the JavaScriptBuilder, to be added after the other
+elements. Neither is added if add_javascript_builder is false, and
+each has its own switch (add_json_builder_element and
+add_javascript_builder_element).
 @rtype: list
 @return: Returns a list of FlowElements     
+</pre> 
+</div>
+</div>
+<a id="adf78fb126288b926db5bad9274de5121" name="adf78fb126288b926db5bad9274de5121"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adf78fb126288b926db5bad9274de5121">&#9670;&#160;</a></span>get_sequence_elements()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_core.pipelinebuilder.PipelineBuilder.get_sequence_elements </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<pre class="fragment">The SequenceElement, to be the first element of the pipeline, unless
+add_javascript_builder or add_sequence_element is false
+@rtype: list
+@return: Returns a list of FlowElements
 </pre> 
 </div>
 </div>
@@ -400,13 +443,33 @@ If add_javascript_builder is set to true (the default)
       </div>
 </div><div class="c-member__body">
 <pre class="fragment">Adds the SetHeaderElement to the pipeline if
-If use_setheader_properties is set to true (the default)
+If use_setheader_properties and add_set_header_element are true (the default)
 @rtype: list
 @return: Returns a list of FlowElements     
 </pre> 
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="aab5684ff0d0652aea6f1e1193b693f03" name="aab5684ff0d0652aea6f1e1193b693f03"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aab5684ff0d0652aea6f1e1193b693f03">&#9670;&#160;</a></span>add_javascript_builder_element</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_core.pipelinebuilder.PipelineBuilder.add_javascript_builder_element</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=  settings.get(</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;add_javascript_builder_element&quot;</span>, <span class="c-code__keyword">True</span>)</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a492867cf08d70629b08d6e40ef3ffa47" name="a492867cf08d70629b08d6e40ef3ffa47"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a492867cf08d70629b08d6e40ef3ffa47">&#9670;&#160;</a></span>add_javaScriptbuilder</h2>
 
@@ -423,6 +486,64 @@ If use_setheader_properties is set to true (the default)
       </div>
 </div><div class="c-member__body">
 
+</div>
+</div>
+<a id="a615d30418f0a87583dc6e9f53b0a778c" name="a615d30418f0a87583dc6e9f53b0a778c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a615d30418f0a87583dc6e9f53b0a778c">&#9670;&#160;</a></span>add_json_builder_element</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_core.pipelinebuilder.PipelineBuilder.add_json_builder_element</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=  settings.get(</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;add_json_builder_element&quot;</span>, <span class="c-code__keyword">True</span>)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5010bf6c3ff9c05ff4989eef96e74546" name="a5010bf6c3ff9c05ff4989eef96e74546"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5010bf6c3ff9c05ff4989eef96e74546">&#9670;&#160;</a></span>add_sequence_element</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_core.pipelinebuilder.PipelineBuilder.add_sequence_element = settings.get(&quot;add_sequence_element&quot;, True)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="ab7375fdda3b8aa90f14e635a7e4be53a" name="ab7375fdda3b8aa90f14e635a7e4be53a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab7375fdda3b8aa90f14e635a7e4be53a">&#9670;&#160;</a></span>add_set_header_element</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone_pipeline_core.pipelinebuilder.PipelineBuilder.add_set_header_element</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">=  settings.get(</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;add_set_header_element&quot;</span>, <span class="c-code__keyword">True</span>)</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a85d3af1f41d10e64aff434034527de72" name="a85d3af1f41d10e64aff434034527de72"></a>
@@ -461,8 +582,8 @@ If use_setheader_properties is set to true (the default)
 
 </div>
 </div>
-<a id="aa36afe690afcd86e9c03c89a6cb5a748" name="aa36afe690afcd86e9c03c89a6cb5a748"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa36afe690afcd86e9c03c89a6cb5a748">&#9670;&#160;</a></span>flow_elements</h2>
+<a id="a3b4e833371e7f54198617507dd1a5367" name="a3b4e833371e7f54198617507dd1a5367"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3b4e833371e7f54198617507dd1a5367">&#9670;&#160;</a></span>flow_elements</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -470,7 +591,7 @@ If use_setheader_properties is set to true (the default)
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_core.pipelinebuilder.PipelineBuilder.flow_elements = []</td>
+              <td class="c-table__cell">list fiftyone_pipeline_core.pipelinebuilder.PipelineBuilder.flow_elements = []</td>
             </tr>
           </table>
         </div>
@@ -533,8 +654,8 @@ If use_setheader_properties is set to true (the default)
 
 </div>
 </div>
-<a id="ac481cd14f8149bf6bc840152ff63bbb9" name="ac481cd14f8149bf6bc840152ff63bbb9"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac481cd14f8149bf6bc840152ff63bbb9">&#9670;&#160;</a></span>use_setheader_properties</h2>
+<a id="a934d35b096cb4bc5bc0dc3393eff3fb3" name="a934d35b096cb4bc5bc0dc3393eff3fb3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a934d35b096cb4bc5bc0dc3393eff3fb3">&#9670;&#160;</a></span>use_setheader_properties</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -542,7 +663,7 @@ If use_setheader_properties is set to true (the default)
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fiftyone_pipeline_core.pipelinebuilder.PipelineBuilder.use_setheader_properties = settings[&quot;use_setheader_properties&quot;]</td>
+              <td class="c-table__cell">bool fiftyone_pipeline_core.pipelinebuilder.PipelineBuilder.use_setheader_properties = settings[&quot;use_setheader_properties&quot;]</td>
             </tr>
           </table>
         </div>

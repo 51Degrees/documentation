@@ -26,6 +26,7 @@ var NAVTREE =
 [
   [ "51Degrees Pipeline PHP", "index.html", [
     [ "General Docs", "/documentation/4.5/index.html", null ],
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Classes", "annotated.html", "annotated" ]
   ] ]
 ];
@@ -37,7 +38,7 @@ var NAVTREEHIDESYNC = true;
 var NAVTREEINDEX =
 [
 "/documentation/4.5/index.html",
-"classfiftyone_1_1pipeline_1_1engines_1_1_missing_property_messages.html#a8edf033e9c63dcebeda66021db432d7f"
+"classfiftyone_1_1pipeline_1_1did_1_1_public_key.html#a4e923d1c0c3c00e487d8df8a543e4599"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

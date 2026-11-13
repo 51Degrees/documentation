@@ -706,17 +706,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line"><span class="c-code__comment">// client side provided information)</span></div>
 <div class="c-code__line">$flowData-&gt;evidence-&gt;setFromWebRequest();</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__comment">// Process the FlowData</span></div>
-<div class="c-code__line">$flowData-&gt;process();</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__comment">// The client side JavaScript calls back to this page</span></div>
+<div class="c-code__line"><span class="c-code__comment">// The client side JavaScript calls back to this page. Utils processes the</span></div>
+<div class="c-code__line"><span class="c-code__comment">// FlowData itself and sets the cache headers, so a revalidation with a</span></div>
+<div class="c-code__line"><span class="c-code__comment">// matching ETag is answered without any processing.</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> (isset($_GET[<span class="c-code__stringliteral">&#39;json&#39;</span>])) {</div>
-<div class="c-code__line">    header(<span class="c-code__stringliteral">&#39;Content-Type: application/json; charset=UTF-8&#39;</span>);</div>
-<div class="c-code__line">    echo json_encode($flowData-&gt;jsonbundler-&gt;json);</div>
+<div class="c-code__line">    Utils::jsonResponse($flowData)-&gt;send();</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keywordflow">return</span>;</div>
 <div class="c-code__line">}</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment">// Process the FlowData</span></div>
+<div class="c-code__line">$flowData-&gt;process();</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Generate the HTML for the form that gets a user&#39;s starsign</span></div>
 <div class="c-code__line">$output = <span class="c-code__stringliteral">&#39;&#39;</span>;</div>

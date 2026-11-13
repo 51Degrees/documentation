@@ -81,10 +81,10 @@ Collaboration diagram for FiftyOne.IpIntelligence.Examples.OnPremise.Compare.Pro
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="c-table__row memitem:a538eca34ccbb94ee9ba790938ce5446d" id="r_a538eca34ccbb94ee9ba790938ce5446d"><td class="c-table__cell">static&#160;async&#160;Task&#160;</td><td class="c-table__cell"><a class="el" href="#a538eca34ccbb94ee9ba790938ce5446d">Run</a> (string dataFile, string csvTruthFile, TextWriter output, ILoggerFactory loggerFactory, CancellationToken stoppingToken, ILogger logger=null)</td></tr>
-<tr class="c-table__row memdesc:a538eca34ccbb94ee9ba790938ce5446d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Runs the <a class="el" href="namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare.html">Compare</a> console example.  <br /></td></tr>
-<tr class="c-table__row memitem:a787b798104f8d78a3bc89e544e3db4c5" id="r_a787b798104f8d78a3bc89e544e3db4c5"><td class="c-table__cell">static&#160;<a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">IpiOnPremiseEngine</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a787b798104f8d78a3bc89e544e3db4c5">BuildEngine</a> (string dataFile, ILoggerFactory loggerFactory)</td></tr>
-<tr class="c-table__row memdesc:a787b798104f8d78a3bc89e544e3db4c5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Builds the on-premise IP Intelligence engine used by the example.  <br /></td></tr>
+<tr class="c-table__row memitem:adc4bd02e1e7297764ed6a45680c68935" id="r_adc4bd02e1e7297764ed6a45680c68935"><td class="c-table__cell">static&#160;async&#160;Task&#160;</td><td class="c-table__cell"><a class="el" href="#adc4bd02e1e7297764ed6a45680c68935">Run</a> (string dataFile, string csvTruthFile, TextWriter output, ILoggerFactory loggerFactory, CancellationToken stoppingToken, ILogger logger=null, PerformanceProfiles performanceProfile=DEFAULT_PERFORMANCE_PROFILE)</td></tr>
+<tr class="c-table__row memdesc:adc4bd02e1e7297764ed6a45680c68935"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Runs the <a class="el" href="namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare.html">Compare</a> console example.  <br /></td></tr>
+<tr class="c-table__row memitem:a17071a9c78da0763c2647724a774e8d7" id="r_a17071a9c78da0763c2647724a774e8d7"><td class="c-table__cell">static&#160;<a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">IpiOnPremiseEngine</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a17071a9c78da0763c2647724a774e8d7">BuildEngine</a> (string dataFile, ILoggerFactory loggerFactory, PerformanceProfiles performanceProfile=DEFAULT_PERFORMANCE_PROFILE)</td></tr>
+<tr class="c-table__row memdesc:a17071a9c78da0763c2647724a774e8d7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Builds the on-premise IP Intelligence engine used by the example.  <br /></td></tr>
 <tr class="c-table__row memitem:ac84f8d62bcb92024450beb91b3e88404" id="r_ac84f8d62bcb92024450beb91b3e88404"><td class="c-table__cell">static&#160;async&#160;Task&#160;</td><td class="c-table__cell"><a class="el" href="#ac84f8d62bcb92024450beb91b3e88404">Run</a> (<a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_engine_1_1_on_premise_1_1_flow_elements_1_1_ipi_on_premise_engine.html">IpiOnPremiseEngine</a> ipiEngine, string csvTruthFile, TextWriter output, ILoggerFactory loggerFactory, CancellationToken stoppingToken, ILogger logger=null)</td></tr>
 <tr class="c-table__row memdesc:ac84f8d62bcb92024450beb91b3e88404"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Runs the <a class="el" href="namespace_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare.html">Compare</a> console example against an already built engine.  <br /></td></tr>
 <tr class="c-table__row memitem:ae5a00152f1ad8ce5b645d192e918ceaa" id="r_ae5a00152f1ad8ce5b645d192e918ceaa"><td class="c-table__cell">static&#160;<a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_consumer.html">Consumer</a>[]&#160;</td><td class="c-table__cell"><a class="el" href="#ae5a00152f1ad8ce5b645d192e918ceaa">CreateConsumers</a> (Func&lt; <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html">Truth</a>, <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_result.html">Result</a> &gt; process, BlockingCollection&lt; <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_truth.html">Truth</a> &gt; truth, <a class="el" href="class_fifty_one_1_1_ip_intelligence_1_1_examples_1_1_on_premise_1_1_compare_1_1_program_1_1_skipped_truths.html">SkippedTruths</a> skipped, CancellationTokenSource stopping)</td></tr>
@@ -113,8 +113,8 @@ static&#160;IEnumerable&lt;&#160;string&#160;&gt;&#160;</td><td class="c-table__
 static&#160;void&#160;</td><td class="c-table__cell"><b>OutputException</b> (Exception ex, int depth=0)</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
-<a id="a787b798104f8d78a3bc89e544e3db4c5" name="a787b798104f8d78a3bc89e544e3db4c5"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a787b798104f8d78a3bc89e544e3db4c5">&#9670;&#160;</a></span>BuildEngine()</h2>
+<a id="a17071a9c78da0763c2647724a774e8d7" name="a17071a9c78da0763c2647724a774e8d7"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a17071a9c78da0763c2647724a774e8d7">&#9670;&#160;</a></span>BuildEngine()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -132,7 +132,12 @@ static&#160;void&#160;</td><td class="c-table__cell"><b>OutputException</b> (Exc
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">ILoggerFactory</td>          <td class="c-table__cell"><span class="paramname"><em>loggerFactory</em></span>&#160;)</td>
+          <td class="c-table__cell">ILoggerFactory</td>          <td class="c-table__cell"><span class="paramname"><em>loggerFactory</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">PerformanceProfiles</td>          <td class="c-table__cell"><span class="paramname"><em>performanceProfile</em></span><span class="paramdefsep"> = </span><span class="paramdefval">DEFAULT_PERFORMANCE_PROFILE</span>&#160;)</td>
         </tr>
           </table>
         </div>
@@ -151,11 +156,12 @@ ILoggerFactory, CancellationToken, ILogger) for each file. The caller is respons
   <table class="params">
     <tr><td class="paramname">dataFile</td><td></td></tr>
     <tr><td class="paramname">loggerFactory</td><td></td></tr>
+    <tr><td class="paramname">performanceProfile</td><td>Profile the engine is built with, see DEFAULT_PERFORMANCE_PROFILE. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"></dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a21">OnPremise/Compare-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a22">OnPremise/Compare-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>
@@ -335,7 +341,7 @@ ILoggerFactory, CancellationToken, ILogger) for each file. The caller is respons
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">A list of the output results. </dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a27">OnPremise/Compare-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a28">OnPremise/Compare-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>
@@ -398,7 +404,7 @@ ILoggerFactory, CancellationToken, ILogger) for each file. The caller is respons
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a26">OnPremise/Compare-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a27">OnPremise/Compare-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>
@@ -444,7 +450,7 @@ ILoggerFactory, CancellationToken, ILogger) for each file. The caller is respons
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">The truth records that can be compared. </dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a28">OnPremise/Compare-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a29">OnPremise/Compare-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>
@@ -517,8 +523,8 @@ ILoggerFactory, CancellationToken, ILogger) for each file. The caller is respons
 
 </div>
 </div>
-<a id="a538eca34ccbb94ee9ba790938ce5446d" name="a538eca34ccbb94ee9ba790938ce5446d"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a538eca34ccbb94ee9ba790938ce5446d">&#9670;&#160;</a></span>Run() <span class="c-member__count">[2/2]</span></h2>
+<a id="adc4bd02e1e7297764ed6a45680c68935" name="adc4bd02e1e7297764ed6a45680c68935"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adc4bd02e1e7297764ed6a45680c68935">&#9670;&#160;</a></span>Run() <span class="c-member__count">[2/2]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -556,7 +562,12 @@ ILoggerFactory, CancellationToken, ILogger) for each file. The caller is respons
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">ILogger</td>          <td class="c-table__cell"><span class="paramname"><em>logger</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
+          <td class="c-table__cell">ILogger</td>          <td class="c-table__cell"><span class="paramname"><em>logger</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">PerformanceProfiles</td>          <td class="c-table__cell"><span class="paramname"><em>performanceProfile</em></span><span class="paramdefsep"> = </span><span class="paramdefval">DEFAULT_PERFORMANCE_PROFILE</span>&#160;)</td>
         </tr>
           </table>
         </div>
@@ -577,11 +588,12 @@ ILoggerFactory, CancellationToken, ILogger) for each file. The caller is respons
     <tr><td class="paramname">loggerFactory</td><td></td></tr>
     <tr><td class="paramname">stoppingToken</td><td></td></tr>
     <tr><td class="paramname">logger</td><td></td></tr>
+    <tr><td class="paramname">performanceProfile</td><td>Profile the engine is built with, see DEFAULT_PERFORMANCE_PROFILE. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">Allow passing in of an external logger for automated comparison</dd></dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a20">OnPremise/Compare-Console/Program.cs</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_on_premise_2_compare-_console_2_program_8cs-example.html#a21">OnPremise/Compare-Console/Program.cs</a>.</dd>
 </dl>
 
 </div>
