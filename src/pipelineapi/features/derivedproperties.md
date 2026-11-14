@@ -20,10 +20,10 @@ Each script writes one property, named by the script, into the element data unde
 
 The packages carry the scripts in the [derived-properties](https://github.com/51Degrees/derived-properties/tree/main/scripts) repository, which you can add by name.
 
-| Property | Values | Reads properties from | Script |
-|----------|--------|-----------------------|--------|
+| Property | Values | Engines to add | Script |
+|----------|--------|----------------|--------|
 | `HumanConfidence` | High, Medium, Low or Unknown | @DeviceDetection and @IpIntelligence | [HumanConfidence.yaml](https://github.com/51Degrees/derived-properties/blob/main/scripts/HumanConfidence.yaml) |
-| `IsGdpr` | True or False | @IpIntelligence, being the country code | [IsGdpr.yaml](https://github.com/51Degrees/derived-properties/blob/main/scripts/IsGdpr.yaml) |
+| `IsGdpr` | True or False | @IpIntelligence | [IsGdpr.yaml](https://github.com/51Degrees/derived-properties/blob/main/scripts/IsGdpr.yaml) |
 
 `HumanConfidence` is described on @ref HumanConfidence_Overview. `IsGdpr` is defined by its script as "Whether the General Data Protection Regulation, or the United Kingdom's version of it, is likely to apply to the person making the request, judged from the country of the supplied location", and its script says that it is a default for a caller that knows nothing about its own position, and not a determination.
 
@@ -37,9 +37,11 @@ You can write a script for a property of your own. The [authoring guide](https:/
 
 # When a property has no value
 
-Where every property a script reads is available, the script's rules run and it gives a value. Where any one of them is not available, the property has no value, and its message names every property that could not be read and what the element that supplies it said. The specification gives a message of this shape.
+Where every property a script reads is available, the script's rules run and it gives a value. Where any one of them is not available, the property has no value, and its message names every property that could not be read and what the element that supplies it said. For `IsGdpr`, which reads the country code `ip.CountryCode`, the message has this shape.
 
-> Derived property 'HumanConfidence' has no value because 2 source properties were not available. 'device.BrowserReleaseYear' (element 'device' has no value for 'BrowserReleaseYear': ...). 'ip.HumanProbability' (...). Usual causes are the element that supplies the property not being in the pipeline, the property being excluded in the engine configuration, the property not being included in the resource key, or JavaScript that populates the property not having run yet.
+> Derived property 'IsGdpr' has no value because 1 source property was not available. 'ip.CountryCode' (element 'ip' has no value for 'CountryCode': ...). Usual causes are the element that supplies the property not being in the pipeline, the property being excluded in the engine configuration, the property not being included in the resource key, or JavaScript that populates the property not having run yet.
+
+Where more than one property is not available, the count reads `<n> source properties were not available` and each property is named in turn.
 
 There is no third state. A value that cannot be read as the type the script expects counts as not available, so a value such as `Unknown` or `N/A` never turns into false or zero.
 
@@ -211,7 +213,7 @@ echo $humanConfidence->hasValue ?
 ```
 @endsnippet
 @startsnippet{rust}
-Add the [fiftyone-derived-properties](https://crates.io/crates/fiftyone-derived-properties) crate from crates.io. The source and its readme are in [derived-properties](https://github.com/51Degrees/51degrees-rust/tree/main/derived-properties). The scripts are compiled into the crate, so the element runs where there is no file system, such as in WebAssembly.
+Add the [fiftyone-derived-properties](https://crates.io/crates/fiftyone-derived-properties) crate from crates.io. The source and its readme are in [derived-properties](https://github.com/51Degrees/51degrees-rust/tree/main/derived-properties). The scripts are compiled into the crate, so the element runs where there is no file system, such as in WebAssembly. The [derived-property](https://github.com/51Degrees/51degrees-rust/blob/main/examples/pipeline-examples/src/bin/derived-property.rs) example shows a script held in the code, a script read from a file, the same Pipeline built from an options file, and a property with no value.
 
 ```{rust}
 use std::sync::Arc;
