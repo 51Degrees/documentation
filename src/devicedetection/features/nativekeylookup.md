@@ -12,10 +12,11 @@ See the
 [Specification](https://github.com/51Degrees/specifications/blob/main/device-detection-specification/pipeline-elements/hardware-profile-lookup-cloud.md#)
 for more technical details.
 
-Native key lookup is currently available in two forms:
+Native key lookup is currently available in three forms:
 1. Requests to the 51Degrees Cloud Service, fully integrated into the Pipeline API.
 2. Using the 'TAC CSV' data file to create a local lookup solution based on SQL or some 
 other data query mechanism.
+3. The on-premise Hash engine with a Hash data file that includes the NativeModel property.
 
 # Cloud Service
 
@@ -36,3 +37,14 @@ have a valid License Key that includes access to this product).
 This data file includes all values for all properties and can be used to populate a database or 
 similar. The database can then be used to perform indexed lookups on given property values, 
 such as native model.
+
+# On-premise lookup
+
+The on-premise Hash engine can also give the profiles holding a native model name, using a Hash 
+data file that includes the NativeModel property, such as the TAC Hash data file. Name the 
+property with the engine's indexed properties option, for example `SetIndexedProperties` on the 
+.NET Hash engine builder, and the lookup uses the engine's index rather than reading every profile.
+
+A native model name matches only when it is spelled exactly as the data file holds it, including 
+its case. Where the data file holds two spellings of a name that differ only in case, each 
+spelling gives only its own profiles.
