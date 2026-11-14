@@ -10,6 +10,8 @@
 
 @subpage PipelineApi_Features_CustomElements
 
+@subpage PipelineApi_Features_DerivedProperties
+
 @subpage PipelineApi_Features_ErrorHandling
 
 @subpage PipelineApi_Features_FlexibleAccessors
