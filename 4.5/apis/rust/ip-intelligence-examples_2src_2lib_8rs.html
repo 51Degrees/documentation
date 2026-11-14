@@ -64,6 +64,458 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ip-intelligenc
 <h1 class="g-docs__page-title">lib.rs File Reference</h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
+<table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-nested-classes" class="g-docs__section-heading"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="c-table__row memitem:ProfileArguments" id="r_ProfileArguments"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="struct_profile_arguments.html">ProfileArguments</a></td></tr>
+<tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The command-line arguments of an on-premise example that takes a data-file path and a performance profile.  <a href="struct_profile_arguments.html#details">More...</a><br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="c-table__row memitem:ac89b0fe3a1dad639955a50d9e7f38c93" id="r_ac89b0fe3a1dad639955a50d9e7f38c93"><td class="c-table__cell">pub&#160;const&#160;pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#ac89b0fe3a1dad639955a50d9e7f38c93">data_file_properties</a> (data_file:&amp;Path) -&gt; Result&lt; Vec&lt; String &gt; &gt;</td></tr>
+<tr class="c-table__row memdesc:ac89b0fe3a1dad639955a50d9e7f38c93"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The names of the properties the data file at <code><a class="el" href="#ab533a800544facf05fd1c8e50f92099a" title="The first argument that is not [PROFILE_FLAG] or its value, being the path of the data file to open.">data_file</a></code> carries.  <br /></td></tr>
+<tr class="c-table__row memitem:a2e4b0464a7aedd962962a64d87578d83" id="r_a2e4b0464a7aedd962962a64d87578d83"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a2e4b0464a7aedd962962a64d87578d83">write_data_file_warnings</a> (data_file:&amp;Path, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write) -&gt; Result&lt;()&gt;</td></tr>
+<tr class="c-table__row memdesc:a2e4b0464a7aedd962962a64d87578d83"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Write the standard lines about the data file at <code><a class="el" href="#ab533a800544facf05fd1c8e50f92099a" title="The first argument that is not [PROFILE_FLAG] or its value, being the path of the data file to open.">data_file</a></code>, being its tier and publish date, then any warning that it is free data or more than 30 days old.  <br /></td></tr>
+<tr class="c-table__row memitem:ac7dd33fac7200a49b6d557369d23cdae" id="r_ac7dd33fac7200a49b6d557369d23cdae"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ac7dd33fac7200a49b6d557369d23cdae">open_for_inspection</a> (data_file:&amp;Path) -&gt; Result&lt; IpIntelligenceOnPremiseEngine &gt;</td></tr>
+<tr class="c-table__row memdesc:ac7dd33fac7200a49b6d557369d23cdae"><td class="c-table__cell">&#160;</td><td class="c-table__cell">An engine over <code><a class="el" href="#ab533a800544facf05fd1c8e50f92099a" title="The first argument that is not [PROFILE_FLAG] or its value, being the path of the data file to open.">data_file</a></code> for reading what the file holds, with the low-memory profile and no updates.  <br /></td></tr>
+<tr class="c-table__row memitem:a0cbd377e8d140d3d000f4f7e4cda1d18" id="r_a0cbd377e8d140d3d000f4f7e4cda1d18"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_profile_arguments.html">ProfileArguments</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a0cbd377e8d140d3d000f4f7e4cda1d18">Argument</a> (arguments:Arguments) -&gt; Result&lt; <a class="el" href="struct_profile_arguments.html">ProfileArguments</a> &gt; where Arguments:IntoIterator&lt; Item=Argument &gt;, Argument:AsRef&lt; <a class="el" href="dd-cloud-configurator_8rs.html#af99483e1224efe9ddfe4c99d7caa54ac">str</a> &gt;,</td></tr>
+<tr class="c-table__row memitem:aaf7ff2d0d38b590842e7754f09f7f0b6" id="r_aaf7ff2d0d38b590842e7754f09f7f0b6"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#aaf7ff2d0d38b590842e7754f09f7f0b6">reads_the_profile_flag_in_both_spellings</a> ()</td></tr>
+<tr class="c-table__row memitem:a3c74a5f4775058344251f225947b6652" id="r_a3c74a5f4775058344251f225947b6652"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a3c74a5f4775058344251f225947b6652">takes_the_data_file_from_either_side_of_the_flag</a> ()</td></tr>
+<tr class="c-table__row memitem:aae8edf386c8304b3660c9fb1cda9e574" id="r_aae8edf386c8304b3660c9fb1cda9e574"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#aae8edf386c8304b3660c9fb1cda9e574">no_arguments_give_no_file_and_no_profile</a> ()</td></tr>
+<tr class="c-table__row memitem:adf308876e13d0cabf654117706fecadc" id="r_adf308876e13d0cabf654117706fecadc"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#adf308876e13d0cabf654117706fecadc">refuses_a_missing_or_unknown_profile</a> ()</td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="c-table__row memitem:af30c33ca9e330d6cc1f685a0ff9c8730" id="r_af30c33ca9e330d6cc1f685a0ff9c8730"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#af30c33ca9e330d6cc1f685a0ff9c8730">ENTERPRISE_PROPERTIES</a></td></tr>
+<tr class="c-table__row memdesc:af30c33ca9e330d6cc1f685a0ff9c8730"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Properties the Enterprise data file carries and neither free file does.  <br /></td></tr>
+<tr class="c-table__row memitem:a1fa5fe03a96e71725eb264a69674ef90" id="r_a1fa5fe03a96e71725eb264a69674ef90"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a1fa5fe03a96e71725eb264a69674ef90">CountryCode</a></td></tr>
+<tr class="c-table__row memitem:a9af177de28b97c9d420b87756e5eef9e" id="r_a9af177de28b97c9d420b87756e5eef9e"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a9af177de28b97c9d420b87756e5eef9e">Town</a></td></tr>
+<tr class="c-table__row memitem:a4ea7707ca1508422734243cea7bdc5e7" id="r_a4ea7707ca1508422734243cea7bdc5e7"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a4ea7707ca1508422734243cea7bdc5e7">Latitude</a></td></tr>
+<tr class="c-table__row memitem:afedb94435e18119a2e66c3a07d13d978" id="r_afedb94435e18119a2e66c3a07d13d978"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#afedb94435e18119a2e66c3a07d13d978">Longitude</a></td></tr>
+<tr class="c-table__row memitem:a3d8df78db51ae9a347ffab5e18a677fc" id="r_a3d8df78db51ae9a347ffab5e18a677fc"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a3d8df78db51ae9a347ffab5e18a677fc">IsHosted</a></td></tr>
+<tr class="c-table__row memitem:ad9e2c7bad4ee8eab6c14c3c01358f08f" id="r_ad9e2c7bad4ee8eab6c14c3c01358f08f"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#ad9e2c7bad4ee8eab6c14c3c01358f08f">IsVPN</a></td></tr>
+<tr class="c-table__row memitem:a66bb8788f21973be3691243e428fcef6" id="r_a66bb8788f21973be3691243e428fcef6"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a66bb8788f21973be3691243e428fcef6">PROFILE_FLAG</a></td></tr>
+<tr class="c-table__row memdesc:a66bb8788f21973be3691243e428fcef6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The flag that chooses the performance profile of an example that offers one, as <code>--<a class="el" href="#ae5bcdc5c590f007269dd7601cd69c63c" title="The profile [PROFILE_FLAG] names, when it is given.">profile</a> &lt;name&gt;</code> or <code>--<a class="el" href="#ae5bcdc5c590f007269dd7601cd69c63c" title="The profile [PROFILE_FLAG] names, when it is given.">profile</a>=&lt;name&gt;</code>.  <br /></td></tr>
+<tr class="c-table__row memitem:aa24fcc75f877d228e879ab25f93dbadf" id="r_aa24fcc75f877d228e879ab25f93dbadf"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_profile_arguments.html">ProfileArguments</a>&#160;</td><td class="c-table__cell"><a class="el" href="#aa24fcc75f877d228e879ab25f93dbadf">Arguments</a></td></tr>
+<tr class="c-table__row memdesc:aa24fcc75f877d228e879ab25f93dbadf"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read the arguments that follow the program name into [<code><a class="el" href="struct_profile_arguments.html" title="The command-line arguments of an on-premise example that takes a data-file path and a performance pro...">ProfileArguments</a></code>].  <br /></td></tr>
+<tr class="c-table__row memitem:ab533a800544facf05fd1c8e50f92099a" id="r_ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">pub&#160;</td><td class="c-table__cell"><a class="el" href="#ab533a800544facf05fd1c8e50f92099a">data_file</a></td></tr>
+<tr class="c-table__row memdesc:ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The first argument that is not [<code><a class="el" href="#a66bb8788f21973be3691243e428fcef6" title="The flag that chooses the performance profile of an example that offers one, as --profile &lt;name&gt; or -...">PROFILE_FLAG</a></code>] or its value, being the path of the data file to open.  <br /></td></tr>
+<tr class="c-table__row memitem:ae5bcdc5c590f007269dd7601cd69c63c" id="r_ae5bcdc5c590f007269dd7601cd69c63c"><td class="c-table__cell">pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#ae5bcdc5c590f007269dd7601cd69c63c">profile</a></td></tr>
+<tr class="c-table__row memdesc:ae5bcdc5c590f007269dd7601cd69c63c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The profile [<code><a class="el" href="#a66bb8788f21973be3691243e428fcef6" title="The flag that chooses the performance profile of an example that offers one, as --profile &lt;name&gt; or -...">PROFILE_FLAG</a></code>] names, when it is given.  <br /></td></tr>
+<tr class="c-table__row memitem:ab60c545115f42f88c00b55f384f5ffc0" id="r_ab60c545115f42f88c00b55f384f5ffc0"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#ab60c545115f42f88c00b55f384f5ffc0">tests</a></td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
+<a id="a0cbd377e8d140d3d000f4f7e4cda1d18" name="a0cbd377e8d140d3d000f4f7e4cda1d18"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0cbd377e8d140d3d000f4f7e4cda1d18">&#9670;&#160;</a></span>Argument()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub struct <a class="el" href="struct_profile_arguments.html">ProfileArguments</a> Argument </td>
+          <td>(</td>
+          <td class="c-table__cell">arguments:Arguments</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; Result&lt; <a class="el" href="struct_profile_arguments.html">ProfileArguments</a> &gt; where Arguments:IntoIterator&lt; Item=Argument &gt;, Argument:AsRef&lt; <a class="el" href="dd-cloud-configurator_8rs.html#af99483e1224efe9ddfe4c99d7caa54ac">str</a> &gt;,</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="ac89b0fe3a1dad639955a50d9e7f38c93" name="ac89b0fe3a1dad639955a50d9e7f38c93"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac89b0fe3a1dad639955a50d9e7f38c93">&#9670;&#160;</a></span>data_file_properties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub const pub fn data_file_properties </td>
+          <td>(</td>
+          <td class="c-table__cell">data_file:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>Path</em></span></td><td>)</td>
+          <td> -&gt; Result&lt; Vec&lt; String &gt; &gt;</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The names of the properties the data file at <code><a class="el" href="#ab533a800544facf05fd1c8e50f92099a" title="The first argument that is not [PROFILE_FLAG] or its value, being the path of the data file to open.">data_file</a></code> carries. </p>
+<p>This opens a second engine over the same file with the low-memory profile, which leaves the data on disk, and no named properties, and asks it. The pipeline builder does not hand back its engine, and an engine built with named properties lists the names it was given, including any the file lacks. </p>
+
+</div>
+</div>
+<a id="aae8edf386c8304b3660c9fb1cda9e574" name="aae8edf386c8304b3660c9fb1cda9e574"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aae8edf386c8304b3660c9fb1cda9e574">&#9670;&#160;</a></span>no_arguments_give_no_file_and_no_profile()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn no_arguments_give_no_file_and_no_profile </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="ac7dd33fac7200a49b6d557369d23cdae" name="ac7dd33fac7200a49b6d557369d23cdae"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac7dd33fac7200a49b6d557369d23cdae">&#9670;&#160;</a></span>open_for_inspection()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn open_for_inspection </td>
+          <td>(</td>
+          <td class="c-table__cell">data_file:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>Path</em></span></td><td>)</td>
+          <td> -&gt; Result&lt; IpIntelligenceOnPremiseEngine &gt;</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>An engine over <code><a class="el" href="#ab533a800544facf05fd1c8e50f92099a" title="The first argument that is not [PROFILE_FLAG] or its value, being the path of the data file to open.">data_file</a></code> for reading what the file holds, with the low-memory profile and no updates. </p>
+
+</div>
+</div>
+<a id="aaf7ff2d0d38b590842e7754f09f7f0b6" name="aaf7ff2d0d38b590842e7754f09f7f0b6"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aaf7ff2d0d38b590842e7754f09f7f0b6">&#9670;&#160;</a></span>reads_the_profile_flag_in_both_spellings()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn reads_the_profile_flag_in_both_spellings </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="adf308876e13d0cabf654117706fecadc" name="adf308876e13d0cabf654117706fecadc"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adf308876e13d0cabf654117706fecadc">&#9670;&#160;</a></span>refuses_a_missing_or_unknown_profile()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn refuses_a_missing_or_unknown_profile </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a3c74a5f4775058344251f225947b6652" name="a3c74a5f4775058344251f225947b6652"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3c74a5f4775058344251f225947b6652">&#9670;&#160;</a></span>takes_the_data_file_from_either_side_of_the_flag()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn takes_the_data_file_from_either_side_of_the_flag </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a2e4b0464a7aedd962962a64d87578d83" name="a2e4b0464a7aedd962962a64d87578d83"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2e4b0464a7aedd962962a64d87578d83">&#9670;&#160;</a></span>write_data_file_warnings()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub fn write_data_file_warnings </td>
+          <td>(</td>
+          <td class="c-table__cell">data_file:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>Path</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn</td>          <td class="c-table__cell"><span class="paramname"><em>Write</em></span>&#160;) -&gt; Result&lt;()&gt;</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Write the standard lines about the data file at <code><a class="el" href="#ab533a800544facf05fd1c8e50f92099a" title="The first argument that is not [PROFILE_FLAG] or its value, being the path of the data file to open.">data_file</a></code>, being its tier and publish date, then any warning that it is free data or more than 30 days old. </p>
+<p>Opens a second engine over the file, as [<code><a class="el" href="#ac89b0fe3a1dad639955a50d9e7f38c93" title="The names of the properties the data file at data_file carries.">data_file_properties</a></code>] does. </p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>
+<a id="aa24fcc75f877d228e879ab25f93dbadf" name="aa24fcc75f877d228e879ab25f93dbadf"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa24fcc75f877d228e879ab25f93dbadf">&#9670;&#160;</a></span>Arguments</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub struct <a class="el" href="struct_profile_arguments.html">ProfileArguments</a> Arguments</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Read the arguments that follow the program name into [<code><a class="el" href="struct_profile_arguments.html" title="The command-line arguments of an on-premise example that takes a data-file path and a performance pro...">ProfileArguments</a></code>]. </p>
+<p>The name is read by [<code>PerformanceProfile::parse</code>], so <code>HighPerformance</code> and <code>high-performance</code> name the same profile. Fails when [<code><a class="el" href="#a66bb8788f21973be3691243e428fcef6" title="The flag that chooses the performance profile of an example that offers one, as --profile &lt;name&gt; or -...">PROFILE_FLAG</a></code>] has no value or its value names no profile. </p>
+
+</div>
+</div>
+<a id="a1fa5fe03a96e71725eb264a69674ef90" name="a1fa5fe03a96e71725eb264a69674ef90"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1fa5fe03a96e71725eb264a69674ef90">&#9670;&#160;</a></span>CountryCode</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub const CountryCode</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="ab533a800544facf05fd1c8e50f92099a" name="ab533a800544facf05fd1c8e50f92099a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab533a800544facf05fd1c8e50f92099a">&#9670;&#160;</a></span>data_file</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub data_file</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The first argument that is not [<code><a class="el" href="#a66bb8788f21973be3691243e428fcef6" title="The flag that chooses the performance profile of an example that offers one, as --profile &lt;name&gt; or -...">PROFILE_FLAG</a></code>] or its value, being the path of the data file to open. </p>
+
+</div>
+</div>
+<a id="af30c33ca9e330d6cc1f685a0ff9c8730" name="af30c33ca9e330d6cc1f685a0ff9c8730"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af30c33ca9e330d6cc1f685a0ff9c8730">&#9670;&#160;</a></span>ENTERPRISE_PROPERTIES</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub const ENTERPRISE_PROPERTIES</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Properties the Enterprise data file carries and neither free file does. </p>
+<p>The on-premise examples ask for these alongside the free properties, and say where to ask about the Enterprise data file when the file in use does not carry them. </p>
+
+</div>
+</div>
+<a id="a3d8df78db51ae9a347ffab5e18a677fc" name="a3d8df78db51ae9a347ffab5e18a677fc"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3d8df78db51ae9a347ffab5e18a677fc">&#9670;&#160;</a></span>IsHosted</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub const IsHosted</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="ad9e2c7bad4ee8eab6c14c3c01358f08f" name="ad9e2c7bad4ee8eab6c14c3c01358f08f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad9e2c7bad4ee8eab6c14c3c01358f08f">&#9670;&#160;</a></span>IsVPN</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub const IsVPN</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a4ea7707ca1508422734243cea7bdc5e7" name="a4ea7707ca1508422734243cea7bdc5e7"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4ea7707ca1508422734243cea7bdc5e7">&#9670;&#160;</a></span>Latitude</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub const Latitude</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="afedb94435e18119a2e66c3a07d13d978" name="afedb94435e18119a2e66c3a07d13d978"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#afedb94435e18119a2e66c3a07d13d978">&#9670;&#160;</a></span>Longitude</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub const Longitude</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="ae5bcdc5c590f007269dd7601cd69c63c" name="ae5bcdc5c590f007269dd7601cd69c63c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae5bcdc5c590f007269dd7601cd69c63c">&#9670;&#160;</a></span>profile</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub pub profile</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The profile [<code><a class="el" href="#a66bb8788f21973be3691243e428fcef6" title="The flag that chooses the performance profile of an example that offers one, as --profile &lt;name&gt; or -...">PROFILE_FLAG</a></code>] names, when it is given. </p>
+
+</div>
+</div>
+<a id="a66bb8788f21973be3691243e428fcef6" name="a66bb8788f21973be3691243e428fcef6"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a66bb8788f21973be3691243e428fcef6">&#9670;&#160;</a></span>PROFILE_FLAG</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub const PROFILE_FLAG</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The flag that chooses the performance profile of an example that offers one, as <code>--<a class="el" href="#ae5bcdc5c590f007269dd7601cd69c63c" title="The profile [PROFILE_FLAG] names, when it is given.">profile</a> &lt;name&gt;</code> or <code>--<a class="el" href="#ae5bcdc5c590f007269dd7601cd69c63c" title="The profile [PROFILE_FLAG] names, when it is given.">profile</a>=&lt;name&gt;</code>. </p>
+
+</div>
+</div>
+<a id="ab60c545115f42f88c00b55f384f5ffc0" name="ab60c545115f42f88c00b55f384f5ffc0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab60c545115f42f88c00b55f384f5ffc0">&#9670;&#160;</a></span>tests</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">mod tests</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div>
+<div class="c-code__line">    use super::*</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9af177de28b97c9d420b87756e5eef9e" name="a9af177de28b97c9d420b87756e5eef9e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9af177de28b97c9d420b87756e5eef9e">&#9670;&#160;</a></span>Town</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub const Town</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
 </div><!-- primary -->
 </div><!-- inner -->
 <div id="page-nav" class="page-nav-panel">

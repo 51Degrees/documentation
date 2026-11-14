@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-cloud-getti
 <div class="c-code__line">    <span class="c-code__comment">// example, whose evidence 51Degrees already holds. In normal operation</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// leave it on, which is the builder&#39;s default.</span></div>
 <div class="c-code__line">    let <a class="code hl_variable" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> builder = DeviceDetectionPipelineBuilder::cloud(options.resource_key);</div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let Some(<a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ae83ce8e91df378a7e5b2f394db2631ad">endpoint</a>) = options.endpoint {</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(<a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ae83ce8e91df378a7e5b2f394db2631ad">endpoint</a>) = options.endpoint {</div>
 <div class="c-code__line">        builder = builder.endpoint(<a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ae83ce8e91df378a7e5b2f394db2631ad">endpoint</a>);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">    let pipeline = builder</div>
@@ -84,13 +84,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-cloud-getti
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Run each representative evidence set through the pipeline. The shared</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// sample set covers the desktop, mobile, UACH and high-entropy paths.</span></div>
-<div class="c-code__line">    <span class="c-code__keywordflow">for</span> (<a class="code hl_variable" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a62cc81dcd08eb08cee21fec7d3e4624e">label</a>, pairs) in examples_shared::evidence::all_sample_evidence() {</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">for</span> (<a class="code hl_variable" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#aff76208710c0eea5f0fc0aa60f296fcf">label</a>, pairs) in examples_shared::evidence::all_sample_evidence() {</div>
 <div class="c-code__line">        <span class="c-code__comment">// The IP-address sample sets are for IP Intelligence, not device</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// detection, so they are skipped here.</span></div>
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> pairs.iter().all(|(key, <a class="code hl_variable" href="dd-cloud-getting-started_8rs.html#a0f751db03e526b165039876c46a8930e">_</a>)| key.contains(<span class="c-code__stringliteral">&quot;client-ip&quot;</span>)) {</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">continue</span>;</div>
 <div class="c-code__line">        }</div>
-<div class="c-code__line">        any_value_missing |= <a class="code hl_function" href="dd-cloud-getting-started_8rs.html#a418da7fcd46be2042e5e4a5ad92c2a99">analyse_evidence</a>(&amp;pipeline, <a class="code hl_variable" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a62cc81dcd08eb08cee21fec7d3e4624e">label</a>, &amp;pairs)?;</div>
+<div class="c-code__line">        any_value_missing |= <a class="code hl_function" href="dd-cloud-getting-started_8rs.html#a418da7fcd46be2042e5e4a5ad92c2a99">analyse_evidence</a>(&amp;pipeline, <a class="code hl_variable" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#aff76208710c0eea5f0fc0aa60f296fcf">label</a>, &amp;pairs)?;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> any_value_missing {</div>

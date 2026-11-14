@@ -72,10 +72,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <li>How to retrieve results from both engines in your web application</li>
 </ol>
 <p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-java/blob/main/examples/ip-intelligence/web/getting-started.mixed/src/main/java/fiftyone/ipintelligence/examples/web/GettingStartedWebMixed.java">GitHub</a>.</p>
-<p>This example requires:</p><ul>
-<li>A Device Detection data file (.hash format)</li>
-<li>An IP Intelligence data file (.ipi format)</li>
-</ul>
+<p>By default the example uses the free Lite Device Detection and IP Intelligence data files, which it downloads when they are missing, and shows each property only the Enterprise data files have as needing them. To obtain the Enterprise data files, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=web-getting-started.mixed-src-main-java-fiftyone-ipintelligence-examples-web-gettingstartedwebmixed.java&amp;utm_term=header">contact us</a>.</p>
 <p>Required Maven Dependencies:</p><ul>
 <li><a href="https://central.sonatype.com/artifact/com.51degrees/ip-intelligence">com.51degrees:ip-intelligence</a></li>
 <li><a href="https://central.sonatype.com/artifact/com.51degrees/device-detection">com.51degrees:device-detection</a></li>
@@ -108,9 +105,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.devicedetection.hash.engine.onpremise.flowelements.DeviceDetectionHashEngine;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.devicedetection.shared.DeviceData;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.ipintelligence.engine.onpremise.flowelements.IPIntelligenceOnPremiseEngine;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.ipintelligence.examples.shared.DataFileHelper;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.ipintelligence.shared.IPIntelligenceData;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.core.data.FlowData;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.core.flowelements.FlowElement;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.engines.data.AspectPropertyValue;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.engines.fiftyone.data.FiftyOneAspectPropertyMetaData;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.web.services.FlowDataProviderCore;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> org.slf4j.Logger;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> org.slf4j.LoggerFactory;</div>
@@ -125,10 +126,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line"><span class="c-code__keyword">import</span> java.nio.file.Path;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> java.nio.file.Paths;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> java.util.Map;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> java.util.function.Supplier;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.common.testhelpers.LogbackHelper.configureLogback;</div>
-<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.DataFileHelper.ENTERPRISE_DATA_FILE_REL_PATH;</div>
-<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.DataFileHelper.IPI_PATH_ENV_VAR;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.DataFileHelper.LITE_DATA_FILE_REL_PATH;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.DataFileHelper.IPI_PATH_VARIABLE;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.PropertyHelper.*;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.pipeline.util.FileFinder.getFilePath;</div>
 <div class="c-code__line"></div>
@@ -144,7 +146,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment">// Accept two command line arguments: device detection data file and IP intelligence data file</span></div>
 <div class="c-code__line">        String ddDataFile = args.length &gt; 0 ? args[0] : DD_DATA_FILE_DEFAULT;</div>
-<div class="c-code__line">        String ipiDataFile = args.length &gt; 1 ? args[1] : ENTERPRISE_DATA_FILE_REL_PATH;</div>
+<div class="c-code__line">        String ipiDataFile = args.length &gt; 1 ? args[1] : LITE_DATA_FILE_REL_PATH;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment">// Set Device Detection data file location</span></div>
 <div class="c-code__line">        <span class="c-code__keywordflow">try</span> {</div>
@@ -159,13 +161,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment">// Set IP Intelligence data file location</span></div>
 <div class="c-code__line">        <span class="c-code__keywordflow">try</span> {</div>
-<div class="c-code__line">            String ipiPath = fiftyone.ipintelligence.examples.shared.DataFileHelper.getDataFileLocation(ipiDataFile);</div>
+<div class="c-code__line">            String ipiPath = DataFileHelper.getDataFileLocation(ipiDataFile);</div>
 <div class="c-code__line">            System.setProperty(<span class="c-code__stringliteral">&quot;TestDataFile&quot;</span>, ipiPath);</div>
 <div class="c-code__line">            logger.info(<span class="c-code__stringliteral">&quot;Using IP Intelligence data file: {}&quot;</span>, ipiPath);</div>
 <div class="c-code__line">        } <span class="c-code__keywordflow">catch</span> (Exception e) {</div>
 <div class="c-code__line">            logger.warn(<span class="c-code__stringliteral">&quot;IP Intelligence data file not found at: {}. &quot;</span> +</div>
 <div class="c-code__line">                    <span class="c-code__stringliteral">&quot;An explicit path can be supplied via the {} environment variable.&quot;</span>,</div>
-<div class="c-code__line">                    ipiDataFile, IPI_PATH_ENV_VAR);</div>
+<div class="c-code__line">                    ipiDataFile, IPI_PATH_VARIABLE);</div>
 <div class="c-code__line">            logger.warn(<span class="c-code__stringliteral">&quot;Will attempt to use default path from XML configuration&quot;</span>);</div>
 <div class="c-code__line">            logger.debug(<span class="c-code__stringliteral">&quot;Error finding IP Intelligence data file&quot;</span>, e);</div>
 <div class="c-code__line">        }</div>
@@ -233,58 +235,85 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line">    <span class="c-code__keyword">private</span> String substituteTemplateValues(String template, DeviceData deviceData,</div>
 <div class="c-code__line">                                            IPIntelligenceData ipiData, String inputIp,</div>
 <div class="c-code__line">                                            FlowData flowData) {</div>
+<div class="c-code__line">        <span class="c-code__comment">// The engines say which properties their data files have.</span></div>
+<div class="c-code__line">        DeviceDetectionHashEngine ddEngine =</div>
+<div class="c-code__line">            flowData.getPipeline().getElement(DeviceDetectionHashEngine.class);</div>
+<div class="c-code__line">        IPIntelligenceOnPremiseEngine ipiEngine =</div>
+<div class="c-code__line">            flowData.getPipeline().getElement(IPIntelligenceOnPremiseEngine.class);</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">template</span></div>
 <div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${DATA_FILE_WARNING}&quot;</span>, HtmlContentHelper.getDataFileAgeWarning(flowData))</div>
 <div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${INPUT_IP_ADDRESS}&quot;</span>, inputIp != <span class="c-code__keyword">null</span> ? inputIp : <span class="c-code__stringliteral">&quot;&quot;</span>)</div>
 <div class="c-code__line">            <span class="c-code__comment">// Device Detection properties</span></div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${HARDWARE_VENDOR}&quot;</span>, asString(tryGet(deviceData::getHardwareVendor)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${HARDWARE_NAME}&quot;</span>, asString(tryGet(deviceData::getHardwareName)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${DEVICE_TYPE}&quot;</span>, asString(tryGet(deviceData::getDeviceType)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${PLATFORM_NAME}&quot;</span>, asString(tryGet(deviceData::getPlatformName)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${PLATFORM_VERSION}&quot;</span>, asString(tryGet(deviceData::getPlatformVersion)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${BROWSER_NAME}&quot;</span>, asString(tryGet(deviceData::getBrowserName)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${BROWSER_VERSION}&quot;</span>, asString(tryGet(deviceData::getBrowserVersion)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${SCREEN_WIDTH}&quot;</span>, asString(tryGet(deviceData::getScreenPixelsWidth)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${SCREEN_HEIGHT}&quot;</span>, asString(tryGet(deviceData::getScreenPixelsHeight)))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${HARDWARE_VENDOR}&quot;</span>, value(ddEngine, <span class="c-code__stringliteral">&quot;HardwareVendor&quot;</span>, deviceData::getHardwareVendor))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${HARDWARE_NAME}&quot;</span>, value(ddEngine, <span class="c-code__stringliteral">&quot;HardwareName&quot;</span>, deviceData::getHardwareName))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${DEVICE_TYPE}&quot;</span>, value(ddEngine, <span class="c-code__stringliteral">&quot;DeviceType&quot;</span>, deviceData::getDeviceType))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${PLATFORM_NAME}&quot;</span>, value(ddEngine, <span class="c-code__stringliteral">&quot;PlatformName&quot;</span>, deviceData::getPlatformName))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${PLATFORM_VERSION}&quot;</span>, value(ddEngine, <span class="c-code__stringliteral">&quot;PlatformVersion&quot;</span>, deviceData::getPlatformVersion))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${BROWSER_NAME}&quot;</span>, value(ddEngine, <span class="c-code__stringliteral">&quot;BrowserName&quot;</span>, deviceData::getBrowserName))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${BROWSER_VERSION}&quot;</span>, value(ddEngine, <span class="c-code__stringliteral">&quot;BrowserVersion&quot;</span>, deviceData::getBrowserVersion))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${SCREEN_WIDTH}&quot;</span>, value(ddEngine, <span class="c-code__stringliteral">&quot;ScreenPixelsWidth&quot;</span>, deviceData::getScreenPixelsWidth))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${SCREEN_HEIGHT}&quot;</span>, value(ddEngine, <span class="c-code__stringliteral">&quot;ScreenPixelsHeight&quot;</span>, deviceData::getScreenPixelsHeight))</div>
+<div class="c-code__line">            <span class="c-code__comment">// DeviceId is a match metric, which every data file gives.</span></div>
 <div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${DEVICE_ID}&quot;</span>, asString(tryGet(deviceData::getDeviceId)))</div>
 <div class="c-code__line">            <span class="c-code__comment">// IP Intelligence properties</span></div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${REGISTERED_NAME}&quot;</span>, asStringProperty(tryGet(ipiData::getRegisteredName)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${REGISTERED_OWNER}&quot;</span>, asStringProperty(tryGet(ipiData::getRegisteredOwner)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${REGISTERED_COUNTRY}&quot;</span>, asStringProperty(tryGet(ipiData::getRegisteredCountry)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${IP_RANGE_START}&quot;</span>, asIPAddressProperty(tryGet(ipiData::getIpRangeStart)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${IP_RANGE_END}&quot;</span>, asIPAddressProperty(tryGet(ipiData::getIpRangeEnd)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${COUNTRY}&quot;</span>, asStringProperty(tryGet(ipiData::getCountry)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${COUNTRY_CODE}&quot;</span>, asStringProperty(tryGet(ipiData::getCountryCode)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${COUNTRY_CODE3}&quot;</span>, asStringProperty(tryGet(ipiData::getCountryCode3)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${REGION}&quot;</span>, asStringProperty(tryGet(ipiData::getRegion)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${STATE}&quot;</span>, asStringProperty(tryGet(ipiData::getState)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${TOWN}&quot;</span>, asStringProperty(tryGet(ipiData::getTown)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${LATITUDE}&quot;</span>, asFloatProperty(tryGet(ipiData::getLatitude)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${LONGITUDE}&quot;</span>, asFloatProperty(tryGet(ipiData::getLongitude)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${AREAS}&quot;</span>, asWktStringProperty(tryGet(ipiData::getAreas)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${AREAS_JS}&quot;</span>, escapeForJs(asWktStringProperty(tryGet(ipiData::getAreas))))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${ACCURACY_RADIUS}&quot;</span>, asIntegerProperty(tryGet(ipiData::getAccuracyRadiusMin)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${TIME_ZONE_OFFSET}&quot;</span>, asIntegerProperty(tryGet(ipiData::getTimeZoneOffset)))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${REGISTERED_NAME}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;RegisteredName&quot;</span>, ipiData::getRegisteredName))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${REGISTERED_OWNER}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;RegisteredOwner&quot;</span>, ipiData::getRegisteredOwner))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${REGISTERED_COUNTRY}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;RegisteredCountry&quot;</span>, ipiData::getRegisteredCountry))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${IP_RANGE_START}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;IpRangeStart&quot;</span>, ipiData::getIpRangeStart))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${IP_RANGE_END}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;IpRangeEnd&quot;</span>, ipiData::getIpRangeEnd))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${COUNTRY}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;Country&quot;</span>, ipiData::getCountry))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${COUNTRY_CODE}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;CountryCode&quot;</span>, ipiData::getCountryCode))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${COUNTRY_CODE3}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;CountryCode3&quot;</span>, ipiData::getCountryCode3))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${REGION}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;Region&quot;</span>, ipiData::getRegion))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${STATE}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;State&quot;</span>, ipiData::getState))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${TOWN}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;Town&quot;</span>, ipiData::getTown))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${LATITUDE}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;Latitude&quot;</span>, ipiData::getLatitude))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${LONGITUDE}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;Longitude&quot;</span>, ipiData::getLongitude))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${AREAS}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;Areas&quot;</span>, ipiData::getAreas))</div>
+<div class="c-code__line">            <span class="c-code__comment">// The map shows nothing when the data file has no areas.</span></div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${AREAS_JS}&quot;</span>, DataFileHelper.hasProperty(ipiEngine, <span class="c-code__stringliteral">&quot;Areas&quot;</span>) ?</div>
+<div class="c-code__line">                escapeForJs(asString(ipiData.getAreas())) : <span class="c-code__stringliteral">&quot;&quot;</span>)</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${ACCURACY_RADIUS}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;AccuracyRadiusMin&quot;</span>, ipiData::getAccuracyRadiusMin))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${TIME_ZONE_OFFSET}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;TimeZoneOffset&quot;</span>, ipiData::getTimeZoneOffset))</div>
 <div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${EVIDENCE_ROWS}&quot;</span>, buildEvidenceRows(flowData))</div>
-<div class="c-code__line">            <span class="c-code__comment">//.replace(&quot;${HumanProbability}&quot;,asStringProperty(tryGet(ipiData::getHumanProbability)))</span></div>
-<div class="c-code__line">             .replace(<span class="c-code__stringliteral">&quot;${LocationConfidence}&quot;</span>,asStringProperty(tryGet(ipiData::getLocationConfidence)))</div>
-<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${ConnectionType}&quot;</span>,asStringProperty(tryGet(ipiData::getConnectionType)))</div>
-<div class="c-code__line">                .replace(<span class="c-code__stringliteral">&quot;${HumanProbability}&quot;</span>,asIntegerProperty(tryGet(ipiData::getHumanProbability)))</div>
-<div class="c-code__line">                .replace(<span class="c-code__stringliteral">&quot;${HardwareDiversity}&quot;</span>,asIntegerProperty(tryGet(ipiData::getHardwareDiversity)))</div>
-<div class="c-code__line">        .replace(<span class="c-code__stringliteral">&quot;${BrowserDiversity}&quot;</span>,asIntegerProperty(tryGet(ipiData::getBrowserDiversity)))</div>
-<div class="c-code__line">                .replace(<span class="c-code__stringliteral">&quot;${PlatformDiversity}&quot;</span>,asIntegerProperty(tryGet(ipiData::getPlatformDiversity)))</div>
-<div class="c-code__line">            <span class="c-code__comment">// On-premise engines: only invite the user to contact us about more</span></div>
-<div class="c-code__line">            <span class="c-code__comment">// properties and features when running against the free Lite tier.</span></div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${LocationConfidence}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;LocationConfidence&quot;</span>, ipiData::getLocationConfidence))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${ConnectionType}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;ConnectionType&quot;</span>, ipiData::getConnectionType))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${HumanProbability}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;HumanProbability&quot;</span>, ipiData::getHumanProbability))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${HardwareDiversity}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;HardwareDiversity&quot;</span>, ipiData::getHardwareDiversity))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${BrowserDiversity}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;BrowserDiversity&quot;</span>, ipiData::getBrowserDiversity))</div>
+<div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${PlatformDiversity}&quot;</span>, value(ipiEngine, <span class="c-code__stringliteral">&quot;PlatformDiversity&quot;</span>, ipiData::getPlatformDiversity))</div>
+<div class="c-code__line">            <span class="c-code__comment">// On-premise engines: only invite the user to contact us about the</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// Enterprise data files when running on a free data file.</span></div>
 <div class="c-code__line">            .replace(<span class="c-code__stringliteral">&quot;${CONTACT_MESSAGE}&quot;</span>, HtmlContentHelper.getContactMessage(</div>
-<div class="c-code__line">                HtmlContentHelper.ContactMessageVariant.ON_PREMISE, isLiteDataFile(flowData)));</div>
+<div class="c-code__line">                HtmlContentHelper.ContactMessageVariant.ON_PREMISE,</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;Lite&quot;</span>.equals(ddEngine.getDataSourceTier()) ||</div>
+<div class="c-code__line">                    DataFileHelper.isFreeDataFile(ipiEngine)));</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"></div>
-<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">boolean</span> isLiteDataFile(FlowData flowData) {</div>
-<div class="c-code__line">        <a id="_a0" name="_a0"></a><a class="code hl_class" href="classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_on_premise_engine.html">fiftyone.ipintelligence.engine.onpremise.flowelements.IPIntelligenceOnPremiseEngine</a> engine =</div>
-<div class="c-code__line">            flowData.getPipeline().getElement(</div>
-<div class="c-code__line">                fiftyone.ipintelligence.engine.onpremise.flowelements.IPIntelligenceOnPremiseEngine.class);</div>
-<div class="c-code__line">        <span class="c-code__keywordflow">return</span> engine != <span class="c-code__keyword">null</span> &amp;&amp; engine.<a id="a1" name="a1"></a>getDataSourceTier().equals(<span class="c-code__stringliteral">&quot;Lite&quot;</span>);</div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> String value(IPIntelligenceOnPremiseEngine engine,</div>
+<div class="c-code__line">                                String property,</div>
+<div class="c-code__line">                                Supplier&lt;AspectPropertyValue&lt;?&gt;&gt; value) {</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> DataFileHelper.hasProperty(engine, property) ?</div>
+<div class="c-code__line">                asString(value.get()) :</div>
+<div class="c-code__line">                DataFileHelper.NEEDS_ENTERPRISE;</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> String value(DeviceDetectionHashEngine engine,</div>
+<div class="c-code__line">                                String property,</div>
+<div class="c-code__line">                                Supplier&lt;AspectPropertyValue&lt;?&gt;&gt; value) {</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> hasProperty(engine, property) ?</div>
+<div class="c-code__line">                asString(value.get()) :</div>
+<div class="c-code__line">                DataFileHelper.NEEDS_ENTERPRISE;</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">boolean</span> hasProperty(DeviceDetectionHashEngine engine, String name) {</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">for</span> (FiftyOneAspectPropertyMetaData property : engine.getProperties()) {</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (property.getName().equalsIgnoreCase(name)) {</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">true</span>;</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">false</span>;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">private</span> String buildEvidenceRows(FlowData flowData) {</div>
@@ -350,16 +379,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_getting_start
 <div class="c-code__line">        <span class="c-code__comment">// Search within the project directory, downloading the free Lite</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// file if it is missing</span></div>
 <div class="c-code__line">        <span class="c-code__keywordflow">try</span> {</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">return</span> <a id="_a2" name="_a2"></a><a class="code hl_class" href="classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper.html">fiftyone.ipintelligence.examples.shared.DataFileHelper</a></div>
-<div class="c-code__line">                    .<a id="a3" name="a3"></a><a class="code hl_function" href="classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper.html#a5c4a9dea4acd6b121cdcd8d0be00dfc1">findDataFile</a>(dataFile).getAbsolutePath();</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper.html">fiftyone.ipintelligence.examples.shared.DataFileHelper</a></div>
+<div class="c-code__line">                    .<a id="a1" name="a1"></a><a class="code hl_function" href="classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper.html#a5c4a9dea4acd6b121cdcd8d0be00dfc1">findDataFile</a>(dataFile).getAbsolutePath();</div>
 <div class="c-code__line">        } <span class="c-code__keywordflow">catch</span> (Exception e) {</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">throw</span> <span class="c-code__keyword">new</span> IOException(<span class="c-code__stringliteral">&quot;Data file not found: &quot;</span> + dataFile, e);</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_on_premise_engine_html"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_on_premise_engine.html">fiftyone.ipintelligence.engine.onpremise.flowelements.IPIntelligenceOnPremiseEngine</a></div><div class="ttdoc">On-premise IP Intelligence engine.</div><div class="ttdef"><b>Definition</b> IPIntelligenceOnPremiseEngine.java:55</div></div>
-<div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper_html"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper.html">fiftyone.ipintelligence.examples.shared.DataFileHelper</a></div><div class="ttdef"><b>Definition</b> DataFileHelper.java:51</div></div>
-<div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper_html_a5c4a9dea4acd6b121cdcd8d0be00dfc1"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper.html#a5c4a9dea4acd6b121cdcd8d0be00dfc1">fiftyone.ipintelligence.examples.shared.DataFileHelper.findDataFile</a></div><div class="ttdeci">static File findDataFile(String file)</div><div class="ttdoc">Finds a file below the project root, as FileFinder#getFilePath(String) does.</div><div class="ttdef"><b>Definition</b> DataFileHelper.java:284</div></div>
+<div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper_html"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper.html">fiftyone.ipintelligence.examples.shared.DataFileHelper</a></div><div class="ttdef"><b>Definition</b> DataFileHelper.java:54</div></div>
+<div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper_html_a5c4a9dea4acd6b121cdcd8d0be00dfc1"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper.html#a5c4a9dea4acd6b121cdcd8d0be00dfc1">fiftyone.ipintelligence.examples.shared.DataFileHelper.findDataFile</a></div><div class="ttdeci">static File findDataFile(String file)</div><div class="ttdoc">Finds a file below the project root, as FileFinder#getFilePath(String) does, and then in the data rep...</div><div class="ttdef"><b>Definition</b> DataFileHelper.java:515</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

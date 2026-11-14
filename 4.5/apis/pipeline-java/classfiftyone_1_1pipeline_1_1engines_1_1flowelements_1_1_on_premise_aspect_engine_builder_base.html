@@ -118,6 +118,8 @@ final&#160;void&#160;</td><td class="c-table__cell"><b>createAndVerifyTempDir</b
 Protected Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a45ba653d77cb265ff4638d2902b3fd59" id="r_a45ba653d77cb265ff4638d2902b3fd59"><td class="c-table__cell"><a id="a45ba653d77cb265ff4638d2902b3fd59" name="a45ba653d77cb265ff4638d2902b3fd59"></a>
 void&#160;</td><td class="c-table__cell"><b>preCreateEngine</b> ()</td></tr>
+<tr class="c-table__row memitem:a1f26bad7660f9be33d10f1f3dedf67c3" id="r_a1f26bad7660f9be33d10f1f3dedf67c3"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="#a1f26bad7660f9be33d10f1f3dedf67c3">isLicenseKeyRequired</a> (<a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1configuration_1_1_data_file_configuration.html">DataFileConfiguration</a> dataFileConfig)</td></tr>
+<tr class="c-table__row memdesc:a1f26bad7660f9be33d10f1f3dedf67c3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether the data update URL in the configuration serves nothing without a license key.  <br /></td></tr>
 <tr class="c-table__row memitem:a3eca66c10420ffaa81a31ed9b6593f09" id="r_a3eca66c10420ffaa81a31ed9b6593f09"><td class="c-table__cell"><a id="a3eca66c10420ffaa81a31ed9b6593f09" name="a3eca66c10420ffaa81a31ed9b6593f09"></a>
 void&#160;</td><td class="c-table__cell"><b>configureEngine</b> (TEngine engine)  throws Exception </td></tr>
 <tr class="c-table__row memitem:abc215009d7e7b390dbf399359e312da0" id="r_abc215009d7e7b390dbf399359e312da0"><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_engine_data_file.html">AspectEngineDataFile</a>&#160;</td><td class="c-table__cell"><a class="el" href="#abc215009d7e7b390dbf399359e312da0">newAspectEngineDataFile</a> ()</td></tr>
@@ -241,6 +243,44 @@ final&#160;ILoggerFactory&#160;</td><td class="c-table__cell"><b>loggerFactory</
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">this engine builder instance </dd></dl>
+
+</div>
+</div>
+<a id="a1f26bad7660f9be33d10f1f3dedf67c3" name="a1f26bad7660f9be33d10f1f3dedf67c3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1f26bad7660f9be33d10f1f3dedf67c3">&#9670;&#160;</a></span>isLicenseKeyRequired()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">boolean <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_on_premise_aspect_engine_builder_base.html">fiftyone.pipeline.engines.flowelements.OnPremiseAspectEngineBuilderBase</a>&lt; TBuilder extends <a class="el" href="#a055c2b7c45c1dcf269d1abe7f360a421">OnPremiseAspectEngineBuilderBase</a>&lt; TBuilder, TEngine, TEngine extends <a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_on_premise_aspect_engine.html">OnPremiseAspectEngine</a> &gt;.isLicenseKeyRequired </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1configuration_1_1_data_file_configuration.html">DataFileConfiguration</a></td>          <td class="c-table__cell"><span class="paramname"><em>dataFileConfig</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Whether the data update URL in the configuration serves nothing without a license key. </p>
+<p>Engines whose update source needs a key override this, and the engine then refuses to build with a data update option on and no key set. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataFileConfig</td><td>the data file configuration to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if the update source needs a license key </dd></dl>
 
 </div>
 </div>

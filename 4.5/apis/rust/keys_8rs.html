@@ -67,15 +67,20 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('keys_8rs.html'
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="c-table__row memitem:aefce3bb4e002698333c04bbb182d318d" id="r_aefce3bb4e002698333c04bbb182d318d"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#aefce3bb4e002698333c04bbb182d318d">resource_key_from_env</a> () -&gt; Option&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td></tr>
+<tr class="c-table__row memitem:aefce3bb4e002698333c04bbb182d318d" id="r_aefce3bb4e002698333c04bbb182d318d"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#aefce3bb4e002698333c04bbb182d318d">resource_key_from_env</a> () -&gt; Option&lt; String &gt;</td></tr>
 <tr class="c-table__row memdesc:aefce3bb4e002698333c04bbb182d318d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read a cloud resource key from the environment.  <br /></td></tr>
-<tr class="c-table__row memitem:aea2183a4a0dbc23d74224c6ecd7f09ae" id="r_aea2183a4a0dbc23d74224c6ecd7f09ae"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#aea2183a4a0dbc23d74224c6ecd7f09ae">non_blank_env</a> (name:&amp;str) -&gt; Option&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td></tr>
+<tr class="c-table__row memitem:a334fff405dc367e23834a28d358708ff" id="r_a334fff405dc367e23834a28d358708ff"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a334fff405dc367e23834a28d358708ff">license_key_from_env</a> () -&gt; Option&lt; String &gt;</td></tr>
+<tr class="c-table__row memdesc:a334fff405dc367e23834a28d358708ff"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read a licence key from [<code><a class="el" href="#a3a2e032d9ec9b719daa90e6d8d50c1c9" title="The licence-key environment variable.">LICENSE_KEY_ENV_VAR</a></code>], trimmed of surrounding whitespace.  <br /></td></tr>
+<tr class="c-table__row memitem:aea2183a4a0dbc23d74224c6ecd7f09ae" id="r_aea2183a4a0dbc23d74224c6ecd7f09ae"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#aea2183a4a0dbc23d74224c6ecd7f09ae">non_blank_env</a> (name:&amp;str) -&gt; Option&lt; String &gt;</td></tr>
 <tr class="c-table__row memdesc:aea2183a4a0dbc23d74224c6ecd7f09ae"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read <code>name</code> from the environment, returning the trimmed value only when it is present and not blank (a null-or-whitespace value is rejected).  <br /></td></tr>
-<tr class="c-table__row memitem:aa1a3fde0758672ce2aaefca992332e03" id="r_aa1a3fde0758672ce2aaefca992332e03"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#aa1a3fde0758672ce2aaefca992332e03">is_invalid_key</a> (key:&amp;str) -&gt; <a class="el" href="performance__results_8rs.html#a13eda313804a469af81193c4e2e1ee58">bool</a></td></tr>
+<tr class="c-table__row memitem:aa1a3fde0758672ce2aaefca992332e03" id="r_aa1a3fde0758672ce2aaefca992332e03"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#aa1a3fde0758672ce2aaefca992332e03">is_invalid_key</a> (key:&amp;str) -&gt; <a class="el" href="data__paths_8rs.html#ace367d07d2cbc650fd186739e5511adb">bool</a></td></tr>
 <tr class="c-table__row memdesc:aa1a3fde0758672ce2aaefca992332e03"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Report whether <code>key</code> is <em>definitely</em> an invalid resource or license key.  <br /></td></tr>
 <tr class="c-table__row memitem:a5a01174c45504b9163df76c4c26c2a85" id="r_a5a01174c45504b9163df76c4c26c2a85"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a5a01174c45504b9163df76c4c26c2a85">clear_all</a> ()</td></tr>
 <tr class="c-table__row memitem:a554b462311bf26c1a44e5a66509cd907" id="r_a554b462311bf26c1a44e5a66509cd907"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a554b462311bf26c1a44e5a66509cd907">returns_none_when_unset</a> ()</td></tr>
 <tr class="c-table__row memitem:adec7d630a7d8d014a894a098eeb44c23" id="r_adec7d630a7d8d014a894a098eeb44c23"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#adec7d630a7d8d014a894a098eeb44c23">aligned_name_wins_over_tiered</a> ()</td></tr>
+<tr class="c-table__row memitem:a46c55a6094965906a768800b8d79fc7b" id="r_a46c55a6094965906a768800b8d79fc7b"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a46c55a6094965906a768800b8d79fc7b">a_license_key_is_read_trimmed</a> ()</td></tr>
+<tr class="c-table__row memitem:a7d7c3736449f02d6957f1a76a90fb0a0" id="r_a7d7c3736449f02d6957f1a76a90fb0a0"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a7d7c3736449f02d6957f1a76a90fb0a0">a_license_key_of_only_spaces_is_unset</a> ()</td></tr>
+<tr class="c-table__row memitem:acb4192b4e95b594cc8974a2e229ab576" id="r_acb4192b4e95b594cc8974a2e229ab576"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#acb4192b4e95b594cc8974a2e229ab576">the_name_checked_first_can_be_exported</a> ()</td></tr>
 <tr class="c-table__row memitem:a47536e0852f41d1f8ab8a2c4b223befc" id="r_a47536e0852f41d1f8ab8a2c4b223befc"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a47536e0852f41d1f8ab8a2c4b223befc">falls_back_through_the_chain</a> ()</td></tr>
 <tr class="c-table__row memitem:a01abd0eadc699b3d28a19db9af0b0899" id="r_a01abd0eadc699b3d28a19db9af0b0899"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a01abd0eadc699b3d28a19db9af0b0899">blank_value_is_skipped</a> ()</td></tr>
 <tr class="c-table__row memitem:a9f9a78b610e98092b2bc748d784328cc" id="r_a9f9a78b610e98092b2bc748d784328cc"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a9f9a78b610e98092b2bc748d784328cc">obvious_placeholders_are_invalid</a> ()</td></tr>
@@ -85,7 +90,9 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="c-table__row memitem:a18eba5d96a653fc6c16bdae9c7f7d00f" id="r_a18eba5d96a653fc6c16bdae9c7f7d00f"><td class="c-table__cell">use&#160;base64::Engine&#160;as&#160;</td><td class="c-table__cell"><a class="el" href="#a18eba5d96a653fc6c16bdae9c7f7d00f">_</a></td></tr>
 <tr class="c-table__row memitem:a4cbb5b10944327f887b41fab8b4634d3" id="r_a4cbb5b10944327f887b41fab8b4634d3"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a4cbb5b10944327f887b41fab8b4634d3">RESOURCE_KEY_ENV_VAR</a></td></tr>
-<tr class="c-table__row memdesc:a4cbb5b10944327f887b41fab8b4634d3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The aligned resource-key environment variable, checked first.  <br /></td></tr>
+<tr class="c-table__row memdesc:a4cbb5b10944327f887b41fab8b4634d3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The resource-key environment variable, checked first.  <br /></td></tr>
+<tr class="c-table__row memitem:a3a2e032d9ec9b719daa90e6d8d50c1c9" id="r_a3a2e032d9ec9b719daa90e6d8d50c1c9"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a3a2e032d9ec9b719daa90e6d8d50c1c9">LICENSE_KEY_ENV_VAR</a></td></tr>
+<tr class="c-table__row memdesc:a3a2e032d9ec9b719daa90e6d8d50c1c9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The licence-key environment variable.  <br /></td></tr>
 <tr class="c-table__row memitem:ab0d7ccb46c03418e5d8d388b77be06a7" id="r_ab0d7ccb46c03418e5d8d388b77be06a7"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#ab0d7ccb46c03418e5d8d388b77be06a7">CI_RESOURCE_KEY_BESPOKE_ENV_VAR</a></td></tr>
 <tr class="c-table__row memdesc:ab0d7ccb46c03418e5d8d388b77be06a7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The CI-exported bespoke-tier resource-key environment variable, checked second.  <br /></td></tr>
 <tr class="c-table__row memitem:aef3f673a99e87709d1f7f4f69e2b6644" id="r_aef3f673a99e87709d1f7f4f69e2b6644"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#aef3f673a99e87709d1f7f4f69e2b6644">CI_RESOURCE_KEY_BASIC_ENV_VAR</a></td></tr>
@@ -96,6 +103,48 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:a26ba5e116eefd6a3a0afcc00472b8b75" id="r_a26ba5e116eefd6a3a0afcc00472b8b75"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a26ba5e116eefd6a3a0afcc00472b8b75">ENV_LOCK</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
+<a id="a46c55a6094965906a768800b8d79fc7b" name="a46c55a6094965906a768800b8d79fc7b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a46c55a6094965906a768800b8d79fc7b">&#9670;&#160;</a></span>a_license_key_is_read_trimmed()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn a_license_key_is_read_trimmed </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a7d7c3736449f02d6957f1a76a90fb0a0" name="a7d7c3736449f02d6957f1a76a90fb0a0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7d7c3736449f02d6957f1a76a90fb0a0">&#9670;&#160;</a></span>a_license_key_of_only_spaces_is_unset()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn a_license_key_of_only_spaces_is_unset </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
 <a id="adec7d630a7d8d014a894a098eeb44c23" name="adec7d630a7d8d014a894a098eeb44c23"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#adec7d630a7d8d014a894a098eeb44c23">&#9670;&#160;</a></span>aligned_name_wins_over_tiered()</h2>
 
@@ -192,7 +241,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">pub fn is_invalid_key </td>
           <td>(</td>
           <td class="c-table__cell">key:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span></td><td>)</td>
-          <td> -&gt; <a class="el" href="performance__results_8rs.html#a13eda313804a469af81193c4e2e1ee58">bool</a></td>
+          <td> -&gt; <a class="el" href="data__paths_8rs.html#ace367d07d2cbc650fd186739e5511adb">bool</a></td>
         </tr>
           </table>
         </div>
@@ -211,6 +260,30 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a334fff405dc367e23834a28d358708ff" name="a334fff405dc367e23834a28d358708ff"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a334fff405dc367e23834a28d358708ff">&#9670;&#160;</a></span>license_key_from_env()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub fn license_key_from_env </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; Option&lt; String &gt;</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Read a licence key from [<code><a class="el" href="#a3a2e032d9ec9b719daa90e6d8d50c1c9" title="The licence-key environment variable.">LICENSE_KEY_ENV_VAR</a></code>], trimmed of surrounding whitespace. </p>
+<p>Returns <code>None</code> when the variable is unset or blank, so a value of only spaces counts as no key. </p>
+
+</div>
+</div>
 <a id="aea2183a4a0dbc23d74224c6ecd7f09ae" name="aea2183a4a0dbc23d74224c6ecd7f09ae"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#aea2183a4a0dbc23d74224c6ecd7f09ae">&#9670;&#160;</a></span>non_blank_env()</h2>
 
@@ -223,7 +296,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">fn non_blank_env </td>
           <td>(</td>
           <td class="c-table__cell">name:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span></td><td>)</td>
-          <td> -&gt; Option&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>
+          <td> -&gt; Option&lt; String &gt;</td>
         </tr>
           </table>
         </div>
@@ -231,6 +304,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Read <code>name</code> from the environment, returning the trimmed value only when it is present and not blank (a null-or-whitespace value is rejected). </p>
+<p>A renamed variable is also read under its deprecated name when <code>name</code> is unset or empty. </p>
 
 </div>
 </div>
@@ -288,7 +362,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">pub fn resource_key_from_env </td>
           <td>(</td>
           <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Option&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>
+          <td> -&gt; Option&lt; String &gt;</td>
         </tr>
           </table>
         </div>
@@ -321,6 +395,27 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="acb4192b4e95b594cc8974a2e229ab576" name="acb4192b4e95b594cc8974a2e229ab576"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#acb4192b4e95b594cc8974a2e229ab576">&#9670;&#160;</a></span>the_name_checked_first_can_be_exported()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn the_name_checked_first_can_be_exported </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>
 <a id="a18eba5d96a653fc6c16bdae9c7f7d00f" name="a18eba5d96a653fc6c16bdae9c7f7d00f"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a18eba5d96a653fc6c16bdae9c7f7d00f">&#9670;&#160;</a></span>_</h2>
@@ -337,8 +432,9 @@ Variables</h2></td></tr>
         </div>
       </div>
 </div><div class="c-member__body">
-<p>Resolve a cloud resource key from the environment, and the obvious-placeholder check.</p>
-<p>Cloud examples and example tests read a 51Degrees resource key from the environment rather than hard-coding it. The resolver also consults the CI-exported tiered names so the same resolver works in a local shell and on the build agents. </p>
+<p>Resolve a cloud resource key and a licence key from the environment, and the obvious-placeholder check.</p>
+<p>Cloud examples and example tests read a 51Degrees resource key from the environment rather than hard-coding it. The resolver also consults the CI-exported tiered names so the same resolver works in a local shell and on the build agents.</p>
+<p>Every name starts with an underscore because a POSIX shell cannot set a name that starts with a digit. </p>
 
 </div>
 </div>
@@ -409,6 +505,26 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a3a2e032d9ec9b719daa90e6d8d50c1c9" name="a3a2e032d9ec9b719daa90e6d8d50c1c9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3a2e032d9ec9b719daa90e6d8d50c1c9">&#9670;&#160;</a></span>LICENSE_KEY_ENV_VAR</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub const LICENSE_KEY_ENV_VAR</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The licence-key environment variable. </p>
+
+</div>
+</div>
 <a id="a4cbb5b10944327f887b41fab8b4634d3" name="a4cbb5b10944327f887b41fab8b4634d3"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4cbb5b10944327f887b41fab8b4634d3">&#9670;&#160;</a></span>RESOURCE_KEY_ENV_VAR</h2>
 
@@ -425,8 +541,8 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>The aligned resource-key environment variable, checked first. </p>
-<p>An explicit value here (set by a developer or by CI) overrides every other source. </p>
+<p>The resource-key environment variable, checked first. </p>
+<p>The leading underscore makes the name a valid shell identifier, so <code>export _51DEGREES_RESOURCE_KEY=...</code> works and every 51Degrees language reads the same name. An explicit value here (set by a developer or by CI) overrides every other source. </p>
 
 </div>
 </div>
@@ -447,7 +563,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>The order in which the resource-key environment variables are consulted. </p>
-<p>An explicit <code>51DEGREES_RESOURCE_KEY</code> wins, then the bespoke CI key (a superset of the basic one), then the basic CI key. The first variable set to a non-blank value supplies the key. </p>
+<p>An explicit <code>_51DEGREES_RESOURCE_KEY</code> wins, then the bespoke CI key (a superset of the basic one), then the basic CI key. The first variable set to a non-blank value supplies the key. </p>
 
 </div>
 </div>

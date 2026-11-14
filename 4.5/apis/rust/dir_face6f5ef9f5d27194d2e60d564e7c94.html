@@ -93,17 +93,17 @@ Directories</h2></td></tr>
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Variable  </td><td class="c-table__cell">Meaning  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>51DEGREES_RESOURCE_KEY</code>  </td><td class="c-table__cell">Required. The page's resource key, public by nature. The CI names <code>_51DEGREES_RESOURCE_KEY_BESPOKE</code> and <code>_51DEGREES_RESOURCE_KEY_BASIC</code> are read after it, as every cloud example in this repository does. Without one the demo prints which variables it looked at and exits.  </td></tr>
+<td class="c-table__cell"><code>_51DEGREES_RESOURCE_KEY</code>  </td><td class="c-table__cell">Required. The page's resource key, public by nature. The CI names <code>_51DEGREES_RESOURCE_KEY_BESPOKE</code> and <code>_51DEGREES_RESOURCE_KEY_BASIC</code> are read after it, as every cloud example in this repository does. Without one the demo prints which variables it looked at and exits.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>51DEGREES_LICENSE_KEY</code>  </td><td class="c-table__cell">Optional. A licence key of the same account, used server side only. Only an account that holds licence keys needs one to redeem, so an account holding none runs without it.  </td></tr>
+<td class="c-table__cell"><code>_51DEGREES_LICENSE_KEY</code>  </td><td class="c-table__cell">Optional. A licence key of the same account, used server side only. Only an account that holds licence keys needs one to redeem, so an account holding none runs without it.  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell"><code>51DEGREES_CLOUD_ENDPOINT</code>  </td><td class="c-table__cell">Optional. The cloud API base including the <code>/api/v4/</code> segment, defaulting to <code><a href="https://cloud.51degrees.com/api/v4/">https://cloud.51degrees.com/api/v4/</a></code>. A host other than cloud.51degrees.com would be used to (a) use an on premise web server, or (b) use a privately hosted version of the 51Degrees cloud for performance reasons, which is the private hosting option of the 51Degrees cloud service. Both run the same service, so the demo works unchanged. This is the same variable the cloud request engine honours, so a developer who has set it once points every 51Degrees example at the same place.  </td></tr>
+<td class="c-table__cell"><code>_51DEGREES_CLOUD_ENDPOINT</code>  </td><td class="c-table__cell">Optional. The cloud API base including the <code>/api/v4/</code> segment, defaulting to <code><a href="https://cloud.51degrees.com/api/v4/">https://cloud.51degrees.com/api/v4/</a></code>. A host other than cloud.51degrees.com would be used to (a) use an on premise web server, or (b) use a privately hosted version of the 51Degrees cloud for performance reasons, which is the private hosting option of the 51Degrees cloud service. Both run the same service, so the demo works unchanged. This is the same variable the cloud request engine honours, so a developer who has set it once points every 51Degrees example at the same place.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><code>PORT</code>  </td><td class="c-table__cell">Optional. The port to listen on, defaulting to <code>5100</code>.  </td></tr>
 </table>
 <h2>Running</h2>
 <p>From the <code>examples</code> directory:</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">export 51DEGREES_RESOURCE_KEY=&quot;&lt;your resource key&gt;&quot;</div>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">export _51DEGREES_RESOURCE_KEY=&quot;&lt;your resource key&gt;&quot;</div>
 <div class="c-code__line">cargo run -p fodid-examples --bin fodid-web-creator-context</div>
 </div><!-- fragment --><p>Then open <a href="http://localhost:5100/">http://localhost:5100/</a>. The server listens on every interface, so to demonstrate across two devices open the page by this machine's network address and copy the link from there.</p>
 <p>To build against the local source tree rather than the published crates, add <code>--config source.toml</code> as for the other example crates.</p>
@@ -113,7 +113,7 @@ Directories</h2></td></tr>
 <div class="c-code__line">use fodid::FodId;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">// At start-up. The endpoint defaults to the public cloud or the</div>
-<div class="c-code__line">// 51DEGREES_CLOUD_ENDPOINT environment variable.</div>
+<div class="c-code__line">// _51DEGREES_CLOUD_ENDPOINT environment variable.</div>
 <div class="c-code__line">let client = DidClient::builder(resource_key)</div>
 <div class="c-code__line">    .licence_key(licence_key)</div>
 <div class="c-code__line">    .build()?;</div>

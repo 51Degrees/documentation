@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-onprem-met
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><p>On-premise IP Intelligence metadata console example.</p>
-<p>Inspects an on-premise engine and prints its available properties (with value types and any descriptions/tiers), the evidence keys its data file defines and a summary of the data file in use. The descriptive block the documentation tooling renders lives at the bottom of the file.</p>
+<p>Inspects an on-premise engine and prints a summary of the data file in use, each component the data file defines with its properties, each property's category, value type, description, data tiers and first few values, which Enterprise properties the data file lacks, and the evidence keys its data file defines. The descriptive block the documentation tooling renders lives at the bottom of the file.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">pub fn <a class="code hl_function" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f">run</a>(options: &amp;<a class="code hl_struct" href="struct_example_options.html">ExampleOptions</a>, out: &amp;<a class="code hl_variable" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write) -&gt; anyhow::Result&lt;()&gt; {</div>
 <div class="c-code__line">    <span class="c-code__comment">// Build the concrete on-premise engine so the engine-level metadata traits</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// (AspectEngine, OnPremiseAspectEngine) are reachable. The facade also</span></div>
@@ -80,10 +80,20 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-onprem-met
 <div class="c-code__line">        .context(<span class="c-code__stringliteral">&quot;failed to build the on-premise IP Intelligence engine&quot;</span>)?;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <a class="code hl_function" href="dd-onprem-metadata_8rs.html#a7962d5989b4e5d6c359f2cda12ec99ea">output_data_file_details</a>(&amp;engine, out)?;</div>
-<div class="c-code__line">    <a class="code hl_function" href="ipi-onprem-metadata_8rs.html#ae8f6cdc30f9f2b51e278ee024d381f24">output_property_details</a>(&amp;engine, out)?;</div>
+<div class="c-code__line">    <a class="code hl_function" href="dd-onprem-metadata_8rs.html#af93a301d1f0b0afc3d87136e193dd147">output_components</a>(&amp;engine, out)?;</div>
+<div class="c-code__line">    let missing = <a class="code hl_function" href="dd-onprem-metadata_8rs.html#af481150ab8aeea0a02be2ee8636d9d35">output_enterprise_properties</a>(&amp;engine, out)?;</div>
 <div class="c-code__line">    <a class="code hl_function" href="ipi-onprem-metadata_8rs.html#aad61df3c2080977853c1b70939fc64d6">output_evidence_key_details</a>(&amp;engine, out)?;</div>
 <div class="c-code__line">    <a class="code hl_function" href="ipi-onprem-metadata_8rs.html#a2fca267c69399b9b26d25a1fea0a8f50">output_warnings</a>(&amp;engine, out)?;</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(message) = examples_shared::enterprise_data_file_message(&amp;missing, <a class="code hl_variable" href="dd-onprem-getting-started_8rs.html#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a>) {</div>
+<div class="c-code__line">        writeln!(out)?;</div>
+<div class="c-code__line">        writeln!(out, <span class="c-code__stringliteral">&quot;{message}&quot;</span>)?;</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">    examples_shared::write_find_out_more(</div>
+<div class="c-code__line">        out,</div>
+<div class="c-code__line">        <a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ad25b7f6d0c89d56f4024e2b559cf89cc">FIND_OUT_MORE</a>,</div>
+<div class="c-code__line">        examples_shared::ON_PREMISE_REPOSITORIES,</div>
+<div class="c-code__line">    )?;</div>
 <div class="c-code__line">    Ok(())</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --> </div></div><!-- primary -->

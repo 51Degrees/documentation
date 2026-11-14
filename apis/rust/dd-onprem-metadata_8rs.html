@@ -78,24 +78,31 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a8d89ee9c2e74b56660b709b41f9dfa11"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run the on-premise metadata example.  <br /></td></tr>
 <tr class="c-table__row memitem:a7962d5989b4e5d6c359f2cda12ec99ea" id="r_a7962d5989b4e5d6c359f2cda12ec99ea"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a7962d5989b4e5d6c359f2cda12ec99ea">output_data_file_details</a> (engine:&amp;impl OnPremiseAspectEngine)</td></tr>
 <tr class="c-table__row memdesc:a7962d5989b4e5d6c359f2cda12ec99ea"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print the data file's publish date and data tier.  <br /></td></tr>
-<tr class="c-table__row memitem:a098ab95b3086acc4bc0f1bf89d49b7e7" id="r_a098ab95b3086acc4bc0f1bf89d49b7e7"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a098ab95b3086acc4bc0f1bf89d49b7e7">output_properties_by_component</a> (engine:&amp;impl AspectEngine)</td></tr>
-<tr class="c-table__row memdesc:a098ab95b3086acc4bc0f1bf89d49b7e7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print the available properties grouped by component (their category), with the value type and description of each.  <br /></td></tr>
-<tr class="c-table__row memitem:a124e1f120bf5280a0e16a8f307a8a48a" id="r_a124e1f120bf5280a0e16a8f307a8a48a"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a124e1f120bf5280a0e16a8f307a8a48a">output_evidence_keys</a> (keys:&amp;[<a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>])</td></tr>
+<tr class="c-table__row memitem:af93a301d1f0b0afc3d87136e193dd147" id="r_af93a301d1f0b0afc3d87136e193dd147"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#af93a301d1f0b0afc3d87136e193dd147">output_components</a> (engine:&amp;DeviceDetectionOnPremiseEngine)</td></tr>
+<tr class="c-table__row memdesc:af93a301d1f0b0afc3d87136e193dd147"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print each component with its properties, and each property's category, value type, description, data tiers and first few possible values.  <br /></td></tr>
+<tr class="c-table__row memitem:a124e1f120bf5280a0e16a8f307a8a48a" id="r_a124e1f120bf5280a0e16a8f307a8a48a"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a124e1f120bf5280a0e16a8f307a8a48a">output_evidence_keys</a> (keys:&amp;[String])</td></tr>
 <tr class="c-table__row memdesc:a124e1f120bf5280a0e16a8f307a8a48a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print the evidence keys device detection accepts.  <br /></td></tr>
-<tr class="c-table__row memitem:a6fcdc58603a2286f8d5ff499f3d9c995" id="r_a6fcdc58603a2286f8d5ff499f3d9c995"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a6fcdc58603a2286f8d5ff499f3d9c995">value_type_name</a> (value_type:PropertyValueType) -&gt; &amp;'static <a class="el" href="device-detection-examples_2src_2web__support_2mod_8rs.html#a59c09f4d2e77fa42c030902215658830">str</a></td></tr>
+<tr class="c-table__row memitem:af481150ab8aeea0a02be2ee8636d9d35" id="r_af481150ab8aeea0a02be2ee8636d9d35"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#af481150ab8aeea0a02be2ee8636d9d35">output_enterprise_properties</a> (available:&amp;[String])</td></tr>
+<tr class="c-table__row memdesc:af481150ab8aeea0a02be2ee8636d9d35"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print whether the data file carries each property only the Enterprise data file has.  <br /></td></tr>
+<tr class="c-table__row memitem:a6fcdc58603a2286f8d5ff499f3d9c995" id="r_a6fcdc58603a2286f8d5ff499f3d9c995"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a6fcdc58603a2286f8d5ff499f3d9c995">value_type_name</a> (value_type:PropertyValueType) -&gt; &amp;'static <a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a></td></tr>
 <tr class="c-table__row memdesc:a6fcdc58603a2286f8d5ff499f3d9c995"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A short display name for a property value type, used in the metadata listing.  <br /></td></tr>
 <tr class="c-table__row memitem:a685047298dbf9911e9f06a366e9b1bb4" id="r_a685047298dbf9911e9f06a366e9b1bb4"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a685047298dbf9911e9f06a366e9b1bb4">main</a> () -&gt; Result&lt;()&gt;</td></tr>
-<tr class="c-table__row memdesc:a685047298dbf9911e9f06a366e9b1bb4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Resolve the data file then run the example, with the same fallback chain as the other on-premise examples (argument, env var, shipped Lite file).  <br /></td></tr>
+<tr class="c-table__row memdesc:a685047298dbf9911e9f06a366e9b1bb4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Resolve the data file then run the example, with the same fallback chain as the other on-premise examples (argument, env var, Lite file).  <br /></td></tr>
 <tr class="c-table__row memitem:a19499d1af805265d1f66dd6aab1f2303" id="r_a19499d1af805265d1f66dd6aab1f2303"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a19499d1af805265d1f66dd6aab1f2303">runs_against_the_lite_data_file</a> ()</td></tr>
 <tr class="c-table__row memdesc:a19499d1af805265d1f66dd6aab1f2303"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run the example against the Lite Hash file, skipping when none is present.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="c-table__row memitem:a0f751db03e526b165039876c46a8930e" id="r_a0f751db03e526b165039876c46a8930e"><td class="c-table__cell">use&#160;std::fmt::Write&#160;as&#160;</td><td class="c-table__cell"><a class="el" href="#a0f751db03e526b165039876c46a8930e">_</a></td></tr>
+<tr class="c-table__row memitem:a65560ade98913e76a1868a9845e47e52" id="r_a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a></td></tr>
+<tr class="c-table__row memdesc:a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Where to ask about a copy of the Enterprise data file.  <br /></td></tr>
+<tr class="c-table__row memitem:a59c09f4d2e77fa42c030902215658830" id="r_a59c09f4d2e77fa42c030902215658830"><td class="c-table__cell">const&#160;&amp;&#160;</td><td class="c-table__cell"><a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a></td></tr>
 <tr class="c-table__row memitem:ab533a800544facf05fd1c8e50f92099a" id="r_ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">pub&#160;</td><td class="c-table__cell"><a class="el" href="#ab533a800544facf05fd1c8e50f92099a">data_file</a></td></tr>
 <tr class="c-table__row memdesc:ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The path to the on-premise Hash data file the engine loads.  <br /></td></tr>
 <tr class="c-table__row memitem:ae5bcdc5c590f007269dd7601cd69c63c" id="r_ae5bcdc5c590f007269dd7601cd69c63c"><td class="c-table__cell">pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#ae5bcdc5c590f007269dd7601cd69c63c">profile</a></td></tr>
 <tr class="c-table__row memdesc:ae5bcdc5c590f007269dd7601cd69c63c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The performance profile to load the data file with.  <br /></td></tr>
+<tr class="c-table__row memitem:a50904ffff86a2ccf88e82655affdf0c0" id="r_a50904ffff86a2ccf88e82655affdf0c0"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a50904ffff86a2ccf88e82655affdf0c0">SHOWN_VALUES</a></td></tr>
+<tr class="c-table__row memdesc:a50904ffff86a2ccf88e82655affdf0c0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The number of a property's values the example prints.  <br /></td></tr>
 <tr class="c-table__row memitem:ab60c545115f42f88c00b55f384f5ffc0" id="r_ab60c545115f42f88c00b55f384f5ffc0"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#ab60c545115f42f88c00b55f384f5ffc0">tests</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
@@ -118,7 +125,31 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Resolve the data file then run the example, with the same fallback chain as the other on-premise examples (argument, env var, shipped Lite file). </p>
+<p>Resolve the data file then run the example, with the same fallback chain as the other on-premise examples (argument, env var, Lite file). </p>
+
+</div>
+</div>
+<a id="af93a301d1f0b0afc3d87136e193dd147" name="af93a301d1f0b0afc3d87136e193dd147"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af93a301d1f0b0afc3d87136e193dd147">&#9670;&#160;</a></span>output_components()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn output_components </td>
+          <td>(</td>
+          <td class="c-table__cell">engine:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>DeviceDetectionOnPremiseEngine</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Print each component with its properties, and each property's category, value type, description, data tiers and first few possible values. </p>
+<p>The device-detection data model groups properties into components, being the hardware, the software platform (the operating system), the browser and the crawler, with the engine's match metrics in a <code>Metrics</code> component of their own. The engine reads a property's values from the data file when they are asked for, because a data file can hold hundreds of thousands. The number of properties depends on the data tier: the free Lite tier contains fewer than 20 of the 200-plus properties in the full data file. </p>
 
 </div>
 </div>
@@ -146,6 +177,30 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="af481150ab8aeea0a02be2ee8636d9d35" name="af481150ab8aeea0a02be2ee8636d9d35"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af481150ab8aeea0a02be2ee8636d9d35">&#9670;&#160;</a></span>output_enterprise_properties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn output_enterprise_properties </td>
+          <td>(</td>
+          <td class="c-table__cell">available:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String]</td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Print whether the data file carries each property only the Enterprise data file has. </p>
+<p><code><a class="el" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5" title="The properties the data file carries.">available</a></code> holds the properties the data file carries. </p>
+
+</div>
+</div>
 <a id="a124e1f120bf5280a0e16a8f307a8a48a" name="a124e1f120bf5280a0e16a8f307a8a48a"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a124e1f120bf5280a0e16a8f307a8a48a">&#9670;&#160;</a></span>output_evidence_keys()</h2>
 
@@ -170,30 +225,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a098ab95b3086acc4bc0f1bf89d49b7e7" name="a098ab95b3086acc4bc0f1bf89d49b7e7"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a098ab95b3086acc4bc0f1bf89d49b7e7">&#9670;&#160;</a></span>output_properties_by_component()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">fn output_properties_by_component </td>
-          <td>(</td>
-          <td class="c-table__cell">engine:&amp;impl</td>          <td class="c-table__cell"><span class="paramname"><em>AspectEngine</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>Print the available properties grouped by component (their category), with the value type and description of each. </p>
-<p>The device-detection data model groups properties by component: Hardware, Software Platform (OS), Browser and Crawler, plus the engine's own match metrics. The Rust engine carries each property's category on its metadata, so the example groups on that. Match-metric pseudo-properties carry the category <code>Device Metrics</code>; data-file properties whose category the native reader does not surface fall under <code>Other</code>. The number of properties available depends on the data tier: the free Lite tier contains fewer than 20 of the 200-plus properties in the full data file. </p>
-
-</div>
-</div>
 <a id="a8d89ee9c2e74b56660b709b41f9dfa11" name="a8d89ee9c2e74b56660b709b41f9dfa11"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8d89ee9c2e74b56660b709b41f9dfa11">&#9670;&#160;</a></span>run()</h2>
 
@@ -214,7 +245,8 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Run the on-premise metadata example. </p>
-<p>Builds a Hash engine directly (no full pipeline is needed to read metadata), then enumerates the properties grouped by category/component, the property value types and descriptions, the accepted evidence keys, and the data file's publish date and tier. </p>
+<p>Builds a Hash engine directly (no full pipeline is needed to read metadata), then enumerates the components and their properties, each property's category, value type, description and possible values, the accepted evidence keys, and the data file's publish date and tier. It then says which of the Enterprise properties the data file carries, and ends with where to ask about a copy of the Enterprise data file and the "Find out
+more" links. </p>
 
 </div>
 </div>
@@ -253,7 +285,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">fn value_type_name </td>
           <td>(</td>
           <td class="c-table__cell">value_type:PropertyValueType</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; &amp; 'static <a class="el" href="device-detection-examples_2src_2web__support_2mod_8rs.html#a59c09f4d2e77fa42c030902215658830">str</a></td>
+          <td> -&gt; &amp; 'static <a class="el" href="dd-cloud-configurator_8rs.html#af99483e1224efe9ddfe4c99d7caa54ac">str</a></td>
         </tr>
           </table>
         </div>
@@ -280,6 +312,26 @@ Variables</h2></td></tr>
         </div>
       </div>
 </div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a65560ade98913e76a1868a9845e47e52" name="a65560ade98913e76a1868a9845e47e52"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a65560ade98913e76a1868a9845e47e52">&#9670;&#160;</a></span>CONTACT_US_URL</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const CONTACT_US_URL</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Where to ask about a copy of the Enterprise data file. </p>
 
 </div>
 </div>
@@ -321,6 +373,49 @@ Variables</h2></td></tr>
 
 <p>The performance profile to load the data file with. </p>
 
+</div>
+</div>
+<a id="a50904ffff86a2ccf88e82655affdf0c0" name="a50904ffff86a2ccf88e82655affdf0c0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a50904ffff86a2ccf88e82655affdf0c0">&#9670;&#160;</a></span>SHOWN_VALUES</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const SHOWN_VALUES</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The number of a property's values the example prints. </p>
+
+</div>
+</div>
+<a id="a59c09f4d2e77fa42c030902215658830" name="a59c09f4d2e77fa42c030902215658830"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a59c09f4d2e77fa42c030902215658830">&#9670;&#160;</a></span>str</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const &amp; str</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">     = &amp;[</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Device Detection&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/device-detection?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-device-detection-examples-src-bin-dd-onprem-metadata.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Pricing&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-device-detection-examples-src-bin-dd-onprem-metadata.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Documentation&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-device-detection-examples-src-bin-dd-onprem-metadata.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">]</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab60c545115f42f88c00b55f384f5ffc0" name="ab60c545115f42f88c00b55f384f5ffc0"></a>

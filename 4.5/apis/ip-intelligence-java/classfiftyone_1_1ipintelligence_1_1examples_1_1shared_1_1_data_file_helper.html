@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
-<div class="textblock"><dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_getting_started_web_mixed_8java-example.html#_a2">GettingStartedWebMixed.java</a>.</dd>
+<div class="textblock"><dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_getting_started_web_mixed_8java-example.html#_a0">GettingStartedWebMixed.java</a>.</dd>
 </dl>
 </div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-nested-classes" class="g-docs__section-heading"><a id="nested-classes" name="nested-classes"></a>
@@ -78,10 +78,24 @@ Static Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:aa68e7e5b628b94c7234b9e42294abc16"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Find the best IP Intelligence data file available, preferring the enterprise file, then the free ASN file, then the free Lite file, and downloading a free file that is missing.  <br /></td></tr>
 <tr class="c-table__row memitem:a24eb46db33ec76d5fb70c2efe302bc40" id="r_a24eb46db33ec76d5fb70c2efe302bc40"><td class="c-table__cell">static&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a24eb46db33ec76d5fb70c2efe302bc40">findAvailableDataFile</a> (String... candidates)</td></tr>
 <tr class="c-table__row memdesc:a24eb46db33ec76d5fb70c2efe302bc40"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Find the first of the passed candidate data files that can be resolved.  <br /></td></tr>
-<tr class="c-table__row memitem:aa1cb12aa53656a59898abffe4f3f14de" id="r_aa1cb12aa53656a59898abffe4f3f14de"><td class="c-table__cell"><a id="aa1cb12aa53656a59898abffe4f3f14de" name="aa1cb12aa53656a59898abffe4f3f14de"></a>
-static&#160;<a class="el" href="classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper_1_1_datafile_info.html">DatafileInfo</a>&#160;</td><td class="c-table__cell"><b>getDatafileMetaData</b> (String dataFileLocation)  throws Exception </td></tr>
-<tr class="c-table__row memitem:aa3f4734172328c2b9365c5719c5564e1" id="r_aa3f4734172328c2b9365c5719c5564e1"><td class="c-table__cell"><a id="aa3f4734172328c2b9365c5719c5564e1" name="aa3f4734172328c2b9365c5719c5564e1"></a>
-static&#160;void&#160;</td><td class="c-table__cell"><b>logDataFileInfo</b> (<a class="el" href="classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_on_premise_engine.html">IPIntelligenceOnPremiseEngine</a> engine)</td></tr>
+<tr class="c-table__row memitem:aa1cb12aa53656a59898abffe4f3f14de" id="r_aa1cb12aa53656a59898abffe4f3f14de"><td class="c-table__cell">static&#160;<a class="el" href="classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper_1_1_datafile_info.html">DatafileInfo</a>&#160;</td><td class="c-table__cell"><a class="el" href="#aa1cb12aa53656a59898abffe4f3f14de">getDatafileMetaData</a> (String dataFileLocation)  throws Exception </td></tr>
+<tr class="c-table__row memdesc:aa1cb12aa53656a59898abffe4f3f14de"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Reads the details of a data file, such as its tier and publish date.  <br /></td></tr>
+<tr class="c-table__row memitem:aa3f4734172328c2b9365c5719c5564e1" id="r_aa3f4734172328c2b9365c5719c5564e1"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#aa3f4734172328c2b9365c5719c5564e1">logDataFileInfo</a> (<a class="el" href="classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_on_premise_engine.html">IPIntelligenceOnPremiseEngine</a> engine)</td></tr>
+<tr class="c-table__row memdesc:aa3f4734172328c2b9365c5719c5564e1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Logs the data file in use, and a warning if it is old.  <br /></td></tr>
+<tr class="c-table__row memitem:ac9ece7029d6a77575a8b27c33ae19eb0" id="r_ac9ece7029d6a77575a8b27c33ae19eb0"><td class="c-table__cell">static&#160;boolean&#160;</td><td class="c-table__cell"><a class="el" href="#ac9ece7029d6a77575a8b27c33ae19eb0">hasProperty</a> (<a class="el" href="classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_on_premise_engine.html">IPIntelligenceOnPremiseEngine</a> engine, String name)</td></tr>
+<tr class="c-table__row memdesc:ac9ece7029d6a77575a8b27c33ae19eb0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True when the engine's data file has the property.  <br /></td></tr>
+<tr class="c-table__row memitem:ac77df58e3ce6c2f4ba18b1ba31641ea5" id="r_ac77df58e3ce6c2f4ba18b1ba31641ea5"><td class="c-table__cell">static&#160;boolean&#160;</td><td class="c-table__cell"><a class="el" href="#ac77df58e3ce6c2f4ba18b1ba31641ea5">isFreeDataFile</a> (<a class="el" href="classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_on_premise_engine.html">IPIntelligenceOnPremiseEngine</a> engine)</td></tr>
+<tr class="c-table__row memdesc:ac77df58e3ce6c2f4ba18b1ba31641ea5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True when the engine uses one of the free data files, Lite or Asn.  <br /></td></tr>
+<tr class="c-table__row memitem:a7e6dddd8fdb2975394cbd1dde623bd61" id="r_a7e6dddd8fdb2975394cbd1dde623bd61"><td class="c-table__cell">static&#160;boolean&#160;</td><td class="c-table__cell"><a class="el" href="#a7e6dddd8fdb2975394cbd1dde623bd61">lacksEnterpriseProperties</a> (String dataFile, String purpose, List&lt; String &gt; properties, PrintWriter output, String contactUs)  throws Exception </td></tr>
+<tr class="c-table__row memdesc:a7e6dddd8fdb2975394cbd1dde623bd61"><td class="c-table__cell">&#160;</td><td class="c-table__cell">For an example that needs properties only the Enterprise data file has, reports when the data file has none of them, and then says so and where to ask for a copy of the Enterprise data file.  <br /></td></tr>
+<tr class="c-table__row memitem:a1e88ca330ddc190683d53b3dbe3ab523" id="r_a1e88ca330ddc190683d53b3dbe3ab523"><td class="c-table__cell">static&#160;boolean&#160;</td><td class="c-table__cell"><a class="el" href="#a1e88ca330ddc190683d53b3dbe3ab523">lacksEnterpriseProperties</a> (<a class="el" href="classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_on_premise_engine.html">IPIntelligenceOnPremiseEngine</a> engine, String purpose, List&lt; String &gt; properties, PrintWriter output, String contactUs)</td></tr>
+<tr class="c-table__row memdesc:a1e88ca330ddc190683d53b3dbe3ab523"><td class="c-table__cell">&#160;</td><td class="c-table__cell">As <code><a class="el" href="">lacksEnterpriseProperties(String, String, List, PrintWriter, String)</a></code> for an engine the example has already built.  <br /></td></tr>
+<tr class="c-table__row memitem:a2dd96f55b66e55f829509994c79a86ec" id="r_a2dd96f55b66e55f829509994c79a86ec"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a2dd96f55b66e55f829509994c79a86ec">writeEnterpriseNote</a> (PrintWriter output, String contactUs)</td></tr>
+<tr class="c-table__row memdesc:a2dd96f55b66e55f829509994c79a86ec"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Writes, after an example has shown properties that the data file in use does not have, where to ask for a copy of the Enterprise data file.  <br /></td></tr>
+<tr class="c-table__row memitem:a2a7b5742ae2a859637dc5ed7b1821a61" id="r_a2a7b5742ae2a859637dc5ed7b1821a61"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a2a7b5742ae2a859637dc5ed7b1821a61">writeEnterpriseOffer</a> (PrintWriter output, String contactUs)</td></tr>
+<tr class="c-table__row memdesc:a2a7b5742ae2a859637dc5ed7b1821a61"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Writes, after an example that shows no location properties has run on a free data file, what the Enterprise data file adds and where to ask for a copy.  <br /></td></tr>
+<tr class="c-table__row memitem:ab6916d5df5f4286d2b6ac78204770b12" id="r_ab6916d5df5f4286d2b6ac78204770b12"><td class="c-table__cell">static&#160;Constants.PerformanceProfiles&#160;</td><td class="c-table__cell"><a class="el" href="#ab6916d5df5f4286d2b6ac78204770b12">findPerformanceProfile</a> (String name, PrintWriter output)</td></tr>
+<tr class="c-table__row memdesc:ab6916d5df5f4286d2b6ac78204770b12"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Finds the performance profile an example is given by name, ignoring case.  <br /></td></tr>
 <tr class="c-table__row memitem:a5a67e0d132cbe77ac23dc117ac2ab155" id="r_a5a67e0d132cbe77ac23dc117ac2ab155"><td class="c-table__cell"><a id="a5a67e0d132cbe77ac23dc117ac2ab155" name="a5a67e0d132cbe77ac23dc117ac2ab155"></a>
 static&#160;void&#160;</td><td class="c-table__cell"><b>cantFindDataFile</b> (String dataFile)</td></tr>
 <tr class="c-table__row memitem:ac3d02f7917c7c4630ffa49d23e1c6cdc" id="r_ac3d02f7917c7c4630ffa49d23e1c6cdc"><td class="c-table__cell">static&#160;File&#160;</td><td class="c-table__cell"><a class="el" href="#ac3d02f7917c7c4630ffa49d23e1c6cdc">getEvidenceFile</a> (String evidenceFilename)  throws Exception </td></tr>
@@ -89,18 +103,22 @@ static&#160;void&#160;</td><td class="c-table__cell"><b>cantFindDataFile</b> (St
 <tr class="c-table__row memitem:adad2e7d9b01160aea0b11520980c7727" id="r_adad2e7d9b01160aea0b11520980c7727"><td class="c-table__cell">static&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#adad2e7d9b01160aea0b11520980c7727">getDataFileLocation</a> (String dataFilename)  throws Exception </td></tr>
 <tr class="c-table__row memdesc:adad2e7d9b01160aea0b11520980c7727"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Tries to find the passed file, or if null a default file.  <br /></td></tr>
 <tr class="c-table__row memitem:a5c4a9dea4acd6b121cdcd8d0be00dfc1" id="r_a5c4a9dea4acd6b121cdcd8d0be00dfc1"><td class="c-table__cell">static&#160;File&#160;</td><td class="c-table__cell"><a class="el" href="#a5c4a9dea4acd6b121cdcd8d0be00dfc1">findDataFile</a> (String file)</td></tr>
-<tr class="c-table__row memdesc:a5c4a9dea4acd6b121cdcd8d0be00dfc1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Finds a file below the project root, as <code><a class="el" href="">FileFinder#getFilePath(String)</a></code> does.  <br /></td></tr>
+<tr class="c-table__row memdesc:a5c4a9dea4acd6b121cdcd8d0be00dfc1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Finds a file below the project root, as <code><a class="el" href="">FileFinder#getFilePath(String)</a></code> does, and then in the data repository at the root of this repository, which is above the folder of the examples that their READMEs run them from.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
+<tr class="c-table__row memitem:a3d0fb23e2cb25ea0908c6162d07436d2" id="r_a3d0fb23e2cb25ea0908c6162d07436d2"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a3d0fb23e2cb25ea0908c6162d07436d2">NEEDS_ENTERPRISE</a> = &quot;needs the Enterprise data file&quot;</td></tr>
+<tr class="c-table__row memdesc:a3d0fb23e2cb25ea0908c6162d07436d2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Shown in place of a value for a property that the data file in use does not have.  <br /></td></tr>
 <tr class="c-table__row memitem:ad902ce64cb85a95b86ea524c725a589f" id="r_ad902ce64cb85a95b86ea524c725a589f"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#ad902ce64cb85a95b86ea524c725a589f">ENTERPRISE_DATA_FILE_REL_PATH</a> = &quot;ip-intelligence/51Degrees-EnterpriseIpiV41.ipi&quot;</td></tr>
 <tr class="c-table__row memdesc:ad902ce64cb85a95b86ea524c725a589f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Folder and name of the enterprise IP Intelligence data file, which belongs in cxx/data/ip-intelligence, a folder of the data repository.  <br /></td></tr>
 <tr class="c-table__row memitem:a94355a32ceeaea9efc30069a45dcc17e" id="r_a94355a32ceeaea9efc30069a45dcc17e"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a94355a32ceeaea9efc30069a45dcc17e">LITE_DATA_FILE_REL_PATH</a> = &quot;ip-intelligence/51Degrees-LiteV41.ipi&quot;</td></tr>
 <tr class="c-table__row memdesc:a94355a32ceeaea9efc30069a45dcc17e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Folder and name of the free Lite IP Intelligence data file, which the data repository's get-data-files script downloads to that folder.  <br /></td></tr>
 <tr class="c-table__row memitem:a279d850b285205908405d1309f2968af" id="r_a279d850b285205908405d1309f2968af"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a279d850b285205908405d1309f2968af">ASN_DATA_FILE_REL_PATH</a> = &quot;ip-intelligence/51Degrees-IPIV4AsnIpiV41.ipi&quot;</td></tr>
 <tr class="c-table__row memdesc:a279d850b285205908405d1309f2968af"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Folder and name of the free ASN IP Intelligence data file, which the same script downloads.  <br /></td></tr>
+<tr class="c-table__row memitem:acb50e9438b4bd0433e35ba42f86b62c1" id="r_acb50e9438b4bd0433e35ba42f86b62c1"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#acb50e9438b4bd0433e35ba42f86b62c1">IPI_PATH_VARIABLE</a> = &quot;_51DEGREES_IPI_PATH&quot;</td></tr>
+<tr class="c-table__row memdesc:acb50e9438b4bd0433e35ba42f86b62c1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Aligned name of the environment variable or system property which may hold an explicit path to the IP Intelligence data file.  <br /></td></tr>
 <tr class="c-table__row memitem:af25ccc637b7ef01c469bc2f1b972e6d7" id="r_af25ccc637b7ef01c469bc2f1b972e6d7"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#af25ccc637b7ef01c469bc2f1b972e6d7">IPI_PATH_ENV_VAR</a> = &quot;51DEGREES_IPI_PATH&quot;</td></tr>
-<tr class="c-table__row memdesc:af25ccc637b7ef01c469bc2f1b972e6d7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Aligned name of the environment variable or system property which may hold an explicit path to the IP Intelligence data file.  <br /></td></tr>
+<tr class="c-table__row memdesc:af25ccc637b7ef01c469bc2f1b972e6d7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The old name of <code><a class="el" href="#acb50e9438b4bd0433e35ba42f86b62c1">IPI_PATH_VARIABLE</a></code>, read only when that one is not set.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="aa68e7e5b628b94c7234b9e42294abc16" name="aa68e7e5b628b94c7234b9e42294abc16"></a>
@@ -200,7 +218,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="c-member__body">
 
-<p>Finds a file below the project root, as <code><a class="el" href="">FileFinder#getFilePath(String)</a></code> does. </p>
+<p>Finds a file below the project root, as <code><a class="el" href="">FileFinder#getFilePath(String)</a></code> does, and then in the data repository at the root of this repository, which is above the folder of the examples that their READMEs run them from. </p>
 <p>A free data file that is missing has a <code class="JavaDocCode">&lt;file&gt;.link</code> in the data repository, so the data repository's script is run to download it, and the file is looked for again. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">file</td><td>the name of the file, or the end of its path </td></tr>
@@ -214,8 +232,51 @@ Static Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_getting_started_web_mixed_8java-example.html#a3">GettingStartedWebMixed.java</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_getting_started_web_mixed_8java-example.html#a1">GettingStartedWebMixed.java</a>.</dd>
 </dl>
+
+</div>
+</div>
+<a id="ab6916d5df5f4286d2b6ac78204770b12" name="ab6916d5df5f4286d2b6ac78204770b12"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab6916d5df5f4286d2b6ac78204770b12">&#9670;&#160;</a></span>findPerformanceProfile()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">Constants.PerformanceProfiles fiftyone.ipintelligence.examples.shared.DataFileHelper.findPerformanceProfile </td>
+          <td>(</td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">PrintWriter</td>          <td class="c-table__cell"><span class="paramname"><em>output</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Finds the performance profile an example is given by name, ignoring case. </p>
+<p>When no profile has the name, writes the names accepted. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>the name given, such as MaxPerformance </td></tr>
+    <tr><td class="paramname">output</td><td>where to write when no profile has the name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the profile, or null when no profile has the name </dd></dl>
 
 </div>
 </div>
@@ -247,7 +308,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Tries to find the passed file, or if null a default file. </p>
-<p>Handles both absolute and relative paths. An absolute path supplied by the caller is used as is. Otherwise an explicit path supplied via the <code><a class="el" href="#af25ccc637b7ef01c469bc2f1b972e6d7">IPI_PATH_ENV_VAR</a></code> environment variable or system property is checked before the folder hierarchy is searched for the passed filename. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Handles both absolute and relative paths. An absolute path supplied by the caller is used as is. Otherwise an explicit path supplied via the <code><a class="el" href="#acb50e9438b4bd0433e35ba42f86b62c1">IPI_PATH_VARIABLE</a></code> environment variable or system property is checked before the folder hierarchy is searched for the passed filename. When neither is set the deprecated <code><a class="el" href="#af25ccc637b7ef01c469bc2f1b972e6d7">IPI_PATH_ENV_VAR</a></code> is read, and its first use is logged as a warning. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dataFilename</td><td>a filename to find (can be absolute or relative path) </td></tr>
   </table>
@@ -257,6 +318,50 @@ Static Public Attributes</h2></td></tr>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">Exception</td><td>if the file was not found </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa1cb12aa53656a59898abffe4f3f14de" name="aa1cb12aa53656a59898abffe4f3f14de"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa1cb12aa53656a59898abffe4f3f14de">&#9670;&#160;</a></span>getDatafileMetaData()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="classfiftyone_1_1ipintelligence_1_1examples_1_1shared_1_1_data_file_helper_1_1_datafile_info.html">DatafileInfo</a> fiftyone.ipintelligence.examples.shared.DataFileHelper.getDatafileMetaData </td>
+          <td>(</td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>dataFileLocation</em></span></td><td>)</td>
+          <td> throws Exception</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Reads the details of a data file, such as its tier and publish date. </p>
+<p>The data file is opened with the low memory profile, which reads little of it. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataFileLocation</td><td>the data file to read </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the data file's details </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Exception</td><td>if the data file cannot be opened </td></tr>
   </table>
   </dd>
 </dl>
@@ -301,6 +406,336 @@ Static Public Attributes</h2></td></tr>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">Exception</td><td>if the file was not found </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac9ece7029d6a77575a8b27c33ae19eb0" name="ac9ece7029d6a77575a8b27c33ae19eb0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac9ece7029d6a77575a8b27c33ae19eb0">&#9670;&#160;</a></span>hasProperty()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">boolean fiftyone.ipintelligence.examples.shared.DataFileHelper.hasProperty </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_on_premise_engine.html">IPIntelligenceOnPremiseEngine</a></td>          <td class="c-table__cell"><span class="paramname"><em>engine</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>name</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>True when the engine's data file has the property. </p>
+<p>The free Lite data file has only RegisteredCountry, RegisteredName and RegisteredOwner, and the free Asn data file the Asn properties, such as AsnName. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">engine</td><td>the engine to check </td></tr>
+    <tr><td class="paramname">name</td><td>the name of the property </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if the data file has the property </dd></dl>
+
+</div>
+</div>
+<a id="ac77df58e3ce6c2f4ba18b1ba31641ea5" name="ac77df58e3ce6c2f4ba18b1ba31641ea5"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac77df58e3ce6c2f4ba18b1ba31641ea5">&#9670;&#160;</a></span>isFreeDataFile()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">boolean fiftyone.ipintelligence.examples.shared.DataFileHelper.isFreeDataFile </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_on_premise_engine.html">IPIntelligenceOnPremiseEngine</a></td>          <td class="c-table__cell"><span class="paramname"><em>engine</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>True when the engine uses one of the free data files, Lite or Asn. </p>
+<p>Only the Enterprise data file has the range properties, so a check for IpRangeStart tells them apart. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">engine</td><td>the engine to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true for a free data file </dd></dl>
+
+</div>
+</div>
+<a id="a1e88ca330ddc190683d53b3dbe3ab523" name="a1e88ca330ddc190683d53b3dbe3ab523"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1e88ca330ddc190683d53b3dbe3ab523">&#9670;&#160;</a></span>lacksEnterpriseProperties() <span class="c-member__count">[1/2]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">boolean fiftyone.ipintelligence.examples.shared.DataFileHelper.lacksEnterpriseProperties </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_on_premise_engine.html">IPIntelligenceOnPremiseEngine</a></td>          <td class="c-table__cell"><span class="paramname"><em>engine</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>purpose</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">List&lt; String &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>properties</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">PrintWriter</td>          <td class="c-table__cell"><span class="paramname"><em>output</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>contactUs</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>As <code><a class="el" href="">lacksEnterpriseProperties(String, String, List, PrintWriter, String)</a></code> for an engine the example has already built. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">engine</td><td>the engine the example uses </td></tr>
+    <tr><td class="paramname">purpose</td><td>what the example does, as the start of a sentence </td></tr>
+    <tr><td class="paramname">properties</td><td>the properties the example needs </td></tr>
+    <tr><td class="paramname">output</td><td>where to write </td></tr>
+    <tr><td class="paramname">contactUs</td><td>the link to the contact page, tagged with the example </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if the data file has none of the properties </dd></dl>
+
+</div>
+</div>
+<a id="a7e6dddd8fdb2975394cbd1dde623bd61" name="a7e6dddd8fdb2975394cbd1dde623bd61"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7e6dddd8fdb2975394cbd1dde623bd61">&#9670;&#160;</a></span>lacksEnterpriseProperties() <span class="c-member__count">[2/2]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">boolean fiftyone.ipintelligence.examples.shared.DataFileHelper.lacksEnterpriseProperties </td>
+          <td>(</td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>dataFile</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>purpose</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">List&lt; String &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>properties</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">PrintWriter</td>          <td class="c-table__cell"><span class="paramname"><em>output</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>contactUs</em></span>&#160;) throws Exception</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>For an example that needs properties only the Enterprise data file has, reports when the data file has none of them, and then says so and where to ask for a copy of the Enterprise data file. </p>
+<p>The data file is opened with the low memory profile, which reads little of it. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataFile</td><td>the data file the example would use </td></tr>
+    <tr><td class="paramname">purpose</td><td>what the example does, as the start of a sentence, for example "Comparing known locations with IP Intelligence" </td></tr>
+    <tr><td class="paramname">properties</td><td>the properties the example needs </td></tr>
+    <tr><td class="paramname">output</td><td>where to write </td></tr>
+    <tr><td class="paramname">contactUs</td><td>the link to the contact page, tagged with the example's file so an enquiry can be traced to it </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if the data file has none of the properties </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Exception</td><td>if the data file cannot be opened </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa3f4734172328c2b9365c5719c5564e1" name="aa3f4734172328c2b9365c5719c5564e1"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa3f4734172328c2b9365c5719c5564e1">&#9670;&#160;</a></span>logDataFileInfo()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyone.ipintelligence.examples.shared.DataFileHelper.logDataFileInfo </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_on_premise_engine.html">IPIntelligenceOnPremiseEngine</a></td>          <td class="c-table__cell"><span class="paramname"><em>engine</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Logs the data file in use, and a warning if it is old. </p>
+<p>An example run on a free data file says what the Enterprise data file adds in its own output, with <code><a class="el" href="#a2dd96f55b66e55f829509994c79a86ec">writeEnterpriseNote</a></code>, <code><a class="el" href="#a2a7b5742ae2a859637dc5ed7b1821a61">writeEnterpriseOffer</a></code> or <code><a class="el" href="#a7e6dddd8fdb2975394cbd1dde623bd61">lacksEnterpriseProperties</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">engine</td><td>the engine whose data file is logged </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2dd96f55b66e55f829509994c79a86ec" name="a2dd96f55b66e55f829509994c79a86ec"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2dd96f55b66e55f829509994c79a86ec">&#9670;&#160;</a></span>writeEnterpriseNote()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyone.ipintelligence.examples.shared.DataFileHelper.writeEnterpriseNote </td>
+          <td>(</td>
+          <td class="c-table__cell">PrintWriter</td>          <td class="c-table__cell"><span class="paramname"><em>output</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>contactUs</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Writes, after an example has shown properties that the data file in use does not have, where to ask for a copy of the Enterprise data file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>where to write </td></tr>
+    <tr><td class="paramname">contactUs</td><td>the link to the contact page, tagged with the example's file so an enquiry can be traced to it </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2a7b5742ae2a859637dc5ed7b1821a61" name="a2a7b5742ae2a859637dc5ed7b1821a61"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2a7b5742ae2a859637dc5ed7b1821a61">&#9670;&#160;</a></span>writeEnterpriseOffer()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyone.ipintelligence.examples.shared.DataFileHelper.writeEnterpriseOffer </td>
+          <td>(</td>
+          <td class="c-table__cell">PrintWriter</td>          <td class="c-table__cell"><span class="paramname"><em>output</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>contactUs</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Writes, after an example that shows no location properties has run on a free data file, what the Enterprise data file adds and where to ask for a copy. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>where to write </td></tr>
+    <tr><td class="paramname">contactUs</td><td>the link to the contact page, tagged with the example's file so an enquiry can be traced to it </td></tr>
   </table>
   </dd>
 </dl>
@@ -390,6 +825,35 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="c-member__body">
 
+<p>The old name of <code><a class="el" href="#acb50e9438b4bd0433e35ba42f86b62c1">IPI_PATH_VARIABLE</a></code>, read only when that one is not set. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated</a></b></dt><dd>use <code><a class="el" href="#acb50e9438b4bd0433e35ba42f86b62c1">IPI_PATH_VARIABLE</a></code>, and set the variable it names in place of this one. </dd></dl>
+
+</div>
+</div>
+<a id="acb50e9438b4bd0433e35ba42f86b62c1" name="acb50e9438b4bd0433e35ba42f86b62c1"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#acb50e9438b4bd0433e35ba42f86b62c1">&#9670;&#160;</a></span>IPI_PATH_VARIABLE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">final String fiftyone.ipintelligence.examples.shared.DataFileHelper.IPI_PATH_VARIABLE = &quot;_51DEGREES_IPI_PATH&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
 <p>Aligned name of the environment variable or system property which may hold an explicit path to the IP Intelligence data file. </p>
 <p>This name is checked first, before any search of the project space. </p>
 
@@ -421,6 +885,35 @@ Static Public Attributes</h2></td></tr>
 
 <p>Folder and name of the free Lite IP Intelligence data file, which the data repository's get-data-files script downloads to that folder. </p>
 <p>It contains the RegisteredCountry, RegisteredName and RegisteredOwner properties. </p>
+
+</div>
+</div>
+<a id="a3d0fb23e2cb25ea0908c6162d07436d2" name="a3d0fb23e2cb25ea0908c6162d07436d2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3d0fb23e2cb25ea0908c6162d07436d2">&#9670;&#160;</a></span>NEEDS_ENTERPRISE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">final String fiftyone.ipintelligence.examples.shared.DataFileHelper.NEEDS_ENTERPRISE = &quot;needs the Enterprise data file&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Shown in place of a value for a property that the data file in use does not have. </p>
+<p>Every property the examples ask for is in the Enterprise data file. </p>
 
 </div>
 </div>

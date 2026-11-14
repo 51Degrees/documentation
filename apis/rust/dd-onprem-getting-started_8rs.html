@@ -76,20 +76,24 @@ Classes</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="c-table__row memitem:a8d89ee9c2e74b56660b709b41f9dfa11" id="r_a8d89ee9c2e74b56660b709b41f9dfa11"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_example_options.html">ExampleOptions</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a8d89ee9c2e74b56660b709b41f9dfa11">run</a> (options:ExampleOptions) -&gt; Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a8d89ee9c2e74b56660b709b41f9dfa11"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run the on-premise getting-started example.  <br /></td></tr>
-<tr class="c-table__row memitem:a5be50f5e0061e2790a9f84d347068831" id="r_a5be50f5e0061e2790a9f84d347068831"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a5be50f5e0061e2790a9f84d347068831">representative_evidence</a> () -&gt; Vec&lt;(&amp;'static <a class="el" href="device-detection-examples_2src_2web__support_2mod_8rs.html#a59c09f4d2e77fa42c030902215658830">str</a>, Vec&lt;(&amp;'static <a class="el" href="device-detection-examples_2src_2web__support_2mod_8rs.html#a59c09f4d2e77fa42c030902215658830">str</a>, &amp;'static <a class="el" href="device-detection-examples_2src_2web__support_2mod_8rs.html#a59c09f4d2e77fa42c030902215658830">str</a>)&gt;)&gt;</td></tr>
-<tr class="c-table__row memdesc:a5be50f5e0061e2790a9f84d347068831"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The representative evidence the example processes: a desktop and a mobile User-Agent, each as a labelled <code>(key, <a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a9d58c3d628e2a73ead14ac823d810027" title="The resolved value, or the no-value message.">value</a>)</code> pair list.  <br /></td></tr>
-<tr class="c-table__row memitem:a7a441c62605e0338a2f9dee68af33331" id="r_a7a441c62605e0338a2f9dee68af33331"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a7a441c62605e0338a2f9dee68af33331">analyse_evidence</a> (pipeline:&amp;Arc&lt; Pipeline &gt;, label:&amp;str, pairs:&amp;[(&amp;str, &amp;str)]) -&gt; Result&lt;()&gt;</td></tr>
-<tr class="c-table__row memdesc:a7a441c62605e0338a2f9dee68af33331"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process one evidence set and print the key device properties.  <br /></td></tr>
-<tr class="c-table__row memitem:ac7227680fa751c5eb23d39534301f6e2" id="r_ac7227680fa751c5eb23d39534301f6e2"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ac7227680fa751c5eb23d39534301f6e2">output_value&lt; T:std::fmt::Display &gt;</a> (name:&amp;str, value:&amp;AspectPropertyValue&lt; <a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a749647531536dd5127e7ef0b82685080">T</a> &gt;, message:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> String,)</td></tr>
-<tr class="c-table__row memdesc:ac7227680fa751c5eb23d39534301f6e2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Append one typed property to the output, handling the no-value case.  <br /></td></tr>
+<tr class="c-table__row memitem:a5be50f5e0061e2790a9f84d347068831" id="r_a5be50f5e0061e2790a9f84d347068831"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a5be50f5e0061e2790a9f84d347068831">representative_evidence</a> () -&gt; Vec&lt;(&amp;'static <a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a>, Vec&lt;(&amp;'static <a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a>, &amp;'static <a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a>)&gt;)&gt;</td></tr>
+<tr class="c-table__row memdesc:a5be50f5e0061e2790a9f84d347068831"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The representative evidence the example processes: a desktop and a mobile User-Agent, each as a labelled <code>(key, <a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a451961dd347700d7bb5d36beec33eb80" title="The resolved value, or the no-value message.">value</a>)</code> pair list.  <br /></td></tr>
+<tr class="c-table__row memitem:a2a5fce5dfa379e33f06443d3f4b39a43" id="r_a2a5fce5dfa379e33f06443d3f4b39a43"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a2a5fce5dfa379e33f06443d3f4b39a43">analyse_evidence</a> (pipeline:&amp;Arc&lt; Pipeline &gt;, label:&amp;str, pairs:&amp;[(&amp;str, &amp;str)], available:&amp;[String],) -&gt; Result&lt;()&gt;</td></tr>
+<tr class="c-table__row memdesc:a2a5fce5dfa379e33f06443d3f4b39a43"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process one evidence set and print the key device properties. <code><a class="el" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5" title="The properties the data file carries.">available</a></code> holds the properties the data file carries.  <br /></td></tr>
+<tr class="c-table__row memitem:aa8a1a007bfd73cc5defaf20e54d4cd9b" id="r_aa8a1a007bfd73cc5defaf20e54d4cd9b"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#aa8a1a007bfd73cc5defaf20e54d4cd9b">output_value&lt; T:Display &gt;</a> (name:&amp;str, value:&amp;AspectPropertyValue&lt; <a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#ad0c2824278fe83f467fdf5cc24646eae">T</a> &gt;, message:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> String)</td></tr>
+<tr class="c-table__row memdesc:aa8a1a007bfd73cc5defaf20e54d4cd9b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Append one typed property to the output, handling the no-value case.  <br /></td></tr>
+<tr class="c-table__row memitem:a09acfbafc3724a98a02cd3783c49a4ff" id="r_a09acfbafc3724a98a02cd3783c49a4ff"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a09acfbafc3724a98a02cd3783c49a4ff">output_enterprise&lt; T:Display &gt;</a> (name:&amp;str, property:&amp;str, value:&amp;AspectPropertyValue&lt; <a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#ad0c2824278fe83f467fdf5cc24646eae">T</a> &gt;, available:&amp;[String], message:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> String,)</td></tr>
+<tr class="c-table__row memdesc:a09acfbafc3724a98a02cd3783c49a4ff"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Append a property only the Enterprise data file carries, or say that it needs the Enterprise data file when the data file in use does not carry it.  <br /></td></tr>
 <tr class="c-table__row memitem:a685047298dbf9911e9f06a366e9b1bb4" id="r_a685047298dbf9911e9f06a366e9b1bb4"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a685047298dbf9911e9f06a366e9b1bb4">main</a> () -&gt; Result&lt;()&gt;</td></tr>
-<tr class="c-table__row memdesc:a685047298dbf9911e9f06a366e9b1bb4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Resolve the data file then run the example. The data file is taken from the first command-line argument, the <code>51DEGREES_DD_PATH</code> environment variable, or the Lite Hash file shipped in the <code>cxx</code> submodule. With none of those present the example prints a clear message and exits successfully so an offline checkout is not a hard error.  <br /></td></tr>
+<tr class="c-table__row memdesc:a685047298dbf9911e9f06a366e9b1bb4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Resolve the data file then run the example. The data file is taken from the first command-line argument, the <code>_51DEGREES_DD_PATH</code> environment variable, or the Lite Hash file in the data repository inside the <code>cxx</code> submodule, which is downloaded when it is missing. With none of those present the example fails, after the resolver has printed the command that gets the file.  <br /></td></tr>
 <tr class="c-table__row memitem:a19499d1af805265d1f66dd6aab1f2303" id="r_a19499d1af805265d1f66dd6aab1f2303"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a19499d1af805265d1f66dd6aab1f2303">runs_against_the_lite_data_file</a> ()</td></tr>
 <tr class="c-table__row memdesc:a19499d1af805265d1f66dd6aab1f2303"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run the example end to end against the Lite Hash data file.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="c-table__row memitem:a0f751db03e526b165039876c46a8930e" id="r_a0f751db03e526b165039876c46a8930e"><td class="c-table__cell">use&#160;std::fmt::Write&#160;as&#160;</td><td class="c-table__cell"><a class="el" href="#a0f751db03e526b165039876c46a8930e">_</a></td></tr>
+<tr class="c-table__row memitem:a65560ade98913e76a1868a9845e47e52" id="r_a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a></td></tr>
+<tr class="c-table__row memdesc:a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Where to ask about a copy of the Enterprise data file.  <br /></td></tr>
+<tr class="c-table__row memitem:a59c09f4d2e77fa42c030902215658830" id="r_a59c09f4d2e77fa42c030902215658830"><td class="c-table__cell">const&#160;&amp;&#160;</td><td class="c-table__cell"><a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a></td></tr>
 <tr class="c-table__row memitem:ab533a800544facf05fd1c8e50f92099a" id="r_ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">pub&#160;</td><td class="c-table__cell"><a class="el" href="#ab533a800544facf05fd1c8e50f92099a">data_file</a></td></tr>
 <tr class="c-table__row memdesc:ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The path to the on-premise Hash data file the engine loads.  <br /></td></tr>
 <tr class="c-table__row memitem:ae5bcdc5c590f007269dd7601cd69c63c" id="r_ae5bcdc5c590f007269dd7601cd69c63c"><td class="c-table__cell">pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#ae5bcdc5c590f007269dd7601cd69c63c">profile</a></td></tr>
@@ -97,8 +101,8 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:ab60c545115f42f88c00b55f384f5ffc0" id="r_ab60c545115f42f88c00b55f384f5ffc0"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#ab60c545115f42f88c00b55f384f5ffc0">tests</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
-<a id="a7a441c62605e0338a2f9dee68af33331" name="a7a441c62605e0338a2f9dee68af33331"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7a441c62605e0338a2f9dee68af33331">&#9670;&#160;</a></span>analyse_evidence()</h2>
+<a id="a2a5fce5dfa379e33f06443d3f4b39a43" name="a2a5fce5dfa379e33f06443d3f4b39a43"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2a5fce5dfa379e33f06443d3f4b39a43">&#9670;&#160;</a></span>analyse_evidence()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -118,14 +122,19 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">pairs:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[(&amp;str, &amp;str)]&#160;) -&gt; Result&lt;()&gt;</td>
+          <td class="c-table__cell">pairs:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[(&amp;str, &amp;str)], </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">available:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String]&#160;) -&gt; Result&lt;()&gt;</td>
         </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>Process one evidence set and print the key device properties. </p>
+<p>Process one evidence set and print the key device properties. <code><a class="el" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5" title="The properties the data file carries.">available</a></code> holds the properties the data file carries. </p>
 
 </div>
 </div>
@@ -148,12 +157,12 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Resolve the data file then run the example. The data file is taken from the first command-line argument, the <code>51DEGREES_DD_PATH</code> environment variable, or the Lite Hash file shipped in the <code>cxx</code> submodule. With none of those present the example prints a clear message and exits successfully so an offline checkout is not a hard error. </p>
+<p>Resolve the data file then run the example. The data file is taken from the first command-line argument, the <code>_51DEGREES_DD_PATH</code> environment variable, or the Lite Hash file in the data repository inside the <code>cxx</code> submodule, which is downloaded when it is missing. With none of those present the example fails, after the resolver has printed the command that gets the file. </p>
 
 </div>
 </div>
-<a id="ac7227680fa751c5eb23d39534301f6e2" name="ac7227680fa751c5eb23d39534301f6e2"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac7227680fa751c5eb23d39534301f6e2">&#9670;&#160;</a></span>output_value&lt; T:std::fmt::Display &gt;()</h2>
+<a id="a09acfbafc3724a98a02cd3783c49a4ff" name="a09acfbafc3724a98a02cd3783c49a4ff"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a09acfbafc3724a98a02cd3783c49a4ff">&#9670;&#160;</a></span>output_enterprise&lt; T:Display &gt;()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -161,14 +170,56 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fn output_value&lt; T:std::fmt::Display &gt; </td>
+              <td class="c-table__cell">fn <a class="el" href="dd-onprem-match-metrics_8rs.html#ab26d50d812b853514e3d3dc0010f94c7">output_enterprise</a>&lt; T:Display &gt; </td>
           <td>(</td>
           <td class="c-table__cell">name:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">value:&amp;AspectPropertyValue&lt; <a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a749647531536dd5127e7ef0b82685080">T</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+          <td class="c-table__cell">property:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">value:&amp;AspectPropertyValue&lt; <a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#ad0c2824278fe83f467fdf5cc24646eae">T</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">available:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String], </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">message:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a></td>          <td class="c-table__cell"><span class="paramname"><em>String</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Append a property only the Enterprise data file carries, or say that it needs the Enterprise data file when the data file in use does not carry it. </p>
+
+</div>
+</div>
+<a id="aa8a1a007bfd73cc5defaf20e54d4cd9b" name="aa8a1a007bfd73cc5defaf20e54d4cd9b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa8a1a007bfd73cc5defaf20e54d4cd9b">&#9670;&#160;</a></span>output_value&lt; T:Display &gt;()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn output_value&lt; T:Display &gt; </td>
+          <td>(</td>
+          <td class="c-table__cell">name:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">value:&amp;AspectPropertyValue&lt; <a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#ad0c2824278fe83f467fdf5cc24646eae">T</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
@@ -197,14 +248,14 @@ Variables</h2></td></tr>
               <td class="c-table__cell">fn representative_evidence </td>
           <td>(</td>
           <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Vec&lt;(&amp; 'static <a class="el" href="device-detection-examples_2src_2web__support_2mod_8rs.html#a59c09f4d2e77fa42c030902215658830">str</a>, Vec&lt;(&amp; 'static <a class="el" href="device-detection-examples_2src_2web__support_2mod_8rs.html#a59c09f4d2e77fa42c030902215658830">str</a>, &amp; 'static <a class="el" href="device-detection-examples_2src_2web__support_2mod_8rs.html#a59c09f4d2e77fa42c030902215658830">str</a>)&gt;)&gt;</td>
+          <td> -&gt; Vec&lt;(&amp; 'static <a class="el" href="dd-cloud-configurator_8rs.html#af99483e1224efe9ddfe4c99d7caa54ac">str</a>, Vec&lt;(&amp; 'static <a class="el" href="dd-cloud-configurator_8rs.html#af99483e1224efe9ddfe4c99d7caa54ac">str</a>, &amp; 'static <a class="el" href="dd-cloud-configurator_8rs.html#af99483e1224efe9ddfe4c99d7caa54ac">str</a>)&gt;)&gt;</td>
         </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>The representative evidence the example processes: a desktop and a mobile User-Agent, each as a labelled <code>(key, <a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a9d58c3d628e2a73ead14ac823d810027" title="The resolved value, or the no-value message.">value</a>)</code> pair list. </p>
+<p>The representative evidence the example processes: a desktop and a mobile User-Agent, each as a labelled <code>(key, <a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a451961dd347700d7bb5d36beec33eb80" title="The resolved value, or the no-value message.">value</a>)</code> pair list. </p>
 
 </div>
 </div>
@@ -228,7 +279,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Run the on-premise getting-started example. </p>
-<p>Builds an on-premise device-detection pipeline from the Hash data file, then runs a desktop and a mobile User-Agent through it, printing the strongly-typed <code>IsMobile</code>, <code>PlatformName</code>, <code>PlatformVersion</code>, <code>BrowserName</code>, <code>BrowserVersion</code> and <code>DeviceId</code> results for each. Finishes by printing the standard data-file warnings (Lite tier, more-than-30-days-old) so a limited or stale data file is surfaced rather than silently degrading results. </p>
+<p>Builds an on-premise device-detection pipeline from the Hash data file, then runs a desktop and a mobile User-Agent through it, printing the strongly-typed <code>IsMobile</code>, <code>PlatformName</code>, <code>PlatformVersion</code>, <code>BrowserName</code>, <code>BrowserVersion</code> and <code>DeviceId</code> results for each, then the Enterprise properties. Finishes by printing the standard data-file warnings (Lite tier, more-than-30-days-old), the Enterprise properties the data file does not carry with where to ask about a copy, and the "Find out more" links. </p>
 
 </div>
 </div>
@@ -252,13 +303,13 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Run the example end to end against the Lite Hash data file. </p>
-<p>On-premise tests run for real against the shipped Lite file. The test is skipped (not failed) only when no data file can be located, so a checkout without the submodule keeps <code>cargo test</code> green while a developer with it gets genuine coverage. </p>
+<p>On-premise tests run for real against the Lite file. The test is skipped (not failed) only when no data file can be located, so a checkout without the submodule keeps <code>cargo test</code> green while a developer with it gets genuine coverage. </p>
 
 </div>
 </div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>
-<a id="a0f751db03e526b165039876c46a8930e" name="a0f751db03e526b165039876c46a8930e"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0f751db03e526b165039876c46a8930e">&#9670;&#160;</a></span>_</h2>
+<a id="a65560ade98913e76a1868a9845e47e52" name="a65560ade98913e76a1868a9845e47e52"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a65560ade98913e76a1868a9845e47e52">&#9670;&#160;</a></span>CONTACT_US_URL</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -266,12 +317,14 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">use std::fmt::Write as _</td>
+              <td class="c-table__cell">const CONTACT_US_URL</td>
             </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
+
+<p>Where to ask about a copy of the Enterprise data file. </p>
 
 </div>
 </div>
@@ -314,6 +367,29 @@ Variables</h2></td></tr>
 <p>The performance profile to load the data file with. </p>
 <p>The example uses the low-memory profile, whose performance is sufficient here. </p>
 
+</div>
+</div>
+<a id="a59c09f4d2e77fa42c030902215658830" name="a59c09f4d2e77fa42c030902215658830"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a59c09f4d2e77fa42c030902215658830">&#9670;&#160;</a></span>str</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const &amp; str</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">     = &amp;[</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Device Detection&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/device-detection?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-device-detection-examples-src-bin-dd-onprem-getting-started.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Pricing&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-device-detection-examples-src-bin-dd-onprem-getting-started.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Documentation&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-device-detection-examples-src-bin-dd-onprem-getting-started.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">]</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab60c545115f42f88c00b55f384f5ffc0" name="ab60c545115f42f88c00b55f384f5ffc0"></a>

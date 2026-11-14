@@ -75,15 +75,23 @@ Classes</h2></td></tr>
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="c-table__row memitem:a6f46caea8ef2116e6868901462d62778" id="r_a6f46caea8ef2116e6868901462d62778"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_example_options.html">ExampleOptions</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a6f46caea8ef2116e6868901462d62778">from_env</a> () -&gt; Option&lt; Self &gt;</td></tr>
-<tr class="c-table__row memdesc:a6f46caea8ef2116e6868901462d62778"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default options, using the best-available loadable data-file tier.  <br /></td></tr>
+<tr class="c-table__row memdesc:a6f46caea8ef2116e6868901462d62778"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default options, reading the Enterprise file when its share is reachable and otherwise the free Lite file.  <br /></td></tr>
 <tr class="c-table__row memitem:a8ec87ce59a7730398990e6de32fb8cb4" id="r_a8ec87ce59a7730398990e6de32fb8cb4"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a8ec87ce59a7730398990e6de32fb8cb4">for_tier</a> (<a class="el" href="data__paths_8rs.html#a29e87adf1760ab44a6a8d86c736658f8">tier:examples_shared::IpiTier</a>) -&gt; Option&lt; Self &gt;</td></tr>
 <tr class="c-table__row memdesc:a8ec87ce59a7730398990e6de32fb8cb4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="struct_options.html" title="Options that drive [run].">Options</a> pinned to a specific data-file tier.  <br /></td></tr>
 <tr class="c-table__row memitem:a72a494311da1d889b016fd2f0e734e7e" id="r_a72a494311da1d889b016fd2f0e734e7e"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a72a494311da1d889b016fd2f0e734e7e">run</a> (options:&amp;ExampleOptions, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a72a494311da1d889b016fd2f0e734e7e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run the metadata example, writing all output to <code>out</code>.  <br /></td></tr>
 <tr class="c-table__row memitem:af02254a493bd456e1adaaa49eba6db13" id="r_af02254a493bd456e1adaaa49eba6db13"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#af02254a493bd456e1adaaa49eba6db13">output_data_file_details</a> (engine:&amp;IpIntelligenceOnPremiseEngine, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:af02254a493bd456e1adaaa49eba6db13"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print the tier and publish date of the data file in use.  <br /></td></tr>
-<tr class="c-table__row memitem:ae8f6cdc30f9f2b51e278ee024d381f24" id="r_ae8f6cdc30f9f2b51e278ee024d381f24"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ae8f6cdc30f9f2b51e278ee024d381f24">output_property_details</a> (engine:&amp;IpIntelligenceOnPremiseEngine, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
-<tr class="c-table__row memdesc:ae8f6cdc30f9f2b51e278ee024d381f24"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print every property the engine populates, with its value type and (where known) description and the data tiers in which it carries a value.  <br /></td></tr>
+<tr class="c-table__row memitem:a513ae2dbc3b6b45e703239cba1bd3839" id="r_a513ae2dbc3b6b45e703239cba1bd3839"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a513ae2dbc3b6b45e703239cba1bd3839">output_components</a> (engine:&amp;IpIntelligenceOnPremiseEngine, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
+<tr class="c-table__row memdesc:a513ae2dbc3b6b45e703239cba1bd3839"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print each component with its properties, then any property the engine lists in no component.  <br /></td></tr>
+<tr class="c-table__row memitem:a42d5ffab8508dfa3a5b85f4f8462c09f" id="r_a42d5ffab8508dfa3a5b85f4f8462c09f"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a42d5ffab8508dfa3a5b85f4f8462c09f">output_property</a> (engine:&amp;IpIntelligenceOnPremiseEngine, property:&amp;FiftyOneAspectPropertyMetaData, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
+<tr class="c-table__row memdesc:a42d5ffab8508dfa3a5b85f4f8462c09f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print a property's category, value type, description and data tiers, and the first few of its values with how many there are.  <br /></td></tr>
+<tr class="c-table__row memitem:a6d95cb1f1fa10952a2ffde8a3e356a33" id="r_a6d95cb1f1fa10952a2ffde8a3e356a33"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a6d95cb1f1fa10952a2ffde8a3e356a33">shorten</a> (value:&amp;str) -&gt; String</td></tr>
+<tr class="c-table__row memdesc:a6d95cb1f1fa10952a2ffde8a3e356a33"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The first line of <code><a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a451961dd347700d7bb5d36beec33eb80" title="The resolved value, or the no-value message.">value</a></code>, cut to [<code><a class="el" href="#a217067ef0ae41e8f5a0d28afb156ef92" title="The number of characters of a value the example prints, because an area&#39;s value is the whole boundary...">SHOWN_VALUE_CHARACTERS</a></code>] characters, with " ..." added when anything was left out.  <br /></td></tr>
+<tr class="c-table__row memitem:ad236848828eaffee1157be9bfcb3f675" id="r_ad236848828eaffee1157be9bfcb3f675"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ad236848828eaffee1157be9bfcb3f675">value_type_name</a> (value_type:PropertyValueType) -&gt; Cow&lt; 'static, <a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a> &gt;</td></tr>
+<tr class="c-table__row memdesc:ad236848828eaffee1157be9bfcb3f675"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A short display name for a property value type.  <br /></td></tr>
+<tr class="c-table__row memitem:a89cdd6bcebaa5ce782f79ac94c47ab32" id="r_a89cdd6bcebaa5ce782f79ac94c47ab32"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a89cdd6bcebaa5ce782f79ac94c47ab32">output_enterprise_properties</a> (engine:&amp;IpIntelligenceOnPremiseEngine, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt; Vec&lt;&amp;'static <a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a> &gt; &gt;</td></tr>
+<tr class="c-table__row memdesc:a89cdd6bcebaa5ce782f79ac94c47ab32"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print whether the data file carries each property only the Enterprise data file has, and return the ones it does not.  <br /></td></tr>
 <tr class="c-table__row memitem:aad61df3c2080977853c1b70939fc64d6" id="r_aad61df3c2080977853c1b70939fc64d6"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#aad61df3c2080977853c1b70939fc64d6">output_evidence_key_details</a> (engine:&amp;IpIntelligenceOnPremiseEngine, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:aad61df3c2080977853c1b70939fc64d6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print the evidence keys the engine accepts, which its data file defines, in the order the engine tries them.  <br /></td></tr>
 <tr class="c-table__row memitem:a2fca267c69399b9b26d25a1fea0a8f50" id="r_a2fca267c69399b9b26d25a1fea0a8f50"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a2fca267c69399b9b26d25a1fea0a8f50">output_warnings</a> (engine:&amp;IpIntelligenceOnPremiseEngine, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
@@ -94,8 +102,15 @@ Functions</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="c-table__row memitem:a65560ade98913e76a1868a9845e47e52" id="r_a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a></td></tr>
+<tr class="c-table__row memdesc:a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Where to ask about a copy of the Enterprise data file.  <br /></td></tr>
+<tr class="c-table__row memitem:a59c09f4d2e77fa42c030902215658830" id="r_a59c09f4d2e77fa42c030902215658830"><td class="c-table__cell">const&#160;&amp;&#160;</td><td class="c-table__cell"><a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a></td></tr>
 <tr class="c-table__row memitem:ab533a800544facf05fd1c8e50f92099a" id="r_ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">pub&#160;</td><td class="c-table__cell"><a class="el" href="#ab533a800544facf05fd1c8e50f92099a">data_file</a></td></tr>
 <tr class="c-table__row memdesc:ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The full path to the <code>.ipi</code> data file to open.  <br /></td></tr>
+<tr class="c-table__row memitem:a50904ffff86a2ccf88e82655affdf0c0" id="r_a50904ffff86a2ccf88e82655affdf0c0"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a50904ffff86a2ccf88e82655affdf0c0">SHOWN_VALUES</a></td></tr>
+<tr class="c-table__row memdesc:a50904ffff86a2ccf88e82655affdf0c0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The number of a property's values the example prints.  <br /></td></tr>
+<tr class="c-table__row memitem:a217067ef0ae41e8f5a0d28afb156ef92" id="r_a217067ef0ae41e8f5a0d28afb156ef92"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a217067ef0ae41e8f5a0d28afb156ef92">SHOWN_VALUE_CHARACTERS</a></td></tr>
+<tr class="c-table__row memdesc:a217067ef0ae41e8f5a0d28afb156ef92"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The number of characters of a value the example prints, because an area's value is the whole boundary of the area as text.  <br /></td></tr>
 <tr class="c-table__row memitem:ab60c545115f42f88c00b55f384f5ffc0" id="r_ab60c545115f42f88c00b55f384f5ffc0"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#ab60c545115f42f88c00b55f384f5ffc0">tests</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
@@ -142,7 +157,7 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Default options, using the best-available loadable data-file tier. </p>
+<p>Default options, reading the Enterprise file when its share is reachable and otherwise the free Lite file. </p>
 
 </div>
 </div>
@@ -190,6 +205,34 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a513ae2dbc3b6b45e703239cba1bd3839" name="a513ae2dbc3b6b45e703239cba1bd3839"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a513ae2dbc3b6b45e703239cba1bd3839">&#9670;&#160;</a></span>output_components()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn output_components </td>
+          <td>(</td>
+          <td class="c-table__cell">engine:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>IpIntelligenceOnPremiseEngine</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn</td>          <td class="c-table__cell"><span class="paramname"><em>Write</em></span>&#160;) -&gt; anyhow::Result&lt;()&gt;</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Print each component with its properties, then any property the engine lists in no component. </p>
+<p>The data file groups its properties into components, such as the location and the network. The engine adds <code>Ip</code> and <code>IpV6</code>, which belong to no component it lists. </p>
+
+</div>
+</div>
 <a id="af02254a493bd456e1adaaa49eba6db13" name="af02254a493bd456e1adaaa49eba6db13"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#af02254a493bd456e1adaaa49eba6db13">&#9670;&#160;</a></span>output_data_file_details()</h2>
 
@@ -214,6 +257,33 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Print the tier and publish date of the data file in use. </p>
+
+</div>
+</div>
+<a id="a89cdd6bcebaa5ce782f79ac94c47ab32" name="a89cdd6bcebaa5ce782f79ac94c47ab32"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a89cdd6bcebaa5ce782f79ac94c47ab32">&#9670;&#160;</a></span>output_enterprise_properties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn output_enterprise_properties </td>
+          <td>(</td>
+          <td class="c-table__cell">engine:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>IpIntelligenceOnPremiseEngine</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn</td>          <td class="c-table__cell"><span class="paramname"><em>Write</em></span>&#160;) -&gt; anyhow::Result&lt; Vec&lt;&amp; 'static <a class="el" href="dd-cloud-configurator_8rs.html#af99483e1224efe9ddfe4c99d7caa54ac">str</a> &gt; &gt;</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Print whether the data file carries each property only the Enterprise data file has, and return the ones it does not. </p>
 
 </div>
 </div>
@@ -244,8 +314,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ae8f6cdc30f9f2b51e278ee024d381f24" name="ae8f6cdc30f9f2b51e278ee024d381f24"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae8f6cdc30f9f2b51e278ee024d381f24">&#9670;&#160;</a></span>output_property_details()</h2>
+<a id="a42d5ffab8508dfa3a5b85f4f8462c09f" name="a42d5ffab8508dfa3a5b85f4f8462c09f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a42d5ffab8508dfa3a5b85f4f8462c09f">&#9670;&#160;</a></span>output_property()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -253,9 +323,14 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fn output_property_details </td>
+              <td class="c-table__cell">fn output_property </td>
           <td>(</td>
           <td class="c-table__cell">engine:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>IpIntelligenceOnPremiseEngine</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">property:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>FiftyOneAspectPropertyMetaData</em></span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
@@ -267,7 +342,7 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Print every property the engine populates, with its value type and (where known) description and the data tiers in which it carries a value. </p>
+<p>Print a property's category, value type, description and data tiers, and the first few of its values with how many there are. </p>
 
 </div>
 </div>
@@ -326,7 +401,73 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a6d95cb1f1fa10952a2ffde8a3e356a33" name="a6d95cb1f1fa10952a2ffde8a3e356a33"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6d95cb1f1fa10952a2ffde8a3e356a33">&#9670;&#160;</a></span>shorten()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn shorten </td>
+          <td>(</td>
+          <td class="c-table__cell">value:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td> -&gt; String</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The first line of <code><a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a451961dd347700d7bb5d36beec33eb80" title="The resolved value, or the no-value message.">value</a></code>, cut to [<code><a class="el" href="#a217067ef0ae41e8f5a0d28afb156ef92" title="The number of characters of a value the example prints, because an area&#39;s value is the whole boundary...">SHOWN_VALUE_CHARACTERS</a></code>] characters, with " ..." added when anything was left out. </p>
+
+</div>
+</div>
+<a id="ad236848828eaffee1157be9bfcb3f675" name="ad236848828eaffee1157be9bfcb3f675"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad236848828eaffee1157be9bfcb3f675">&#9670;&#160;</a></span>value_type_name()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn value_type_name </td>
+          <td>(</td>
+          <td class="c-table__cell">value_type:PropertyValueType</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; Cow&lt; 'static, <a class="el" href="dd-cloud-configurator_8rs.html#af99483e1224efe9ddfe4c99d7caa54ac">str</a> &gt;</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>A short display name for a property value type. </p>
+
+</div>
+</div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>
+<a id="a65560ade98913e76a1868a9845e47e52" name="a65560ade98913e76a1868a9845e47e52"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a65560ade98913e76a1868a9845e47e52">&#9670;&#160;</a></span>CONTACT_US_URL</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const CONTACT_US_URL</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Where to ask about a copy of the Enterprise data file. </p>
+
+</div>
+</div>
 <a id="ab533a800544facf05fd1c8e50f92099a" name="ab533a800544facf05fd1c8e50f92099a"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab533a800544facf05fd1c8e50f92099a">&#9670;&#160;</a></span>data_file</h2>
 
@@ -345,6 +486,69 @@ Variables</h2></td></tr>
 
 <p>The full path to the <code>.ipi</code> data file to open. </p>
 
+</div>
+</div>
+<a id="a217067ef0ae41e8f5a0d28afb156ef92" name="a217067ef0ae41e8f5a0d28afb156ef92"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a217067ef0ae41e8f5a0d28afb156ef92">&#9670;&#160;</a></span>SHOWN_VALUE_CHARACTERS</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const SHOWN_VALUE_CHARACTERS</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The number of characters of a value the example prints, because an area's value is the whole boundary of the area as text. </p>
+
+</div>
+</div>
+<a id="a50904ffff86a2ccf88e82655affdf0c0" name="a50904ffff86a2ccf88e82655affdf0c0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a50904ffff86a2ccf88e82655affdf0c0">&#9670;&#160;</a></span>SHOWN_VALUES</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const SHOWN_VALUES</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The number of a property's values the example prints. </p>
+
+</div>
+</div>
+<a id="a59c09f4d2e77fa42c030902215658830" name="a59c09f4d2e77fa42c030902215658830"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a59c09f4d2e77fa42c030902215658830">&#9670;&#160;</a></span>str</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const &amp; str</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">     = &amp;[</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;IP Intelligence&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/ip-intelligence?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-metadata.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Pricing&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-metadata.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Documentation&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-metadata.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">]</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab60c545115f42f88c00b55f384f5ffc0" name="ab60c545115f42f88c00b55f384f5ffc0"></a>

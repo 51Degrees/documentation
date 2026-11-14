@@ -77,6 +77,7 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:ac13ba2cdbedb218b696c09f14b6d3df6" id="r_ac13ba2cdbedb218b696c09f14b6d3df6"><td class="c-table__cell">OutputStream&#160;</td><td class="c-table__cell"><a class="el" href="#ac13ba2cdbedb218b696c09f14b6d3df6">getOutputStream</a> ()  throws Exception</td></tr>
 <tr class="c-table__row memdesc:ac13ba2cdbedb218b696c09f14b6d3df6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">returns an OutputStream through which data may be uploaded  <br /></td></tr>
 <tr class="c-table__row memitem:ac51372108f5537c179ee2cd0fc1a1e8d" id="r_ac51372108f5537c179ee2cd0fc1a1e8d"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#ac51372108f5537c179ee2cd0fc1a1e8d">getResponseCode</a> ()  throws IOException</td></tr>
+<tr class="c-table__row memitem:ac472e1a78eb443177221010f4601482c" id="r_ac472e1a78eb443177221010f4601482c"><td class="c-table__cell">default&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#ac472e1a78eb443177221010f4601482c">getResponseContent</a> ()</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="ac13ba2cdbedb218b696c09f14b6d3df6" name="ac13ba2cdbedb218b696c09f14b6d3df6"></a>
@@ -125,6 +126,30 @@ Public Member Functions</h2></td></tr>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">200 for success </dd></dl>
 
 <p>Implemented in <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1services_1_1_data_uploader_http.html#a592a8aedd530b8b00c57a83d3dac7fc5">fiftyone.pipeline.engines.services.DataUploaderHttp</a>.</p>
+
+</div>
+</div>
+<a id="ac472e1a78eb443177221010f4601482c" name="ac472e1a78eb443177221010f4601482c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac472e1a78eb443177221010f4601482c">&#9670;&#160;</a></span>getResponseContent()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">default String fiftyone.pipeline.engines.services.DataUploader.getResponseContent </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the content of the answer, which is logged when the code is not 200, or an empty string if the uploader cannot give it </dd></dl>
+
+<p>Implemented in <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1services_1_1_data_uploader_http.html#a4496586e18bd4c283f81e68117b8d22e">fiftyone.pipeline.engines.services.DataUploaderHttp</a>.</p>
 
 </div>
 </div>

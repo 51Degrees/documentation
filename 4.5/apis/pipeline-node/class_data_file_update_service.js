@@ -1,12 +1,20 @@
 var class_data_file_update_service =
 [
+    [ "accessError", "class_data_file_update_service.html#aed2f75ac43fcf5497ccbb5313beecb28", null ],
     [ "checkNextUpdate", "class_data_file_update_service.html#a27a2280b44642e7197022c237bcbd04c", null ],
+    [ "complete", "class_data_file_update_service.html#a3f95270aa34a929e89a9fa841c009a51", null ],
     [ "constructor", "class_data_file_update_service.html#a071de1d012725f09a9143095f0d88b55", null ],
+    [ "fail", "class_data_file_update_service.html#aeb2f4eaada68bab196255403ba3bdfbf", null ],
     [ "fileReady", "class_data_file_update_service.html#a8a5fb195fde7a22fc78078a77b35177f", null ],
+    [ "integrityFailed", "class_data_file_update_service.html#a5e9132fba6542cfeba6118b6394dc86b", null ],
+    [ "log", "class_data_file_update_service.html#a8a3a462bb192b3da2e7674d3fea0dd44", null ],
     [ "on", "class_data_file_update_service.html#a5adf0c2a40a3a8c9959f5661f7a52dc6", null ],
     [ "once", "class_data_file_update_service.html#a9e6444617d4b4191239f5b59305f98fc", null ],
     [ "processFile", "class_data_file_update_service.html#af0b92e19f40fb9395b0edfd50f59d6d9", null ],
+    [ "refreshDataFile", "class_data_file_update_service.html#a10854a70d6b9dbb89d9f61677091cee9", null ],
     [ "registerDataFile", "class_data_file_update_service.html#a963482532d8cd1a2c4cc70188de47feb", null ],
     [ "registerPipeline", "class_data_file_update_service.html#aa020d4441cc489d4daaa631d47cbf2fa", null ],
-    [ "updateDataFile", "class_data_file_update_service.html#a6d585d04b5f501bbdd2721c5b0c7a2f4", null ]
+    [ "unhandled", "class_data_file_update_service.html#a92025e39548d3220c74c9300622d5263", null ],
+    [ "updateDataFile", "class_data_file_update_service.html#ac4d28d47f84fcecc0b59f2df393d00d9", null ],
+    [ "updateFromMemory", "class_data_file_update_service.html#a244f21402f38f8a534dc402cc943b205", null ]
 ];

@@ -82,8 +82,10 @@ Collaboration diagram for fiftyone.ipintelligence.cloud.flowelements.IPIntellige
 Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a27eaf29dafd64bd9746ceef39b70881d" id="r_a27eaf29dafd64bd9746ceef39b70881d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a27eaf29dafd64bd9746ceef39b70881d">IPIntelligenceCloudEngine</a> (Logger logger, ElementDataFactory&lt; <a class="el" href="interfacefiftyone_1_1ipintelligence_1_1cloud_1_1data_1_1_i_p_intelligence_data_cloud.html">IPIntelligenceDataCloud</a> &gt; ipiDataFactory)</td></tr>
 <tr class="c-table__row memdesc:a27eaf29dafd64bd9746ceef39b70881d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Construct a new instance of the <code><a class="el" href="classfiftyone_1_1ipintelligence_1_1cloud_1_1flowelements_1_1_i_p_intelligence_cloud_engine.html">IPIntelligenceCloudEngine</a></code>.  <br /></td></tr>
-<tr class="c-table__row memitem:a214081fe649da9288202b9d617304194" id="r_a214081fe649da9288202b9d617304194"><td class="c-table__cell"><a id="a214081fe649da9288202b9d617304194" name="a214081fe649da9288202b9d617304194"></a>
-List&lt;&#160;AspectPropertyMetaData&#160;&gt;&#160;</td><td class="c-table__cell"><b>getProperties</b> ()</td></tr>
+<tr class="c-table__row memitem:a214081fe649da9288202b9d617304194" id="r_a214081fe649da9288202b9d617304194"><td class="c-table__cell">List&lt;&#160;AspectPropertyMetaData&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a214081fe649da9288202b9d617304194">getProperties</a> ()</td></tr>
+<tr class="c-table__row memdesc:a214081fe649da9288202b9d617304194"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The property metadata, from the products the Cloud Request Engine reports.  <br /></td></tr>
+<tr class="c-table__row memitem:af2a5115e69912a20121e500467e095ec" id="r_af2a5115e69912a20121e500467e095ec"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="#af2a5115e69912a20121e500467e095ec">hasLoadedProperties</a> ()</td></tr>
+<tr class="c-table__row memdesc:af2a5115e69912a20121e500467e095ec"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether the property metadata is loaded, which reads it if the Cloud Request Engine now knows the accessible properties.  <br /></td></tr>
 <tr class="c-table__row memitem:a2747673f2c829bfe29d2ac8a5d54fb53" id="r_a2747673f2c829bfe29d2ac8a5d54fb53"><td class="c-table__cell"><a id="a2747673f2c829bfe29d2ac8a5d54fb53" name="a2747673f2c829bfe29d2ac8a5d54fb53"></a>
 String&#160;</td><td class="c-table__cell"><b>getDataSourceTier</b> ()</td></tr>
 <tr class="c-table__row memitem:a65675220e554fded70c408a184f7ced4" id="r_a65675220e554fded70c408a184f7ced4"><td class="c-table__cell"><a id="a65675220e554fded70c408a184f7ced4" name="a65675220e554fded70c408a184f7ced4"></a>
@@ -132,6 +134,55 @@ void&#160;</td><td class="c-table__cell"><b>unmanagedResourcesCleanup</b> ()</td
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a214081fe649da9288202b9d617304194" name="a214081fe649da9288202b9d617304194"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a214081fe649da9288202b9d617304194">&#9670;&#160;</a></span>getProperties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">List&lt; AspectPropertyMetaData &gt; fiftyone.ipintelligence.cloud.flowelements.IPIntelligenceCloudEngine.getProperties </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The property metadata, from the products the Cloud Request Engine reports. </p>
+<p>Until they are known, after a failure at build that can pass, this is empty and is read again on the next call. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the property metadata </dd></dl>
+
+</div>
+</div>
+<a id="af2a5115e69912a20121e500467e095ec" name="af2a5115e69912a20121e500467e095ec"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af2a5115e69912a20121e500467e095ec">&#9670;&#160;</a></span>hasLoadedProperties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">boolean fiftyone.ipintelligence.cloud.flowelements.IPIntelligenceCloudEngine.hasLoadedProperties </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Whether the property metadata is loaded, which reads it if the Cloud Request Engine now knows the accessible properties. </p>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true once the property metadata is loaded </dd></dl>
 
 </div>
 </div>

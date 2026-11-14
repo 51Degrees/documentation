@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_offl
 <p>As well as explaining the basic operation of offline processing using the defaults, for advanced operation this example can be used to experiment with tuning IP Intelligence for performance using Performance Profile settings.</p>
 <p>Evidence files can be obtained from the <a href="https://github.com/51Degrees/data">data repository</a>.</p>
 <p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-java/blob/main/examples/ip-intelligence/console/src/main/java/fiftyone/ipintelligence/examples/console/OfflineProcessing.java">GitHub</a>.</p>
-<p>This example requires an enterprise IP Intelligence data file (.ipi). To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-offlineprocessing.java&amp;utm_term=header">contact us</a>.</p>
+<p>By default the example uses the free Lite IP Intelligence data file, which it downloads when it is missing, and records Country, which only the Enterprise data file has, as needing it. To obtain an Enterprise data file, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-offlineprocessing.java&amp;utm_term=header">contact us</a>.</p>
 <p>Required Maven Dependencies:</p><ul>
 <li><a href="https://central.sonatype.com/artifact/com.51degrees/ip-intelligence">com.51degrees:ip-intelligence</a></li>
 </ul>
@@ -120,30 +120,33 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_offl
 <div class="c-code__line"><span class="c-code__keyword">import</span> java.util.stream.Collectors;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.common.testhelpers.LogbackHelper.configureLogback;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.PropertyHelper.asString;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.PropertyHelper.asStringProperty;</div>
-<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.DataFileHelper.ENTERPRISE_DATA_FILE_REL_PATH;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.DataFileHelper.LITE_DATA_FILE_REL_PATH;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.pipeline.util.FileFinder.getFilePath;</div>
 <div class="c-code__line"></div>
 <div class="c-code__line"><span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>OfflineProcessing {</div>
 <div class="c-code__line">    <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> Logger logger = LoggerFactory.getLogger(OfflineProcessing.class);</div>
-<div class="c-code__line">    <span class="c-code__comment">// This 51degrees IP Intelligence data file (distributed with the source) needs to</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// be somewhere in the project space</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// By default the free 51degrees Lite IP Intelligence data file is used from</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// the data repository in cxx/data, and is downloaded if it is missing.</span></div>
 <div class="c-code__line">    <span class="c-code__comment">//</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// For testing, contact us to obtain an enterprise data file: https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-offlineprocessing.java&amp;utm_term=datadir</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// Contact us for a copy of the Enterprise data file: https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-offlineprocessing.java&amp;utm_term=datadir</span></div>
 <div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> String dataDir = <span class="c-code__stringliteral">&quot;ip-intelligence&quot;</span>;</div>
 <div class="c-code__line">    <span class="c-code__comment">// This 51degrees file of 20,000 examples (distributed with the source)</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// needs to be somewhere in the project space. Additional evidence files</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// can be obtained from the [data repository](https://github.com/51Degrees/data)</span></div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> String HEADER_EVIDENCE_YML =</div>
 <div class="c-code__line">            dataDir + <span class="c-code__stringliteral">&quot;/evidence.yml&quot;</span>;</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> String CONTACT_US = <span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-offlineprocessing.java&amp;utm_term=enterprise-data-file&quot;</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> main(String[] args) <span class="c-code__keywordflow">throws</span> Exception {</div>
 <div class="c-code__line">        configureLogback(getFilePath(<span class="c-code__stringliteral">&quot;logback.xml&quot;</span>));</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment">// Use provided data file argument, or fall back to default data file path</span></div>
-<div class="c-code__line">        String dataFile = (args.length &gt; 0) ? args[0] : ENTERPRISE_DATA_FILE_REL_PATH;</div>
-<div class="c-code__line">        </div>
-<div class="c-code__line">        File evidenceFile = getFilePath(HEADER_EVIDENCE_YML);</div>
+<div class="c-code__line">        String dataFile = (args.length &gt; 0) ? args[0] : LITE_DATA_FILE_REL_PATH;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">        File evidenceFile = DataFileHelper.findDataFile(HEADER_EVIDENCE_YML);</div>
 <div class="c-code__line">        <a id="a0" name="a0"></a><a class="code hl_function" href="classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_offline_processing.html#a681ca39e099041f9a333f9258584f570">run</a>(dataFile, Files.newInputStream(evidenceFile.toPath()), System.out);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"></div>
@@ -157,7 +160,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_offl
 <div class="c-code__line">            logger.error(<span class="c-code__stringliteral">&quot;Failed to find IP Intelligence data file at &#39;{}&#39;. &quot;</span> +</div>
 <div class="c-code__line">                    <span class="c-code__stringliteral">&quot;Please provide a valid path to an IP Intelligence data file (.ipi). &quot;</span> +</div>
 <div class="c-code__line">                    <span class="c-code__stringliteral">&quot;An explicit path can be supplied via the {} environment variable.&quot;</span>,</div>
-<div class="c-code__line">                    dataFile, DataFileHelper.IPI_PATH_ENV_VAR);</div>
+<div class="c-code__line">                    dataFile, DataFileHelper.IPI_PATH_VARIABLE);</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">throw</span> e;</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line"> </div>
@@ -194,11 +197,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_offl
 <div class="c-code__line">                <span class="c-code__comment">// Performance options for IP Intelligence</span></div>
 <div class="c-code__line">                <span class="c-code__comment">//.setPerformanceProfile(Constants.PerformanceProfiles.MaxPerformance)</span></div>
 <div class="c-code__line">                <span class="c-code__comment">//.setPerformanceProfile(Constants.PerformanceProfiles.HighPerformance)</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// Low memory profile has the data streamed from disk on</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// demand and is conservative in its use of memory, but</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// slower because of disk access</span></div>
-<div class="c-code__line">                .setPerformanceProfile(Constants.PerformanceProfiles.MaxPerformance)</div>
 <div class="c-code__line">                <span class="c-code__comment">//.setPerformanceProfile(Constants.PerformanceProfiles.Balanced)</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// We use the low memory profile, which reads the data file</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// from disk as it is needed, because this example may be</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// given the Enterprise data file, which is over 6 GB, through</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// its first argument or _51DEGREES_IPI_PATH. MaxPerformance</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// loads the whole data file into memory, which makes each</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// lookup faster where there is memory to hold it.</span></div>
+<div class="c-code__line">                .setPerformanceProfile(Constants.PerformanceProfiles.LowMemory)</div>
 <div class="c-code__line">                .build()) {</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">// get the details of the IP Intelligence engine from the pipeline,</span></div>
@@ -214,6 +220,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_offl
 <div class="c-code__line">            <span class="c-code__keywordflow">try</span> (Writer writer = <span class="c-code__keyword">new</span> OutputStreamWriter(os)) {</div>
 <div class="c-code__line">                <span class="c-code__comment">// read a batch of IP evidence from the stream</span></div>
 <div class="c-code__line">                <span class="c-code__keywordtype">int</span> count = 0;</div>
+<div class="c-code__line">                <span class="c-code__keywordtype">boolean</span> needsEnterprise = <span class="c-code__keyword">false</span>;</div>
 <div class="c-code__line">                <span class="c-code__keywordflow">while</span> (evidenceIterator.hasNext() &amp;&amp; count &lt; 20) {</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Flow data is the container for inputs and outputs that</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// flow through the pipeline a flowdata instance is</span></div>
@@ -251,9 +258,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_offl
 <div class="c-code__line">                        resultMap.put(<span class="c-code__stringliteral">&quot;ip.RegisteredName&quot;</span>, asStringProperty(ipData.getRegisteredName()));</div>
 <div class="c-code__line">                        resultMap.put(<span class="c-code__stringliteral">&quot;ip.RegisteredOwner&quot;</span>, asStringProperty(ipData.getRegisteredOwner()));</div>
 <div class="c-code__line">                        resultMap.put(<span class="c-code__stringliteral">&quot;ip.RegisteredCountry&quot;</span>, asStringProperty(ipData.getRegisteredCountry()));</div>
+<div class="c-code__line">                        <span class="c-code__comment">// Only the Enterprise data file has Country.</span></div>
+<div class="c-code__line">                        <span class="c-code__keywordflow">if</span> (DataFileHelper.hasProperty(engine, <span class="c-code__stringliteral">&quot;Country&quot;</span>)) {</div>
+<div class="c-code__line">                            resultMap.put(<span class="c-code__stringliteral">&quot;ip.Country&quot;</span>, asString(ipData.getCountry()));</div>
+<div class="c-code__line">                        } <span class="c-code__keywordflow">else</span> {</div>
+<div class="c-code__line">                            resultMap.put(<span class="c-code__stringliteral">&quot;ip.Country&quot;</span>, DataFileHelper.NEEDS_ENTERPRISE);</div>
+<div class="c-code__line">                            needsEnterprise = <span class="c-code__keyword">true</span>;</div>
+<div class="c-code__line">                        }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">                        <span class="c-code__comment">// To output all populated IP Intelligence properties instead of</span></div>
-<div class="c-code__line">                        <span class="c-code__comment">// the fixed subset above, replace the three puts with the helper:</span></div>
+<div class="c-code__line">                        <span class="c-code__comment">// the fixed subset above, replace the puts with the helper:</span></div>
 <div class="c-code__line">                        <span class="c-code__comment">// resultMap.putAll(getPopulatedProperties(ipData, &quot;ip.&quot;));</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">                        <span class="c-code__comment">// write document to output stream as a YAML document</span></div>
@@ -264,18 +278,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_offl
 <div class="c-code__line">                    }</div>
 <div class="c-code__line">                    count++;</div>
 <div class="c-code__line">                }</div>
+<div class="c-code__line">                <span class="c-code__keywordflow">if</span> (needsEnterprise) {</div>
+<div class="c-code__line">                    <span class="c-code__comment">// A comment keeps the output a valid YAML stream.</span></div>
+<div class="c-code__line">                    writer.write(<span class="c-code__stringliteral">&quot;# Some of these properties need the &quot;</span> +</div>
+<div class="c-code__line">                            <span class="c-code__stringliteral">&quot;Enterprise data file. Contact us for a copy at &quot;</span> +</div>
+<div class="c-code__line">                            CONTACT_US + <span class="c-code__stringliteral">&quot;\n&quot;</span>);</div>
+<div class="c-code__line">                }</div>
 <div class="c-code__line">                <span class="c-code__comment">// finish the last YAML document</span></div>
 <div class="c-code__line">                writer.write(<span class="c-code__stringliteral">&quot;...\n&quot;</span>);</div>
 <div class="c-code__line">                writer.flush();</div>
 <div class="c-code__line">                logger.info(<span class="c-code__stringliteral">&quot;Finished processing {} records&quot;</span>, count);</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">                <span class="c-code__keywordflow">if</span> (engine.getDataSourceTier().equals(<span class="c-code__stringliteral">&quot;Lite&quot;</span>)) {</div>
-<div class="c-code__line">                    logger.warn(<span class="c-code__stringliteral">&quot;You have used a Lite data file which has &quot;</span> +</div>
-<div class="c-code__line">                            <span class="c-code__stringliteral">&quot;limited properties and is of limited accuracy&quot;</span>);</div>
-<div class="c-code__line">                    logger.info(<span class="c-code__stringliteral">&quot;The example requires an Enterprise data file &quot;</span> +</div>
-<div class="c-code__line">                            <span class="c-code__stringliteral">&quot;to work fully. Find out about the Enterprise &quot;</span> +</div>
-<div class="c-code__line">                            <span class="c-code__stringliteral">&quot;data file here: https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-offlineprocessing.java&amp;utm_term=enterprise-data-file&quot;</span>);</div>
-<div class="c-code__line">                }</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
@@ -299,7 +311,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_offl
 <div class="c-code__line">                        e -&gt; ((AspectPropertyValue&lt;?&gt;)e.getValue()).getValue()));</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_offline_processing_html_a681ca39e099041f9a333f9258584f570"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_offline_processing.html#a681ca39e099041f9a333f9258584f570">fiftyone.ipintelligence.examples.console.OfflineProcessing.run</a></div><div class="ttdeci">static void run(String dataFile, InputStream is, OutputStream os)</div><div class="ttdoc">Process a YAML representation of evidence - and create a YAML output containing the processed evidenc...</div><div class="ttdef"><b>Definition</b> OfflineProcessing.java:129</div></div>
+<div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_offline_processing_html_a681ca39e099041f9a333f9258584f570"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_offline_processing.html#a681ca39e099041f9a333f9258584f570">fiftyone.ipintelligence.examples.console.OfflineProcessing.run</a></div><div class="ttdeci">static void run(String dataFile, InputStream is, OutputStream os)</div><div class="ttdoc">Process a YAML representation of evidence - and create a YAML output containing the processed evidenc...</div><div class="ttdef"><b>Definition</b> OfflineProcessing.java:137</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

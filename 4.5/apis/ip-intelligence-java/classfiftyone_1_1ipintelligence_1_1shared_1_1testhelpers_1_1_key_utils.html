@@ -78,8 +78,10 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
+<tr class="c-table__row memitem:a8d0b90767b69aa5651621b8061b1d470" id="r_a8d0b90767b69aa5651621b8061b1d470"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a8d0b90767b69aa5651621b8061b1d470">RESOURCE_KEY_VARIABLE</a> = &quot;_51DEGREES_RESOURCE_KEY&quot;</td></tr>
+<tr class="c-table__row memdesc:a8d0b90767b69aa5651621b8061b1d470"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Name of the aligned environment variable or system property which supplies the resource key.  <br /></td></tr>
 <tr class="c-table__row memitem:a4d51df535b6c281ac6e5776d7f2f5cf8" id="r_a4d51df535b6c281ac6e5776d7f2f5cf8"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a4d51df535b6c281ac6e5776d7f2f5cf8">RESOURCE_KEY_ENV_VAR</a> = &quot;51DEGREES_RESOURCE_KEY&quot;</td></tr>
-<tr class="c-table__row memdesc:a4d51df535b6c281ac6e5776d7f2f5cf8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Name of the aligned environment variable or system property which supplies the resource key.  <br /></td></tr>
+<tr class="c-table__row memdesc:a4d51df535b6c281ac6e5776d7f2f5cf8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The old name of <code><a class="el" href="#a8d0b90767b69aa5651621b8061b1d470">RESOURCE_KEY_VARIABLE</a></code>, read only when that one is not set.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="a4fc189c83423c5bf673b723d9c636e08" name="a4fc189c83423c5bf673b723d9c636e08"></a>
@@ -142,13 +144,13 @@ Static Public Attributes</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Obtain a resource key from an environment variable or a system property. </p>
-<p>The aligned name <code><a class="el" href="#a4d51df535b6c281ac6e5776d7f2f5cf8">RESOURCE_KEY_ENV_VAR</a></code> is checked first and the supplied legacy name is checked second. Each name is looked up using <code><a class="el" href="#a4fc189c83423c5bf673b723d9c636e08">getNamedKey(String)</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The aligned name <code><a class="el" href="#a8d0b90767b69aa5651621b8061b1d470">RESOURCE_KEY_VARIABLE</a></code> is checked first. When it is not set or is empty the deprecated <code><a class="el" href="#a4d51df535b6c281ac6e5776d7f2f5cf8">RESOURCE_KEY_ENV_VAR</a></code> is checked, and its first use is reported on standard error. The supplied legacy name is checked last. Each name is looked up using <code><a class="el" href="#a4fc189c83423c5bf673b723d9c636e08">getNamedKey(String)</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">legacyKeyName</td><td>legacy name to try when the aligned name is not set </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the resource key, or null if neither name is set </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the resource key, or null if no name is set </dd></dl>
 
 </div>
 </div>
@@ -204,6 +206,35 @@ Static Public Attributes</h2></td></tr>
           <table class="c-table c-table--article">
             <tr class="c-table__row">
               <td class="c-table__cell">final String fiftyone.ipintelligence.shared.testhelpers.KeyUtils.RESOURCE_KEY_ENV_VAR = &quot;51DEGREES_RESOURCE_KEY&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The old name of <code><a class="el" href="#a8d0b90767b69aa5651621b8061b1d470">RESOURCE_KEY_VARIABLE</a></code>, read only when that one is not set. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated</a></b></dt><dd>use <code><a class="el" href="#a8d0b90767b69aa5651621b8061b1d470">RESOURCE_KEY_VARIABLE</a></code>, and set the variable it names in place of this one. </dd></dl>
+
+</div>
+</div>
+<a id="a8d0b90767b69aa5651621b8061b1d470" name="a8d0b90767b69aa5651621b8061b1d470"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8d0b90767b69aa5651621b8061b1d470">&#9670;&#160;</a></span>RESOURCE_KEY_VARIABLE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">final String fiftyone.ipintelligence.shared.testhelpers.KeyUtils.RESOURCE_KEY_VARIABLE = &quot;_51DEGREES_RESOURCE_KEY&quot;</td>
             </tr>
           </table>
         </div>

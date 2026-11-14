@@ -83,6 +83,10 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="c-table__cell"><b>CloudRequestEngineBuilder</b> (ILoggerFactory loggerFactory)</td></tr>
 <tr class="c-table__row memitem:a3f63770ef6da3a239605cb4115634532" id="r_a3f63770ef6da3a239605cb4115634532"><td class="c-table__cell"><a id="a3f63770ef6da3a239605cb4115634532" name="a3f63770ef6da3a239605cb4115634532"></a>
 &#160;</td><td class="c-table__cell"><b>CloudRequestEngineBuilder</b> (ILoggerFactory loggerFactory, <a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1services_1_1_http_client.html">HttpClient</a> httpClient)</td></tr>
+<tr class="c-table__row memitem:aac39579094c36b753c51c408181f3ce6" id="r_aac39579094c36b753c51c408181f3ce6"><td class="c-table__cell">CloudRequestEngineBuilder&#160;</td><td class="c-table__cell"><a class="el" href="#aac39579094c36b753c51c408181f3ce6">setDiscoveryState</a> (<a class="el" href="classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1_cloud_discovery_state.html">CloudDiscoveryState</a> state)</td></tr>
+<tr class="c-table__row memdesc:aac39579094c36b753c51c408181f3ce6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the engine from a copy of what an earlier engine discovered for the same resource key, so that the build makes no discovery request.  <br /></td></tr>
+<tr class="c-table__row memitem:af3f40d82abd0e746dc7241ead9a4d6e3" id="r_af3f40d82abd0e746dc7241ead9a4d6e3"><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1_cloud_discovery_state.html">CloudDiscoveryState</a>&#160;</td><td class="c-table__cell"><a class="el" href="#af3f40d82abd0e746dc7241ead9a4d6e3">getDiscoveryState</a> ()</td></tr>
+<tr class="c-table__row memdesc:af3f40d82abd0e746dc7241ead9a4d6e3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A copy of what the engine this builder last built discovered, to give to a later build with <code><a class="el" href="#aac39579094c36b753c51c408181f3ce6">setDiscoveryState(CloudDiscoveryState)</a></code>.  <br /></td></tr>
 <tr class="c-table__row memitem:aa758e7b0d1d7170620bdd1f698b155f1" id="r_aa758e7b0d1d7170620bdd1f698b155f1"><td class="c-table__cell"><a id="aa758e7b0d1d7170620bdd1f698b155f1" name="aa758e7b0d1d7170620bdd1f698b155f1"></a>
 <a class="el" href="interfacefiftyone_1_1pipeline_1_1cloudrequestengine_1_1flowelements_1_1_cloud_request_engine.html">CloudRequestEngine</a>&#160;</td><td class="c-table__cell"><b>build</b> ()  throws Exception </td></tr>
 <tr class="c-table__row memitem:ac58913b743c9e6bed15c1cd06e01cc6f" id="r_ac58913b743c9e6bed15c1cd06e01cc6f"><td class="c-table__cell">CloudRequestEngineBuilder&#160;</td><td class="c-table__cell"><a class="el" href="#ac58913b743c9e6bed15c1cd06e01cc6f">setEndpoint</a> (String uri)</td></tr>
@@ -97,8 +101,12 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ab45dc917cd68a61abab7cc566dfba901"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The resource key to query the endpoint with.  <br /></td></tr>
 <tr class="c-table__row memitem:a51421066f66025af5c6c386530de8546" id="r_a51421066f66025af5c6c386530de8546"><td class="c-table__cell">CloudRequestEngineBuilder&#160;</td><td class="c-table__cell"><a class="el" href="#a51421066f66025af5c6c386530de8546">setLicenseKey</a> (String licenseKey)</td></tr>
 <tr class="c-table__row memdesc:a51421066f66025af5c6c386530de8546"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The license key to query the endpoint with.  <br /></td></tr>
+<tr class="c-table__row memitem:aee921b8e4736063c32e76095b020afa1" id="r_aee921b8e4736063c32e76095b020afa1"><td class="c-table__cell">CloudRequestEngineBuilder&#160;</td><td class="c-table__cell"><a class="el" href="#aee921b8e4736063c32e76095b020afa1">setRequestedProperties</a> (List&lt; String &gt; properties)</td></tr>
+<tr class="c-table__row memdesc:aee921b8e4736063c32e76095b020afa1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The properties each request asks the cloud service for, as fully qualified names such as <code class="JavaDocCode">device.ismobile</code>, sent as values.  <br /></td></tr>
+<tr class="c-table__row memitem:ad32c87b3a72f41e057066dbf1d1fab26" id="r_ad32c87b3a72f41e057066dbf1d1fab26"><td class="c-table__cell">CloudRequestEngineBuilder&#160;</td><td class="c-table__cell"><a class="el" href="#ad32c87b3a72f41e057066dbf1d1fab26">setRequestedProperties</a> (String properties)</td></tr>
+<tr class="c-table__row memdesc:ad32c87b3a72f41e057066dbf1d1fab26"><td class="c-table__cell">&#160;</td><td class="c-table__cell">As <code><a class="el" href="">setRequestedProperties(List)</a></code>, taking the names as one comma separated string, as a configuration file gives them.  <br /></td></tr>
 <tr class="c-table__row memitem:aef8d46f9b0cf0a828e6e7608a1e611ac" id="r_aef8d46f9b0cf0a828e6e7608a1e611ac"><td class="c-table__cell">CloudRequestEngineBuilder&#160;</td><td class="c-table__cell"><a class="el" href="#aef8d46f9b0cf0a828e6e7608a1e611ac">setTimeOutSeconds</a> (int timeout)</td></tr>
-<tr class="c-table__row memdesc:aef8d46f9b0cf0a828e6e7608a1e611ac"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Timeout in seconds for the request to the endpoint.  <br /></td></tr>
+<tr class="c-table__row memdesc:aef8d46f9b0cf0a828e6e7608a1e611ac"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Timeout in seconds for each request to the cloud service, the two discovery requests when the engine is built and each data request.  <br /></td></tr>
 <tr class="c-table__row memitem:a05e1395a722c194cea4591417d2204f1" id="r_a05e1395a722c194cea4591417d2204f1"><td class="c-table__cell">CloudRequestEngineBuilder&#160;</td><td class="c-table__cell"><a class="el" href="#a05e1395a722c194cea4591417d2204f1">setCloudRequestOrigin</a> (String cloudRequestOrigin)</td></tr>
 <tr class="c-table__row memdesc:a05e1395a722c194cea4591417d2204f1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The value to set for the Origin header when making requests to the cloud service.  <br /></td></tr>
 <tr class="c-table__row memitem:aa9b5e6119bb732216d2cf6b4cec856c2" id="r_aa9b5e6119bb732216d2cf6b4cec856c2"><td class="c-table__cell">CloudRequestEngineBuilder&#160;</td><td class="c-table__cell"><a class="el" href="#aa9b5e6119bb732216d2cf6b4cec856c2">setCacheSize</a> (int size)</td></tr>
@@ -147,6 +155,30 @@ final&#160;ILoggerFactory&#160;</td><td class="c-table__cell"><b>loggerFactory</
 <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1configuration_1_1_cache_configuration.html">CacheConfiguration</a>&#160;</td><td class="c-table__cell"><b>cacheConfig</b> = null</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="af3f40d82abd0e746dc7241ead9a4d6e3" name="af3f40d82abd0e746dc7241ead9a4d6e3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af3f40d82abd0e746dc7241ead9a4d6e3">&#9670;&#160;</a></span>getDiscoveryState()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1_cloud_discovery_state.html">CloudDiscoveryState</a> fiftyone.pipeline.cloudrequestengine.flowelements.CloudRequestEngineBuilder.getDiscoveryState </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>A copy of what the engine this builder last built discovered, to give to a later build with <code><a class="el" href="#aac39579094c36b753c51c408181f3ce6">setDiscoveryState(CloudDiscoveryState)</a></code>. </p>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the copy, or null if no engine has been built or it does not yet know both the accepted evidence keys and the accessible properties </dd></dl>
+
+</div>
+</div>
 <a id="af999668ad8d62734ba786017356b194c" name="af999668ad8d62734ba786017356b194c"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#af999668ad8d62734ba786017356b194c">&#9670;&#160;</a></span>newEngine()</h2>
 
@@ -274,9 +306,39 @@ final&#160;ILoggerFactory&#160;</td><td class="c-table__cell"><b>loggerFactory</
 </div><div class="c-member__body">
 
 <p>The endpoint the <a class="el" href="interfacefiftyone_1_1pipeline_1_1cloudrequestengine_1_1flowelements_1_1_cloud_request_engine.html" title="Engine that makes requests to the 51Degrees cloud service based on the details passed at creation and...">CloudRequestEngine</a> will query to get a processing result. </p>
-<p>By default, this is the endpoint value suffixed with the resourcekey and ".json" </p><dl class="params"><dt>Parameters</dt><dd>
+<p>By default, this is the endpoint value suffixed with the resourcekey and ".json", or with "json" alone when no resource key is set </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">uri</td><td>data endpoint </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">this builder </dd></dl>
+
+</div>
+</div>
+<a id="aac39579094c36b753c51c408181f3ce6" name="aac39579094c36b753c51c408181f3ce6"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aac39579094c36b753c51c408181f3ce6">&#9670;&#160;</a></span>setDiscoveryState()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">CloudRequestEngineBuilder fiftyone.pipeline.cloudrequestengine.flowelements.CloudRequestEngineBuilder.setDiscoveryState </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1_cloud_discovery_state.html">CloudDiscoveryState</a></td>          <td class="c-table__cell"><span class="paramname"><em>state</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Build the engine from a copy of what an earlier engine discovered for the same resource key, so that the build makes no discovery request. </p>
+<p>The copy comes from <code><a class="el" href="#af3f40d82abd0e746dc7241ead9a4d6e3">getDiscoveryState()</a></code> after a successful build, and can be kept with <code><a class="el" href="classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1_cloud_discovery_state.html#a919d3f2709a0a77db2ca0c9e9cff1874">CloudDiscoveryState#toJson()</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>the copy, or null to discover when building </td></tr>
   </table>
   </dd>
 </dl>
@@ -365,6 +427,7 @@ final&#160;ILoggerFactory&#160;</td><td class="c-table__cell"><b>loggerFactory</
 </div><div class="c-member__body">
 
 <p>The license key to query the endpoint with. </p>
+<p>A license key used without a resource key needs the properties wanted, named with <code><a class="el" href="">setRequestedProperties(List)</a></code>. Beside a resource key it adds the requested properties the license grants to what the resource key carries. </p>
 <p>There is no default </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">licenseKey</td><td>license key </td></tr>
@@ -405,6 +468,67 @@ final&#160;ILoggerFactory&#160;</td><td class="c-table__cell"><b>loggerFactory</
 
 </div>
 </div>
+<a id="aee921b8e4736063c32e76095b020afa1" name="aee921b8e4736063c32e76095b020afa1"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aee921b8e4736063c32e76095b020afa1">&#9670;&#160;</a></span>setRequestedProperties() <span class="c-member__count">[1/2]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">CloudRequestEngineBuilder fiftyone.pipeline.cloudrequestengine.flowelements.CloudRequestEngineBuilder.setRequestedProperties </td>
+          <td>(</td>
+          <td class="c-table__cell">List&lt; String &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>properties</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The properties each request asks the cloud service for, as fully qualified names such as <code class="JavaDocCode">device.ismobile</code>, sent as values. </p>
+<p>Required with a license key alone. Beside a resource key the cloud service adds them to the properties the resource key carries. Names are trimmed and sent as given, and a name given again in another letter case is sent once. The properties set with <code><a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_aspect_engine_builder_base.html#ae98607e9bd9e95c0107135fc8912ebf6">setProperty(String)</a></code> and <code><a class="el" href="">setProperties(List)</a></code> are not sent. </p>
+<p>By default no properties are requested </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">properties</td><td>the fully qualified property names </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">this builder </dd></dl>
+
+</div>
+</div>
+<a id="ad32c87b3a72f41e057066dbf1d1fab26" name="ad32c87b3a72f41e057066dbf1d1fab26"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad32c87b3a72f41e057066dbf1d1fab26">&#9670;&#160;</a></span>setRequestedProperties() <span class="c-member__count">[2/2]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">CloudRequestEngineBuilder fiftyone.pipeline.cloudrequestengine.flowelements.CloudRequestEngineBuilder.setRequestedProperties </td>
+          <td>(</td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>properties</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>As <code><a class="el" href="">setRequestedProperties(List)</a></code>, taking the names as one comma separated string, as a configuration file gives them. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">properties</td><td>comma separated fully qualified property names </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">this builder </dd></dl>
+
+</div>
+</div>
 <a id="ab45dc917cd68a61abab7cc566dfba901" name="ab45dc917cd68a61abab7cc566dfba901"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab45dc917cd68a61abab7cc566dfba901">&#9670;&#160;</a></span>setResourceKey()</h2>
 
@@ -425,7 +549,7 @@ final&#160;ILoggerFactory&#160;</td><td class="c-table__cell"><b>loggerFactory</
 </div><div class="c-member__body">
 
 <p>The resource key to query the endpoint with. </p>
-<p>No default, a value must be supplied </p><dl class="params"><dt>Parameters</dt><dd>
+<p>No default. Either a resource key or a license key must be supplied. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">resourceKey</td><td>resource key </td></tr>
   </table>
@@ -454,8 +578,8 @@ final&#160;ILoggerFactory&#160;</td><td class="c-table__cell"><b>loggerFactory</
       </div>
 </div><div class="c-member__body">
 
-<p>Timeout in seconds for the request to the endpoint. </p>
-<p>Default value is 100 seconds </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Timeout in seconds for each request to the cloud service, the two discovery requests when the engine is built and each data request. </p>
+<p>Default value is 2 seconds </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">timeout</td><td>in seconds </td></tr>
   </table>

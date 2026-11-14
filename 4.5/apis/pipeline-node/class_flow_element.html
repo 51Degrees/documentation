@@ -76,8 +76,8 @@ Inheritance diagram for FlowElement:</h2>
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="c-table__row memitem:aafd6a7f4076e2499ee1ea86f4a963cb8" id="r_aafd6a7f4076e2499ee1ea86f4a963cb8"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aafd6a7f4076e2499ee1ea86f4a963cb8">constructor</a> ({ <a class="el" href="#a227dd46e0e0c51ecf79186a4d7368646">processInternal</a>, dataKey, properties={}, evidenceKeyFilter }={})</td></tr>
-<tr class="c-table__row memdesc:aafd6a7f4076e2499ee1ea86f4a963cb8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for flowElement class.  <br /></td></tr>
+<tr class="c-table__row memitem:add7aa4fba8761432d27b26c3f63edd48" id="r_add7aa4fba8761432d27b26c3f63edd48"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#add7aa4fba8761432d27b26c3f63edd48">constructor</a> ({ <a class="el" href="#a227dd46e0e0c51ecf79186a4d7368646">processInternal</a>, dataKey, properties={}, evidenceKeyFilter, keptEvidenceKeyFilter }={})</td></tr>
+<tr class="c-table__row memdesc:add7aa4fba8761432d27b26c3f63edd48"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for flowElement class.  <br /></td></tr>
 <tr class="c-table__row memitem:aea883b72955f23691d0188efa918670e" id="r_aea883b72955f23691d0188efa918670e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aea883b72955f23691d0188efa918670e">onRegistration</a> (pipeline, flowElement)</td></tr>
 <tr class="c-table__row memdesc:aea883b72955f23691d0188efa918670e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Internal function to be called when a <a class="el" href="class_flow_element.html" title="A FlowElement is placed inside a pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a> is added to pipeline, runs through any registrationCallbacks on the <a class="el" href="class_flow_element.html" title="A FlowElement is placed inside a pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a>.  <br /></td></tr>
 <tr class="c-table__row memitem:a67a6943bd9976e1571453b41bcea2f11" id="r_a67a6943bd9976e1571453b41bcea2f11"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a67a6943bd9976e1571453b41bcea2f11">ready</a> ()</td></tr>
@@ -136,8 +136,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aafd6a7f4076e2499ee1ea86f4a963cb8" name="aafd6a7f4076e2499ee1ea86f4a963cb8"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aafd6a7f4076e2499ee1ea86f4a963cb8">&#9670;&#160;</a></span>constructor()</h2>
+<a id="add7aa4fba8761432d27b26c3f63edd48" name="add7aa4fba8761432d27b26c3f63edd48"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#add7aa4fba8761432d27b26c3f63edd48">&#9670;&#160;</a></span>constructor()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -150,7 +150,7 @@ Public Member Functions</h2></td></tr>
             <tr class="c-table__row">
               <td class="c-table__cell">FlowElement::constructor </td>
           <td>(</td>
-          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>{ processInternal, dataKey, properties={}, evidenceKeyFilter }</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span></td><td>)</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>{ processInternal, dataKey, properties={}, evidenceKeyFilter, keptEvidenceKeyFilter }</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span></td><td>)</td>
           <td></td>
         </tr>
           </table>
@@ -170,10 +170,13 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">{string}</td><td>options.dataKey the dataKey the flowElement's elementData will be stored under </td></tr>
     <tr><td class="paramname">{Function}</td><td>options.processInternal callback to act on flowData </td></tr>
     <tr><td class="paramname">{object}</td><td>options.properties list of properties including metadata </td></tr>
-    <tr><td class="paramname">{EvidenceKeyFilter}</td><td>options.evidenceKeyFilter an instance of an <a class="el" href="class_evidence_key_filter.html" title="An evidence key filter is added to a flowElement It tells the pipeline which evidence it is intereste...">EvidenceKeyFilter</a> to filter evidence added to the <a class="el" href="class_pipeline.html" title="Pipeline holding a list of flowElements for processing, can create flowData that will be passed throu...">Pipeline</a> </td></tr>
+    <tr><td class="paramname">{EvidenceKeyFilter}</td><td>options.evidenceKeyFilter the evidence the element accepts, being the keys that can change its results. An element that gives none accepts no evidence, so it never widens what the <a class="el" href="class_pipeline.html" title="Pipeline holding a list of flowElements for processing, can create flowData that will be passed throu...">Pipeline</a> keeps </td></tr>
+    <tr><td class="paramname">{EvidenceKeyFilter}</td><td>[options.keptEvidenceKeyFilter] the evidence the element reads without it changing its results, which the flow data keeps but which is not accepted evidence </td></tr>
   </table>
   </dd>
 </dl>
+<p><a class="el" href="class_evidence.html" title="Storage of evidence on a flowData object.">Evidence</a> the flow data keeps for the element, though it is not accepted, such as the evidence the usage sharing element shares.</p>
+<p>@type {EvidenceKeyFilter|undefined}</p>
 <p>@type {Function[]}</p>
 <p>@type {<a class="el" href="class_pipeline.html" title="Pipeline holding a list of flowElements for processing, can create flowData that will be passed throu...">Pipeline</a>[]}</p>
 

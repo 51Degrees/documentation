@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2mixed_2
 <p>This example demonstrates using both device detection and IP intelligence from the 51Degrees cloud service as part of a simple web server. The User-Agent and IP address of the requesting client are used as evidence and details about the device, network, and location are displayed.</p>
 <p>The page also loads the 51Degrees client-side script from '/51Degrees.core.js'. The script gathers evidence in the browser, such as the screen size, and posts that evidence to '/json', which answers with the refined results.</p>
 <p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-node/blob/main/ip-intelligence/fiftyone.ipintelligence.cloud/examples/cloud/mixed/gettingstarted-web/gettingStarted.js">GitHub</a>.</p>
-<p>To run this example, you will eventually need to create a resource key. A resource key is used as shorthand to store the particular set of properties you are interested in as well as any associated license keys that entitle you to increased request limits and/or paid-for properties, but it is not yet available for IP intelligence. For now, you can run the onpremise/mixed/gettingstarted-api example to simulate a custom hosted cloud service, and point this example to it by setting the 'FOD_CLOUD_API_URL' environment variable to '<a href="http://localhost:5225/'">http://localhost:5225/'</a>. Any value can then be used for the resource key.</p>
+<p>To run this example, you will eventually need to create a resource key. A resource key is used as shorthand to store the particular set of properties you are interested in as well as any associated license keys that entitle you to increased request limits and/or paid-for properties, but it is not yet available for IP intelligence. For now, you can run the onpremise/mixed/gettingstarted-api example to simulate a custom hosted cloud service, and point this example to it by setting the '_51DEGREES_CLOUD_ENDPOINT' environment variable to '<a href="http://localhost:5225/'">http://localhost:5225/'</a>. Any value can then be used for the resource key.</p>
 <p>Required npm Dependencies:</p><ul>
 <li><a href="https://www.npmjs.com/package/fiftyone.pipeline.cloudrequestengine">fiftyone.pipeline.cloudrequestengine</a></li>
 <li><a href="https://www.npmjs.com/package/fiftyone.pipeline.core">fiftyone.pipeline.core</a></li>
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2mixed_2
 <div class="c-code__line">  <span class="c-code__keywordflow">if</span> (!resourceKey || resourceKey.startsWith(<span class="c-code__stringliteral">&#39;!!&#39;</span>)) {</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">throw</span> <span class="c-code__stringliteral">&#39;No resource key specified in the configuration file &#39;</span> +</div>
 <div class="c-code__line">      <span class="c-code__charliteral">&#39;\&#39;</span>51d.json\<span class="c-code__stringliteral">&#39; or the environment variable &#39;</span> +</div>
-<div class="c-code__line">      `<span class="c-code__stringliteral">&#39;${ExampleUtils.RESOURCE_KEY_ENV_VAR}&#39;</span>. The 51Degrees cloud ` +</div>
+<div class="c-code__line">      `<span class="c-code__stringliteral">&#39;${ExampleUtils.RESOURCE_KEY_VARIABLE}&#39;</span>. The 51Degrees cloud ` +</div>
 <div class="c-code__line">      <span class="c-code__stringliteral">&#39;service is accessed using a \&#39;ResourceKey\&#39;. For more information &#39;</span> +</div>
 <div class="c-code__line">      <span class="c-code__stringliteral">&#39;see &#39;</span> +</div>
 <div class="c-code__line">      <span class="c-code__stringliteral">&#39;https://51degrees.com/documentation/_services__cloud__resource_keys.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.ipintelligence.cloud-examples-cloud-mixed-gettingstarted-web-gettingstarted.js&amp;utm_term=resource-key-required. &#39;</span> +</div>
@@ -219,10 +219,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2mixed_2
 <div class="c-code__line">    <span class="c-code__comment">// Answer the client-side script with the results of processing the</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// evidence it posted.</span></div>
 <div class="c-code__line">    flowData.process().then(<span class="c-code__keyword">function</span> () {</div>
-<div class="c-code__line">      res.statusCode = 200;</div>
-<div class="c-code__line">      res.setHeader(<span class="c-code__stringliteral">&#39;Content-Type&#39;</span>, <span class="c-code__stringliteral">&#39;application/json&#39;</span>);</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">      res.end(JSON.stringify(flowData.jsonbundler.json));</div>
+<div class="c-code__line">      <span class="c-code__comment">// Sends the caching headers, and a 304 to a matching If-None-Match.</span></div>
+<div class="c-code__line">      core.Helpers.writeClientSideResponse(req, res, flowData,</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;application/json&#39;</span>, JSON.stringify(flowData.jsonbundler.json));</div>
 <div class="c-code__line">    });</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">return</span>;</div>
 <div class="c-code__line">  }</div>
@@ -232,10 +231,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2mixed_2
 <div class="c-code__line">    <span class="c-code__comment">// carries the results of this request&#39;s detection, so it is built per</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// request rather than cached.</span></div>
 <div class="c-code__line">    flowData.process().then(<span class="c-code__keyword">function</span> () {</div>
-<div class="c-code__line">      res.statusCode = 200;</div>
-<div class="c-code__line">      res.setHeader(<span class="c-code__stringliteral">&#39;Content-Type&#39;</span>, <span class="c-code__stringliteral">&#39;application/x-javascript&#39;</span>);</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">      res.end(flowData.javascriptbuilder.javascript);</div>
+<div class="c-code__line">      <span class="c-code__comment">// Sends the caching headers, and a 304 to a matching If-None-Match.</span></div>
+<div class="c-code__line">      core.Helpers.writeClientSideResponse(req, res, flowData,</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;application/x-javascript&#39;</span>, flowData.javascriptbuilder.javascript);</div>
 <div class="c-code__line">    });</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">return</span>;</div>
 <div class="c-code__line">  }</div>
@@ -313,7 +311,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2mixed_2
 <div class="c-code__line">  server,</div>
 <div class="c-code__line">  setPipeline</div>
 <div class="c-code__line">};</div>
-<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.ipintelligence.onpremise/examples/onpremise/exampleUtils.js:116</div></div>
+<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.ipintelligence.onpremise/examples/onpremise/exampleUtils.js:203</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

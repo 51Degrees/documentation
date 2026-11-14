@@ -135,6 +135,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_performance_b
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.devicedetection.examples.shared.DataFileHelper.getDataFileLocation;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.devicedetection.examples.shared.DataFileHelper.getEvidenceFile;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.devicedetection.shared.testhelpers.FileUtils.LITE_HASH_DATA_FILE_PATH;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.pipeline.engines.Constants.PerformanceProfiles.*;</div>
 <div class="c-code__line"></div>
 <div class="c-code__line"><span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>PerformanceBenchmark {</div>
@@ -144,6 +145,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_performance_b
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> <span class="c-code__keywordtype">int</span> TESTS_PER_THREAD = 10000;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> Logger logger = LoggerFactory.getLogger(PerformanceBenchmark.class);</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> String CONTACT_US = <span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-performancebenchmark.java&amp;utm_term=enterprise-data-file&quot;</span>;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment">// true when the benchmarks ran on the free Lite data file</span></div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keywordtype">boolean</span> usedLiteDataFile;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// where the results of the tests are gathered</span></div>
 <div class="c-code__line">    <span class="c-code__keyword">private</span> List&lt;Future&lt;BenchmarkResult&gt;&gt; resultList;</div>
@@ -163,7 +169,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_performance_b
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> main(String[] args) <span class="c-code__keywordflow">throws</span> Exception {</div>
 <div class="c-code__line">        LogbackHelper.configureLogback(FileFinder.getFilePath(<span class="c-code__stringliteral">&quot;logback.xml&quot;</span>));</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">        String dataFilename = args.length &gt; 0 ? args[0] : <span class="c-code__keyword">null</span>;</div>
+<div class="c-code__line">        <span class="c-code__comment">// Use the supplied data file, or the free Lite file, which is</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// downloaded if it is missing</span></div>
+<div class="c-code__line">        String dataFilename = args.length &gt; 0 ? args[0] : LITE_HASH_DATA_FILE_PATH;</div>
 <div class="c-code__line">        String evidenceFilename = args.length &gt; 1 ? args[1] : <span class="c-code__keyword">null</span>;</div>
 <div class="c-code__line">        <span class="c-code__keywordtype">int</span> numberOfThreads = DEFAULT_NUMBER_OF_THREADS;</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> (args.length &gt; 2) {</div>
@@ -205,6 +213,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_performance_b
 <div class="c-code__line">        <span class="c-code__keywordflow">for</span> (PerformanceConfiguration config: performanceConfigurations){</div>
 <div class="c-code__line">            executeBenchmark(<span class="c-code__keyword">true</span>, config);</div>
 <div class="c-code__line">        }</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (usedLiteDataFile) {</div>
+<div class="c-code__line">            DataFileHelper.writeEnterpriseOffer(writer, CONTACT_US);</div>
+<div class="c-code__line">        }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        logger.info(<span class="c-code__stringliteral">&quot;Finished Performance example&quot;</span>);</div>
 <div class="c-code__line">    }</div>
@@ -233,7 +244,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_performance_b
 <div class="c-code__line">                setPipelinePerformanceProperties(builder, config);</div>
 <div class="c-code__line">                <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a> = builder.build();</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">                DataFileHelper.logDataFileInfo(<a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>.getElement(DeviceDetectionHashEngine.class));</div>
+<div class="c-code__line">                DeviceDetectionHashEngine engine =</div>
+<div class="c-code__line">                        <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>.getElement(DeviceDetectionHashEngine.class);</div>
+<div class="c-code__line">                DataFileHelper.logDataFileInfo(engine);</div>
+<div class="c-code__line">                usedLiteDataFile = DataFileHelper.isLiteDataFile(engine);</div>
 <div class="c-code__line">            } <span class="c-code__keywordflow">else</span> {</div>
 <div class="c-code__line">                logger.info(<span class="c-code__stringliteral">&quot;Load memory from {}&quot;</span>, dataFileLocation);</div>
 <div class="c-code__line">                <span class="c-code__keywordtype">byte</span>[] fileContent = Files.readAllBytes(<span class="c-code__keyword">new</span> File(dataFileLocation).toPath());</div>
@@ -429,7 +443,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_performance_b
 <div class="c-code__line">}</div>
 <div class="c-code__line"></div>
 <div class="c-code__line"> </div>
-<div class="ttc" id="aclassfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_performance_benchmark_html_ae3d542b8df722282a50952e8df88ef17"><div class="ttname"><a href="classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_performance_benchmark.html#ae3d542b8df722282a50952e8df88ef17">fiftyone.devicedetection.examples.console.PerformanceBenchmark.runBenchmarks</a></div><div class="ttdeci">void runBenchmarks(PerformanceConfiguration[] performanceConfigurations, String dataFilename, String evidenceFilename, int numberOfThreads, PrintWriter writer)</div><div class="ttdoc">Runs benchmarks for various configurations.</div><div class="ttdef"><b>Definition</b> PerformanceBenchmark.java:107</div></div>
+<div class="ttc" id="aclassfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_performance_benchmark_html_ae3d542b8df722282a50952e8df88ef17"><div class="ttname"><a href="classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_performance_benchmark.html#ae3d542b8df722282a50952e8df88ef17">fiftyone.devicedetection.examples.console.PerformanceBenchmark.runBenchmarks</a></div><div class="ttdeci">void runBenchmarks(PerformanceConfiguration[] performanceConfigurations, String dataFilename, String evidenceFilename, int numberOfThreads, PrintWriter writer)</div><div class="ttdoc">Runs benchmarks for various configurations.</div><div class="ttdef"><b>Definition</b> PerformanceBenchmark.java:119</div></div>
 <div class="ttc" id="aclasspipeline_1_1developerexamples_1_1usagesharing_1_1_main_html"><div class="ttname"><a href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a></div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->

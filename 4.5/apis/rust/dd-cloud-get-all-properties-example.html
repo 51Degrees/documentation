@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-cloud-get-a
 <div class="textblock"><p>Cloud get-all-properties console example. See the descriptive block at the bottom of this file for the full write-up.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">pub fn <a class="code hl_function" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f">run</a>(options: <a class="code hl_struct" href="struct_example_options.html">ExampleOptions</a>) -&gt; Result&lt;()&gt; {</div>
 <div class="c-code__line">    let <a class="code hl_variable" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> builder = DeviceDetectionPipelineBuilder::cloud(options.resource_key);</div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let Some(<a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ae83ce8e91df378a7e5b2f394db2631ad">endpoint</a>) = options.endpoint {</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(<a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ae83ce8e91df378a7e5b2f394db2631ad">endpoint</a>) = options.endpoint {</div>
 <div class="c-code__line">        builder = builder.endpoint(<a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ae83ce8e91df378a7e5b2f394db2631ad">endpoint</a>);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">    <span class="c-code__comment">// Usage sharing is off because this is a console example, whose evidence</span></div>
@@ -112,8 +112,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-cloud-get-a
 <div class="c-code__line">    <span class="c-code__keywordflow">for</span> name in names {</div>
 <div class="c-code__line">        <span class="c-code__comment">// get_property_as_string renders any value type to a display string and</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// returns the no-value marker for an absent or no-value property.</span></div>
-<div class="c-code__line">        let <a class="code hl_variable" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a9d58c3d628e2a73ead14ac823d810027">value</a> = examples_shared::get_property_as_string(device, &amp;name);</div>
-<div class="c-code__line">        println!(<span class="c-code__stringliteral">&quot;{name} = {}&quot;</span>, <a class="code hl_function" href="dd-cloud-get-all-properties_8rs.html#af78e53330168739c6a9500f6fe358fb3">truncate</a>(&amp;<a class="code hl_variable" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a9d58c3d628e2a73ead14ac823d810027">value</a>));</div>
+<div class="c-code__line">        let <a class="code hl_variable" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a451961dd347700d7bb5d36beec33eb80">value</a> = examples_shared::get_property_as_string(device, &amp;name);</div>
+<div class="c-code__line">        println!(<span class="c-code__stringliteral">&quot;{name} = {}&quot;</span>, <a class="code hl_function" href="dd-cloud-get-all-properties_8rs.html#af78e53330168739c6a9500f6fe358fb3">truncate</a>(&amp;<a class="code hl_variable" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a451961dd347700d7bb5d36beec33eb80">value</a>));</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    Ok(())</div>

@@ -78,6 +78,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-offl
 <div class="c-code__line">        .build()</div>
 <div class="c-code__line">        .context(<span class="c-code__stringliteral">&quot;failed to build the on-premise device-detection pipeline&quot;</span>)?;</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment">// The properties the engine can return are those its data file carries.</span></div>
+<div class="c-code__line">    let <a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a> = device_detection_examples::available_properties(&amp;pipeline);</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Read the whole evidence file. It is a multi-document YAML stream, one</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// document per record, each a map of evidence key to value.</span></div>
 <div class="c-code__line">    let yaml = std::fs::read_to_string(&amp;options.evidence_file).with_context(|| {</div>
@@ -102,7 +105,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-offl
 <div class="c-code__line">            <span class="c-code__keywordflow">break</span>;</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">        let record = record.context(<span class="c-code__stringliteral">&quot;failed to parse an evidence record&quot;</span>)?;</div>
-<div class="c-code__line">        let <a class="code hl_variable" href="fodid-web-creator-context_8rs.html#a71b4cb0e03b217e733bdef1a89459109">result</a> = <a class="code hl_function" href="dd-cloud-getting-started_8rs.html#a418da7fcd46be2042e5e4a5ad92c2a99">analyse_evidence</a>(&amp;pipeline, &amp;record)?;</div>
+<div class="c-code__line">        let <a class="code hl_variable" href="fodid-web-creator-context_8rs.html#a71b4cb0e03b217e733bdef1a89459109">result</a> = <a class="code hl_function" href="dd-cloud-getting-started_8rs.html#a418da7fcd46be2042e5e4a5ad92c2a99">analyse_evidence</a>(&amp;pipeline, &amp;record, &amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>)?;</div>
 <div class="c-code__line">        <a class="code hl_function" href="dd-onprem-offline-processing_8rs.html#ab9386b1eccda85c64718e788670e142f">write_record</a>(&amp;<a class="code hl_variable" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> output, &amp;<a class="code hl_variable" href="fodid-web-creator-context_8rs.html#a71b4cb0e03b217e733bdef1a89459109">result</a>)?;</div>
 <div class="c-code__line">        processed += 1;</div>
 <div class="c-code__line">    }</div>
@@ -118,6 +121,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-offl
 <div class="c-code__line">        PerformanceProfile::LowMemory,</div>
 <div class="c-code__line">    )?;</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">    let missing = examples_shared::missing_properties(<a class="code hl_variable" href="device-detection-examples_2src_2lib_8rs.html#a27ce90c59887a6542ed37f82eeb71fc3">ENTERPRISE_PROPERTIES</a>, &amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>);</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(message) = examples_shared::enterprise_data_file_message(&amp;missing, <a class="code hl_variable" href="dd-onprem-getting-started_8rs.html#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a>) {</div>
+<div class="c-code__line">        println!();</div>
+<div class="c-code__line">        println!(<span class="c-code__stringliteral">&quot;{message}&quot;</span>);</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    examples_shared::print_find_out_more(<a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ad25b7f6d0c89d56f4024e2b559cf89cc">FIND_OUT_MORE</a>, examples_shared::ON_PREMISE_REPOSITORIES);</div>
 <div class="c-code__line">    Ok(())</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --> </div></div><!-- primary -->

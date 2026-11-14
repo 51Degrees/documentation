@@ -84,6 +84,8 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a9a69d38ccfc88bc4a1d693f63d6d181c" id="r_a9a69d38ccfc88bc4a1d693f63d6d181c"><td class="c-table__cell">OutputStream&#160;</td><td class="c-table__cell"><a class="el" href="#a9a69d38ccfc88bc4a1d693f63d6d181c">getOutputStream</a> ()  throws Exception</td></tr>
 <tr class="c-table__row memdesc:a9a69d38ccfc88bc4a1d693f63d6d181c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns a gzipped output stream.  <br /></td></tr>
 <tr class="c-table__row memitem:a592a8aedd530b8b00c57a83d3dac7fc5" id="r_a592a8aedd530b8b00c57a83d3dac7fc5"><td class="c-table__cell">int&#160;</td><td class="c-table__cell"><a class="el" href="#a592a8aedd530b8b00c57a83d3dac7fc5">getResponseCode</a> ()  throws IOException </td></tr>
+<tr class="c-table__row memitem:a4496586e18bd4c283f81e68117b8d22e" id="r_a4496586e18bd4c283f81e68117b8d22e"><td class="c-table__cell">String&#160;</td><td class="c-table__cell"><a class="el" href="#a4496586e18bd4c283f81e68117b8d22e">getResponseContent</a> ()</td></tr>
+<tr class="c-table__row memdesc:a4496586e18bd4c283f81e68117b8d22e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Reads the content of a failed answer, as far as the most characters that are logged.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="a5bcdd23653a5a22a2343f8993bb5867f" name="a5bcdd23653a5a22a2343f8993bb5867f"></a>
@@ -119,7 +121,7 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">url</td><td>the URL rto which data should be uploaded </td></tr>
     <tr><td class="paramname">headers</td><td>HTTP headers for the connection </td></tr>
-    <tr><td class="paramname">timeout</td><td>connection timeout in milliseconds </td></tr>
+    <tr><td class="paramname">timeout</td><td>milliseconds to wait to connect, and then to wait for an answer </td></tr>
   </table>
   </dd>
 </dl>
@@ -173,6 +175,31 @@ Public Member Functions</h2></td></tr>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">200 for success </dd></dl>
 
 <p>Implements <a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1services_1_1_data_uploader.html#ac51372108f5537c179ee2cd0fc1a1e8d">fiftyone.pipeline.engines.services.DataUploader</a>.</p>
+
+</div>
+</div>
+<a id="a4496586e18bd4c283f81e68117b8d22e" name="a4496586e18bd4c283f81e68117b8d22e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4496586e18bd4c283f81e68117b8d22e">&#9670;&#160;</a></span>getResponseContent()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">String fiftyone.pipeline.engines.services.DataUploaderHttp.getResponseContent </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Reads the content of a failed answer, as far as the most characters that are logged. </p>
+
+<p>Implements <a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1services_1_1_data_uploader.html#ac472e1a78eb443177221010f4601482c">fiftyone.pipeline.engines.services.DataUploader</a>.</p>
 
 </div>
 </div>

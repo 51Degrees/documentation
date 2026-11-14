@@ -67,40 +67,44 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-web-gettin
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-nested-classes" class="g-docs__section-heading"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="c-table__row memitem:Options" id="r_Options"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="struct_options.html">Options</a></td></tr>
-<tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="struct_options.html" title="Options that drive [run].">Options</a> that drive [<code><a class="el" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f" title="Run the cloud configurator example.">run</a></code>].  <a href="struct_options.html#details">More...</a><br /></td></tr>
+<tr class="c-table__row memitem:DataFileNotes" id="r_DataFileNotes"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="struct_data_file_notes.html">DataFileNotes</a></td></tr>
+<tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">What the page shows about the data file, read once when the engine is built.  <a href="struct_data_file_notes.html#details">More...</a><br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="c-table__row memitem:af7705fb1b146ccd9782c5f7c5673024e" id="r_af7705fb1b146ccd9782c5f7c5673024e"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_options.html">Options</a>&#160;</td><td class="c-table__cell"><a class="el" href="#af7705fb1b146ccd9782c5f7c5673024e">build_app</a> (data_file:&amp;std::path::Path, share_usage:bool,) -&gt; anyhow::Result&lt;(Router, Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;)&gt;</td></tr>
-<tr class="c-table__row memdesc:af7705fb1b146ccd9782c5f7c5673024e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the on-premise web application router plus the data-file warnings.  <br /></td></tr>
+<tr class="c-table__row memitem:ac5eb33c95f0a3c4ce44dc8666cdd0bfb" id="r_ac5eb33c95f0a3c4ce44dc8666cdd0bfb"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_data_file_notes.html">DataFileNotes</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ac5eb33c95f0a3c4ce44dc8666cdd0bfb">build_app</a> (data_file:&amp;std::path::Path, share_usage:bool,) -&gt; anyhow::Result&lt;(Router, <a class="el" href="struct_data_file_notes.html">DataFileNotes</a>)&gt;</td></tr>
+<tr class="c-table__row memdesc:ac5eb33c95f0a3c4ce44dc8666cdd0bfb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the on-premise web application router plus the data-file notes.  <br /></td></tr>
 <tr class="c-table__row memitem:a8d644587b49a1bca9eba622abbfaef16" id="r_a8d644587b49a1bca9eba622abbfaef16"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a8d644587b49a1bca9eba622abbfaef16">run</a> (options:Options) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a8d644587b49a1bca9eba622abbfaef16"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Serve the example page over TCP until interrupted.  <br /></td></tr>
-<tr class="c-table__row memitem:a0ecdaa6c332af4e687f3bc109baa11a8" id="r_a0ecdaa6c332af4e687f3bc109baa11a8"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a0ecdaa6c332af4e687f3bc109baa11a8">store_warnings</a> (warnings:Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;)</td></tr>
-<tr class="c-table__row memdesc:a0ecdaa6c332af4e687f3bc109baa11a8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Record the warnings for the running server to show on each page.  <br /></td></tr>
-<tr class="c-table__row memitem:aaeb48676d44082d1d0c8695645c607f7" id="r_aaeb48676d44082d1d0c8695645c607f7"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#aaeb48676d44082d1d0c8695645c607f7">current_warnings</a> () -&gt; Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td></tr>
-<tr class="c-table__row memdesc:aaeb48676d44082d1d0c8695645c607f7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The warnings recorded by [<code><a class="el" href="#a0ecdaa6c332af4e687f3bc109baa11a8" title="Record the warnings for the running server to show on each page.">store_warnings</a></code>], or an empty list if none.  <br /></td></tr>
-<tr class="c-table__row memitem:a4bdb0e3cfaa0302fa9d6bf057dfa9c88" id="r_a4bdb0e3cfaa0302fa9d6bf057dfa9c88"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a4bdb0e3cfaa0302fa9d6bf057dfa9c88">home</a> (Query(params):Query&lt; std::collections::HashMap&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt; &gt;, result:FiftyOneResult,) -&gt; Html&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td></tr>
-<tr class="c-table__row memdesc:a4bdb0e3cfaa0302fa9d6bf057dfa9c88"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The home-page handler: render the weighted server-side IP-intelligence results, the evidence table, the IP look-up form, the location map and the free-tier data-file warnings.  <br /></td></tr>
+<tr class="c-table__row memitem:a2ee65b728d5cc1fc7c19257db1c5219e" id="r_a2ee65b728d5cc1fc7c19257db1c5219e"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a2ee65b728d5cc1fc7c19257db1c5219e">store_notes</a> (notes:DataFileNotes)</td></tr>
+<tr class="c-table__row memdesc:a2ee65b728d5cc1fc7c19257db1c5219e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Record the notes for the running server to show on each page.  <br /></td></tr>
+<tr class="c-table__row memitem:a9448e9ae37d87512a212a60d61aa3db3" id="r_a9448e9ae37d87512a212a60d61aa3db3"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a9448e9ae37d87512a212a60d61aa3db3">current_notes</a> () -&gt; <a class="el" href="struct_data_file_notes.html">DataFileNotes</a></td></tr>
+<tr class="c-table__row memdesc:a9448e9ae37d87512a212a60d61aa3db3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The notes recorded by [<code><a class="el" href="#a2ee65b728d5cc1fc7c19257db1c5219e" title="Record the notes for the running server to show on each page.">store_notes</a></code>], or empty notes if none.  <br /></td></tr>
+<tr class="c-table__row memitem:a4bdb0e3cfaa0302fa9d6bf057dfa9c88" id="r_a4bdb0e3cfaa0302fa9d6bf057dfa9c88"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a4bdb0e3cfaa0302fa9d6bf057dfa9c88">home</a> (Query(params):Query&lt; std::collections::HashMap&lt; String, String &gt; &gt;, result:FiftyOneResult,) -&gt; Html&lt; String &gt;</td></tr>
+<tr class="c-table__row memdesc:a4bdb0e3cfaa0302fa9d6bf057dfa9c88"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The home-page handler: render the weighted server-side IP-intelligence results, the evidence table, the IP look-up form, the location map, the free-tier data-file warnings and which properties need the Enterprise data file.  <br /></td></tr>
 <tr class="c-table__row memitem:a10397c317f477c2d5f6629f1d23f9b28" id="r_a10397c317f477c2d5f6629f1d23f9b28"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a10397c317f477c2d5f6629f1d23f9b28">main</a> () -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memitem:a0e71e181a371ab9ba8b2f13d810d5cc5" id="r_a0e71e181a371ab9ba8b2f13d810d5cc5"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a0e71e181a371ab9ba8b2f13d810d5cc5">test_app</a> () -&gt; Option&lt; Router &gt;</td></tr>
 <tr class="c-table__row memdesc:a0e71e181a371ab9ba8b2f13d810d5cc5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the app for the test, skipping when no data file is available.  <br /></td></tr>
 <tr class="c-table__row memitem:afd999b7aa5523a56df70f70728e4434b" id="r_afd999b7aa5523a56df70f70728e4434b"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#afd999b7aa5523a56df70f70728e4434b">get</a> (app:Router, uri:&amp;str) -&gt; Response</td></tr>
 <tr class="c-table__row memdesc:afd999b7aa5523a56df70f70728e4434b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Drive one GET request through a clone of the app and return the response.  <br /></td></tr>
-<tr class="c-table__row memitem:ac54be9a96a863c0e4cef3167495c7dea" id="r_ac54be9a96a863c0e4cef3167495c7dea"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#ac54be9a96a863c0e4cef3167495c7dea">body_string</a> (response:Response) -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td></tr>
+<tr class="c-table__row memitem:ac54be9a96a863c0e4cef3167495c7dea" id="r_ac54be9a96a863c0e4cef3167495c7dea"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#ac54be9a96a863c0e4cef3167495c7dea">body_string</a> (response:Response) -&gt; String</td></tr>
 <tr class="c-table__row memdesc:ac54be9a96a863c0e4cef3167495c7dea"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read a response body to an owned UTF-8 string.  <br /></td></tr>
 <tr class="c-table__row memitem:afcbd66bcc8262004448d7ce17a112dbf" id="r_afcbd66bcc8262004448d7ce17a112dbf"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#afcbd66bcc8262004448d7ce17a112dbf">server_starts_and_serves_page_and_client_script</a> ()</td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="c-table__row memitem:a1e696dc80104c89d86947a21c38136f1" id="r_a1e696dc80104c89d86947a21c38136f1"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#a1e696dc80104c89d86947a21c38136f1">web_support</a></td></tr>
-<tr class="c-table__row memitem:a688551bf64a1116d363f5354b4a93d66" id="r_a688551bf64a1116d363f5354b4a93d66"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a688551bf64a1116d363f5354b4a93d66">FORM_FIELD</a></td></tr>
-<tr class="c-table__row memdesc:a688551bf64a1116d363f5354b4a93d66"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The query-string parameter the IP form submits under.  <br /></td></tr>
-<tr class="c-table__row memitem:ab533a800544facf05fd1c8e50f92099a" id="r_ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">pub&#160;</td><td class="c-table__cell"><a class="el" href="#ab533a800544facf05fd1c8e50f92099a">data_file</a></td></tr>
-<tr class="c-table__row memdesc:ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The path to the on-premise <code>.ipi</code> data file.  <br /></td></tr>
-<tr class="c-table__row memitem:a130d69dc98a7553dd1c8d6b4811dd5ba" id="r_a130d69dc98a7553dd1c8d6b4811dd5ba"><td class="c-table__cell">pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#a130d69dc98a7553dd1c8d6b4811dd5ba">address</a></td></tr>
-<tr class="c-table__row memdesc:a130d69dc98a7553dd1c8d6b4811dd5ba"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The socket address the server binds to.  <br /></td></tr>
-<tr class="c-table__row memitem:a395ca98cfcd30d78d151bfdb166e46cd" id="r_a395ca98cfcd30d78d151bfdb166e46cd"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a395ca98cfcd30d78d151bfdb166e46cd">WARNINGS</a></td></tr>
+<tr class="c-table__row memitem:a65560ade98913e76a1868a9845e47e52" id="r_a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a></td></tr>
+<tr class="c-table__row memdesc:a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Where to ask about a copy of the Enterprise data file, as the console output links it when the server starts.  <br /></td></tr>
+<tr class="c-table__row memitem:a36282740ed407fcac2ef7800fa2fbaf2" id="r_a36282740ed407fcac2ef7800fa2fbaf2"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_data_file_notes.html">DataFileNotes</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a36282740ed407fcac2ef7800fa2fbaf2">PathBuf</a></td></tr>
+<tr class="c-table__row memdesc:a36282740ed407fcac2ef7800fa2fbaf2"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="struct_options.html" title="Options that drive [run].">Options</a> that drive [<code><a class="el" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f" title="Run the cloud configurator example.">run</a></code>].  <br /></td></tr>
+<tr class="c-table__row memitem:a563d47276a0c0f08118b289443d2fa13" id="r_a563d47276a0c0f08118b289443d2fa13"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_data_file_notes.html">DataFileNotes</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a563d47276a0c0f08118b289443d2fa13">SocketAddr</a></td></tr>
+<tr class="c-table__row memdesc:a563d47276a0c0f08118b289443d2fa13"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The socket address the server binds to.  <br /></td></tr>
+<tr class="c-table__row memitem:a93dfcdf1ed27d9cfa54fec802d7f6b24" id="r_a93dfcdf1ed27d9cfa54fec802d7f6b24"><td class="c-table__cell">pub&#160;</td><td class="c-table__cell"><a class="el" href="#a93dfcdf1ed27d9cfa54fec802d7f6b24">warnings</a></td></tr>
+<tr class="c-table__row memdesc:a93dfcdf1ed27d9cfa54fec802d7f6b24"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The standard free-tier and stale-file warnings.  <br /></td></tr>
+<tr class="c-table__row memitem:a911cbb6a095bcf777a3bfd243ad938e5" id="r_a911cbb6a095bcf777a3bfd243ad938e5"><td class="c-table__cell">pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#a911cbb6a095bcf777a3bfd243ad938e5">available</a></td></tr>
+<tr class="c-table__row memdesc:a911cbb6a095bcf777a3bfd243ad938e5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The properties the data file carries.  <br /></td></tr>
+<tr class="c-table__row memitem:a53512d72f46e47f824d43f0be3730ff9" id="r_a53512d72f46e47f824d43f0be3730ff9"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a53512d72f46e47f824d43f0be3730ff9">NOTES</a></td></tr>
 <tr class="c-table__row memitem:ab60c545115f42f88c00b55f384f5ffc0" id="r_ab60c545115f42f88c00b55f384f5ffc0"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#ab60c545115f42f88c00b55f384f5ffc0">tests</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
@@ -116,7 +120,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">async fn body_string </td>
           <td>(</td>
           <td class="c-table__cell">response:Response</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td>
+          <td> -&gt; String</td>
         </tr>
           </table>
         </div>
@@ -127,8 +131,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="af7705fb1b146ccd9782c5f7c5673024e" name="af7705fb1b146ccd9782c5f7c5673024e"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af7705fb1b146ccd9782c5f7c5673024e">&#9670;&#160;</a></span>build_app()</h2>
+<a id="ac5eb33c95f0a3c4ce44dc8666cdd0bfb" name="ac5eb33c95f0a3c4ce44dc8666cdd0bfb"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac5eb33c95f0a3c4ce44dc8666cdd0bfb">&#9670;&#160;</a></span>build_app()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -136,28 +140,28 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">pub struct <a class="el" href="struct_options.html">Options</a> build_app </td>
+              <td class="c-table__cell">pub struct <a class="el" href="struct_data_file_notes.html">DataFileNotes</a> build_app </td>
           <td>(</td>
           <td class="c-table__cell">data_file:&amp;std::path::Path</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">share_usage:bool</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; anyhow::Result&lt;(Router, Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;)&gt;</td>
+          <td class="c-table__cell">share_usage:bool</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; anyhow::Result&lt;(Router, <a class="el" href="struct_data_file_notes.html">DataFileNotes</a>)&gt;</td>
         </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>Build the on-premise web application router plus the data-file warnings. </p>
-<p>The engine is built once so its data-file warnings (free tier, and over 30 days old) can be read with [<code>examples_shared::check_data_file</code>] and shown on the page, and the very same engine instance is then used as an application element of the web pipeline. Usage sharing is added first (REQUIRED for a web example).</p>
+<p>Build the on-premise web application router plus the data-file notes. </p>
+<p>The engine is built once so its data-file warnings (free tier, and over 30 days old) can be read with [<code>examples_shared::check_data_file</code>] and shown on the page, along with the properties the data file carries, which say which rows need the Enterprise data file. The very same engine instance is then used as an application element of the web pipeline. Usage sharing is added first (REQUIRED for a web example).</p>
 <p><code>share_usage</code> is true when the binary serves the page. The tests pass false, so a test run sends nothing to 51Degrees. </p>
 
 </div>
 </div>
-<a id="aaeb48676d44082d1d0c8695645c607f7" name="aaeb48676d44082d1d0c8695645c607f7"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aaeb48676d44082d1d0c8695645c607f7">&#9670;&#160;</a></span>current_warnings()</h2>
+<a id="a9448e9ae37d87512a212a60d61aa3db3" name="a9448e9ae37d87512a212a60d61aa3db3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9448e9ae37d87512a212a60d61aa3db3">&#9670;&#160;</a></span>current_notes()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -165,17 +169,17 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fn current_warnings </td>
+              <td class="c-table__cell">fn current_notes </td>
           <td>(</td>
           <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>
+          <td> -&gt; <a class="el" href="struct_data_file_notes.html">DataFileNotes</a></td>
         </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>The warnings recorded by [<code><a class="el" href="#a0ecdaa6c332af4e687f3bc109baa11a8" title="Record the warnings for the running server to show on each page.">store_warnings</a></code>], or an empty list if none. </p>
+<p>The notes recorded by [<code><a class="el" href="#a2ee65b728d5cc1fc7c19257db1c5219e" title="Record the notes for the running server to show on each page.">store_notes</a></code>], or empty notes if none. </p>
 
 </div>
 </div>
@@ -218,19 +222,19 @@ Variables</h2></td></tr>
             <tr class="c-table__row">
               <td class="c-table__cell">async fn home </td>
           <td>(</td>
-          <td class="c-table__cell">Query(params):Query&lt; std::collections::HashMap&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt; &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+          <td class="c-table__cell">Query(params):Query&lt; std::collections::HashMap&lt; String, String &gt; &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">result:FiftyOneResult</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; Html&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>
+          <td class="c-table__cell">result:FiftyOneResult</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; Html&lt; String &gt;</td>
         </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>The home-page handler: render the weighted server-side IP-intelligence results, the evidence table, the IP look-up form, the location map and the free-tier data-file warnings. </p>
+<p>The home-page handler: render the weighted server-side IP-intelligence results, the evidence table, the IP look-up form, the location map, the free-tier data-file warnings and which properties need the Enterprise data file. </p>
 
 </div>
 </div>
@@ -299,8 +303,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a0ecdaa6c332af4e687f3bc109baa11a8" name="a0ecdaa6c332af4e687f3bc109baa11a8"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0ecdaa6c332af4e687f3bc109baa11a8">&#9670;&#160;</a></span>store_warnings()</h2>
+<a id="a2ee65b728d5cc1fc7c19257db1c5219e" name="a2ee65b728d5cc1fc7c19257db1c5219e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2ee65b728d5cc1fc7c19257db1c5219e">&#9670;&#160;</a></span>store_notes()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -308,9 +312,9 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fn store_warnings </td>
+              <td class="c-table__cell">fn store_notes </td>
           <td>(</td>
-          <td class="c-table__cell">warnings:Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="c-table__cell">notes:DataFileNotes</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
           </table>
@@ -318,7 +322,7 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Record the warnings for the running server to show on each page. </p>
+<p>Record the notes for the running server to show on each page. </p>
 
 </div>
 </div>
@@ -342,13 +346,13 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Build the app for the test, skipping when no data file is available. </p>
-<p>The test pins the ASN tier so it always exercises the small, current, always-loadable 4.5 ASN file, independent of whether the production Enterprise share happens to be mounted on the build machine. The binary itself uses <code>IpiTier::default()</code> (best available). </p>
+<p>The test pins the ASN tier so it always exercises the small, current, always-loadable 4.5 ASN file, independent of whether the production Enterprise share happens to be mounted on the build machine. The binary itself uses <code>IpiTier::default()</code>, the Enterprise file or the Lite file. </p>
 
 </div>
 </div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>
-<a id="a130d69dc98a7553dd1c8d6b4811dd5ba" name="a130d69dc98a7553dd1c8d6b4811dd5ba"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a130d69dc98a7553dd1c8d6b4811dd5ba">&#9670;&#160;</a></span>address</h2>
+<a id="a911cbb6a095bcf777a3bfd243ad938e5" name="a911cbb6a095bcf777a3bfd243ad938e5"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a911cbb6a095bcf777a3bfd243ad938e5">&#9670;&#160;</a></span>available</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -356,7 +360,94 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">pub pub address</td>
+              <td class="c-table__cell">pub pub available</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The properties the data file carries. </p>
+
+</div>
+</div>
+<a id="a65560ade98913e76a1868a9845e47e52" name="a65560ade98913e76a1868a9845e47e52"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a65560ade98913e76a1868a9845e47e52">&#9670;&#160;</a></span>CONTACT_US_URL</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const CONTACT_US_URL</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Where to ask about a copy of the Enterprise data file, as the console output links it when the server starts. </p>
+
+</div>
+</div>
+<a id="a53512d72f46e47f824d43f0be3730ff9" name="a53512d72f46e47f824d43f0be3730ff9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a53512d72f46e47f824d43f0be3730ff9">&#9670;&#160;</a></span>NOTES</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">NOTES</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a36282740ed407fcac2ef7800fa2fbaf2" name="a36282740ed407fcac2ef7800fa2fbaf2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a36282740ed407fcac2ef7800fa2fbaf2">&#9670;&#160;</a></span>PathBuf</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">use std::path::PathBuf</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p><a class="el" href="struct_options.html" title="Options that drive [run].">Options</a> that drive [<code><a class="el" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f" title="Run the cloud configurator example.">run</a></code>]. </p>
+<p>The path to the on-premise <code>.ipi</code> data file. </p>
+
+</div>
+</div>
+<a id="a563d47276a0c0f08118b289443d2fa13" name="a563d47276a0c0f08118b289443d2fa13"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a563d47276a0c0f08118b289443d2fa13">&#9670;&#160;</a></span>SocketAddr</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">use std::net::SocketAddr</td>
             </tr>
           </table>
         </div>
@@ -364,47 +455,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>The socket address the server binds to. </p>
-
-</div>
-</div>
-<a id="ab533a800544facf05fd1c8e50f92099a" name="ab533a800544facf05fd1c8e50f92099a"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab533a800544facf05fd1c8e50f92099a">&#9670;&#160;</a></span>data_file</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">pub data_file</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>The path to the on-premise <code>.ipi</code> data file. </p>
-
-</div>
-</div>
-<a id="a688551bf64a1116d363f5354b4a93d66" name="a688551bf64a1116d363f5354b4a93d66"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a688551bf64a1116d363f5354b4a93d66">&#9670;&#160;</a></span>FORM_FIELD</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">const FORM_FIELD</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>The query-string parameter the IP form submits under. </p>
-<p>The on-premise engine accepts the <code>query.client-<a class="el" href="ipi-cloud-metadata_8rs.html#a2471e68871ec580a162997ded52956ad">ip</a></code> evidence key, so the form lands directly on an evidence key the on-premise pipeline uses. </p>
+<p>Client-side evidence: gather the birth date from client-side JavaScript. </p>
 
 </div>
 </div>
@@ -428,29 +479,23 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a395ca98cfcd30d78d151bfdb166e46cd" name="a395ca98cfcd30d78d151bfdb166e46cd"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a395ca98cfcd30d78d151bfdb166e46cd">&#9670;&#160;</a></span>WARNINGS</h2>
+<a id="a93dfcdf1ed27d9cfa54fec802d7f6b24" name="a93dfcdf1ed27d9cfa54fec802d7f6b24"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a93dfcdf1ed27d9cfa54fec802d7f6b24">&#9670;&#160;</a></span>warnings</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">WARNINGS</td>
+              <td class="c-table__cell">pub warnings</td>
             </tr>
           </table>
         </div>
       </div>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="c-member__body">
+
+<p>The standard free-tier and stale-file warnings. </p>
 
 </div>
 </div>

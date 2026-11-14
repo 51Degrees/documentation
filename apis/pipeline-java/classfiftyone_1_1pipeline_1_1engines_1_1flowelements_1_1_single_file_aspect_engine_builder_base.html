@@ -151,6 +151,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="c-table__row inherit_header pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_on_premise_aspect_engine_builder_base"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Protected Member Functions inherited from <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_on_premise_aspect_engine_builder_base.html">fiftyone.pipeline.engines.flowelements.OnPremiseAspectEngineBuilderBase&lt; TBuilder, TEngine &gt;</a></h3></td></tr>
 <tr class="c-table__row memitem:a45ba653d77cb265ff4638d2902b3fd59 pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_on_premise_aspect_engine_builder_base" id="r_a45ba653d77cb265ff4638d2902b3fd59"><td class="c-table__cell">
 void&#160;</td><td class="c-table__cell"><b>preCreateEngine</b> ()</td></tr>
+<tr class="c-table__row memitem:a1f26bad7660f9be33d10f1f3dedf67c3 pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_on_premise_aspect_engine_builder_base" id="r_a1f26bad7660f9be33d10f1f3dedf67c3"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_on_premise_aspect_engine_builder_base.html#a1f26bad7660f9be33d10f1f3dedf67c3">isLicenseKeyRequired</a> (<a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1configuration_1_1_data_file_configuration.html">DataFileConfiguration</a> dataFileConfig)</td></tr>
+<tr class="c-table__row memdesc:a1f26bad7660f9be33d10f1f3dedf67c3 pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_on_premise_aspect_engine_builder_base"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether the data update URL in the configuration serves nothing without a license key.  <br /></td></tr>
 <tr class="c-table__row memitem:a3eca66c10420ffaa81a31ed9b6593f09 pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_on_premise_aspect_engine_builder_base" id="r_a3eca66c10420ffaa81a31ed9b6593f09"><td class="c-table__cell">
 void&#160;</td><td class="c-table__cell"><b>configureEngine</b> (TEngine engine)  throws Exception </td></tr>
 <tr class="c-table__row memitem:abc215009d7e7b390dbf399359e312da0 pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_on_premise_aspect_engine_builder_base" id="r_abc215009d7e7b390dbf399359e312da0"><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_engine_data_file.html">AspectEngineDataFile</a>&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_on_premise_aspect_engine_builder_base.html#abc215009d7e7b390dbf399359e312da0">newAspectEngineDataFile</a> ()</td></tr>
@@ -399,7 +401,7 @@ Logger&#160;</td><td class="c-table__cell"><b>logger</b></td></tr>
 
 <p>The <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1services_1_1_data_update_service.html">DataUpdateService</a></code> has the ability to watch a data file on disk and automatically refresh the engine as soon as the file is updated. </p>
 <p>This setting enables/disables that feature. </p>
-<p>The <code><a class="el" href="#a835b48ac6e54fc6d6fa75ebffa210561">setAutoUpdate(boolean)</a></code> feature must also be enabled in order for the file system watcher to work. </p>
+<p>The file system watcher runs on its own setting, whether <code><a class="el" href="#a835b48ac6e54fc6d6fa75ebffa210561">setAutoUpdate(boolean)</a></code> is on or off, and needs no license key, as watching a file downloads nothing. </p>
 <p>If the engine is built from a byte[] then this setting does nothing. </p>
 <p>Default is true </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -641,7 +643,7 @@ Logger&#160;</td><td class="c-table__cell"><b>logger</b></td></tr>
 </div><div class="c-member__body">
 
 <p>Set the time between checks for a new data file made by the <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1services_1_1_data_update_service.html">DataUpdateService</a></code> in seconds. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated</a></b></dt><dd>use <code><a class="el" href="#a8580a2390b67a46921ea409ebe22c081">setUpdatePollingIntervalSeconds(int)</a></code> </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated</a></b></dt><dd>use <code><a class="el" href="#a8580a2390b67a46921ea409ebe22c081">setUpdatePollingIntervalSeconds(int)</a></code> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pollingIntervalSeconds</td><td>the number of seconds between checks </td></tr>
@@ -672,7 +674,7 @@ Logger&#160;</td><td class="c-table__cell"><b>logger</b></td></tr>
 </div><div class="c-member__body">
 
 <p>Set the time between checks for a new data file made by the <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1services_1_1_data_update_service.html">DataUpdateService</a></code> in milliseconds. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated</a></b></dt><dd>use <code><a class="el" href="#a8580a2390b67a46921ea409ebe22c081">setUpdatePollingIntervalSeconds(int)</a></code> </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated</a></b></dt><dd>use <code><a class="el" href="#a8580a2390b67a46921ea409ebe22c081">setUpdatePollingIntervalSeconds(int)</a></code> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pollingIntervalMillis</td><td>the time between checks </td></tr>
@@ -767,7 +769,7 @@ Logger&#160;</td><td class="c-table__cell"><b>logger</b></td></tr>
 <p>A random element can be added to the <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1services_1_1_data_update_service.html">DataUpdateService</a></code> polling interval. </p>
 <p>This option sets the maximum length of this random addition in milliseconds. </p>
 <p>Default = 10 minutes.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated</a></b></dt><dd>use <code><a class="el" href="#a509a7406dd96a64a2915d89b6d75cd8b">setUpdateRandomisationMaxMillis(long)</a></code> </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated</a></b></dt><dd>use <code><a class="el" href="#a509a7406dd96a64a2915d89b6d75cd8b">setUpdateRandomisationMaxMillis(long)</a></code> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">maximumDeviationMillis</td><td>the maximum time added to the data update polling interval </td></tr>

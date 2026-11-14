@@ -82,6 +82,8 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:af67073091407fa1ec0df32fe1f167375"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Serve the demo over TCP until interrupted.  <br /></td></tr>
 <tr class="c-table__row memitem:a900ebc29fdda041ddb43399e87907758" id="r_a900ebc29fdda041ddb43399e87907758"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a900ebc29fdda041ddb43399e87907758">home</a> (<a class="el" href="ipi-onprem-getting-started_8rs.html#a765d7f7e6be90ef9d21be14d1d5a52d8">State</a>(demo):<a class="el" href="ipi-onprem-getting-started_8rs.html#a765d7f7e6be90ef9d21be14d1d5a52d8">State</a>&lt; Demo &gt;) -&gt; Response</td></tr>
 <tr class="c-table__row memdesc:a900ebc29fdda041ddb43399e87907758"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The page, with a fresh single-use challenge per load.  <br /></td></tr>
+<tr class="c-table__row memitem:a4075f0d07f347de08096ff0a523f18c4" id="r_a4075f0d07f347de08096ff0a523f18c4"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a4075f0d07f347de08096ff0a523f18c4">page_with_find_out_more</a> () -&gt; String</td></tr>
+<tr class="c-table__row memdesc:a4075f0d07f347de08096ff0a523f18c4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">[<code><a class="el" href="#a1c510d631618262111140484eef8b43e" title="The demo page, embedded so the binary is self-contained.">PAGE</a></code>] with a "Find out more" section, set apart by a rule, before its closing body tag.  <br /></td></tr>
 <tr class="c-table__row memitem:a4815b394c76d8def5294a16672523455" id="r_a4815b394c76d8def5294a16672523455"><td class="c-table__cell">struct&#160;<a class="el" href="struct_redeem_query.html">RedeemQuery</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a4815b394c76d8def5294a16672523455">redeem</a> (<a class="el" href="ipi-onprem-getting-started_8rs.html#a765d7f7e6be90ef9d21be14d1d5a52d8">State</a>(demo):<a class="el" href="ipi-onprem-getting-started_8rs.html#a765d7f7e6be90ef9d21be14d1d5a52d8">State</a>&lt; Demo &gt;, Query(query):Query&lt; <a class="el" href="struct_redeem_query.html">RedeemQuery</a> &gt;) -&gt; Response</td></tr>
 <tr class="c-table__row memdesc:a4815b394c76d8def5294a16672523455"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The server-side step.  <br /></td></tr>
 <tr class="c-table__row memitem:a407db93a61b6666eb19ed48546410a12" id="r_a407db93a61b6666eb19ed48546410a12"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a407db93a61b6666eb19ed48546410a12">redeem_with</a> (client:&amp;DidClient, query:&amp;RedeemQuery) -&gt; Response</td></tr>
@@ -101,10 +103,11 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="c-table__row memitem:a1c510d631618262111140484eef8b43e" id="r_a1c510d631618262111140484eef8b43e"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a1c510d631618262111140484eef8b43e">PAGE</a></td></tr>
 <tr class="c-table__row memdesc:a1c510d631618262111140484eef8b43e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The demo page, embedded so the binary is self-contained.  <br /></td></tr>
+<tr class="c-table__row memitem:ad25b7f6d0c89d56f4024e2b559cf89cc" id="r_ad25b7f6d0c89d56f4024e2b559cf89cc"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#ad25b7f6d0c89d56f4024e2b559cf89cc">FIND_OUT_MORE</a></td></tr>
+<tr class="c-table__row memdesc:ad25b7f6d0c89d56f4024e2b559cf89cc"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The links the page and the console output end with.  <br /></td></tr>
+<tr class="c-table__row memitem:a59c09f4d2e77fa42c030902215658830" id="r_a59c09f4d2e77fa42c030902215658830"><td class="c-table__cell">const&#160;&amp;&#160;</td><td class="c-table__cell"><a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a></td></tr>
 <tr class="c-table__row memitem:a805ed70a39a9a624522e11acdd62eac7" id="r_a805ed70a39a9a624522e11acdd62eac7"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a805ed70a39a9a624522e11acdd62eac7">PAGE_CSS_ROUTE</a></td></tr>
 <tr class="c-table__row memdesc:a805ed70a39a9a624522e11acdd62eac7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The route the demo page's relative stylesheet URL resolves to.  <br /></td></tr>
-<tr class="c-table__row memitem:a335510ba1184a65f2ad6427ab0461f21" id="r_a335510ba1184a65f2ad6427ab0461f21"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a335510ba1184a65f2ad6427ab0461f21">LICENCE_KEY_ENV_VAR</a></td></tr>
-<tr class="c-table__row memdesc:a335510ba1184a65f2ad6427ab0461f21"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The environment variable holding the optional licence key.  <br /></td></tr>
 <tr class="c-table__row memitem:adbbe510a37f177c138ebb598c3fdb161" id="r_adbbe510a37f177c138ebb598c3fdb161"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#adbbe510a37f177c138ebb598c3fdb161">DEFAULT_PORT</a></td></tr>
 <tr class="c-table__row memdesc:adbbe510a37f177c138ebb598c3fdb161"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The port the demo listens on when <code>PORT</code> is not set.  <br /></td></tr>
 <tr class="c-table__row memitem:a2bf24c93d1195dabf1a29fd882091b65" id="r_a2bf24c93d1195dabf1a29fd882091b65"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_options.html">Options</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a2bf24c93d1195dabf1a29fd882091b65">DidClient</a></td></tr>
@@ -287,6 +290,30 @@ Variables</h2></td></tr>
         </div>
       </div>
 </div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a4075f0d07f347de08096ff0a523f18c4" name="a4075f0d07f347de08096ff0a523f18c4"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4075f0d07f347de08096ff0a523f18c4">&#9670;&#160;</a></span>page_with_find_out_more()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn page_with_find_out_more </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; String</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>[<code><a class="el" href="#a1c510d631618262111140484eef8b43e" title="The demo page, embedded so the binary is self-contained.">PAGE</a></code>] with a "Find out more" section, set apart by a rule, before its closing body tag. </p>
+<p>The section is added here so the page file stays the same as every other language's copy. </p>
 
 </div>
 </div>
@@ -518,8 +545,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a335510ba1184a65f2ad6427ab0461f21" name="a335510ba1184a65f2ad6427ab0461f21"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a335510ba1184a65f2ad6427ab0461f21">&#9670;&#160;</a></span>LICENCE_KEY_ENV_VAR</h2>
+<a id="ad25b7f6d0c89d56f4024e2b559cf89cc" name="ad25b7f6d0c89d56f4024e2b559cf89cc"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad25b7f6d0c89d56f4024e2b559cf89cc">&#9670;&#160;</a></span>FIND_OUT_MORE</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -527,14 +554,14 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">const LICENCE_KEY_ENV_VAR</td>
+              <td class="c-table__cell">const FIND_OUT_MORE</td>
             </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>The environment variable holding the optional licence key. </p>
+<p>The links the page and the console output end with. </p>
 
 </div>
 </div>
@@ -613,6 +640,29 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
+</div>
+</div>
+<a id="a59c09f4d2e77fa42c030902215658830" name="a59c09f4d2e77fa42c030902215658830"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a59c09f4d2e77fa42c030902215658830">&#9670;&#160;</a></span>str</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const &amp; str</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                        = &amp;[</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;51Did&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/_identifiers_51_did.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-fodid-examples-src-bin-fodid-web-creator-context.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;51Did inspector&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/developers/51did-inspector?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-fodid-examples-src-bin-fodid-web-creator-context.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Documentation&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-fodid-examples-src-bin-fodid-web-creator-context.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">]</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab60c545115f42f88c00b55f384f5ffc0" name="ab60c545115f42f88c00b55f384f5ffc0"></a>

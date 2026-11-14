@@ -67,6 +67,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a319f9aefb0bedf3db45c640e90c199a7" id="r_a319f9aefb0bedf3db45c640e90c199a7"><td class="c-table__cell">static&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a319f9aefb0bedf3db45c640e90c199a7">requireTestResourceKey</a> (String asksFor, String... products)</td></tr>
+<tr class="c-table__row memdesc:a319f9aefb0bedf3db45c640e90c199a7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The resource key for a test that calls the live cloud service, from <code><a class="el" href="#a1fdadf91dec88fb9393a802642920728">SHARED_RESOURCE_KEY_NAMES</a></code> and then the names <code><a class="el" href="#aa73bcd1b966af8c96728838b3478e32a">getOrSetTestResourceKey()</a></code> reads.  <br /></td></tr>
 <tr class="c-table__row memitem:aa73bcd1b966af8c96728838b3478e32a" id="r_aa73bcd1b966af8c96728838b3478e32a"><td class="c-table__cell"><a id="aa73bcd1b966af8c96728838b3478e32a" name="aa73bcd1b966af8c96728838b3478e32a"></a>
 static&#160;String&#160;</td><td class="c-table__cell"><b>getOrSetTestResourceKey</b> ()</td></tr>
 <tr class="c-table__row memdesc:aa73bcd1b966af8c96728838b3478e32a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Obtain a resource key either from environment variable or from a property. <br /></td></tr>
@@ -85,10 +87,14 @@ static&#160;String&#160;</td><td class="c-table__cell"><b>getOrSetSuperResourceK
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
+<tr class="c-table__row memitem:a7a5bb29f45216cfe2b9befec30132732" id="r_a7a5bb29f45216cfe2b9befec30132732"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a7a5bb29f45216cfe2b9befec30132732">RESOURCE_KEY_VARIABLE</a> = &quot;_51DEGREES_RESOURCE_KEY&quot;</td></tr>
+<tr class="c-table__row memdesc:a7a5bb29f45216cfe2b9befec30132732"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Aligned name of the environment variable or system property which may hold the resource key.  <br /></td></tr>
 <tr class="c-table__row memitem:a720c9d595f4bf78c210d5f92d317c26c" id="r_a720c9d595f4bf78c210d5f92d317c26c"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a720c9d595f4bf78c210d5f92d317c26c">RESOURCE_KEY_ENV_VAR</a> = &quot;51DEGREES_RESOURCE_KEY&quot;</td></tr>
-<tr class="c-table__row memdesc:a720c9d595f4bf78c210d5f92d317c26c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Aligned name of the environment variable or system property which may hold the resource key.  <br /></td></tr>
+<tr class="c-table__row memdesc:a720c9d595f4bf78c210d5f92d317c26c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The old name of <code><a class="el" href="#a7a5bb29f45216cfe2b9befec30132732">RESOURCE_KEY_VARIABLE</a></code>, read only when that one is not set.  <br /></td></tr>
 <tr class="c-table__row memitem:aebc106742ae2470591b67a280b923e17" id="r_aebc106742ae2470591b67a280b923e17"><td class="c-table__cell"><a id="aebc106742ae2470591b67a280b923e17" name="aebc106742ae2470591b67a280b923e17"></a>
 static&#160;final&#160;String&#160;</td><td class="c-table__cell"><b>TEST_RESOURCE_KEY</b> = &quot;TestResourceKey&quot;</td></tr>
+<tr class="c-table__row memitem:a1fdadf91dec88fb9393a802642920728" id="r_a1fdadf91dec88fb9393a802642920728"><td class="c-table__cell">static&#160;final&#160;List&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a1fdadf91dec88fb9393a802642920728">SHARED_RESOURCE_KEY_NAMES</a></td></tr>
+<tr class="c-table__row memdesc:a1fdadf91dec88fb9393a802642920728"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The names every cloud test reads a resource key from first, before the names its own example reads.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="a1ba467c41f91ee368354bb709dda9554" name="a1ba467c41f91ee368354bb709dda9554"></a>
@@ -133,7 +139,50 @@ static&#160;final&#160;String&#160;</td><td class="c-table__cell"><b>TEST_RESOUR
 </div><div class="c-member__body">
 
 <p>Obtain a resource key from the passed argument, from environment variable or from a property. </p>
-<p>The aligned <code><a class="el" href="#a720c9d595f4bf78c210d5f92d317c26c">RESOURCE_KEY_ENV_VAR</a></code> name is checked first, then the passed variable name. Store as System Property under the passed variable name. </p>
+<p>The aligned <code><a class="el" href="#a7a5bb29f45216cfe2b9befec30132732">RESOURCE_KEY_VARIABLE</a></code> name is checked first, then the deprecated <code><a class="el" href="#a720c9d595f4bf78c210d5f92d317c26c">RESOURCE_KEY_ENV_VAR</a></code>, then the passed variable name. Store as System Property under the passed variable name. </p>
+
+</div>
+</div>
+<a id="a319f9aefb0bedf3db45c640e90c199a7" name="a319f9aefb0bedf3db45c640e90c199a7"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a319f9aefb0bedf3db45c640e90c199a7">&#9670;&#160;</a></span>requireTestResourceKey()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">String fiftyone.ipintelligence.examples.shared.KeyHelper.requireTestResourceKey </td>
+          <td>(</td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>asksFor</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">String...</td>          <td class="c-table__cell"><span class="paramname"><em>products</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The resource key for a test that calls the live cloud service, from <code><a class="el" href="#a1fdadf91dec88fb9393a802642920728">SHARED_RESOURCE_KEY_NAMES</a></code> and then the names <code><a class="el" href="#aa73bcd1b966af8c96728838b3478e32a">getOrSetTestResourceKey()</a></code> reads. </p>
+<p>Fails the test when there is none, because a cloud test that passes without a key has called nothing. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">asksFor</td><td>what the test asks the service for </td></tr>
+    <tr><td class="paramname">products</td><td>the products the key has to carry </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the resource key </dd></dl>
 
 </div>
 </div>
@@ -162,8 +211,69 @@ static&#160;final&#160;String&#160;</td><td class="c-table__cell"><b>TEST_RESOUR
 </table>
 </div><div class="c-member__body">
 
+<p>The old name of <code><a class="el" href="#a7a5bb29f45216cfe2b9befec30132732">RESOURCE_KEY_VARIABLE</a></code>, read only when that one is not set. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000005">Deprecated</a></b></dt><dd>use <code><a class="el" href="#a7a5bb29f45216cfe2b9befec30132732">RESOURCE_KEY_VARIABLE</a></code>, and set the variable it names in place of this one. </dd></dl>
+
+</div>
+</div>
+<a id="a7a5bb29f45216cfe2b9befec30132732" name="a7a5bb29f45216cfe2b9befec30132732"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7a5bb29f45216cfe2b9befec30132732">&#9670;&#160;</a></span>RESOURCE_KEY_VARIABLE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">final String fiftyone.ipintelligence.examples.shared.KeyHelper.RESOURCE_KEY_VARIABLE = &quot;_51DEGREES_RESOURCE_KEY&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
 <p>Aligned name of the environment variable or system property which may hold the resource key. </p>
 <p>This name is checked first, before the legacy <code><a class="el" href="">TEST_RESOURCE_KEY</a></code> name. </p>
+
+</div>
+</div>
+<a id="a1fdadf91dec88fb9393a802642920728" name="a1fdadf91dec88fb9393a802642920728"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1fdadf91dec88fb9393a802642920728">&#9670;&#160;</a></span>SHARED_RESOURCE_KEY_NAMES</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">final List&lt;String&gt; fiftyone.ipintelligence.examples.shared.KeyHelper.SHARED_RESOURCE_KEY_NAMES</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                               =</div>
+<div class="c-code__line">Collections.unmodifiableList(Arrays.asList(</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;_51DEGREES_RESOURCE_KEY&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;_51DEGREES_RESOURCE_KEY_BESPOKE&quot;</span>))</div>
+</div><!-- fragment -->
+<p>The names every cloud test reads a resource key from first, before the names its own example reads. </p>
 
 </div>
 </div>

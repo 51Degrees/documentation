@@ -75,14 +75,22 @@ Classes</h2></td></tr>
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="c-table__row memitem:a6f46caea8ef2116e6868901462d62778" id="r_a6f46caea8ef2116e6868901462d62778"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_example_options.html">ExampleOptions</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a6f46caea8ef2116e6868901462d62778">from_env</a> () -&gt; Option&lt; Self &gt;</td></tr>
-<tr class="c-table__row memdesc:a6f46caea8ef2116e6868901462d62778"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default options, using the best-available loadable data-file tier and a thread count taken from the available parallelism.  <br /></td></tr>
+<tr class="c-table__row memdesc:a6f46caea8ef2116e6868901462d62778"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default options, reading the Enterprise file when its share is reachable and otherwise the free ASN file, which is far smaller to download than the Lite file and serves a benchmark as well.  <br /></td></tr>
 <tr class="c-table__row memitem:aa0e1b39149ce843580024940e9889ed7" id="r_aa0e1b39149ce843580024940e9889ed7"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#aa0e1b39149ce843580024940e9889ed7">for_tier</a> (<a class="el" href="data__paths_8rs.html#a29e87adf1760ab44a6a8d86c736658f8">tier:examples_shared::IpiTier</a>, max_ips:usize, iterations:usize,) -&gt; Option&lt; Self &gt;</td></tr>
 <tr class="c-table__row memdesc:aa0e1b39149ce843580024940e9889ed7"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="struct_options.html" title="Options that drive [run].">Options</a> pinned to a specific data-file tier, IP cap and iteration count.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="c-table__row memitem:a65560ade98913e76a1868a9845e47e52" id="r_a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a></td></tr>
+<tr class="c-table__row memdesc:a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Where to ask about a copy of the Enterprise data file.  <br /></td></tr>
+<tr class="c-table__row memitem:a59c09f4d2e77fa42c030902215658830" id="r_a59c09f4d2e77fa42c030902215658830"><td class="c-table__cell">const&#160;&amp;&#160;</td><td class="c-table__cell"><a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a></td></tr>
 <tr class="c-table__row memitem:a4aa3579c58d196cb9734a1c6a0375af6" id="r_a4aa3579c58d196cb9734a1c6a0375af6"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a4aa3579c58d196cb9734a1c6a0375af6">IPI_EVIDENCE_RELATIVE_PATH</a></td></tr>
 <tr class="c-table__row memdesc:a4aa3579c58d196cb9734a1c6a0375af6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The relative path to the IP-intelligence evidence file in the data submodule.  <br /></td></tr>
+<tr class="c-table__row memitem:af51ab768de4fbab1768eda337d908fd2" id="r_af51ab768de4fbab1768eda337d908fd2"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#af51ab768de4fbab1768eda337d908fd2">ENTERPRISE_LISTED</a></td></tr>
+<tr class="c-table__row memdesc:af51ab768de4fbab1768eda337d908fd2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Location properties only the Enterprise data file carries.  <br /></td></tr>
+<tr class="c-table__row memitem:af57d597f5f001128affae4180f5658d7" id="r_af57d597f5f001128affae4180f5658d7"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#af57d597f5f001128affae4180f5658d7">Town</a></td></tr>
+<tr class="c-table__row memitem:acbae564e6d613a46e556e07862ad4640" id="r_acbae564e6d613a46e556e07862ad4640"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#acbae564e6d613a46e556e07862ad4640">Latitude</a></td></tr>
+<tr class="c-table__row memitem:a6d21aaa57a62218c84db782e7f1623ec" id="r_a6d21aaa57a62218c84db782e7f1623ec"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a6d21aaa57a62218c84db782e7f1623ec">Longitude</a></td></tr>
 <tr class="c-table__row memitem:ab533a800544facf05fd1c8e50f92099a" id="r_ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">pub&#160;</td><td class="c-table__cell"><a class="el" href="#ab533a800544facf05fd1c8e50f92099a">data_file</a></td></tr>
 <tr class="c-table__row memdesc:ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The full path to the <code>.ipi</code> data file to open.  <br /></td></tr>
 <tr class="c-table__row memitem:ad6bffea55ace1dfffd05353879a20738" id="r_ad6bffea55ace1dfffd05353879a20738"><td class="c-table__cell">pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#ad6bffea55ace1dfffd05353879a20738">evidence_file</a></td></tr>
@@ -149,11 +157,32 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Default options, using the best-available loadable data-file tier and a thread count taken from the available parallelism. </p>
+<p>Default options, reading the Enterprise file when its share is reachable and otherwise the free ASN file, which is far smaller to download than the Lite file and serves a benchmark as well. </p>
+<p>The thread count is taken from the available parallelism. </p>
 
 </div>
 </div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>
+<a id="a65560ade98913e76a1868a9845e47e52" name="a65560ade98913e76a1868a9845e47e52"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a65560ade98913e76a1868a9845e47e52">&#9670;&#160;</a></span>CONTACT_US_URL</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const CONTACT_US_URL</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Where to ask about a copy of the Enterprise data file. </p>
+
+</div>
+</div>
 <a id="ab533a800544facf05fd1c8e50f92099a" name="ab533a800544facf05fd1c8e50f92099a"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab533a800544facf05fd1c8e50f92099a">&#9670;&#160;</a></span>data_file</h2>
 
@@ -171,6 +200,27 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>The full path to the <code>.ipi</code> data file to open. </p>
+
+</div>
+</div>
+<a id="af51ab768de4fbab1768eda337d908fd2" name="af51ab768de4fbab1768eda337d908fd2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af51ab768de4fbab1768eda337d908fd2">&#9670;&#160;</a></span>ENTERPRISE_LISTED</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const ENTERPRISE_LISTED</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Location properties only the Enterprise data file carries. </p>
+<p>The timed lookups ask for Asn alone, so the figures stay comparable from run to run, and these are listed after them. </p>
 
 </div>
 </div>
@@ -255,6 +305,42 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="acbae564e6d613a46e556e07862ad4640" name="acbae564e6d613a46e556e07862ad4640"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#acbae564e6d613a46e556e07862ad4640">&#9670;&#160;</a></span>Latitude</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const Latitude</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a6d21aaa57a62218c84db782e7f1623ec" name="a6d21aaa57a62218c84db782e7f1623ec"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6d21aaa57a62218c84db782e7f1623ec">&#9670;&#160;</a></span>Longitude</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const Longitude</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
 <a id="af1c987534faed97a46bf28dae31c87f4" name="af1c987534faed97a46bf28dae31c87f4"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#af1c987534faed97a46bf28dae31c87f4">&#9670;&#160;</a></span>max_ips</h2>
 
@@ -276,6 +362,29 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a59c09f4d2e77fa42c030902215658830" name="a59c09f4d2e77fa42c030902215658830"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a59c09f4d2e77fa42c030902215658830">&#9670;&#160;</a></span>str</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const &amp; str</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">     = &amp;[</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;IP Intelligence&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/ip-intelligence?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-performance.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Pricing&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-performance.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Documentation&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-performance.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">]</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a7d38f5ab07fe2293f1dafb4a9e7c64ab" name="a7d38f5ab07fe2293f1dafb4a9e7c64ab"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7d38f5ab07fe2293f1dafb4a9e7c64ab">&#9670;&#160;</a></span>thread_count</h2>
 
@@ -293,6 +402,24 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>How many worker threads to run the multi-threaded pass with. </p>
+
+</div>
+</div>
+<a id="af57d597f5f001128affae4180f5658d7" name="af57d597f5f001128affae4180f5658d7"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af57d597f5f001128affae4180f5658d7">&#9670;&#160;</a></span>Town</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const Town</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
 
 </div>
 </div>

@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2mix
 <div class="g-docs__primary" id="primary">
 <p>This example runs a local version of the 51Degrees cloud API using both the device detection and IP intelligence on-premise engines.</p>
 <p>This example runs a local version of the 51Degrees cloud API using both the device detection and IP intelligence on-premise engines. See the <a href="https://cloud.51degrees.com/api-docs/index.html">cloud API documentation</a> for details of the endpoints provided.</p>
-<p>The cloud examples can be run against this local API by setting the 'FOD_CLOUD_API_URL' environment variable to '<a href="http://localhost:5225/'">http://localhost:5225/'</a>. Any value can be used for the resource key when using the local API.</p>
+<p>The cloud examples can be run against this local API by setting the '_51DEGREES_CLOUD_ENDPOINT' environment variable to '<a href="http://localhost:5225/'">http://localhost:5225/'</a>. Any value can be used for the resource key when using the local API.</p>
 <p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-node/blob/main/ip-intelligence/fiftyone.ipintelligence.onpremise/examples/onpremise/mixed/gettingstarted-api/gettingStarted.js">GitHub</a>.</p>
 <p>Required data files:</p><ul>
 <li>Device detection data file (.hash format)</li>
@@ -172,7 +172,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2mix
 <div class="c-code__line">  <span class="c-code__comment">// Create the IP intelligence engine from scratch.</span></div>
 <div class="c-code__line">  <span class="c-code__keyword">const</span> ipEngine = <span class="c-code__keyword">new</span> <a class="code hl_class" href="class_ip_intelligence_on_premise.html">IpIntelligenceOnPremise</a>({</div>
 <div class="c-code__line">    dataFilePath: ipDataFile,</div>
-<div class="c-code__line">    performanceProfile: <span class="c-code__stringliteral">&#39;MaxPerformance&#39;</span>,</div>
+<div class="c-code__line">    <span class="c-code__comment">// This example picks the Enterprise IP intelligence data file first,</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// which is about 6 GB, so the low memory profile reads the file as it</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// goes rather than holding all of it in memory.</span></div>
+<div class="c-code__line">    performanceProfile: <span class="c-code__stringliteral">&#39;LowMemory&#39;</span>,</div>
 <div class="c-code__line">    <span class="c-code__comment">// inhibit auto-update of the data file for this example. An empty</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// license key disables automatic updates.</span></div>
 <div class="c-code__line">    licenceKeys: <span class="c-code__stringliteral">&#39;&#39;</span>,</div>
@@ -311,7 +314,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2mix
 <div class="c-code__line">  <span class="c-code__keyword">const</span> args = process.argv.slice(2);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__comment">// Use the supplied path for the device detection data file or try to</span></div>
-<div class="c-code__line">  <span class="c-code__comment">// find one in priority order. The 51DEGREES_DD_PATH environment</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// find one in priority order. The _51DEGREES_DD_PATH environment</span></div>
 <div class="c-code__line">  <span class="c-code__comment">// variable is checked before the folder hierarchy is searched.</span></div>
 <div class="c-code__line">  let deviceDataFile = args.length &gt; 0 ? args[0] : undefined;</div>
 <div class="c-code__line">  <span class="c-code__keywordflow">if</span> (deviceDataFile === undefined) {</div>
@@ -322,7 +325,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2mix
 <div class="c-code__line">  }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__comment">// Use the supplied path for the IP intelligence data file or try to</span></div>
-<div class="c-code__line">  <span class="c-code__comment">// find one in priority order. The 51DEGREES_IPI_PATH environment</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// find one in priority order. The _51DEGREES_IPI_PATH environment</span></div>
 <div class="c-code__line">  <span class="c-code__comment">// variable is checked before the folder hierarchy is searched.</span></div>
 <div class="c-code__line">  let ipDataFile = args.length &gt; 1 ? args[1] : undefined;</div>
 <div class="c-code__line">  <span class="c-code__keywordflow">if</span> (ipDataFile === undefined) {</div>
@@ -360,8 +363,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2mix
 <div class="c-code__line">  server,</div>
 <div class="c-code__line">  setPipeline</div>
 <div class="c-code__line">};</div>
-<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.ipintelligence.onpremise/examples/onpremise/exampleUtils.js:116</div></div>
-<div class="ttc" id="aclass_ip_intelligence_on_premise_html"><div class="ttname"><a href="class_ip_intelligence_on_premise.html">IpIntelligenceOnPremise</a></div><div class="ttdoc">On premise version of the 51Degrees IP Intelligence Engine Uses a data file to process evidence in Fl...</div><div class="ttdef"><b>Definition</b> ipIntelligenceOnPremise.js:99</div></div>
+<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.ipintelligence.onpremise/examples/onpremise/exampleUtils.js:203</div></div>
+<div class="ttc" id="aclass_ip_intelligence_on_premise_html"><div class="ttname"><a href="class_ip_intelligence_on_premise.html">IpIntelligenceOnPremise</a></div><div class="ttdoc">On premise version of the 51Degrees IP Intelligence Engine Uses a data file to process evidence in Fl...</div><div class="ttdef"><b>Definition</b> ipIntelligenceOnPremise.js:101</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

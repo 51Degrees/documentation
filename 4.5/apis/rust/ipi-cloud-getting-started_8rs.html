@@ -76,16 +76,16 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:aba3f12f75d2aa525a41a3da34beb616b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The example logic: build a cloud IP-intelligence pipeline from a resource key, then analyse an IPv4 and an IPv6 address, printing the network and location properties for each.  <br /></td></tr>
 <tr class="c-table__row memitem:a29b89e87fbe7e61ad002a5a4ade448c6" id="r_a29b89e87fbe7e61ad002a5a4ade448c6"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a29b89e87fbe7e61ad002a5a4ade448c6">analyse_ip</a> (pipeline:&amp;Arc&lt; Pipeline &gt;, ip:&amp;str) -&gt; Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a29b89e87fbe7e61ad002a5a4ade448c6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process a single IP address and print the IP-intelligence results.  <br /></td></tr>
-<tr class="c-table__row memitem:a438cda7833e289627ebeb85cfdb89625" id="r_a438cda7833e289627ebeb85cfdb89625"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a438cda7833e289627ebeb85cfdb89625">print_string_property</a> (name:&amp;str, property:&amp;AspectPropertyValue&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;)</td></tr>
+<tr class="c-table__row memitem:a438cda7833e289627ebeb85cfdb89625" id="r_a438cda7833e289627ebeb85cfdb89625"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a438cda7833e289627ebeb85cfdb89625">print_string_property</a> (name:&amp;str, property:&amp;AspectPropertyValue&lt; String &gt;)</td></tr>
 <tr class="c-table__row memdesc:a438cda7833e289627ebeb85cfdb89625"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print a plain string property, or its no-value message when absent.  <br /></td></tr>
 <tr class="c-table__row memitem:afafe96e6ef2ede235c95265480a2ae07" id="r_afafe96e6ef2ede235c95265480a2ae07"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#afafe96e6ef2ede235c95265480a2ae07">print_double_property</a> (name:&amp;str, property:&amp;AspectPropertyValue&lt; f32 &gt;)</td></tr>
 <tr class="c-table__row memdesc:afafe96e6ef2ede235c95265480a2ae07"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print a plain floating-point property (latitude or longitude).  <br /></td></tr>
 <tr class="c-table__row memitem:abccb11be61bffc871a8ff958b89abc21" id="r_abccb11be61bffc871a8ff958b89abc21"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#abccb11be61bffc871a8ff958b89abc21">print_integer_property</a> (name:&amp;str, property:&amp;AspectPropertyValue&lt; i32 &gt;)</td></tr>
 <tr class="c-table__row memdesc:abccb11be61bffc871a8ff958b89abc21"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print a plain integer property (accuracy radius or time-zone offset).  <br /></td></tr>
-<tr class="c-table__row memitem:a0edae8bdf9851297f82fa0580c15060d" id="r_a0edae8bdf9851297f82fa0580c15060d"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a0edae8bdf9851297f82fa0580c15060d">print_bool_property</a> (name:&amp;str, property:&amp;AspectPropertyValue&lt; <a class="el" href="performance__results_8rs.html#a13eda313804a469af81193c4e2e1ee58">bool</a> &gt;)</td></tr>
+<tr class="c-table__row memitem:a0edae8bdf9851297f82fa0580c15060d" id="r_a0edae8bdf9851297f82fa0580c15060d"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a0edae8bdf9851297f82fa0580c15060d">print_bool_property</a> (name:&amp;str, property:&amp;AspectPropertyValue&lt; <a class="el" href="data__paths_8rs.html#ace367d07d2cbc650fd186739e5511adb">bool</a> &gt;)</td></tr>
 <tr class="c-table__row memdesc:a0edae8bdf9851297f82fa0580c15060d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print a plain boolean property (a network flag).  <br /></td></tr>
-<tr class="c-table__row memitem:a537b69dfb63389da33efc814fafc3acf" id="r_a537b69dfb63389da33efc814fafc3acf"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a537b69dfb63389da33efc814fafc3acf">print_weighted_property</a> (name:&amp;str, property:&amp;AspectPropertyValue&lt; Vec&lt; WeightedValue&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt; &gt; &gt;)</td></tr>
-<tr class="c-table__row memdesc:a537b69dfb63389da33efc814fafc3acf"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print a weighted property (the country-code distributions, <code><a class="el" href="ipi-onprem-getting-started_8rs.html#a7c00cae4aeb6106a3784bc0885e0507c">Mcc</a></code>) as a comma-separated list of <code><a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a9d58c3d628e2a73ead14ac823d810027" title="The resolved value, or the no-value message.">value</a> (weight)</code> candidates ordered most probable first, or its no-value message when absent.  <br /></td></tr>
+<tr class="c-table__row memitem:a537b69dfb63389da33efc814fafc3acf" id="r_a537b69dfb63389da33efc814fafc3acf"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a537b69dfb63389da33efc814fafc3acf">print_weighted_property</a> (name:&amp;str, property:&amp;AspectPropertyValue&lt; Vec&lt; WeightedValue&lt; String &gt; &gt; &gt;)</td></tr>
+<tr class="c-table__row memdesc:a537b69dfb63389da33efc814fafc3acf"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print a weighted property (the country-code distributions, <code><a class="el" href="ipi-onprem-getting-started_8rs.html#a7c00cae4aeb6106a3784bc0885e0507c">Mcc</a></code>) as a comma-separated list of <code><a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a451961dd347700d7bb5d36beec33eb80" title="The resolved value, or the no-value message.">value</a> (weight)</code> candidates ordered most probable first, or its no-value message when absent.  <br /></td></tr>
 <tr class="c-table__row memitem:a685047298dbf9911e9f06a366e9b1bb4" id="r_a685047298dbf9911e9f06a366e9b1bb4"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a685047298dbf9911e9f06a366e9b1bb4">main</a> () -&gt; Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a685047298dbf9911e9f06a366e9b1bb4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read the resource key and optional endpoint from the environment (or the first command-line argument) and run the example.  <br /></td></tr>
 <tr class="c-table__row memitem:acf46d6bd4ac71a8cdcd9312b8f995321" id="r_acf46d6bd4ac71a8cdcd9312b8f995321"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#acf46d6bd4ac71a8cdcd9312b8f995321">runs_against_the_cloud</a> ()</td></tr>
@@ -93,6 +93,9 @@ Functions</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="c-table__row memitem:ad25b7f6d0c89d56f4024e2b559cf89cc" id="r_ad25b7f6d0c89d56f4024e2b559cf89cc"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#ad25b7f6d0c89d56f4024e2b559cf89cc">FIND_OUT_MORE</a></td></tr>
+<tr class="c-table__row memdesc:ad25b7f6d0c89d56f4024e2b559cf89cc"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The links the example's output ends with.  <br /></td></tr>
+<tr class="c-table__row memitem:a59c09f4d2e77fa42c030902215658830" id="r_a59c09f4d2e77fa42c030902215658830"><td class="c-table__cell">const&#160;&amp;&#160;</td><td class="c-table__cell"><a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a></td></tr>
 <tr class="c-table__row memitem:ace022a29563ed7cbd82d7bfe115d7108" id="r_ace022a29563ed7cbd82d7bfe115d7108"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#ace022a29563ed7cbd82d7bfe115d7108">CLIENT_IP_EVIDENCE_KEY</a></td></tr>
 <tr class="c-table__row memdesc:ace022a29563ed7cbd82d7bfe115d7108"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The evidence key under which a client IP address is supplied to the cloud pipeline.  <br /></td></tr>
 <tr class="c-table__row memitem:a4c3d53cc817ab7f6a8e320b5f0e602a4" id="r_a4c3d53cc817ab7f6a8e320b5f0e602a4"><td class="c-table__cell">pub&#160;</td><td class="c-table__cell"><a class="el" href="#a4c3d53cc817ab7f6a8e320b5f0e602a4">resource_key</a></td></tr>
@@ -169,7 +172,7 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">property:&amp;AspectPropertyValue&lt; <a class="el" href="performance__results_8rs.html#a13eda313804a469af81193c4e2e1ee58">bool</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;)</td>
+          <td class="c-table__cell">property:&amp;AspectPropertyValue&lt; <a class="el" href="data__paths_8rs.html#ace367d07d2cbc650fd186739e5511adb">bool</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;)</td>
         </tr>
           </table>
         </div>
@@ -250,7 +253,7 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">property:&amp;AspectPropertyValue&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;)</td>
+          <td class="c-table__cell">property:&amp;AspectPropertyValue&lt; String &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;)</td>
         </tr>
           </table>
         </div>
@@ -277,14 +280,14 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">property:&amp;AspectPropertyValue&lt; Vec&lt; WeightedValue&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt; &gt; &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;)</td>
+          <td class="c-table__cell">property:&amp;AspectPropertyValue&lt; Vec&lt; WeightedValue&lt; String &gt; &gt; &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;)</td>
         </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>Print a weighted property (the country-code distributions, <code><a class="el" href="ipi-onprem-getting-started_8rs.html#a7c00cae4aeb6106a3784bc0885e0507c">Mcc</a></code>) as a comma-separated list of <code><a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a9d58c3d628e2a73ead14ac823d810027" title="The resolved value, or the no-value message.">value</a> (weight)</code> candidates ordered most probable first, or its no-value message when absent. </p>
+<p>Print a weighted property (the country-code distributions, <code><a class="el" href="ipi-onprem-getting-started_8rs.html#a7c00cae4aeb6106a3784bc0885e0507c">Mcc</a></code>) as a comma-separated list of <code><a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a451961dd347700d7bb5d36beec33eb80" title="The resolved value, or the no-value message.">value</a> (weight)</code> candidates ordered most probable first, or its no-value message when absent. </p>
 
 </div>
 </div>
@@ -378,6 +381,26 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ad25b7f6d0c89d56f4024e2b559cf89cc" name="ad25b7f6d0c89d56f4024e2b559cf89cc"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad25b7f6d0c89d56f4024e2b559cf89cc">&#9670;&#160;</a></span>FIND_OUT_MORE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const FIND_OUT_MORE</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The links the example's output ends with. </p>
+
+</div>
+</div>
 <a id="a4c3d53cc817ab7f6a8e320b5f0e602a4" name="a4c3d53cc817ab7f6a8e320b5f0e602a4"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4c3d53cc817ab7f6a8e320b5f0e602a4">&#9670;&#160;</a></span>resource_key</h2>
 
@@ -396,6 +419,29 @@ Variables</h2></td></tr>
 
 <p>The cloud resource key that authenticates the request and selects the properties returned. </p>
 
+</div>
+</div>
+<a id="a59c09f4d2e77fa42c030902215658830" name="a59c09f4d2e77fa42c030902215658830"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a59c09f4d2e77fa42c030902215658830">&#9670;&#160;</a></span>str</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const &amp; str</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                        = &amp;[</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;IP Intelligence&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/ip-intelligence?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-cloud-getting-started.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Pricing&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-cloud-getting-started.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Documentation&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-cloud-getting-started.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">]</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab60c545115f42f88c00b55f384f5ffc0" name="ab60c545115f42f88c00b55f384f5ffc0"></a>

@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_gett
 <li>How to retrieve the results</li>
 </ol>
 <p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-java/blob/main/examples/ip-intelligence/console/src/main/java/fiftyone/ipintelligence/examples/console/GettingStartedOnPrem.java">GitHub</a>.</p>
-<p>This example requires an enterprise IP Intelligence data file (.ipi). To obtain an enterprise data file for testing, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-gettingstartedonprem.java&amp;utm_term=header">contact us</a>.</p>
+<p>By default the example uses the free Lite IP Intelligence data file, which it downloads when it is missing. The Lite data file has the registration properties, and the example shows each property only the Enterprise data file has as needing it. To obtain an Enterprise data file, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-gettingstartedonprem.java&amp;utm_term=header">contact us</a>.</p>
 <p>Required Maven Dependencies:</p><ul>
 <li><a href="https://central.sonatype.com/artifact/com.51degrees/ip-intelligence">com.51degrees:ip-intelligence</a></li>
 </ul>
@@ -123,37 +123,29 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_gett
 <div class="c-code__line"><span class="c-code__keyword">import</span> java.io.PrintWriter;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> java.util.List;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> java.util.Map;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> java.util.function.Supplier;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.common.testhelpers.LogbackHelper.configureLogback;</div>
-<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.PropertyHelper.asStringProperty;</div>
-<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.PropertyHelper.asIntegerProperty;</div>
-<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.PropertyHelper.asFloatProperty;</div>
-<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.PropertyHelper.asIPAddressProperty;</div>
-<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.PropertyHelper.asWktStringProperty;</div>
-<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.PropertyHelper.tryGet;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.PropertyHelper.asString;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.pipeline.util.FileFinder.getFilePath;</div>
-<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.DataFileHelper.ENTERPRISE_DATA_FILE_REL_PATH;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.DataFileHelper.LITE_DATA_FILE_REL_PATH;</div>
 <div class="c-code__line"></div>
 <div class="c-code__line"><span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>GettingStartedOnPrem {</div>
 <div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> Logger logger = LoggerFactory.getLogger(GettingStartedOnPrem.class);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment">/* In this example, the 51degrees IP Intelligence data file needs to be specified as a command line parameter.</span></div>
-<div class="c-code__line"><span class="c-code__comment">    </span></div>
-<div class="c-code__line"><span class="c-code__comment">    To test this example, you need to:</span></div>
-<div class="c-code__line"><span class="c-code__comment">    1. Host an IP Intelligence data file (.ipi) at a custom URL accessible to this application</span></div>
-<div class="c-code__line"><span class="c-code__comment">    2. Provide the path to that hosted data file as a command line parameter</span></div>
-<div class="c-code__line"><span class="c-code__comment">    3. No license key is required when using a custom URL</span></div>
-<div class="c-code__line"><span class="c-code__comment">    </span></div>
-<div class="c-code__line"><span class="c-code__comment">    For production use, you will eventually need to use a Distributor service and license key</span></div>
-<div class="c-code__line"><span class="c-code__comment">    to keep your data file updated.</span></div>
-<div class="c-code__line"><span class="c-code__comment">    </span></div>
-<div class="c-code__line"><span class="c-code__comment">    To obtain access to enterprise data files for hosting, please contact us: https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-gettingstartedonprem.java&amp;utm_term=main */</span></div>
+<div class="c-code__line">    <span class="c-code__comment">/* In this example, by default, the free 51degrees Lite IP Intelligence data file is used from</span></div>
+<div class="c-code__line"><span class="c-code__comment">    the data repository in cxx/data, and is downloaded if it is missing, or you may specify another</span></div>
+<div class="c-code__line"><span class="c-code__comment">    file as a command line parameter.</span></div>
+<div class="c-code__line"><span class="c-code__comment"></span> </div>
+<div class="c-code__line"><span class="c-code__comment">    Contact us for a copy of the Enterprise data file: https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-gettingstartedonprem.java&amp;utm_term=main */</span></div>
+<div class="c-code__line"></div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> String CONTACT_US = <span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-gettingstartedonprem.java&amp;utm_term=enterprise-data-file&quot;</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> main(String[] args) <span class="c-code__keywordflow">throws</span> Exception {</div>
 <div class="c-code__line">        configureLogback(getFilePath(<span class="c-code__stringliteral">&quot;logback.xml&quot;</span>));</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment">// Use the supplied path for the data file</span></div>
-<div class="c-code__line">        String dataFile = args.length &gt; 0 ? args[0] : ENTERPRISE_DATA_FILE_REL_PATH;</div>
+<div class="c-code__line">        String dataFile = args.length &gt; 0 ? args[0] : LITE_DATA_FILE_REL_PATH;</div>
 <div class="c-code__line">        <span class="c-code__comment">// prepare &#39;evidence&#39; for use in pipeline (see below)</span></div>
 <div class="c-code__line">        List&lt;Map&lt;String, String&gt;&gt; evidence = EvidenceHelper.setUpEvidence();</div>
 <div class="c-code__line">        <a id="a0" name="a0"></a><a class="code hl_function" href="classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_getting_started_on_prem.html#a4ef6546bbabb814d1c7208ab9aca2918">run</a>(dataFile, evidence, System.out);</div>
@@ -176,7 +168,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_gett
 <div class="c-code__line">                    <span class="c-code__stringliteral">&quot;An explicit path can be supplied via the {} environment variable. &quot;</span> +</div>
 <div class="c-code__line">                    <span class="c-code__stringliteral">&quot;For testing, you can obtain an enterprise data file by contacting us at &quot;</span> +</div>
 <div class="c-code__line">                    <span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-gettingstartedonprem.java&amp;utm_term=data-file-not-found&quot;</span>,</div>
-<div class="c-code__line">                    dataFile, DataFileHelper.IPI_PATH_ENV_VAR);</div>
+<div class="c-code__line">                    dataFile, DataFileHelper.IPI_PATH_VARIABLE);</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">throw</span> e;</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line"> </div>
@@ -197,24 +189,31 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_gett
 <div class="c-code__line">                .buildFromConfiguration(pipelineOptions)) {</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">            <span class="c-code__comment">// carry out some sample detections</span></div>
-<div class="c-code__line">            <span class="c-code__keywordflow">for</span> (Map&lt;String, String&gt; evidence : evidenceList) {</div>
-<div class="c-code__line">                analyzeEvidence(evidence, pipeline, outputStream);</div>
-<div class="c-code__line">            }</div>
-<div class="c-code__line"> </div>
 <div class="c-code__line">            <span class="c-code__comment">/* Get the &#39;engine&#39; element within the pipeline that performs IP Intelligence. We</span></div>
 <div class="c-code__line"><span class="c-code__comment">            can use this to get details about the data file as well as meta-data describing</span></div>
 <div class="c-code__line"><span class="c-code__comment">            things such as the available properties. */</span></div>
 <div class="c-code__line">            IPIntelligenceOnPremiseEngine engine = pipeline.getElement(IPIntelligenceOnPremiseEngine.class);</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">            <span class="c-code__comment">// carry out some sample detections</span></div>
+<div class="c-code__line">            <span class="c-code__keywordtype">boolean</span> needsEnterprise = <span class="c-code__keyword">false</span>;</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">for</span> (Map&lt;String, String&gt; evidence : evidenceList) {</div>
+<div class="c-code__line">                needsEnterprise |= analyzeEvidence(evidence, pipeline, engine, outputStream);</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (needsEnterprise) {</div>
+<div class="c-code__line">                DataFileHelper.writeEnterpriseNote(<span class="c-code__keyword">new</span> PrintWriter(outputStream), CONTACT_US);</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">            DataFileHelper.logDataFileInfo(engine);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            logger.info(<span class="c-code__stringliteral">&quot;All done&quot;</span>);</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"></div>
-<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> analyzeEvidence(Map&lt;String, String&gt; evidence,</div>
-<div class="c-code__line">                                        Pipeline pipeline,</div>
-<div class="c-code__line">                                        OutputStream out) <span class="c-code__keywordflow">throws</span> Exception {</div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">boolean</span> analyzeEvidence(Map&lt;String, String&gt; evidence,</div>
+<div class="c-code__line">                                           Pipeline pipeline,</div>
+<div class="c-code__line">                                           IPIntelligenceOnPremiseEngine engine,</div>
+<div class="c-code__line">                                           OutputStream out) <span class="c-code__keywordflow">throws</span> Exception {</div>
+<div class="c-code__line">        <span class="c-code__keywordtype">boolean</span> needsEnterprise = <span class="c-code__keyword">false</span>;</div>
 <div class="c-code__line">        PrintWriter writer = <span class="c-code__keyword">new</span> PrintWriter(out);</div>
 <div class="c-code__line">        <span class="c-code__comment">/* FlowData is a data structure that is used to convey information required for a lookup</span></div>
 <div class="c-code__line"><span class="c-code__comment">        and the results of the lookup through the pipeline. Information required for</span></div>
@@ -248,29 +247,43 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_gett
 <div class="c-code__line"><span class="c-code__comment">            property dictionary at https://51degrees.com/developers/property-dictionary?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-gettingstartedonprem.java&amp;utm_term=analyzeevidence for</span></div>
 <div class="c-code__line"><span class="c-code__comment">            details of all available properties. */</span></div>
 <div class="c-code__line">            </div>
-<div class="c-code__line">            <span class="c-code__comment">// Output all the properties using shared PropertyHelper methods</span></div>
-<div class="c-code__line">            writer.println(<span class="c-code__stringliteral">&quot;\tRegisteredName: &quot;</span> + asStringProperty(tryGet(ipData::getRegisteredName)));</div>
-<div class="c-code__line">            writer.println(<span class="c-code__stringliteral">&quot;\tRegisteredOwner: &quot;</span> + asStringProperty(tryGet(ipData::getRegisteredOwner)));</div>
-<div class="c-code__line">            writer.println(<span class="c-code__stringliteral">&quot;\tRegisteredCountry: &quot;</span> + asStringProperty(tryGet(ipData::getRegisteredCountry)));</div>
-<div class="c-code__line">            writer.println(<span class="c-code__stringliteral">&quot;\tIpRangeStart: &quot;</span> + asIPAddressProperty(tryGet(ipData::getIpRangeStart)));</div>
-<div class="c-code__line">            writer.println(<span class="c-code__stringliteral">&quot;\tIpRangeEnd: &quot;</span> + asIPAddressProperty(tryGet(ipData::getIpRangeEnd)));</div>
-<div class="c-code__line">            writer.println(<span class="c-code__stringliteral">&quot;\tCountry: &quot;</span> + asStringProperty(tryGet(ipData::getCountry)));</div>
-<div class="c-code__line">            writer.println(<span class="c-code__stringliteral">&quot;\tCountryCode: &quot;</span> + asStringProperty(tryGet(ipData::getCountryCode)));</div>
-<div class="c-code__line">            writer.println(<span class="c-code__stringliteral">&quot;\tCountryCode3: &quot;</span> + asStringProperty(tryGet(ipData::getCountryCode3)));</div>
-<div class="c-code__line">            writer.println(<span class="c-code__stringliteral">&quot;\tRegion: &quot;</span> + asStringProperty(tryGet(ipData::getRegion)));</div>
-<div class="c-code__line">            writer.println(<span class="c-code__stringliteral">&quot;\tState: &quot;</span> + asStringProperty(tryGet(ipData::getState)));</div>
-<div class="c-code__line">            writer.println(<span class="c-code__stringliteral">&quot;\tTown: &quot;</span> + asStringProperty(tryGet(ipData::getTown)));</div>
-<div class="c-code__line">            writer.println(<span class="c-code__stringliteral">&quot;\tLatitude: &quot;</span> + asFloatProperty(tryGet(ipData::getLatitude)));</div>
-<div class="c-code__line">            writer.println(<span class="c-code__stringliteral">&quot;\tLongitude: &quot;</span> + asFloatProperty(tryGet(ipData::getLongitude)));</div>
-<div class="c-code__line">            writer.println(<span class="c-code__stringliteral">&quot;\tAreas: &quot;</span> + asWktStringProperty(tryGet(ipData::getAreas)));</div>
-<div class="c-code__line">            writer.println(<span class="c-code__stringliteral">&quot;\tAccuracyRadiusMin: &quot;</span> + asIntegerProperty(tryGet(ipData::getAccuracyRadiusMin)));</div>
-<div class="c-code__line">            writer.println(<span class="c-code__stringliteral">&quot;\tTimeZoneOffset: &quot;</span> + asIntegerProperty(tryGet(ipData::getTimeZoneOffset)));</div>
+<div class="c-code__line">            <span class="c-code__comment">// The free Lite data file has the registration properties, and</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// only the Enterprise data file has the others.</span></div>
+<div class="c-code__line">            needsEnterprise |= writeValue(writer, engine, <span class="c-code__stringliteral">&quot;RegisteredName&quot;</span>, ipData::getRegisteredName);</div>
+<div class="c-code__line">            needsEnterprise |= writeValue(writer, engine, <span class="c-code__stringliteral">&quot;RegisteredOwner&quot;</span>, ipData::getRegisteredOwner);</div>
+<div class="c-code__line">            needsEnterprise |= writeValue(writer, engine, <span class="c-code__stringliteral">&quot;RegisteredCountry&quot;</span>, ipData::getRegisteredCountry);</div>
+<div class="c-code__line">            needsEnterprise |= writeValue(writer, engine, <span class="c-code__stringliteral">&quot;IpRangeStart&quot;</span>, ipData::getIpRangeStart);</div>
+<div class="c-code__line">            needsEnterprise |= writeValue(writer, engine, <span class="c-code__stringliteral">&quot;IpRangeEnd&quot;</span>, ipData::getIpRangeEnd);</div>
+<div class="c-code__line">            needsEnterprise |= writeValue(writer, engine, <span class="c-code__stringliteral">&quot;Country&quot;</span>, ipData::getCountry);</div>
+<div class="c-code__line">            needsEnterprise |= writeValue(writer, engine, <span class="c-code__stringliteral">&quot;CountryCode&quot;</span>, ipData::getCountryCode);</div>
+<div class="c-code__line">            needsEnterprise |= writeValue(writer, engine, <span class="c-code__stringliteral">&quot;CountryCode3&quot;</span>, ipData::getCountryCode3);</div>
+<div class="c-code__line">            needsEnterprise |= writeValue(writer, engine, <span class="c-code__stringliteral">&quot;Region&quot;</span>, ipData::getRegion);</div>
+<div class="c-code__line">            needsEnterprise |= writeValue(writer, engine, <span class="c-code__stringliteral">&quot;State&quot;</span>, ipData::getState);</div>
+<div class="c-code__line">            needsEnterprise |= writeValue(writer, engine, <span class="c-code__stringliteral">&quot;Town&quot;</span>, ipData::getTown);</div>
+<div class="c-code__line">            needsEnterprise |= writeValue(writer, engine, <span class="c-code__stringliteral">&quot;Latitude&quot;</span>, ipData::getLatitude);</div>
+<div class="c-code__line">            needsEnterprise |= writeValue(writer, engine, <span class="c-code__stringliteral">&quot;Longitude&quot;</span>, ipData::getLongitude);</div>
+<div class="c-code__line">            needsEnterprise |= writeValue(writer, engine, <span class="c-code__stringliteral">&quot;Areas&quot;</span>, ipData::getAreas);</div>
+<div class="c-code__line">            needsEnterprise |= writeValue(writer, engine, <span class="c-code__stringliteral">&quot;AccuracyRadiusMin&quot;</span>, ipData::getAccuracyRadiusMin);</div>
+<div class="c-code__line">            needsEnterprise |= writeValue(writer, engine, <span class="c-code__stringliteral">&quot;TimeZoneOffset&quot;</span>, ipData::getTimeZoneOffset);</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">        writer.println();</div>
 <div class="c-code__line">        writer.flush();</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> needsEnterprise;</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">boolean</span> writeValue(PrintWriter writer,</div>
+<div class="c-code__line">                                      IPIntelligenceOnPremiseEngine engine,</div>
+<div class="c-code__line">                                      String property,</div>
+<div class="c-code__line">                                      Supplier&lt;AspectPropertyValue&lt;?&gt;&gt; value) {</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (DataFileHelper.hasProperty(engine, property)) {</div>
+<div class="c-code__line">            writer.println(<span class="c-code__stringliteral">&quot;\t&quot;</span> + property + <span class="c-code__stringliteral">&quot;: &quot;</span> + asString(value.get()));</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">false</span>;</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        writer.println(<span class="c-code__stringliteral">&quot;\t&quot;</span> + property + <span class="c-code__stringliteral">&quot;: &quot;</span> + DataFileHelper.NEEDS_ENTERPRISE);</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">return</span> <span class="c-code__keyword">true</span>;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_getting_started_on_prem_html_a4ef6546bbabb814d1c7208ab9aca2918"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_getting_started_on_prem.html#a4ef6546bbabb814d1c7208ab9aca2918">fiftyone.ipintelligence.examples.console.GettingStartedOnPrem.run</a></div><div class="ttdeci">static void run(String dataFile, List&lt; Map&lt; String, String &gt; &gt; evidenceList, OutputStream outputStream)</div><div class="ttdoc">Run the example.</div><div class="ttdef"><b>Definition</b> GettingStartedOnPrem.java:117</div></div>
+<div class="ttc" id="aclassfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_getting_started_on_prem_html_a4ef6546bbabb814d1c7208ab9aca2918"><div class="ttname"><a href="classfiftyone_1_1ipintelligence_1_1examples_1_1console_1_1_getting_started_on_prem.html#a4ef6546bbabb814d1c7208ab9aca2918">fiftyone.ipintelligence.examples.console.GettingStartedOnPrem.run</a></div><div class="ttdeci">static void run(String dataFile, List&lt; Map&lt; String, String &gt; &gt; evidenceList, OutputStream outputStream)</div><div class="ttdoc">Run the example.</div><div class="ttdef"><b>Definition</b> GettingStartedOnPrem.java:115</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

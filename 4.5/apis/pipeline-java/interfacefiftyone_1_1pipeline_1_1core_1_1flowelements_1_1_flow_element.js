@@ -8,6 +8,7 @@ var interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element =
     [ "getProperties", "interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a489547fe8f18946ba32d1500cd15f13b", null ],
     [ "getProperty", "interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#aa95ae1003864e7b0e1b7e71bfa6536c5", null ],
     [ "getTypedDataKey", "interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a18b17d7225adc868eb727bc10c25c754", null ],
+    [ "hasLoadedProperties", "interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a5d740f4fcfc20816b33dbf49450350e0", null ],
     [ "isClosed", "interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a93a813715876146eca839f3541867cc8", null ],
     [ "isConcurrent", "interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#ab0aa98bdda4981e0892d75ea4f79331a", null ],
     [ "process", "interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a765fe6de5aab64ce3e92e07533fb776a", null ]

@@ -81,6 +81,8 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a7dd595647927f6722356f4a925dc8ca6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for elementData.  <br /></td></tr>
 <tr class="c-table__row memitem:afc28b43960a3575af640424d12d89c9f" id="r_afc28b43960a3575af640424d12d89c9f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#afc28b43960a3575af640424d12d89c9f">getInternal</a> (key)</td></tr>
 <tr class="c-table__row memdesc:afc28b43960a3575af640424d12d89c9f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Internal get method for elementData to retrieve an element from it called via the elementData's get method This method is overriden by classes inheriting from elementData.  <br /></td></tr>
+<tr class="c-table__row memitem:a02d933fac7808424eaf3565de639616e" id="r_a02d933fac7808424eaf3565de639616e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a02d933fac7808424eaf3565de639616e">getInternalIgnoringCase</a> (key)</td></tr>
+<tr class="c-table__row memdesc:a02d933fac7808424eaf3565de639616e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Looks for a key again ignoring its letter case, after getInternal found nothing for the key as given, because property names are compared ignoring case.  <br /></td></tr>
 <tr class="c-table__row memitem:a3f4787327e32ab0d19721ca414d7019c" id="r_a3f4787327e32ab0d19721ca414d7019c"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a3f4787327e32ab0d19721ca414d7019c">get</a> (key)</td></tr>
 <tr class="c-table__row memdesc:a3f4787327e32ab0d19721ca414d7019c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A wrapper that performs actions before passing on processing (or skipping) the getInternal method.  <br /></td></tr>
 <tr class="c-table__row memitem:afa947db6748b5de222df0c3e675b024c" id="r_afa947db6748b5de222df0c3e675b024c"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#afa947db6748b5de222df0c3e675b024c">getAsString</a> (key)</td></tr>
@@ -157,6 +159,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>A wrapper that performs actions before passing on processing (or skipping) the getInternal method. </p>
+<p>A key that finds nothing as given is looked for again ignoring its letter case, so a read that found its value before costs no more.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{string}</td><td>key the key to retrieve a property value for </td></tr>
@@ -315,6 +318,45 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a02d933fac7808424eaf3565de639616e" name="a02d933fac7808424eaf3565de639616e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a02d933fac7808424eaf3565de639616e">&#9670;&#160;</a></span>getInternalIgnoringCase()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">ElementData::getInternalIgnoringCase </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Looks for a key again ignoring its letter case, after getInternal found nothing for the key as given, because property names are compared ignoring case. </p>
+<p>Classes inheriting from elementData override this, and this one finds nothing.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{string}</td><td>key the key to retrieve a property value for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{*} the value, or undefined if there is none </dd></dl>
 
 </div>
 </div>

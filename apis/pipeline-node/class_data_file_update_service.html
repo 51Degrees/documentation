@@ -79,18 +79,72 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a5adf0c2a40a3a8c9959f5661f7a52dc6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">EventEmitter's 'on' delegation.  <br /></td></tr>
 <tr class="c-table__row memitem:a9e6444617d4b4191239f5b59305f98fc" id="r_a9e6444617d4b4191239f5b59305f98fc"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a9e6444617d4b4191239f5b59305f98fc">once</a> (listener, callback)</td></tr>
 <tr class="c-table__row memdesc:a9e6444617d4b4191239f5b59305f98fc"><td class="c-table__cell">&#160;</td><td class="c-table__cell">EventEmitter's 'once' delegation.  <br /></td></tr>
-<tr class="c-table__row memitem:a6d585d04b5f501bbdd2721c5b0c7a2f4" id="r_a6d585d04b5f501bbdd2721c5b0c7a2f4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a6d585d04b5f501bbdd2721c5b0c7a2f4">updateDataFile</a> (dataFile)</td></tr>
-<tr class="c-table__row memdesc:a6d585d04b5f501bbdd2721c5b0c7a2f4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Method that updates a datafile when it is due an update.  <br /></td></tr>
+<tr class="c-table__row memitem:a8a3a462bb192b3da2e7674d3fea0dd44" id="r_a8a3a462bb192b3da2e7674d3fea0dd44"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8a3a462bb192b3da2e7674d3fea0dd44">log</a> (level, message)</td></tr>
+<tr class="c-table__row memdesc:a8a3a462bb192b3da2e7674d3fea0dd44"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Writes a message to the log of the pipeline the service is attached to.  <br /></td></tr>
+<tr class="c-table__row memitem:a3f95270aa34a929e89a9fa841c009a51" id="r_a3f95270aa34a929e89a9fa841c009a51"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a3f95270aa34a929e89a9fa841c009a51">complete</a> (dataFile, status)</td></tr>
+<tr class="c-table__row memdesc:a3f95270aa34a929e89a9fa841c009a51"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Reports how an update ended, to the listeners of 'updateComplete' and to the data file's own onUpdateComplete function, if it has one.  <br /></td></tr>
+<tr class="c-table__row memitem:aed2f75ac43fcf5497ccbb5313beecb28" id="r_aed2f75ac43fcf5497ccbb5313beecb28"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aed2f75ac43fcf5497ccbb5313beecb28">accessError</a> (dataFile)</td></tr>
+<tr class="c-table__row memdesc:aed2f75ac43fcf5497ccbb5313beecb28"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The message for a data update service that could not be reached.  <br /></td></tr>
+<tr class="c-table__row memitem:a10854a70d6b9dbb89d9f61677091cee9" id="r_a10854a70d6b9dbb89d9f61677091cee9"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a10854a70d6b9dbb89d9f61677091cee9">refreshDataFile</a> (dataFile, fromFile=true)</td></tr>
+<tr class="c-table__row memdesc:a10854a70d6b9dbb89d9f61677091cee9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Refreshes the engine of a data file with the data now in place, and logs a failure.  <br /></td></tr>
+<tr class="c-table__row memitem:aeb2f4eaada68bab196255403ba3bdfbf" id="r_aeb2f4eaada68bab196255403ba3bdfbf"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aeb2f4eaada68bab196255403ba3bdfbf">fail</a> (dataFile, status)</td></tr>
+<tr class="c-table__row memdesc:aeb2f4eaada68bab196255403ba3bdfbf"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Ends an update that failed, so that the next one can be scheduled.  <br /></td></tr>
+<tr class="c-table__row memitem:ac4d28d47f84fcecc0b59f2df393d00d9" id="r_ac4d28d47f84fcecc0b59f2df393d00d9"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ac4d28d47f84fcecc0b59f2df393d00d9">updateDataFile</a> (dataFile, automatic=false)</td></tr>
+<tr class="c-table__row memdesc:ac4d28d47f84fcecc0b59f2df393d00d9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Method that updates a datafile when it is due an update.  <br /></td></tr>
+<tr class="c-table__row memitem:a92025e39548d3220c74c9300622d5263" id="r_a92025e39548d3220c74c9300622d5263"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a92025e39548d3220c74c9300622d5263">unhandled</a> (dataFile, error)</td></tr>
+<tr class="c-table__row memdesc:a92025e39548d3220c74c9300622d5263"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Logs an error that has no message of its own, with its cause.  <br /></td></tr>
+<tr class="c-table__row memitem:a5e9132fba6542cfeba6118b6394dc86b" id="r_a5e9132fba6542cfeba6118b6394dc86b"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a5e9132fba6542cfeba6118b6394dc86b">integrityFailed</a> (dataFile, serverHash, downloadHash)</td></tr>
+<tr class="c-table__row memdesc:a5e9132fba6542cfeba6118b6394dc86b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Logs a download whose MD5 hash does not match the one the response carried.  <br /></td></tr>
 <tr class="c-table__row memitem:a8a5fb195fde7a22fc78078a77b35177f" id="r_a8a5fb195fde7a22fc78078a77b35177f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8a5fb195fde7a22fc78078a77b35177f">fileReady</a> (dataFile, filename)</td></tr>
 <tr class="c-table__row memdesc:a8a5fb195fde7a22fc78078a77b35177f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Internal method called when the datafile has been downloaded and is ready after an update.  <br /></td></tr>
 <tr class="c-table__row memitem:af0b92e19f40fb9395b0edfd50f59d6d9" id="r_af0b92e19f40fb9395b0edfd50f59d6d9"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#af0b92e19f40fb9395b0edfd50f59d6d9">processFile</a> (dataFile, filename)</td></tr>
 <tr class="c-table__row memdesc:af0b92e19f40fb9395b0edfd50f59d6d9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Internal method to process the datafile has been downloaded Including unzipping if needed.  <br /></td></tr>
+<tr class="c-table__row memitem:a244f21402f38f8a534dc402cc943b205" id="r_a244f21402f38f8a534dc402cc943b205"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a244f21402f38f8a534dc402cc943b205">updateFromMemory</a> (dataFile, buffer)</td></tr>
+<tr class="c-table__row memdesc:a244f21402f38f8a534dc402cc943b205"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Refreshes a data file that is held in memory with the bytes given.  <br /></td></tr>
 <tr class="c-table__row memitem:a27a2280b44642e7197022c237bcbd04c" id="r_a27a2280b44642e7197022c237bcbd04c"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a27a2280b44642e7197022c237bcbd04c">checkNextUpdate</a> (dataFile)</td></tr>
 <tr class="c-table__row memdesc:a27a2280b44642e7197022c237bcbd04c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Internal method to check the next update of a datafile at a polling interval set on the datafile.  <br /></td></tr>
 <tr class="c-table__row memitem:a963482532d8cd1a2c4cc70188de47feb" id="r_a963482532d8cd1a2c4cc70188de47feb"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a963482532d8cd1a2c4cc70188de47feb">registerDataFile</a> (dataFile)</td></tr>
 <tr class="c-table__row memdesc:a963482532d8cd1a2c4cc70188de47feb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Method that registers a datafile with the update service.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="aed2f75ac43fcf5497ccbb5313beecb28" name="aed2f75ac43fcf5497ccbb5313beecb28"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aed2f75ac43fcf5497ccbb5313beecb28">&#9670;&#160;</a></span>accessError()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">DataFileUpdateService::accessError </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>dataFile</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The message for a data update service that could not be reached. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{DataFile}</td><td>dataFile the data file being updated </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{string} the message to log </dd></dl>
+
+</div>
+</div>
 <a id="a27a2280b44642e7197022c237bcbd04c" name="a27a2280b44642e7197022c237bcbd04c"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a27a2280b44642e7197022c237bcbd04c">&#9670;&#160;</a></span>checkNextUpdate()</h2>
 
@@ -122,6 +176,49 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{DataFile}</td><td>dataFile the datafile to check updates for </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3f95270aa34a929e89a9fa841c009a51" name="a3f95270aa34a929e89a9fa841c009a51"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3f95270aa34a929e89a9fa841c009a51">&#9670;&#160;</a></span>complete()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">DataFileUpdateService::complete </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>dataFile</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>status</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Reports how an update ended, to the listeners of 'updateComplete' and to the data file's own onUpdateComplete function, if it has one. </p>
+<p>An error thrown by any of them is logged, goes no further, and the callbacks after it are not called.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{DataFile}</td><td>dataFile the data file the update was for </td></tr>
+    <tr><td class="paramname">{string}</td><td>status one of the AutoUpdateStatus values </td></tr>
   </table>
   </dd>
 </dl>
@@ -166,6 +263,48 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aeb2f4eaada68bab196255403ba3bdfbf" name="aeb2f4eaada68bab196255403ba3bdfbf"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aeb2f4eaada68bab196255403ba3bdfbf">&#9670;&#160;</a></span>fail()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">DataFileUpdateService::fail </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>dataFile</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>status</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Ends an update that failed, so that the next one can be scheduled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{DataFile}</td><td>dataFile the data file being updated </td></tr>
+    <tr><td class="paramname">{string}</td><td>status the AutoUpdateStatus to report </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a8a5fb195fde7a22fc78078a77b35177f" name="a8a5fb195fde7a22fc78078a77b35177f"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8a5fb195fde7a22fc78078a77b35177f">&#9670;&#160;</a></span>fileReady()</h2>
 
@@ -206,6 +345,98 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{void} </dd></dl>
+
+</div>
+</div>
+<a id="a5e9132fba6542cfeba6118b6394dc86b" name="a5e9132fba6542cfeba6118b6394dc86b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5e9132fba6542cfeba6118b6394dc86b">&#9670;&#160;</a></span>integrityFailed()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">DataFileUpdateService::integrityFailed </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>dataFile</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>serverHash</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>downloadHash</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Logs a download whose MD5 hash does not match the one the response carried. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{DataFile}</td><td>dataFile the data file being updated </td></tr>
+    <tr><td class="paramname">{string}</td><td>serverHash the hash the response carried </td></tr>
+    <tr><td class="paramname">{string}</td><td>downloadHash the hash of the data that arrived </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8a3a462bb192b3da2e7674d3fea0dd44" name="a8a3a462bb192b3da2e7674d3fea0dd44"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8a3a462bb192b3da2e7674d3fea0dd44">&#9670;&#160;</a></span>log()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">DataFileUpdateService::log </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>level</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>message</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Writes a message to the log of the pipeline the service is attached to. </p>
+<p>With no pipeline, an error is written to the console, as a pipeline with no error listener does, so that it is not lost.</p>
+<p>The service's messages name the update URL, which carries the license keys, so every one of them is masked here. The pipeline's log does not mask, because each detection goes through it.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{string}</td><td>level the log level </td></tr>
+    <tr><td class="paramname">{*}</td><td>message the message </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -335,6 +566,50 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a10854a70d6b9dbb89d9f61677091cee9" name="a10854a70d6b9dbb89d9f61677091cee9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a10854a70d6b9dbb89d9f61677091cee9">&#9670;&#160;</a></span>refreshDataFile()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">DataFileUpdateService::refreshDataFile </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>dataFile</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>fromFile</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Refreshes the engine of a data file with the data now in place, and logs a failure. </p>
+<p>The caller reports the outcome.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{DataFile}</td><td>dataFile the data file to refresh </td></tr>
+    <tr><td class="paramname">{boolean}</td><td>[fromFile] true where the data came from a file that was written, which is the case the message names a try count for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{boolean} true if the refresh worked </dd></dl>
+
+</div>
+</div>
 <a id="a963482532d8cd1a2c4cc70188de47feb" name="a963482532d8cd1a2c4cc70188de47feb"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a963482532d8cd1a2c4cc70188de47feb">&#9670;&#160;</a></span>registerDataFile()</h2>
 
@@ -409,8 +684,50 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6d585d04b5f501bbdd2721c5b0c7a2f4" name="a6d585d04b5f501bbdd2721c5b0c7a2f4"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6d585d04b5f501bbdd2721c5b0c7a2f4">&#9670;&#160;</a></span>updateDataFile()</h2>
+<a id="a92025e39548d3220c74c9300622d5263" name="a92025e39548d3220c74c9300622d5263"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a92025e39548d3220c74c9300622d5263">&#9670;&#160;</a></span>unhandled()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">DataFileUpdateService::unhandled </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>dataFile</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>error</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Logs an error that has no message of its own, with its cause. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{DataFile}</td><td>dataFile the data file being updated </td></tr>
+    <tr><td class="paramname">{*}</td><td>error the error, or whatever was thrown </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac4d28d47f84fcecc0b59f2df393d00d9" name="ac4d28d47f84fcecc0b59f2df393d00d9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac4d28d47f84fcecc0b59f2df393d00d9">&#9670;&#160;</a></span>updateDataFile()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -423,8 +740,12 @@ Public Member Functions</h2></td></tr>
             <tr class="c-table__row">
               <td class="c-table__cell">DataFileUpdateService::updateDataFile </td>
           <td>(</td>
-          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>dataFile</em></span></td><td>)</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>dataFile</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
           <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>automatic</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
         </tr>
           </table>
         </div>
@@ -440,10 +761,55 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{DataFile}</td><td>dataFile the datafile to update </td></tr>
+    <tr><td class="paramname">{boolean}</td><td>[automatic] true where the update is one the service started itself, on start-up or when the polling interval has passed, and not one an application asked for. Only the log messages differ. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{boolean | void} returns false if already updating or request failed </dd></dl>
+
+</div>
+</div>
+<a id="a244f21402f38f8a534dc402cc943b205" name="a244f21402f38f8a534dc402cc943b205"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a244f21402f38f8a534dc402cc943b205">&#9670;&#160;</a></span>updateFromMemory()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">DataFileUpdateService::updateFromMemory </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>dataFile</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>buffer</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Refreshes a data file that is held in memory with the bytes given. </p>
+<p>The data file keeps the data it has if the refresh fails. Nothing is downloaded and no file is written.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{DataFile}</td><td>dataFile the memory data file to refresh </td></tr>
+    <tr><td class="paramname">{Buffer</td><td>| Uint8Array} buffer the new data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{boolean} false if the data file is already updating or the refresh failed, which is also logged and reported through the 'updateComplete' event </dd></dl>
 
 </div>
 </div>

@@ -76,40 +76,56 @@ Classes</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="c-table__row memitem:a0446ba3b19c9d80a05b950a388fee5c9" id="r_a0446ba3b19c9d80a05b950a388fee5c9"><td class="c-table__cell">const&#160;pub&#160;struct&#160;<a class="el" href="struct_example_options.html">ExampleOptions</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a0446ba3b19c9d80a05b950a388fee5c9">from_env</a> () -&gt; Option&lt; Self &gt;</td></tr>
-<tr class="c-table__row memdesc:a0446ba3b19c9d80a05b950a388fee5c9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default options, using the best-available loadable data-file tier.  <br /></td></tr>
+<tr class="c-table__row memitem:a6f46caea8ef2116e6868901462d62778" id="r_a6f46caea8ef2116e6868901462d62778"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_example_options.html">ExampleOptions</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a6f46caea8ef2116e6868901462d62778">from_env</a> () -&gt; Option&lt; Self &gt;</td></tr>
+<tr class="c-table__row memdesc:a6f46caea8ef2116e6868901462d62778"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default options, reading the Enterprise file when its share is reachable and otherwise the free Lite file.  <br /></td></tr>
 <tr class="c-table__row memitem:a8ec87ce59a7730398990e6de32fb8cb4" id="r_a8ec87ce59a7730398990e6de32fb8cb4"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a8ec87ce59a7730398990e6de32fb8cb4">for_tier</a> (<a class="el" href="data__paths_8rs.html#a29e87adf1760ab44a6a8d86c736658f8">tier:examples_shared::IpiTier</a>) -&gt; Option&lt; Self &gt;</td></tr>
 <tr class="c-table__row memdesc:a8ec87ce59a7730398990e6de32fb8cb4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="struct_options.html" title="Options that drive [run].">Options</a> pinned to a specific data-file tier.  <br /></td></tr>
 <tr class="c-table__row memitem:ac10497ea1a8e7d45645db7ecb88335c8" id="r_ac10497ea1a8e7d45645db7ecb88335c8"><td class="c-table__cell">struct&#160;<a class="el" href="struct_suspicious_inputs.html">SuspiciousInputs</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ac10497ea1a8e7d45645db7ecb88335c8">run</a> (options:&amp;ExampleOptions, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:ac10497ea1a8e7d45645db7ecb88335c8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run the suspicious example against the supplied options, writing all output to <code>out</code>.  <br /></td></tr>
-<tr class="c-table__row memitem:a57732fbeeeb5564350d473ab596e01a3" id="r_a57732fbeeeb5564350d473ab596e01a3"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a57732fbeeeb5564350d473ab596e01a3">assess_ip</a> (pipeline:&amp;Arc&lt; Pipeline &gt;, ip:&amp;str, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write) -&gt; anyhow::Result&lt;()&gt;</td></tr>
-<tr class="c-table__row memdesc:a57732fbeeeb5564350d473ab596e01a3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Assess one IP address and print the contributing values plus the verdict.  <br /></td></tr>
-<tr class="c-table__row memitem:a75bc210badf8344444c862160f5ff3aa" id="r_a75bc210badf8344444c862160f5ff3aa"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a75bc210badf8344444c862160f5ff3aa">is_suspicious</a> (inputs:&amp;SuspiciousInputs) -&gt; <a class="el" href="performance__results_8rs.html#a13eda313804a469af81193c4e2e1ee58">bool</a></td></tr>
+<tr class="c-table__row memitem:af2dc442a56306865d4801d8b7833e23b" id="r_af2dc442a56306865d4801d8b7833e23b"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#af2dc442a56306865d4801d8b7833e23b">assess_ip</a> (pipeline:&amp;Arc&lt; Pipeline &gt;, ip:&amp;str, available:&amp;[String], out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
+<tr class="c-table__row memdesc:af2dc442a56306865d4801d8b7833e23b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Assess one IP address and print the contributing values plus the verdict.  <br /></td></tr>
+<tr class="c-table__row memitem:a4180682d09b5e37276a55a5121cea614" id="r_a4180682d09b5e37276a55a5121cea614"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a4180682d09b5e37276a55a5121cea614">shown</a> (name:&amp;str, value:String, available:&amp;[String]) -&gt; String</td></tr>
+<tr class="c-table__row memdesc:a4180682d09b5e37276a55a5121cea614"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The text for a property's line, being <code><a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a451961dd347700d7bb5d36beec33eb80" title="The resolved value, or the no-value message.">value</a></code> when the data file carries the property, otherwise why there is none.  <br /></td></tr>
+<tr class="c-table__row memitem:acfe09709081f4d740983d4948a96f7da" id="r_acfe09709081f4d740983d4948a96f7da"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#acfe09709081f4d740983d4948a96f7da">plain_string</a> (ip_data:&amp;IpIntelligenceDataBase, name:&amp;str) -&gt; String</td></tr>
+<tr class="c-table__row memdesc:acfe09709081f4d740983d4948a96f7da"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read a plain string property, or <code>(no <a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a451961dd347700d7bb5d36beec33eb80" title="The resolved value, or the no-value message.">value</a>)</code> when it has none.  <br /></td></tr>
+<tr class="c-table__row memitem:a75bc210badf8344444c862160f5ff3aa" id="r_a75bc210badf8344444c862160f5ff3aa"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a75bc210badf8344444c862160f5ff3aa">is_suspicious</a> (inputs:&amp;SuspiciousInputs) -&gt; <a class="el" href="data__paths_8rs.html#ace367d07d2cbc650fd186739e5511adb">bool</a></td></tr>
 <tr class="c-table__row memdesc:a75bc210badf8344444c862160f5ff3aa"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The three-branch heuristic for deciding whether an IP looks suspicious.  <br /></td></tr>
-<tr class="c-table__row memitem:ab4f8aba90e17ec049d3efb4513510721" id="r_ab4f8aba90e17ec049d3efb4513510721"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ab4f8aba90e17ec049d3efb4513510721">top_string</a> (ip_data:&amp;IpIntelligenceDataBase, name:&amp;str) -&gt; Option&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td></tr>
-<tr class="c-table__row memdesc:ab4f8aba90e17ec049d3efb4513510721"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read the most probable candidate of a weighted string property, or <code>None</code> when the property had no value (for example because the data tier does not carry it).  <br /></td></tr>
+<tr class="c-table__row memitem:ab4f8aba90e17ec049d3efb4513510721" id="r_ab4f8aba90e17ec049d3efb4513510721"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ab4f8aba90e17ec049d3efb4513510721">top_string</a> (ip_data:&amp;IpIntelligenceDataBase, name:&amp;str) -&gt; Option&lt; String &gt;</td></tr>
+<tr class="c-table__row memdesc:ab4f8aba90e17ec049d3efb4513510721"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read a property as text, being its plain string value, or otherwise the most probable candidate of a weighted list.  <br /></td></tr>
 <tr class="c-table__row memitem:a071371602e6e27c3693b993375af8d0f" id="r_a071371602e6e27c3693b993375af8d0f"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a071371602e6e27c3693b993375af8d0f">top_integer</a> (ip_data:&amp;IpIntelligenceDataBase, name:&amp;str) -&gt; i64</td></tr>
-<tr class="c-table__row memdesc:a071371602e6e27c3693b993375af8d0f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read the most probable candidate of a weighted property as an integer.  <br /></td></tr>
-<tr class="c-table__row memitem:a231894cfd669047ec8a198a322c1d5b7" id="r_a231894cfd669047ec8a198a322c1d5b7"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a231894cfd669047ec8a198a322c1d5b7">top_bool</a> (ip_data:&amp;IpIntelligenceDataBase, name:&amp;str) -&gt; <a class="el" href="performance__results_8rs.html#a13eda313804a469af81193c4e2e1ee58">bool</a></td></tr>
-<tr class="c-table__row memdesc:a231894cfd669047ec8a198a322c1d5b7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read the most probable candidate of a weighted property as a boolean.  <br /></td></tr>
+<tr class="c-table__row memdesc:a071371602e6e27c3693b993375af8d0f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read a property as an integer, being its plain integer value, or otherwise [<code><a class="el" href="#ab4f8aba90e17ec049d3efb4513510721" title="Read a property as text, being its plain string value, or otherwise the most probable candidate of a ...">top_string</a></code>] parsed to an <code>i64</code>, tolerating a trailing fractional part.  <br /></td></tr>
+<tr class="c-table__row memitem:a231894cfd669047ec8a198a322c1d5b7" id="r_a231894cfd669047ec8a198a322c1d5b7"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a231894cfd669047ec8a198a322c1d5b7">top_bool</a> (ip_data:&amp;IpIntelligenceDataBase, name:&amp;str) -&gt; <a class="el" href="data__paths_8rs.html#ace367d07d2cbc650fd186739e5511adb">bool</a></td></tr>
+<tr class="c-table__row memdesc:a231894cfd669047ec8a198a322c1d5b7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read a property as a boolean, being its plain boolean value, or otherwise [<code><a class="el" href="#ab4f8aba90e17ec049d3efb4513510721" title="Read a property as text, being its plain string value, or otherwise the most probable candidate of a ...">top_string</a></code>] read as <code>True</code>/<code>False</code> (or <code>1</code>/<code>0</code>), the spellings the native side renders.  <br /></td></tr>
 <tr class="c-table__row memitem:a10397c317f477c2d5f6629f1d23f9b28" id="r_a10397c317f477c2d5f6629f1d23f9b28"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a10397c317f477c2d5f6629f1d23f9b28">main</a> () -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a10397c317f477c2d5f6629f1d23f9b28"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read the data file, then run the example, writing to standard output.  <br /></td></tr>
 <tr class="c-table__row memitem:ad0888d3071748e445f1e6551d81fab82" id="r_ad0888d3071748e445f1e6551d81fab82"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ad0888d3071748e445f1e6551d81fab82">suspicious_runs_against_the_enterprise_file</a> ()</td></tr>
 <tr class="c-table__row memdesc:ad0888d3071748e445f1e6551d81fab82"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The example runs end to end against an Enterprise data file and prints a verdict per IP.  <br /></td></tr>
+<tr class="c-table__row memitem:a37ff5583096692b87a66f3a823b225d2" id="r_a37ff5583096692b87a66f3a823b225d2"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a37ff5583096692b87a66f3a823b225d2">suspicious_runs_against_the_asn_file</a> ()</td></tr>
+<tr class="c-table__row memdesc:a37ff5583096692b87a66f3a823b225d2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The example runs on the free ASN file, which carries none of the judgement's properties, so it gives no verdict and says why.  <br /></td></tr>
+<tr class="c-table__row memitem:a3113a28c73724456269830b9f965a528" id="r_a3113a28c73724456269830b9f965a528"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a3113a28c73724456269830b9f965a528">inputs_are_read_as_stored</a> ()</td></tr>
+<tr class="c-table__row memdesc:a3113a28c73724456269830b9f965a528"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Each input is read whether the engine stored it under its declared type or as a weighted list.  <br /></td></tr>
 <tr class="c-table__row memitem:a138af69baf6fd952d472bb754248f711" id="r_a138af69baf6fd952d472bb754248f711"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a138af69baf6fd952d472bb754248f711">heuristic_branches_flag_independently</a> ()</td></tr>
 <tr class="c-table__row memdesc:a138af69baf6fd952d472bb754248f711"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The heuristic's three branches each independently flag a suspicious IP, and a benign profile is not flagged.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="c-table__row memitem:a65560ade98913e76a1868a9845e47e52" id="r_a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a></td></tr>
+<tr class="c-table__row memdesc:a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Where to ask about a copy of the Enterprise data file.  <br /></td></tr>
+<tr class="c-table__row memitem:a59c09f4d2e77fa42c030902215658830" id="r_a59c09f4d2e77fa42c030902215658830"><td class="c-table__cell">const&#160;&amp;&#160;</td><td class="c-table__cell"><a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a></td></tr>
 <tr class="c-table__row memitem:a1890ba08c56ee0fdf82b489df7463d96" id="r_a1890ba08c56ee0fdf82b489df7463d96"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a1890ba08c56ee0fdf82b489df7463d96">SUSPICIOUS_PROPERTIES</a></td></tr>
-<tr class="c-table__row memdesc:a1890ba08c56ee0fdf82b489df7463d96"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The behavioral and diversity properties this example reads.  <br /></td></tr>
+<tr class="c-table__row memdesc:a1890ba08c56ee0fdf82b489df7463d96"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The behavioral and diversity properties the judgement reads.  <br /></td></tr>
 <tr class="c-table__row memitem:a72515629ae0f4fee1afb611b5a979508" id="r_a72515629ae0f4fee1afb611b5a979508"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a72515629ae0f4fee1afb611b5a979508">HardwareDiversity</a></td></tr>
 <tr class="c-table__row memitem:accbf4172a68a4790519a93318e22128c" id="r_accbf4172a68a4790519a93318e22128c"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#accbf4172a68a4790519a93318e22128c">BrowserDiversity</a></td></tr>
 <tr class="c-table__row memitem:aa0039ab5771539ea35cf213fdb106805" id="r_aa0039ab5771539ea35cf213fdb106805"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#aa0039ab5771539ea35cf213fdb106805">LocationConfidence</a></td></tr>
 <tr class="c-table__row memitem:a2ddc8635c505f1f11b60eb376e2a11f0" id="r_a2ddc8635c505f1f11b60eb376e2a11f0"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a2ddc8635c505f1f11b60eb376e2a11f0">IsHosted</a></td></tr>
 <tr class="c-table__row memitem:af4284b9198fb548eca82ef441215def3" id="r_af4284b9198fb548eca82ef441215def3"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#af4284b9198fb548eca82ef441215def3">CountryCode</a></td></tr>
-<tr class="c-table__row memitem:a81efc5e1d9e1a380d67bc4649173dd25" id="r_a81efc5e1d9e1a380d67bc4649173dd25"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a81efc5e1d9e1a380d67bc4649173dd25">RegisteredCountry</a></td></tr>
 <tr class="c-table__row memitem:adb341de0f1725996cb8afbbaaca3a596" id="r_adb341de0f1725996cb8afbbaaca3a596"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#adb341de0f1725996cb8afbbaaca3a596">HumanProbability</a></td></tr>
+<tr class="c-table__row memitem:a4cd105e3e5494a90c5f074f8041a4963" id="r_a4cd105e3e5494a90c5f074f8041a4963"><td class="c-table__cell">const&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a4cd105e3e5494a90c5f074f8041a4963">FREE_PROPERTIES</a></td></tr>
+<tr class="c-table__row memdesc:a4cd105e3e5494a90c5f074f8041a4963"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The free properties also requested and shown.  <br /></td></tr>
+<tr class="c-table__row memitem:ae471abc62acc92aeb94bef1026e73e6f" id="r_ae471abc62acc92aeb94bef1026e73e6f"><td class="c-table__cell">const&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#ae471abc62acc92aeb94bef1026e73e6f">AsnName</a></td></tr>
+<tr class="c-table__row memitem:a74b66bc5ff342f454fc5beae262ff778" id="r_a74b66bc5ff342f454fc5beae262ff778"><td class="c-table__cell">const&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a74b66bc5ff342f454fc5beae262ff778">RegisteredCountry</a></td></tr>
+<tr class="c-table__row memitem:a9214474ee1e489a3f407516aa335c854" id="r_a9214474ee1e489a3f407516aa335c854"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a9214474ee1e489a3f407516aa335c854">NOT_IN_THIS_FILE</a></td></tr>
+<tr class="c-table__row memdesc:a9214474ee1e489a3f407516aa335c854"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Shown for a free property the data file in use does not carry.  <br /></td></tr>
 <tr class="c-table__row memitem:ab533a800544facf05fd1c8e50f92099a" id="r_ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">pub&#160;</td><td class="c-table__cell"><a class="el" href="#ab533a800544facf05fd1c8e50f92099a">data_file</a></td></tr>
 <tr class="c-table__row memdesc:ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The full path to the <code>.ipi</code> data file to open.  <br /></td></tr>
 <tr class="c-table__row memitem:a7707ba8c1851ca9fb8ad30d7096bfdb0" id="r_a7707ba8c1851ca9fb8ad30d7096bfdb0"><td class="c-table__cell">pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#a7707ba8c1851ca9fb8ad30d7096bfdb0">ips</a></td></tr>
@@ -133,8 +149,8 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:ab60c545115f42f88c00b55f384f5ffc0" id="r_ab60c545115f42f88c00b55f384f5ffc0"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#ab60c545115f42f88c00b55f384f5ffc0">tests</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
-<a id="a57732fbeeeb5564350d473ab596e01a3" name="a57732fbeeeb5564350d473ab596e01a3"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a57732fbeeeb5564350d473ab596e01a3">&#9670;&#160;</a></span>assess_ip()</h2>
+<a id="af2dc442a56306865d4801d8b7833e23b" name="af2dc442a56306865d4801d8b7833e23b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af2dc442a56306865d4801d8b7833e23b">&#9670;&#160;</a></span>assess_ip()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -154,6 +170,11 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
+          <td class="c-table__cell">available:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String], </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
           <td class="c-table__cell">out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn</td>          <td class="c-table__cell"><span class="paramname"><em>Write</em></span>&#160;) -&gt; anyhow::Result&lt;()&gt;</td>
         </tr>
           </table>
@@ -162,6 +183,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Assess one IP address and print the contributing values plus the verdict. </p>
+<p><code><a class="el" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5" title="The properties the data file carries.">available</a></code> holds the properties the data file carries. </p>
 
 </div>
 </div>
@@ -185,12 +207,12 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p><a class="el" href="struct_options.html" title="Options that drive [run].">Options</a> pinned to a specific data-file tier. </p>
-<p>The test pins the Enterprise tier, the only tier that carries the diversity and behavioral properties this example relies on, and skips when it is not reachable. </p>
+<p>One test pins the Enterprise tier, the only tier that carries the diversity and behavioral properties, and skips when it is not reachable. Another pins the ASN tier, which runs without them. </p>
 
 </div>
 </div>
-<a id="a0446ba3b19c9d80a05b950a388fee5c9" name="a0446ba3b19c9d80a05b950a388fee5c9"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0446ba3b19c9d80a05b950a388fee5c9">&#9670;&#160;</a></span>from_env()</h2>
+<a id="a6f46caea8ef2116e6868901462d62778" name="a6f46caea8ef2116e6868901462d62778"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6f46caea8ef2116e6868901462d62778">&#9670;&#160;</a></span>from_env()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -198,7 +220,7 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">const pub struct <a class="el" href="struct_example_options.html">ExampleOptions</a> from_env </td>
+              <td class="c-table__cell">pub struct <a class="el" href="struct_example_options.html">ExampleOptions</a> from_env </td>
           <td>(</td>
           <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
           <td> -&gt; Option&lt; Self &gt;</td>
@@ -208,8 +230,8 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Default options, using the best-available loadable data-file tier. </p>
-<p>In practice the diversity and behavioral properties are only present in an Enterprise file, so the verdict is meaningful only when an Enterprise file is resolved. </p>
+<p>Default options, reading the Enterprise file when its share is reachable and otherwise the free Lite file. </p>
+<p>The diversity and behavioral properties are only present in an Enterprise file, so the judgement is made only when an Enterprise file is resolved. </p>
 
 </div>
 </div>
@@ -237,6 +259,30 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a3113a28c73724456269830b9f965a528" name="a3113a28c73724456269830b9f965a528"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3113a28c73724456269830b9f965a528">&#9670;&#160;</a></span>inputs_are_read_as_stored()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn inputs_are_read_as_stored </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Each input is read whether the engine stored it under its declared type or as a weighted list. </p>
+<p>The free Lite file gives RegisteredCountry as a plain string, which a weighted read alone missed. </p>
+
+</div>
+</div>
 <a id="a75bc210badf8344444c862160f5ff3aa" name="a75bc210badf8344444c862160f5ff3aa"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a75bc210badf8344444c862160f5ff3aa">&#9670;&#160;</a></span>is_suspicious()</h2>
 
@@ -249,7 +295,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">fn is_suspicious </td>
           <td>(</td>
           <td class="c-table__cell">inputs:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>SuspiciousInputs</em></span></td><td>)</td>
-          <td> -&gt; <a class="el" href="performance__results_8rs.html#a13eda313804a469af81193c4e2e1ee58">bool</a></td>
+          <td> -&gt; <a class="el" href="data__paths_8rs.html#ace367d07d2cbc650fd186739e5511adb">bool</a></td>
         </tr>
           </table>
         </div>
@@ -284,6 +330,33 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="acfe09709081f4d740983d4948a96f7da" name="acfe09709081f4d740983d4948a96f7da"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#acfe09709081f4d740983d4948a96f7da">&#9670;&#160;</a></span>plain_string()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn plain_string </td>
+          <td>(</td>
+          <td class="c-table__cell">ip_data:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>IpIntelligenceDataBase</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">name:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>&#160;) -&gt; String</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Read a plain string property, or <code>(no <a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a451961dd347700d7bb5d36beec33eb80" title="The resolved value, or the no-value message.">value</a>)</code> when it has none. </p>
+
+</div>
+</div>
 <a id="ac10497ea1a8e7d45645db7ecb88335c8" name="ac10497ea1a8e7d45645db7ecb88335c8"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac10497ea1a8e7d45645db7ecb88335c8">&#9670;&#160;</a></span>run()</h2>
 
@@ -308,7 +381,62 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Run the suspicious example against the supplied options, writing all output to <code>out</code>. </p>
-<p>Builds an on-premise IP Intelligence pipeline, requesting the diversity and behavioral properties, and for each IP prints the contributing values and an IsSuspicious verdict. Usage sharing is not enabled, because this is a console example. A production deployment, and every web example, should enable it. </p>
+<p>Builds an on-premise IP Intelligence pipeline, requesting the diversity and behavioral properties, and for each IP prints the contributing values and an IsSuspicious verdict. When the data file does not carry the properties the verdict reads, each says it needs the Enterprise data file, and so does the verdict. Usage sharing is not enabled, because this is a console example. A production deployment, and every web example, should enable it. </p>
+
+</div>
+</div>
+<a id="a4180682d09b5e37276a55a5121cea614" name="a4180682d09b5e37276a55a5121cea614"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4180682d09b5e37276a55a5121cea614">&#9670;&#160;</a></span>shown()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn shown </td>
+          <td>(</td>
+          <td class="c-table__cell">name:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">value:String</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">available:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String]&#160;) -&gt; String</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The text for a property's line, being <code><a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a451961dd347700d7bb5d36beec33eb80" title="The resolved value, or the no-value message.">value</a></code> when the data file carries the property, otherwise why there is none. </p>
+
+</div>
+</div>
+<a id="a37ff5583096692b87a66f3a823b225d2" name="a37ff5583096692b87a66f3a823b225d2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a37ff5583096692b87a66f3a823b225d2">&#9670;&#160;</a></span>suspicious_runs_against_the_asn_file()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn suspicious_runs_against_the_asn_file </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The example runs on the free ASN file, which carries none of the judgement's properties, so it gives no verdict and says why. </p>
 
 </div>
 </div>
@@ -352,15 +480,15 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">name:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>&#160;) -&gt; <a class="el" href="performance__results_8rs.html#a13eda313804a469af81193c4e2e1ee58">bool</a></td>
+          <td class="c-table__cell">name:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>&#160;) -&gt; <a class="el" href="data__paths_8rs.html#ace367d07d2cbc650fd186739e5511adb">bool</a></td>
         </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>Read the most probable candidate of a weighted property as a boolean. </p>
-<p>The native side renders booleans as <code>True</code>/<code>False</code> (or <code>1</code>/<code>0</code>), so both spellings are accepted. Returns <code>false</code> when the property had no value. </p>
+<p>Read a property as a boolean, being its plain boolean value, or otherwise [<code><a class="el" href="#ab4f8aba90e17ec049d3efb4513510721" title="Read a property as text, being its plain string value, or otherwise the most probable candidate of a ...">top_string</a></code>] read as <code>True</code>/<code>False</code> (or <code>1</code>/<code>0</code>), the spellings the native side renders. </p>
+<p>Returns <code>false</code> when the property had no value. </p>
 
 </div>
 </div>
@@ -387,8 +515,8 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Read the most probable candidate of a weighted property as an integer. </p>
-<p>The on-premise engine surfaces these counts as weighted strings, so the top candidate is parsed to an <code>i64</code>, tolerating a trailing fractional part. Returns <code>0</code> when the property had no value or did not parse. </p>
+<p>Read a property as an integer, being its plain integer value, or otherwise [<code><a class="el" href="#ab4f8aba90e17ec049d3efb4513510721" title="Read a property as text, being its plain string value, or otherwise the most probable candidate of a ...">top_string</a></code>] parsed to an <code>i64</code>, tolerating a trailing fractional part. </p>
+<p>Returns <code>0</code> when the property had no value or did not parse. </p>
 
 </div>
 </div>
@@ -408,14 +536,15 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">name:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>&#160;) -&gt; Option&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>
+          <td class="c-table__cell">name:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>&#160;) -&gt; Option&lt; String &gt;</td>
         </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>Read the most probable candidate of a weighted string property, or <code>None</code> when the property had no value (for example because the data tier does not carry it). </p>
+<p>Read a property as text, being its plain string value, or otherwise the most probable candidate of a weighted list. </p>
+<p><code>None</code> when the property had no value (for example because the data tier does not carry it). </p>
 
 </div>
 </div>
@@ -438,6 +567,24 @@ Variables</h2></td></tr>
 
 <p>Whether the IP's primary connection is cellular. </p>
 <p>Cellular ranges naturally carry many hardware profiles, so this rules out a false positive. </p>
+
+</div>
+</div>
+<a id="ae471abc62acc92aeb94bef1026e73e6f" name="ae471abc62acc92aeb94bef1026e73e6f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae471abc62acc92aeb94bef1026e73e6f">&#9670;&#160;</a></span>AsnName</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const const AsnName</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
 
 </div>
 </div>
@@ -476,6 +623,26 @@ Variables</h2></td></tr>
         </div>
       </div>
 </div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a65560ade98913e76a1868a9845e47e52" name="a65560ade98913e76a1868a9845e47e52"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a65560ade98913e76a1868a9845e47e52">&#9670;&#160;</a></span>CONTACT_US_URL</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const CONTACT_US_URL</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Where to ask about a copy of the Enterprise data file. </p>
 
 </div>
 </div>
@@ -534,6 +701,27 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>The full path to the <code>.ipi</code> data file to open. </p>
+
+</div>
+</div>
+<a id="a4cd105e3e5494a90c5f074f8041a4963" name="a4cd105e3e5494a90c5f074f8041a4963"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4cd105e3e5494a90c5f074f8041a4963">&#9670;&#160;</a></span>FREE_PROPERTIES</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const const FREE_PROPERTIES</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The free properties also requested and shown. </p>
+<p>The ASN file carries Asn and AsnName and the Lite file RegisteredCountry, which the judgement also reads. A data file opens only when it carries at least one property asked for, so these let either free file open. </p>
 
 </div>
 </div>
@@ -710,6 +898,26 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a9214474ee1e489a3f407516aa335c854" name="a9214474ee1e489a3f407516aa335c854"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9214474ee1e489a3f407516aa335c854">&#9670;&#160;</a></span>NOT_IN_THIS_FILE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const NOT_IN_THIS_FILE</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Shown for a free property the data file in use does not carry. </p>
+
+</div>
+</div>
 <a id="a89d031c32e201b4108f842c14d9434a9" name="a89d031c32e201b4108f842c14d9434a9"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a89d031c32e201b4108f842c14d9434a9">&#9670;&#160;</a></span>registered_country</h2>
 
@@ -730,8 +938,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a81efc5e1d9e1a380d67bc4649173dd25" name="a81efc5e1d9e1a380d67bc4649173dd25"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a81efc5e1d9e1a380d67bc4649173dd25">&#9670;&#160;</a></span>RegisteredCountry</h2>
+<a id="a74b66bc5ff342f454fc5beae262ff778" name="a74b66bc5ff342f454fc5beae262ff778"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a74b66bc5ff342f454fc5beae262ff778">&#9670;&#160;</a></span>RegisteredCountry</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -739,13 +947,36 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">const RegisteredCountry</td>
+              <td class="c-table__cell">const const RegisteredCountry</td>
             </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
+</div>
+</div>
+<a id="a59c09f4d2e77fa42c030902215658830" name="a59c09f4d2e77fa42c030902215658830"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a59c09f4d2e77fa42c030902215658830">&#9670;&#160;</a></span>str</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const &amp; str</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">     = &amp;[</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;IP Intelligence&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/ip-intelligence?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-suspicious.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Pricing&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-suspicious.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Documentation&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-suspicious.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">]</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1890ba08c56ee0fdf82b489df7463d96" name="a1890ba08c56ee0fdf82b489df7463d96"></a>
@@ -764,8 +995,8 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>The behavioral and diversity properties this example reads. </p>
-<p>They are carried by an Enterprise data file and are requested by name so the on-premise engine surfaces them. An ASN or Lite file does not carry them, in which case each reads back as a no-value and the verdict falls through to its safe default. </p>
+<p>The behavioral and diversity properties the judgement reads. </p>
+<p>Only the Enterprise data file carries them, and they are requested by name so the on-premise engine surfaces them. </p>
 
 </div>
 </div>

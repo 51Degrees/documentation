@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-perf
 <div class="c-code__line">    <span class="c-code__comment">// The nightly performance graphs read this file. The example writes it</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// itself so the figure does not depend on the wording or number formatting</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// of the printed report above, which is free to change.</span></div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let Some(<a class="code hl_variable" href="dd-onprem-performance_8rs.html#aa245846aeec29710a80ded0f0027b273">json_output</a>) = &amp;options.json_output {</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(<a class="code hl_variable" href="dd-onprem-performance_8rs.html#aa245846aeec29710a80ded0f0027b273">json_output</a>) = &amp;options.json_output {</div>
 <div class="c-code__line">        let results = examples_shared::PerformanceResults::new()</div>
 <div class="c-code__line">            .higher_is_better(<span class="c-code__stringliteral">&quot;DetectionsPerSecond&quot;</span>, <a class="code hl_variable" href="fodid-web-creator-context_8rs.html#a71b4cb0e03b217e733bdef1a89459109">result</a>.detections_per_second())</div>
 <div class="c-code__line">            .lower_is_better(<span class="c-code__stringliteral">&quot;AvgMillisecsPerDetection&quot;</span>, <a class="code hl_variable" href="fodid-web-creator-context_8rs.html#a71b4cb0e03b217e733bdef1a89459109">result</a>.millisecs_per_detection());</div>
@@ -139,6 +139,27 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-perf
 <div class="c-code__line">    <span class="c-code__comment">// detection. This benchmark already requests only IsMobile. See the</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// match-metrics example for that effect in isolation.</span></div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment">// The benchmark&#39;s engine asks only for IsMobile, so the data file&#39;s own</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// properties are read from a second engine to say which Enterprise</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// properties it carries.</span></div>
+<div class="c-code__line">    let <a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a> = device_detection_examples::data_file_properties(&amp;options.data_file)?;</div>
+<div class="c-code__line">    println!();</div>
+<div class="c-code__line">    println!(<span class="c-code__stringliteral">&quot;--- Enterprise properties ---&quot;</span>);</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">for</span> name in <a class="code hl_variable" href="device-detection-examples_2src_2lib_8rs.html#a27ce90c59887a6542ed37f82eeb71fc3">ENTERPRISE_PROPERTIES</a> {</div>
+<div class="c-code__line">        let state = <span class="c-code__keywordflow">if</span> examples_shared::is_available(name, &amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>) {</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;in this data file&quot;</span></div>
+<div class="c-code__line">        } <span class="c-code__keywordflow">else</span> {</div>
+<div class="c-code__line">            examples_shared::NEEDS_ENTERPRISE_DATA_FILE</div>
+<div class="c-code__line">        };</div>
+<div class="c-code__line">        println!(<span class="c-code__stringliteral">&quot;\t{name:&lt;22}: {state}&quot;</span>);</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">    let missing = examples_shared::missing_properties(<a class="code hl_variable" href="device-detection-examples_2src_2lib_8rs.html#a27ce90c59887a6542ed37f82eeb71fc3">ENTERPRISE_PROPERTIES</a>, &amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>);</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(message) = examples_shared::enterprise_data_file_message(&amp;missing, <a class="code hl_variable" href="dd-onprem-getting-started_8rs.html#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a>) {</div>
+<div class="c-code__line">        println!();</div>
+<div class="c-code__line">        println!(<span class="c-code__stringliteral">&quot;{message}&quot;</span>);</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    examples_shared::print_find_out_more(<a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ad25b7f6d0c89d56f4024e2b559cf89cc">FIND_OUT_MORE</a>, examples_shared::ON_PREMISE_REPOSITORIES);</div>
 <div class="c-code__line">    Ok(())</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --> </div></div><!-- primary -->

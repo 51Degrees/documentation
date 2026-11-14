@@ -850,9 +850,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_pipeline_api_
 <div class="c-code__line">    // via the JavaScriptBuilder</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    if (req.url.indexOf(&#39;/json&#39;) !== -1) {</div>
-<div class="c-code__line">      res.statusCode = 200;</div>
-<div class="c-code__line">      res.setHeader(&#39;Content-Type&#39;, &#39;application/json&#39;);</div>
-<div class="c-code__line">      res.end(JSON.stringify(flowData.jsonbundler.json));</div>
+<div class="c-code__line">      // Sends the caching headers, and a 304 to a matching If-None-Match.</div>
+<div class="c-code__line">      FiftyOnePipelineCore.Helpers.writeClientSideResponse(req, res, flowData,</div>
+<div class="c-code__line">        &#39;application/json&#39;, JSON.stringify(flowData.jsonbundler.json));</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">      return;</div>
 <div class="c-code__line">    }</div>

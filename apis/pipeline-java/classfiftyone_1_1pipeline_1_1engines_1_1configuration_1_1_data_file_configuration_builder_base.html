@@ -307,7 +307,7 @@ abstract&#160;TConfig&#160;</td><td class="c-table__cell"><b>createConfig</b> ()
 
 <p>The <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1services_1_1_data_update_service.html">DataUpdateService</a></code> has the ability to watch a data file on disk and automatically refresh the engine as soon as the file is updated. </p>
 <p>This setting enables/disables that feature.</p>
-<p>The <code><a class="el" href="#ade48bafdd6938ebbb40e95bc70e94555">setAutoUpdate(boolean)</a></code> feature must also be enabled in order for the file system watcher to work. If the engine is built from a byte[] then this setting does nothing. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The file system watcher runs on its own setting, whether <code><a class="el" href="#ade48bafdd6938ebbb40e95bc70e94555">setAutoUpdate(boolean)</a></code> is on or off, and needs no license key, as watching a file downloads nothing. If the engine is built from a byte[] then this setting does nothing. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">enabled</td><td>the cache configuration to use </td></tr>
   </table>

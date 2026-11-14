@@ -247,9 +247,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('client_side_ev
 <div class="c-code__line">    <span class="c-code__comment">// via the JavaScriptBuilder</span></div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keywordflow">if</span> (req.url.indexOf(<span class="c-code__stringliteral">&#39;/json&#39;</span>) !== -1) {</div>
-<div class="c-code__line">      res.statusCode = 200;</div>
-<div class="c-code__line">      res.setHeader(<span class="c-code__stringliteral">&#39;Content-Type&#39;</span>, <span class="c-code__stringliteral">&#39;application/json&#39;</span>);</div>
-<div class="c-code__line">      res.end(JSON.stringify(flowData.jsonbundler.json));</div>
+<div class="c-code__line">      <span class="c-code__comment">// Sends the caching headers, and a 304 to a matching If-None-Match.</span></div>
+<div class="c-code__line">      FiftyOnePipelineCore.Helpers.writeClientSideResponse(req, res, flowData,</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;application/json&#39;</span>, JSON.stringify(flowData.jsonbundler.json));</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">      <span class="c-code__keywordflow">return</span>;</div>
 <div class="c-code__line">    }</div>

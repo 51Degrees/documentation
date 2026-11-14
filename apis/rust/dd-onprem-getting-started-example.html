@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-gett
 <h1 class="g-docs__page-title">Getting Started (Device Detection, On-premise) </h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
-<div class="textblock"><p>Builds an on-premise Device Detection pipeline and reads strongly-typed device properties (<code>IsMobile</code>, <code>PlatformName</code>, <code>BrowserName</code>, <code>DeviceId</code>) back from processed User-Agent evidence. The core of the example:</p>
+<div class="textblock"><p>Builds an on-premise Device Detection pipeline and reads strongly-typed device properties (<code>IsMobile</code>, <code>PlatformName</code>, <code>BrowserName</code>, <code>DeviceId</code>) back from processed User-Agent evidence, along with properties only the Enterprise data file carries, such as <code>HardwareVendor</code> and <code><a class="el" href="device-detection-examples_2src_2lib_8rs.html#ace5bad1f125aac11e50d346ea52e831c">PriceBand</a></code>. The core of the example:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">pub fn <a class="code hl_function" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f">run</a>(options: <a class="code hl_struct" href="struct_example_options.html">ExampleOptions</a>) -&gt; Result&lt;()&gt; {</div>
 <div class="c-code__line">    <span class="c-code__comment">// Build the on-premise pipeline. Usage sharing is off because this is a</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// console example, whose evidence 51Degrees already holds. In normal</span></div>
@@ -82,11 +82,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-gett
 <div class="c-code__line">        .build()</div>
 <div class="c-code__line">        .context(<span class="c-code__stringliteral">&quot;failed to build the on-premise device-detection pipeline&quot;</span>)?;</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment">// The properties the engine can return are those its data file carries.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// The free Lite file does not carry the Enterprise properties.</span></div>
+<div class="c-code__line">    let <a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a> = device_detection_examples::available_properties(&amp;pipeline);</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// One pipeline is built once and reused as a factory for many flow data</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// instances. In a real application it would be a long-lived singleton. Here</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// it processes a desktop and a mobile User-Agent in turn.</span></div>
-<div class="c-code__line">    <span class="c-code__keywordflow">for</span> (<a class="code hl_variable" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a62cc81dcd08eb08cee21fec7d3e4624e">label</a>, pairs) in <a class="code hl_function" href="dd-onprem-getting-started_8rs.html#a5be50f5e0061e2790a9f84d347068831">representative_evidence</a>() {</div>
-<div class="c-code__line">        <a class="code hl_function" href="dd-cloud-getting-started_8rs.html#a418da7fcd46be2042e5e4a5ad92c2a99">analyse_evidence</a>(&amp;pipeline, <a class="code hl_variable" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a62cc81dcd08eb08cee21fec7d3e4624e">label</a>, &amp;pairs)?;</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">for</span> (<a class="code hl_variable" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#aff76208710c0eea5f0fc0aa60f296fcf">label</a>, pairs) in <a class="code hl_function" href="dd-onprem-getting-started_8rs.html#a5be50f5e0061e2790a9f84d347068831">representative_evidence</a>() {</div>
+<div class="c-code__line">        <a class="code hl_function" href="dd-cloud-getting-started_8rs.html#a418da7fcd46be2042e5e4a5ad92c2a99">analyse_evidence</a>(&amp;pipeline, <a class="code hl_variable" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#aff76208710c0eea5f0fc0aa60f296fcf">label</a>, &amp;pairs, &amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>)?;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Print the standard data-file warnings. The pipeline holds the engine, but</span></div>
@@ -94,6 +98,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-gett
 <div class="c-code__line">    <span class="c-code__comment">// introspect its data file.</span></div>
 <div class="c-code__line">    device_detection_examples::print_data_file_warnings(&amp;options.data_file, options.profile)?;</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">    let missing = examples_shared::missing_properties(<a class="code hl_variable" href="device-detection-examples_2src_2lib_8rs.html#a27ce90c59887a6542ed37f82eeb71fc3">ENTERPRISE_PROPERTIES</a>, &amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>);</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(message) = examples_shared::enterprise_data_file_message(&amp;missing, <a class="code hl_variable" href="dd-onprem-getting-started_8rs.html#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a>) {</div>
+<div class="c-code__line">        println!();</div>
+<div class="c-code__line">        println!(<span class="c-code__stringliteral">&quot;{message}&quot;</span>);</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    examples_shared::print_find_out_more(<a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ad25b7f6d0c89d56f4024e2b559cf89cc">FIND_OUT_MORE</a>, examples_shared::ON_PREMISE_REPOSITORIES);</div>
 <div class="c-code__line">    Ok(())</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --> </div></div><!-- primary -->

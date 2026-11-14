@@ -107,6 +107,8 @@ void&#160;</td><td class="c-table__cell"><b>close</b> ()  throws IOException </t
 Protected Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a412fa8713b0e8cffa579550de51082b4" id="r_a412fa8713b0e8cffa579550de51082b4"><td class="c-table__cell">abstract&#160;<a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter.html">EvidenceKeyFilter</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a412fa8713b0e8cffa579550de51082b4">getFilter</a> ()</td></tr>
 <tr class="c-table__row memdesc:a412fa8713b0e8cffa579550de51082b4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns the <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter.html">EvidenceKeyFilter</a></code> to use when generating a key from <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a></code> instances.  <br /></td></tr>
+<tr class="c-table__row memitem:aa0399fa1b0c63ac5c2e4cf652ead1f8f" id="r_aa0399fa1b0c63ac5c2e4cf652ead1f8f"><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1data_1_1_data_key.html">DataKey</a>&#160;</td><td class="c-table__cell"><a class="el" href="#aa0399fa1b0c63ac5c2e4cf652ead1f8f">generateKey</a> (<a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a> flowData)</td></tr>
+<tr class="c-table__row memdesc:aa0399fa1b0c63ac5c2e4cf652ead1f8f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Creates the key the internal cache holds the data of a <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a></code> under.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="ac7558dbe5a69cc9ccfa472e22f40e512" name="ac7558dbe5a69cc9ccfa472e22f40e512"></a>
@@ -139,6 +141,46 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="aa0399fa1b0c63ac5c2e4cf652ead1f8f" name="aa0399fa1b0c63ac5c2e4cf652ead1f8f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa0399fa1b0c63ac5c2e4cf652ead1f8f">&#9670;&#160;</a></span>generateKey()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1data_1_1_data_key.html">DataKey</a> <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1caching_1_1_data_keyed_cache_base.html">fiftyone.pipeline.engines.caching.DataKeyedCacheBase</a>&lt; V &gt;.generateKey </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a></td>          <td class="c-table__cell"><span class="paramname"><em>flowData</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Creates the key the internal cache holds the data of a <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a></code> under. </p>
+<p>By default this is the key the <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a></code> generates from the Evidence that <code><a class="el" href="#a412fa8713b0e8cffa579550de51082b4">getFilter()</a></code> includes. A class whose key is made from other values overrides this method. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flowData</td><td>the <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a></code> to make a key for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the key to use in the internal cache </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1trackers_1_1_share_usage_tracker.html#a6b47e810116779910f2768d4bd1d6745">fiftyone.pipeline.engines.fiftyone.trackers.ShareUsageTracker</a>.</p>
+
+</div>
+</div>
 <a id="a412fa8713b0e8cffa579550de51082b4" name="a412fa8713b0e8cffa579550de51082b4"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a412fa8713b0e8cffa579550de51082b4">&#9670;&#160;</a></span>getFilter()</h2>
 

@@ -81,6 +81,8 @@ Static Public Member Functions</h2></td></tr>
 static&#160;void&#160;</td><td class="c-table__cell"><b>main</b> (String[] args)  throws Exception </td></tr>
 <tr class="c-table__row memitem:a74624efcdb53a717cfc03effb352015f" id="r_a74624efcdb53a717cfc03effb352015f"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a74624efcdb53a717cfc03effb352015f">run</a> (String dataFile, String csvTruthFile, PrintWriter output)  throws Exception </td></tr>
 <tr class="c-table__row memdesc:a74624efcdb53a717cfc03effb352015f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run the example.  <br /></td></tr>
+<tr class="c-table__row memitem:a41e614a0219681e5946182cf4ef9cc91" id="r_a41e614a0219681e5946182cf4ef9cc91"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a41e614a0219681e5946182cf4ef9cc91">run</a> (String dataFile, String csvTruthFile, Constants.PerformanceProfiles profile, PrintWriter output)  throws Exception </td></tr>
+<tr class="c-table__row memdesc:a41e614a0219681e5946182cf4ef9cc91"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run the example.  <br /></td></tr>
 <tr class="c-table__row memitem:a0244097356d15c9dc459640a565679d1" id="r_a0244097356d15c9dc459640a565679d1"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a0244097356d15c9dc459640a565679d1">run</a> (String dataFile, String csvTruthFile, OutputStream outputStream)  throws Exception </td></tr>
 <tr class="c-table__row memdesc:a0244097356d15c9dc459640a565679d1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Used by the example test to run against a stream rather than a file.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
@@ -91,10 +93,68 @@ Static Public Attributes</h2></td></tr>
 <tr class="c-table__row memitem:a12d7f99ac164982d8c1236ff47dabf47" id="r_a12d7f99ac164982d8c1236ff47dabf47"><td class="c-table__cell"><a id="a12d7f99ac164982d8c1236ff47dabf47" name="a12d7f99ac164982d8c1236ff47dabf47"></a>
 static&#160;final&#160;String&#160;</td><td class="c-table__cell"><b>DEFAULT_OUTPUT_FILE</b> = &quot;compare-output.csv&quot;</td></tr>
 <tr class="c-table__row memdesc:a12d7f99ac164982d8c1236ff47dabf47"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default name of the output file written to the working directory. <br /></td></tr>
+<tr class="c-table__row memitem:ad0db173f0775c504b6edd2052756cc5a" id="r_ad0db173f0775c504b6edd2052756cc5a"><td class="c-table__cell">static&#160;final&#160;Constants.PerformanceProfiles&#160;</td><td class="c-table__cell"><a class="el" href="#ad0db173f0775c504b6edd2052756cc5a">DEFAULT_PERFORMANCE_PROFILE</a></td></tr>
+<tr class="c-table__row memdesc:ad0db173f0775c504b6edd2052756cc5a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The performance profile used unless one is given as the fourth argument.  <br /></td></tr>
+<tr class="c-table__row memitem:a0b62c3366fa86f33fd076db95a46fd21" id="r_a0b62c3366fa86f33fd076db95a46fd21"><td class="c-table__cell">static&#160;final&#160;List&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a0b62c3366fa86f33fd076db95a46fd21">LOCATION_PROPERTIES</a></td></tr>
+<tr class="c-table__row memdesc:a0b62c3366fa86f33fd076db95a46fd21"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The properties the comparison asks the engine for, which only the Enterprise data file has.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a41e614a0219681e5946182cf4ef9cc91" name="a41e614a0219681e5946182cf4ef9cc91"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a41e614a0219681e5946182cf4ef9cc91">&#9670;&#160;</a></span>run() <span class="c-member__count">[1/3]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyone.ipintelligence.examples.console.CompareOnPrem.run </td>
+          <td>(</td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>dataFile</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>csvTruthFile</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">Constants.PerformanceProfiles</td>          <td class="c-table__cell"><span class="paramname"><em>profile</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">PrintWriter</td>          <td class="c-table__cell"><span class="paramname"><em>output</em></span>&#160;) throws Exception</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Run the example. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataFile</td><td>an IP Intelligence data file </td></tr>
+    <tr><td class="paramname">csvTruthFile</td><td>a CSV file of truth records </td></tr>
+    <tr><td class="paramname">profile</td><td>the performance profile to build the engine with </td></tr>
+    <tr><td class="paramname">output</td><td>somewhere for the result CSV </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a0244097356d15c9dc459640a565679d1" name="a0244097356d15c9dc459640a565679d1"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0244097356d15c9dc459640a565679d1">&#9670;&#160;</a></span>run() <span class="c-member__count">[1/2]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0244097356d15c9dc459640a565679d1">&#9670;&#160;</a></span>run() <span class="c-member__count">[2/3]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -142,7 +202,7 @@ static&#160;final&#160;String&#160;</td><td class="c-table__cell"><b>DEFAULT_OUT
 </div>
 </div>
 <a id="a74624efcdb53a717cfc03effb352015f" name="a74624efcdb53a717cfc03effb352015f"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a74624efcdb53a717cfc03effb352015f">&#9670;&#160;</a></span>run() <span class="c-member__count">[2/2]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a74624efcdb53a717cfc03effb352015f">&#9670;&#160;</a></span>run() <span class="c-member__count">[3/3]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -186,12 +246,45 @@ static&#160;final&#160;String&#160;</td><td class="c-table__cell"><b>DEFAULT_OUT
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="console_2_compare_on_prem_8java-example.html#a2">console/CompareOnPrem.java</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="console_2_compare_on_prem_8java-example.html#a4">console/CompareOnPrem.java</a>.</dd>
 </dl>
 
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="ad0db173f0775c504b6edd2052756cc5a" name="ad0db173f0775c504b6edd2052756cc5a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad0db173f0775c504b6edd2052756cc5a">&#9670;&#160;</a></span>DEFAULT_PERFORMANCE_PROFILE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">final Constants.PerformanceProfiles fiftyone.ipintelligence.examples.console.CompareOnPrem.DEFAULT_PERFORMANCE_PROFILE</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                            =</div>
+<div class="c-code__line">Constants.PerformanceProfiles.LowMemory</div>
+</div><!-- fragment -->
+<p>The performance profile used unless one is given as the fourth argument. </p>
+<p>This example needs the Enterprise data file, which is over 6 GB, and LowMemory reads it from disk as it is needed, so the example runs without memory to hold the whole file. MaxPerformance loads the whole file into memory, which makes each lookup faster where there is memory to hold it. </p>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="console_2_compare_on_prem_8java-example.html#a2">console/CompareOnPrem.java</a>.</dd>
+</dl>
+
+</div>
+</div>
 <a id="ad19f3913f27c2d137af9bda9513ba1b6" name="ad19f3913f27c2d137af9bda9513ba1b6"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad19f3913f27c2d137af9bda9513ba1b6">&#9670;&#160;</a></span>GEOIP_COMPARISON_EVIDENCE_REL_PATH</h2>
 
@@ -220,6 +313,41 @@ static&#160;final&#160;String&#160;</td><td class="c-table__cell"><b>DEFAULT_OUT
 </div><!-- fragment -->
 <p>Relative path to the CSV file of truth records distributed with the data repository, in cxx/data/ip-intelligence. </p>
 <dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="console_2_compare_on_prem_8java-example.html#a0">console/CompareOnPrem.java</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a0b62c3366fa86f33fd076db95a46fd21" name="a0b62c3366fa86f33fd076db95a46fd21"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0b62c3366fa86f33fd076db95a46fd21">&#9670;&#160;</a></span>LOCATION_PROPERTIES</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">final List&lt;String&gt; fiftyone.ipintelligence.examples.console.CompareOnPrem.LOCATION_PROPERTIES</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                     = Arrays.asList(</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;Latitude&quot;</span>,</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;Longitude&quot;</span>,</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;LocationConfidence&quot;</span>,</div>
+<div class="c-code__line"><span class="c-code__stringliteral">&quot;Areas&quot;</span>)</div>
+</div><!-- fragment -->
+<p>The properties the comparison asks the engine for, which only the Enterprise data file has. </p>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="console_2_compare_on_prem_8java-example.html#a3">console/CompareOnPrem.java</a>.</dd>
 </dl>
 
 </div>

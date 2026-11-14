@@ -1,6 +1,6 @@
 var struct_options =
 [
-    [ "address", "struct_options.html#a2c8ad302a21b7f506d84d3b6f1ca3697", null ],
+    [ "address", "struct_options.html#ae2567d35e9439ecc75b374c6d51bfd6d", null ],
     [ "address", "struct_options.html#a2c8ad302a21b7f506d84d3b6f1ca3697", null ],
     [ "client", "struct_options.html#a6ad3b49209fc724787740def8b4ff6c5", null ],
     [ "data_file", "struct_options.html#a3017c6eb838ee64ebf413f2e7783a3a3", null ],

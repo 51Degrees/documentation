@@ -76,16 +76,16 @@ Classes</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="c-table__row memitem:af7705fb1b146ccd9782c5f7c5673024e" id="r_af7705fb1b146ccd9782c5f7c5673024e"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_options.html">Options</a>&#160;</td><td class="c-table__cell"><a class="el" href="#af7705fb1b146ccd9782c5f7c5673024e">build_app</a> (data_file:&amp;std::path::Path, share_usage:bool,) -&gt; anyhow::Result&lt;(Router, Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;)&gt;</td></tr>
+<tr class="c-table__row memitem:af7705fb1b146ccd9782c5f7c5673024e" id="r_af7705fb1b146ccd9782c5f7c5673024e"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_options.html">Options</a>&#160;</td><td class="c-table__cell"><a class="el" href="#af7705fb1b146ccd9782c5f7c5673024e">build_app</a> (data_file:&amp;std::path::Path, share_usage:bool,) -&gt; anyhow::Result&lt;(Router, Vec&lt; String &gt;)&gt;</td></tr>
 <tr class="c-table__row memdesc:af7705fb1b146ccd9782c5f7c5673024e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the on-premise web application router plus the data-file warnings.  <br /></td></tr>
 <tr class="c-table__row memitem:a8d644587b49a1bca9eba622abbfaef16" id="r_a8d644587b49a1bca9eba622abbfaef16"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a8d644587b49a1bca9eba622abbfaef16">run</a> (options:Options) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a8d644587b49a1bca9eba622abbfaef16"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Serve the example page over TCP until interrupted.  <br /></td></tr>
-<tr class="c-table__row memitem:a0ecdaa6c332af4e687f3bc109baa11a8" id="r_a0ecdaa6c332af4e687f3bc109baa11a8"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a0ecdaa6c332af4e687f3bc109baa11a8">store_warnings</a> (warnings:Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;)</td></tr>
+<tr class="c-table__row memitem:a0ecdaa6c332af4e687f3bc109baa11a8" id="r_a0ecdaa6c332af4e687f3bc109baa11a8"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a0ecdaa6c332af4e687f3bc109baa11a8">store_warnings</a> (warnings:Vec&lt; String &gt;)</td></tr>
 <tr class="c-table__row memdesc:a0ecdaa6c332af4e687f3bc109baa11a8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Record the warnings for the running server to show on each page.  <br /></td></tr>
-<tr class="c-table__row memitem:aaeb48676d44082d1d0c8695645c607f7" id="r_aaeb48676d44082d1d0c8695645c607f7"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#aaeb48676d44082d1d0c8695645c607f7">current_warnings</a> () -&gt; Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td></tr>
+<tr class="c-table__row memitem:aaeb48676d44082d1d0c8695645c607f7" id="r_aaeb48676d44082d1d0c8695645c607f7"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#aaeb48676d44082d1d0c8695645c607f7">current_warnings</a> () -&gt; Vec&lt; String &gt;</td></tr>
 <tr class="c-table__row memdesc:aaeb48676d44082d1d0c8695645c607f7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The warnings recorded by [<code><a class="el" href="#a0ecdaa6c332af4e687f3bc109baa11a8" title="Record the warnings for the running server to show on each page.">store_warnings</a></code>], or an empty list if none.  <br /></td></tr>
-<tr class="c-table__row memitem:ab11b8dbcc6bd4a67b449a99b8ff3c6fe" id="r_ab11b8dbcc6bd4a67b449a99b8ff3c6fe"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#ab11b8dbcc6bd4a67b449a99b8ff3c6fe">home</a> (result:FiftyOneResult) -&gt; Html&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td></tr>
-<tr class="c-table__row memdesc:ab11b8dbcc6bd4a67b449a99b8ff3c6fe"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The home-page handler: render the server-side detection results, the evidence and response-header tables, and the Lite/stale data-file warnings.  <br /></td></tr>
+<tr class="c-table__row memitem:a2cbbeec1a7c5437a2c9f38bd23dbb50b" id="r_a2cbbeec1a7c5437a2c9f38bd23dbb50b"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a2cbbeec1a7c5437a2c9f38bd23dbb50b">home</a> (result:FiftyOneResult, available:Arc&lt; Vec&lt; String &gt; &gt;) -&gt; Html&lt; String &gt;</td></tr>
+<tr class="c-table__row memdesc:a2cbbeec1a7c5437a2c9f38bd23dbb50b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The home-page handler: render the server-side detection results, the evidence and response-header tables, and the Lite/stale data-file warnings.  <br /></td></tr>
 <tr class="c-table__row memitem:a10397c317f477c2d5f6629f1d23f9b28" id="r_a10397c317f477c2d5f6629f1d23f9b28"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a10397c317f477c2d5f6629f1d23f9b28">main</a> () -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memitem:a97a55b2604927dc3e050ca67ac5874f0" id="r_a97a55b2604927dc3e050ca67ac5874f0"><td class="c-table__cell">struct&#160;<a class="el" href="struct_captured.html">Captured</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a97a55b2604927dc3e050ca67ac5874f0">test_app</a> () -&gt; Option&lt; Router &gt;</td></tr>
 <tr class="c-table__row memdesc:a97a55b2604927dc3e050ca67ac5874f0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the app for the test, skipping when no data file is available.  <br /></td></tr>
@@ -123,7 +123,7 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">share_usage:bool</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; anyhow::Result&lt;(Router, Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;)&gt;</td>
+          <td class="c-table__cell">share_usage:bool</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; anyhow::Result&lt;(Router, Vec&lt; String &gt;)&gt;</td>
         </tr>
           </table>
         </div>
@@ -131,7 +131,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Build the on-premise web application router plus the data-file warnings. </p>
-<p>The Hash engine is built once so its data-file warnings (Lite tier, and over 28/30 days old) can be read with [<code>examples_shared::check_data_file</code>] and shown on the page, and the very same engine instance is then used as the application element of the web pipeline.</p>
+<p>The Hash engine is built once so its data-file warnings (Lite tier, and over 28/30 days old) can be read with [<code>examples_shared::check_data_file</code>] and shown on the page, and the very same engine instance is then used as the application element of the web pipeline. The engine's properties, which are those its data file carries, go to the page handler so it can say which Enterprise properties the data file lacks.</p>
 <p><code>share_usage</code> is true when the binary serves the page. The tests pass false, so a test run sends nothing to 51Degrees. </p>
 
 </div>
@@ -148,7 +148,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">fn current_warnings </td>
           <td>(</td>
           <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>
+          <td> -&gt; Vec&lt; String &gt;</td>
         </tr>
           </table>
         </div>
@@ -187,8 +187,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ab11b8dbcc6bd4a67b449a99b8ff3c6fe" name="ab11b8dbcc6bd4a67b449a99b8ff3c6fe"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab11b8dbcc6bd4a67b449a99b8ff3c6fe">&#9670;&#160;</a></span>home()</h2>
+<a id="a2cbbeec1a7c5437a2c9f38bd23dbb50b" name="a2cbbeec1a7c5437a2c9f38bd23dbb50b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2cbbeec1a7c5437a2c9f38bd23dbb50b">&#9670;&#160;</a></span>home()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -198,8 +198,12 @@ Variables</h2></td></tr>
             <tr class="c-table__row">
               <td class="c-table__cell">async fn home </td>
           <td>(</td>
-          <td class="c-table__cell">result:FiftyOneResult</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Html&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>
+          <td class="c-table__cell">result:FiftyOneResult</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">available:Arc&lt; Vec&lt; String &gt; &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; Html&lt; String &gt;</td>
         </tr>
           </table>
         </div>
@@ -207,6 +211,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>The home-page handler: render the server-side detection results, the evidence and response-header tables, and the Lite/stale data-file warnings. </p>
+<p><code><a class="el" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5" title="The properties the data file carries.">available</a></code> holds the properties the data file carries. </p>
 
 </div>
 </div>
@@ -307,7 +312,7 @@ Variables</h2></td></tr>
             <tr class="c-table__row">
               <td class="c-table__cell">fn store_warnings </td>
           <td>(</td>
-          <td class="c-table__cell">warnings:Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="c-table__cell">warnings:Vec&lt; String &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
           </table>

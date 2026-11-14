@@ -76,15 +76,26 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-meta
 <div class="c-code__line">        .context(<span class="c-code__stringliteral">&quot;failed to build the on-premise Hash engine&quot;</span>)?;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <a class="code hl_function" href="dd-onprem-metadata_8rs.html#a7962d5989b4e5d6c359f2cda12ec99ea">output_data_file_details</a>(engine.as_ref());</div>
-<div class="c-code__line">    <a class="code hl_function" href="dd-onprem-metadata_8rs.html#a098ab95b3086acc4bc0f1bf89d49b7e7">output_properties_by_component</a>(engine.as_ref());</div>
+<div class="c-code__line">    <a class="code hl_function" href="dd-onprem-metadata_8rs.html#af93a301d1f0b0afc3d87136e193dd147">output_components</a>(engine.as_ref());</div>
 <div class="c-code__line">    <a class="code hl_function" href="dd-cloud-metadata_8rs.html#a20af5480e6095189cb19da6aebd1f7e2">output_evidence_keys</a>(&amp;engine.evidence_keys());</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment">// Print the standard data-file warnings last, as the other examples do.</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// The engine is already in hand, so the engine-taking helper prints the same</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// The engine&#39;s properties are those its data file carries.</span></div>
+<div class="c-code__line">    let <a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a> = engine.available_properties();</div>
+<div class="c-code__line">    <a class="code hl_function" href="dd-onprem-metadata_8rs.html#af481150ab8aeea0a02be2ee8636d9d35">output_enterprise_properties</a>(&amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>);</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment">// Print the standard data-file warnings, as the other examples do. The</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// engine is already in hand, so the engine-taking helper prints the same</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// lines without building a second engine.</span></div>
 <div class="c-code__line">    println!();</div>
 <div class="c-code__line">    device_detection_examples::print_data_file_warnings_for(engine.as_ref());</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">    let missing = examples_shared::missing_properties(<a class="code hl_variable" href="device-detection-examples_2src_2lib_8rs.html#a27ce90c59887a6542ed37f82eeb71fc3">ENTERPRISE_PROPERTIES</a>, &amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>);</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(message) = examples_shared::enterprise_data_file_message(&amp;missing, <a class="code hl_variable" href="dd-onprem-getting-started_8rs.html#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a>) {</div>
+<div class="c-code__line">        println!();</div>
+<div class="c-code__line">        println!(<span class="c-code__stringliteral">&quot;{message}&quot;</span>);</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    examples_shared::print_find_out_more(<a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ad25b7f6d0c89d56f4024e2b559cf89cc">FIND_OUT_MORE</a>, examples_shared::ON_PREMISE_REPOSITORIES);</div>
 <div class="c-code__line">    Ok(())</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --> </div></div><!-- primary -->

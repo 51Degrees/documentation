@@ -80,8 +80,8 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a596da3ec8226d4d1e9f6913946efc700"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the UACH web application router.  <br /></td></tr>
 <tr class="c-table__row memitem:a8d644587b49a1bca9eba622abbfaef16" id="r_a8d644587b49a1bca9eba622abbfaef16"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a8d644587b49a1bca9eba622abbfaef16">run</a> (options:Options) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a8d644587b49a1bca9eba622abbfaef16"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Serve the example page over TCP until interrupted.  <br /></td></tr>
-<tr class="c-table__row memitem:ab11b8dbcc6bd4a67b449a99b8ff3c6fe" id="r_ab11b8dbcc6bd4a67b449a99b8ff3c6fe"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#ab11b8dbcc6bd4a67b449a99b8ff3c6fe">home</a> (result:FiftyOneResult) -&gt; Html&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td></tr>
-<tr class="c-table__row memdesc:ab11b8dbcc6bd4a67b449a99b8ff3c6fe"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The home-page handler: show the evidence the pipeline received (the decoded <code>sec-ch-ua*</code> client hints become visible here after the client round trip), the detection results and the <code>Accept-CH</code> request headers.  <br /></td></tr>
+<tr class="c-table__row memitem:a2cbbeec1a7c5437a2c9f38bd23dbb50b" id="r_a2cbbeec1a7c5437a2c9f38bd23dbb50b"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a2cbbeec1a7c5437a2c9f38bd23dbb50b">home</a> (result:FiftyOneResult, available:Arc&lt; Vec&lt; String &gt; &gt;) -&gt; Html&lt; String &gt;</td></tr>
+<tr class="c-table__row memdesc:a2cbbeec1a7c5437a2c9f38bd23dbb50b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The home-page handler: show the evidence the pipeline received (the high-entropy blob becomes visible here after the client round trip), the detection results and the <code>Accept-CH</code> request headers.  <br /></td></tr>
 <tr class="c-table__row memitem:a10397c317f477c2d5f6629f1d23f9b28" id="r_a10397c317f477c2d5f6629f1d23f9b28"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a10397c317f477c2d5f6629f1d23f9b28">main</a> () -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memitem:a97a55b2604927dc3e050ca67ac5874f0" id="r_a97a55b2604927dc3e050ca67ac5874f0"><td class="c-table__cell">struct&#160;<a class="el" href="struct_captured.html">Captured</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a97a55b2604927dc3e050ca67ac5874f0">test_app</a> () -&gt; Option&lt; Router &gt;</td></tr>
 <tr class="c-table__row memitem:a440351bee685fb640c6da6ac0d4229bd" id="r_a440351bee685fb640c6da6ac0d4229bd"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a440351bee685fb640c6da6ac0d4229bd">dispatch</a> (app:&amp;Router, uri:&amp;str) -&gt; <a class="el" href="struct_captured.html">Captured</a></td></tr>
@@ -125,7 +125,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Build the UACH web application router. </p>
-<p>The pipeline is on-premise so the UA-CH high-entropy decoder ([<code>UachJsConversionElement</code>]) is wired explicitly ahead of the Hash engine. The decoder turns a <code>getHighEntropyValues</code> blob into the <code>sec-ch-ua*</code> headers the engine consumes, which is the heart of this example.</p>
+<p>The Hash engine turns a <code>getHighEntropyValues</code> blob into the <code>sec-ch-ua*</code> headers it matches on, which is the heart of this example, so the pipeline needs no element before the engine. The engine's properties, which are those its data file carries, go to the page handler so it can say which Enterprise properties the data file lacks.</p>
 <p><code>share_usage</code> is true when the binary serves the page. The tests pass false, so a test run sends nothing to 51Degrees. </p>
 
 </div>
@@ -158,8 +158,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ab11b8dbcc6bd4a67b449a99b8ff3c6fe" name="ab11b8dbcc6bd4a67b449a99b8ff3c6fe"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab11b8dbcc6bd4a67b449a99b8ff3c6fe">&#9670;&#160;</a></span>home()</h2>
+<a id="a2cbbeec1a7c5437a2c9f38bd23dbb50b" name="a2cbbeec1a7c5437a2c9f38bd23dbb50b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2cbbeec1a7c5437a2c9f38bd23dbb50b">&#9670;&#160;</a></span>home()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -169,15 +169,20 @@ Variables</h2></td></tr>
             <tr class="c-table__row">
               <td class="c-table__cell">async fn home </td>
           <td>(</td>
-          <td class="c-table__cell">result:FiftyOneResult</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Html&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>
+          <td class="c-table__cell">result:FiftyOneResult</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">available:Arc&lt; Vec&lt; String &gt; &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; Html&lt; String &gt;</td>
         </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>The home-page handler: show the evidence the pipeline received (the decoded <code>sec-ch-ua*</code> client hints become visible here after the client round trip), the detection results and the <code>Accept-CH</code> request headers. </p>
+<p>The home-page handler: show the evidence the pipeline received (the high-entropy blob becomes visible here after the client round trip), the detection results and the <code>Accept-CH</code> request headers. </p>
+<p><code><a class="el" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5" title="The properties the data file carries.">available</a></code> holds the properties the data file carries. </p>
 
 </div>
 </div>

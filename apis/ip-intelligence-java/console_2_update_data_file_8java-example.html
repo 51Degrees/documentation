@@ -82,9 +82,8 @@ Filesystem Watcher </li>
 <li>
 Daily auto-update </li>
 </ol>
-<h2>Distributor Service and License Key</h2>
-<p>For production use, you will eventually need to use a Distributor service and license key to keep your data file updated. However, for now this example requires a custom URL where an updated data file will be hosted.</p>
-<p>To obtain access to enterprise data files, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-updatedatafile.java&amp;utm_term=header">contact us</a>.</p>
+<h2>License Key</h2>
+<p>Updating the data file downloads the Enterprise data file from the Distributor service, which needs a 51Degrees licence key. Without one, the example shows the free Asn data file and says where to ask for a key. To obtain a key and an Enterprise data file, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-updatedatafile.java&amp;utm_term=header">contact us</a>.</p>
 <h2>Configuration</h2>
 <ul>
 <li>the pipeline must be configured to use a temp file <div class="c-code__block c-code__block--outline"><div class="c-code__line">.useOnPremise(dataFilename, <span class="c-code__keyword">true</span>)</div>
@@ -141,13 +140,7 @@ Daily auto-update </li>
 </li>
 </ul>
 <p>This example is available in full on <a href="https://github.com/51Degrees/51degrees-java/blob/main/examples/ip-intelligence/console/src/main/java/fiftyone/ipintelligence/examples/console/UpdateDataFile.java">GitHub</a>.</p>
-<p>To test this example, you need to:</p><ol type="1">
-<li>Host an IP Intelligence data file (.ipi) at a custom URL accessible to this application</li>
-<li>Provide that custom URL using the WithDataUpdateUrl parameter</li>
-<li>No license key is required when using a custom URL</li>
-</ol>
-<p>For production use, you will eventually need to use a Distributor service and license key to keep your data file updated.</p>
-<p>To obtain access to enterprise data files for hosting, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-updatedatafile.java&amp;utm_term=header-2">contact us</a>.</p>
+<p>To test this example you need a licence key for the Enterprise data file. To obtain one, please <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-updatedatafile.java&amp;utm_term=header-2">contact us</a>.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line"><span class="c-code__comment">/* *********************************************************************</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * This Original Work is copyright of 51 Degrees Mobile Experts Limited.</span></div>
 <div class="c-code__line"><span class="c-code__comment"> * Copyright 2026 51 Degrees Mobile Experts Limited, Davidson House,</span></div>
@@ -176,6 +169,7 @@ Daily auto-update </li>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.ipintelligence.examples.shared.DataFileHelper;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.ipintelligence.shared.testhelpers.KeyUtils;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.core.flowelements.Pipeline;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.engines.Constants;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.engines.services.DataUpdateService;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.engines.services.DataUpdateServiceDefault;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> fiftyone.pipeline.engines.services.OnUpdateComplete;</div>
@@ -184,6 +178,7 @@ Daily auto-update </li>
 <div class="c-code__line"><span class="c-code__keyword">import</span> org.slf4j.LoggerFactory;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> java.io.File;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> java.io.PrintWriter;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> java.nio.file.*;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> java.text.SimpleDateFormat;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> java.util.Objects;</div>
@@ -202,6 +197,8 @@ Daily auto-update </li>
 <div class="c-code__line">            System.getProperty(<span class="c-code__stringliteral">&quot;user.dir&quot;</span>) + File.separator +  ENTERPRISE_DATA_FILE_REL_PATH;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> Logger logger = LoggerFactory.getLogger(UpdateDataFile.class);</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> String CONTACT_US = <span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-updatedatafile.java&amp;utm_term=licence-key&quot;</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> UpdateCompletionListener completionListener = <span class="c-code__keyword">new</span> UpdateCompletionListener();</div>
 <div class="c-code__line">    <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> SimpleDateFormat simpleDateFormat = <span class="c-code__keyword">new</span> SimpleDateFormat(<span class="c-code__stringliteral">&quot;yyyy-MM-dd hh:mm:ss Z&quot;</span>);</div>
@@ -221,13 +218,8 @@ Daily auto-update </li>
 <div class="c-code__line">            licenseKey = KeyUtils.getNamedKey(UPDATE_EXAMPLE_LICENSE_KEY_NAME);</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> (Objects.isNull(licenseKey) || KeyUtils.isInvalidKey(licenseKey)) {</div>
-<div class="c-code__line">            logger.error(<span class="c-code__stringliteral">&quot;For production use, you will eventually need to use a Distributor service and &quot;</span> +</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;license key to keep your data file updated. However, for now this example requires &quot;</span> +</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;a custom URL where an updated data file will be hosted. To obtain access to enterprise &quot;</span> +</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;data files, please contact us at https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-updatedatafile.java&amp;utm_term=license-key-required. You must supply the &quot;</span> +</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;license key as an argument to this program, or as an environment or system variable &quot;</span> +</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;named &#39;{}&#39;&quot;</span>, UPDATE_EXAMPLE_LICENSE_KEY_NAME);</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">throw</span> <span class="c-code__keyword">new</span> IllegalArgumentException(<span class="c-code__stringliteral">&quot;No license key available&quot;</span>);</div>
+<div class="c-code__line">            explainLicenseKey(dataFilename, <span class="c-code__keyword">new</span> PrintWriter(System.out, <span class="c-code__keyword">true</span>));</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span>;</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment">// work out where the downloaded file will be put, directory must exist</span></div>
@@ -257,9 +249,9 @@ Daily auto-update </li>
 <div class="c-code__line">            DataFileHelper.DatafileInfo metadata = getDatafileMetaData(dataFilename);</div>
 <div class="c-code__line">            <span class="c-code__comment">// and output the results</span></div>
 <div class="c-code__line">            logFileInfo(metadata);</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (metadata.getTier().equals(<span class="c-code__stringliteral">&quot;Lite&quot;</span>)) {</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (metadata.isFree()) {</div>
 <div class="c-code__line">                logger.error(<span class="c-code__stringliteral">&quot;Will not download an &#39;Enterprise&#39; data file over the top of &quot;</span> +</div>
-<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;a &#39;Lite&#39; data file, please supply another location.&quot;</span>);</div>
+<div class="c-code__line">                        <span class="c-code__stringliteral">&quot;a free data file, please supply another location.&quot;</span>);</div>
 <div class="c-code__line">                <span class="c-code__keywordflow">throw</span> <span class="c-code__keyword">new</span> IllegalArgumentException(<span class="c-code__stringliteral">&quot;File supplied has wrong data tier&quot;</span>);</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">            logger.info(<span class="c-code__stringliteral">&quot;Existing data file will be replaced with downloaded data file&quot;</span>);</div>
@@ -301,13 +293,15 @@ Daily auto-update </li>
 <div class="c-code__line">                    <span class="c-code__comment">// overwritten the pipeline must be configured to copy the supplied</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// file to a temporary file (createTempDataCopy parameter == true.</span></div>
 <div class="c-code__line">                    .useOnPremise(dataFilename, <span class="c-code__keyword">true</span>)</div>
+<div class="c-code__line">                    <span class="c-code__comment">// Use the low memory profile, because this example</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// downloads the Enterprise data file, which is over 6 GB,</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// and MaxPerformance would load all of it into memory.</span></div>
+<div class="c-code__line">                    .setPerformanceProfile(Constants.PerformanceProfiles.LowMemory)</div>
 <div class="c-code__line">                    <span class="c-code__comment">// pass in the update listener which has been configured</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// to notify when update complete</span></div>
 <div class="c-code__line">                    .setDataUpdateService(dataUpdateService)</div>
-<div class="c-code__line">                    <span class="c-code__comment">// For production use, you will eventually need to use a Distributor service and</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// license key to keep your data file updated. However, for now this example</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// requires a custom URL where an updated data file will be hosted.</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// To obtain access to enterprise data files, please contact us at https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-updatedatafile.java&amp;utm_term=run</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// Updates from the Distributor service need a licence key for the</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// Enterprise data file. To obtain one, please contact us at https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-ipintelligence-examples-console-updatedatafile.java&amp;utm_term=run</span></div>
 <div class="c-code__line">                    .setDataUpdateLicenseKey(licenseKey)</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Enable update on startup, the auto update system</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// will be used to check for an update before the</span></div>
@@ -360,6 +354,32 @@ Daily auto-update </li>
 <div class="c-code__line">                logger.info(<span class="c-code__stringliteral">&quot;Finished Example&quot;</span>);</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">    <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> explainLicenseKey(String dataFilename, PrintWriter output) <span class="c-code__keywordflow">throws</span> Exception {</div>
+<div class="c-code__line">        File dataFile = <span class="c-code__keyword">null</span>;</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">try</span> {</div>
+<div class="c-code__line">            dataFile = Objects.isNull(dataFilename) ?</div>
+<div class="c-code__line">                    DataFileHelper.findDataFile(DataFileHelper.ASN_DATA_FILE_REL_PATH) :</div>
+<div class="c-code__line">                    <span class="c-code__keyword">new</span> File(dataFilename);</div>
+<div class="c-code__line">        } <span class="c-code__keywordflow">catch</span> (IllegalArgumentException e) {</div>
+<div class="c-code__line">            logger.warn(e.getMessage());</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (Objects.nonNull(dataFile) &amp;&amp; dataFile.exists()) {</div>
+<div class="c-code__line">            DataFileHelper.DatafileInfo metadata =</div>
+<div class="c-code__line">                    getDatafileMetaData(dataFile.getAbsolutePath());</div>
+<div class="c-code__line">            output.println(<span class="c-code__stringliteral">&quot;The data file in use is the &#39;&quot;</span> + metadata.getTier() +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;&#39; file published on &quot;</span> + simpleDateFormat.format(</div>
+<div class="c-code__line">                            metadata.getFileInfo().getDataPublishedDateTime()) +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;, at &#39;&quot;</span> + metadata.getFileInfo().getDataFilePath() + <span class="c-code__stringliteral">&quot;&#39;.&quot;</span>);</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        output.println();</div>
+<div class="c-code__line">        output.println(<span class="c-code__stringliteral">&quot;Updating the data file downloads the Enterprise data &quot;</span> +</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;file, which needs a licence key. Give the key as the first &quot;</span> +</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;command line argument, or in the environment variable or &quot;</span> +</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;system property &#39;&quot;</span> + UPDATE_EXAMPLE_LICENSE_KEY_NAME + <span class="c-code__stringliteral">&quot;&#39;. &quot;</span> +</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;Contact us for a key and a copy at &quot;</span> + CONTACT_US);</div>
+<div class="c-code__line">        output.flush();</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> logFileInfo(DataFileHelper.DatafileInfo metadata) {</div>

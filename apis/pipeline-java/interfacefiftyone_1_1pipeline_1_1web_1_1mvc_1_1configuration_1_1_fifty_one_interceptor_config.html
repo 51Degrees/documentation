@@ -80,6 +80,14 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a455cf808b3dc84a410ea68a88ea445c8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the path to the data file.  <br /></td></tr>
 <tr class="c-table__row memitem:ada9a11b7c535f206d03404113311bb9c" id="r_ada9a11b7c535f206d03404113311bb9c"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="#ada9a11b7c535f206d03404113311bb9c">getClientsidePropertiesEnabled</a> ()</td></tr>
 <tr class="c-table__row memdesc:ada9a11b7c535f206d03404113311bb9c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get whether client-side properties are enabled.  <br /></td></tr>
+<tr class="c-table__row memitem:ac688c73dfcc46bb2718b3c5728ee8dc8" id="r_ac688c73dfcc46bb2718b3c5728ee8dc8"><td class="c-table__cell">default&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#ac688c73dfcc46bb2718b3c5728ee8dc8">getJavaScriptPath</a> ()</td></tr>
+<tr class="c-table__row memdesc:ac688c73dfcc46bb2718b3c5728ee8dc8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the end of the request path the JavaScript is served for.  <br /></td></tr>
+<tr class="c-table__row memitem:a2629c40eb7921e35f9987a915701a773" id="r_a2629c40eb7921e35f9987a915701a773"><td class="c-table__cell">default&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a2629c40eb7921e35f9987a915701a773">getJsonPath</a> ()</td></tr>
+<tr class="c-table__row memdesc:a2629c40eb7921e35f9987a915701a773"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the end of the request path the JSON is served for.  <br /></td></tr>
+<tr class="c-table__row memitem:a2b3d73a67fa5774518ced48e7a0f9a84" id="r_a2b3d73a67fa5774518ced48e7a0f9a84"><td class="c-table__cell">default&#160;boolean&#160;</td><td class="c-table__cell"><a class="el" href="#a2b3d73a67fa5774518ced48e7a0f9a84">getSequenceElementEnabled</a> ()</td></tr>
+<tr class="c-table__row memdesc:a2b3d73a67fa5774518ced48e7a0f9a84"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get whether the Sequence Element is added to the <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html" title="The Pipeline groups together FlowElements and is a factory for FlowData which serves as the evidence,...">Pipeline</a> when the configuration does not include it.  <br /></td></tr>
+<tr class="c-table__row memitem:a492490188f7d643965e3a681c8187c1a" id="r_a492490188f7d643965e3a681c8187c1a"><td class="c-table__cell">default&#160;boolean&#160;</td><td class="c-table__cell"><a class="el" href="#a492490188f7d643965e3a681c8187c1a">getSetHeadersElementEnabled</a> ()</td></tr>
+<tr class="c-table__row memdesc:a492490188f7d643965e3a681c8187c1a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get whether the Set Headers Element is added to the <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html" title="The Pipeline groups together FlowElements and is a factory for FlowData which serves as the evidence,...">Pipeline</a> when the configuration does not include it.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="ada9a11b7c535f206d03404113311bb9c" name="ada9a11b7c535f206d03404113311bb9c"></a>
@@ -131,6 +139,110 @@ Public Member Functions</h2></td></tr>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">data file path </dd></dl>
 
 <p>Implemented in <a class="el" href="classfiftyone_1_1pipeline_1_1web_1_1mvc_1_1configuration_1_1_fifty_one_interceptor_config_default.html#adda2fd9eef1c37295106261e9caed95a">fiftyone.pipeline.web.mvc.configuration.FiftyOneInterceptorConfigDefault</a>.</p>
+
+</div>
+</div>
+<a id="ac688c73dfcc46bb2718b3c5728ee8dc8" name="ac688c73dfcc46bb2718b3c5728ee8dc8"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac688c73dfcc46bb2718b3c5728ee8dc8">&#9670;&#160;</a></span>getJavaScriptPath()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">default String fiftyone.pipeline.web.mvc.configuration.FiftyOneInterceptorConfig.getJavaScriptPath </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Get the end of the request path the JavaScript is served for. </p>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the path, or null or empty for the default </dd></dl>
+
+<p>Implemented in <a class="el" href="classfiftyone_1_1pipeline_1_1web_1_1mvc_1_1configuration_1_1_fifty_one_interceptor_config_default.html#a625d146605b0048ddca00a8c6def706f">fiftyone.pipeline.web.mvc.configuration.FiftyOneInterceptorConfigDefault</a>.</p>
+
+</div>
+</div>
+<a id="a2629c40eb7921e35f9987a915701a773" name="a2629c40eb7921e35f9987a915701a773"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2629c40eb7921e35f9987a915701a773">&#9670;&#160;</a></span>getJsonPath()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">default String fiftyone.pipeline.web.mvc.configuration.FiftyOneInterceptorConfig.getJsonPath </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Get the end of the request path the JSON is served for. </p>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the path, or null or empty for the default </dd></dl>
+
+<p>Implemented in <a class="el" href="classfiftyone_1_1pipeline_1_1web_1_1mvc_1_1configuration_1_1_fifty_one_interceptor_config_default.html#a11b52e65f08c47f59003a2c9e1c83ae9">fiftyone.pipeline.web.mvc.configuration.FiftyOneInterceptorConfigDefault</a>.</p>
+
+</div>
+</div>
+<a id="a2b3d73a67fa5774518ced48e7a0f9a84" name="a2b3d73a67fa5774518ced48e7a0f9a84"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2b3d73a67fa5774518ced48e7a0f9a84">&#9670;&#160;</a></span>getSequenceElementEnabled()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">default boolean fiftyone.pipeline.web.mvc.configuration.FiftyOneInterceptorConfig.getSequenceElementEnabled </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Get whether the Sequence Element is added to the <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html" title="The Pipeline groups together FlowElements and is a factory for FlowData which serves as the evidence,...">Pipeline</a> when the configuration does not include it. </p>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true to add the Sequence Element </dd></dl>
+
+<p>Implemented in <a class="el" href="classfiftyone_1_1pipeline_1_1web_1_1mvc_1_1configuration_1_1_fifty_one_interceptor_config_default.html#a4efa68965aefd1c0a6ab3735b170e99c">fiftyone.pipeline.web.mvc.configuration.FiftyOneInterceptorConfigDefault</a>.</p>
+
+</div>
+</div>
+<a id="a492490188f7d643965e3a681c8187c1a" name="a492490188f7d643965e3a681c8187c1a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a492490188f7d643965e3a681c8187c1a">&#9670;&#160;</a></span>getSetHeadersElementEnabled()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">default boolean fiftyone.pipeline.web.mvc.configuration.FiftyOneInterceptorConfig.getSetHeadersElementEnabled </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Get whether the Set Headers Element is added to the <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html" title="The Pipeline groups together FlowElements and is a factory for FlowData which serves as the evidence,...">Pipeline</a> when the configuration does not include it. </p>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true to add the Set Headers Element </dd></dl>
+
+<p>Implemented in <a class="el" href="classfiftyone_1_1pipeline_1_1web_1_1mvc_1_1configuration_1_1_fifty_one_interceptor_config_default.html#af2274f7c88cedfb93e2aec297bb53c72">fiftyone.pipeline.web.mvc.configuration.FiftyOneInterceptorConfigDefault</a>.</p>
 
 </div>
 </div>

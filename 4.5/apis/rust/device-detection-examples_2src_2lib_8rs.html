@@ -67,14 +67,75 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('device-detecti
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="c-table__row memitem:ad5f029c4454e6fd70f6271ab92bd8947" id="r_ad5f029c4454e6fd70f6271ab92bd8947"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#ad5f029c4454e6fd70f6271ab92bd8947">profile_line</a> (profile:&amp;DeviceDataBase) -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td></tr>
+<tr class="c-table__row memitem:a1753f8c16e99b4035be9bbfc980ec25b" id="r_a1753f8c16e99b4035be9bbfc980ec25b"><td class="c-table__cell">pub&#160;const&#160;pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a1753f8c16e99b4035be9bbfc980ec25b">available_properties</a> (pipeline:&amp;Pipeline) -&gt; Vec&lt; String &gt;</td></tr>
+<tr class="c-table__row memdesc:a1753f8c16e99b4035be9bbfc980ec25b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The names of the properties the Device Detection engine in <code>pipeline</code> can return.  <br /></td></tr>
+<tr class="c-table__row memitem:a89468a474baec29b69c09b349ad735b9" id="r_a89468a474baec29b69c09b349ad735b9"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a89468a474baec29b69c09b349ad735b9">data_file_properties</a> (data_file:&amp;Path) -&gt; Result&lt; Vec&lt; String &gt; &gt;</td></tr>
+<tr class="c-table__row memdesc:a89468a474baec29b69c09b349ad735b9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The names of the properties the data file at <code><a class="el" href="dd-onprem-getting-started_8rs.html#ab533a800544facf05fd1c8e50f92099a" title="The path to the on-premise Hash data file the engine loads.">data_file</a></code> carries, read from an engine opened over it with the low-memory profile and no named properties.  <br /></td></tr>
+<tr class="c-table__row memitem:ad5f029c4454e6fd70f6271ab92bd8947" id="r_ad5f029c4454e6fd70f6271ab92bd8947"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#ad5f029c4454e6fd70f6271ab92bd8947">profile_line</a> (profile:&amp;DeviceDataBase) -&gt; String</td></tr>
 <tr class="c-table__row memdesc:ad5f029c4454e6fd70f6271ab92bd8947"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Render one matched device profile as a <code>Vendor Name (Model)</code> line, reading the hardware properties through the shared typed accessors.  <br /></td></tr>
 <tr class="c-table__row memitem:a1236029c8b7fce9744c99085b7604479" id="r_a1236029c8b7fce9744c99085b7604479"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a1236029c8b7fce9744c99085b7604479">print_data_file_warnings</a> (data_file:&amp;PathBuf, profile:PerformanceProfile) -&gt; Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a1236029c8b7fce9744c99085b7604479"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build a sibling on-premise engine over <code><a class="el" href="dd-onprem-getting-started_8rs.html#ab533a800544facf05fd1c8e50f92099a" title="The path to the on-premise Hash data file the engine loads.">data_file</a></code>, then print the standard data-file introspection: the tier and publish date line followed by the Lite-tier and out-of-date warnings.  <br /></td></tr>
 <tr class="c-table__row memitem:aa37f6944d1e689d28a691cf94e148007" id="r_aa37f6944d1e689d28a691cf94e148007"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#aa37f6944d1e689d28a691cf94e148007">print_data_file_warnings_for</a> (engine:&amp;dyn OnPremiseAspectEngine)</td></tr>
 <tr class="c-table__row memdesc:aa37f6944d1e689d28a691cf94e148007"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print the standard data-file introspection for an engine the caller already holds: the tier and publish date line followed by the Lite-tier and out-of-date warnings.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="c-table__row memitem:a27ce90c59887a6542ed37f82eeb71fc3" id="r_a27ce90c59887a6542ed37f82eeb71fc3"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a27ce90c59887a6542ed37f82eeb71fc3">ENTERPRISE_PROPERTIES</a></td></tr>
+<tr class="c-table__row memdesc:a27ce90c59887a6542ed37f82eeb71fc3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Properties the Enterprise data file carries and the free Lite file does not.  <br /></td></tr>
+<tr class="c-table__row memitem:a5cf843f963661cb062ba66bdd5bc20aa" id="r_a5cf843f963661cb062ba66bdd5bc20aa"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a5cf843f963661cb062ba66bdd5bc20aa">HardwareModel</a></td></tr>
+<tr class="c-table__row memitem:a43f1f8c23543c0ee6a7236cdcf60cb83" id="r_a43f1f8c23543c0ee6a7236cdcf60cb83"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a43f1f8c23543c0ee6a7236cdcf60cb83">DeviceType</a></td></tr>
+<tr class="c-table__row memitem:ace5bad1f125aac11e50d346ea52e831c" id="r_ace5bad1f125aac11e50d346ea52e831c"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#ace5bad1f125aac11e50d346ea52e831c">PriceBand</a></td></tr>
+<tr class="c-table__row memitem:a1ff95ccdf2f5628900ee2166591ad657" id="r_a1ff95ccdf2f5628900ee2166591ad657"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a1ff95ccdf2f5628900ee2166591ad657">ScreenInchesDiagonal</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
+<a id="a1753f8c16e99b4035be9bbfc980ec25b" name="a1753f8c16e99b4035be9bbfc980ec25b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1753f8c16e99b4035be9bbfc980ec25b">&#9670;&#160;</a></span>available_properties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub const pub fn available_properties </td>
+          <td>(</td>
+          <td class="c-table__cell">pipeline:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>Pipeline</em></span></td><td>)</td>
+          <td> -&gt; Vec&lt; String &gt;</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The names of the properties the Device Detection engine in <code>pipeline</code> can return. </p>
+<p>For an engine built without naming properties these are the ones its data file carries. An engine built with named properties lists the names it was given, including any its data file lacks, so use [<code><a class="el" href="#a89468a474baec29b69c09b349ad735b9" title="The names of the properties the data file at data_file carries, read from an engine opened over it wi...">data_file_properties</a></code>] for one of those. </p>
+
+</div>
+</div>
+<a id="a89468a474baec29b69c09b349ad735b9" name="a89468a474baec29b69c09b349ad735b9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a89468a474baec29b69c09b349ad735b9">&#9670;&#160;</a></span>data_file_properties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub fn data_file_properties </td>
+          <td>(</td>
+          <td class="c-table__cell">data_file:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>Path</em></span></td><td>)</td>
+          <td> -&gt; Result&lt; Vec&lt; String &gt; &gt;</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The names of the properties the data file at <code><a class="el" href="dd-onprem-getting-started_8rs.html#ab533a800544facf05fd1c8e50f92099a" title="The path to the on-premise Hash data file the engine loads.">data_file</a></code> carries, read from an engine opened over it with the low-memory profile and no named properties. </p>
+<p>This suits an example whose own engine names its properties, because such an engine lists the names it was given rather than what the file holds. </p>
+
+</div>
+</div>
 <a id="a1236029c8b7fce9744c99085b7604479" name="a1236029c8b7fce9744c99085b7604479"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1236029c8b7fce9744c99085b7604479">&#9670;&#160;</a></span>print_data_file_warnings()</h2>
 
@@ -99,7 +160,7 @@ Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Build a sibling on-premise engine over <code><a class="el" href="dd-onprem-getting-started_8rs.html#ab533a800544facf05fd1c8e50f92099a" title="The path to the on-premise Hash data file the engine loads.">data_file</a></code>, then print the standard data-file introspection: the tier and publish date line followed by the Lite-tier and out-of-date warnings. </p>
-<p>The on-premise examples run detection through a pipeline, but the pipeline does not hand back the concrete engine, and the introspection helpers in [<code>examples_shared</code>] take a <code>&amp;dyn OnPremiseAspectEngine</code>. Building a throwaway engine over the same file with the same [<code>PerformanceProfile</code>] is the simplest way to read the data-file metadata, so each example calls this once at the end of its run. An example that already holds an engine should call [<code><a class="el" href="#aa37f6944d1e689d28a691cf94e148007" title="Print the standard data-file introspection for an engine the caller already holds: the tier and publi...">print_data_file_warnings_for</a></code>] instead, avoiding the second build. </p>
+<p>The on-premise examples run detection through a pipeline, but the pipeline does not hand back the concrete engine, and the introspection helpers in [<code>examples_shared</code>] take a <code>&amp;dyn OnPremiseAspectEngine</code>. Building a throwaway engine over the same file with the same [<code><a class="el" href="ipi-onprem-compare_8rs.html#a61af5a4ca35abc899289deb75d593b32" title="The profile the two IP addresses are compared under unless --profile names another.">PerformanceProfile</a></code>] is the simplest way to read the data-file metadata, so each example calls this once at the end of its run. An example that already holds an engine should call [<code><a class="el" href="#aa37f6944d1e689d28a691cf94e148007" title="Print the standard data-file introspection for an engine the caller already holds: the tier and publi...">print_data_file_warnings_for</a></code>] instead, avoiding the second build. </p>
 
 </div>
 </div>
@@ -139,7 +200,7 @@ Functions</h2></td></tr>
               <td class="c-table__cell">pub fn profile_line </td>
           <td>(</td>
           <td class="c-table__cell">profile:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>DeviceDataBase</em></span></td><td>)</td>
-          <td> -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td>
+          <td> -&gt; String</td>
         </tr>
           </table>
         </div>
@@ -149,6 +210,100 @@ Functions</h2></td></tr>
 <p>Render one matched device profile as a <code>Vendor Name (Model)</code> line, reading the hardware properties through the shared typed accessors. </p>
 <p>A property the cloud did not resolve is shown as <code>Unknown</code>.</p>
 <p>Shared by the TAC and native-model cloud examples: a hardware-profile lookup returns a list of device profiles, and both examples list each one this way. </p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>
+<a id="a43f1f8c23543c0ee6a7236cdcf60cb83" name="a43f1f8c23543c0ee6a7236cdcf60cb83"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a43f1f8c23543c0ee6a7236cdcf60cb83">&#9670;&#160;</a></span>DeviceType</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub const DeviceType</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a27ce90c59887a6542ed37f82eeb71fc3" name="a27ce90c59887a6542ed37f82eeb71fc3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a27ce90c59887a6542ed37f82eeb71fc3">&#9670;&#160;</a></span>ENTERPRISE_PROPERTIES</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">use ip_intelligence_examples::ENTERPRISE_PROPERTIES</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Properties the Enterprise data file carries and the free Lite file does not. </p>
+<p>The on-premise examples ask for these alongside the Lite properties, and say where to ask about the Enterprise data file when the file in use does not carry them. </p>
+
+</div>
+</div>
+<a id="a5cf843f963661cb062ba66bdd5bc20aa" name="a5cf843f963661cb062ba66bdd5bc20aa"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5cf843f963661cb062ba66bdd5bc20aa">&#9670;&#160;</a></span>HardwareModel</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub const HardwareModel</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="ace5bad1f125aac11e50d346ea52e831c" name="ace5bad1f125aac11e50d346ea52e831c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ace5bad1f125aac11e50d346ea52e831c">&#9670;&#160;</a></span>PriceBand</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub const PriceBand</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a1ff95ccdf2f5628900ee2166591ad657" name="a1ff95ccdf2f5628900ee2166591ad657"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1ff95ccdf2f5628900ee2166591ad657">&#9670;&#160;</a></span>ScreenInchesDiagonal</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub const ScreenInchesDiagonal</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
 
 </div>
 </div>

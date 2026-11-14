@@ -103,13 +103,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-upda
 <div class="c-code__line"> </div>
 <div class="c-code__line">    let engine = DeviceDetectionOnPremiseEngineBuilder::new(&amp;options.data_file)</div>
 <div class="c-code__line">        .performance_profile(PerformanceProfile::LowMemory)</div>
-<div class="c-code__line">        .auto_update(config, Some(Arc::clone(&amp;service)))</div>
+<div class="c-code__line">        .auto_update(config, <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(Arc::clone(&amp;service)))</div>
 <div class="c-code__line">        .build()</div>
 <div class="c-code__line">        .context(<span class="c-code__stringliteral">&quot;failed to build the auto-update engine&quot;</span>)?;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    println!();</div>
 <div class="c-code__line">    println!(<span class="c-code__stringliteral">&quot;Engine built and its data file registered with the update service.&quot;</span>);</div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let Some(published) = engine.data_file_published() {</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(published) = engine.data_file_published() {</div>
 <div class="c-code__line">        println!(<span class="c-code__stringliteral">&quot;Current data file published: {published}&quot;</span>);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">    println!(</div>
@@ -121,9 +121,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-upda
 <div class="c-code__line">    <span class="c-code__comment">//</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// Trigger an immediate update check. With no remote URL configured (the case</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// here, since the Lite file has none), the service refreshes the engine from</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// the file currently on disk, which is a safe no-network operation that</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// demonstrates the reload path. A `Success` status means the engine swapped</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// in a freshly read data set.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// the file on disk only when that file is newer than the one the engine was</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// built from, which is a safe no-network check. With the file unchanged the</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// status is `NotNeeded`, and a `Success` status means the engine reloaded</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// its data set from the file.</span></div>
 <div class="c-code__line">    println!();</div>
 <div class="c-code__line">    println!(<span class="c-code__stringliteral">&quot;Triggering a programmatic update check ...&quot;</span>);</div>
 <div class="c-code__line">    let as_engine: Arc&lt;dyn OnPremiseAspectEngine&gt; = engine.clone();</div>
@@ -140,15 +141,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-upda
 <div class="c-code__line">    <span class="c-code__comment">//</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// An application can also reload the engine directly, bypassing the service,</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// for example after it has placed a new file on disk itself. This reloads the</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// same Lite file, proving the hot-swap works while in-flight detections keep</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// using the data set they snapshotted.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// same Lite file, proving the reload works while in-flight detections keep</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// reading the data set they started with.</span></div>
 <div class="c-code__line">    println!();</div>
 <div class="c-code__line">    println!(<span class="c-code__stringliteral">&quot;Performing a direct engine refresh from the file on disk ...&quot;</span>);</div>
 <div class="c-code__line">    engine</div>
 <div class="c-code__line">        .refresh(None)</div>
 <div class="c-code__line">        .context(<span class="c-code__stringliteral">&quot;the direct engine refresh should succeed&quot;</span>)?;</div>
 <div class="c-code__line">    println!(<span class="c-code__stringliteral">&quot;Direct refresh complete; the engine reloaded its data file.&quot;</span>);</div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let Some(published) = engine.data_file_published() {</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(published) = engine.data_file_published() {</div>
 <div class="c-code__line">        println!(<span class="c-code__stringliteral">&quot;Data file published after refresh: {published}&quot;</span>);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
@@ -157,6 +158,27 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-upda
 <div class="c-code__line">    <span class="c-code__comment">// without building a second engine.</span></div>
 <div class="c-code__line">    println!();</div>
 <div class="c-code__line">    device_detection_examples::print_data_file_warnings_for(engine.as_ref());</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment">// The engine&#39;s properties are those its data file carries, so they say</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// which Enterprise properties an update to the Enterprise data file adds.</span></div>
+<div class="c-code__line">    let <a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a> = engine.available_properties();</div>
+<div class="c-code__line">    println!();</div>
+<div class="c-code__line">    println!(<span class="c-code__stringliteral">&quot;--- Enterprise properties ---&quot;</span>);</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">for</span> name in <a class="code hl_variable" href="device-detection-examples_2src_2lib_8rs.html#a27ce90c59887a6542ed37f82eeb71fc3">ENTERPRISE_PROPERTIES</a> {</div>
+<div class="c-code__line">        let state = <span class="c-code__keywordflow">if</span> examples_shared::is_available(name, &amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>) {</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;in this data file&quot;</span></div>
+<div class="c-code__line">        } <span class="c-code__keywordflow">else</span> {</div>
+<div class="c-code__line">            examples_shared::NEEDS_ENTERPRISE_DATA_FILE</div>
+<div class="c-code__line">        };</div>
+<div class="c-code__line">        println!(<span class="c-code__stringliteral">&quot;\t{name:&lt;22}: {state}&quot;</span>);</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">    let missing = examples_shared::missing_properties(<a class="code hl_variable" href="device-detection-examples_2src_2lib_8rs.html#a27ce90c59887a6542ed37f82eeb71fc3">ENTERPRISE_PROPERTIES</a>, &amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>);</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(message) = examples_shared::enterprise_data_file_message(&amp;missing, <a class="code hl_variable" href="dd-onprem-getting-started_8rs.html#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a>) {</div>
+<div class="c-code__line">        println!();</div>
+<div class="c-code__line">        println!(<span class="c-code__stringliteral">&quot;{message}&quot;</span>);</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    examples_shared::print_find_out_more(<a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ad25b7f6d0c89d56f4024e2b559cf89cc">FIND_OUT_MORE</a>, examples_shared::ON_PREMISE_REPOSITORIES);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Dropping `service` here stops the background scheduler and releases the</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// file-system watcher cleanly.</span></div>

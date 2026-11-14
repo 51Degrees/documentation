@@ -85,14 +85,24 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-onprem-matc
 <div class="c-code__line">        PerformanceProfile::LowMemory,</div>
 <div class="c-code__line">    )?;</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment">// The properties the engine can return are those its data file carries.</span></div>
+<div class="c-code__line">    let <a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a> = device_detection_examples::available_properties(&amp;pipeline);</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Run a single detection and print the match metrics for it.</span></div>
 <div class="c-code__line">    let sample = examples_shared::evidence::mobile_user_agent_evidence();</div>
-<div class="c-code__line">    <a class="code hl_function" href="dd-onprem-match-metrics_8rs.html#a036595bce2a25829f37c19aaba008893">print_match_metrics</a>(&amp;pipeline, &amp;sample)?;</div>
+<div class="c-code__line">    <a class="code hl_function" href="dd-onprem-match-metrics_8rs.html#acd2c26105310adad22d59974ef15392d">print_match_metrics</a>(&amp;pipeline, &amp;sample, &amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>)?;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// Demonstrate that requesting fewer properties is faster: time a one-property</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// engine against an all-properties engine over the same evidence.</span></div>
 <div class="c-code__line">    <a class="code hl_function" href="dd-onprem-match-metrics_8rs.html#a739336dafb3dfdfb5c32e6a1702a06f3">compare_property_count_timing</a>(&amp;options)?;</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">    let missing = examples_shared::missing_properties(<a class="code hl_variable" href="dd-onprem-match-metrics_8rs.html#a6de6f008b228cff8a206563748b16143">ENTERPRISE_SHOWN</a>, &amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>);</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(message) = examples_shared::enterprise_data_file_message(&amp;missing, <a class="code hl_variable" href="dd-onprem-getting-started_8rs.html#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a>) {</div>
+<div class="c-code__line">        println!();</div>
+<div class="c-code__line">        println!(<span class="c-code__stringliteral">&quot;{message}&quot;</span>);</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    examples_shared::print_find_out_more(<a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ad25b7f6d0c89d56f4024e2b559cf89cc">FIND_OUT_MORE</a>, examples_shared::ON_PREMISE_REPOSITORIES);</div>
 <div class="c-code__line">    Ok(())</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --> </div></div><!-- primary -->

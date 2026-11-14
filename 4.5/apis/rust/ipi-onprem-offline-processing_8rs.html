@@ -73,39 +73,51 @@ Classes</h2></td></tr>
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="c-table__row memitem:a6f46caea8ef2116e6868901462d62778" id="r_a6f46caea8ef2116e6868901462d62778"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_example_options.html">ExampleOptions</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a6f46caea8ef2116e6868901462d62778">from_env</a> () -&gt; Option&lt; Self &gt;</td></tr>
-<tr class="c-table__row memdesc:a6f46caea8ef2116e6868901462d62778"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default options, using the best-available loadable data-file tier.  <br /></td></tr>
+<tr class="c-table__row memdesc:a6f46caea8ef2116e6868901462d62778"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default options, reading the Enterprise file when its share is reachable and otherwise the free Lite file.  <br /></td></tr>
 <tr class="c-table__row memitem:a99e86a6bfea2cb0cb7100b2773ec5e5e" id="r_a99e86a6bfea2cb0cb7100b2773ec5e5e"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a99e86a6bfea2cb0cb7100b2773ec5e5e">for_tier</a> (<a class="el" href="data__paths_8rs.html#a29e87adf1760ab44a6a8d86c736658f8">tier:examples_shared::IpiTier</a>, max_records:usize) -&gt; Option&lt; Self &gt;</td></tr>
 <tr class="c-table__row memdesc:a99e86a6bfea2cb0cb7100b2773ec5e5e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="struct_options.html" title="Options that drive [run].">Options</a> pinned to a specific data-file tier and record limit.  <br /></td></tr>
 <tr class="c-table__row memitem:a72a494311da1d889b016fd2f0e734e7e" id="r_a72a494311da1d889b016fd2f0e734e7e"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a72a494311da1d889b016fd2f0e734e7e">run</a> (options:&amp;ExampleOptions, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a72a494311da1d889b016fd2f0e734e7e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run the offline-processing example, writing all output to <code>out</code>.  <br /></td></tr>
 <tr class="c-table__row memitem:a53abe23ae8bd63e3f3ea71ffc4f16dda" id="r_a53abe23ae8bd63e3f3ea71ffc4f16dda"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a53abe23ae8bd63e3f3ea71ffc4f16dda">read_evidence</a> (path:&amp;std::path::Path, max_records:usize,) -&gt; anyhow::Result&lt; Vec&lt; <a class="el" href="#a65996ea862cba5ecbddd5fba780b5740">EvidenceRecord</a> &gt; &gt;</td></tr>
 <tr class="c-table__row memdesc:a53abe23ae8bd63e3f3ea71ffc4f16dda"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read up to <code><a class="el" href="#a0598609daf6a682e8b8a3c289e6ef5bc" title="The maximum number of records to process (the evidence file holds many).">max_records</a></code> evidence records from a multi-document YAML file.  <br /></td></tr>
-<tr class="c-table__row memitem:af9232ade2f3c3f342aa867ee34a406bf" id="r_af9232ade2f3c3f342aa867ee34a406bf"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#af9232ade2f3c3f342aa867ee34a406bf">analyse_record</a> (pipeline:&amp;Arc&lt; Pipeline &gt;, record:&amp;EvidenceRecord, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
-<tr class="c-table__row memdesc:af9232ade2f3c3f342aa867ee34a406bf"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Look one evidence record up and write its inputs and results.  <br /></td></tr>
+<tr class="c-table__row memitem:a7d790bbe10fae7fe46da2ed718690d60" id="r_a7d790bbe10fae7fe46da2ed718690d60"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a7d790bbe10fae7fe46da2ed718690d60">analyse_record</a> (pipeline:&amp;Arc&lt; Pipeline &gt;, record:&amp;EvidenceRecord, available:&amp;[String], out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
+<tr class="c-table__row memdesc:a7d790bbe10fae7fe46da2ed718690d60"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Look one evidence record up and write its inputs and results.  <br /></td></tr>
 <tr class="c-table__row memitem:a10397c317f477c2d5f6629f1d23f9b28" id="r_a10397c317f477c2d5f6629f1d23f9b28"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a10397c317f477c2d5f6629f1d23f9b28">main</a> () -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a10397c317f477c2d5f6629f1d23f9b28"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read the data file and evidence file, then run the example.  <br /></td></tr>
 <tr class="c-table__row memitem:ae1318f2f981aaa6549051fd740f73edc" id="r_ae1318f2f981aaa6549051fd740f73edc"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ae1318f2f981aaa6549051fd740f73edc">offline_processing_streams_evidence</a> ()</td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="c-table__row memitem:a65560ade98913e76a1868a9845e47e52" id="r_a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a></td></tr>
+<tr class="c-table__row memdesc:a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Where to ask about a copy of the Enterprise data file.  <br /></td></tr>
+<tr class="c-table__row memitem:a59c09f4d2e77fa42c030902215658830" id="r_a59c09f4d2e77fa42c030902215658830"><td class="c-table__cell">const&#160;&amp;&#160;</td><td class="c-table__cell"><a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a></td></tr>
 <tr class="c-table__row memitem:a4aa3579c58d196cb9734a1c6a0375af6" id="r_a4aa3579c58d196cb9734a1c6a0375af6"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a4aa3579c58d196cb9734a1c6a0375af6">IPI_EVIDENCE_RELATIVE_PATH</a></td></tr>
 <tr class="c-table__row memdesc:a4aa3579c58d196cb9734a1c6a0375af6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The relative path to the IP-intelligence evidence file in the data submodule.  <br /></td></tr>
 <tr class="c-table__row memitem:adf3e1d05295506c9fae1be6adaf00230" id="r_adf3e1d05295506c9fae1be6adaf00230"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#adf3e1d05295506c9fae1be6adaf00230">REPORTED_PROPERTIES</a></td></tr>
-<tr class="c-table__row memdesc:adf3e1d05295506c9fae1be6adaf00230"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The properties reported for each record.  <br /></td></tr>
+<tr class="c-table__row memdesc:adf3e1d05295506c9fae1be6adaf00230"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The properties asked for and reported for each record.  <br /></td></tr>
 <tr class="c-table__row memitem:a9823967acc55858ce6dd8fde953f1ebd" id="r_a9823967acc55858ce6dd8fde953f1ebd"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a9823967acc55858ce6dd8fde953f1ebd">AsnName</a></td></tr>
+<tr class="c-table__row memitem:ad2022a0016694abdaef60b9ea57958a0" id="r_ad2022a0016694abdaef60b9ea57958a0"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#ad2022a0016694abdaef60b9ea57958a0">RegisteredName</a></td></tr>
+<tr class="c-table__row memitem:a81efc5e1d9e1a380d67bc4649173dd25" id="r_a81efc5e1d9e1a380d67bc4649173dd25"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a81efc5e1d9e1a380d67bc4649173dd25">RegisteredCountry</a></td></tr>
+<tr class="c-table__row memitem:a8f181820fc3e33d399e569676f8b5eec" id="r_a8f181820fc3e33d399e569676f8b5eec"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a8f181820fc3e33d399e569676f8b5eec">Country</a></td></tr>
+<tr class="c-table__row memitem:a21f5309ccfac36a5fc9f674ce539524e" id="r_a21f5309ccfac36a5fc9f674ce539524e"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a21f5309ccfac36a5fc9f674ce539524e">CountryCode</a></td></tr>
+<tr class="c-table__row memitem:aef0cde54aff133ca2d60d4532daa7643" id="r_aef0cde54aff133ca2d60d4532daa7643"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#aef0cde54aff133ca2d60d4532daa7643">Town</a></td></tr>
+<tr class="c-table__row memitem:ae37d0d0a3834d4eb022d69d863bacf70" id="r_ae37d0d0a3834d4eb022d69d863bacf70"><td class="c-table__cell">const&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#ae37d0d0a3834d4eb022d69d863bacf70">ENTERPRISE_REPORTED</a></td></tr>
+<tr class="c-table__row memdesc:ae37d0d0a3834d4eb022d69d863bacf70"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The reported properties only the Enterprise data file carries.  <br /></td></tr>
+<tr class="c-table__row memitem:a9214474ee1e489a3f407516aa335c854" id="r_a9214474ee1e489a3f407516aa335c854"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a9214474ee1e489a3f407516aa335c854">NOT_IN_THIS_FILE</a></td></tr>
+<tr class="c-table__row memdesc:a9214474ee1e489a3f407516aa335c854"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Shown for a free property the data file in use does not carry.  <br /></td></tr>
 <tr class="c-table__row memitem:ab533a800544facf05fd1c8e50f92099a" id="r_ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">pub&#160;</td><td class="c-table__cell"><a class="el" href="#ab533a800544facf05fd1c8e50f92099a">data_file</a></td></tr>
 <tr class="c-table__row memdesc:ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The full path to the <code>.ipi</code> data file to open.  <br /></td></tr>
 <tr class="c-table__row memitem:ad6bffea55ace1dfffd05353879a20738" id="r_ad6bffea55ace1dfffd05353879a20738"><td class="c-table__cell">pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#ad6bffea55ace1dfffd05353879a20738">evidence_file</a></td></tr>
 <tr class="c-table__row memdesc:ad6bffea55ace1dfffd05353879a20738"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The full path to the YAML evidence file to read.  <br /></td></tr>
 <tr class="c-table__row memitem:a0598609daf6a682e8b8a3c289e6ef5bc" id="r_a0598609daf6a682e8b8a3c289e6ef5bc"><td class="c-table__cell">pub&#160;pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#a0598609daf6a682e8b8a3c289e6ef5bc">max_records</a></td></tr>
 <tr class="c-table__row memdesc:a0598609daf6a682e8b8a3c289e6ef5bc"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The maximum number of records to process (the evidence file holds many).  <br /></td></tr>
-<tr class="c-table__row memitem:a65996ea862cba5ecbddd5fba780b5740" id="r_a65996ea862cba5ecbddd5fba780b5740"><td class="c-table__cell">type&#160;</td><td class="c-table__cell"><a class="el" href="#a65996ea862cba5ecbddd5fba780b5740">EvidenceRecord</a> = std::collections::BTreeMap&lt;<a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>&gt;</td></tr>
+<tr class="c-table__row memitem:a65996ea862cba5ecbddd5fba780b5740" id="r_a65996ea862cba5ecbddd5fba780b5740"><td class="c-table__cell">type&#160;</td><td class="c-table__cell"><a class="el" href="#a65996ea862cba5ecbddd5fba780b5740">EvidenceRecord</a> = std::collections::BTreeMap&lt;String, String&gt;</td></tr>
 <tr class="c-table__row memdesc:a65996ea862cba5ecbddd5fba780b5740"><td class="c-table__cell">&#160;</td><td class="c-table__cell">One evidence record read from the YAML file: client-IP key/value pairs.  <br /></td></tr>
 <tr class="c-table__row memitem:ab60c545115f42f88c00b55f384f5ffc0" id="r_ab60c545115f42f88c00b55f384f5ffc0"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#ab60c545115f42f88c00b55f384f5ffc0">tests</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
-<a id="af9232ade2f3c3f342aa867ee34a406bf" name="af9232ade2f3c3f342aa867ee34a406bf"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af9232ade2f3c3f342aa867ee34a406bf">&#9670;&#160;</a></span>analyse_record()</h2>
+<a id="a7d790bbe10fae7fe46da2ed718690d60" name="a7d790bbe10fae7fe46da2ed718690d60"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7d790bbe10fae7fe46da2ed718690d60">&#9670;&#160;</a></span>analyse_record()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -125,6 +137,11 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
+          <td class="c-table__cell">available:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String], </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
           <td class="c-table__cell">out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn</td>          <td class="c-table__cell"><span class="paramname"><em>Write</em></span>&#160;) -&gt; anyhow::Result&lt;()&gt;</td>
         </tr>
           </table>
@@ -133,6 +150,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Look one evidence record up and write its inputs and results. </p>
+<p><code><a class="el" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5" title="The properties the data file carries.">available</a></code> holds the properties the data file carries. </p>
 
 </div>
 </div>
@@ -183,7 +201,7 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Default options, using the best-available loadable data-file tier. </p>
+<p>Default options, reading the Enterprise file when its share is reachable and otherwise the free Lite file. </p>
 
 </div>
 </div>
@@ -306,6 +324,62 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a65560ade98913e76a1868a9845e47e52" name="a65560ade98913e76a1868a9845e47e52"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a65560ade98913e76a1868a9845e47e52">&#9670;&#160;</a></span>CONTACT_US_URL</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const CONTACT_US_URL</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Where to ask about a copy of the Enterprise data file. </p>
+
+</div>
+</div>
+<a id="a8f181820fc3e33d399e569676f8b5eec" name="a8f181820fc3e33d399e569676f8b5eec"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8f181820fc3e33d399e569676f8b5eec">&#9670;&#160;</a></span>Country</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const Country</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a21f5309ccfac36a5fc9f674ce539524e" name="a21f5309ccfac36a5fc9f674ce539524e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a21f5309ccfac36a5fc9f674ce539524e">&#9670;&#160;</a></span>CountryCode</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const const CountryCode</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
 <a id="ab533a800544facf05fd1c8e50f92099a" name="ab533a800544facf05fd1c8e50f92099a"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab533a800544facf05fd1c8e50f92099a">&#9670;&#160;</a></span>data_file</h2>
 
@@ -323,6 +397,26 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>The full path to the <code>.ipi</code> data file to open. </p>
+
+</div>
+</div>
+<a id="ae37d0d0a3834d4eb022d69d863bacf70" name="ae37d0d0a3834d4eb022d69d863bacf70"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae37d0d0a3834d4eb022d69d863bacf70">&#9670;&#160;</a></span>ENTERPRISE_REPORTED</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const const ENTERPRISE_REPORTED</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The reported properties only the Enterprise data file carries. </p>
 
 </div>
 </div>
@@ -355,7 +449,7 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">type EvidenceRecord = std::collections::BTreeMap&lt;<a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>&gt;</td>
+              <td class="c-table__cell">type EvidenceRecord = std::collections::BTreeMap&lt;String, String&gt;</td>
             </tr>
           </table>
         </div>
@@ -406,6 +500,62 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a9214474ee1e489a3f407516aa335c854" name="a9214474ee1e489a3f407516aa335c854"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9214474ee1e489a3f407516aa335c854">&#9670;&#160;</a></span>NOT_IN_THIS_FILE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const NOT_IN_THIS_FILE</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Shown for a free property the data file in use does not carry. </p>
+
+</div>
+</div>
+<a id="a81efc5e1d9e1a380d67bc4649173dd25" name="a81efc5e1d9e1a380d67bc4649173dd25"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a81efc5e1d9e1a380d67bc4649173dd25">&#9670;&#160;</a></span>RegisteredCountry</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const RegisteredCountry</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="ad2022a0016694abdaef60b9ea57958a0" name="ad2022a0016694abdaef60b9ea57958a0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad2022a0016694abdaef60b9ea57958a0">&#9670;&#160;</a></span>RegisteredName</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const RegisteredName</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
 <a id="adf3e1d05295506c9fae1be6adaf00230" name="adf3e1d05295506c9fae1be6adaf00230"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#adf3e1d05295506c9fae1be6adaf00230">&#9670;&#160;</a></span>REPORTED_PROPERTIES</h2>
 
@@ -422,9 +572,32 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>The properties reported for each record. </p>
-<p>The ASN data file populates the autonomous system; an Enterprise file would also populate the location set. </p>
+<p>The properties asked for and reported for each record. </p>
+<p>The free ASN file carries Asn and AsnName, the free Lite file RegisteredName and RegisteredCountry, and only the Enterprise data file the location ones. A data file opens only when it carries at least one property asked for, so each free file has some here. </p>
 
+</div>
+</div>
+<a id="a59c09f4d2e77fa42c030902215658830" name="a59c09f4d2e77fa42c030902215658830"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a59c09f4d2e77fa42c030902215658830">&#9670;&#160;</a></span>str</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const &amp; str</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">     = &amp;[</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;IP Intelligence&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/ip-intelligence?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-offline-processing.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Pricing&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-offline-processing.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Documentation&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-offline-processing.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">]</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab60c545115f42f88c00b55f384f5ffc0" name="ab60c545115f42f88c00b55f384f5ffc0"></a>
@@ -445,6 +618,24 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div>
 <div class="c-code__line">    use super::*</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="aef0cde54aff133ca2d60d4532daa7643" name="aef0cde54aff133ca2d60d4532daa7643"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aef0cde54aff133ca2d60d4532daa7643">&#9670;&#160;</a></span>Town</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const const Town</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
 </div>
 </div>
 </div><!-- primary -->

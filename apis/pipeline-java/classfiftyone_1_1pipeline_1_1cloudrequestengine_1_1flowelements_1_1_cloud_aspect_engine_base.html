@@ -91,6 +91,9 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a06ebc2808c5cd3102351f7f52875ad2d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Construct a new instance of the <code><a class="el" href="classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1flowelements_1_1_cloud_aspect_engine_base.html">CloudAspectEngineBase</a></code>.  <br /></td></tr>
 <tr class="c-table__row memitem:ad29227e213ce198f56837258012eacda" id="r_ad29227e213ce198f56837258012eacda"><td class="c-table__cell">String&#160;</td><td class="c-table__cell"><a class="el" href="#ad29227e213ce198f56837258012eacda">getDataSourceTier</a> ()</td></tr>
 <tr class="c-table__row memitem:aca69801d38f8cc7197f18ceff3e1b07e" id="r_aca69801d38f8cc7197f18ceff3e1b07e"><td class="c-table__cell">List&lt;&#160;<a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_property_meta_data.html">AspectPropertyMetaData</a>&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#aca69801d38f8cc7197f18ceff3e1b07e">getProperties</a> ()</td></tr>
+<tr class="c-table__row memdesc:aca69801d38f8cc7197f18ceff3e1b07e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The property metadata of this engine, from the products the Cloud Request Engine reports.  <br /></td></tr>
+<tr class="c-table__row memitem:a6747b64449621c584185e561df906ab4" id="r_a6747b64449621c584185e561df906ab4"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="#a6747b64449621c584185e561df906ab4">hasLoadedProperties</a> ()</td></tr>
+<tr class="c-table__row memdesc:a6747b64449621c584185e561df906ab4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether the property metadata is loaded, which reads it if the Cloud Request Engine now knows the accessible properties.  <br /></td></tr>
 <tr class="c-table__row memitem:a8f54730c775b37b7a5242dbc2f8da5f5" id="r_a8f54730c775b37b7a5242dbc2f8da5f5"><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1typed_1_1_typed_key.html">TypedKey</a>&lt;&#160;TData&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a8f54730c775b37b7a5242dbc2f8da5f5">getTypedDataKey</a> ()</td></tr>
 <tr class="c-table__row inherit_header pub_methods_classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_aspect_engine_base"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_aspect_engine_base.html">fiftyone.pipeline.engines.flowelements.AspectEngineBase&lt; TData extends AspectData, TProperty extends AspectPropertyMetaData &gt;</a></h3></td></tr>
 <tr class="c-table__row memitem:a87ff9259b30b4b22ba4377eb367479b2 pub_methods_classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_aspect_engine_base" id="r_a87ff9259b30b4b22ba4377eb367479b2"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_aspect_engine_base.html#a87ff9259b30b4b22ba4377eb367479b2">AspectEngineBase</a> (Logger logger, <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1factories_1_1_element_data_factory.html">ElementDataFactory</a>&lt; TData &gt; aspectDataFactory)</td></tr>
@@ -112,8 +115,7 @@ void&#160;</td><td class="c-table__cell"><b>addPipeline</b> (<a class="el" href=
 <tr class="c-table__row memdesc:a1b8967f4d90ed0edbb69912837556313 pub_methods_classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element_base"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a unmodifiable list of the <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html">Pipeline</a></code>s that this element has been added to.  <br /></td></tr>
 <tr class="c-table__row memitem:ac3ef98a284c9f558eef99720719d2a8e pub_methods_classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element_base" id="r_ac3ef98a284c9f558eef99720719d2a8e"><td class="c-table__cell">
 abstract&#160;String&#160;</td><td class="c-table__cell"><b>getElementDataKey</b> ()</td></tr>
-<tr class="c-table__row memitem:a855a151bd4ef483a3f2c4133ed5a6e24 pub_methods_classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element_base" id="r_a855a151bd4ef483a3f2c4133ed5a6e24"><td class="c-table__cell">
-abstract&#160;<a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter.html">EvidenceKeyFilter</a>&#160;</td><td class="c-table__cell"><b>getEvidenceKeyFilter</b> ()</td></tr>
+<tr class="c-table__row memitem:a855a151bd4ef483a3f2c4133ed5a6e24 pub_methods_classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element_base" id="r_a855a151bd4ef483a3f2c4133ed5a6e24"><td class="c-table__cell">abstract&#160;<a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter.html">EvidenceKeyFilter</a>&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element_base.html#a855a151bd4ef483a3f2c4133ed5a6e24">getEvidenceKeyFilter</a> ()</td></tr>
 <tr class="c-table__row memitem:a3fcc1e537b2fb1d7d1cd6b33e5279438 pub_methods_classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element_base" id="r_a3fcc1e537b2fb1d7d1cd6b33e5279438"><td class="c-table__cell">
 TProperty&#160;</td><td class="c-table__cell"><b>getProperty</b> (String name)</td></tr>
 <tr class="c-table__row memitem:a4161784023e024ede2842bccb40710cf pub_methods_classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element_base" id="r_a4161784023e024ede2842bccb40710cf"><td class="c-table__cell">
@@ -143,6 +145,8 @@ void&#160;</td><td class="c-table__cell"><b>close</b> ()  throws Exception </td>
 <tr class="c-table__row memdesc:aa95ae1003864e7b0e1b7e71bfa6536c5 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a property from the properties that this element can populate using its name.  <br /></td></tr>
 <tr class="c-table__row memitem:ab0aa98bdda4981e0892d75ea4f79331a pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element" id="r_ab0aa98bdda4981e0892d75ea4f79331a"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#ab0aa98bdda4981e0892d75ea4f79331a">isConcurrent</a> ()</td></tr>
 <tr class="c-table__row memdesc:ab0aa98bdda4981e0892d75ea4f79331a pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">if true, requires that the <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html" title="The Pipeline groups together FlowElements and is a factory for FlowData which serves as the evidence,...">Pipeline</a> guards against concurrent access to <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a></code> structures  <br /></td></tr>
+<tr class="c-table__row memitem:a5d740f4fcfc20816b33dbf49450350e0 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element" id="r_a5d740f4fcfc20816b33dbf49450350e0"><td class="c-table__cell">default&#160;boolean&#160;</td><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a5d740f4fcfc20816b33dbf49450350e0">hasLoadedProperties</a> ()</td></tr>
+<tr class="c-table__row memdesc:a5d740f4fcfc20816b33dbf49450350e0 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether the element knows all the property metadata and accepted <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence.html" title="Evidence used by a FlowElement when processing.">Evidence</a> it will expose.  <br /></td></tr>
 <tr class="c-table__row memitem:a93a813715876146eca839f3541867cc8 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element" id="r_a93a813715876146eca839f3541867cc8"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a93a813715876146eca839f3541867cc8">isClosed</a> ()</td></tr>
 <tr class="c-table__row memdesc:a93a813715876146eca839f3541867cc8 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Indicates whether the element has been closed using the <code><a class="el" href="">close()</a></code> method, either explicitly or as a result of a 'try with resource'.  <br /></td></tr>
 <tr class="c-table__row memitem:a96dfad7107c88b5643e80847d5820863 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element" id="r_a96dfad7107c88b5643e80847d5820863"><td class="c-table__cell">DataFactory&lt;&#160;TData&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a96dfad7107c88b5643e80847d5820863">getDataFactory</a> ()</td></tr>
@@ -165,6 +169,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ac0cdd5e93e48ab5456d1ef73bad39149"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Used to access the <a class="el" href="interfacefiftyone_1_1pipeline_1_1cloudrequestengine_1_1flowelements_1_1_cloud_request_engine.html" title="Engine that makes requests to the 51Degrees cloud service based on the details passed at creation and...">CloudRequestEngine</a> that will be making HTTP requests on behalf of this engine.  <br /></td></tr>
 <tr class="c-table__row memitem:aea26ee76f41e26998d06ba89908388df" id="r_aea26ee76f41e26998d06ba89908388df"><td class="c-table__cell"><a id="aea26ee76f41e26998d06ba89908388df" name="aea26ee76f41e26998d06ba89908388df"></a>
 void&#160;</td><td class="c-table__cell"><b>setRequestEngine</b> (<a class="el" href="classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1flowelements_1_1_cloud_aspect_engine_base_1_1_request_engine_accessor.html">RequestEngineAccessor</a> requestEngine)</td></tr>
+<tr class="c-table__row memitem:afe8b1fb03d4b57e3ad1a9cefc2362f19" id="r_afe8b1fb03d4b57e3ad1a9cefc2362f19"><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1data_1_1_accessible_property_meta_data_1_1_product_meta_data.html">AccessiblePropertyMetaData.ProductMetaData</a>&#160;</td><td class="c-table__cell"><a class="el" href="#afe8b1fb03d4b57e3ad1a9cefc2362f19">findProduct</a> (Map&lt; String, <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1data_1_1_accessible_property_meta_data_1_1_product_meta_data.html">AccessiblePropertyMetaData.ProductMetaData</a> &gt; products)</td></tr>
+<tr class="c-table__row memdesc:afe8b1fb03d4b57e3ad1a9cefc2362f19"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Find this engine's product among the products the Cloud Request Engine reports for the resource key.  <br /></td></tr>
+<tr class="c-table__row memitem:a986a6c55db1a3064c0f425cccda2ae74" id="r_a986a6c55db1a3064c0f425cccda2ae74"><td class="c-table__cell">JSONObject&#160;</td><td class="c-table__cell"><a class="el" href="#a986a6c55db1a3064c0f425cccda2ae74">getElementJson</a> (JSONObject response)</td></tr>
+<tr class="c-table__row memdesc:a986a6c55db1a3064c0f425cccda2ae74"><td class="c-table__cell">&#160;</td><td class="c-table__cell">This engine's part of the cloud response.  <br /></td></tr>
 <tr class="c-table__row memitem:a9ffc07eeb3ecb3e2a1c37f5a0c654238" id="r_a9ffc07eeb3ecb3e2a1c37f5a0c654238"><td class="c-table__cell">Map&lt;&#160;String,&#160;Object&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a9ffc07eeb3ecb3e2a1c37f5a0c654238">createAPVMap</a> (Map&lt; String, Object &gt; cloudData, List&lt; <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_property_meta_data.html">ElementPropertyMetaData</a> &gt; propertyMetaData)</td></tr>
 <tr class="c-table__row memdesc:a9ffc07eeb3ecb3e2a1c37f5a0c654238"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Use the supplied cloud data to create a map of <code><a class="el" href="">AspectPropertyValue</a></code> instances.  <br /></td></tr>
 <tr class="c-table__row memitem:a10c827e8afe55edefaeaf836afb956fe" id="r_a10c827e8afe55edefaeaf836afb956fe"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a10c827e8afe55edefaeaf836afb956fe">processEngine</a> (<a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a> data, TData aspectData)</td></tr>
@@ -266,11 +274,49 @@ final&#160;Logger&#160;</td><td class="c-table__cell"><b>logger</b></td></tr>
 <p>A new instance of <code><a class="el" href="">AspectPropertyValue</a></code> will be created for each value and the value from the cloud data assigned to it. If the value is null, then the code will look for a property in the cloud data with the same name suffixed with 'nullreason'. If it exists, then its value will be used to set the no value message in the new <code><a class="el" href="">AspectPropertyValue</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cloudData</td><td>the cloud data to be processed. Keys are flat property names (i.e. no '.' separators) </td></tr>
-    <tr><td class="paramname">propertyMetaData</td><td>the meta data for the properties in the data. This will usually be the list from <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a489547fe8f18946ba32d1500cd15f13b">getProperties()</a></code> but will be different if dealing with sub-properties </td></tr>
+    <tr><td class="paramname">propertyMetaData</td><td>the meta data for the properties in the data. This will usually be the list from <code><a class="el" href="#aca69801d38f8cc7197f18ceff3e1b07e">getProperties()</a></code> but will be different if dealing with sub-properties </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a map containing the original values converted to <code><a class="el" href="">AspectPropertyValue</a></code> instances. Any entries in the source map where the key ends with 'nullreason' will not appear in the output </dd></dl>
+
+</div>
+</div>
+<a id="afe8b1fb03d4b57e3ad1a9cefc2362f19" name="afe8b1fb03d4b57e3ad1a9cefc2362f19"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#afe8b1fb03d4b57e3ad1a9cefc2362f19">&#9670;&#160;</a></span>findProduct()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1data_1_1_accessible_property_meta_data_1_1_product_meta_data.html">AccessiblePropertyMetaData.ProductMetaData</a> <a class="el" href="classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1flowelements_1_1_cloud_aspect_engine_base.html">fiftyone.pipeline.cloudrequestengine.flowelements.CloudAspectEngineBase</a>&lt; TData extends <a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_data.html">AspectData</a> &gt;.findProduct </td>
+          <td>(</td>
+          <td class="c-table__cell">Map&lt; String, <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1data_1_1_accessible_property_meta_data_1_1_product_meta_data.html">AccessiblePropertyMetaData.ProductMetaData</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>products</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Find this engine's product among the products the Cloud Request Engine reports for the resource key. </p>
+<p>A valid resource key can include no product that holds this engine's properties. That is logged once for this engine, as a warning naming its Data Key, and an empty product is returned, so the engine builds with empty property metadata and logs nothing on each request. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">products</td><td>the products from <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1cloudrequestengine_1_1flowelements_1_1_cloud_request_engine.html#aca8659b1a8648369340261250ae110c9">CloudRequestEngine#getPublicProperties()</a></code>, or null if they have not been loaded </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the product, an empty product if the resource key does not include it, or null if the products have not been loaded </dd></dl>
 
 </div>
 </div>
@@ -297,6 +343,44 @@ final&#160;Logger&#160;</td><td class="c-table__cell"><b>logger</b></td></tr>
 
 </div>
 </div>
+<a id="a986a6c55db1a3064c0f425cccda2ae74" name="a986a6c55db1a3064c0f425cccda2ae74"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a986a6c55db1a3064c0f425cccda2ae74">&#9670;&#160;</a></span>getElementJson()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">JSONObject <a class="el" href="classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1flowelements_1_1_cloud_aspect_engine_base.html">fiftyone.pipeline.cloudrequestengine.flowelements.CloudAspectEngineBase</a>&lt; TData extends <a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_data.html">AspectData</a> &gt;.getElementJson </td>
+          <td>(</td>
+          <td class="c-table__cell">JSONObject</td>          <td class="c-table__cell"><span class="paramname"><em>response</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>This engine's part of the cloud response. </p>
+<p>Where the response has no part for this engine, as when the resource key does not include its product, an empty object is returned, so the element data holds no values and no error is raised. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">response</td><td>the whole cloud response </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">this engine's part of the response </dd></dl>
+
+</div>
+</div>
 <a id="aca69801d38f8cc7197f18ceff3e1b07e" name="aca69801d38f8cc7197f18ceff3e1b07e"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#aca69801d38f8cc7197f18ceff3e1b07e">&#9670;&#160;</a></span>getProperties()</h2>
 
@@ -315,6 +399,9 @@ final&#160;Logger&#160;</td><td class="c-table__cell"><b>logger</b></td></tr>
         </div>
       </div>
 </div><div class="c-member__body">
+
+<p>The property metadata of this engine, from the products the Cloud Request Engine reports. </p>
+<p>After a failure at build that can pass the products are not known yet, and an empty list is returned without being kept, so the metadata is read again on the next call. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the property metadata </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_aspect_engine_base.html">fiftyone.pipeline.engines.flowelements.AspectEngineBase&lt; TData extends AspectData, TProperty extends AspectPropertyMetaData &gt;</a>.</p>
 
@@ -372,6 +459,30 @@ final&#160;Logger&#160;</td><td class="c-table__cell"><b>logger</b></td></tr>
 </div><div class="c-member__body">
 
 <p>Reimplemented from <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_aspect_engine_base.html">fiftyone.pipeline.engines.flowelements.AspectEngineBase&lt; TData extends AspectData, TProperty extends AspectPropertyMetaData &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a6747b64449621c584185e561df906ab4" name="a6747b64449621c584185e561df906ab4"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6747b64449621c584185e561df906ab4">&#9670;&#160;</a></span>hasLoadedProperties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">boolean <a class="el" href="classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1flowelements_1_1_cloud_aspect_engine_base.html">fiftyone.pipeline.cloudrequestengine.flowelements.CloudAspectEngineBase</a>&lt; TData extends <a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_data.html">AspectData</a> &gt;.hasLoadedProperties </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Whether the property metadata is loaded, which reads it if the Cloud Request Engine now knows the accessible properties. </p>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true once the property metadata is loaded </dd></dl>
 
 </div>
 </div>

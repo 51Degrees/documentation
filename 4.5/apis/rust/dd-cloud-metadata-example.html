@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-cloud-metad
 <div class="c-code__line">    <span class="c-code__comment">// discovery. The device engine is built on top of it and derives its</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// property metadata from it.</span></div>
 <div class="c-code__line">    let <a class="code hl_variable" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> request_builder = CloudRequestEngine::builder().resource_key(options.resource_key);</div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let Some(<a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ae83ce8e91df378a7e5b2f394db2631ad">endpoint</a>) = options.endpoint {</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(<a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ae83ce8e91df378a7e5b2f394db2631ad">endpoint</a>) = options.endpoint {</div>
 <div class="c-code__line">        request_builder = request_builder.endpoint(<a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ae83ce8e91df378a7e5b2f394db2631ad">endpoint</a>);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line">    let request_engine = Arc::new(</div>
@@ -80,9 +80,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-cloud-metad
 <div class="c-code__line">            .context(<span class="c-code__stringliteral">&quot;failed to build the cloud request engine&quot;</span>)?,</div>
 <div class="c-code__line">    );</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment">// Build the device engine and eagerly refresh its property metadata, which</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// triggers the request engine&#39;s lazy accessible-properties fetch (one cloud</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// request) and fills in the device product&#39;s property list.</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// Build the device engine, which reads the device product&#39;s property list</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// from the accessible properties the request engine fetched when it was</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// built. `refresh_properties` returns how many there are, or an error when</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// the cloud could not be reached then.</span></div>
 <div class="c-code__line">    let <a class="code hl_variable" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> device_engine = DeviceDetectionCloudEngine::builder()</div>
 <div class="c-code__line">        .cloud_request_engine(request_engine.clone())</div>
 <div class="c-code__line">        .try_build()</div>

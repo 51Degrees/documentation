@@ -72,76 +72,38 @@ Classes</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="c-table__row memitem:a6f46caea8ef2116e6868901462d62778" id="r_a6f46caea8ef2116e6868901462d62778"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_example_options.html">ExampleOptions</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a6f46caea8ef2116e6868901462d62778">from_env</a> () -&gt; Option&lt; Self &gt;</td></tr>
-<tr class="c-table__row memdesc:a6f46caea8ef2116e6868901462d62778"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default options, using the best-available loadable data-file tier.  <br /></td></tr>
-<tr class="c-table__row memitem:a8ec87ce59a7730398990e6de32fb8cb4" id="r_a8ec87ce59a7730398990e6de32fb8cb4"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a8ec87ce59a7730398990e6de32fb8cb4">for_tier</a> (<a class="el" href="data__paths_8rs.html#a29e87adf1760ab44a6a8d86c736658f8">tier:examples_shared::IpiTier</a>) -&gt; Option&lt; Self &gt;</td></tr>
-<tr class="c-table__row memdesc:a8ec87ce59a7730398990e6de32fb8cb4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="struct_options.html" title="Options that drive [run].">Options</a> pinned to a specific data-file tier.  <br /></td></tr>
-<tr class="c-table__row memitem:a72a494311da1d889b016fd2f0e734e7e" id="r_a72a494311da1d889b016fd2f0e734e7e"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a72a494311da1d889b016fd2f0e734e7e">run</a> (options:&amp;ExampleOptions, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write) -&gt; anyhow::Result&lt;()&gt;</td></tr>
-<tr class="c-table__row memdesc:a72a494311da1d889b016fd2f0e734e7e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run the metrics example, writing all output to <code>out</code>.  <br /></td></tr>
-<tr class="c-table__row memitem:afba891cc729364e07dc34ac934129311" id="r_afba891cc729364e07dc34ac934129311"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#afba891cc729364e07dc34ac934129311">report_lookup</a> (pipeline:&amp;Arc&lt; Pipeline &gt;, ip:&amp;str, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write) -&gt; anyhow::Result&lt;()&gt;</td></tr>
-<tr class="c-table__row memdesc:afba891cc729364e07dc34ac934129311"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Time one lookup and print its insight: elapsed time, cache-hit flag and the resolved value of the summary property.  <br /></td></tr>
+<tr class="c-table__row memitem:a58055420230c3c3a4c52dc72ba18e749" id="r_a58055420230c3c3a4c52dc72ba18e749"><td class="c-table__cell">const&#160;const&#160;pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a58055420230c3c3a4c52dc72ba18e749">run</a> (options:&amp;ExampleOptions, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write) -&gt; anyhow::Result&lt;()&gt;</td></tr>
+<tr class="c-table__row memdesc:a58055420230c3c3a4c52dc72ba18e749"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run the metrics example, writing all output to <code>out</code>.  <br /></td></tr>
+<tr class="c-table__row memitem:ad0671e9435d52a2d2226f27ce214e3fd" id="r_ad0671e9435d52a2d2226f27ce214e3fd"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ad0671e9435d52a2d2226f27ce214e3fd">report_lookup</a> (pipeline:&amp;Arc&lt; Pipeline &gt;, ip:&amp;str, available:&amp;[String], out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
+<tr class="c-table__row memdesc:ad0671e9435d52a2d2226f27ce214e3fd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Time one lookup and print its insight: elapsed time, cache-hit flag, the resolved values of the summary properties and the accuracy measures.  <br /></td></tr>
 <tr class="c-table__row memitem:a10397c317f477c2d5f6629f1d23f9b28" id="r_a10397c317f477c2d5f6629f1d23f9b28"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a10397c317f477c2d5f6629f1d23f9b28">main</a> () -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a10397c317f477c2d5f6629f1d23f9b28"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read the data file, then run the example, writing to standard output.  <br /></td></tr>
 <tr class="c-table__row memitem:a8a1a10174de24b6c124fa952135aa944" id="r_a8a1a10174de24b6c124fa952135aa944"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a8a1a10174de24b6c124fa952135aa944">metrics_report_timing_and_weighting</a> ()</td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="c-table__row memitem:ab533a800544facf05fd1c8e50f92099a" id="r_ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">pub&#160;</td><td class="c-table__cell"><a class="el" href="#ab533a800544facf05fd1c8e50f92099a">data_file</a></td></tr>
-<tr class="c-table__row memdesc:ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The full path to the <code>.ipi</code> data file to open.  <br /></td></tr>
-<tr class="c-table__row memitem:a7707ba8c1851ca9fb8ad30d7096bfdb0" id="r_a7707ba8c1851ca9fb8ad30d7096bfdb0"><td class="c-table__cell">pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#a7707ba8c1851ca9fb8ad30d7096bfdb0">ips</a></td></tr>
-<tr class="c-table__row memdesc:a7707ba8c1851ca9fb8ad30d7096bfdb0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The IP addresses to look up and time.  <br /></td></tr>
-<tr class="c-table__row memitem:ade55360a6371086a00561b042dc8eb44" id="r_ade55360a6371086a00561b042dc8eb44"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#ade55360a6371086a00561b042dc8eb44">SUMMARY_PROPERTY</a></td></tr>
-<tr class="c-table__row memdesc:ade55360a6371086a00561b042dc8eb44"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The property the metrics print summarises.  <br /></td></tr>
+<tr class="c-table__row memitem:a65560ade98913e76a1868a9845e47e52" id="r_a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a></td></tr>
+<tr class="c-table__row memdesc:a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Where to ask about a copy of the Enterprise data file.  <br /></td></tr>
+<tr class="c-table__row memitem:a59c09f4d2e77fa42c030902215658830" id="r_a59c09f4d2e77fa42c030902215658830"><td class="c-table__cell">const&#160;&amp;&#160;</td><td class="c-table__cell"><a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a></td></tr>
+<tr class="c-table__row memitem:a61af5a4ca35abc899289deb75d593b32" id="r_a61af5a4ca35abc899289deb75d593b32"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_example_options.html">ExampleOptions</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a61af5a4ca35abc899289deb75d593b32">PerformanceProfile</a> = PerformanceProfile::LowMemory</td></tr>
+<tr class="c-table__row memdesc:a61af5a4ca35abc899289deb75d593b32"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The profile the pipeline is built with unless <code>--<a class="el" href="dd-onprem-getting-started_8rs.html#ae5bcdc5c590f007269dd7601cd69c63c" title="The performance profile to load the data file with.">profile</a></code> names another.  <br /></td></tr>
+<tr class="c-table__row memitem:a9fd1aac1e641b0dd9482ef5c3bb31a17" id="r_a9fd1aac1e641b0dd9482ef5c3bb31a17"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a9fd1aac1e641b0dd9482ef5c3bb31a17">FASTER_PROFILE_COMMAND</a></td></tr>
+<tr class="c-table__row memdesc:a9fd1aac1e641b0dd9482ef5c3bb31a17"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The command that runs this example with the faster profile.  <br /></td></tr>
+<tr class="c-table__row memitem:a0496db63703a25375c9aa37013ccb65d" id="r_a0496db63703a25375c9aa37013ccb65d"><td class="c-table__cell">impl&#160;</td><td class="c-table__cell"><a class="el" href="#a0496db63703a25375c9aa37013ccb65d">ExampleOptions</a></td></tr>
+<tr class="c-table__row memitem:a9214474ee1e489a3f407516aa335c854" id="r_a9214474ee1e489a3f407516aa335c854"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a9214474ee1e489a3f407516aa335c854">NOT_IN_THIS_FILE</a></td></tr>
+<tr class="c-table__row memdesc:a9214474ee1e489a3f407516aa335c854"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Shown for a summary property the data file in use does not carry.  <br /></td></tr>
+<tr class="c-table__row memitem:a621f6856f6a24619f6984b1afd8d3a7c" id="r_a621f6856f6a24619f6984b1afd8d3a7c"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a621f6856f6a24619f6984b1afd8d3a7c">ACCURACY_PROPERTIES</a></td></tr>
+<tr class="c-table__row memdesc:a621f6856f6a24619f6984b1afd8d3a7c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">How accurate each lookup's location is.  <br /></td></tr>
+<tr class="c-table__row memitem:ae878f89e6b73388b42e44ac693b1b2fb" id="r_ae878f89e6b73388b42e44ac693b1b2fb"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#ae878f89e6b73388b42e44ac693b1b2fb">AccuracyRadiusMax</a></td></tr>
+<tr class="c-table__row memitem:a664ce62fcf424a24475822bb6fd2b206" id="r_a664ce62fcf424a24475822bb6fd2b206"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a664ce62fcf424a24475822bb6fd2b206">LocationConfidence</a></td></tr>
+<tr class="c-table__row memitem:ad76a2f16829aa61cbd57c6256071cfa5" id="r_ad76a2f16829aa61cbd57c6256071cfa5"><td class="c-table__cell">const&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#ad76a2f16829aa61cbd57c6256071cfa5">REQUESTED_PROPERTIES</a></td></tr>
+<tr class="c-table__row memdesc:ad76a2f16829aa61cbd57c6256071cfa5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The properties the pipeline is asked for.  <br /></td></tr>
+<tr class="c-table__row memitem:ae471abc62acc92aeb94bef1026e73e6f" id="r_ae471abc62acc92aeb94bef1026e73e6f"><td class="c-table__cell">const&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#ae471abc62acc92aeb94bef1026e73e6f">AsnName</a></td></tr>
+<tr class="c-table__row memitem:a810821214dd6f0b9bdef73e05eedbdc2" id="r_a810821214dd6f0b9bdef73e05eedbdc2"><td class="c-table__cell">const&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a810821214dd6f0b9bdef73e05eedbdc2">RegisteredName</a></td></tr>
+<tr class="c-table__row memitem:a79efee77819e33c8aa564ddbb1f805af" id="r_a79efee77819e33c8aa564ddbb1f805af"><td class="c-table__cell">const&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a79efee77819e33c8aa564ddbb1f805af">AccuracyRadiusMin</a></td></tr>
 <tr class="c-table__row memitem:ab60c545115f42f88c00b55f384f5ffc0" id="r_ab60c545115f42f88c00b55f384f5ffc0"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#ab60c545115f42f88c00b55f384f5ffc0">tests</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
-<a id="a8ec87ce59a7730398990e6de32fb8cb4" name="a8ec87ce59a7730398990e6de32fb8cb4"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8ec87ce59a7730398990e6de32fb8cb4">&#9670;&#160;</a></span>for_tier()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">pub fn for_tier </td>
-          <td>(</td>
-          <td class="c-table__cell"><a class="el" href="data__paths_8rs.html#a29e87adf1760ab44a6a8d86c736658f8">tier:examples_shared::IpiTier</a></td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Option&lt; Self &gt;</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p><a class="el" href="struct_options.html" title="Options that drive [run].">Options</a> pinned to a specific data-file tier. </p>
-<p>The test pins the ASN tier so it runs deterministically against the always-loadable ASN file. </p>
-
-</div>
-</div>
-<a id="a6f46caea8ef2116e6868901462d62778" name="a6f46caea8ef2116e6868901462d62778"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6f46caea8ef2116e6868901462d62778">&#9670;&#160;</a></span>from_env()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">pub struct <a class="el" href="struct_example_options.html">ExampleOptions</a> from_env </td>
-          <td>(</td>
-          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Option&lt; Self &gt;</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>Default options, using the best-available loadable data-file tier. </p>
-
-</div>
-</div>
 <a id="a10397c317f477c2d5f6629f1d23f9b28" name="a10397c317f477c2d5f6629f1d23f9b28"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a10397c317f477c2d5f6629f1d23f9b28">&#9670;&#160;</a></span>main()</h2>
 
@@ -186,8 +148,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="afba891cc729364e07dc34ac934129311" name="afba891cc729364e07dc34ac934129311"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#afba891cc729364e07dc34ac934129311">&#9670;&#160;</a></span>report_lookup()</h2>
+<a id="ad0671e9435d52a2d2226f27ce214e3fd" name="ad0671e9435d52a2d2226f27ce214e3fd"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad0671e9435d52a2d2226f27ce214e3fd">&#9670;&#160;</a></span>report_lookup()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -207,6 +169,11 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
+          <td class="c-table__cell">available:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String], </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
           <td class="c-table__cell">out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn</td>          <td class="c-table__cell"><span class="paramname"><em>Write</em></span>&#160;) -&gt; anyhow::Result&lt;()&gt;</td>
         </tr>
           </table>
@@ -214,12 +181,13 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Time one lookup and print its insight: elapsed time, cache-hit flag and the resolved value of the summary property. </p>
+<p>Time one lookup and print its insight: elapsed time, cache-hit flag, the resolved values of the summary properties and the accuracy measures. </p>
+<p><code><a class="el" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5" title="The properties the data file carries.">available</a></code> holds the properties the data file carries. </p>
 
 </div>
 </div>
-<a id="a72a494311da1d889b016fd2f0e734e7e" name="a72a494311da1d889b016fd2f0e734e7e"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a72a494311da1d889b016fd2f0e734e7e">&#9670;&#160;</a></span>run()</h2>
+<a id="a58055420230c3c3a4c52dc72ba18e749" name="a58055420230c3c3a4c52dc72ba18e749"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a58055420230c3c3a4c52dc72ba18e749">&#9670;&#160;</a></span>run()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -227,7 +195,7 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">pub fn run </td>
+              <td class="c-table__cell">const const pub fn run </td>
           <td>(</td>
           <td class="c-table__cell">options:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>ExampleOptions</em></span>, </td>
         </tr>
@@ -247,8 +215,8 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>
-<a id="ab533a800544facf05fd1c8e50f92099a" name="ab533a800544facf05fd1c8e50f92099a"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab533a800544facf05fd1c8e50f92099a">&#9670;&#160;</a></span>data_file</h2>
+<a id="a621f6856f6a24619f6984b1afd8d3a7c" name="a621f6856f6a24619f6984b1afd8d3a7c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a621f6856f6a24619f6984b1afd8d3a7c">&#9670;&#160;</a></span>ACCURACY_PROPERTIES</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -256,19 +224,20 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">pub data_file</td>
+              <td class="c-table__cell">const ACCURACY_PROPERTIES</td>
             </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>The full path to the <code>.ipi</code> data file to open. </p>
+<p>How accurate each lookup's location is. </p>
+<p>Only the Enterprise data file carries these. </p>
 
 </div>
 </div>
-<a id="a7707ba8c1851ca9fb8ad30d7096bfdb0" name="a7707ba8c1851ca9fb8ad30d7096bfdb0"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7707ba8c1851ca9fb8ad30d7096bfdb0">&#9670;&#160;</a></span>ips</h2>
+<a id="ae878f89e6b73388b42e44ac693b1b2fb" name="ae878f89e6b73388b42e44ac693b1b2fb"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae878f89e6b73388b42e44ac693b1b2fb">&#9670;&#160;</a></span>AccuracyRadiusMax</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -276,19 +245,17 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">pub pub ips</td>
+              <td class="c-table__cell">const const AccuracyRadiusMax</td>
             </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>The IP addresses to look up and time. </p>
-
 </div>
 </div>
-<a id="ade55360a6371086a00561b042dc8eb44" name="ade55360a6371086a00561b042dc8eb44"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ade55360a6371086a00561b042dc8eb44">&#9670;&#160;</a></span>SUMMARY_PROPERTY</h2>
+<a id="a79efee77819e33c8aa564ddbb1f805af" name="a79efee77819e33c8aa564ddbb1f805af"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a79efee77819e33c8aa564ddbb1f805af">&#9670;&#160;</a></span>AccuracyRadiusMin</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -296,16 +263,240 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">const SUMMARY_PROPERTY</td>
+              <td class="c-table__cell">const const AccuracyRadiusMin</td>
             </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>The property the metrics print summarises. </p>
-<p>For the ASN data file this is the autonomous system; an Enterprise file would also populate the location properties. </p>
+</div>
+</div>
+<a id="ae471abc62acc92aeb94bef1026e73e6f" name="ae471abc62acc92aeb94bef1026e73e6f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae471abc62acc92aeb94bef1026e73e6f">&#9670;&#160;</a></span>AsnName</h2>
 
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const const AsnName</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a65560ade98913e76a1868a9845e47e52" name="a65560ade98913e76a1868a9845e47e52"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a65560ade98913e76a1868a9845e47e52">&#9670;&#160;</a></span>CONTACT_US_URL</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const CONTACT_US_URL</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Where to ask about a copy of the Enterprise data file. </p>
+
+</div>
+</div>
+<a id="a0496db63703a25375c9aa37013ccb65d" name="a0496db63703a25375c9aa37013ccb65d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0496db63703a25375c9aa37013ccb65d">&#9670;&#160;</a></span>ExampleOptions</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">impl ExampleOptions</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div>
+<div class="c-code__line">    </div>
+<div class="c-code__line">    pub fn <a class="code hl_function" href="ipi-onprem-getting-started_8rs.html#a4d4eee41204463b9d6085445f399db43">from_env</a>() -&gt; Option&lt;Self&gt; {</div>
+<div class="c-code__line">        Self::for_tier(examples_shared::IpiTier::EnterpriseOrLite)</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    </div>
+<div class="c-code__line">    pub fn <a class="code hl_function" href="ipi-onprem-getting-started_8rs.html#a8ec87ce59a7730398990e6de32fb8cb4">for_tier</a>(tier: examples_shared::IpiTier) -&gt; Option&lt;Self&gt; {</div>
+<div class="c-code__line">        <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(<a class="code hl_struct" href="struct_example_options.html">ExampleOptions</a> {</div>
+<div class="c-code__line">            <a class="code hl_variable" href="dd-onprem-getting-started_8rs.html#ab533a800544facf05fd1c8e50f92099a">data_file</a>: examples_shared::ipi_data_path(tier)?,</div>
+<div class="c-code__line">            <a class="code hl_variable" href="ipi-onprem-getting-started_8rs.html#a7707ba8c1851ca9fb8ad30d7096bfdb0">ips</a>: vec![</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;1.1.1.1&quot;</span>.to_owned(),</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;8.8.8.8&quot;</span>.to_owned(),</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;2606:4700:4700::1111&quot;</span>.to_owned(),</div>
+<div class="c-code__line">            ],</div>
+<div class="c-code__line">            <a class="code hl_variable" href="dd-onprem-getting-started_8rs.html#ae5bcdc5c590f007269dd7601cd69c63c">profile</a>: DEFAULT_PROFILE,</div>
+<div class="c-code__line">        })</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">}</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> SUMMARY_PROPERTIES: &amp;[&amp;<a class="code hl_variable" href="dd-cloud-configurator_8rs.html#af99483e1224efe9ddfe4c99d7caa54ac">str</a>] = &amp;[<span class="c-code__stringliteral">&quot;Asn&quot;</span>, <span class="c-code__stringliteral">&quot;RegisteredName&quot;</span>]</div>
+<div class="ttc" id="adata__file__check_8rs_html_af237e159d58cb9c57a1bd88cfd455988"><div class="ttname"><a href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a></div><div class="ttdeci">if let Some(published)</div></div>
+<div class="ttc" id="add-cloud-configurator_8rs_html_af99483e1224efe9ddfe4c99d7caa54ac"><div class="ttname"><a href="dd-cloud-configurator_8rs.html#af99483e1224efe9ddfe4c99d7caa54ac">str</a></div><div class="ttdeci">const &amp; str</div><div class="ttdef"><b>Definition</b> dd-cloud-configurator.rs:40</div></div>
+<div class="ttc" id="add-onprem-getting-started_8rs_html_ab533a800544facf05fd1c8e50f92099a"><div class="ttname"><a href="dd-onprem-getting-started_8rs.html#ab533a800544facf05fd1c8e50f92099a">data_file</a></div><div class="ttdeci">pub data_file</div><div class="ttdoc">The path to the on-premise Hash data file the engine loads.</div><div class="ttdef"><b>Definition</b> dd-onprem-getting-started.rs:79</div></div>
+<div class="ttc" id="add-onprem-getting-started_8rs_html_ae5bcdc5c590f007269dd7601cd69c63c"><div class="ttname"><a href="dd-onprem-getting-started_8rs.html#ae5bcdc5c590f007269dd7601cd69c63c">profile</a></div><div class="ttdeci">pub pub profile</div><div class="ttdoc">The performance profile to load the data file with.</div><div class="ttdef"><b>Definition</b> dd-onprem-getting-started.rs:82</div></div>
+<div class="ttc" id="aipi-onprem-getting-started_8rs_html_a4d4eee41204463b9d6085445f399db43"><div class="ttname"><a href="ipi-onprem-getting-started_8rs.html#a4d4eee41204463b9d6085445f399db43">from_env</a></div><div class="ttdeci">pub fn from_env() -&gt; Option&lt; Self &gt;</div><div class="ttdoc">Build the default options through the shared resolver.</div><div class="ttdef"><b>Definition</b> ipi-onprem-getting-started.rs:93</div></div>
+<div class="ttc" id="aipi-onprem-getting-started_8rs_html_a7707ba8c1851ca9fb8ad30d7096bfdb0"><div class="ttname"><a href="ipi-onprem-getting-started_8rs.html#a7707ba8c1851ca9fb8ad30d7096bfdb0">ips</a></div><div class="ttdeci">pub pub ips</div><div class="ttdoc">The IP addresses to look up, as client-IP evidence values.</div><div class="ttdef"><b>Definition</b> ipi-onprem-getting-started.rs:82</div></div>
+<div class="ttc" id="aipi-onprem-getting-started_8rs_html_a8ec87ce59a7730398990e6de32fb8cb4"><div class="ttname"><a href="ipi-onprem-getting-started_8rs.html#a8ec87ce59a7730398990e6de32fb8cb4">for_tier</a></div><div class="ttdeci">pub fn for_tier(tier:examples_shared::IpiTier) -&gt; Option&lt; Self &gt;</div><div class="ttdoc">Build options pinned to a specific data-file tier.</div><div class="ttdef"><b>Definition</b> ipi-onprem-getting-started.rs:113</div></div>
+<div class="ttc" id="astruct_example_options_html"><div class="ttname"><a href="struct_example_options.html">ExampleOptions</a></div><div class="ttdoc">Options the example runs with.</div><div class="ttdef"><b>Definition</b> dd-cloud-configurator.rs:54</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9fd1aac1e641b0dd9482ef5c3bb31a17" name="a9fd1aac1e641b0dd9482ef5c3bb31a17"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9fd1aac1e641b0dd9482ef5c3bb31a17">&#9670;&#160;</a></span>FASTER_PROFILE_COMMAND</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const FASTER_PROFILE_COMMAND</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The command that runs this example with the faster profile. </p>
+
+</div>
+</div>
+<a id="a664ce62fcf424a24475822bb6fd2b206" name="a664ce62fcf424a24475822bb6fd2b206"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a664ce62fcf424a24475822bb6fd2b206">&#9670;&#160;</a></span>LocationConfidence</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const const LocationConfidence</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a9214474ee1e489a3f407516aa335c854" name="a9214474ee1e489a3f407516aa335c854"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9214474ee1e489a3f407516aa335c854">&#9670;&#160;</a></span>NOT_IN_THIS_FILE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const NOT_IN_THIS_FILE</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Shown for a summary property the data file in use does not carry. </p>
+
+</div>
+</div>
+<a id="a61af5a4ca35abc899289deb75d593b32" name="a61af5a4ca35abc899289deb75d593b32"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a61af5a4ca35abc899289deb75d593b32">&#9670;&#160;</a></span>PerformanceProfile</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub struct <a class="el" href="struct_example_options.html">ExampleOptions</a> PerformanceProfile = PerformanceProfile::LowMemory</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The profile the pipeline is built with unless <code>--<a class="el" href="dd-onprem-getting-started_8rs.html#ae5bcdc5c590f007269dd7601cd69c63c" title="The performance profile to load the data file with.">profile</a></code> names another. </p>
+<p>LowMemory reads the data file from disk, so the run needs little memory even with the Enterprise file, which is over 6 GB. Reading from disk is much slower, and the .NET metrics example read a profile's values about 166 times a second with LowMemory against 2,013 with the file held in memory, so <code>--<a class="el" href="dd-onprem-getting-started_8rs.html#ae5bcdc5c590f007269dd7601cd69c63c" title="The performance profile to load the data file with.">profile</a> HighPerformance</code> is offered where there is memory for the whole file. </p>
+
+</div>
+</div>
+<a id="a810821214dd6f0b9bdef73e05eedbdc2" name="a810821214dd6f0b9bdef73e05eedbdc2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a810821214dd6f0b9bdef73e05eedbdc2">&#9670;&#160;</a></span>RegisteredName</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const const RegisteredName</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="ad76a2f16829aa61cbd57c6256071cfa5" name="ad76a2f16829aa61cbd57c6256071cfa5"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad76a2f16829aa61cbd57c6256071cfa5">&#9670;&#160;</a></span>REQUESTED_PROPERTIES</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const const REQUESTED_PROPERTIES</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The properties the pipeline is asked for. </p>
+<p>The summary properties give each free file one it carries, because a data file opens only when it carries at least one property asked for. </p>
+
+</div>
+</div>
+<a id="a59c09f4d2e77fa42c030902215658830" name="a59c09f4d2e77fa42c030902215658830"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a59c09f4d2e77fa42c030902215658830">&#9670;&#160;</a></span>str</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const &amp; str</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">     = &amp;[</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;IP Intelligence&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/ip-intelligence?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-metrics.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Pricing&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-metrics.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Documentation&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-metrics.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">]</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab60c545115f42f88c00b55f384f5ffc0" name="ab60c545115f42f88c00b55f384f5ffc0"></a>

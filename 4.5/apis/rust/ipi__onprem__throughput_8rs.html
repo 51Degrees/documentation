@@ -69,9 +69,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi__onprem__t
 Functions</h2></td></tr>
 <tr class="c-table__row memitem:a22d7c8693c7ac6179e3837c098a64906" id="r_a22d7c8693c7ac6179e3837c098a64906"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a22d7c8693c7ac6179e3837c098a64906">build_pipeline</a> (data_file:&amp;Path) -&gt; Arc&lt; Pipeline &gt;</td></tr>
 <tr class="c-table__row memdesc:a22d7c8693c7ac6179e3837c098a64906"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the on-premise IP Intelligence pipeline the benchmark looks up through.  <br /></td></tr>
-<tr class="c-table__row memitem:acdf32375bf80086aa759fee0723098ea" id="r_acdf32375bf80086aa759fee0723098ea"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#acdf32375bf80086aa759fee0723098ea">load_ips</a> (path:&amp;Path, max:usize) -&gt; Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td></tr>
+<tr class="c-table__row memitem:acdf32375bf80086aa759fee0723098ea" id="r_acdf32375bf80086aa759fee0723098ea"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#acdf32375bf80086aa759fee0723098ea">load_ips</a> (path:&amp;Path, max:usize) -&gt; Vec&lt; String &gt;</td></tr>
 <tr class="c-table__row memdesc:acdf32375bf80086aa759fee0723098ea"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Load up to <code>max</code> IP-address strings from the multi-document YAML evidence file.  <br /></td></tr>
-<tr class="c-table__row memitem:ac986b28c87b31d3590f8c1ea5b28b554" id="r_ac986b28c87b31d3590f8c1ea5b28b554"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ac986b28c87b31d3590f8c1ea5b28b554">look_up_all</a> (pipeline:&amp;Arc&lt; Pipeline &gt;, ips:&amp;[<a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>]) -&gt; <a class="el" href="dd-onprem-performance_8rs.html#ab798c2e151673618ca772d4f0ee287fe">u64</a></td></tr>
+<tr class="c-table__row memitem:ac986b28c87b31d3590f8c1ea5b28b554" id="r_ac986b28c87b31d3590f8c1ea5b28b554"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ac986b28c87b31d3590f8c1ea5b28b554">look_up_all</a> (pipeline:&amp;Arc&lt; Pipeline &gt;, ips:&amp;[String]) -&gt; <a class="el" href="dd-onprem-performance_8rs.html#ab798c2e151673618ca772d4f0ee287fe">u64</a></td></tr>
 <tr class="c-table__row memdesc:ac986b28c87b31d3590f8c1ea5b28b554"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Look every IP up once, reading the result so the optimizer cannot elide the work, and return how many lookups succeeded.  <br /></td></tr>
 <tr class="c-table__row memitem:af1506a2d13c12d52550b008d0ffa4d8b" id="r_af1506a2d13c12d52550b008d0ffa4d8b"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#af1506a2d13c12d52550b008d0ffa4d8b">ipi_onprem_throughput</a> (c:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> Criterion)</td></tr>
 <tr class="c-table__row memdesc:af1506a2d13c12d52550b008d0ffa4d8b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Register the IP Intelligence throughput benchmark, or skip cleanly when the ASN data file or evidence file is not present in this checkout.  <br /></td></tr>
@@ -197,7 +197,7 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">max:usize</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>
+          <td class="c-table__cell">max:usize</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; Vec&lt; String &gt;</td>
         </tr>
           </table>
         </div>

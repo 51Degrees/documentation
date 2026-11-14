@@ -123,21 +123,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2mix
 <div class="c-code__line"><span class="c-code__keyword">const</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="class_ip_intelligence_on_premise.html">IpIntelligenceOnPremise</a> =</div>
 <div class="c-code__line">  require51(<span class="c-code__stringliteral">&#39;fiftyone.ipintelligence.onpremise&#39;</span>).IpIntelligenceOnPremise;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="class_example_utils.html">ExampleUtils</a> = require(path.join(__dirname, <span class="c-code__stringliteral">&#39;/../../exampleUtils&#39;</span>)).ExampleUtils;</div>
-<div class="c-code__line"><span class="c-code__keyword">const</span> <a id="_a2" name="_a2"></a><a class="code hl_class" href="class_data_extension.html">DataExtension</a> = require51(<span class="c-code__stringliteral">&#39;fiftyone.ipintelligence.shared&#39;</span>).dataExtension;</div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> { <a id="_a1" name="_a1"></a><a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>, NEEDS_ENTERPRISE } =</div>
+<div class="c-code__line">  require(path.join(__dirname, <span class="c-code__stringliteral">&#39;/../../exampleUtils&#39;</span>));</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__comment">// Device detection data file names in priority order.</span></div>
-<div class="c-code__line"><span class="c-code__keyword">const</span> HASH_FILE_NAMES = [</div>
-<div class="c-code__line">  <span class="c-code__stringliteral">&#39;TAC-HashV41.hash&#39;</span>,</div>
-<div class="c-code__line">  <span class="c-code__stringliteral">&#39;51Degrees-EnterpriseV4.1.hash&#39;</span>,</div>
-<div class="c-code__line">  <span class="c-code__stringliteral">&#39;51Degrees-LiteV4.1.hash&#39;</span></div>
-<div class="c-code__line">];</div>
+<div class="c-code__line"><span class="c-code__comment">// The free Lite data files, which are downloaded if they are missing.</span></div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> LITE_V_4_1_HASH = <span class="c-code__stringliteral">&#39;51Degrees-LiteV4.1.hash&#39;</span>;</div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> LITE_V_4_1_IPI = <span class="c-code__stringliteral">&#39;51Degrees-LiteV41.ipi&#39;</span>;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__comment">// IP intelligence data file names in priority order.</span></div>
-<div class="c-code__line"><span class="c-code__keyword">const</span> IPI_FILE_NAMES = [</div>
-<div class="c-code__line">  <span class="c-code__stringliteral">&#39;51Degrees-EnterpriseIpiV41.ipi&#39;</span>,</div>
-<div class="c-code__line">  <span class="c-code__stringliteral">&#39;51Degrees-LiteV41.ipi&#39;</span></div>
-<div class="c-code__line">];</div>
+<div class="c-code__line"><span class="c-code__comment">// Where to ask for a copy of the Enterprise data files, tagged with this</span></div>
+<div class="c-code__line"><span class="c-code__comment">// example.</span></div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> CONTACT_US = <span class="c-code__stringliteral">&#39;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.ipintelligence.onpremise-examples-onpremise-mixed-gettingstarted-console-gettingstarted.js&amp;utm_term=enterprise-data-file&#39;</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Evidence that includes both a User-Agent (for device detection) and an</span></div>
 <div class="c-code__line"><span class="c-code__comment">// IP address (for IP intelligence).</span></div>
@@ -164,9 +159,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2mix
 <div class="c-code__line">  ])</div>
 <div class="c-code__line">];</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment">// A property that the data file does not have is shown as needing the</span></div>
+<div class="c-code__line"><span class="c-code__comment">// Enterprise data file.</span></div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> outputValue = <span class="c-code__keyword">function</span> (name, elementData, propertyName) {</div>
-<div class="c-code__line">  <span class="c-code__keywordflow">return</span> `\n\t${name}: ` +</div>
-<div class="c-code__line">    <a class="code hl_class" href="class_data_extension.html">DataExtension</a>.<a id="a3" name="a3"></a><a class="code hl_function" href="class_data_extension.html#a208dbc998aec51823620213f54daf71b">getValueHelper</a>(elementData, propertyName);</div>
+<div class="c-code__line">  <span class="c-code__keywordflow">return</span> `\n\t${name}: ` + <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.<a id="a2" name="a2"></a>getEnterpriseValue(</div>
+<div class="c-code__line">    elementData.flowElement, elementData, propertyName);</div>
 <div class="c-code__line">};</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> analyse = async <span class="c-code__keyword">function</span> (evidence, pipeline, output) {</div>
@@ -204,6 +201,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2mix
 <div class="c-code__line">  message += outputValue(<span class="c-code__stringliteral">&#39;Screen Width&#39;</span>, device, <span class="c-code__stringliteral">&#39;screenpixelswidth&#39;</span>);</div>
 <div class="c-code__line">  message += outputValue(<span class="c-code__stringliteral">&#39;Screen Height&#39;</span>, device, <span class="c-code__stringliteral">&#39;screenpixelsheight&#39;</span>);</div>
 <div class="c-code__line">  output.write(message + <span class="c-code__charliteral">&#39;\n&#39;</span>);</div>
+<div class="c-code__line">  <span class="c-code__keyword">const</span> needsEnterprise = message.includes(NEEDS_ENTERPRISE);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__comment">// Get the IP intelligence results.</span></div>
 <div class="c-code__line">  message = <span class="c-code__stringliteral">&#39;\nIP Intelligence Results:&#39;</span>;</div>
@@ -224,6 +222,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2mix
 <div class="c-code__line">  message += outputValue(<span class="c-code__stringliteral">&#39;Accuracy Radius&#39;</span>, ip, <span class="c-code__stringliteral">&#39;accuracyradiusmin&#39;</span>);</div>
 <div class="c-code__line">  message += outputValue(<span class="c-code__stringliteral">&#39;Time Zone Offset&#39;</span>, ip, <span class="c-code__stringliteral">&#39;timezoneoffset&#39;</span>);</div>
 <div class="c-code__line">  output.write(message + <span class="c-code__stringliteral">&#39;\n\n&#39;</span>);</div>
+<div class="c-code__line">  <span class="c-code__keywordflow">return</span> needsEnterprise || message.includes(NEEDS_ENTERPRISE);</div>
 <div class="c-code__line">};</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> run = async <span class="c-code__keyword">function</span> (deviceDataFile, ipDataFile, output) {</div>
@@ -265,8 +264,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2mix
 <div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__comment">// Process the combined evidence (User-Agent for device detection,</span></div>
 <div class="c-code__line">  <span class="c-code__comment">// IP address for IP intelligence).</span></div>
+<div class="c-code__line">  let needsEnterprise = <span class="c-code__keyword">false</span>;</div>
 <div class="c-code__line">  <span class="c-code__keywordflow">for</span> (<span class="c-code__keyword">const</span> evidence of combinedEvidence) {</div>
-<div class="c-code__line">    await analyse(evidence, pipeline, output);</div>
+<div class="c-code__line">    needsEnterprise = await analyse(evidence, pipeline, output) || needsEnterprise;</div>
+<div class="c-code__line">  }</div>
+<div class="c-code__line">  <span class="c-code__keywordflow">if</span> (needsEnterprise) {</div>
+<div class="c-code__line">    output.write(`${<a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.<a id="a3" name="a3"></a>getEnterpriseNote(CONTACT_US)}\n`);</div>
 <div class="c-code__line">  }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__comment">// Check the IP intelligence data file.</span></div>
@@ -277,27 +280,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2mix
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> (process.env.JEST_WORKER_ID === undefined) {</div>
 <div class="c-code__line">  <span class="c-code__keyword">const</span> args = process.argv.slice(2);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">  <span class="c-code__comment">// Use the supplied path for the device detection data file or try to</span></div>
-<div class="c-code__line">  <span class="c-code__comment">// find one in priority order. The 51DEGREES_DD_PATH environment</span></div>
-<div class="c-code__line">  <span class="c-code__comment">// variable is checked before the folder hierarchy is searched.</span></div>
-<div class="c-code__line">  let deviceDataFile = args.length &gt; 0 ? args[0] : undefined;</div>
-<div class="c-code__line">  <span class="c-code__keywordflow">if</span> (deviceDataFile === undefined) {</div>
-<div class="c-code__line">    <span class="c-code__keywordflow">for</span> (<span class="c-code__keyword">const</span> fileName of HASH_FILE_NAMES) {</div>
-<div class="c-code__line">      deviceDataFile = <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.<a id="a5" name="a5"></a>findDeviceDataFile(fileName);</div>
-<div class="c-code__line">      <span class="c-code__keywordflow">if</span> (deviceDataFile !== undefined) <span class="c-code__keywordflow">break</span>;</div>
-<div class="c-code__line">    }</div>
-<div class="c-code__line">  }</div>
+<div class="c-code__line">  <span class="c-code__comment">// Use the supplied path for the device detection data file, the path in</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// the _51DEGREES_DD_PATH environment variable, or the Lite file.</span></div>
+<div class="c-code__line">  <span class="c-code__keyword">const</span> deviceDataFile = args.length &gt; 0</div>
+<div class="c-code__line">    ? args[0]</div>
+<div class="c-code__line">    : <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.<a id="a5" name="a5"></a>findDeviceDataFile(LITE_V_4_1_HASH);</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">  <span class="c-code__comment">// Use the supplied path for the IP intelligence data file or try to</span></div>
-<div class="c-code__line">  <span class="c-code__comment">// find one in priority order. The 51DEGREES_IPI_PATH environment</span></div>
-<div class="c-code__line">  <span class="c-code__comment">// variable is checked before the folder hierarchy is searched.</span></div>
-<div class="c-code__line">  let ipDataFile = args.length &gt; 1 ? args[1] : undefined;</div>
-<div class="c-code__line">  <span class="c-code__keywordflow">if</span> (ipDataFile === undefined) {</div>
-<div class="c-code__line">    <span class="c-code__keywordflow">for</span> (<span class="c-code__keyword">const</span> fileName of IPI_FILE_NAMES) {</div>
-<div class="c-code__line">      ipDataFile = <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.<a id="a6" name="a6"></a>findDataFile(fileName);</div>
-<div class="c-code__line">      <span class="c-code__keywordflow">if</span> (ipDataFile !== undefined) <span class="c-code__keywordflow">break</span>;</div>
-<div class="c-code__line">    }</div>
-<div class="c-code__line">  }</div>
+<div class="c-code__line">  <span class="c-code__comment">// Use the supplied path for the IP intelligence data file, the path in</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// the _51DEGREES_IPI_PATH environment variable, or the Lite file.</span></div>
+<div class="c-code__line">  <span class="c-code__keyword">const</span> ipDataFile = args.length &gt; 1</div>
+<div class="c-code__line">    ? args[1]</div>
+<div class="c-code__line">    : <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.<a id="a6" name="a6"></a>findDataFile(LITE_V_4_1_IPI);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__keywordflow">if</span> (deviceDataFile !== undefined &amp;&amp; ipDataFile !== undefined) {</div>
 <div class="c-code__line">    console.log(`Device detection data file: ${deviceDataFile}`);</div>
@@ -323,10 +316,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2mix
 <div class="c-code__line">module.exports = {</div>
 <div class="c-code__line">  run</div>
 <div class="c-code__line">};</div>
-<div class="ttc" id="aclass_data_extension_html"><div class="ttname"><a href="class_data_extension.html">DataExtension</a></div><div class="ttdef"><b>Definition</b> dataExtension.js:23</div></div>
-<div class="ttc" id="aclass_data_extension_html_a208dbc998aec51823620213f54daf71b"><div class="ttname"><a href="class_data_extension.html#a208dbc998aec51823620213f54daf71b">DataExtension::getValueHelper</a></div><div class="ttdeci">static getValueHelper(elementData, propertyName)</div><div class="ttdoc">Helper to get a human readable value of an aspect property value.</div><div class="ttdef"><b>Definition</b> dataExtension.js:55</div></div>
-<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.ipintelligence.onpremise/examples/onpremise/exampleUtils.js:116</div></div>
-<div class="ttc" id="aclass_ip_intelligence_on_premise_html"><div class="ttname"><a href="class_ip_intelligence_on_premise.html">IpIntelligenceOnPremise</a></div><div class="ttdoc">On premise version of the 51Degrees IP Intelligence Engine Uses a data file to process evidence in Fl...</div><div class="ttdef"><b>Definition</b> ipIntelligenceOnPremise.js:99</div></div>
+<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.ipintelligence.onpremise/examples/onpremise/exampleUtils.js:203</div></div>
+<div class="ttc" id="aclass_ip_intelligence_on_premise_html"><div class="ttname"><a href="class_ip_intelligence_on_premise.html">IpIntelligenceOnPremise</a></div><div class="ttdoc">On premise version of the 51Degrees IP Intelligence Engine Uses a data file to process evidence in Fl...</div><div class="ttdef"><b>Definition</b> ipIntelligenceOnPremise.js:101</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

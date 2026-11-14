@@ -18,8 +18,8 @@ var annotated =
           [ "RequestFormatter", "interfacefiftyone_1_1geolocation_1_1core_1_1_request_formatter.html", null ]
         ] ],
         [ "data", null, [
-          [ "CloudGeoData", "interfacefiftyone_1_1geolocation_1_1data_1_1_cloud_geo_data.html", null ],
-          [ "CloudGeoDataDefault", "classfiftyone_1_1geolocation_1_1data_1_1_cloud_geo_data_default.html", null ]
+          [ "CloudGeoData", "interfacefiftyone_1_1geolocation_1_1data_1_1_cloud_geo_data.html", "interfacefiftyone_1_1geolocation_1_1data_1_1_cloud_geo_data" ],
+          [ "CloudGeoDataDefault", "classfiftyone_1_1geolocation_1_1data_1_1_cloud_geo_data_default.html", "classfiftyone_1_1geolocation_1_1data_1_1_cloud_geo_data_default" ]
         ] ],
         [ "examples", null, [
           [ "cloud", null, [
@@ -29,7 +29,7 @@ var annotated =
           [ "ExampleBase", "classfiftyone_1_1geolocation_1_1examples_1_1_example_base.html", null ]
         ] ],
         [ "flowelements", null, [
-          [ "GeoLocationCloudEngine", "classfiftyone_1_1geolocation_1_1flowelements_1_1_geo_location_cloud_engine.html", null ],
+          [ "GeoLocationCloudEngine", "classfiftyone_1_1geolocation_1_1flowelements_1_1_geo_location_cloud_engine.html", "classfiftyone_1_1geolocation_1_1flowelements_1_1_geo_location_cloud_engine" ],
           [ "GeoLocationCloudEngineBuilder", "classfiftyone_1_1geolocation_1_1flowelements_1_1_geo_location_cloud_engine_builder.html", null ]
         ] ],
         [ "web", null, [

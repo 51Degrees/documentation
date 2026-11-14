@@ -69,16 +69,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('device-detecti
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="c-table__row memitem:a0fd1504a7922b81f6c328727e805421d" id="r_a0fd1504a7922b81f6c328727e805421d"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a0fd1504a7922b81f6c328727e805421d">detection_results_table</a> (device:&amp;dyn ElementData) -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td></tr>
-<tr class="c-table__row memdesc:a0fd1504a7922b81f6c328727e805421d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Render the server-side detection results as a <code>.c-eg-table</code>.  <br /></td></tr>
-<tr class="c-table__row memitem:aa77de6e414f8aaef0c3984354bda509b" id="r_aa77de6e414f8aaef0c3984354bda509b"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#aa77de6e414f8aaef0c3984354bda509b">response_header_table</a> (headers:&amp;[(<a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>)]) -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td></tr>
+<tr class="c-table__row memitem:a5dd890c748ec442940c4260ce983906f" id="r_a5dd890c748ec442940c4260ce983906f"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a5dd890c748ec442940c4260ce983906f">enterprise_only</a> (property:&amp;str) -&gt; <a class="el" href="data__paths_8rs.html#ace367d07d2cbc650fd186739e5511adb">bool</a></td></tr>
+<tr class="c-table__row memdesc:a5dd890c748ec442940c4260ce983906f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether <code><a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#adf5ba300143c3e9bea959172d1f72aea" title="The property&#39;s name, such as CountryCode.">property</a></code> is one the pages display that only the Enterprise data file carries, being those in the crate's list plus HardwareName, which the free Lite file does not carry either.  <br /></td></tr>
+<tr class="c-table__row memitem:afdfa84aceb9bd5ce40c6096bd9db0a54" id="r_afdfa84aceb9bd5ce40c6096bd9db0a54"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#afdfa84aceb9bd5ce40c6096bd9db0a54">detection_results_table</a> (device:&amp;dyn ElementData, available:Option&lt;&amp;[String]&gt;) -&gt; String</td></tr>
+<tr class="c-table__row memdesc:afdfa84aceb9bd5ce40c6096bd9db0a54"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Render the server-side detection results as a <code>.c-eg-table</code>.  <br /></td></tr>
+<tr class="c-table__row memitem:a823d1d7c5ceed1e546532f61fde38810" id="r_a823d1d7c5ceed1e546532f61fde38810"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a823d1d7c5ceed1e546532f61fde38810">find_out_more_html</a> (repositories:&amp;[&amp;<a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a>]) -&gt; String</td></tr>
+<tr class="c-table__row memdesc:a823d1d7c5ceed1e546532f61fde38810"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The "Find out more" section that ends every page, set apart by a rule.  <br /></td></tr>
+<tr class="c-table__row memitem:aa77de6e414f8aaef0c3984354bda509b" id="r_aa77de6e414f8aaef0c3984354bda509b"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#aa77de6e414f8aaef0c3984354bda509b">response_header_table</a> (headers:&amp;[(String, String)]) -&gt; String</td></tr>
 <tr class="c-table__row memdesc:aa77de6e414f8aaef0c3984354bda509b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Render the set-headers response headers (such as <code>Accept-CH</code>) as a <code>.c-eg-table</code>.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="c-table__row memitem:a14d6550b3f17a2c77325636fe51868e0" id="r_a14d6550b3f17a2c77325636fe51868e0"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a14d6550b3f17a2c77325636fe51868e0">ENTERPRISE_CONTACT_URL</a></td></tr>
+<tr class="c-table__row memdesc:a14d6550b3f17a2c77325636fe51868e0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Where the on-premise pages send a reader to ask about a copy of the Enterprise data file.  <br /></td></tr>
+<tr class="c-table__row memitem:a59c09f4d2e77fa42c030902215658830" id="r_a59c09f4d2e77fa42c030902215658830"><td class="c-table__cell">pub&#160;const&#160;&amp;&#160;</td><td class="c-table__cell"><a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a></td></tr>
 <tr class="c-table__row memitem:a5e0d1adc652c69e903d8e0821c0035b3" id="r_a5e0d1adc652c69e903d8e0821c0035b3"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a5e0d1adc652c69e903d8e0821c0035b3">DISPLAY_PROPERTIES</a></td></tr>
-<tr class="c-table__row memdesc:a5e0d1adc652c69e903d8e0821c0035b3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The device-detection properties the example pages display, as <code>(<a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a62cc81dcd08eb08cee21fec7d3e4624e" title="The human-readable label for the property row.">label</a>, property-name)</code> pairs.  <br /></td></tr>
-<tr class="c-table__row memitem:a59c09f4d2e77fa42c030902215658830" id="r_a59c09f4d2e77fa42c030902215658830"><td class="c-table__cell">const&#160;&amp;&#160;</td><td class="c-table__cell"><a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a></td></tr>
+<tr class="c-table__row memdesc:a5e0d1adc652c69e903d8e0821c0035b3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The device-detection properties the example pages display, as <code>(<a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#aff76208710c0eea5f0fc0aa60f296fcf" title="The human-readable label for the property row.">label</a>, property-name)</code> pairs.  <br /></td></tr>
 <tr class="c-table__row memitem:a1d7bc800cf1221657cc927261220f2f3" id="r_a1d7bc800cf1221657cc927261220f2f3"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a1d7bc800cf1221657cc927261220f2f3">CLOUD_CONTACT_BANNER</a></td></tr>
 <tr class="c-table__row memdesc:a1d7bc800cf1221657cc927261220f2f3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The contact-us banner shown on cloud pages, inviting the reader to discuss an on-premise deployment.  <br /></td></tr>
 <tr class="c-table__row memitem:a4fb50cad4a02a2fef55c1e6107cd7703" id="r_a4fb50cad4a02a2fef55c1e6107cd7703"><td class="c-table__cell">pub&#160;const&#160;which&#160;detects&#160;only&#160;a&#160;limited&#160;set&#160;of&#160;<a class="el" href="examples-shared_2src_2lib_8rs.html#a3299cecbddd2fc69d121f1e70c6fb7c9">properties</a>&#160;A&#160;paid&#160;data&#160;file&#160;adds&#160;thousands&#160;of&#160;device&#160;</td><td class="c-table__cell"><a class="el" href="#a4fb50cad4a02a2fef55c1e6107cd7703">models</a></td></tr>
@@ -86,8 +92,8 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:a3a2cae43ddae1028ece04e083b57b342" id="r_a3a2cae43ddae1028ece04e083b57b342"><td class="c-table__cell">pub&#160;const&#160;which&#160;detects&#160;only&#160;a&#160;limited&#160;set&#160;of&#160;<a class="el" href="examples-shared_2src_2lib_8rs.html#a3299cecbddd2fc69d121f1e70c6fb7c9">properties</a>&#160;A&#160;paid&#160;data&#160;file&#160;adds&#160;thousands&#160;of&#160;device&#160;hardware&#160;vendor&#160;and&#160;finer&#160;platform&#160;and&#160;browser&#160;detail&#160;and&#160;Apple&#160;<a class="el" href="#aa4ae77ae03f73532e6719d08b8469814">model</a>&#160;resolution&lt;&#160;a&#160;href=\&quot;https:&#160;pub&#160;const&#160;MISSING_ACCEPT_CH_ALERT:&#160;&amp;<a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a>&#160;=&#160;&quot;\&lt;&#160;div&#160;class=\&quot;c-eg-alert\&quot;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a3a2cae43ddae1028ece04e083b57b342">WARNING</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
-<a id="a0fd1504a7922b81f6c328727e805421d" name="a0fd1504a7922b81f6c328727e805421d"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0fd1504a7922b81f6c328727e805421d">&#9670;&#160;</a></span>detection_results_table()</h2>
+<a id="afdfa84aceb9bd5ce40c6096bd9db0a54" name="afdfa84aceb9bd5ce40c6096bd9db0a54"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#afdfa84aceb9bd5ce40c6096bd9db0a54">&#9670;&#160;</a></span>detection_results_table()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -97,8 +103,12 @@ Variables</h2></td></tr>
             <tr class="c-table__row">
               <td class="c-table__cell">pub fn detection_results_table </td>
           <td>(</td>
-          <td class="c-table__cell">device:&amp;dyn</td>          <td class="c-table__cell"><span class="paramname"><em>ElementData</em></span></td><td>)</td>
-          <td> -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td>
+          <td class="c-table__cell">device:&amp;dyn</td>          <td class="c-table__cell"><span class="paramname"><em>ElementData</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">available:Option&lt;&amp;[String]&gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; String</td>
         </tr>
           </table>
         </div>
@@ -106,7 +116,55 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Render the server-side detection results as a <code>.c-eg-table</code>. </p>
-<p><code>device</code> is the device element data read from the flow data. Each displayed property is rendered through [<code>examples_shared::get_property_as_string</code>], so a missing or no-value property shows the standard marker rather than failing. </p>
+<p><code>device</code> is the device element data read from the flow data. Each displayed property is rendered through [<code>examples_shared::get_property_as_string</code>], so a missing or no-value property shows the standard marker rather than failing.</p>
+<p><code><a class="el" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5" title="The properties the data file carries.">available</a></code> is the on-premise engine's properties, which are those its data file carries, or <code>None</code> for the cloud. An Enterprise property the data file does not carry says it needs the Enterprise data file, with a link to ask about a copy. </p>
+
+</div>
+</div>
+<a id="a5dd890c748ec442940c4260ce983906f" name="a5dd890c748ec442940c4260ce983906f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5dd890c748ec442940c4260ce983906f">&#9670;&#160;</a></span>enterprise_only()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn enterprise_only </td>
+          <td>(</td>
+          <td class="c-table__cell">property:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="data__paths_8rs.html#ace367d07d2cbc650fd186739e5511adb">bool</a></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Whether <code><a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#adf5ba300143c3e9bea959172d1f72aea" title="The property&#39;s name, such as CountryCode.">property</a></code> is one the pages display that only the Enterprise data file carries, being those in the crate's list plus HardwareName, which the free Lite file does not carry either. </p>
+
+</div>
+</div>
+<a id="a823d1d7c5ceed1e546532f61fde38810" name="a823d1d7c5ceed1e546532f61fde38810"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a823d1d7c5ceed1e546532f61fde38810">&#9670;&#160;</a></span>find_out_more_html()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub fn find_out_more_html </td>
+          <td>(</td>
+          <td class="c-table__cell">repositories:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[&amp;str]</td><td>)</td>
+          <td> -&gt; String</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The "Find out more" section that ends every page, set apart by a rule. </p>
+<p>It lists the 51degrees.com links, then each of <code>repositories</code> as its address. </p>
 
 </div>
 </div>
@@ -122,7 +180,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">pub fn response_header_table </td>
           <td>(</td>
           <td class="c-table__cell">headers:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[(String, String)]</td><td>)</td>
-          <td> -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td>
+          <td> -&gt; String</td>
         </tr>
           </table>
         </div>
@@ -170,7 +228,27 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>The device-detection properties the example pages display, as <code>(<a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a62cc81dcd08eb08cee21fec7d3e4624e" title="The human-readable label for the property row.">label</a>, property-name)</code> pairs. </p>
+<p>The device-detection properties the example pages display, as <code>(<a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#aff76208710c0eea5f0fc0aa60f296fcf" title="The human-readable label for the property row.">label</a>, property-name)</code> pairs. </p>
+
+</div>
+</div>
+<a id="a14d6550b3f17a2c77325636fe51868e0" name="a14d6550b3f17a2c77325636fe51868e0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a14d6550b3f17a2c77325636fe51868e0">&#9670;&#160;</a></span>ENTERPRISE_CONTACT_URL</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub const ENTERPRISE_CONTACT_URL</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Where the on-premise pages send a reader to ask about a copy of the Enterprise data file. </p>
 
 </div>
 </div>
@@ -225,19 +303,10 @@ Variables</h2></td></tr>
         </div>
       </div>
 </div><div class="c-member__body">
-<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                             = &amp;[</div>
-<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Hardware Vendor&quot;</span>, <span class="c-code__stringliteral">&quot;hardwarevendor&quot;</span>),</div>
-<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Hardware Name&quot;</span>, <span class="c-code__stringliteral">&quot;hardwarename&quot;</span>),</div>
-<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Device Type&quot;</span>, <span class="c-code__stringliteral">&quot;devicetype&quot;</span>),</div>
-<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Platform Vendor&quot;</span>, <span class="c-code__stringliteral">&quot;platformvendor&quot;</span>),</div>
-<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Platform Name&quot;</span>, <span class="c-code__stringliteral">&quot;platformname&quot;</span>),</div>
-<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Platform Version&quot;</span>, <span class="c-code__stringliteral">&quot;platformversion&quot;</span>),</div>
-<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Browser Vendor&quot;</span>, <span class="c-code__stringliteral">&quot;browservendor&quot;</span>),</div>
-<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Browser Name&quot;</span>, <span class="c-code__stringliteral">&quot;browsername&quot;</span>),</div>
-<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Browser Version&quot;</span>, <span class="c-code__stringliteral">&quot;browserversion&quot;</span>),</div>
-<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Screen width (pixels)&quot;</span>, <span class="c-code__stringliteral">&quot;screenpixelswidth&quot;</span>),</div>
-<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Screen height (pixels)&quot;</span>, <span class="c-code__stringliteral">&quot;screenpixelsheight&quot;</span>),</div>
-<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Device Id&quot;</span>, <span class="c-code__stringliteral">&quot;deviceid&quot;</span>),</div>
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">     = &amp;[</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Device Detection&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/device-detection?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-device-detection-examples-src-web_support-mod.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Pricing&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-device-detection-examples-src-web_support-mod.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Documentation&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-device-detection-examples-src-web_support-mod.rs&amp;utm_term=find-out-more&quot;</span>),</div>
 <div class="c-code__line">]</div>
 </div><!-- fragment -->
 </div>

@@ -82,7 +82,11 @@ Collaboration diagram for fiftyone.pipeline.web.services.FiftyOneJSServiceCore.D
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:ac29347a13ead5c92157a56d3154be4ae" id="r_ac29347a13ead5c92157a56d3154be4ae"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ac29347a13ead5c92157a56d3154be4ae">Default</a> (<a class="el" href="interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_clientside_property_service_core.html">ClientsidePropertyServiceCore</a> clientsidePropertyServiceCore, boolean enabled)</td></tr>
-<tr class="c-table__row memdesc:ac29347a13ead5c92157a56d3154be4ae"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Construct a new instance.  <br /></td></tr>
+<tr class="c-table__row memdesc:ac29347a13ead5c92157a56d3154be4ae"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Construct a new instance that serves the JavaScript and the JSON from the default paths.  <br /></td></tr>
+<tr class="c-table__row memitem:af87484ffbe2a2fad1a83803d1569cac3" id="r_af87484ffbe2a2fad1a83803d1569cac3"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#af87484ffbe2a2fad1a83803d1569cac3">Default</a> (<a class="el" href="interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_clientside_property_service_core.html">ClientsidePropertyServiceCore</a> clientsidePropertyServiceCore, boolean enabled, String javaScriptPath, String jsonPath)</td></tr>
+<tr class="c-table__row memdesc:af87484ffbe2a2fad1a83803d1569cac3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Construct a new instance.  <br /></td></tr>
+<tr class="c-table__row memitem:a5c3fa826c10e60619a61f5bcef2a3c78" id="r_a5c3fa826c10e60619a61f5bcef2a3c78"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a5c3fa826c10e60619a61f5bcef2a3c78">setPaths</a> (String javaScriptPath, String jsonPath)</td></tr>
+<tr class="c-table__row memdesc:a5c3fa826c10e60619a61f5bcef2a3c78"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the paths the JavaScript and the JSON are served from.  <br /></td></tr>
 <tr class="c-table__row memitem:a0e66e1f685b9537dfa478197d2e967d4" id="r_a0e66e1f685b9537dfa478197d2e967d4"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="#a0e66e1f685b9537dfa478197d2e967d4">serveJS</a> (HttpServletRequest request, HttpServletResponse response)  throws IOException </td></tr>
 <tr class="c-table__row memdesc:a0e66e1f685b9537dfa478197d2e967d4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check if the 51Degrees JavaScript is being requested and write it to the response if it is.  <br /></td></tr>
 <tr class="c-table__row memitem:a3316d15ecd4550baf99816991584b3af" id="r_a3316d15ecd4550baf99816991584b3af"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="#a3316d15ecd4550baf99816991584b3af">serveJson</a> (HttpServletRequest request, HttpServletResponse response)  throws IOException </td></tr>
@@ -94,10 +98,14 @@ Protected Attributes</h2></td></tr>
 final&#160;<a class="el" href="interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_clientside_property_service_core.html">ClientsidePropertyServiceCore</a>&#160;</td><td class="c-table__cell"><b>clientsidePropertyServiceCore</b></td></tr>
 <tr class="c-table__row memitem:aa987868c6675f6a395f13c1fe77eec0c" id="r_aa987868c6675f6a395f13c1fe77eec0c"><td class="c-table__cell"><a id="aa987868c6675f6a395f13c1fe77eec0c" name="aa987868c6675f6a395f13c1fe77eec0c"></a>
 boolean&#160;</td><td class="c-table__cell"><b>enabled</b></td></tr>
+<tr class="c-table__row memitem:ac17f58f80497fe3f20a090af05e0534b" id="r_ac17f58f80497fe3f20a090af05e0534b"><td class="c-table__cell"><a id="ac17f58f80497fe3f20a090af05e0534b" name="ac17f58f80497fe3f20a090af05e0534b"></a>
+String&#160;</td><td class="c-table__cell"><b>javaScriptPath</b></td></tr>
+<tr class="c-table__row memitem:a7ce020f7053b4cbbc29d01c229234ad9" id="r_a7ce020f7053b4cbbc29d01c229234ad9"><td class="c-table__cell"><a id="a7ce020f7053b4cbbc29d01c229234ad9" name="a7ce020f7053b4cbbc29d01c229234ad9"></a>
+String&#160;</td><td class="c-table__cell"><b>jsonPath</b></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="ac29347a13ead5c92157a56d3154be4ae" name="ac29347a13ead5c92157a56d3154be4ae"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac29347a13ead5c92157a56d3154be4ae">&#9670;&#160;</a></span>Default()</h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac29347a13ead5c92157a56d3154be4ae">&#9670;&#160;</a></span>Default() <span class="c-member__count">[1/2]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -119,11 +127,57 @@ boolean&#160;</td><td class="c-table__cell"><b>enabled</b></td></tr>
       </div>
 </div><div class="c-member__body">
 
+<p>Construct a new instance that serves the JavaScript and the JSON from the default paths. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clientsidePropertyServiceCore</td><td>used to get the JavaScript to add to the returned file </td></tr>
+    <tr><td class="paramname">enabled</td><td>true if the service should be enabled </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af87484ffbe2a2fad1a83803d1569cac3" name="af87484ffbe2a2fad1a83803d1569cac3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af87484ffbe2a2fad1a83803d1569cac3">&#9670;&#160;</a></span>Default() <span class="c-member__count">[2/2]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone.pipeline.web.services.FiftyOneJSServiceCore.Default.Default </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_clientside_property_service_core.html">ClientsidePropertyServiceCore</a></td>          <td class="c-table__cell"><span class="paramname"><em>clientsidePropertyServiceCore</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">boolean</td>          <td class="c-table__cell"><span class="paramname"><em>enabled</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>javaScriptPath</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>jsonPath</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
 <p>Construct a new instance. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">clientsidePropertyServiceCore</td><td>used to get the JavaScript to add to the returned file </td></tr>
     <tr><td class="paramname">enabled</td><td>true if the service should be enabled </td></tr>
+    <tr><td class="paramname">javaScriptPath</td><td>the path inside the application that the JavaScript is served for, or null or empty for the default </td></tr>
+    <tr><td class="paramname">jsonPath</td><td>the path inside the application that the JSON is served for, or null or empty for the default </td></tr>
   </table>
   </dd>
 </dl>
@@ -214,6 +268,40 @@ boolean&#160;</td><td class="c-table__cell"><b>enabled</b></td></tr>
 </dl>
 
 <p>Implements <a class="el" href="interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_fifty_one_j_s_service_core.html#abbcd04e122a7914e078ba9bcbe70a055">fiftyone.pipeline.web.services.FiftyOneJSServiceCore</a>.</p>
+
+</div>
+</div>
+<a id="a5c3fa826c10e60619a61f5bcef2a3c78" name="a5c3fa826c10e60619a61f5bcef2a3c78"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5c3fa826c10e60619a61f5bcef2a3c78">&#9670;&#160;</a></span>setPaths()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyone.pipeline.web.services.FiftyOneJSServiceCore.Default.setPaths </td>
+          <td>(</td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>javaScriptPath</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>jsonPath</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Set the paths the JavaScript and the JSON are served from. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">javaScriptPath</td><td>the path inside the application that the JavaScript is served for, or null or empty for the default </td></tr>
+    <tr><td class="paramname">jsonPath</td><td>the path inside the application that the JSON is served for, or null or empty for the default </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

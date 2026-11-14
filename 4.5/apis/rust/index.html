@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">cargo add fiftyone-device-detection</div>
 <div class="c-code__line">cargo add fiftyone-ip-intelligence</div>
 </div><!-- fragment --><p>The crates below list the others. To build from source, see BuildingBuilding.</p>
+<p>The crates of one release require each other at exactly that release's version, so each crate builds with the 51Degrees crates and the C library of its own release, and <code>cargo update</code> moves them together. Where two of a project's 51Degrees crates share a crate beneath them, Cargo takes both from one release, even if that means an older version of one, and stops with an error only when the project's requirements allow no single release, such as two crates pinned with <code>=</code> to different releases. Running <code>cargo update</code> with one crate named leaves that crate at the release of the crates locked beside it. Pinning a crate with <code>=</code> therefore also pins the crates beneath it, and the C library they build.</p>
 <p>Try the <a href="https://51degrees.com/developers/user-agent-tester?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-rust&amp;utm_content=readme.md&amp;utm_term=install">User-Agent tester</a> and <a href="https://51degrees.com/developers/ip-tester?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-rust&amp;utm_content=readme.md&amp;utm_term=install">IP tester</a>. For cloud use, <a href="https://configure.51degrees.com/?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-rust&amp;utm_content=readme.md&amp;utm_term=install">create a Resource Key</a>.</p>
 <p>This repository was renamed from <code>rust</code> and continues that work.</p>
 <h2>Example</h2>
@@ -81,11 +82,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <div class="c-code__line">    IpIntelligencePipelineBuilder, PerformanceProfile, IP_DATA_KEY,</div>
 <div class="c-code__line">};</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">// Use an on-premise IP Intelligence data file. The ASN file checked into the</div>
-<div class="c-code__line">// data repository suits quick tests; a full data file is downloaded from the</div>
-<div class="c-code__line">// data repository (see its README).</div>
+<div class="c-code__line">// Use an on-premise IP Intelligence data file. The free ASN file from the data</div>
+<div class="c-code__line">// repository suits quick tests. An Enterprise file has the full property set.</div>
+<div class="c-code__line">// LowMemory reads the file from disk, so even the Enterprise file, which is</div>
+<div class="c-code__line">// over 6 GB, needs little memory. HighPerformance holds the whole file in</div>
+<div class="c-code__line">// memory for faster lookups, where there is memory for it.</div>
 <div class="c-code__line">let pipeline = IpIntelligencePipelineBuilder::on_premise(&quot;51Degrees-IPIV4AsnIpiV41.ipi&quot;)</div>
-<div class="c-code__line">    .performance_profile(PerformanceProfile::HighPerformance)</div>
+<div class="c-code__line">    .performance_profile(PerformanceProfile::LowMemory)</div>
 <div class="c-code__line">    // Off because the free ASN file has no licence key for updates.</div>
 <div class="c-code__line">    .auto_update(false)</div>
 <div class="c-code__line">    .build()?;</div>
@@ -95,7 +98,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <p>Our libraries form a Cargo workspace for console and axum web applications, with examples, documentation, and tests.</p>
 <p>The <a href="https://github.com/51Degrees/specifications">specification</a> is the source of truth for the concepts and design of this API and is recommended reading. See ARCHITECTURE.md for the layering, the native co-link symbol-namespacing, the IP Intelligence data strategy and the minification opt-in.</p>
 <h1>Crates</h1>
-<p>The workspace has 29 members, arranged in dependency order from the pure-Rust core up to the runnable examples.</p>
+<p>The library workspace has 30 members and the examples workspace 7, listed below in dependency order from the pure-Rust core up to the runnable examples.</p>
 <h2>Core</h2>
 <table class="c-table">
 <tr class="c-table__row--heading">
@@ -119,6 +122,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <td class="c-table__cell">[<code>fiftyone-json-builder</code>](json-builder)  </td><td class="c-table__cell">JSON serialization element.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">[<code>fiftyone-javascript-builder</code>](javascript-builder)  </td><td class="c-table__cell">JavaScript snippet builder element with the bundled Mustache asset. Minification is an opt-in feature (see below).  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">[<code>fiftyone-agent-signature</code>](agent-signature)  </td><td class="c-table__cell">Agent Signature element, which checks the HTTP Message Signature an automated agent sends under the IETF Web Bot Auth protocol.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">[<code>fiftyone-derived-properties</code>](derived-properties)  </td><td class="c-table__cell">Derived property element, which computes a property from properties earlier elements have already produced, using the script format and scripts of the derived-properties repository, which .NET uses too.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">[<code>fiftyone-pipeline-translation</code>](pipeline-translation)  </td><td class="c-table__cell">Translation engine, which translates the values another element produced into the language the request asks for, from YAML sources of <code><a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a451961dd347700d7bb5d36beec33eb80" title="The resolved value, or the no-value message.">value</a>: translation</code> lines.  </td></tr>
 </table>
 <h2>Native FFI</h2>
 <p>These crates touch the C toolchain. They are pulled in only by the on-premise path, so cloud-only users and most of CI build without a C compiler.</p>
@@ -139,9 +148,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Crate  </td><td class="c-table__cell">Responsibility  </td><td class="c-table__cell">Deployment  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">[<code>fiftyone-device-detection-shared</code>](device-detection-shared)  </td><td class="c-table__cell">DeviceData trait with typed accessors, the property model and the UACH high-entropy decoder element.  </td><td class="c-table__cell">both  </td></tr>
+<td class="c-table__cell">[<code>fiftyone-device-detection-shared</code>](device-detection-shared)  </td><td class="c-table__cell">DeviceData trait with typed accessors, the property model and the UACH high-entropy evidence keys.  </td><td class="c-table__cell">both  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">[<code>fiftyone-device-detection-onpremise</code>](device-detection-onpremise)  </td><td class="c-table__cell">On-premise Hash engine over the safe fiftyone-native wrapper.  </td><td class="c-table__cell">on-premise  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">[<code>fiftyone-device-detection-robots-txt</code>](device-detection-robots-txt)  </td><td class="c-table__cell">robots.txt engine, which allows or refuses each crawler the Hash data file describes by what it uses pages for.  </td><td class="c-table__cell">on-premise  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">[<code>fiftyone-device-detection-property-keyed</code>](device-detection-property-keyed)  </td><td class="c-table__cell">TAC and Native engines, which give every hardware profile in the Hash data file holding a TAC or a native model name.  </td><td class="c-table__cell">on-premise  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">[<code>fiftyone-device-detection-cloud</code>](device-detection-cloud)  </td><td class="c-table__cell">Cloud engine that maps the cloud JSON response to DeviceData.  </td><td class="c-table__cell">cloud  </td></tr>
 <tr class="c-table__row">
@@ -159,6 +172,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <td class="c-table__cell">[<code>fiftyone-ip-intelligence-cloud</code>](ip-intelligence-cloud)  </td><td class="c-table__cell">Cloud engine that maps the cloud JSON response to IpIntelligenceData.  </td><td class="c-table__cell">cloud  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell">[<code>fiftyone-ip-intelligence</code>](ip-intelligence)  </td><td class="c-table__cell">Facade: re-exports plus a builder that selects cloud or on-premise. <code>cloud</code> and <code>on-premise</code> are both default-on features.  </td><td class="c-table__cell">both  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">[<code>fiftyone-ip-intelligence-translation</code>](ip-intelligence-translation)  </td><td class="c-table__cell">Country translation engines: the English names of the countries IP Intelligence gives, those names in the language the request asks for, and every country in that language's order.  </td><td class="c-table__cell">both  </td></tr>
 </table>
 <h2>Web</h2>
 <table class="c-table">
@@ -174,7 +189,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <tr class="c-table__row--heading">
 <td class="c-table__cell">Crate  </td><td class="c-table__cell">Responsibility  </td></tr>
 <tr class="c-table__row">
-<td class="c-table__cell">[<code>examples-shared</code>](examples-shared)  </td><td class="c-table__cell">Shared example helpers: file-finder, resource-key-from-env, the DD/IPI data-path resolvers, the data-file-age warning, property-as-string and the sample evidence.  </td></tr>
+<td class="c-table__cell"><a href="examples/examples-shared"><code>examples-shared</code></a>  </td><td class="c-table__cell">Shared example helpers: file-finder, resource-key-from-env, the DD/IPI data-path resolvers, the data-file-age warning, property-as-string and the sample evidence.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell"><a href="examples/examples-web-shared"><code>examples-web-shared</code></a>  </td><td class="c-table__cell">Shared HTML and static-asset helpers for the web examples: the vendored design-system assets, asset-serving handlers, HTML escaping and the common table helpers.  </td></tr>
 <tr class="c-table__row">
 <td class="c-table__cell"><a href="examples/device-detection-examples"><code>device-detection-examples</code></a>  </td><td class="c-table__cell">Runnable device-detection examples (cloud, on-premise and web).  </td></tr>
 <tr class="c-table__row">
@@ -188,13 +205,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <tr class="c-table__row">
 <td class="c-table__cell">[<code>fodid</code>](fodid)  </td><td class="c-table__cell">Standalone reader for the 51Did (51Degrees Identifier) returned by the cloud, described in the <a href="https://51degrees.com/documentation/_identifiers__index.html?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-rust&amp;utm_content=readme.md&amp;utm_term=51did">identifiers documentation</a>. It parses the OWID envelope and is independent of the pipeline stack.  </td></tr>
 <tr class="c-table__row">
+<td class="c-table__cell">[<code>fiftyone-fodid-core</code>](fodid-core)  </td><td class="c-table__cell">The 51Did element data, property names, metadata and engine trait that any engine producing 51Dids is built on. It does not depend on the cloud request engine.  </td></tr>
+<tr class="c-table__row">
+<td class="c-table__cell">[<code>fiftyone-fodid-cloud</code>](fodid-cloud)  </td><td class="c-table__cell">Cloud engine that maps the cloud response's <code>fodid</code> member to the 51Did element data, and re-exports <code>fiftyone-fodid-core</code>.  </td></tr>
+<tr class="c-table__row">
 <td class="c-table__cell">[<code>fodid-client</code>](fodid-client)  </td><td class="c-table__cell">The server side of the 51Did two-step verification: fetches and caches the signing keys, verifies a signature offline or through the cloud, and redeems the sealed creator context result a browser relays, with the typed outcomes the other 51Did packages report. Builds without a network stack by default. The <code>reqwest-client</code> feature turns on the built-in transport.  </td></tr>
 </table>
 <h1>Feature notes</h1>
 <ul>
 <li>The Device Detection and IP Intelligence facades both default to <code>["cloud", "on-premise", "share-usage"]</code>. A cloud-only application can disable the <code>on-premise</code> feature to drop the native FFI crates and build without a C toolchain.</li>
 <li>Usage sharing is on by default in the facades' pipeline builders, as it is in the other languages. The default <code>share-usage</code> feature adds the share-usage element to both builders and compiles the built-in HTTP sender it posts with. A console or offline tool turns it off, as the console examples do, with <code>.share_usage(false)</code> or by leaving out the feature. With the feature off, the builders leave usage sharing off unless <code>.share_usage(true)</code> is called, and the element's sender is a no-op unless the <code>fiftyone-pipeline-engines-fiftyone/share-usage-transport</code> feature is enabled, so no network connection to 51Degrees is made. See the <a href="https://51degrees.com/documentation/_pipeline_api__features__usage_sharing.html?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-rust&amp;utm_content=readme.md&amp;utm_term=usage-sharing">usage sharing</a> documentation for what is shared, and the <code>fiftyone-pipeline-engines-fiftyone</code> crate docs for the feature detail.</li>
-<li>Automatic data file updates are on by default in the facades' on-premise pipeline builders, as they are in .NET and Java. The pipeline owns a data update service that polls the 51Degrees data download service every thirty minutes, staggered by up to ten minutes, with the License Keys given through <code>.data_update_license_keys(..)</code>, and that refreshes the engine when the data file changes on disk. The data download service serves nothing without a License Key, so a build with polling on and no key fails with an error that says so, as it does in .NET, and a deployment of the free Lite file turns automatic updates off with <code>.auto_update(false)</code>, which stops the polling and the file watcher together, as the specification's master switch does. <code>.file_system_watcher(false)</code> turns only the watcher off, and <code>pipeline.resource::&lt;DataUpdateService&gt;()</code> reaches the service for a check on demand.</li>
+<li>Automatic data file updates are on by default in the facades' on-premise pipeline builders, as they are in .NET and Java. The pipeline owns a data update service that polls the 51Degrees data download service every thirty minutes, staggered by up to ten minutes, with the License Keys given through <code>.data_update_license_keys(..)</code>, and that refreshes the engine when the data file changes on disk. The data download service serves nothing without a License Key, so a build with polling on and no key fails with an error that says so, as it does in .NET, and a deployment of the free Lite file turns automatic updates off with <code>.auto_update(false)</code>, which stops the polling and the file watcher together, as the specification's master switch does. <code>.file_system_watcher(false)</code> turns only the watcher off, and <code>pipeline.resource::&lt;DataUpdateService&gt;()</code> reaches the service for a check on demand. <code>DataUpdateService::on_update_complete</code> adds a callback that is told how each check ended, with a refresh that fails or panics reported as <code>RefreshFailed</code> while the engine keeps the data it had, a change to a watched file that is no newer reported as <code>NotNeeded</code>, and a further event for a write already applied reported as <code>InProgress</code>. An update from memory is not reported, and gives its result to the caller alone. <code>DataUpdateService::on_update_started</code> adds one told when each check starts. A callback added to a service given to the builder with <code>.data_update_service(..)</code> also hears the update on start-up.</li>
 <li>JavaScript minification in <code>fiftyone-javascript-builder</code> is opt-in behind the <code>minify</code> feature and off by default. See ARCHITECTURE.md for why.</li>
 </ul>
 <h1>Quick start</h1>
@@ -260,11 +281,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <div class="c-code__line">    IpIntelligencePipelineBuilder, PerformanceProfile, IP_DATA_KEY,</div>
 <div class="c-code__line">};</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">// Use an on-premise IP Intelligence data file. The ASN file checked into the</div>
-<div class="c-code__line">// data repository suits quick tests; a full data file is downloaded from the</div>
-<div class="c-code__line">// data repository (see its README).</div>
+<div class="c-code__line">// Use an on-premise IP Intelligence data file. The free ASN file from the data</div>
+<div class="c-code__line">// repository suits quick tests. An Enterprise file has the full property set.</div>
+<div class="c-code__line">// LowMemory reads the file from disk, so even the Enterprise file, which is</div>
+<div class="c-code__line">// over 6 GB, needs little memory. HighPerformance holds the whole file in</div>
+<div class="c-code__line">// memory for faster lookups, where there is memory for it.</div>
 <div class="c-code__line">let pipeline = IpIntelligencePipelineBuilder::on_premise(&quot;51Degrees-IPIV4AsnIpiV41.ipi&quot;)</div>
-<div class="c-code__line">    .performance_profile(PerformanceProfile::HighPerformance)</div>
+<div class="c-code__line">    .performance_profile(PerformanceProfile::LowMemory)</div>
 <div class="c-code__line">    // Off because the free ASN file has no licence key for updates.</div>
 <div class="c-code__line">    .auto_update(false)</div>
 <div class="c-code__line">    .build()?;</div>
@@ -279,14 +302,23 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <div class="c-code__line"> </div>
 <div class="c-code__line"># async fn run() -&gt; anyhow::Result&lt;()&gt; {</div>
 <div class="c-code__line">// Usage sharing is on by default, and is set here so the choice is visible.</div>
-<div class="c-code__line">// It helps improve 51Degrees data.</div>
-<div class="c-code__line">let pipeline = DeviceDetectionPipelineBuilder::cloud(&quot;YOUR_RESOURCE_KEY&quot;)</div>
-<div class="c-code__line">    .share_usage(true)</div>
-<div class="c-code__line">    .build()?;</div>
+<div class="c-code__line">// It helps improve 51Degrees data. The facade&#39;s pipeline is only used for its</div>
+<div class="c-code__line">// elements and is dropped at the end of this statement, because a usage</div>
+<div class="c-code__line">// sharing element can be in only one pipeline at a time. An on-premise</div>
+<div class="c-code__line">// facade&#39;s pipeline also runs its data file updates, so for on-premise data</div>
+<div class="c-code__line">// build the facade with .share_usage(false), keep its pipeline, and add a</div>
+<div class="c-code__line">// ShareUsageElement to the elements given to WebPipeline::build. The</div>
+<div class="c-code__line">// on-premise web example adds its ShareUsageElement to those elements in the</div>
+<div class="c-code__line">// same way, beside a Hash engine it builds without the facade.</div>
+<div class="c-code__line">let elements: Vec&lt;Arc&lt;dyn FlowElement&gt;&gt; =</div>
+<div class="c-code__line">    DeviceDetectionPipelineBuilder::cloud(&quot;YOUR_RESOURCE_KEY&quot;)</div>
+<div class="c-code__line">        .share_usage(true)</div>
+<div class="c-code__line">        .build()?</div>
+<div class="c-code__line">        .flow_elements()</div>
+<div class="c-code__line">        .to_vec();</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">// Hand the facade&#39;s elements to the web pipeline, which adds the sequence,</div>
 <div class="c-code__line">// set-headers, JSON and JavaScript elements on top.</div>
-<div class="c-code__line">let elements: Vec&lt;Arc&lt;dyn FlowElement&gt;&gt; = pipeline.flow_elements().to_vec();</div>
 <div class="c-code__line">let web = WebPipeline::build(elements, WebIntegrationOptions::default())?;</div>
 <div class="c-code__line">let state = FiftyOneState::from_web_pipeline(&amp;web);</div>
 <div class="c-code__line"> </div>
@@ -310,24 +342,39 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html',''
 <div class="c-code__line">cargo doc --workspace --no-deps</div>
 </div><!-- fragment --><p>A cloud-only build that skips the native path:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">cargo build -p fiftyone-device-detection --no-default-features --features cloud</div>
-</div><!-- fragment --><h2>Running the examples</h2>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line"># Cloud examples read 51DEGREES_RESOURCE_KEY from the environment.</div>
-<div class="c-code__line">cargo run -p device-detection-examples --bin dd-cloud-getting-started</div>
-<div class="c-code__line">cargo run -p ip-intelligence-examples --bin ipi-cloud-getting-started</div>
+</div><!-- fragment --><h2>Data files</h2>
+<p>The on-premise tests and examples read the free data files from the <a href="https://github.com/51Degrees/data">data repository</a>, which the <code>cxx</code> submodule holds at <code>cxx/data</code>. The files are not stored in git. Each one is listed as a <code>.link</code> file in <code>cxx/data/device-detection</code> or <code>cxx/data/ip-intelligence</code>, and the data repository's script downloads it. These commands get the two files the tests read.</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">git submodule update --init --recursive</div>
+<div class="c-code__line">sh cxx/data/get-data-files.sh 51Degrees-LiteV4.1.hash 51Degrees-IPIV4AsnIpiV41.ipi</div>
+</div><!-- fragment --><p>On Windows, run <code>cxx\data\get-data-files.ps1</code> with the same file names. An on-premise example that cannot find its data file runs the script for that file itself, and a test skips when its file is missing.</p>
+<p>A clone made while 51degrees-cxx still has its <code>device-detection-data</code> and <code>ip-intelligence-data</code> submodules holds those two folders inside <code>cxx</code>. Once 51degrees-cxx removes the two submodules, delete both folders, because git leaves a removed submodule's folder on disk with the old data files in it.</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">rm -rf cxx/device-detection-data cxx/ip-intelligence-data</div>
+</div><!-- fragment --><p>On Windows, run <code>Remove-Item -Recurse -Force cxx\device-detection-data, cxx\ip-intelligence-data</code>.</p>
+<h2>Running the examples</h2>
+<p>The examples are a Cargo workspace of their own in <code>examples</code>, which the root workspace leaves out, so run them from that folder. They build against the crates published on crates.io. Add <code>--config source.toml</code> to build them against the crates in this checkout instead.</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">git clone --recurse-submodules https://github.com/51Degrees/51degrees-rust.git</div>
+<div class="c-code__line">cd 51degrees-rust/examples</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"># On-premise examples resolve a data file from a sibling -cxx checkout, or from</div>
-<div class="c-code__line"># 51DEGREES_DD_PATH / 51DEGREES_IPI_PATH.</div>
+<div class="c-code__line"># On-premise examples run with no settings. Each reads the free data files in</div>
+<div class="c-code__line"># cxx/data, downloading one that is missing, unless _51DEGREES_DD_PATH or</div>
+<div class="c-code__line"># _51DEGREES_IPI_PATH names another file.</div>
 <div class="c-code__line">cargo run -p device-detection-examples --bin dd-onprem-getting-started</div>
 <div class="c-code__line">cargo run -p ip-intelligence-examples --bin ipi-onprem-getting-started</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"># Cloud examples read _51DEGREES_RESOURCE_KEY from the environment.</div>
+<div class="c-code__line">cargo run -p device-detection-examples --bin dd-cloud-getting-started</div>
+<div class="c-code__line">cargo run -p ip-intelligence-examples --bin ipi-cloud-getting-started</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"># Web examples (cloud variant shown).</div>
 <div class="c-code__line">cargo run -p device-detection-examples --bin dd-web-getting-started-cloud</div>
 <div class="c-code__line">cargo run -p fodid-examples --bin fodid-web-creator-context</div>
-</div><!-- fragment --><p>Every cloud example calls the public 51Degrees cloud at <code><a href="https://cloud.51degrees.com/api/v4/">https://cloud.51degrees.com/api/v4/</a></code> unless <code>51DEGREES_CLOUD_ENDPOINT</code> names another host. A host other than cloud.51degrees.com would be used to (a) use an on premise web server, or (b) use a privately hosted version of the 51Degrees cloud for performance reasons. This is the private hosting option of the 51Degrees cloud service. Both run the same service as the public cloud, so the examples work unchanged. The variable is the same one the cloud request engine reads, so setting it once points every example at the same place, and the value is the API base including the <code>/api/v4/</code> segment.</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">51DEGREES_CLOUD_ENDPOINT=http://localhost:8080/api/v4/ cargo run -p ip-intelligence-examples --bin ipi-cloud-getting-started</div>
+</div><!-- fragment --><p>The free data files carry a small set of properties. Each on-premise example also asks for properties only the Enterprise data file carries, such as HardwareVendor, DeviceType and PriceBand for Device Detection, and Country, Town and IsVPN for IP Intelligence. On a free file each of those says it needs the Enterprise data file, and the output gives a link to contact 51Degrees about a copy. The on-premise IP Intelligence examples read the free Lite file, a download of about 320 MB that carries RegisteredName, RegisteredOwner and RegisteredCountry. <code>ipi-onprem-performance</code> and <code>ipi-onprem-update-data-file</code> read the ASN file instead, a download of a few megabytes, because their properties do not matter to what they show, and <code>ipi-onprem-getting-started</code> reads both, the ASN file for Asn and AsnName. Every example ends with a "Find
+out more" section.</p>
+<p>Every cloud example calls the public 51Degrees cloud at <code><a href="https://cloud.51degrees.com/api/v4/">https://cloud.51degrees.com/api/v4/</a></code> unless <code>_51DEGREES_CLOUD_ENDPOINT</code> names another host. A host other than cloud.51degrees.com would be used to (a) use an on premise web server, or (b) use a privately hosted version of the 51Degrees cloud for performance reasons. This is the private hosting option of the 51Degrees cloud service. Both run the same service as the public cloud, so the examples work unchanged. The variable is the same one the cloud request engine reads, so setting it once points every example at the same place, and the value is the API base including the <code>/api/v4/</code> segment.</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">_51DEGREES_CLOUD_ENDPOINT=http://localhost:8080/api/v4/ cargo run -p ip-intelligence-examples --bin ipi-cloud-getting-started</div>
 </div><!-- fragment --><h3>Browser (Selenium) tests</h3>
 <p>Browser-driven verification of the web examples comes from the shared <a href="https://github.com/51Degrees/selenium-api-tests">selenium-api-tests</a> suite, which every 51Degrees SDK reuses rather than maintaining its own browser automation. Its <code>Contract</code> category drives headless Chrome against a running example and checks that the page serves <code>51Degrees.core.js</code>, that client-side evidence flows back, and that the server renders a real detection result.</p>
-<p>CI runs it here in the <code>contract</code> job of the Examples workflow (<code>.github/workflows/examples.yml</code>), through <code>ci/run-browser-contract.ps1</code>, against both Device Detection web examples built from this checkout. The cloud example (<code>dd-web-getting-started-cloud</code>) talks to the public cloud with the bespoke Resource Key. The on-premise example (<code>dd-web-getting-started-onprem</code>) loads the TAC data file, because the Lite file has neither <code>DeviceType</code> nor the screen size JavaScript properties the contract checks. A test that fails, or that the suite skips as inconclusive, fails the job. Start it on any branch with <code>gh workflow <a class="el" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f" title="Run the cloud configurator example.">run</a> Examples --ref &lt;branch&gt;</code>. The cloud service also runs the cloud example against its own container, alongside the .NET, Java, Node, Python and PHP examples.</p>
+<p>CI runs it here in the <code>contract</code> job of the Examples workflow (<code>.github/workflows/examples.yml</code>), through <code>ci/run-browser-contract.ps1</code>, against both Device Detection web examples built from this checkout's crates through <code>ci/test-examples-against-source.ps1</code>. The cloud example (<code>dd-web-getting-started-cloud</code>) talks to the public cloud with the bespoke Resource Key. The on-premise example (<code>dd-web-getting-started-onprem</code>) loads the TAC data file, because the Lite file has neither <code><a class="el" href="dd-onprem-match-metrics_8rs.html#a985e3e63c7ba01fe333a33219c5b649b">DeviceType</a></code> nor the screen size JavaScript properties the contract checks. A test that fails, or that the suite skips as inconclusive, fails the job. Start it on any branch with <code>gh workflow <a class="el" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f" title="Run the cloud configurator example.">run</a> Examples --ref &lt;branch&gt;</code>. The cloud service also runs the cloud example against its own container, alongside the .NET, Java, Node, Python and PHP examples.</p>
 <p>To run the contract against an example that is already running, set <code>EXAMPLE_URL</code> to its address, as the CI script does. To run it locally, check out <code>selenium-api-tests</code> as a sibling of this repo and let the suite launch the example itself through its <code>rust</code> descriptor. Point <code>CLOUD_ROOT_URL</code> at a cloud container rather than the public service, so the result reflects the code and data you are testing:</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">cd ../selenium-api-tests</div>
 <div class="c-code__line">export CLOUD_ROOT_URL=&quot;http://localhost:8080/&quot;   # a running cloud container</div>

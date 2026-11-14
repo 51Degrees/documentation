@@ -67,11 +67,28 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-onprem-com
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><p>On-premise IP Intelligence compare console example.</p>
-<p>Looks the same IP addresses up under several performance profiles and shows the results side by side, then compares two IP addresses against each other. The descriptive block the documentation tooling renders lives at the bottom of the file.</p>
-<div class="c-code__block c-code__block--outline"><div class="c-code__line">pub fn <a class="code hl_function" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f">run</a>(options: &amp;<a class="code hl_struct" href="struct_example_options.html">ExampleOptions</a>, out: &amp;<a class="code hl_variable" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write) -&gt; anyhow::Result&lt;()&gt; {</div>
-<div class="c-code__line">    <a class="code hl_function" href="ipi-onprem-compare_8rs.html#aac53aa3102bc60eeea6a50eeb8b1eba2">compare_across_profiles</a>(options, out)?;</div>
+<p>Looks the same IP addresses up under several performance profiles and shows the results side by side, then compares two IP addresses against each other. The location properties compared need the Enterprise data file, and the run says so when the file in use does not carry them. The descriptive block the documentation tooling renders lives at the bottom of the file.</p>
+<div class="c-code__block c-code__block--outline"><div class="c-code__line">pub fn <a class="code hl_function" href="ipi-onprem-update-data-file_8rs.html#a72a494311da1d889b016fd2f0e734e7e">run</a>(options: &amp;<a class="code hl_variable" href="ipi-onprem-compare_8rs.html#a0496db63703a25375c9aa37013ccb65d">ExampleOptions</a>, out: &amp;<a class="code hl_variable" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write) -&gt; anyhow::Result&lt;()&gt; {</div>
+<div class="c-code__line">    <span class="c-code__comment">// The data file&#39;s own list of properties says which compared properties it</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// can answer. The free files carry none of the location ones.</span></div>
+<div class="c-code__line">    let <a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a> = ip_intelligence_examples::data_file_properties(&amp;options.data_file)?;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    <a class="code hl_function" href="ipi-onprem-compare_8rs.html#a386c535e527d427a6dda84aa9c85ddd5">compare_across_profiles</a>(options, &amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>, out)?;</div>
 <div class="c-code__line">    writeln!(out)?;</div>
-<div class="c-code__line">    <a class="code hl_function" href="ipi-onprem-compare_8rs.html#a24bc2d9374833df06eb22a5d5b5a3d67">compare_two_ips</a>(options, out)?;</div>
+<div class="c-code__line">    <a class="code hl_function" href="ipi-onprem-compare_8rs.html#a52a47790ec70eac505f3ac00eed1dd1b">compare_two_ips</a>(options, &amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>, out)?;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    writeln!(out)?;</div>
+<div class="c-code__line">    ip_intelligence_examples::write_data_file_warnings(&amp;options.data_file, out)?;</div>
+<div class="c-code__line">    let missing = examples_shared::missing_properties(<a class="code hl_variable" href="ipi-onprem-compare_8rs.html#a93688234fcaaf8315f010dd4318ceeb8">ENTERPRISE_COMPARED</a>, &amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>);</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(message) = examples_shared::enterprise_data_file_message(&amp;missing, <a class="code hl_variable" href="ipi-onprem-update-data-file_8rs.html#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a>) {</div>
+<div class="c-code__line">        writeln!(out)?;</div>
+<div class="c-code__line">        writeln!(out, <span class="c-code__stringliteral">&quot;{message}&quot;</span>)?;</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">    examples_shared::write_find_out_more(</div>
+<div class="c-code__line">        out,</div>
+<div class="c-code__line">        <a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ad25b7f6d0c89d56f4024e2b559cf89cc">FIND_OUT_MORE</a>,</div>
+<div class="c-code__line">        examples_shared::ON_PREMISE_REPOSITORIES,</div>
+<div class="c-code__line">    )?;</div>
 <div class="c-code__line">    Ok(())</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --> </div></div><!-- primary -->

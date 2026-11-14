@@ -80,8 +80,8 @@ Collaboration diagram for fiftyone.pipeline.engines.fiftyone.flowelements.Sequen
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="c-table__row memitem:ad713fe0551b131e55cacb9163f7091fb" id="r_ad713fe0551b131e55cacb9163f7091fb"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad713fe0551b131e55cacb9163f7091fb">SequenceElement</a> (Logger logger)</td></tr>
-<tr class="c-table__row memdesc:ad713fe0551b131e55cacb9163f7091fb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Construct a new instance of the <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html">FlowElement</a></code>.  <br /></td></tr>
+<tr class="c-table__row memitem:ad9247bcaa26739948a40e85667eb4d53" id="r_ad9247bcaa26739948a40e85667eb4d53"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad9247bcaa26739948a40e85667eb4d53">SequenceElement</a> (final Logger logger)</td></tr>
+<tr class="c-table__row memdesc:ad9247bcaa26739948a40e85667eb4d53"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Construct a new instance of the <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html">FlowElement</a></code>.  <br /></td></tr>
 <tr class="c-table__row memitem:af130160827b2c62a9a936cc214653469" id="r_af130160827b2c62a9a936cc214653469"><td class="c-table__cell">String&#160;</td><td class="c-table__cell"><a class="el" href="#af130160827b2c62a9a936cc214653469">getElementDataKey</a> ()</td></tr>
 <tr class="c-table__row memitem:a73254f0f69ae2874c46a2422a1c6cf85" id="r_a73254f0f69ae2874c46a2422a1c6cf85"><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter.html">EvidenceKeyFilter</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a73254f0f69ae2874c46a2422a1c6cf85">getEvidenceKeyFilter</a> ()</td></tr>
 <tr class="c-table__row memitem:a94ac2bd449e2abab83d23438b9e5a276" id="r_a94ac2bd449e2abab83d23438b9e5a276"><td class="c-table__cell">List&lt;&#160;<a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_property_meta_data.html">ElementPropertyMetaData</a>&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a94ac2bd449e2abab83d23438b9e5a276">getProperties</a> ()</td></tr>
@@ -123,10 +123,17 @@ void&#160;</td><td class="c-table__cell"><b>close</b> ()  throws Exception </td>
 <tr class="c-table__row memdesc:aa95ae1003864e7b0e1b7e71bfa6536c5 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a property from the properties that this element can populate using its name.  <br /></td></tr>
 <tr class="c-table__row memitem:ab0aa98bdda4981e0892d75ea4f79331a pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element" id="r_ab0aa98bdda4981e0892d75ea4f79331a"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#ab0aa98bdda4981e0892d75ea4f79331a">isConcurrent</a> ()</td></tr>
 <tr class="c-table__row memdesc:ab0aa98bdda4981e0892d75ea4f79331a pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">if true, requires that the <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html" title="The Pipeline groups together FlowElements and is a factory for FlowData which serves as the evidence,...">Pipeline</a> guards against concurrent access to <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a></code> structures  <br /></td></tr>
+<tr class="c-table__row memitem:a5d740f4fcfc20816b33dbf49450350e0 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element" id="r_a5d740f4fcfc20816b33dbf49450350e0"><td class="c-table__cell">default&#160;boolean&#160;</td><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a5d740f4fcfc20816b33dbf49450350e0">hasLoadedProperties</a> ()</td></tr>
+<tr class="c-table__row memdesc:a5d740f4fcfc20816b33dbf49450350e0 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether the element knows all the property metadata and accepted <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence.html" title="Evidence used by a FlowElement when processing.">Evidence</a> it will expose.  <br /></td></tr>
 <tr class="c-table__row memitem:a93a813715876146eca839f3541867cc8 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element" id="r_a93a813715876146eca839f3541867cc8"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a93a813715876146eca839f3541867cc8">isClosed</a> ()</td></tr>
 <tr class="c-table__row memdesc:a93a813715876146eca839f3541867cc8 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Indicates whether the element has been closed using the <code><a class="el" href="">close()</a></code> method, either explicitly or as a result of a 'try with resource'.  <br /></td></tr>
 <tr class="c-table__row memitem:a96dfad7107c88b5643e80847d5820863 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element" id="r_a96dfad7107c88b5643e80847d5820863"><td class="c-table__cell">DataFactory&lt;&#160;TData&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a96dfad7107c88b5643e80847d5820863">getDataFactory</a> ()</td></tr>
 <tr class="c-table__row memdesc:a96dfad7107c88b5643e80847d5820863 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the factory used to create the element data instances that are populated by this flow element.  <br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="c-table__row memitem:a25dc280cb094e35f96547c47eb1fb2f1" id="r_a25dc280cb094e35f96547c47eb1fb2f1"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a25dc280cb094e35f96547c47eb1fb2f1">DEFAULT_ELEMENT_DATA_KEY</a> = &quot;sequence&quot;</td></tr>
+<tr class="c-table__row memdesc:a25dc280cb094e35f96547c47eb1fb2f1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The key the Element <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_data.html" title="Represents a collection of property values.">Data</a> is stored under in the Flow <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_data.html" title="Represents a collection of property values.">Data</a>, unless a subclass gives another from <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a6e70ed49ec5161659b8f7d9b960b80aa">getElementDataKey()</a></code>.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-methods" class="g-docs__section-heading"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -149,8 +156,8 @@ final&#160;Logger&#160;</td><td class="c-table__cell"><b>logger</b></td></tr>
 <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1typed_1_1_typed_key.html">TypedKey</a>&lt;&#160;TData&#160;&gt;&#160;</td><td class="c-table__cell"><b>typedKey</b> = null</td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
-<a id="ad713fe0551b131e55cacb9163f7091fb" name="ad713fe0551b131e55cacb9163f7091fb"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad713fe0551b131e55cacb9163f7091fb">&#9670;&#160;</a></span>SequenceElement()</h2>
+<a id="ad9247bcaa26739948a40e85667eb4d53" name="ad9247bcaa26739948a40e85667eb4d53"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad9247bcaa26739948a40e85667eb4d53">&#9670;&#160;</a></span>SequenceElement()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -160,7 +167,7 @@ final&#160;Logger&#160;</td><td class="c-table__cell"><b>logger</b></td></tr>
             <tr class="c-table__row">
               <td class="c-table__cell">fiftyone.pipeline.engines.fiftyone.flowelements.SequenceElement.SequenceElement </td>
           <td>(</td>
-          <td class="c-table__cell">Logger</td>          <td class="c-table__cell"><span class="paramname"><em>logger</em></span></td><td>)</td>
+          <td class="c-table__cell">final Logger</td>          <td class="c-table__cell"><span class="paramname"><em>logger</em></span></td><td>)</td>
           <td></td>
         </tr>
           </table>
@@ -357,6 +364,36 @@ final&#160;Logger&#160;</td><td class="c-table__cell"><b>logger</b></td></tr>
 <p>Cleanup any unmanaged resources that the element is using. </p>
 
 <p>Reimplemented from <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element_base.html#af809db5ffd4e5dfdb5a2f051c8697770">fiftyone.pipeline.core.flowelements.FlowElementBase&lt; TData extends ElementData, TProperty extends ElementPropertyMetaData &gt;</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="a25dc280cb094e35f96547c47eb1fb2f1" name="a25dc280cb094e35f96547c47eb1fb2f1"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a25dc280cb094e35f96547c47eb1fb2f1">&#9670;&#160;</a></span>DEFAULT_ELEMENT_DATA_KEY</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">final String fiftyone.pipeline.engines.fiftyone.flowelements.SequenceElement.DEFAULT_ELEMENT_DATA_KEY = &quot;sequence&quot;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The key the Element <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_data.html" title="Represents a collection of property values.">Data</a> is stored under in the Flow <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_data.html" title="Represents a collection of property values.">Data</a>, unless a subclass gives another from <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a6e70ed49ec5161659b8f7d9b960b80aa">getElementDataKey()</a></code>. </p>
+<dl class="c-list-definition section see"><dt class="c-list-definition__title">See also</dt><dd class="c-list-definition__desc"><a href="https://github.com/51Degrees/specifications/blob/67ead6986f3118c68f0714325800b92d48ddc71f/pipeline-specification/pipeline-elements/sequence-element.md#element-data">Specification</a> </dd></dl>
 
 </div>
 </div>

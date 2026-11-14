@@ -76,14 +76,14 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:aebb369dc2458f1fd42fa324af7e14337"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the cloud web application router, ready to serve.  <br /></td></tr>
 <tr class="c-table__row memitem:a8d644587b49a1bca9eba622abbfaef16" id="r_a8d644587b49a1bca9eba622abbfaef16"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a8d644587b49a1bca9eba622abbfaef16">run</a> (options:Options) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a8d644587b49a1bca9eba622abbfaef16"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Serve the example page over TCP until interrupted.  <br /></td></tr>
-<tr class="c-table__row memitem:a4bdb0e3cfaa0302fa9d6bf057dfa9c88" id="r_a4bdb0e3cfaa0302fa9d6bf057dfa9c88"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a4bdb0e3cfaa0302fa9d6bf057dfa9c88">home</a> (Query(params):Query&lt; std::collections::HashMap&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt; &gt;, result:FiftyOneResult,) -&gt; Html&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td></tr>
+<tr class="c-table__row memitem:a4bdb0e3cfaa0302fa9d6bf057dfa9c88" id="r_a4bdb0e3cfaa0302fa9d6bf057dfa9c88"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a4bdb0e3cfaa0302fa9d6bf057dfa9c88">home</a> (Query(params):Query&lt; std::collections::HashMap&lt; String, String &gt; &gt;, result:FiftyOneResult,) -&gt; Html&lt; String &gt;</td></tr>
 <tr class="c-table__row memdesc:a4bdb0e3cfaa0302fa9d6bf057dfa9c88"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The home-page handler.  <br /></td></tr>
 <tr class="c-table__row memitem:a10397c317f477c2d5f6629f1d23f9b28" id="r_a10397c317f477c2d5f6629f1d23f9b28"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a10397c317f477c2d5f6629f1d23f9b28">main</a> () -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memitem:afd999b7aa5523a56df70f70728e4434b" id="r_afd999b7aa5523a56df70f70728e4434b"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#afd999b7aa5523a56df70f70728e4434b">get</a> (app:Router, uri:&amp;str) -&gt; Response</td></tr>
 <tr class="c-table__row memdesc:afd999b7aa5523a56df70f70728e4434b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Drive one GET request through a clone of the app and return the response.  <br /></td></tr>
-<tr class="c-table__row memitem:ac54be9a96a863c0e4cef3167495c7dea" id="r_ac54be9a96a863c0e4cef3167495c7dea"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#ac54be9a96a863c0e4cef3167495c7dea">body_string</a> (response:Response) -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td></tr>
+<tr class="c-table__row memitem:ac54be9a96a863c0e4cef3167495c7dea" id="r_ac54be9a96a863c0e4cef3167495c7dea"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#ac54be9a96a863c0e4cef3167495c7dea">body_string</a> (response:Response) -&gt; String</td></tr>
 <tr class="c-table__row memdesc:ac54be9a96a863c0e4cef3167495c7dea"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read a response body to an owned UTF-8 string.  <br /></td></tr>
-<tr class="c-table__row memitem:a0eaf64ced4273e168aa6d3e91332cdbb" id="r_a0eaf64ced4273e168aa6d3e91332cdbb"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a0eaf64ced4273e168aa6d3e91332cdbb">is_css</a> (response:&amp;Response) -&gt; <a class="el" href="performance__results_8rs.html#a13eda313804a469af81193c4e2e1ee58">bool</a></td></tr>
+<tr class="c-table__row memitem:a0eaf64ced4273e168aa6d3e91332cdbb" id="r_a0eaf64ced4273e168aa6d3e91332cdbb"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a0eaf64ced4273e168aa6d3e91332cdbb">is_css</a> (response:&amp;Response) -&gt; <a class="el" href="data__paths_8rs.html#ace367d07d2cbc650fd186739e5511adb">bool</a></td></tr>
 <tr class="c-table__row memdesc:a0eaf64ced4273e168aa6d3e91332cdbb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True when a CSS response carries the expected <code>text/css</code> content type.  <br /></td></tr>
 <tr class="c-table__row memitem:afcbd66bcc8262004448d7ce17a112dbf" id="r_afcbd66bcc8262004448d7ce17a112dbf"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#afcbd66bcc8262004448d7ce17a112dbf">server_starts_and_serves_page_and_client_script</a> ()</td></tr>
 </table><table class="c-table c-table--directory">
@@ -113,7 +113,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">async fn body_string </td>
           <td>(</td>
           <td class="c-table__cell">response:Response</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td>
+          <td> -&gt; String</td>
         </tr>
           </table>
         </div>
@@ -140,7 +140,7 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">endpoint:Option&lt;&amp;<a class="el" href="device-detection-examples_2src_2web__support_2mod_8rs.html#a59c09f4d2e77fa42c030902215658830">str</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+          <td class="c-table__cell">endpoint:Option&lt;&amp;<a class="el" href="dd-cloud-configurator_8rs.html#af99483e1224efe9ddfe4c99d7caa54ac">str</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
@@ -203,12 +203,12 @@ Variables</h2></td></tr>
             <tr class="c-table__row">
               <td class="c-table__cell">async fn home </td>
           <td>(</td>
-          <td class="c-table__cell">Query(params):Query&lt; std::collections::HashMap&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt; &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+          <td class="c-table__cell">Query(params):Query&lt; std::collections::HashMap&lt; String, String &gt; &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">result:FiftyOneResult</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; Html&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>
+          <td class="c-table__cell">result:FiftyOneResult</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; Html&lt; String &gt;</td>
         </tr>
           </table>
         </div>
@@ -233,7 +233,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">fn is_css </td>
           <td>(</td>
           <td class="c-table__cell">response:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>Response</em></span></td><td>)</td>
-          <td> -&gt; <a class="el" href="performance__results_8rs.html#a13eda313804a469af81193c4e2e1ee58">bool</a></td>
+          <td> -&gt; <a class="el" href="data__paths_8rs.html#ace367d07d2cbc650fd186739e5511adb">bool</a></td>
         </tr>
           </table>
         </div>

@@ -67,6 +67,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('data__paths_8r
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-nested-classes" class="g-docs__section-heading"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="c-table__row memitem:Host" id="r_Host"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="struct_host.html">Host</a></td></tr>
+<tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">What the download command depends on besides the file.  <a href="struct_host.html#details">More...</a><br /></td></tr>
+<tr class="c-table__row memitem:DownloadCommand" id="r_DownloadCommand"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="struct_download_command.html">DownloadCommand</a></td></tr>
+<tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The command that runs the data repository's download script for one file.  <a href="struct_download_command.html#details">More...</a><br /></td></tr>
+</table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-enum-members" class="g-docs__section-heading"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="c-table__row memitem:a29e87adf1760ab44a6a8d86c736658f8" id="r_a29e87adf1760ab44a6a8d86c736658f8"><td class="c-table__cell">enum &#160;</td><td class="c-table__cell"><a class="el" href="#a29e87adf1760ab44a6a8d86c736658f8">IpiTier</a> </td></tr>
@@ -74,25 +81,23 @@ Enumerations</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="c-table__row memitem:a8d730218e6edf5a28e821a2c763e3e89" id="r_a8d730218e6edf5a28e821a2c763e3e89"><td class="c-table__cell">pub&#160;enum&#160;<a class="el" href="#a29e87adf1760ab44a6a8d86c736658f8">IpiTier</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a8d730218e6edf5a28e821a2c763e3e89">dd_data_path</a> () -&gt; Option&lt; PathBuf &gt;</td></tr>
+<tr class="c-table__row memitem:a8d730218e6edf5a28e821a2c763e3e89" id="r_a8d730218e6edf5a28e821a2c763e3e89"><td class="c-table__cell">pub&#160;enum&#160;<a class="el" href="#a29e87adf1760ab44a6a8d86c736658f8">IpiTier</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a8d730218e6edf5a28e821a2c763e3e89">dd_data_path</a> () -&gt; Option&lt; <a class="el" href="ipi-web-getting-started-onprem_8rs.html#a36282740ed407fcac2ef7800fa2fbaf2">PathBuf</a> &gt;</td></tr>
 <tr class="c-table__row memdesc:a8d730218e6edf5a28e821a2c763e3e89"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Resolve the path to an on-premise Device Detection data file.  <br /></td></tr>
-<tr class="c-table__row memitem:ac1e4e0793ba48f9be3462e1ab5d61928" id="r_ac1e4e0793ba48f9be3462e1ab5d61928"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#ac1e4e0793ba48f9be3462e1ab5d61928">ipi_data_path</a> (tier:IpiTier) -&gt; Option&lt; PathBuf &gt;</td></tr>
+<tr class="c-table__row memitem:ac1e4e0793ba48f9be3462e1ab5d61928" id="r_ac1e4e0793ba48f9be3462e1ab5d61928"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#ac1e4e0793ba48f9be3462e1ab5d61928">ipi_data_path</a> (tier:IpiTier) -&gt; Option&lt; <a class="el" href="ipi-web-getting-started-onprem_8rs.html#a36282740ed407fcac2ef7800fa2fbaf2">PathBuf</a> &gt;</td></tr>
 <tr class="c-table__row memdesc:ac1e4e0793ba48f9be3462e1ab5d61928"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Resolve the path to an on-premise IP Intelligence data file at the requested tier.  <br /></td></tr>
-<tr class="c-table__row memitem:a8cfc1f565eb02fc1a60a3d8525080c44" id="r_a8cfc1f565eb02fc1a60a3d8525080c44"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a8cfc1f565eb02fc1a60a3d8525080c44">latest_enterprise_ipi</a> () -&gt; Option&lt; PathBuf &gt;</td></tr>
-<tr class="c-table__row memdesc:a8cfc1f565eb02fc1a60a3d8525080c44"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Locate the latest dated Enterprise IP Intelligence file on the configured share ([<code><a class="el" href="#a380365aa8b70b2cbb9b64de4ca04719e" title="The environment variable giving the root of the dated Enterprise IP Intelligence share,...">IPI_ENTERPRISE_SHARE_ENV_VAR</a></code>]), or <code>None</code> when the share is unset or not reachable.  <br /></td></tr>
-<tr class="c-table__row memitem:a94f79b151a90f1b22aa4b30df28b8f3c" id="r_a94f79b151a90f1b22aa4b30df28b8f3c"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a94f79b151a90f1b22aa4b30df28b8f3c">numeric_child_dirs</a> (dir:&amp;std::path::Path) -&gt; Vec&lt; PathBuf &gt;</td></tr>
-<tr class="c-table__row memdesc:a94f79b151a90f1b22aa4b30df28b8f3c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The immediate subdirectories of <code>dir</code> whose names are all ASCII digits, sorted ascending by name (zero-padded <code>YYYY</code>, <code>MM</code> and <code>DD</code> sort the same as by date).  <br /></td></tr>
-<tr class="c-table__row memitem:a780a8dd9bd7495abedbe402855c1368e" id="r_a780a8dd9bd7495abedbe402855c1368e"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a780a8dd9bd7495abedbe402855c1368e">latest_numeric_child</a> (dir:&amp;std::path::Path) -&gt; Option&lt; PathBuf &gt;</td></tr>
-<tr class="c-table__row memdesc:a780a8dd9bd7495abedbe402855c1368e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The lexicographically greatest immediate subdirectory of <code>dir</code> whose name is all digits, or <code>None</code> if there is none (or <code>dir</code> cannot be read).  <br /></td></tr>
-<tr class="c-table__row memitem:a5238a8ea4f84f1875cf510a7ae9bef12" id="r_a5238a8ea4f84f1875cf510a7ae9bef12"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a5238a8ea4f84f1875cf510a7ae9bef12">latest_dated_day_with_file</a> (month:&amp;std::path::Path) -&gt; Option&lt; PathBuf &gt;</td></tr>
-<tr class="c-table__row memdesc:a5238a8ea4f84f1875cf510a7ae9bef12"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The latest day subdirectory of <code>month</code> that actually contains the Enterprise data file.  <br /></td></tr>
-<tr class="c-table__row memitem:a3e21ff57cb17d59f316c78a6154fd2a2" id="r_a3e21ff57cb17d59f316c78a6154fd2a2"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a3e21ff57cb17d59f316c78a6154fd2a2">env_path</a> (name:&amp;str) -&gt; Option&lt; PathBuf &gt;</td></tr>
-<tr class="c-table__row memdesc:a3e21ff57cb17d59f316c78a6154fd2a2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read <code>name</code> from the environment as a path, returning it only when set to a non-blank value (the value is trimmed and rejected when empty).  <br /></td></tr>
-<tr class="c-table__row memitem:aff3de5d6825f49b9bb1fc178756e8262" id="r_aff3de5d6825f49b9bb1fc178756e8262"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#aff3de5d6825f49b9bb1fc178756e8262">dd_env_var_wins</a> ()</td></tr>
-<tr class="c-table__row memitem:a4ba5f355c20ca7ee569e30b3f0517308" id="r_a4ba5f355c20ca7ee569e30b3f0517308"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a4ba5f355c20ca7ee569e30b3f0517308">ipi_env_var_wins_for_every_tier</a> ()</td></tr>
-<tr class="c-table__row memitem:a03c3b5c16a4f571cab07628368d968ea" id="r_a03c3b5c16a4f571cab07628368d968ea"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a03c3b5c16a4f571cab07628368d968ea">default_tier_picks_a_loadable_file</a> ()</td></tr>
-<tr class="c-table__row memitem:a183f41547a2ee04ee6e4f768c9a8afbc" id="r_a183f41547a2ee04ee6e4f768c9a8afbc"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a183f41547a2ee04ee6e4f768c9a8afbc">default_tier_is_best_available</a> ()</td></tr>
-<tr class="c-table__row memitem:a0bc0e60ddfcd4a779ba0dc0d968f6888" id="r_a0bc0e60ddfcd4a779ba0dc0d968f6888"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a0bc0e60ddfcd4a779ba0dc0d968f6888">unreachable_enterprise_share_is_none</a> ()</td></tr>
+<tr class="c-table__row memitem:a9207bbfdcbe8863c64519a5debb294ee" id="r_a9207bbfdcbe8863c64519a5debb294ee"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a9207bbfdcbe8863c64519a5debb294ee">find_data_file</a> (relative_path:&amp;str) -&gt; Option&lt; <a class="el" href="ipi-web-getting-started-onprem_8rs.html#a36282740ed407fcac2ef7800fa2fbaf2">PathBuf</a> &gt;</td></tr>
+<tr class="c-table__row memdesc:a9207bbfdcbe8863c64519a5debb294ee"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Find a data file the data repository links to, downloading it when it is missing.  <br /></td></tr>
+<tr class="c-table__row memitem:a1631fe26a2ee124d922aa936db1f3831" id="r_a1631fe26a2ee124d922aa936db1f3831"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a1631fe26a2ee124d922aa936db1f3831">find_data_file_from</a> (relative_path:&amp;str, start:&amp;Path) -&gt; Option&lt; <a class="el" href="ipi-web-getting-started-onprem_8rs.html#a36282740ed407fcac2ef7800fa2fbaf2">PathBuf</a> &gt;</td></tr>
+<tr class="c-table__row memdesc:a1631fe26a2ee124d922aa936db1f3831"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Find a data file the data repository links to by walking up from <code>start</code> instead of the current working directory, downloading it when it is missing.  <br /></td></tr>
+<tr class="c-table__row memitem:a686e19db4644148a11b6853e296b5fc7" id="r_a686e19db4644148a11b6853e296b5fc7"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a686e19db4644148a11b6853e296b5fc7">find_data_file_for</a> (relative_path:&amp;str, start:&amp;Path, host:Host) -&gt; Option&lt; <a class="el" href="ipi-web-getting-started-onprem_8rs.html#a36282740ed407fcac2ef7800fa2fbaf2">PathBuf</a> &gt;</td></tr>
+<tr class="c-table__row memdesc:a686e19db4644148a11b6853e296b5fc7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">[<code><a class="el" href="#a1631fe26a2ee124d922aa936db1f3831" title="Find a data file the data repository links to by walking up from start instead of the current working...">find_data_file_from</a></code>] with the download command chosen for <code>host</code>.  <br /></td></tr>
+<tr class="c-table__row memitem:a27b0c54b665f814c749aef41a81ebca0" id="r_a27b0c54b665f814c749aef41a81ebca0"><td class="c-table__cell">struct&#160;<a class="el" href="struct_host.html">Host</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a27b0c54b665f814c749aef41a81ebca0">current</a> () -&gt; Self</td></tr>
+<tr class="c-table__row memdesc:a27b0c54b665f814c749aef41a81ebca0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The host this process runs on.  <br /></td></tr>
+<tr class="c-table__row memitem:acfbfeebfebf310866bdfca3c37551a35" id="r_acfbfeebfebf310866bdfca3c37551a35"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#acfbfeebfebf310866bdfca3c37551a35">on_path</a> (program:&amp;str) -&gt; <a class="el" href="#ace367d07d2cbc650fd186739e5511adb">bool</a></td></tr>
+<tr class="c-table__row memdesc:acfbfeebfebf310866bdfca3c37551a35"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether <code>program</code>, or <code>program.exe</code>, is in a folder on the PATH.  <br /></td></tr>
+<tr class="c-table__row memitem:acf56e8dad3b4debf535044ed5e09b667" id="r_acf56e8dad3b4debf535044ed5e09b667"><td class="c-table__cell">struct&#160;<a class="el" href="struct_download_command.html">DownloadCommand</a>&#160;</td><td class="c-table__cell"><a class="el" href="#acf56e8dad3b4debf535044ed5e09b667">for_host</a> (data_repository:&amp;Path, name:&amp;str, host:Host) -&gt; Self</td></tr>
+<tr class="c-table__row memdesc:acf56e8dad3b4debf535044ed5e09b667"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The command that downloads <code>name</code> into the data repository at <code>data_repository</code> on <code>host</code>.  <br /></td></tr>
+<tr class="c-table__row memitem:a8966114cf623eb135f6379ed939e040b" id="r_a8966114cf623eb135f6379ed939e040b"><td class="c-table__cell">command&#160;args&#160;self&#160;</td><td class="c-table__cell"><a class="el" href="#a8966114cf623eb135f6379ed939e040b">stdout</a> (std::io::stderr())</td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -101,21 +106,44 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:a1251f17f4edf0d528a56e7d85fdcbb4c" id="r_a1251f17f4edf0d528a56e7d85fdcbb4c"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a1251f17f4edf0d528a56e7d85fdcbb4c">IPI_PATH_ENV_VAR</a></td></tr>
 <tr class="c-table__row memdesc:a1251f17f4edf0d528a56e7d85fdcbb4c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The environment variable giving an explicit IP Intelligence data-file path.  <br /></td></tr>
 <tr class="c-table__row memitem:af405d3d5d691b8fc4bdcb71013f01d80" id="r_af405d3d5d691b8fc4bdcb71013f01d80"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#af405d3d5d691b8fc4bdcb71013f01d80">DD_LITE_RELATIVE_PATH</a></td></tr>
-<tr class="c-table__row memdesc:af405d3d5d691b8fc4bdcb71013f01d80"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The Lite Device Detection data file in the <code>cxx</code> submodule.  <br /></td></tr>
+<tr class="c-table__row memdesc:af405d3d5d691b8fc4bdcb71013f01d80"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The Lite Device Detection data file in the data repository.  <br /></td></tr>
 <tr class="c-table__row memitem:af3d7a5db6b43a06357cf4daf62ff7dce" id="r_af3d7a5db6b43a06357cf4daf62ff7dce"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#af3d7a5db6b43a06357cf4daf62ff7dce">IPI_ASN_RELATIVE_PATH</a></td></tr>
-<tr class="c-table__row memdesc:af3d7a5db6b43a06357cf4daf62ff7dce"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The ASN IP Intelligence data file checked into the <code>ip-intelligence-data</code> repository (resolved through the <code>cxx</code> submodule).  <br /></td></tr>
+<tr class="c-table__row memdesc:af3d7a5db6b43a06357cf4daf62ff7dce"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The ASN IP Intelligence data file in the data repository, giving Asn and AsnName.  <br /></td></tr>
+<tr class="c-table__row memitem:a7afaa4eff49d584bff6761751147f9ee" id="r_a7afaa4eff49d584bff6761751147f9ee"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a7afaa4eff49d584bff6761751147f9ee">IPI_LITE_RELATIVE_PATH</a></td></tr>
+<tr class="c-table__row memdesc:a7afaa4eff49d584bff6761751147f9ee"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The Lite IP Intelligence data file in the data repository, giving RegisteredName, RegisteredOwner and RegisteredCountry.  <br /></td></tr>
 <tr class="c-table__row memitem:a9d580bd798c07fd4ca3a668c4dd84317" id="r_a9d580bd798c07fd4ca3a668c4dd84317"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a9d580bd798c07fd4ca3a668c4dd84317">IPI_ENTERPRISE_FILE_NAME</a></td></tr>
 <tr class="c-table__row memdesc:a9d580bd798c07fd4ca3a668c4dd84317"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The Enterprise IP Intelligence data-file name on the Enterprise share.  <br /></td></tr>
 <tr class="c-table__row memitem:a380365aa8b70b2cbb9b64de4ca04719e" id="r_a380365aa8b70b2cbb9b64de4ca04719e"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a380365aa8b70b2cbb9b64de4ca04719e">IPI_ENTERPRISE_SHARE_ENV_VAR</a></td></tr>
 <tr class="c-table__row memdesc:a380365aa8b70b2cbb9b64de4ca04719e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The environment variable giving the root of the dated Enterprise IP Intelligence share, which holds the latest data file under a <code>YYYY/MM/DD</code> subdirectory.  <br /></td></tr>
-<tr class="c-table__row memitem:aea85a38f8ec3ec905ad95d6ae1e3892d" id="r_aea85a38f8ec3ec905ad95d6ae1e3892d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aea85a38f8ec3ec905ad95d6ae1e3892d">BestAvailable</a></td></tr>
-<tr class="c-table__row memdesc:aea85a38f8ec3ec905ad95d6ae1e3892d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Pick the best loadable tier: Enterprise if the share is reachable, otherwise the ASN file checked into the repository.  <br /></td></tr>
+<tr class="c-table__row memitem:ab3ce18fb6f2aca6884744e78d61a0fce" id="r_ab3ce18fb6f2aca6884744e78d61a0fce"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab3ce18fb6f2aca6884744e78d61a0fce">EnterpriseOrLite</a></td></tr>
+<tr class="c-table__row memdesc:ab3ce18fb6f2aca6884744e78d61a0fce"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The Enterprise file if the share is reachable, otherwise the Lite file from the data repository.  <br /></td></tr>
+<tr class="c-table__row memitem:ae12a263e37f72890688a0b4e2cdb142b" id="r_ae12a263e37f72890688a0b4e2cdb142b"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ae12a263e37f72890688a0b4e2cdb142b">EnterpriseOrAsn</a></td></tr>
+<tr class="c-table__row memdesc:ae12a263e37f72890688a0b4e2cdb142b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The Enterprise file if the share is reachable, otherwise the ASN file from the data repository.  <br /></td></tr>
 <tr class="c-table__row memitem:a9cb77e8bd3a4974627c90936971d10cd" id="r_a9cb77e8bd3a4974627c90936971d10cd"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a9cb77e8bd3a4974627c90936971d10cd">Asn</a></td></tr>
-<tr class="c-table__row memdesc:a9cb77e8bd3a4974627c90936971d10cd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Force the ASN file ([<code><a class="el" href="#af3d7a5db6b43a06357cf4daf62ff7dce" title="The ASN IP Intelligence data file checked into the ip-intelligence-data repository (resolved through ...">IPI_ASN_RELATIVE_PATH</a></code>]).  <br /></td></tr>
+<tr class="c-table__row memdesc:a9cb77e8bd3a4974627c90936971d10cd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Force the ASN file ([<code><a class="el" href="#af3d7a5db6b43a06357cf4daf62ff7dce" title="The ASN IP Intelligence data file in the data repository, giving Asn and AsnName.">IPI_ASN_RELATIVE_PATH</a></code>]).  <br /></td></tr>
+<tr class="c-table__row memitem:a90bea49b07745b6fbd53950bb0270cd1" id="r_a90bea49b07745b6fbd53950bb0270cd1"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a90bea49b07745b6fbd53950bb0270cd1">Lite</a></td></tr>
+<tr class="c-table__row memdesc:a90bea49b07745b6fbd53950bb0270cd1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Force the Lite file ([<code><a class="el" href="#a7afaa4eff49d584bff6761751147f9ee" title="The Lite IP Intelligence data file in the data repository, giving RegisteredName, RegisteredOwner and...">IPI_LITE_RELATIVE_PATH</a></code>]), free from the data repository and much larger than the ASN file.  <br /></td></tr>
 <tr class="c-table__row memitem:adec5bd66711aa1a0e8023b8eb8076c9e" id="r_adec5bd66711aa1a0e8023b8eb8076c9e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#adec5bd66711aa1a0e8023b8eb8076c9e">Enterprise</a></td></tr>
 <tr class="c-table__row memdesc:adec5bd66711aa1a0e8023b8eb8076c9e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Force the Enterprise file from the Enterprise share.  <br /></td></tr>
-<tr class="c-table__row memitem:ab60c545115f42f88c00b55f384f5ffc0" id="r_ab60c545115f42f88c00b55f384f5ffc0"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#ab60c545115f42f88c00b55f384f5ffc0">tests</a></td></tr>
-<tr class="c-table__row memitem:a26ba5e116eefd6a3a0afcc00472b8b75" id="r_a26ba5e116eefd6a3a0afcc00472b8b75"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#a26ba5e116eefd6a3a0afcc00472b8b75">ENV_LOCK</a></td></tr>
+<tr class="c-table__row memitem:a021f46e16b8d323d2c1e96568d8a226d" id="r_a021f46e16b8d323d2c1e96568d8a226d"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a021f46e16b8d323d2c1e96568d8a226d">DATA_DOWNLOAD_SOURCE</a></td></tr>
+<tr class="c-table__row memdesc:a021f46e16b8d323d2c1e96568d8a226d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The <code>source</code> the examples send with each download, so that downloads can be counted by where they come from.  <br /></td></tr>
+<tr class="c-table__row memitem:ae7b39b29e9fa364511af8a2eae4cfba4" id="r_ae7b39b29e9fa364511af8a2eae4cfba4"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#ae7b39b29e9fa364511af8a2eae4cfba4">GITHUB_ACTIONS_ENV_VAR</a></td></tr>
+<tr class="c-table__row memdesc:ae7b39b29e9fa364511af8a2eae4cfba4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The environment variable GitHub Actions sets to <code>true</code> in every step.  <br /></td></tr>
+<tr class="c-table__row memitem:a393a7b2a8320f3958f0a00f4047d00bf" id="r_a393a7b2a8320f3958f0a00f4047d00bf"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a393a7b2a8320f3958f0a00f4047d00bf">POWERSHELL_MODULE_PATH_ENV_VAR</a></td></tr>
+<tr class="c-table__row memdesc:a393a7b2a8320f3958f0a00f4047d00bf"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The module path Windows PowerShell must not inherit from PowerShell 7.  <br /></td></tr>
+<tr class="c-table__row memitem:af5d1e661fa7d9cd923f63d39041ed622" id="r_af5d1e661fa7d9cd923f63d39041ed622"><td class="c-table__cell">static&#160;</td><td class="c-table__cell"><a class="el" href="#af5d1e661fa7d9cd923f63d39041ed622">DOWNLOADS_TRIED</a></td></tr>
+<tr class="c-table__row memdesc:af5d1e661fa7d9cd923f63d39041ed622"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The links this process has already run the download script for.  <br /></td></tr>
+<tr class="c-table__row memitem:aad1ce42ad864f750be017806db51a3e1" id="r_aad1ce42ad864f750be017806db51a3e1"><td class="c-table__cell">windows&#160;</td><td class="c-table__cell"><a class="el" href="#aad1ce42ad864f750be017806db51a3e1">__pad0__</a></td></tr>
+<tr class="c-table__row memdesc:aad1ce42ad864f750be017806db51a3e1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether this is Windows, where the PowerShell script is run.  <br /></td></tr>
+<tr class="c-table__row memitem:abc901246717bf92cf7f8941442000adf" id="r_abc901246717bf92cf7f8941442000adf"><td class="c-table__cell">windows&#160;</td><td class="c-table__cell"><a class="el" href="#abc901246717bf92cf7f8941442000adf">has_pwsh</a></td></tr>
+<tr class="c-table__row memdesc:abc901246717bf92cf7f8941442000adf"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether PowerShell 7, <code>pwsh</code>, is on the PATH.  <br /></td></tr>
+<tr class="c-table__row memitem:aacbd175c9a4da8601cc8545860f05413" id="r_aacbd175c9a4da8601cc8545860f05413"><td class="c-table__cell">windows&#160;</td><td class="c-table__cell"><a class="el" href="#aacbd175c9a4da8601cc8545860f05413">in_github_actions</a></td></tr>
+<tr class="c-table__row memdesc:aacbd175c9a4da8601cc8545860f05413"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether this runs in GitHub Actions, where no source is sent.  <br /></td></tr>
+<tr class="c-table__row memitem:aad81f93055116d4ba1b1c839a9bd7fd2" id="r_aad81f93055116d4ba1b1c839a9bd7fd2"><td class="c-table__cell">program&#160;</td><td class="c-table__cell"><a class="el" href="#aad81f93055116d4ba1b1c839a9bd7fd2">arguments</a></td></tr>
+<tr class="c-table__row memitem:ac6261915af7256c436ec4a504915d07a" id="r_ac6261915af7256c436ec4a504915d07a"><td class="c-table__cell">program&#160;</td><td class="c-table__cell"><a class="el" href="#ac6261915af7256c436ec4a504915d07a">removed</a></td></tr>
+<tr class="c-table__row memdesc:ac6261915af7256c436ec4a504915d07a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Variables removed from the environment the command runs in.  <br /></td></tr>
+<tr class="c-table__row memitem:ace367d07d2cbc650fd186739e5511adb" id="r_ace367d07d2cbc650fd186739e5511adb"><td class="c-table__cell">fn&#160;<a class="el" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f">run</a>&#160;self&#160;</td><td class="c-table__cell"><a class="el" href="#ace367d07d2cbc650fd186739e5511adb">bool</a></td></tr>
+<tr class="c-table__row memdesc:ace367d07d2cbc650fd186739e5511adb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run the command, returning whether it succeeded.  <br /></td></tr>
 </table>
 <a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="g-docs__section-heading">Enumeration Type Documentation</h2>
 <a id="a29e87adf1760ab44a6a8d86c736658f8" name="a29e87adf1760ab44a6a8d86c736658f8"></a>
@@ -135,11 +163,34 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Which tier of IP Intelligence data file to resolve. </p>
-<p>The default, [<code>IpiTier::BestAvailable</code>], picks the best <em>loadable</em> tier: Enterprise when the configured share is reachable, otherwise ASN. A caller can force a specific tier when an example needs it, for example to exercise the Enterprise-only properties. </p>
+<p>With no file set, an example that shows location or registration properties reads the Lite file, and one whose properties do not matter to what it shows, such as a performance or update example, reads the much smaller ASN file. Either reads the Enterprise file instead when the configured share is reachable. A caller can also force a specific tier, for example to exercise the Enterprise-only properties. </p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
+<a id="a27b0c54b665f814c749aef41a81ebca0" name="a27b0c54b665f814c749aef41a81ebca0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a27b0c54b665f814c749aef41a81ebca0">&#9670;&#160;</a></span>current()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">struct <a class="el" href="struct_host.html">Host</a> current </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; Self</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The host this process runs on. </p>
+
+</div>
+</div>
 <a id="a8d730218e6edf5a28e821a2c763e3e89" name="a8d730218e6edf5a28e821a2c763e3e89"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8d730218e6edf5a28e821a2c763e3e89">&#9670;&#160;</a></span>dd_data_path()</h2>
 
@@ -152,7 +203,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">pub enum <a class="el" href="#a29e87adf1760ab44a6a8d86c736658f8">IpiTier</a> dd_data_path </td>
           <td>(</td>
           <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Option&lt; PathBuf &gt;</td>
+          <td> -&gt; Option&lt; <a class="el" href="ipi-web-getting-started-onprem_8rs.html#a36282740ed407fcac2ef7800fa2fbaf2">PathBuf</a> &gt;</td>
         </tr>
           </table>
         </div>
@@ -160,12 +211,12 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Resolve the path to an on-premise Device Detection data file. </p>
-<p>Checks [<code><a class="el" href="#a3c1924144c6663a4394cdbcd8ed8c644" title="The environment variable giving an explicit Device Detection data-file path.">DD_PATH_ENV_VAR</a></code>] first and returns its value when set to a non-blank path. Otherwise walks up the directory tree with [<code>crate::find_file</code>] looking for [<code><a class="el" href="#af405d3d5d691b8fc4bdcb71013f01d80" title="The Lite Device Detection data file in the cxx submodule.">DD_LITE_RELATIVE_PATH</a></code>] in the <code>cxx</code> submodule. Returns <code>None</code> if neither is available. </p>
+<p>Checks [<code><a class="el" href="#a3c1924144c6663a4394cdbcd8ed8c644" title="The environment variable giving an explicit Device Detection data-file path.">DD_PATH_ENV_VAR</a></code>] first and returns its value when set to a non-blank path. Otherwise finds [<code><a class="el" href="#af405d3d5d691b8fc4bdcb71013f01d80" title="The Lite Device Detection data file in the data repository.">DD_LITE_RELATIVE_PATH</a></code>] with [<code><a class="el" href="#a9207bbfdcbe8863c64519a5debb294ee" title="Find a data file the data repository links to, downloading it when it is missing.">find_data_file</a></code>], which downloads it when it is missing. Returns <code>None</code> if neither is available. </p>
 
 </div>
 </div>
-<a id="aff3de5d6825f49b9bb1fc178756e8262" name="aff3de5d6825f49b9bb1fc178756e8262"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aff3de5d6825f49b9bb1fc178756e8262">&#9670;&#160;</a></span>dd_env_var_wins()</h2>
+<a id="a9207bbfdcbe8863c64519a5debb294ee" name="a9207bbfdcbe8863c64519a5debb294ee"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9207bbfdcbe8863c64519a5debb294ee">&#9670;&#160;</a></span>find_data_file()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -173,41 +224,55 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fn dd_env_var_wins </td>
+              <td class="c-table__cell">pub fn find_data_file </td>
           <td>(</td>
-          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="c-table__cell">relative_path:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td> -&gt; Option&lt; <a class="el" href="ipi-web-getting-started-onprem_8rs.html#a36282740ed407fcac2ef7800fa2fbaf2">PathBuf</a> &gt;</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Find a data file the data repository links to, downloading it when it is missing. </p>
+<p><code>relative_path</code> is looked for as [<code>crate::find_file</code>] looks for it. The data repository lists each data file as <code>&lt;file&gt;.link</code> in the folder where the file goes, so when the file is missing and its link is there, the data repository is the folder above, and its script is run for that one file, saying so. The file is then looked for again. When it still cannot be found, a message naming the command that gets it is printed and <code>None</code> is returned. </p>
+
+</div>
+</div>
+<a id="a686e19db4644148a11b6853e296b5fc7" name="a686e19db4644148a11b6853e296b5fc7"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a686e19db4644148a11b6853e296b5fc7">&#9670;&#160;</a></span>find_data_file_for()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn find_data_file_for </td>
+          <td>(</td>
+          <td class="c-table__cell">relative_path:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
           <td></td>
+          <td class="c-table__cell">start:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>Path</em></span>, </td>
         </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-</div>
-</div>
-<a id="a183f41547a2ee04ee6e4f768c9a8afbc" name="a183f41547a2ee04ee6e4f768c9a8afbc"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a183f41547a2ee04ee6e4f768c9a8afbc">&#9670;&#160;</a></span>default_tier_is_best_available()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">fn default_tier_is_best_available </td>
-          <td>(</td>
-          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
           <td></td>
+          <td class="c-table__cell">host:Host</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; Option&lt; <a class="el" href="ipi-web-getting-started-onprem_8rs.html#a36282740ed407fcac2ef7800fa2fbaf2">PathBuf</a> &gt;</td>
         </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
+<p>[<code><a class="el" href="#a1631fe26a2ee124d922aa936db1f3831" title="Find a data file the data repository links to by walking up from start instead of the current working...">find_data_file_from</a></code>] with the download command chosen for <code>host</code>. </p>
+
 </div>
 </div>
-<a id="a03c3b5c16a4f571cab07628368d968ea" name="a03c3b5c16a4f571cab07628368d968ea"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a03c3b5c16a4f571cab07628368d968ea">&#9670;&#160;</a></span>default_tier_picks_a_loadable_file()</h2>
+<a id="a1631fe26a2ee124d922aa936db1f3831" name="a1631fe26a2ee124d922aa936db1f3831"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1631fe26a2ee124d922aa936db1f3831">&#9670;&#160;</a></span>find_data_file_from()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -215,20 +280,27 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fn default_tier_picks_a_loadable_file </td>
+              <td class="c-table__cell">pub fn find_data_file_from </td>
           <td>(</td>
-          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="c-table__cell">relative_path:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
           <td></td>
+          <td class="c-table__cell">start:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>Path</em></span>&#160;) -&gt; Option&lt; <a class="el" href="ipi-web-getting-started-onprem_8rs.html#a36282740ed407fcac2ef7800fa2fbaf2">PathBuf</a> &gt;</td>
         </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
+<p>Find a data file the data repository links to by walking up from <code>start</code> instead of the current working directory, downloading it when it is missing. </p>
+<p>See [<code><a class="el" href="#a9207bbfdcbe8863c64519a5debb294ee" title="Find a data file the data repository links to, downloading it when it is missing.">find_data_file</a></code>]. </p>
+
 </div>
 </div>
-<a id="a3e21ff57cb17d59f316c78a6154fd2a2" name="a3e21ff57cb17d59f316c78a6154fd2a2"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3e21ff57cb17d59f316c78a6154fd2a2">&#9670;&#160;</a></span>env_path()</h2>
+<a id="acf56e8dad3b4debf535044ed5e09b667" name="acf56e8dad3b4debf535044ed5e09b667"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#acf56e8dad3b4debf535044ed5e09b667">&#9670;&#160;</a></span>for_host()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -236,17 +308,27 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fn env_path </td>
+              <td class="c-table__cell">struct <a class="el" href="struct_download_command.html">DownloadCommand</a> for_host </td>
           <td>(</td>
-          <td class="c-table__cell">name:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span></td><td>)</td>
-          <td> -&gt; Option&lt; PathBuf &gt;</td>
+          <td class="c-table__cell">data_repository:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>Path</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">name:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">host:Host</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; Self</td>
         </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>Read <code>name</code> from the environment as a path, returning it only when set to a non-blank value (the value is trimmed and rejected when empty). </p>
+<p>The command that downloads <code>name</code> into the data repository at <code>data_repository</code> on <code>host</code>. </p>
+<p>Outside GitHub Actions it sends [<code><a class="el" href="#a021f46e16b8d323d2c1e96568d8a226d" title="The source the examples send with each download, so that downloads can be counted by where they come ...">DATA_DOWNLOAD_SOURCE</a></code>] as the source. </p>
 
 </div>
 </div>
@@ -262,7 +344,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">pub fn ipi_data_path </td>
           <td>(</td>
           <td class="c-table__cell">tier:IpiTier</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Option&lt; PathBuf &gt;</td>
+          <td> -&gt; Option&lt; <a class="el" href="ipi-web-getting-started-onprem_8rs.html#a36282740ed407fcac2ef7800fa2fbaf2">PathBuf</a> &gt;</td>
         </tr>
           </table>
         </div>
@@ -272,16 +354,16 @@ Variables</h2></td></tr>
 <p>Resolve the path to an on-premise IP Intelligence data file at the requested tier. </p>
 <p>[<code><a class="el" href="#a1251f17f4edf0d528a56e7d85fdcbb4c" title="The environment variable giving an explicit IP Intelligence data-file path.">IPI_PATH_ENV_VAR</a></code>] always wins when set to a non-blank path, regardless of <code>tier</code>, so a caller can point every example at one explicit file. Otherwise the tier decides:</p>
 <ul>
-<li>[<code>IpiTier::BestAvailable</code>] returns the latest Enterprise file from the configured share if it is reachable, and otherwise the ASN file.</li>
+<li>[<code>IpiTier::EnterpriseOrLite</code>] and [<code>IpiTier::EnterpriseOrAsn</code>] return the latest Enterprise file from the configured share if it is reachable, and otherwise that free file.</li>
 <li>[<code>IpiTier::Enterprise</code>] returns the latest Enterprise file, or <code>None</code> when the share is unreachable.</li>
-<li>[<code>IpiTier::Asn</code>] returns the ASN file located in the <code>cxx</code> submodule.</li>
+<li>[<code>IpiTier::Asn</code>] and [<code>IpiTier::Lite</code>] return that free file, found with [<code><a class="el" href="#a9207bbfdcbe8863c64519a5debb294ee" title="Find a data file the data repository links to, downloading it when it is missing.">find_data_file</a></code>], which downloads it when it is missing.</li>
 </ul>
 <p>Returns <code>None</code> when no file for the requested tier can be located. </p>
 
 </div>
 </div>
-<a id="a4ba5f355c20ca7ee569e30b3f0517308" name="a4ba5f355c20ca7ee569e30b3f0517308"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4ba5f355c20ca7ee569e30b3f0517308">&#9670;&#160;</a></span>ipi_env_var_wins_for_every_tier()</h2>
+<a id="acfbfeebfebf310866bdfca3c37551a35" name="acfbfeebfebf310866bdfca3c37551a35"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#acfbfeebfebf310866bdfca3c37551a35">&#9670;&#160;</a></span>on_path()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -289,20 +371,22 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fn ipi_env_var_wins_for_every_tier </td>
+              <td class="c-table__cell">fn on_path </td>
           <td>(</td>
-          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
+          <td class="c-table__cell">program:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="#ace367d07d2cbc650fd186739e5511adb">bool</a></td>
         </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
+<p>Whether <code>program</code>, or <code>program.exe</code>, is in a folder on the PATH. </p>
+
 </div>
 </div>
-<a id="a5238a8ea4f84f1875cf510a7ae9bef12" name="a5238a8ea4f84f1875cf510a7ae9bef12"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5238a8ea4f84f1875cf510a7ae9bef12">&#9670;&#160;</a></span>latest_dated_day_with_file()</h2>
+<a id="a8966114cf623eb135f6379ed939e040b" name="a8966114cf623eb135f6379ed939e040b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8966114cf623eb135f6379ed939e040b">&#9670;&#160;</a></span>stdout()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -310,104 +394,9 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fn latest_dated_day_with_file </td>
+              <td class="c-table__cell">command args self stdout </td>
           <td>(</td>
-          <td class="c-table__cell">month:&amp;std::path::Path</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Option&lt; PathBuf &gt;</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>The latest day subdirectory of <code>month</code> that actually contains the Enterprise data file. </p>
-<p>Falling back from the latest empty day to an earlier populated one keeps the resolver working on a day the upload has not yet completed. </p>
-
-</div>
-</div>
-<a id="a8cfc1f565eb02fc1a60a3d8525080c44" name="a8cfc1f565eb02fc1a60a3d8525080c44"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8cfc1f565eb02fc1a60a3d8525080c44">&#9670;&#160;</a></span>latest_enterprise_ipi()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">pub fn latest_enterprise_ipi </td>
-          <td>(</td>
-          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Option&lt; PathBuf &gt;</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>Locate the latest dated Enterprise IP Intelligence file on the configured share ([<code><a class="el" href="#a380365aa8b70b2cbb9b64de4ca04719e" title="The environment variable giving the root of the dated Enterprise IP Intelligence share,...">IPI_ENTERPRISE_SHARE_ENV_VAR</a></code>]), or <code>None</code> when the share is unset or not reachable. </p>
-<p>The share is laid out as <code>&lt;root&gt;/YYYY/MM/DD/&lt;file&gt;</code>. The most recent dated folder that actually contains the file is chosen, comparing folder names lexicographically (zero-padded <code>YYYY</code>, <code>MM</code> and <code>DD</code> sort the same as by date). When the variable is unset, or any I/O error occurs (the common case when the share is not mounted), the result is <code>None</code>, so the resolver never blocks or panics. </p>
-
-</div>
-</div>
-<a id="a780a8dd9bd7495abedbe402855c1368e" name="a780a8dd9bd7495abedbe402855c1368e"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a780a8dd9bd7495abedbe402855c1368e">&#9670;&#160;</a></span>latest_numeric_child()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">fn latest_numeric_child </td>
-          <td>(</td>
-          <td class="c-table__cell">dir:&amp;std::path::Path</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Option&lt; PathBuf &gt;</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>The lexicographically greatest immediate subdirectory of <code>dir</code> whose name is all digits, or <code>None</code> if there is none (or <code>dir</code> cannot be read). </p>
-
-</div>
-</div>
-<a id="a94f79b151a90f1b22aa4b30df28b8f3c" name="a94f79b151a90f1b22aa4b30df28b8f3c"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a94f79b151a90f1b22aa4b30df28b8f3c">&#9670;&#160;</a></span>numeric_child_dirs()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">fn numeric_child_dirs </td>
-          <td>(</td>
-          <td class="c-table__cell">dir:&amp;std::path::Path</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Vec&lt; PathBuf &gt;</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>The immediate subdirectories of <code>dir</code> whose names are all ASCII digits, sorted ascending by name (zero-padded <code>YYYY</code>, <code>MM</code> and <code>DD</code> sort the same as by date). </p>
-<p>Returns an empty <code>Vec</code> when <code>dir</code> cannot be read. </p>
-
-</div>
-</div>
-<a id="a0bc0e60ddfcd4a779ba0dc0d968f6888" name="a0bc0e60ddfcd4a779ba0dc0d968f6888"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0bc0e60ddfcd4a779ba0dc0d968f6888">&#9670;&#160;</a></span>unreachable_enterprise_share_is_none()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">fn unreachable_enterprise_share_is_none </td>
-          <td>(</td>
-          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="c-table__cell">std::io::stderr()</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
           </table>
@@ -418,6 +407,44 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>
+<a id="aad1ce42ad864f750be017806db51a3e1" name="aad1ce42ad864f750be017806db51a3e1"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aad1ce42ad864f750be017806db51a3e1">&#9670;&#160;</a></span>__pad0__</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">program __pad0__</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Whether this is Windows, where the PowerShell script is run. </p>
+
+</div>
+</div>
+<a id="aad81f93055116d4ba1b1c839a9bd7fd2" name="aad81f93055116d4ba1b1c839a9bd7fd2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aad81f93055116d4ba1b1c839a9bd7fd2">&#9670;&#160;</a></span>arguments</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">program arguments</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
 <a id="a9cb77e8bd3a4974627c90936971d10cd" name="a9cb77e8bd3a4974627c90936971d10cd"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9cb77e8bd3a4974627c90936971d10cd">&#9670;&#160;</a></span>Asn</h2>
 
@@ -434,13 +461,13 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Force the ASN file ([<code><a class="el" href="#af3d7a5db6b43a06357cf4daf62ff7dce" title="The ASN IP Intelligence data file checked into the ip-intelligence-data repository (resolved through ...">IPI_ASN_RELATIVE_PATH</a></code>]). </p>
-<p>Small, current and checked into the repository, so it suits most quick tests. </p>
+<p>Force the ASN file ([<code><a class="el" href="#af3d7a5db6b43a06357cf4daf62ff7dce" title="The ASN IP Intelligence data file in the data repository, giving Asn and AsnName.">IPI_ASN_RELATIVE_PATH</a></code>]). </p>
+<p>Small, current and free from the data repository, so it suits most quick tests. </p>
 
 </div>
 </div>
-<a id="aea85a38f8ec3ec905ad95d6ae1e3892d" name="aea85a38f8ec3ec905ad95d6ae1e3892d"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aea85a38f8ec3ec905ad95d6ae1e3892d">&#9670;&#160;</a></span>BestAvailable</h2>
+<a id="ace367d07d2cbc650fd186739e5511adb" name="ace367d07d2cbc650fd186739e5511adb"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ace367d07d2cbc650fd186739e5511adb">&#9670;&#160;</a></span>bool</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -448,14 +475,39 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">BestAvailable</td>
+              <td class="c-table__cell">fn <a class="el" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f">run</a> self bool</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div>
+<div class="c-code__line">        let <a class="code hl_variable" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> command = Command::new(self.program)</div>
+<div class="ttc" id="astar__sign_8rs_html_a4dfb142d47a422e580aa3795ccce5db6"><div class="ttname"><a href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a></div><div class="ttdeci">pub fn set_star_sign mut</div><div class="ttdoc">Set the computed star sign.</div><div class="ttdef"><b>Definition</b> star_sign.rs:193</div></div>
+</div><!-- fragment -->
+<p>Run the command, returning whether it succeeded. </p>
+<p>The script's progress goes to standard error, as this module's own messages do, so the example's standard output carries only its results. </p>
+
+</div>
+</div>
+<a id="a021f46e16b8d323d2c1e96568d8a226d" name="a021f46e16b8d323d2c1e96568d8a226d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a021f46e16b8d323d2c1e96568d8a226d">&#9670;&#160;</a></span>DATA_DOWNLOAD_SOURCE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub const DATA_DOWNLOAD_SOURCE</td>
             </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>Pick the best loadable tier: Enterprise if the share is reachable, otherwise the ASN file checked into the repository. </p>
+<p>The <code>source</code> the examples send with each download, so that downloads can be counted by where they come from. </p>
+<p>In GitHub Actions they send none, and the data repository's scripts send <code>ci-&lt;repository&gt;</code> instead, so CI is not counted as use of the examples. </p>
 
 </div>
 </div>
@@ -475,7 +527,7 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>The Lite Device Detection data file in the <code>cxx</code> submodule. </p>
+<p>The Lite Device Detection data file in the data repository. </p>
 
 </div>
 </div>
@@ -496,6 +548,35 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>The environment variable giving an explicit Device Detection data-file path. </p>
+
+</div>
+</div>
+<a id="af5d1e661fa7d9cd923f63d39041ed622" name="af5d1e661fa7d9cd923f63d39041ed622"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af5d1e661fa7d9cd923f63d39041ed622">&#9670;&#160;</a></span>DOWNLOADS_TRIED</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">DOWNLOADS_TRIED</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The links this process has already run the download script for. </p>
+<p>Each file is tried once, and the lock means two threads never download one together. </p>
 
 </div>
 </div>
@@ -520,29 +601,105 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a26ba5e116eefd6a3a0afcc00472b8b75" name="a26ba5e116eefd6a3a0afcc00472b8b75"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a26ba5e116eefd6a3a0afcc00472b8b75">&#9670;&#160;</a></span>ENV_LOCK</h2>
+<a id="ae12a263e37f72890688a0b4e2cdb142b" name="ae12a263e37f72890688a0b4e2cdb142b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae12a263e37f72890688a0b4e2cdb142b">&#9670;&#160;</a></span>EnterpriseOrAsn</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <div class="c-member__split">
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">ENV_LOCK</td>
+              <td class="c-table__cell">EnterpriseOrAsn</td>
             </tr>
           </table>
         </div>
       </div>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="c-member__body">
+
+<p>The Enterprise file if the share is reachable, otherwise the ASN file from the data repository. </p>
+<p>For the performance and update examples, whose properties do not matter to what they show. </p>
+
+</div>
+</div>
+<a id="ab3ce18fb6f2aca6884744e78d61a0fce" name="ab3ce18fb6f2aca6884744e78d61a0fce"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab3ce18fb6f2aca6884744e78d61a0fce">&#9670;&#160;</a></span>EnterpriseOrLite</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">EnterpriseOrLite</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The Enterprise file if the share is reachable, otherwise the Lite file from the data repository. </p>
+<p>For the examples that show location or registration properties. </p>
+
+</div>
+</div>
+<a id="ae7b39b29e9fa364511af8a2eae4cfba4" name="ae7b39b29e9fa364511af8a2eae4cfba4"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae7b39b29e9fa364511af8a2eae4cfba4">&#9670;&#160;</a></span>GITHUB_ACTIONS_ENV_VAR</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const GITHUB_ACTIONS_ENV_VAR</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The environment variable GitHub Actions sets to <code>true</code> in every step. </p>
+
+</div>
+</div>
+<a id="abc901246717bf92cf7f8941442000adf" name="abc901246717bf92cf7f8941442000adf"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#abc901246717bf92cf7f8941442000adf">&#9670;&#160;</a></span>has_pwsh</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">windows has_pwsh</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Whether PowerShell 7, <code>pwsh</code>, is on the PATH. </p>
+
+</div>
+</div>
+<a id="aacbd175c9a4da8601cc8545860f05413" name="aacbd175c9a4da8601cc8545860f05413"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aacbd175c9a4da8601cc8545860f05413">&#9670;&#160;</a></span>in_github_actions</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">windows in_github_actions</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Whether this runs in GitHub Actions, where no source is sent. </p>
 
 </div>
 </div>
@@ -562,8 +719,8 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>The ASN IP Intelligence data file checked into the <code>ip-intelligence-data</code> repository (resolved through the <code>cxx</code> submodule). </p>
-<p>As the data file committed to the repository it loads against the current native library and is the convenient default for quick tests and CI. A full IP Intelligence data file is obtained from the data repository (see its README) when richer properties are needed. </p>
+<p>The ASN IP Intelligence data file in the data repository, giving Asn and AsnName. </p>
+<p>It is a download of a few megabytes, so the examples whose properties do not matter to what they show read it, as do the examples' tests. </p>
 
 </div>
 </div>
@@ -608,6 +765,27 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a7afaa4eff49d584bff6761751147f9ee" name="a7afaa4eff49d584bff6761751147f9ee"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7afaa4eff49d584bff6761751147f9ee">&#9670;&#160;</a></span>IPI_LITE_RELATIVE_PATH</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub const IPI_LITE_RELATIVE_PATH</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The Lite IP Intelligence data file in the data repository, giving RegisteredName, RegisteredOwner and RegisteredCountry. </p>
+<p>It is a download of a few hundred megabytes. The examples that show location or registration properties read it when no other file is set. </p>
+
+</div>
+</div>
 <a id="a1251f17f4edf0d528a56e7d85fdcbb4c" name="a1251f17f4edf0d528a56e7d85fdcbb4c"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1251f17f4edf0d528a56e7d85fdcbb4c">&#9670;&#160;</a></span>IPI_PATH_ENV_VAR</h2>
 
@@ -628,8 +806,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ab60c545115f42f88c00b55f384f5ffc0" name="ab60c545115f42f88c00b55f384f5ffc0"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab60c545115f42f88c00b55f384f5ffc0">&#9670;&#160;</a></span>tests</h2>
+<a id="a90bea49b07745b6fbd53950bb0270cd1" name="a90bea49b07745b6fbd53950bb0270cd1"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a90bea49b07745b6fbd53950bb0270cd1">&#9670;&#160;</a></span>Lite</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -637,15 +815,58 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">mod tests</td>
+              <td class="c-table__cell">Lite</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Force the Lite file ([<code><a class="el" href="#a7afaa4eff49d584bff6761751147f9ee" title="The Lite IP Intelligence data file in the data repository, giving RegisteredName, RegisteredOwner and...">IPI_LITE_RELATIVE_PATH</a></code>]), free from the data repository and much larger than the ASN file. </p>
+
+</div>
+</div>
+<a id="a393a7b2a8320f3958f0a00f4047d00bf" name="a393a7b2a8320f3958f0a00f4047d00bf"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a393a7b2a8320f3958f0a00f4047d00bf">&#9670;&#160;</a></span>POWERSHELL_MODULE_PATH_ENV_VAR</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const POWERSHELL_MODULE_PATH_ENV_VAR</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The module path Windows PowerShell must not inherit from PowerShell 7. </p>
+<p>With PowerShell 7's module folders it cannot load its own modules, and the data repository's script stops because Get-FileHash is not recognised. </p>
+
+</div>
+</div>
+<a id="ac6261915af7256c436ec4a504915d07a" name="ac6261915af7256c436ec4a504915d07a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac6261915af7256c436ec4a504915d07a">&#9670;&#160;</a></span>removed</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">for name in &amp;self removed</td>
             </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div>
-<div class="c-code__line">    use super::*</div>
+<div class="c-code__line">            command.env_remove(name)</div>
 </div><!-- fragment -->
+<p>Variables removed from the environment the command runs in. </p>
+
 </div>
 </div>
 </div><!-- primary -->

@@ -92,11 +92,19 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a4ffdb8b2bd6812a30c34d03ed338ebc9" id="r_a4ffdb8b2bd6812a30c34d03ed338ebc9"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a4ffdb8b2bd6812a30c34d03ed338ebc9">ShareUsageBuilderBase</a> (ILoggerFactory loggerFactory, Logger logger)</td></tr>
 <tr class="c-table__row memdesc:a4ffdb8b2bd6812a30c34d03ed338ebc9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor.  <br /></td></tr>
 <tr class="c-table__row memitem:a650a1ae15a6753d704399053be9d4425" id="r_a650a1ae15a6753d704399053be9d4425"><td class="c-table__cell"><a class="el" href="#a4622db0f7179a0e059f61105cc60ed63">ShareUsageBuilderBase</a>&lt;&#160;T&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a650a1ae15a6753d704399053be9d4425">setIncludedQueryStringParameters</a> (List&lt; String &gt; queryStringParameterNames)</td></tr>
-<tr class="c-table__row memdesc:a650a1ae15a6753d704399053be9d4425"><td class="c-table__cell">&#160;</td><td class="c-table__cell">By default, query string parameters are not shared.  <br /></td></tr>
+<tr class="c-table__row memdesc:a650a1ae15a6753d704399053be9d4425"><td class="c-table__cell">&#160;</td><td class="c-table__cell">By default, only query string parameters that start with 51D_ are shared.  <br /></td></tr>
 <tr class="c-table__row memitem:adca627baa81c8113af91f8ae1c41055a" id="r_adca627baa81c8113af91f8ae1c41055a"><td class="c-table__cell"><a class="el" href="#a4622db0f7179a0e059f61105cc60ed63">ShareUsageBuilderBase</a>&lt;&#160;T&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#adca627baa81c8113af91f8ae1c41055a">setIncludedQueryStringParameters</a> (String queryStringParameterNames)</td></tr>
-<tr class="c-table__row memdesc:adca627baa81c8113af91f8ae1c41055a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">By default, query string parameters are not shared.  <br /></td></tr>
+<tr class="c-table__row memdesc:adca627baa81c8113af91f8ae1c41055a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">By default, only query string parameters that start with 51D_ are shared.  <br /></td></tr>
 <tr class="c-table__row memitem:a9aa466ebb68bb960533ce6d2f6e20a29" id="r_a9aa466ebb68bb960533ce6d2f6e20a29"><td class="c-table__cell"><a class="el" href="#a4622db0f7179a0e059f61105cc60ed63">ShareUsageBuilderBase</a>&lt;&#160;T&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a9aa466ebb68bb960533ce6d2f6e20a29">setIncludedQueryStringParameter</a> (String queryStringParameterName)</td></tr>
-<tr class="c-table__row memdesc:a9aa466ebb68bb960533ce6d2f6e20a29"><td class="c-table__cell">&#160;</td><td class="c-table__cell">By default, query string parameters are not shared.  <br /></td></tr>
+<tr class="c-table__row memdesc:a9aa466ebb68bb960533ce6d2f6e20a29"><td class="c-table__cell">&#160;</td><td class="c-table__cell">By default, only query string parameters that start with 51D_ are shared.  <br /></td></tr>
+<tr class="c-table__row memitem:ad50ad70949fe1191bc97f83fd42b8418" id="r_ad50ad70949fe1191bc97f83fd42b8418"><td class="c-table__cell"><a class="el" href="#a4622db0f7179a0e059f61105cc60ed63">ShareUsageBuilderBase</a>&lt;&#160;T&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ad50ad70949fe1191bc97f83fd42b8418">setShareAllQueryStringParameters</a> (boolean shareAll)</td></tr>
+<tr class="c-table__row memdesc:ad50ad70949fe1191bc97f83fd42b8418"><td class="c-table__cell">&#160;</td><td class="c-table__cell">If set to true, every query string and HTTP form parameter is shared, rather than only those that start with 51D_ or are named in the included parameters.  <br /></td></tr>
+<tr class="c-table__row memitem:ad722600079169f08fd3b0fe3312b3379" id="r_ad722600079169f08fd3b0fe3312b3379"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="#ad722600079169f08fd3b0fe3312b3379">isShareAllQueryStringParameters</a> ()</td></tr>
+<tr class="c-table__row memdesc:ad722600079169f08fd3b0fe3312b3379"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether every query string parameter is shared.  <br /></td></tr>
+<tr class="c-table__row memitem:ac095f4b62d9cbc96afd1b8dfa1f0b278" id="r_ac095f4b62d9cbc96afd1b8dfa1f0b278"><td class="c-table__cell"><a class="el" href="#a4622db0f7179a0e059f61105cc60ed63">ShareUsageBuilderBase</a>&lt;&#160;T&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ac095f4b62d9cbc96afd1b8dfa1f0b278">setShareAllEvidence</a> (boolean shareAll)</td></tr>
+<tr class="c-table__row memdesc:ac095f4b62d9cbc96afd1b8dfa1f0b278"><td class="c-table__cell">&#160;</td><td class="c-table__cell">If set to true, all Evidence is shared, which overrides the blocked HTTP headers and the rules for cookies, session values and query string parameters.  <br /></td></tr>
+<tr class="c-table__row memitem:aa1567891d30d3bf1979cb4cd12671abf" id="r_aa1567891d30d3bf1979cb4cd12671abf"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="#aa1567891d30d3bf1979cb4cd12671abf">isShareAllEvidence</a> ()</td></tr>
+<tr class="c-table__row memdesc:aa1567891d30d3bf1979cb4cd12671abf"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether all Evidence is shared.  <br /></td></tr>
 <tr class="c-table__row memitem:a98187e5ed567da145edc6bd6ff279f0f" id="r_a98187e5ed567da145edc6bd6ff279f0f"><td class="c-table__cell"><a class="el" href="#a4622db0f7179a0e059f61105cc60ed63">ShareUsageBuilderBase</a>&lt;&#160;T&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a98187e5ed567da145edc6bd6ff279f0f">setBlockedHttpHeaders</a> (List&lt; String &gt; blockedHeaders)</td></tr>
 <tr class="c-table__row memdesc:a98187e5ed567da145edc6bd6ff279f0f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">By default, all HTTP headers (excluding a few such as 'cookies', if they don't start with 51D_) are shared.  <br /></td></tr>
 <tr class="c-table__row memitem:a00b5378f37515ac883626150705f0d83" id="r_a00b5378f37515ac883626150705f0d83"><td class="c-table__cell"><a class="el" href="#a4622db0f7179a0e059f61105cc60ed63">ShareUsageBuilderBase</a>&lt;&#160;T&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a00b5378f37515ac883626150705f0d83">setBlockedHttpHeaders</a> (String blockedHeaders)</td></tr>
@@ -129,6 +137,16 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ab5700dedeb89dea519147de71c3c7229"><td class="c-table__cell">&#160;</td><td class="c-table__cell">If exactly the same evidence values are seen multiple times within this time limit then they will only be shared once.  <br /></td></tr>
 <tr class="c-table__row memitem:a1da8b191e44d90e2fdcd024325572982" id="r_a1da8b191e44d90e2fdcd024325572982"><td class="c-table__cell"><a class="el" href="#a4622db0f7179a0e059f61105cc60ed63">ShareUsageBuilderBase</a>&lt;&#160;T&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a1da8b191e44d90e2fdcd024325572982">setTrackSession</a> (boolean track)</td></tr>
 <tr class="c-table__row memdesc:a1da8b191e44d90e2fdcd024325572982"><td class="c-table__cell">&#160;</td><td class="c-table__cell">If set to true, the configured session cookie will be used to identify user sessions.  <br /></td></tr>
+<tr class="c-table__row memitem:a6de20042aa209a6a8c34c63ff1df6b62" id="r_a6de20042aa209a6a8c34c63ff1df6b62"><td class="c-table__cell"><a class="el" href="#a4622db0f7179a0e059f61105cc60ed63">ShareUsageBuilderBase</a>&lt;&#160;T&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a6de20042aa209a6a8c34c63ff1df6b62">setFailuresToEnterRecovery</a> (int failuresToEnterRecovery)</td></tr>
+<tr class="c-table__row memdesc:a6de20042aa209a6a8c34c63ff1df6b62"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the number of failed sends within the failures window that pauses sending.  <br /></td></tr>
+<tr class="c-table__row memitem:a13487ee188b885b8ec49b45c3f9a9b1c" id="r_a13487ee188b885b8ec49b45c3f9a9b1c"><td class="c-table__cell"><a class="el" href="#a4622db0f7179a0e059f61105cc60ed63">ShareUsageBuilderBase</a>&lt;&#160;T&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a13487ee188b885b8ec49b45c3f9a9b1c">setFailuresWindowSeconds</a> (int failuresWindowSeconds)</td></tr>
+<tr class="c-table__row memdesc:a13487ee188b885b8ec49b45c3f9a9b1c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the time in seconds over which failed sends are counted.  <br /></td></tr>
+<tr class="c-table__row memitem:ad1c9c5d92ab87dda6cb67d0e41650377" id="r_ad1c9c5d92ab87dda6cb67d0e41650377"><td class="c-table__cell"><a class="el" href="#a4622db0f7179a0e059f61105cc60ed63">ShareUsageBuilderBase</a>&lt;&#160;T&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ad1c9c5d92ab87dda6cb67d0e41650377">setInitialRecoveryDelaySeconds</a> (double initialDelaySeconds)</td></tr>
+<tr class="c-table__row memdesc:ad1c9c5d92ab87dda6cb67d0e41650377"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the length in seconds of the first pause after failed sends.  <br /></td></tr>
+<tr class="c-table__row memitem:a0efec5d2a50fc751c41d3f576f3792e9" id="r_a0efec5d2a50fc751c41d3f576f3792e9"><td class="c-table__cell"><a class="el" href="#a4622db0f7179a0e059f61105cc60ed63">ShareUsageBuilderBase</a>&lt;&#160;T&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a0efec5d2a50fc751c41d3f576f3792e9">setMaxRecoveryDelaySeconds</a> (double maxDelaySeconds)</td></tr>
+<tr class="c-table__row memdesc:a0efec5d2a50fc751c41d3f576f3792e9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the longest a pause can be, in seconds.  <br /></td></tr>
+<tr class="c-table__row memitem:aaaee4d574b815055baff794751c20363" id="r_aaaee4d574b815055baff794751c20363"><td class="c-table__cell"><a class="el" href="#a4622db0f7179a0e059f61105cc60ed63">ShareUsageBuilderBase</a>&lt;&#160;T&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#aaaee4d574b815055baff794751c20363">setRecoveryMultiplier</a> (double multiplier)</td></tr>
+<tr class="c-table__row memdesc:aaaee4d574b815055baff794751c20363"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set what the pause is multiplied by each time the send tried when a pause ends fails.  <br /></td></tr>
 <tr class="c-table__row memitem:a1b8a87825e2294a3f4183f0f08715ed9" id="r_a1b8a87825e2294a3f4183f0f08715ed9"><td class="c-table__cell">abstract&#160;T&#160;</td><td class="c-table__cell"><a class="el" href="#a1b8a87825e2294a3f4183f0f08715ed9">build</a> ()  throws IOException</td></tr>
 <tr class="c-table__row memdesc:a1b8a87825e2294a3f4183f0f08715ed9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Create the <code><a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_element.html">ShareUsageElement</a></code>.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
@@ -162,6 +180,20 @@ final&#160;List&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><b
 final&#160;List&lt;&#160;Map.Entry&lt;&#160;String,&#160;String&#160;&gt;&#160;&gt;&#160;</td><td class="c-table__cell"><b>ignoreDataEvidenceFilter</b> = new ArrayList&lt;&gt;()</td></tr>
 <tr class="c-table__row memitem:aae6587a9aca6ece6bc97e82acbad594d" id="r_aae6587a9aca6ece6bc97e82acbad594d"><td class="c-table__cell"><a id="aae6587a9aca6ece6bc97e82acbad594d" name="aae6587a9aca6ece6bc97e82acbad594d"></a>
 boolean&#160;</td><td class="c-table__cell"><b>trackSession</b></td></tr>
+<tr class="c-table__row memitem:a217feac074f865cb74ad5bd059f2d943" id="r_a217feac074f865cb74ad5bd059f2d943"><td class="c-table__cell"><a id="a217feac074f865cb74ad5bd059f2d943" name="a217feac074f865cb74ad5bd059f2d943"></a>
+int&#160;</td><td class="c-table__cell"><b>failuresToEnterRecovery</b> = <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_constants.html#a162a79bf6f8b0f2a3f127764070d771f">Constants.SHARE_USAGE_FAILURES_TO_ENTER_RECOVERY_DEFAULT</a></td></tr>
+<tr class="c-table__row memitem:a27edf68a623ffd7381ac868b5a2e9549" id="r_a27edf68a623ffd7381ac868b5a2e9549"><td class="c-table__cell"><a id="a27edf68a623ffd7381ac868b5a2e9549" name="a27edf68a623ffd7381ac868b5a2e9549"></a>
+int&#160;</td><td class="c-table__cell"><b>failuresWindowSeconds</b> = <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_constants.html#abb74726301a7926aff433485f3812278">Constants.SHARE_USAGE_FAILURES_WINDOW_SECONDS_DEFAULT</a></td></tr>
+<tr class="c-table__row memitem:ad2d172eb7d564ad732a604817002c44c" id="r_ad2d172eb7d564ad732a604817002c44c"><td class="c-table__cell"><a id="ad2d172eb7d564ad732a604817002c44c" name="ad2d172eb7d564ad732a604817002c44c"></a>
+double&#160;</td><td class="c-table__cell"><b>initialRecoveryDelaySeconds</b> = <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_constants.html#af755817694792147003fbf70b798b27e">Constants.SHARE_USAGE_EXPONENTIAL_BACKOFF_INITIAL_DELAY_SECONDS_DEFAULT</a></td></tr>
+<tr class="c-table__row memitem:a8e36780a802b41a921e2046b4173adba" id="r_a8e36780a802b41a921e2046b4173adba"><td class="c-table__cell"><a id="a8e36780a802b41a921e2046b4173adba" name="a8e36780a802b41a921e2046b4173adba"></a>
+double&#160;</td><td class="c-table__cell"><b>maxRecoveryDelaySeconds</b> = <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_constants.html#ae4f365ecd5cc64e07a3c58a3f07115c0">Constants.SHARE_USAGE_EXPONENTIAL_BACKOFF_MAX_DELAY_SECONDS_DEFAULT</a></td></tr>
+<tr class="c-table__row memitem:a47e1c9c9867af4ab7aa82f0e971088f4" id="r_a47e1c9c9867af4ab7aa82f0e971088f4"><td class="c-table__cell"><a id="a47e1c9c9867af4ab7aa82f0e971088f4" name="a47e1c9c9867af4ab7aa82f0e971088f4"></a>
+double&#160;</td><td class="c-table__cell"><b>recoveryMultiplier</b> = <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_constants.html#a2d5e7d12a41ba5b35bbe4d5c2619ae4f">Constants.SHARE_USAGE_EXPONENTIAL_BACKOFF_MULTIPLIER_DEFAULT</a></td></tr>
+<tr class="c-table__row memitem:a768efbefc08d31224ef438870abb333c" id="r_a768efbefc08d31224ef438870abb333c"><td class="c-table__cell"><a id="a768efbefc08d31224ef438870abb333c" name="a768efbefc08d31224ef438870abb333c"></a>
+boolean&#160;</td><td class="c-table__cell"><b>shareAllEvidence</b></td></tr>
+<tr class="c-table__row memitem:a993ae40ee69d6d0d09ecdce79ae8cf4c" id="r_a993ae40ee69d6d0d09ecdce79ae8cf4c"><td class="c-table__cell"><a id="a993ae40ee69d6d0d09ecdce79ae8cf4c" name="a993ae40ee69d6d0d09ecdce79ae8cf4c"></a>
+boolean&#160;</td><td class="c-table__cell"><b>shareAllQueryStringParameters</b></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="a4622db0f7179a0e059f61105cc60ed63" name="a4622db0f7179a0e059f61105cc60ed63"></a>
@@ -290,6 +322,54 @@ boolean&#160;</td><td class="c-table__cell"><b>trackSession</b></td></tr>
 
 </div>
 </div>
+<a id="aa1567891d30d3bf1979cb4cd12671abf" name="aa1567891d30d3bf1979cb4cd12671abf"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa1567891d30d3bf1979cb4cd12671abf">&#9670;&#160;</a></span>isShareAllEvidence()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">boolean <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_builder_base.html">fiftyone.pipeline.engines.fiftyone.flowelements.ShareUsageBuilderBase</a>&lt; T extends <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_base.html">ShareUsageBase</a> &gt;.isShareAllEvidence </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Whether all Evidence is shared. </p>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if all Evidence is shared </dd></dl>
+
+</div>
+</div>
+<a id="ad722600079169f08fd3b0fe3312b3379" name="ad722600079169f08fd3b0fe3312b3379"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad722600079169f08fd3b0fe3312b3379">&#9670;&#160;</a></span>isShareAllQueryStringParameters()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">boolean <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_builder_base.html">fiftyone.pipeline.engines.fiftyone.flowelements.ShareUsageBuilderBase</a>&lt; T extends <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_base.html">ShareUsageBase</a> &gt;.isShareAllQueryStringParameters </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Whether every query string parameter is shared. </p>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if all query string parameters are shared </dd></dl>
+
+</div>
+</div>
 <a id="ae8f6cb6fa0d86c2c60310bdcc6f25891" name="ae8f6cb6fa0d86c2c60310bdcc6f25891"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae8f6cb6fa0d86c2c60310bdcc6f25891">&#9670;&#160;</a></span>setAddTimeout()</h2>
 
@@ -310,7 +390,7 @@ boolean&#160;</td><td class="c-table__cell"><b>trackSession</b></td></tr>
 </div><div class="c-member__body">
 
 <p>Set the timeout in milliseconds to allow when attempting to add an item to the queue. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated</a></b></dt><dd>Use <code><a class="el" href="#aa28e608080a6f08ca0a038df94056882">setAddTimeoutMillis</a></code> </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000007">Deprecated</a></b></dt><dd>Use <code><a class="el" href="#aa28e608080a6f08ca0a038df94056882">setAddTimeoutMillis</a></code> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">milliseconds</td><td>timeout to set </td></tr>
@@ -444,6 +524,66 @@ boolean&#160;</td><td class="c-table__cell"><b>trackSession</b></td></tr>
 
 </div>
 </div>
+<a id="a6de20042aa209a6a8c34c63ff1df6b62" name="a6de20042aa209a6a8c34c63ff1df6b62"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6de20042aa209a6a8c34c63ff1df6b62">&#9670;&#160;</a></span>setFailuresToEnterRecovery()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#a4622db0f7179a0e059f61105cc60ed63">ShareUsageBuilderBase</a>&lt; T &gt; <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_builder_base.html">fiftyone.pipeline.engines.fiftyone.flowelements.ShareUsageBuilderBase</a>&lt; T extends <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_base.html">ShareUsageBase</a> &gt;.setFailuresToEnterRecovery </td>
+          <td>(</td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>failuresToEnterRecovery</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Set the number of failed sends within the failures window that pauses sending. </p>
+<p>Usage data is still queued while sending is paused, up to the maximum queue size. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">failuresToEnterRecovery</td><td>the number of failed sends, from 1 to 100 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">this builder </dd></dl>
+
+</div>
+</div>
+<a id="a13487ee188b885b8ec49b45c3f9a9b1c" name="a13487ee188b885b8ec49b45c3f9a9b1c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a13487ee188b885b8ec49b45c3f9a9b1c">&#9670;&#160;</a></span>setFailuresWindowSeconds()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#a4622db0f7179a0e059f61105cc60ed63">ShareUsageBuilderBase</a>&lt; T &gt; <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_builder_base.html">fiftyone.pipeline.engines.fiftyone.flowelements.ShareUsageBuilderBase</a>&lt; T extends <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_base.html">ShareUsageBase</a> &gt;.setFailuresWindowSeconds </td>
+          <td>(</td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>failuresWindowSeconds</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Set the time in seconds over which failed sends are counted. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">failuresWindowSeconds</td><td>the time in seconds, 1 or more </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">this builder </dd></dl>
+
+</div>
+</div>
 <a id="a3dd0ba4f3d1f89f3426c71835958afcc" name="a3dd0ba4f3d1f89f3426c71835958afcc"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3dd0ba4f3d1f89f3426c71835958afcc">&#9670;&#160;</a></span>setIgnoreFlowDataEvidenceFilter()</h2>
 
@@ -495,7 +635,7 @@ boolean&#160;</td><td class="c-table__cell"><b>trackSession</b></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>By default, query string parameters are not shared. </p>
+<p>By default, only query string parameters that start with 51D_ are shared. </p>
 <p>This setting adds the name of a parameter to share with 51Degrees if needed. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">queryStringParameterName</td><td>the (case-insensitive) name of the query string parameter to include </td></tr>
@@ -525,7 +665,7 @@ boolean&#160;</td><td class="c-table__cell"><b>trackSession</b></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>By default, query string parameters are not shared. </p>
+<p>By default, only query string parameters that start with 51D_ are shared. </p>
 <p>This setter replaces the current list, if any </p>
 <p>This setting allows you to share these parameters with 51Degrees if needed. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -556,11 +696,41 @@ boolean&#160;</td><td class="c-table__cell"><b>trackSession</b></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>By default, query string parameters are not shared. </p>
+<p>By default, only query string parameters that start with 51D_ are shared. </p>
 <p>This setter replaces the current list, if any </p>
 <p>This setting allows you to share these parameters with 51Degrees if needed. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">queryStringParameterNames</td><td>a comma separated list of (case-insensitive) names of the query string parameters to include </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">this builder </dd></dl>
+
+</div>
+</div>
+<a id="ad1c9c5d92ab87dda6cb67d0e41650377" name="ad1c9c5d92ab87dda6cb67d0e41650377"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad1c9c5d92ab87dda6cb67d0e41650377">&#9670;&#160;</a></span>setInitialRecoveryDelaySeconds()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#a4622db0f7179a0e059f61105cc60ed63">ShareUsageBuilderBase</a>&lt; T &gt; <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_builder_base.html">fiftyone.pipeline.engines.fiftyone.flowelements.ShareUsageBuilderBase</a>&lt; T extends <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_base.html">ShareUsageBase</a> &gt;.setInitialRecoveryDelaySeconds </td>
+          <td>(</td>
+          <td class="c-table__cell">double</td>          <td class="c-table__cell"><span class="paramname"><em>initialDelaySeconds</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Set the length in seconds of the first pause after failed sends. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">initialDelaySeconds</td><td>the length in seconds, more than 0 </td></tr>
   </table>
   </dd>
 </dl>
@@ -599,6 +769,36 @@ boolean&#160;</td><td class="c-table__cell"><b>trackSession</b></td></tr>
 
 </div>
 </div>
+<a id="a0efec5d2a50fc751c41d3f576f3792e9" name="a0efec5d2a50fc751c41d3f576f3792e9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0efec5d2a50fc751c41d3f576f3792e9">&#9670;&#160;</a></span>setMaxRecoveryDelaySeconds()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#a4622db0f7179a0e059f61105cc60ed63">ShareUsageBuilderBase</a>&lt; T &gt; <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_builder_base.html">fiftyone.pipeline.engines.fiftyone.flowelements.ShareUsageBuilderBase</a>&lt; T extends <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_base.html">ShareUsageBase</a> &gt;.setMaxRecoveryDelaySeconds </td>
+          <td>(</td>
+          <td class="c-table__cell">double</td>          <td class="c-table__cell"><span class="paramname"><em>maxDelaySeconds</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Set the longest a pause can be, in seconds. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">maxDelaySeconds</td><td>the length in seconds, more than 0 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">this builder </dd></dl>
+
+</div>
+</div>
 <a id="a5159c455537647ceea5740f3ce7f8fee" name="a5159c455537647ceea5740f3ce7f8fee"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5159c455537647ceea5740f3ce7f8fee">&#9670;&#160;</a></span>setMinimumEntriesPerMessage()</h2>
 
@@ -623,6 +823,36 @@ boolean&#160;</td><td class="c-table__cell"><b>trackSession</b></td></tr>
 <p>The default value is 50. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">minimumEntriesPerMessage</td><td>the minimum number of entries to be aggregated by the <code><a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_element.html">ShareUsageElement</a></code> before they are sent to the remote service </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">this builder </dd></dl>
+
+</div>
+</div>
+<a id="aaaee4d574b815055baff794751c20363" name="aaaee4d574b815055baff794751c20363"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aaaee4d574b815055baff794751c20363">&#9670;&#160;</a></span>setRecoveryMultiplier()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#a4622db0f7179a0e059f61105cc60ed63">ShareUsageBuilderBase</a>&lt; T &gt; <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_builder_base.html">fiftyone.pipeline.engines.fiftyone.flowelements.ShareUsageBuilderBase</a>&lt; T extends <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_base.html">ShareUsageBase</a> &gt;.setRecoveryMultiplier </td>
+          <td>(</td>
+          <td class="c-table__cell">double</td>          <td class="c-table__cell"><span class="paramname"><em>multiplier</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Set what the pause is multiplied by each time the send tried when a pause ends fails. </p>
+<p>2 doubles the pause each time. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">multiplier</td><td>the multiplier, 1 or more </td></tr>
   </table>
   </dd>
 </dl>
@@ -684,6 +914,68 @@ boolean&#160;</td><td class="c-table__cell"><b>trackSession</b></td></tr>
 <p>This setting has no effect if TrackSession is false. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cookieName</td><td>the name of the cookie that contains the session id </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">this builder </dd></dl>
+
+</div>
+</div>
+<a id="ac095f4b62d9cbc96afd1b8dfa1f0b278" name="ac095f4b62d9cbc96afd1b8dfa1f0b278"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac095f4b62d9cbc96afd1b8dfa1f0b278">&#9670;&#160;</a></span>setShareAllEvidence()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#a4622db0f7179a0e059f61105cc60ed63">ShareUsageBuilderBase</a>&lt; T &gt; <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_builder_base.html">fiftyone.pipeline.engines.fiftyone.flowelements.ShareUsageBuilderBase</a>&lt; T extends <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_base.html">ShareUsageBase</a> &gt;.setShareAllEvidence </td>
+          <td>(</td>
+          <td class="c-table__cell">boolean</td>          <td class="c-table__cell"><span class="paramname"><em>shareAll</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>If set to true, all Evidence is shared, which overrides the blocked HTTP headers and the rules for cookies, session values and query string parameters. </p>
+<p>The keys that are never shared (an email address, the salt for hashed email identifiers, the whole query string, the path and the Cookie header) are still not shared. </p>
+<p>Default value is false </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shareAll</td><td>true to share all Evidence </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">this builder </dd></dl>
+
+</div>
+</div>
+<a id="ad50ad70949fe1191bc97f83fd42b8418" name="ad50ad70949fe1191bc97f83fd42b8418"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad50ad70949fe1191bc97f83fd42b8418">&#9670;&#160;</a></span>setShareAllQueryStringParameters()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="#a4622db0f7179a0e059f61105cc60ed63">ShareUsageBuilderBase</a>&lt; T &gt; <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_builder_base.html">fiftyone.pipeline.engines.fiftyone.flowelements.ShareUsageBuilderBase</a>&lt; T extends <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_base.html">ShareUsageBase</a> &gt;.setShareAllQueryStringParameters </td>
+          <td>(</td>
+          <td class="c-table__cell">boolean</td>          <td class="c-table__cell"><span class="paramname"><em>shareAll</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>If set to true, every query string and HTTP form parameter is shared, rather than only those that start with 51D_ or are named in the included parameters. </p>
+<p>The whole query string and the parameters that are never shared are still not shared. </p>
+<p>Default value is false </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shareAll</td><td>true to share all query string parameters </td></tr>
   </table>
   </dd>
 </dl>
@@ -771,7 +1063,7 @@ boolean&#160;</td><td class="c-table__cell"><b>trackSession</b></td></tr>
 </div><div class="c-member__body">
 
 <p>Set the timeout in milliseconds to allow when attempting to take an item from the queue in order to send to the remote service. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000007">Deprecated</a></b></dt><dd>use <code><a class="el" href="#a1e5bb3725800d1864bbda36ca2ee23ae">setTakeTimeoutMillis(int)</a></code> </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000008">Deprecated</a></b></dt><dd>use <code><a class="el" href="#a1e5bb3725800d1864bbda36ca2ee23ae">setTakeTimeoutMillis(int)</a></code> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">milliseconds</td><td>timeout to set </td></tr>

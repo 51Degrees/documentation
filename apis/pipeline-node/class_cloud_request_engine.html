@@ -79,8 +79,8 @@ Collaboration diagram for CloudRequestEngine:</h2>
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="c-table__row memitem:a7ddaae05521ed4acbf6b64b16a1c86f8" id="r_a7ddaae05521ed4acbf6b64b16a1c86f8"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7ddaae05521ed4acbf6b64b16a1c86f8">constructor</a> ({ resourceKey, licenseKey, baseURL, cloudRequestOrigin, requestClient })</td></tr>
-<tr class="c-table__row memdesc:a7ddaae05521ed4acbf6b64b16a1c86f8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for <a class="el" href="class_cloud_request_engine.html">CloudRequestEngine</a>.  <br /></td></tr>
+<tr class="c-table__row memitem:a6e1863e1fc83f02361caa17d706881a6" id="r_a6e1863e1fc83f02361caa17d706881a6"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a6e1863e1fc83f02361caa17d706881a6">constructor</a> ({ resourceKey, licenseKey, requestedProperties, baseURL, cloudRequestOrigin, requestClient })</td></tr>
+<tr class="c-table__row memdesc:a6e1863e1fc83f02361caa17d706881a6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for <a class="el" href="class_cloud_request_engine.html">CloudRequestEngine</a>.  <br /></td></tr>
 <tr class="c-table__row memitem:a40cd1181ad3d4f041703c19ccd3a6cf5" id="r_a40cd1181ad3d4f041703c19ccd3a6cf5"><td class="c-table__cell">get&#160;</td><td class="c-table__cell"><a class="el" href="#a40cd1181ad3d4f041703c19ccd3a6cf5">keysAndPropertiesFetched</a> ()</td></tr>
 <tr class="c-table__row memdesc:a40cd1181ad3d4f041703c19ccd3a6cf5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check if the keys and properties have been fetched.  <br /></td></tr>
 <tr class="c-table__row memitem:a2895529dfb43acac9296a74af9178b39" id="r_a2895529dfb43acac9296a74af9178b39"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a2895529dfb43acac9296a74af9178b39">fetchEvidenceKeysAndProperties</a> (resolveCallback, rejectCallback)</td></tr>
@@ -89,6 +89,10 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a8171e23faf5ed0e213e2a7d8a88ff1cd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Function for testing if the cloud engine is ready Checks to see if properties and evidence keys have been fetched.  <br /></td></tr>
 <tr class="c-table__row memitem:acb9f7eba6626f61784c044b3492ddd49" id="r_acb9f7eba6626f61784c044b3492ddd49"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#acb9f7eba6626f61784c044b3492ddd49">processInternal</a> (flowData)</td></tr>
 <tr class="c-table__row memdesc:acb9f7eba6626f61784c044b3492ddd49"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Internal process for cloud engine Returns raw JSON as a "cloud" property in "cloud".  <br /></td></tr>
+<tr class="c-table__row memitem:ae5c96fa06f36a3c4805a39ea260cd227" id="r_ae5c96fa06f36a3c4805a39ea260cd227"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ae5c96fa06f36a3c4805a39ea260cd227">process</a> (flowData)</td></tr>
+<tr class="c-table__row memdesc:ae5c96fa06f36a3c4805a39ea260cd227"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Fetches the evidence keys and properties before the first process, whatever else is in the pipeline, because the cache key is built from the evidence keys.  <br /></td></tr>
+<tr class="c-table__row memitem:a16ebd177b8e6f86b734d9209dd600355" id="r_a16ebd177b8e6f86b734d9209dd600355"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a16ebd177b8e6f86b734d9209dd600355">isCacheable</a> (data)</td></tr>
+<tr class="c-table__row memdesc:a16ebd177b8e6f86b734d9209dd600355"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A response with a top level <code>fodid</code> member, in any case, holds a 51Did created for the one request, so it is neither stored in the cache nor served from it.  <br /></td></tr>
 <tr class="c-table__row memitem:af724bc6554268b405be68bbb3af21d76" id="r_af724bc6554268b405be68bbb3af21d76"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#af724bc6554268b405be68bbb3af21d76">getErrorMessages</a> (responseBody)</td></tr>
 <tr class="c-table__row memdesc:af724bc6554268b405be68bbb3af21d76"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Typically, cloud will return errors as JSON.  <br /></td></tr>
 <tr class="c-table__row memitem:a457ce97869307efb33ca13ecc366690b" id="r_a457ce97869307efb33ca13ecc366690b"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a457ce97869307efb33ca13ecc366690b">getErrorsFromResponse</a> (response)</td></tr>
@@ -101,19 +105,27 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ab430795edbded91c974407d352559edc"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Meta property transform.  <br /></td></tr>
 <tr class="c-table__row memitem:a53b8ff8d67533bc75687d6c0c0682a4a" id="r_a53b8ff8d67533bc75687d6c0c0682a4a"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a53b8ff8d67533bc75687d6c0c0682a4a">getData</a> (flowData)</td></tr>
 <tr class="c-table__row memdesc:a53b8ff8d67533bc75687d6c0c0682a4a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Internal function to get data from cloud service.  <br /></td></tr>
+<tr class="c-table__row memitem:a36a5a532e63aaeba8b8b64cb76521f1f" id="r_a36a5a532e63aaeba8b8b64cb76521f1f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a36a5a532e63aaeba8b8b64cb76521f1f">reportPropertiesNotCovered</a> (flowData, body)</td></tr>
+<tr class="c-table__row memdesc:a36a5a532e63aaeba8b8b64cb76521f1f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Compares the requested properties with an answer and logs, once, the names the answer left out.  <br /></td></tr>
 <tr class="c-table__row memitem:a123bc3108837a02f9ef309eedad2fe10" id="r_a123bc3108837a02f9ef309eedad2fe10"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a123bc3108837a02f9ef309eedad2fe10">getEvidenceKeys</a> ()</td></tr>
 <tr class="c-table__row memdesc:a123bc3108837a02f9ef309eedad2fe10"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Internal function to get evidenceKeys used by cloud resourcekey.  <br /></td></tr>
 <tr class="c-table__row memitem:a77b87f3ba47f7b0d7702a024291c31d4" id="r_a77b87f3ba47f7b0d7702a024291c31d4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a77b87f3ba47f7b0d7702a024291c31d4">getContent</a> (flowData)</td></tr>
 <tr class="c-table__row memdesc:a77b87f3ba47f7b0d7702a024291c31d4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Generate the Content to send in the POST request.  <br /></td></tr>
+<tr class="c-table__row memitem:a36e589b5a9c40297644fcca901565212" id="r_a36e589b5a9c40297644fcca901565212"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a36e589b5a9c40297644fcca901565212">sendableEvidence</a> (evidence)</td></tr>
+<tr class="c-table__row memdesc:a36e589b5a9c40297644fcca901565212"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The evidence the engine sends, being every value in the Flow Data, whether an element accepted it or not, apart from the web request view.  <br /></td></tr>
+<tr class="c-table__row memitem:a768e63cdaaea4f23172ccf8f940f2127" id="r_a768e63cdaaea4f23172ccf8f940f2127"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a768e63cdaaea4f23172ccf8f940f2127">isSent</a> (key)</td></tr>
+<tr class="c-table__row memdesc:a768e63cdaaea4f23172ccf8f940f2127"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether an evidence key is sent to the cloud service.  <br /></td></tr>
 <tr class="c-table__row memitem:a259b2883dbf6aadc73ef3a663d1292b4" id="r_a259b2883dbf6aadc73ef3a663d1292b4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a259b2883dbf6aadc73ef3a663d1292b4">addQueryData</a> (flowData, queryData, allEvidence, evidence)</td></tr>
 <tr class="c-table__row memdesc:a259b2883dbf6aadc73ef3a663d1292b4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add query data to the evidence.  <br /></td></tr>
 <tr class="c-table__row memitem:a98e3424290e124ceb14ba7da0e5b1cb4" id="r_a98e3424290e124ceb14ba7da0e5b1cb4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a98e3424290e124ceb14ba7da0e5b1cb4">getSelectedEvidence</a> (evidence, type)</td></tr>
 <tr class="c-table__row memdesc:a98e3424290e124ceb14ba7da0e5b1cb4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get evidence with specified prefix.  <br /></td></tr>
 <tr class="c-table__row memitem:a9e02a626ab1250bc6133ab1374ce3929" id="r_a9e02a626ab1250bc6133ab1374ce3929"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a9e02a626ab1250bc6133ab1374ce3929">hasKeyPrefix</a> (itemKey, prefix)</td></tr>
-<tr class="c-table__row memdesc:a9e02a626ab1250bc6133ab1374ce3929"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that the key of a KeyValuePair has the given prefix.  <br /></td></tr>
+<tr class="c-table__row memdesc:a9e02a626ab1250bc6133ab1374ce3929"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check that the key of a KeyValuePair has the given prefix, ignoring letter case as evidence keys do.  <br /></td></tr>
 <tr class="c-table__row inherit_header pub_methods_class_engine"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="class_engine.html">Engine</a></h3></td></tr>
 <tr class="c-table__row memitem:a17638e1aae6dc44caf726a38915b697f pub_methods_class_engine" id="r_a17638e1aae6dc44caf726a38915b697f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="class_engine.html#a17638e1aae6dc44caf726a38915b697f">constructor</a> ({ cache, restrictedProperties, dataFile }={})</td></tr>
 <tr class="c-table__row memdesc:a17638e1aae6dc44caf726a38915b697f pub_methods_class_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for an <a class="el" href="class_engine.html" title="An Engine is an extension of a FlowElement which adds options such as restricting to a subset of prop...">Engine</a>.  <br /></td></tr>
+<tr class="c-table__row memitem:aa9e7ba5fb7dd494714df6d7e8ea5e0d4 pub_methods_class_engine" id="r_aa9e7ba5fb7dd494714df6d7e8ea5e0d4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="class_engine.html#aa9e7ba5fb7dd494714df6d7e8ea5e0d4">isCacheable</a> (data)</td></tr>
+<tr class="c-table__row memdesc:aa9e7ba5fb7dd494714df6d7e8ea5e0d4 pub_methods_class_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether a result may be stored in the cache and served from it.  <br /></td></tr>
 <tr class="c-table__row memitem:ad9e56adcbf7b457d98d93aa93768d589 pub_methods_class_engine" id="r_ad9e56adcbf7b457d98d93aa93768d589"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="class_engine.html#ad9e56adcbf7b457d98d93aa93768d589">inCache</a> (flowData)</td></tr>
 <tr class="c-table__row memdesc:ad9e56adcbf7b457d98d93aa93768d589 pub_methods_class_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Checks cache and returns cached result if found.  <br /></td></tr>
 <tr class="c-table__row memitem:af3c9d9ce99d6310cd5af8ab939ae45b0 pub_methods_class_engine" id="r_af3c9d9ce99d6310cd5af8ab939ae45b0"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="class_engine.html#af3c9d9ce99d6310cd5af8ab939ae45b0">process</a> (flowData)</td></tr>
@@ -123,8 +135,8 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a1fe9f5deb4de5581b0eee81f9376a186 pub_methods_class_engine" id="r_a1fe9f5deb4de5581b0eee81f9376a186"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="class_engine.html#a1fe9f5deb4de5581b0eee81f9376a186">registerDataFile</a> (dataFile)</td></tr>
 <tr class="c-table__row memdesc:a1fe9f5deb4de5581b0eee81f9376a186 pub_methods_class_engine"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Function to attach a <a class="el" href="class_data_file.html" title="A datafile used by a FlowElement / Engine to get calculate properties values.">DataFile</a> to the engine and register it with a <a class="el" href="class_data_file_update_service.html" title="Datafiles attached to FlowElements register with the dataFileUpdateService so the datafiles can recei...">DataFileUpdateService</a> if needed.  <br /></td></tr>
 <tr class="c-table__row inherit_header pub_methods_class_flow_element"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="class_flow_element.html">FlowElement</a></h3></td></tr>
-<tr class="c-table__row memitem:aafd6a7f4076e2499ee1ea86f4a963cb8 pub_methods_class_flow_element" id="r_aafd6a7f4076e2499ee1ea86f4a963cb8"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="class_flow_element.html#aafd6a7f4076e2499ee1ea86f4a963cb8">constructor</a> ({ <a class="el" href="class_flow_element.html#a227dd46e0e0c51ecf79186a4d7368646">processInternal</a>, dataKey, properties={}, evidenceKeyFilter }={})</td></tr>
-<tr class="c-table__row memdesc:aafd6a7f4076e2499ee1ea86f4a963cb8 pub_methods_class_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for flowElement class.  <br /></td></tr>
+<tr class="c-table__row memitem:add7aa4fba8761432d27b26c3f63edd48 pub_methods_class_flow_element" id="r_add7aa4fba8761432d27b26c3f63edd48"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="class_flow_element.html#add7aa4fba8761432d27b26c3f63edd48">constructor</a> ({ <a class="el" href="class_flow_element.html#a227dd46e0e0c51ecf79186a4d7368646">processInternal</a>, dataKey, properties={}, evidenceKeyFilter, keptEvidenceKeyFilter }={})</td></tr>
+<tr class="c-table__row memdesc:add7aa4fba8761432d27b26c3f63edd48 pub_methods_class_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for flowElement class.  <br /></td></tr>
 <tr class="c-table__row memitem:aea883b72955f23691d0188efa918670e pub_methods_class_flow_element" id="r_aea883b72955f23691d0188efa918670e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="class_flow_element.html#aea883b72955f23691d0188efa918670e">onRegistration</a> (pipeline, flowElement)</td></tr>
 <tr class="c-table__row memdesc:aea883b72955f23691d0188efa918670e pub_methods_class_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Internal function to be called when a <a class="el" href="class_flow_element.html" title="A FlowElement is placed inside a pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a> is added to pipeline, runs through any registrationCallbacks on the <a class="el" href="class_flow_element.html" title="A FlowElement is placed inside a pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a>.  <br /></td></tr>
 <tr class="c-table__row memitem:a67a6943bd9976e1571453b41bcea2f11 pub_methods_class_flow_element" id="r_a67a6943bd9976e1571453b41bcea2f11"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="class_flow_element.html#a67a6943bd9976e1571453b41bcea2f11">ready</a> ()</td></tr>
@@ -195,8 +207,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7ddaae05521ed4acbf6b64b16a1c86f8" name="a7ddaae05521ed4acbf6b64b16a1c86f8"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7ddaae05521ed4acbf6b64b16a1c86f8">&#9670;&#160;</a></span>constructor()</h2>
+<a id="a6e1863e1fc83f02361caa17d706881a6" name="a6e1863e1fc83f02361caa17d706881a6"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6e1863e1fc83f02361caa17d706881a6">&#9670;&#160;</a></span>constructor()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -209,7 +221,7 @@ Public Member Functions</h2></td></tr>
             <tr class="c-table__row">
               <td class="c-table__cell">CloudRequestEngine::constructor </td>
           <td>(</td>
-          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>{ resourceKey, licenseKey, baseURL, cloudRequestOrigin, requestClient }</em></span></td><td>)</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>{ resourceKey, licenseKey, requestedProperties, baseURL, cloudRequestOrigin, requestClient }</em></span></td><td>)</td>
           <td></td>
         </tr>
           </table>
@@ -227,7 +239,8 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">{object}</td><td>options options object </td></tr>
     <tr><td class="paramname">{string}</td><td>options.resourceKey resourcekey for cloud service </td></tr>
-    <tr><td class="paramname">{string}</td><td>options.licenseKey licensekey for cloud service </td></tr>
+    <tr><td class="paramname">{string}</td><td>options.licenseKey licensekey for cloud service, beside a resourceKey or on its own. On its own, requestedProperties is required. </td></tr>
+    <tr><td class="paramname">{Array&lt;string&gt;|string}</td><td>options.requestedProperties the fully qualified names of the properties to ask for, such as device.ismobile, as a list or one comma separated string. Beside a resourceKey the cloud service adds them to the properties the resource key carries. </td></tr>
     <tr><td class="paramname">{string}</td><td>options.baseURL url the cloud service is located at if overriding default </td></tr>
     <tr><td class="paramname">{string}</td><td>options.cloudRequestOrigin The value to set for the Origin header when making requests to the cloud service. This is used by the cloud service to check that the request is being made from a origin matching those allowed by the resource key. For more detail, see the 'Request Headers' section in the <a href="https://cloud.51degrees.com/api-docs/index.html">cloud documentation</a>. </td></tr>
     <tr><td class="paramname">{RequestClient}</td><td>options.requestClient Set predefined <a class="el" href="class_request_client.html">RequestClient</a>. </td></tr>
@@ -340,7 +353,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Generate the Content to send in the POST request. </p>
-<p>The evidence keys e.g. 'query.' and 'header.' have an order of precedence. These are added to the evidence in reverse order, if there is conflict then the queryData value is overwritten. 'query.' evidence should take precedence over all other evidence. If there are evidence keys other than 'query.' that conflict then this is unexpected so a warning will be logged.</p>
+<p>One name under several prefixes is sent once, with the value of the prefix that evidence.md ranks highest, being query, header, cookie, server, fiftyone and location, then any other prefix alphabetically. The groups are added lowest precedence first, so a later value replaces an earlier one. If there are evidence keys other than 'query.' that conflict then this is unexpected so a warning will be logged.</p>
+<p>The engine sends every <a class="el" href="class_evidence.html" title="Storage of evidence on a flowData object.">Evidence</a> value in the Flow Data, including the values no element in the pipeline accepts, because what the cloud service uses changes over time and knowing about the other <a class="el" href="class_evidence.html" title="Storage of evidence on a flowData object.">Evidence</a> is important to continued optimization. The reserved names and the web request view are left out.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{FlowData}</td><td>flowData <a class="el" href="class_flow_data.html" title="FlowData is created by a specific pipeline It collects evidence set by the user It passes evidence to...">FlowData</a> to get evidence from </td></tr>
@@ -572,7 +586,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="c-member__body">
 
-<p>Check that the key of a KeyValuePair has the given prefix. </p>
+<p>Check that the key of a KeyValuePair has the given prefix, ignoring letter case as evidence keys do. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{string}</td><td>itemKey Key to check </td></tr>
@@ -581,6 +595,84 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{boolean} True if the key has the prefix. </dd></dl>
+
+</div>
+</div>
+<a id="a16ebd177b8e6f86b734d9209dd600355" name="a16ebd177b8e6f86b734d9209dd600355"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a16ebd177b8e6f86b734d9209dd600355">&#9670;&#160;</a></span>isCacheable()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">CloudRequestEngine::isCacheable </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>A response with a top level <code>fodid</code> member, in any case, holds a 51Did created for the one request, so it is neither stored in the cache nor served from it. </p>
+<p>The answer is worked out once for each element data, so a cache hit does not parse the response again.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{object}</td><td>data the element data of a response </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{boolean} false if the response has a top level fodid member </dd></dl>
+
+</div>
+</div>
+<a id="a768e63cdaaea4f23172ccf8f940f2127" name="a768e63cdaaea4f23172ccf8f940f2127"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a768e63cdaaea4f23172ccf8f940f2127">&#9670;&#160;</a></span>isSent()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">CloudRequestEngine::isSent </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Whether an evidence key is sent to the cloud service. </p>
+<p>The reserved names are left out later, by addQueryData.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{string}</td><td>key the evidence key </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{boolean} false for the web request view, in any letter case </dd></dl>
 
 </div>
 </div>
@@ -612,7 +704,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Check if the keys and properties have been fetched. </p>
-<p>This computed property determines whether the keys of a 'flowElementProperties' object and the 'evidenceKeyFilter' array both have elements, indicating that the necessary data has been fetched and is ready for use.</p>
+<p>True once the cloud service's evidence keys have arrived and its properties have been read, so they are fetched once rather than for every request.</p>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{boolean} True if the keys and properties are fetched and ready; otherwise, false. </dd></dl>
 
 </div>
@@ -657,6 +749,45 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{object} transformed properties </dd></dl>
+
+</div>
+</div>
+<a id="ae5c96fa06f36a3c4805a39ea260cd227" name="ae5c96fa06f36a3c4805a39ea260cd227"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae5c96fa06f36a3c4805a39ea260cd227">&#9670;&#160;</a></span>process()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">CloudRequestEngine::process </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>flowData</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Fetches the evidence keys and properties before the first process, whatever else is in the pipeline, because the cache key is built from the evidence keys. </p>
+<p>A fetch that fails is tried again on the next process, and its error is the process error.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{FlowData}</td><td>flowData <a class="el" href="class_flow_data.html" title="FlowData is created by a specific pipeline It collects evidence set by the user It passes evidence to...">FlowData</a> to process </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{Promise} resolved once the <a class="el" href="class_flow_data.html" title="FlowData is created by a specific pipeline It collects evidence set by the user It passes evidence to...">FlowData</a> is processed </dd></dl>
 
 </div>
 </div>
@@ -765,6 +896,88 @@ Public Member Functions</h2></td></tr>
 
 <p>Function for testing if the cloud engine is ready Checks to see if properties and evidence keys have been fetched. </p>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{Promise} whether ready </dd></dl>
+
+</div>
+</div>
+<a id="a36a5a532e63aaeba8b8b64cb76521f1f" name="a36a5a532e63aaeba8b8b64cb76521f1f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a36a5a532e63aaeba8b8b64cb76521f1f">&#9670;&#160;</a></span>reportPropertiesNotCovered()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">CloudRequestEngine::reportPropertiesNotCovered </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>flowData</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>body</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Compares the requested properties with an answer and logs, once, the names the answer left out. </p>
+<p>The cloud service drops a property the keys do not cover without naming it, so only the engine can notice. A property present but null counts as answered, because its nullreason says why it has no value. The answer cannot change while the keys and the list stay the same, so one comparison is enough.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{FlowData}</td><td>flowData the flow data whose pipeline is logged to </td></tr>
+    <tr><td class="paramname">{string}</td><td>body the JSON the cloud service answered with </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a36e589b5a9c40297644fcca901565212" name="a36e589b5a9c40297644fcca901565212"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a36e589b5a9c40297644fcca901565212">&#9670;&#160;</a></span>sendableEvidence()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">CloudRequestEngine::sendableEvidence </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>evidence</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The evidence the engine sends, being every value in the Flow Data, whether an element accepted it or not, apart from the web request view. </p>
+<p>addQueryData then leaves out the reserved names. The accepted values come first, so where the two would give the same name the accepted one is sent.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{Evidence}</td><td>evidence the Flow Data's evidence </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{object} the evidence keys and values to send </dd></dl>
 
 </div>
 </div>

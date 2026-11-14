@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('endpoint_8rs.h
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="c-table__row memitem:a7e40438607837cc5aff69516314917a0" id="r_a7e40438607837cc5aff69516314917a0"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a7e40438607837cc5aff69516314917a0">cloud_endpoint_from_env</a> () -&gt; Option&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td></tr>
+<tr class="c-table__row memitem:a7e40438607837cc5aff69516314917a0" id="r_a7e40438607837cc5aff69516314917a0"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a7e40438607837cc5aff69516314917a0">cloud_endpoint_from_env</a> () -&gt; Option&lt; String &gt;</td></tr>
 <tr class="c-table__row memdesc:a7e40438607837cc5aff69516314917a0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read the optional cloud endpoint from [<code><a class="el" href="#af3550d2e94de7a5dfb7fd58857ecaa76" title="Resolution of the optional self-hosted cloud endpoint from the environment.">CLOUD_ENDPOINT_ENV_VAR</a></code>].  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
@@ -88,7 +88,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">pub fn cloud_endpoint_from_env </td>
           <td>(</td>
           <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Option&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>
+          <td> -&gt; Option&lt; String &gt;</td>
         </tr>
           </table>
         </div>
@@ -96,7 +96,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Read the optional cloud endpoint from [<code><a class="el" href="#af3550d2e94de7a5dfb7fd58857ecaa76" title="Resolution of the optional self-hosted cloud endpoint from the environment.">CLOUD_ENDPOINT_ENV_VAR</a></code>]. </p>
-<p>Returns the trimmed value when the variable is set to a non-blank string, or [<code>None</code>] to use the library default. Surrounding whitespace is stripped (a stray space or newline from a shell or <code>.env</code> file is a common slip), so the value passed to the builder is clean.</p>
+<p>Returns the trimmed value when the variable is set to a non-blank string, or [<code>None</code>] to use the library default. The variable's deprecated name is read when [<code><a class="el" href="#af3550d2e94de7a5dfb7fd58857ecaa76" title="Resolution of the optional self-hosted cloud endpoint from the environment.">CLOUD_ENDPOINT_ENV_VAR</a></code>] is unset or empty. Surrounding whitespace is stripped (a stray space or newline from a shell or <code>.env</code> file is a common slip), so the value passed to the builder is clean.</p>
 <p>Only presence and blankness are screened here. The endpoint's URL format (a valid <code>http(s)</code> scheme and host) is validated by the cloud request engine when it builds, so a malformed value surfaces as a clear configuration error rather than a confusing request failure. </p>
 
 </div>

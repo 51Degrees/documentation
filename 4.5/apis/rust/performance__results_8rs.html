@@ -78,7 +78,7 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:aeeb4071ec4ab0849cbb8ec6e8c4869a6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add a metric where a higher value is a better result.  <br /></td></tr>
 <tr class="c-table__row memitem:adaaea60f03d9c873917e6b98cac51b90" id="r_adaaea60f03d9c873917e6b98cac51b90"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#adaaea60f03d9c873917e6b98cac51b90">lower_is_better</a> (<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> self, metric:&amp;str, value:f64) -&gt; Self</td></tr>
 <tr class="c-table__row memdesc:adaaea60f03d9c873917e6b98cac51b90"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add a metric where a lower value is a better result.  <br /></td></tr>
-<tr class="c-table__row memitem:a57ec14963dd9c61462a6de0021b11a53" id="r_a57ec14963dd9c61462a6de0021b11a53"><td class="c-table__cell">pub&#160;fn&#160;is_empty&#160;self&#160;</td><td class="c-table__cell"><a class="el" href="#a57ec14963dd9c61462a6de0021b11a53">Argument</a> (arguments:Arguments) -&gt; Option&lt; PathBuf &gt; where Arguments:IntoIterator&lt; Item=Argument &gt;, Argument:AsRef&lt; <a class="el" href="device-detection-examples_2src_2web__support_2mod_8rs.html#a59c09f4d2e77fa42c030902215658830">str</a> &gt;,</td></tr>
+<tr class="c-table__row memitem:a57ec14963dd9c61462a6de0021b11a53" id="r_a57ec14963dd9c61462a6de0021b11a53"><td class="c-table__cell">pub&#160;fn&#160;is_empty&#160;self&#160;</td><td class="c-table__cell"><a class="el" href="#a57ec14963dd9c61462a6de0021b11a53">Argument</a> (arguments:Arguments) -&gt; Option&lt; <a class="el" href="ipi-web-getting-started-onprem_8rs.html#a36282740ed407fcac2ef7800fa2fbaf2">PathBuf</a> &gt; where Arguments:IntoIterator&lt; Item=Argument &gt;, Argument:AsRef&lt; <a class="el" href="dd-cloud-configurator_8rs.html#af99483e1224efe9ddfe4c99d7caa54ac">str</a> &gt;,</td></tr>
 <tr class="c-table__row memitem:a0bfe506c6a5433efbab14e2c4ef6d218" id="r_a0bfe506c6a5433efbab14e2c4ef6d218"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a0bfe506c6a5433efbab14e2c4ef6d218">serialises_both_sections_in_the_shared_schema</a> ()</td></tr>
 <tr class="c-table__row memitem:a0829a4047aaf7f352c8e028d2cdde3ab" id="r_a0829a4047aaf7f352c8e028d2cdde3ab"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a0829a4047aaf7f352c8e028d2cdde3ab">omits_an_empty_section</a> ()</td></tr>
 <tr class="c-table__row memitem:a3ba81bea3baf59489e97683a3691325c" id="r_a3ba81bea3baf59489e97683a3691325c"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a3ba81bea3baf59489e97683a3691325c">an_empty_result_set_is_reported_as_empty</a> ()</td></tr>
@@ -132,7 +132,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">pub fn is_empty self Argument </td>
           <td>(</td>
           <td class="c-table__cell">arguments:Arguments</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Option&lt; PathBuf &gt; where Arguments:IntoIterator&lt; Item=Argument &gt;, Argument:AsRef&lt; <a class="el" href="device-detection-examples_2src_2web__support_2mod_8rs.html#a59c09f4d2e77fa42c030902215658830">str</a> &gt;,</td>
+          <td> -&gt; Option&lt; <a class="el" href="ipi-web-getting-started-onprem_8rs.html#a36282740ed407fcac2ef7800fa2fbaf2">PathBuf</a> &gt; where Arguments:IntoIterator&lt; Item=Argument &gt;, Argument:AsRef&lt; <a class="el" href="dd-cloud-configurator_8rs.html#af99483e1224efe9ddfe4c99d7caa54ac">str</a> &gt;,</td>
         </tr>
           </table>
         </div>
@@ -353,13 +353,13 @@ Variables</h2></td></tr>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    </div>
-<div class="c-code__line">    pub fn to_json(&amp;self) -&gt; <a class="code hl_variable" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> {</div>
+<div class="c-code__line">    pub fn to_json(&amp;self) -&gt; String {</div>
 <div class="c-code__line">        serde_json::to_string_pretty(self).expect(<span class="c-code__stringliteral">&quot;performance results are always serialisable&quot;</span>)</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    </div>
 <div class="c-code__line">    pub fn write_to(&amp;self, path: &amp;Path) -&gt; io::Result&lt;()&gt; {</div>
-<div class="c-code__line">        <span class="c-code__keywordflow">if</span> let Some(parent) = path.parent() {</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> let <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(parent) = path.parent() {</div>
 <div class="c-code__line">            <span class="c-code__keywordflow">if</span> !parent.as_os_str().is_empty() {</div>
 <div class="c-code__line">                std::fs::create_dir_all(parent)?;</div>
 <div class="c-code__line">            }</div>
@@ -369,8 +369,9 @@ Variables</h2></td></tr>
 <div class="c-code__line">}</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">pub fn json_output_path&lt;Arguments</div>
-<div class="ttc" id="aipi-onprem-compare_8rs_html_adef5df9d43aaca3d214c1dbd6716c357"><div class="ttname"><a href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></div><div class="ttdeci">pub pub pub String</div><div class="ttdef"><b>Definition</b> ipi-onprem-compare.rs:59</div></div>
+<div class="c-code__line">pub fn json_output_path&lt;<a class="code hl_variable" href="ip-intelligence-examples_2src_2lib_8rs.html#aa24fcc75f877d228e879ab25f93dbadf">Arguments</a></div>
+<div class="ttc" id="adata__file__check_8rs_html_af237e159d58cb9c57a1bd88cfd455988"><div class="ttname"><a href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a></div><div class="ttdeci">if let Some(published)</div></div>
+<div class="ttc" id="aip-intelligence-examples_2src_2lib_8rs_html_aa24fcc75f877d228e879ab25f93dbadf"><div class="ttname"><a href="ip-intelligence-examples_2src_2lib_8rs.html#aa24fcc75f877d228e879ab25f93dbadf">Arguments</a></div><div class="ttdeci">pub struct ProfileArguments Arguments</div><div class="ttdoc">Read the arguments that follow the program name into [ProfileArguments].</div></div>
 </div><!-- fragment -->
 <p>Whether any metric has been added. </p>
 <p>A results file with no metrics carries no figure, so callers can treat this as an error rather than write one. </p>

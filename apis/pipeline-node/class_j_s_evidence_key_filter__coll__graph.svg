@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="An instance of EvidenceKeyFilter which removes all but header and query evidence as that is all that ...">
+<g id="a_Node000001"><a xlink:title="The script reads the query string, and the host and protocol it calls back to, so those are the evide...">
 <polygon fill="#999999" stroke="#666666" points="113,-19 0,-19 0,0 113,0 113,-19"/>
 <text text-anchor="middle" x="56.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">JSEvidenceKeyFilter</text>
 </a>

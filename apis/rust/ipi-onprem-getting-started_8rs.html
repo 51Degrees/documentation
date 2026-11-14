@@ -74,24 +74,30 @@ Classes</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="c-table__row memitem:a6f46caea8ef2116e6868901462d62778" id="r_a6f46caea8ef2116e6868901462d62778"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_example_options.html">ExampleOptions</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a6f46caea8ef2116e6868901462d62778">from_env</a> () -&gt; Option&lt; Self &gt;</td></tr>
-<tr class="c-table__row memdesc:a6f46caea8ef2116e6868901462d62778"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the default options, resolving the on-premise data file through the shared resolver (the ASN file checked into the data repository, or Enterprise when the production share is reachable).  <br /></td></tr>
+<tr class="c-table__row memitem:a4cf0299d807795d3001ec2cc85898908" id="r_a4cf0299d807795d3001ec2cc85898908"><td class="c-table__cell">const&#160;pub&#160;struct&#160;<a class="el" href="struct_example_options.html">ExampleOptions</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a4cf0299d807795d3001ec2cc85898908">with_files</a> (data_files:Vec&lt; <a class="el" href="ipi-web-getting-started-onprem_8rs.html#a36282740ed407fcac2ef7800fa2fbaf2">PathBuf</a> &gt;) -&gt; Self</td></tr>
+<tr class="c-table__row memdesc:a4cf0299d807795d3001ec2cc85898908"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build options that look [<code><a class="el" href="#a84025e85ee2b687b620ba42365d207a3" title="The addresses the example looks up, a public Cloudflare IPv4 and IPv6.">IPS</a></code>] up in each of <code><a class="el" href="#a5b03ad0e4476dd3a108d388667c69938" title="The full paths to the .ipi data files to open, each looked up in turn.">data_files</a></code>.  <br /></td></tr>
+<tr class="c-table__row memitem:a4d4eee41204463b9d6085445f399db43" id="r_a4d4eee41204463b9d6085445f399db43"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a4d4eee41204463b9d6085445f399db43">from_env</a> () -&gt; Option&lt; Self &gt;</td></tr>
+<tr class="c-table__row memdesc:a4d4eee41204463b9d6085445f399db43"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the default options through the shared resolver.  <br /></td></tr>
 <tr class="c-table__row memitem:a8ec87ce59a7730398990e6de32fb8cb4" id="r_a8ec87ce59a7730398990e6de32fb8cb4"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a8ec87ce59a7730398990e6de32fb8cb4">for_tier</a> (<a class="el" href="data__paths_8rs.html#a29e87adf1760ab44a6a8d86c736658f8">tier:examples_shared::IpiTier</a>) -&gt; Option&lt; Self &gt;</td></tr>
 <tr class="c-table__row memdesc:a8ec87ce59a7730398990e6de32fb8cb4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build options pinned to a specific data-file tier.  <br /></td></tr>
 <tr class="c-table__row memitem:a4aed44217e54318e2f90a2065c0f0481" id="r_a4aed44217e54318e2f90a2065c0f0481"><td class="c-table__cell">const&#160;pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a4aed44217e54318e2f90a2065c0f0481">run</a> (options:&amp;ExampleOptions, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a4aed44217e54318e2f90a2065c0f0481"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run the getting-started example against the supplied options, writing all output to <code>out</code>.  <br /></td></tr>
-<tr class="c-table__row memitem:a7d361d185208a0d3ec259408d1846a06" id="r_a7d361d185208a0d3ec259408d1846a06"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a7d361d185208a0d3ec259408d1846a06">analyse_ip</a> (pipeline:&amp;Arc&lt; Pipeline &gt;, ip:&amp;str, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write) -&gt; anyhow::Result&lt;()&gt;</td></tr>
-<tr class="c-table__row memdesc:a7d361d185208a0d3ec259408d1846a06"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Look one IP address up and print its properties.  <br /></td></tr>
-<tr class="c-table__row memitem:a3df87c5ad15db69a4c95895b11b3a28f" id="r_a3df87c5ad15db69a4c95895b11b3a28f"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a3df87c5ad15db69a4c95895b11b3a28f">output_string</a> (name:&amp;str, property:&amp;AspectPropertyValue&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
-<tr class="c-table__row memdesc:a3df87c5ad15db69a4c95895b11b3a28f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print a plain string property, or the no-value message when it is absent.  <br /></td></tr>
-<tr class="c-table__row memitem:a310c7fde0144a0b64cbc31a7b265cf7a" id="r_a310c7fde0144a0b64cbc31a7b265cf7a"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a310c7fde0144a0b64cbc31a7b265cf7a">output_float</a> (name:&amp;str, property:&amp;AspectPropertyValue&lt; f32 &gt;, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
-<tr class="c-table__row memdesc:a310c7fde0144a0b64cbc31a7b265cf7a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print a plain floating-point property (latitude, longitude).  <br /></td></tr>
-<tr class="c-table__row memitem:a485bb5a64a581a2031afd6c5e6543466" id="r_a485bb5a64a581a2031afd6c5e6543466"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a485bb5a64a581a2031afd6c5e6543466">output_integer</a> (name:&amp;str, property:&amp;AspectPropertyValue&lt; i32 &gt;, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
-<tr class="c-table__row memdesc:a485bb5a64a581a2031afd6c5e6543466"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print a plain integer property (time-zone offset, accuracy radius).  <br /></td></tr>
-<tr class="c-table__row memitem:a9d037691d36056b87ccf50ac58d100fd" id="r_a9d037691d36056b87ccf50ac58d100fd"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a9d037691d36056b87ccf50ac58d100fd">output_bool</a> (name:&amp;str, property:&amp;AspectPropertyValue&lt; <a class="el" href="performance__results_8rs.html#a13eda313804a469af81193c4e2e1ee58">bool</a> &gt;, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
-<tr class="c-table__row memdesc:a9d037691d36056b87ccf50ac58d100fd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print a plain boolean property (the network flags), as <code>true</code>/<code>false</code>.  <br /></td></tr>
-<tr class="c-table__row memitem:ab6c81ab4bd8db6431eb4a4ac1509b40e" id="r_ab6c81ab4bd8db6431eb4a4ac1509b40e"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ab6c81ab4bd8db6431eb4a4ac1509b40e">output_weighted</a> (name:&amp;str, property:&amp;AspectPropertyValue&lt; Vec&lt; WeightedValue&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt; &gt; &gt;, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
-<tr class="c-table__row memdesc:ab6c81ab4bd8db6431eb4a4ac1509b40e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print a weighted property (the country-code distributions, <code><a class="el" href="#a7c00cae4aeb6106a3784bc0885e0507c">Mcc</a></code>) as a comma-separated list of <code><a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a9d58c3d628e2a73ead14ac823d810027" title="The resolved value, or the no-value message.">value</a> (weight)</code> candidates ordered most probable first, or the no-value message when it is absent.  <br /></td></tr>
+<tr class="c-table__row memitem:ae1c30422168a5bcd1e9c5c8c6ea91f7f" id="r_ae1c30422168a5bcd1e9c5c8c6ea91f7f"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ae1c30422168a5bcd1e9c5c8c6ea91f7f">look_up</a> (data_file:&amp;std::path::Path, ips:&amp;[String], available:&amp;[String], out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
+<tr class="c-table__row memdesc:ae1c30422168a5bcd1e9c5c8c6ea91f7f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build a pipeline over <code><a class="el" href="dd-onprem-getting-started_8rs.html#ab533a800544facf05fd1c8e50f92099a" title="The path to the on-premise Hash data file the engine loads.">data_file</a></code>, whose properties are <code><a class="el" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5" title="The properties the data file carries.">available</a></code>, and look each of <code><a class="el" href="#a7707ba8c1851ca9fb8ad30d7096bfdb0" title="The IP addresses to look up, as client-IP evidence values.">ips</a></code> up in it.  <br /></td></tr>
+<tr class="c-table__row memitem:a808d6ca5bf509243774fef061c42764d" id="r_a808d6ca5bf509243774fef061c42764d"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a808d6ca5bf509243774fef061c42764d">analyse_ip</a> (pipeline:&amp;Arc&lt; Pipeline &gt;, ip:&amp;str, available:&amp;[String], out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
+<tr class="c-table__row memdesc:a808d6ca5bf509243774fef061c42764d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Look one IP address up and print its properties.  <br /></td></tr>
+<tr class="c-table__row memitem:ad119b371921caed9e8708869db33d51f" id="r_ad119b371921caed9e8708869db33d51f"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ad119b371921caed9e8708869db33d51f">needs_enterprise</a> (name:&amp;str, available:&amp;[String]) -&gt; <a class="el" href="data__paths_8rs.html#ace367d07d2cbc650fd186739e5511adb">bool</a></td></tr>
+<tr class="c-table__row memdesc:ad119b371921caed9e8708869db33d51f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether <code>name</code> is an Enterprise property the data file in use does not carry, in which case its line says so in place of a value.  <br /></td></tr>
+<tr class="c-table__row memitem:a9dcf48259146b1c7e4279b91683b42f8" id="r_a9dcf48259146b1c7e4279b91683b42f8"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a9dcf48259146b1c7e4279b91683b42f8">output_string</a> (name:&amp;str, property:&amp;AspectPropertyValue&lt; String &gt;, available:&amp;[String], out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
+<tr class="c-table__row memdesc:a9dcf48259146b1c7e4279b91683b42f8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print a plain string property, or the no-value message when it is absent.  <br /></td></tr>
+<tr class="c-table__row memitem:a51a4644747a15986415220b5962637ad" id="r_a51a4644747a15986415220b5962637ad"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a51a4644747a15986415220b5962637ad">output_float</a> (name:&amp;str, property:&amp;AspectPropertyValue&lt; f32 &gt;, available:&amp;[String], out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
+<tr class="c-table__row memdesc:a51a4644747a15986415220b5962637ad"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print a plain floating-point property (latitude, longitude).  <br /></td></tr>
+<tr class="c-table__row memitem:a246d1f8e5e6b3a5ff02af1987aaa2c4b" id="r_a246d1f8e5e6b3a5ff02af1987aaa2c4b"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a246d1f8e5e6b3a5ff02af1987aaa2c4b">output_integer</a> (name:&amp;str, property:&amp;AspectPropertyValue&lt; i32 &gt;, available:&amp;[String], out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
+<tr class="c-table__row memdesc:a246d1f8e5e6b3a5ff02af1987aaa2c4b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print a plain integer property (time-zone offset, accuracy radius).  <br /></td></tr>
+<tr class="c-table__row memitem:aeb8929367c6c2dfd2ae6688dd6888f17" id="r_aeb8929367c6c2dfd2ae6688dd6888f17"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#aeb8929367c6c2dfd2ae6688dd6888f17">output_bool</a> (name:&amp;str, property:&amp;AspectPropertyValue&lt; <a class="el" href="data__paths_8rs.html#ace367d07d2cbc650fd186739e5511adb">bool</a> &gt;, available:&amp;[String], out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
+<tr class="c-table__row memdesc:aeb8929367c6c2dfd2ae6688dd6888f17"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print a plain boolean property (the network flags), as <code>true</code>/<code>false</code>.  <br /></td></tr>
+<tr class="c-table__row memitem:aa22f256893697c180220e57fc43260be" id="r_aa22f256893697c180220e57fc43260be"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#aa22f256893697c180220e57fc43260be">output_weighted</a> (name:&amp;str, property:&amp;AspectPropertyValue&lt; Vec&lt; WeightedValue&lt; String &gt; &gt; &gt;, available:&amp;[String], out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
+<tr class="c-table__row memdesc:aa22f256893697c180220e57fc43260be"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Print a weighted property (the country-code distributions, <code><a class="el" href="#a7c00cae4aeb6106a3784bc0885e0507c">Mcc</a></code>) as a comma-separated list of <code><a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a451961dd347700d7bb5d36beec33eb80" title="The resolved value, or the no-value message.">value</a> (weight)</code> candidates ordered most probable first, or the no-value message when it is absent.  <br /></td></tr>
 <tr class="c-table__row memitem:a10397c317f477c2d5f6629f1d23f9b28" id="r_a10397c317f477c2d5f6629f1d23f9b28"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a10397c317f477c2d5f6629f1d23f9b28">main</a> () -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a10397c317f477c2d5f6629f1d23f9b28"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read the data file, then run the example, writing to standard output.  <br /></td></tr>
 <tr class="c-table__row memitem:ab07c314014e6011e8612ee1e48f619fc" id="r_ab07c314014e6011e8612ee1e48f619fc"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ab07c314014e6011e8612ee1e48f619fc">getting_started_runs_against_the_asn_file</a> ()</td></tr>
@@ -99,8 +105,13 @@ Functions</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="c-table__row memitem:ab533a800544facf05fd1c8e50f92099a" id="r_ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">pub&#160;</td><td class="c-table__cell"><a class="el" href="#ab533a800544facf05fd1c8e50f92099a">data_file</a></td></tr>
-<tr class="c-table__row memdesc:ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The full path to the <code>.ipi</code> data file to open.  <br /></td></tr>
+<tr class="c-table__row memitem:a65560ade98913e76a1868a9845e47e52" id="r_a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a></td></tr>
+<tr class="c-table__row memdesc:a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Where to ask about a copy of the Enterprise data file.  <br /></td></tr>
+<tr class="c-table__row memitem:a59c09f4d2e77fa42c030902215658830" id="r_a59c09f4d2e77fa42c030902215658830"><td class="c-table__cell">const&#160;&amp;&#160;</td><td class="c-table__cell"><a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a></td></tr>
+<tr class="c-table__row memitem:a84025e85ee2b687b620ba42365d207a3" id="r_a84025e85ee2b687b620ba42365d207a3"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a84025e85ee2b687b620ba42365d207a3">IPS</a></td></tr>
+<tr class="c-table__row memdesc:a84025e85ee2b687b620ba42365d207a3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The addresses the example looks up, a public Cloudflare IPv4 and IPv6.  <br /></td></tr>
+<tr class="c-table__row memitem:a5b03ad0e4476dd3a108d388667c69938" id="r_a5b03ad0e4476dd3a108d388667c69938"><td class="c-table__cell">pub&#160;</td><td class="c-table__cell"><a class="el" href="#a5b03ad0e4476dd3a108d388667c69938">data_files</a></td></tr>
+<tr class="c-table__row memdesc:a5b03ad0e4476dd3a108d388667c69938"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The full paths to the <code>.ipi</code> data files to open, each looked up in turn.  <br /></td></tr>
 <tr class="c-table__row memitem:a7707ba8c1851ca9fb8ad30d7096bfdb0" id="r_a7707ba8c1851ca9fb8ad30d7096bfdb0"><td class="c-table__cell">pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#a7707ba8c1851ca9fb8ad30d7096bfdb0">ips</a></td></tr>
 <tr class="c-table__row memdesc:a7707ba8c1851ca9fb8ad30d7096bfdb0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The IP addresses to look up, as client-IP evidence values.  <br /></td></tr>
 <tr class="c-table__row memitem:ae196e30e2ff09a38e393a16b76fb0393" id="r_ae196e30e2ff09a38e393a16b76fb0393"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#ae196e30e2ff09a38e393a16b76fb0393">DISPLAYED_PROPERTIES</a></td></tr>
@@ -112,7 +123,7 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:a2115ae392eb0e6a2ee82555cf89a0704" id="r_a2115ae392eb0e6a2ee82555cf89a0704"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a2115ae392eb0e6a2ee82555cf89a0704">IpRangeStart</a></td></tr>
 <tr class="c-table__row memitem:aae02fd0c9ec73cc49d5b1f9f2ced82c8" id="r_aae02fd0c9ec73cc49d5b1f9f2ced82c8"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#aae02fd0c9ec73cc49d5b1f9f2ced82c8">IpRangeEnd</a></td></tr>
 <tr class="c-table__row memitem:a8f181820fc3e33d399e569676f8b5eec" id="r_a8f181820fc3e33d399e569676f8b5eec"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a8f181820fc3e33d399e569676f8b5eec">Country</a></td></tr>
-<tr class="c-table__row memitem:af4284b9198fb548eca82ef441215def3" id="r_af4284b9198fb548eca82ef441215def3"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#af4284b9198fb548eca82ef441215def3">CountryCode</a></td></tr>
+<tr class="c-table__row memitem:a21f5309ccfac36a5fc9f674ce539524e" id="r_a21f5309ccfac36a5fc9f674ce539524e"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a21f5309ccfac36a5fc9f674ce539524e">CountryCode</a></td></tr>
 <tr class="c-table__row memitem:a765d7f7e6be90ef9d21be14d1d5a52d8" id="r_a765d7f7e6be90ef9d21be14d1d5a52d8"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a765d7f7e6be90ef9d21be14d1d5a52d8">State</a></td></tr>
 <tr class="c-table__row memitem:af57d597f5f001128affae4180f5658d7" id="r_af57d597f5f001128affae4180f5658d7"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#af57d597f5f001128affae4180f5658d7">Town</a></td></tr>
 <tr class="c-table__row memitem:acbae564e6d613a46e556e07862ad4640" id="r_acbae564e6d613a46e556e07862ad4640"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#acbae564e6d613a46e556e07862ad4640">Latitude</a></td></tr>
@@ -127,8 +138,8 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:ab60c545115f42f88c00b55f384f5ffc0" id="r_ab60c545115f42f88c00b55f384f5ffc0"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#ab60c545115f42f88c00b55f384f5ffc0">tests</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
-<a id="a7d361d185208a0d3ec259408d1846a06" name="a7d361d185208a0d3ec259408d1846a06"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7d361d185208a0d3ec259408d1846a06">&#9670;&#160;</a></span>analyse_ip()</h2>
+<a id="a808d6ca5bf509243774fef061c42764d" name="a808d6ca5bf509243774fef061c42764d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a808d6ca5bf509243774fef061c42764d">&#9670;&#160;</a></span>analyse_ip()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -148,6 +159,11 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
+          <td class="c-table__cell">available:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String], </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
           <td class="c-table__cell">out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn</td>          <td class="c-table__cell"><span class="paramname"><em>Write</em></span>&#160;) -&gt; anyhow::Result&lt;()&gt;</td>
         </tr>
           </table>
@@ -156,6 +172,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Look one IP address up and print its properties. </p>
+<p><code><a class="el" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5" title="The properties the data file carries.">available</a></code> holds the properties the data file carries. </p>
 
 </div>
 </div>
@@ -179,12 +196,12 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Build options pinned to a specific data-file tier. </p>
-<p><code><a class="el" href="#a10397c317f477c2d5f6629f1d23f9b28" title="Read the data file, then run the example, writing to standard output.">main</a></code> uses the best-available tier, while the test pins to the ASN tier so it runs deterministically against the small, current, always-loadable ASN file rather than depending on the production Enterprise share being mounted. </p>
+<p><code><a class="el" href="#a10397c317f477c2d5f6629f1d23f9b28" title="Read the data file, then run the example, writing to standard output.">main</a></code> reads the Enterprise file or both free files, while the test pins to the ASN tier so it runs deterministically against the small, current, always-loadable ASN file rather than depending on the production Enterprise share being mounted. </p>
 
 </div>
 </div>
-<a id="a6f46caea8ef2116e6868901462d62778" name="a6f46caea8ef2116e6868901462d62778"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6f46caea8ef2116e6868901462d62778">&#9670;&#160;</a></span>from_env()</h2>
+<a id="a4d4eee41204463b9d6085445f399db43" name="a4d4eee41204463b9d6085445f399db43"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4d4eee41204463b9d6085445f399db43">&#9670;&#160;</a></span>from_env()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -192,7 +209,7 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">pub struct <a class="el" href="struct_example_options.html">ExampleOptions</a> from_env </td>
+              <td class="c-table__cell">pub fn from_env </td>
           <td>(</td>
           <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
           <td> -&gt; Option&lt; Self &gt;</td>
@@ -202,8 +219,9 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Build the default options, resolving the on-premise data file through the shared resolver (the ASN file checked into the data repository, or Enterprise when the production share is reachable). </p>
-<p>Returns [<code>None</code>] when no usable data file can be located, so the caller can print a friendly hint and skip rather than panicking. </p>
+<p>Build the default options through the shared resolver. </p>
+<p>A file named by <code>_51DEGREES_IPI_PATH</code>, or the Enterprise file when its share is reachable, is read alone. Otherwise both free files from the data repository are read, each downloaded when it is missing, being the ASN file for Asn and AsnName and the Lite file for the registered properties.</p>
+<p>Returns [<code>None</code>] when no usable data file can be located, so the caller can report it rather than panicking. </p>
 
 </div>
 </div>
@@ -232,6 +250,43 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ae1c30422168a5bcd1e9c5c8c6ea91f7f" name="ae1c30422168a5bcd1e9c5c8c6ea91f7f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae1c30422168a5bcd1e9c5c8c6ea91f7f">&#9670;&#160;</a></span>look_up()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn look_up </td>
+          <td>(</td>
+          <td class="c-table__cell">data_file:&amp;std::path::Path</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">ips:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String], </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">available:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String], </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn</td>          <td class="c-table__cell"><span class="paramname"><em>Write</em></span>&#160;) -&gt; anyhow::Result&lt;()&gt;</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Build a pipeline over <code><a class="el" href="dd-onprem-getting-started_8rs.html#ab533a800544facf05fd1c8e50f92099a" title="The path to the on-premise Hash data file the engine loads.">data_file</a></code>, whose properties are <code><a class="el" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5" title="The properties the data file carries.">available</a></code>, and look each of <code><a class="el" href="#a7707ba8c1851ca9fb8ad30d7096bfdb0" title="The IP addresses to look up, as client-IP evidence values.">ips</a></code> up in it. </p>
+
+</div>
+</div>
 <a id="a10397c317f477c2d5f6629f1d23f9b28" name="a10397c317f477c2d5f6629f1d23f9b28"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a10397c317f477c2d5f6629f1d23f9b28">&#9670;&#160;</a></span>main()</h2>
 
@@ -256,8 +311,35 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a9d037691d36056b87ccf50ac58d100fd" name="a9d037691d36056b87ccf50ac58d100fd"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9d037691d36056b87ccf50ac58d100fd">&#9670;&#160;</a></span>output_bool()</h2>
+<a id="ad119b371921caed9e8708869db33d51f" name="ad119b371921caed9e8708869db33d51f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad119b371921caed9e8708869db33d51f">&#9670;&#160;</a></span>needs_enterprise()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn needs_enterprise </td>
+          <td>(</td>
+          <td class="c-table__cell">name:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">available:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String]&#160;) -&gt; <a class="el" href="data__paths_8rs.html#ace367d07d2cbc650fd186739e5511adb">bool</a></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Whether <code>name</code> is an Enterprise property the data file in use does not carry, in which case its line says so in place of a value. </p>
+
+</div>
+</div>
+<a id="aeb8929367c6c2dfd2ae6688dd6888f17" name="aeb8929367c6c2dfd2ae6688dd6888f17"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aeb8929367c6c2dfd2ae6688dd6888f17">&#9670;&#160;</a></span>output_bool()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -272,7 +354,12 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">property:&amp;AspectPropertyValue&lt; <a class="el" href="performance__results_8rs.html#a13eda313804a469af81193c4e2e1ee58">bool</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+          <td class="c-table__cell">property:&amp;AspectPropertyValue&lt; <a class="el" href="data__paths_8rs.html#ace367d07d2cbc650fd186739e5511adb">bool</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">available:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String], </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
@@ -288,8 +375,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a310c7fde0144a0b64cbc31a7b265cf7a" name="a310c7fde0144a0b64cbc31a7b265cf7a"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a310c7fde0144a0b64cbc31a7b265cf7a">&#9670;&#160;</a></span>output_float()</h2>
+<a id="a51a4644747a15986415220b5962637ad" name="a51a4644747a15986415220b5962637ad"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a51a4644747a15986415220b5962637ad">&#9670;&#160;</a></span>output_float()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -309,6 +396,11 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
+          <td class="c-table__cell">available:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String], </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
           <td class="c-table__cell">out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn</td>          <td class="c-table__cell"><span class="paramname"><em>Write</em></span>&#160;) -&gt; anyhow::Result&lt;()&gt;</td>
         </tr>
           </table>
@@ -320,8 +412,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a485bb5a64a581a2031afd6c5e6543466" name="a485bb5a64a581a2031afd6c5e6543466"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a485bb5a64a581a2031afd6c5e6543466">&#9670;&#160;</a></span>output_integer()</h2>
+<a id="a246d1f8e5e6b3a5ff02af1987aaa2c4b" name="a246d1f8e5e6b3a5ff02af1987aaa2c4b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a246d1f8e5e6b3a5ff02af1987aaa2c4b">&#9670;&#160;</a></span>output_integer()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -341,6 +433,11 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
+          <td class="c-table__cell">available:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String], </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
           <td class="c-table__cell">out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn</td>          <td class="c-table__cell"><span class="paramname"><em>Write</em></span>&#160;) -&gt; anyhow::Result&lt;()&gt;</td>
         </tr>
           </table>
@@ -352,8 +449,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a3df87c5ad15db69a4c95895b11b3a28f" name="a3df87c5ad15db69a4c95895b11b3a28f"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3df87c5ad15db69a4c95895b11b3a28f">&#9670;&#160;</a></span>output_string()</h2>
+<a id="a9dcf48259146b1c7e4279b91683b42f8" name="a9dcf48259146b1c7e4279b91683b42f8"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9dcf48259146b1c7e4279b91683b42f8">&#9670;&#160;</a></span>output_string()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -368,7 +465,12 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">property:&amp;AspectPropertyValue&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+          <td class="c-table__cell">property:&amp;AspectPropertyValue&lt; String &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">available:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String], </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
@@ -384,8 +486,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ab6c81ab4bd8db6431eb4a4ac1509b40e" name="ab6c81ab4bd8db6431eb4a4ac1509b40e"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab6c81ab4bd8db6431eb4a4ac1509b40e">&#9670;&#160;</a></span>output_weighted()</h2>
+<a id="aa22f256893697c180220e57fc43260be" name="aa22f256893697c180220e57fc43260be"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa22f256893697c180220e57fc43260be">&#9670;&#160;</a></span>output_weighted()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -400,7 +502,12 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">property:&amp;AspectPropertyValue&lt; Vec&lt; WeightedValue&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt; &gt; &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+          <td class="c-table__cell">property:&amp;AspectPropertyValue&lt; Vec&lt; WeightedValue&lt; String &gt; &gt; &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">available:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String], </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
@@ -412,7 +519,7 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Print a weighted property (the country-code distributions, <code><a class="el" href="#a7c00cae4aeb6106a3784bc0885e0507c">Mcc</a></code>) as a comma-separated list of <code><a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a9d58c3d628e2a73ead14ac823d810027" title="The resolved value, or the no-value message.">value</a> (weight)</code> candidates ordered most probable first, or the no-value message when it is absent. </p>
+<p>Print a weighted property (the country-code distributions, <code><a class="el" href="#a7c00cae4aeb6106a3784bc0885e0507c">Mcc</a></code>) as a comma-separated list of <code><a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a451961dd347700d7bb5d36beec33eb80" title="The resolved value, or the no-value message.">value</a> (weight)</code> candidates ordered most probable first, or the no-value message when it is absent. </p>
 
 </div>
 </div>
@@ -440,7 +547,30 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Run the getting-started example against the supplied options, writing all output to <code>out</code>. </p>
-<p>Builds an on-premise IP Intelligence pipeline, looks up each IP and prints the results. The pipeline is built with usage sharing left off, because this is a console example. A production deployment that wants to help improve the data should enable it (see the engine builder's <code>share_usage</code> equivalent on the cloud/web side). </p>
+<p>Builds an on-premise IP Intelligence pipeline for each data file, looks up each IP and prints the results. The pipeline is built with usage sharing left off, because this is a console example. A production deployment that wants to help improve the data should enable it (see the engine builder's <code>share_usage</code> equivalent on the cloud/web side). The output ends with the Enterprise properties no file carried, where to ask about a copy of the Enterprise data file, and the "Find out more" links. </p>
+
+</div>
+</div>
+<a id="a4cf0299d807795d3001ec2cc85898908" name="a4cf0299d807795d3001ec2cc85898908"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a4cf0299d807795d3001ec2cc85898908">&#9670;&#160;</a></span>with_files()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const pub struct <a class="el" href="struct_example_options.html">ExampleOptions</a> with_files </td>
+          <td>(</td>
+          <td class="c-table__cell">data_files:Vec&lt; <a class="el" href="ipi-web-getting-started-onprem_8rs.html#a36282740ed407fcac2ef7800fa2fbaf2">PathBuf</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; Self</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Build options that look [<code><a class="el" href="#a84025e85ee2b687b620ba42365d207a3" title="The addresses the example looks up, a public Cloudflare IPv4 and IPv6.">IPS</a></code>] up in each of <code><a class="el" href="#a5b03ad0e4476dd3a108d388667c69938" title="The full paths to the .ipi data files to open, each looked up in turn.">data_files</a></code>. </p>
 
 </div>
 </div>
@@ -481,6 +611,26 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a65560ade98913e76a1868a9845e47e52" name="a65560ade98913e76a1868a9845e47e52"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a65560ade98913e76a1868a9845e47e52">&#9670;&#160;</a></span>CONTACT_US_URL</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const CONTACT_US_URL</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Where to ask about a copy of the Enterprise data file. </p>
+
+</div>
+</div>
 <a id="a8f181820fc3e33d399e569676f8b5eec" name="a8f181820fc3e33d399e569676f8b5eec"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8f181820fc3e33d399e569676f8b5eec">&#9670;&#160;</a></span>Country</h2>
 
@@ -499,8 +649,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="af4284b9198fb548eca82ef441215def3" name="af4284b9198fb548eca82ef441215def3"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af4284b9198fb548eca82ef441215def3">&#9670;&#160;</a></span>CountryCode</h2>
+<a id="a21f5309ccfac36a5fc9f674ce539524e" name="a21f5309ccfac36a5fc9f674ce539524e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a21f5309ccfac36a5fc9f674ce539524e">&#9670;&#160;</a></span>CountryCode</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -508,7 +658,7 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">const CountryCode</td>
+              <td class="c-table__cell">const const CountryCode</td>
             </tr>
           </table>
         </div>
@@ -553,8 +703,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ab533a800544facf05fd1c8e50f92099a" name="ab533a800544facf05fd1c8e50f92099a"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab533a800544facf05fd1c8e50f92099a">&#9670;&#160;</a></span>data_file</h2>
+<a id="a5b03ad0e4476dd3a108d388667c69938" name="a5b03ad0e4476dd3a108d388667c69938"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5b03ad0e4476dd3a108d388667c69938">&#9670;&#160;</a></span>data_files</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -562,14 +712,14 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">pub data_file</td>
+              <td class="c-table__cell">pub data_files</td>
             </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>The full path to the <code>.ipi</code> data file to open. </p>
+<p>The full paths to the <code>.ipi</code> data files to open, each looked up in turn. </p>
 
 </div>
 </div>
@@ -627,6 +777,27 @@ Variables</h2></td></tr>
         </div>
       </div>
 </div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a84025e85ee2b687b620ba42365d207a3" name="a84025e85ee2b687b620ba42365d207a3"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a84025e85ee2b687b620ba42365d207a3">&#9670;&#160;</a></span>IPS</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const IPS</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The addresses the example looks up, a public Cloudflare IPv4 and IPv6. </p>
+<p>Both resolve to a real autonomous system in the ASN data file, so the example always has something to print. </p>
 
 </div>
 </div>
@@ -810,6 +981,29 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
+</div>
+</div>
+<a id="a59c09f4d2e77fa42c030902215658830" name="a59c09f4d2e77fa42c030902215658830"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a59c09f4d2e77fa42c030902215658830">&#9670;&#160;</a></span>str</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const &amp; str</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">     = &amp;[</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;IP Intelligence&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/ip-intelligence?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-getting-started.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Pricing&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-getting-started.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Documentation&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-getting-started.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">]</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab60c545115f42f88c00b55f384f5ffc0" name="ab60c545115f42f88c00b55f384f5ffc0"></a>

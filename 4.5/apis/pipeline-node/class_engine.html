@@ -83,6 +83,8 @@ Collaboration diagram for Engine:</h2>
 Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a17638e1aae6dc44caf726a38915b697f" id="r_a17638e1aae6dc44caf726a38915b697f"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a17638e1aae6dc44caf726a38915b697f">constructor</a> ({ cache, restrictedProperties, dataFile }={})</td></tr>
 <tr class="c-table__row memdesc:a17638e1aae6dc44caf726a38915b697f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for an <a class="el" href="class_engine.html" title="An Engine is an extension of a FlowElement which adds options such as restricting to a subset of prop...">Engine</a>.  <br /></td></tr>
+<tr class="c-table__row memitem:aa9e7ba5fb7dd494714df6d7e8ea5e0d4" id="r_aa9e7ba5fb7dd494714df6d7e8ea5e0d4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aa9e7ba5fb7dd494714df6d7e8ea5e0d4">isCacheable</a> (data)</td></tr>
+<tr class="c-table__row memdesc:aa9e7ba5fb7dd494714df6d7e8ea5e0d4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether a result may be stored in the cache and served from it.  <br /></td></tr>
 <tr class="c-table__row memitem:ad9e56adcbf7b457d98d93aa93768d589" id="r_ad9e56adcbf7b457d98d93aa93768d589"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad9e56adcbf7b457d98d93aa93768d589">inCache</a> (flowData)</td></tr>
 <tr class="c-table__row memdesc:ad9e56adcbf7b457d98d93aa93768d589"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Checks cache and returns cached result if found.  <br /></td></tr>
 <tr class="c-table__row memitem:af3c9d9ce99d6310cd5af8ab939ae45b0" id="r_af3c9d9ce99d6310cd5af8ab939ae45b0"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#af3c9d9ce99d6310cd5af8ab939ae45b0">process</a> (flowData)</td></tr>
@@ -92,8 +94,8 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a1fe9f5deb4de5581b0eee81f9376a186" id="r_a1fe9f5deb4de5581b0eee81f9376a186"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a1fe9f5deb4de5581b0eee81f9376a186">registerDataFile</a> (dataFile)</td></tr>
 <tr class="c-table__row memdesc:a1fe9f5deb4de5581b0eee81f9376a186"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Function to attach a <a class="el" href="class_data_file.html" title="A datafile used by a FlowElement / Engine to get calculate properties values.">DataFile</a> to the engine and register it with a <a class="el" href="class_data_file_update_service.html" title="Datafiles attached to FlowElements register with the dataFileUpdateService so the datafiles can recei...">DataFileUpdateService</a> if needed.  <br /></td></tr>
 <tr class="c-table__row inherit_header pub_methods_class_flow_element"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Public Member Functions inherited from <a class="el" href="class_flow_element.html">FlowElement</a></h3></td></tr>
-<tr class="c-table__row memitem:aafd6a7f4076e2499ee1ea86f4a963cb8 pub_methods_class_flow_element" id="r_aafd6a7f4076e2499ee1ea86f4a963cb8"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="class_flow_element.html#aafd6a7f4076e2499ee1ea86f4a963cb8">constructor</a> ({ <a class="el" href="class_flow_element.html#a227dd46e0e0c51ecf79186a4d7368646">processInternal</a>, dataKey, properties={}, evidenceKeyFilter }={})</td></tr>
-<tr class="c-table__row memdesc:aafd6a7f4076e2499ee1ea86f4a963cb8 pub_methods_class_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for flowElement class.  <br /></td></tr>
+<tr class="c-table__row memitem:add7aa4fba8761432d27b26c3f63edd48 pub_methods_class_flow_element" id="r_add7aa4fba8761432d27b26c3f63edd48"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="class_flow_element.html#add7aa4fba8761432d27b26c3f63edd48">constructor</a> ({ <a class="el" href="class_flow_element.html#a227dd46e0e0c51ecf79186a4d7368646">processInternal</a>, dataKey, properties={}, evidenceKeyFilter, keptEvidenceKeyFilter }={})</td></tr>
+<tr class="c-table__row memdesc:add7aa4fba8761432d27b26c3f63edd48 pub_methods_class_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor for flowElement class.  <br /></td></tr>
 <tr class="c-table__row memitem:aea883b72955f23691d0188efa918670e pub_methods_class_flow_element" id="r_aea883b72955f23691d0188efa918670e"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="class_flow_element.html#aea883b72955f23691d0188efa918670e">onRegistration</a> (pipeline, flowElement)</td></tr>
 <tr class="c-table__row memdesc:aea883b72955f23691d0188efa918670e pub_methods_class_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Internal function to be called when a <a class="el" href="class_flow_element.html" title="A FlowElement is placed inside a pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a> is added to pipeline, runs through any registrationCallbacks on the <a class="el" href="class_flow_element.html" title="A FlowElement is placed inside a pipeline It receives Evidence via a FlowData object It uses this to ...">FlowElement</a>.  <br /></td></tr>
 <tr class="c-table__row memitem:a67a6943bd9976e1571453b41bcea2f11 pub_methods_class_flow_element" id="r_a67a6943bd9976e1571453b41bcea2f11"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="class_flow_element.html#a67a6943bd9976e1571453b41bcea2f11">ready</a> ()</td></tr>
@@ -147,6 +149,8 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<p>The restricted property names in lower case, because property names are compared ignoring case.</p>
+<p>@type {Set&lt;string&gt;}</p>
 
 </div>
 </div>
@@ -185,6 +189,45 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{boolean} whether in cache </dd></dl>
+
+</div>
+</div>
+<a id="aa9e7ba5fb7dd494714df6d7e8ea5e0d4" name="aa9e7ba5fb7dd494714df6d7e8ea5e0d4"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa9e7ba5fb7dd494714df6d7e8ea5e0d4">&#9670;&#160;</a></span>isCacheable()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">Engine::isCacheable </td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Whether a result may be stored in the cache and served from it. </p>
+<p>A result that holds a value created for the one request that asked for it, such as a 51Did, must not be, or the next request with the same evidence would be given it.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">{object}</td><td>data the element data of a result </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{boolean} true unless the result holds such a value </dd></dl>
 
 </div>
 </div>

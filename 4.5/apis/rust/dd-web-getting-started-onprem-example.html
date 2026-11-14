@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-web-getting
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><p>Device Detection web example: on-premise Getting Started (server plus client).</p>
-<p>It builds an on-premise Hash device-detection pipeline, wraps it in a [<code>WebPipeline</code>] so the two client-side endpoints are mounted, and serves an HTML page that shows server-side detection then refreshes it client-side. Because the bundled data file is the free Lite tier, the page shows the standard Lite/stale warnings and a contact-us banner that lists the benefits of a paid data file.</p>
+<p>It builds an on-premise Hash device-detection pipeline, wraps it in a [<code>WebPipeline</code>] so the two client-side endpoints are mounted, and serves an HTML page that shows server-side detection then refreshes it client-side. Because the default data file is the free Lite tier, the page shows the standard Lite/stale warnings and a contact-us banner that lists the benefits of a paid data file. Each Enterprise property the data file does not carry says it needs the Enterprise data file, with a link to ask about a copy.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">pub fn <a class="code hl_function" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f">run</a>(options: <a class="code hl_struct" href="struct_options.html">Options</a>) -&gt; anyhow::Result&lt;()&gt; {</div>
 <div class="c-code__line">    <span class="c-code__comment">// Build the pipeline (and so the share-usage element&#39;s blocking reqwest</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// client) on this plain thread, before the async runtime is entered. The</span></div>
@@ -74,8 +74,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-web-getting
 <div class="c-code__line">    <span class="c-code__comment">// runtime&#39;s async context, so doing this work outside block_on avoids that</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// panic. The warnings are baked into each page render, so capture them here</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// and store them in a process-wide slot the handler reads per request.</span></div>
-<div class="c-code__line">    let (app, warnings) = <a class="code hl_function" href="dd-web-client-only-cloud_8rs.html#a42853b52e8b4e16212d2713d4ce1d36b">build_app</a>(&amp;options.data_file, <span class="c-code__keyword">true</span>)?;</div>
-<div class="c-code__line">    <a class="code hl_function" href="dd-web-getting-started-onprem_8rs.html#a0ecdaa6c332af4e687f3bc109baa11a8">store_warnings</a>(warnings);</div>
+<div class="c-code__line">    let (app, <a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a93dfcdf1ed27d9cfa54fec802d7f6b24">warnings</a>) = <a class="code hl_function" href="dd-web-client-only-cloud_8rs.html#a42853b52e8b4e16212d2713d4ce1d36b">build_app</a>(&amp;options.data_file, <span class="c-code__keyword">true</span>)?;</div>
+<div class="c-code__line">    <a class="code hl_function" href="dd-web-getting-started-onprem_8rs.html#a0ecdaa6c332af4e687f3bc109baa11a8">store_warnings</a>(<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a93dfcdf1ed27d9cfa54fec802d7f6b24">warnings</a>);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    let <a class="code hl_function" href="dd-web-getting-started-cloud_8rs.html#aa008b6165ad78b271beb1714f68596a1">runtime</a> = tokio::runtime::Builder::new_multi_thread()</div>
 <div class="c-code__line">        .enable_all()</div>
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-web-getting
 <div class="c-code__line">        }</div>
 <div class="c-code__line">        axum::serve(</div>
 <div class="c-code__line">            listener,</div>
-<div class="c-code__line">            app.into_make_service_with_connect_info::&lt;SocketAddr&gt;(),</div>
+<div class="c-code__line">            app.into_make_service_with_connect_info::&lt;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a563d47276a0c0f08118b289443d2fa13">SocketAddr</a>&gt;(),</div>
 <div class="c-code__line">        )</div>
 <div class="c-code__line">        .await</div>
 <div class="c-code__line">        .context(<span class="c-code__stringliteral">&quot;serving the application&quot;</span>)</div>

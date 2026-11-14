@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-onprem-per
 <div class="c-code__line">        .build()</div>
 <div class="c-code__line">        .context(<span class="c-code__stringliteral">&quot;failed to build the on-premise IP Intelligence pipeline&quot;</span>)?;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    let <a class="code hl_variable" href="ipi-onprem-compare_8rs.html#a794bef0d1dec0773ddb04f4cddb8dcf1">ips</a> = Arc::new(</div>
+<div class="c-code__line">    let <a class="code hl_variable" href="ipi-onprem-getting-started_8rs.html#a7707ba8c1851ca9fb8ad30d7096bfdb0">ips</a> = Arc::new(</div>
 <div class="c-code__line">        <a class="code hl_function" href="ipi__onprem__throughput_8rs.html#acdf32375bf80086aa759fee0723098ea">load_ips</a>(&amp;options.evidence_file, options.max_ips).with_context(|| {</div>
 <div class="c-code__line">            format!(</div>
 <div class="c-code__line">                <span class="c-code__stringliteral">&quot;failed to read evidence from {}&quot;</span>,</div>
@@ -92,14 +92,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-onprem-per
 <div class="c-code__line">        })?,</div>
 <div class="c-code__line">    );</div>
 <div class="c-code__line">    anyhow::ensure!(</div>
-<div class="c-code__line">        !<a class="code hl_variable" href="ipi-onprem-compare_8rs.html#a794bef0d1dec0773ddb04f4cddb8dcf1">ips</a>.is_empty(),</div>
+<div class="c-code__line">        !<a class="code hl_variable" href="ipi-onprem-getting-started_8rs.html#a7707ba8c1851ca9fb8ad30d7096bfdb0">ips</a>.is_empty(),</div>
 <div class="c-code__line">        <span class="c-code__stringliteral">&quot;no IP addresses were loaded from the evidence file&quot;</span></div>
 <div class="c-code__line">    );</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    writeln!(</div>
 <div class="c-code__line">        out,</div>
 <div class="c-code__line">        <span class="c-code__stringliteral">&quot;Loaded {} IP address(es); running {} iteration(s) per thread.&quot;</span>,</div>
-<div class="c-code__line">        <a class="code hl_variable" href="ipi-onprem-compare_8rs.html#a794bef0d1dec0773ddb04f4cddb8dcf1">ips</a>.len(),</div>
+<div class="c-code__line">        <a class="code hl_variable" href="ipi-onprem-getting-started_8rs.html#a7707ba8c1851ca9fb8ad30d7096bfdb0">ips</a>.len(),</div>
 <div class="c-code__line">        options.iterations</div>
 <div class="c-code__line">    )?;</div>
 <div class="c-code__line"> </div>
@@ -107,10 +107,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-onprem-per
 <div class="c-code__line">    <span class="c-code__comment">// into the headline numbers, so the benchmark measures steady state.</span></div>
 <div class="c-code__line">    writeln!(out)?;</div>
 <div class="c-code__line">    writeln!(out, <span class="c-code__stringliteral">&quot;Warming up ...&quot;</span>)?;</div>
-<div class="c-code__line">    let <a class="code hl_variable" href="dd-cloud-getting-started_8rs.html#a0f751db03e526b165039876c46a8930e">_</a> = benchmark(&amp;pipeline, &amp;<a class="code hl_variable" href="ipi-onprem-compare_8rs.html#a794bef0d1dec0773ddb04f4cddb8dcf1">ips</a>, 1, options.iterations);</div>
+<div class="c-code__line">    let <a class="code hl_variable" href="dd-cloud-getting-started_8rs.html#a0f751db03e526b165039876c46a8930e">_</a> = benchmark(&amp;pipeline, &amp;<a class="code hl_variable" href="ipi-onprem-getting-started_8rs.html#a7707ba8c1851ca9fb8ad30d7096bfdb0">ips</a>, 1, options.iterations);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    writeln!(out, <span class="c-code__stringliteral">&quot;Single-threaded pass ...&quot;</span>)?;</div>
-<div class="c-code__line">    let single = benchmark(&amp;pipeline, &amp;<a class="code hl_variable" href="ipi-onprem-compare_8rs.html#a794bef0d1dec0773ddb04f4cddb8dcf1">ips</a>, 1, options.iterations);</div>
+<div class="c-code__line">    let single = benchmark(&amp;pipeline, &amp;<a class="code hl_variable" href="ipi-onprem-getting-started_8rs.html#a7707ba8c1851ca9fb8ad30d7096bfdb0">ips</a>, 1, options.iterations);</div>
 <div class="c-code__line">    report(out, <span class="c-code__stringliteral">&quot;Single-threaded&quot;</span>, &amp;single, 1)?;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    writeln!(out)?;</div>
@@ -119,14 +119,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-onprem-per
 <div class="c-code__line">        <span class="c-code__stringliteral">&quot;Multi-threaded pass ({} threads) ...&quot;</span>,</div>
 <div class="c-code__line">        options.thread_count</div>
 <div class="c-code__line">    )?;</div>
-<div class="c-code__line">    let multi = benchmark(&amp;pipeline, &amp;<a class="code hl_variable" href="ipi-onprem-compare_8rs.html#a794bef0d1dec0773ddb04f4cddb8dcf1">ips</a>, options.thread_count, options.iterations);</div>
+<div class="c-code__line">    let multi = benchmark(&amp;pipeline, &amp;<a class="code hl_variable" href="ipi-onprem-getting-started_8rs.html#a7707ba8c1851ca9fb8ad30d7096bfdb0">ips</a>, options.thread_count, options.iterations);</div>
 <div class="c-code__line">    report(out, <span class="c-code__stringliteral">&quot;Multi-threaded&quot;</span>, &amp;multi, options.thread_count)?;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// The nightly performance graphs read this file. The example writes it</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// itself so the figure does not depend on the wording or number formatting</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// of the printed report above, which is free to change. The multi-threaded</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// pass is the headline figure for the product, so it is the one published.</span></div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let Some(<a class="code hl_variable" href="dd-onprem-performance_8rs.html#aa245846aeec29710a80ded0f0027b273">json_output</a>) = &amp;options.json_output {</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(<a class="code hl_variable" href="dd-onprem-performance_8rs.html#aa245846aeec29710a80ded0f0027b273">json_output</a>) = &amp;options.json_output {</div>
 <div class="c-code__line">        let results = examples_shared::PerformanceResults::new()</div>
 <div class="c-code__line">            .higher_is_better(<span class="c-code__stringliteral">&quot;LookupsPerSecond&quot;</span>, multi.lookups_per_second())</div>
 <div class="c-code__line">            .lower_is_better(<span class="c-code__stringliteral">&quot;AvgMillisecsPerLookup&quot;</span>, multi.ms_per_lookup());</div>
@@ -143,6 +143,32 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-onprem-per
 <div class="c-code__line">        )?;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment">// The data file&#39;s own list of properties says which of the location</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// properties it can answer. The free files carry none of them.</span></div>
+<div class="c-code__line">    let <a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a> = ip_intelligence_examples::data_file_properties(&amp;options.data_file)?;</div>
+<div class="c-code__line">    writeln!(out)?;</div>
+<div class="c-code__line">    writeln!(out, <span class="c-code__stringliteral">&quot;Enterprise properties:&quot;</span>)?;</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">for</span> name in <a class="code hl_variable" href="ipi-onprem-performance_8rs.html#af51ab768de4fbab1768eda337d908fd2">ENTERPRISE_LISTED</a> {</div>
+<div class="c-code__line">        let state = <span class="c-code__keywordflow">if</span> examples_shared::is_available(name, &amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>) {</div>
+<div class="c-code__line">            <span class="c-code__stringliteral">&quot;in this data file&quot;</span></div>
+<div class="c-code__line">        } <span class="c-code__keywordflow">else</span> {</div>
+<div class="c-code__line">            examples_shared::NEEDS_ENTERPRISE_DATA_FILE</div>
+<div class="c-code__line">        };</div>
+<div class="c-code__line">        writeln!(out, <span class="c-code__stringliteral">&quot;\t{name}: {state}&quot;</span>)?;</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line">    writeln!(out)?;</div>
+<div class="c-code__line">    ip_intelligence_examples::write_data_file_warnings(&amp;options.data_file, out)?;</div>
+<div class="c-code__line">    let missing = examples_shared::missing_properties(<a class="code hl_variable" href="ipi-onprem-performance_8rs.html#af51ab768de4fbab1768eda337d908fd2">ENTERPRISE_LISTED</a>, &amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>);</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(message) = examples_shared::enterprise_data_file_message(&amp;missing, <a class="code hl_variable" href="dd-onprem-getting-started_8rs.html#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a>) {</div>
+<div class="c-code__line">        writeln!(out)?;</div>
+<div class="c-code__line">        writeln!(out, <span class="c-code__stringliteral">&quot;{message}&quot;</span>)?;</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">    examples_shared::write_find_out_more(</div>
+<div class="c-code__line">        out,</div>
+<div class="c-code__line">        <a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ad25b7f6d0c89d56f4024e2b559cf89cc">FIND_OUT_MORE</a>,</div>
+<div class="c-code__line">        examples_shared::ON_PREMISE_REPOSITORIES,</div>
+<div class="c-code__line">    )?;</div>
 <div class="c-code__line">    Ok(())</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --> </div></div><!-- primary -->

@@ -76,14 +76,14 @@ Classes</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="c-table__row memitem:a8d89ee9c2e74b56660b709b41f9dfa11" id="r_a8d89ee9c2e74b56660b709b41f9dfa11"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_example_options.html">ExampleOptions</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a8d89ee9c2e74b56660b709b41f9dfa11">run</a> (options:ExampleOptions) -&gt; Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a8d89ee9c2e74b56660b709b41f9dfa11"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run the on-premise offline-processing example.  <br /></td></tr>
-<tr class="c-table__row memitem:ac37e5f0a047e15d50f37c6ae36c359c8" id="r_ac37e5f0a047e15d50f37c6ae36c359c8"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ac37e5f0a047e15d50f37c6ae36c359c8">evidence_records</a> (yaml:&amp;str) -&gt; impl Iterator&lt; Item=Result&lt; BTreeMap&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt; &gt; &gt;+ '<a class="el" href="#abbc2a31cbfc626f6d4e05b23a541efaa">_</a></td></tr>
+<tr class="c-table__row memitem:ac37e5f0a047e15d50f37c6ae36c359c8" id="r_ac37e5f0a047e15d50f37c6ae36c359c8"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ac37e5f0a047e15d50f37c6ae36c359c8">evidence_records</a> (yaml:&amp;str) -&gt; impl Iterator&lt; Item=Result&lt; BTreeMap&lt; String, String &gt; &gt; &gt;+ '<a class="el" href="#abbc2a31cbfc626f6d4e05b23a541efaa">_</a></td></tr>
 <tr class="c-table__row memdesc:ac37e5f0a047e15d50f37c6ae36c359c8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Iterate the records in a multi-document YAML evidence stream.  <br /></td></tr>
-<tr class="c-table__row memitem:a196c4c901b473a4b9473347a6f798559" id="r_a196c4c901b473a4b9473347a6f798559"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a196c4c901b473a4b9473347a6f798559">analyse_evidence</a> (pipeline:&amp;Arc&lt; Pipeline &gt;, evidence:&amp;BTreeMap&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;,) -&gt; Result&lt; BTreeMap&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt; &gt;</td></tr>
-<tr class="c-table__row memdesc:a196c4c901b473a4b9473347a6f798559"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process one evidence record and return the input plus the detected properties as an ordered map ready to serialize.  <br /></td></tr>
-<tr class="c-table__row memitem:ab9386b1eccda85c64718e788670e142f" id="r_ab9386b1eccda85c64718e788670e142f"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ab9386b1eccda85c64718e788670e142f">write_record</a> (output:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> std::fs::File, record:&amp;BTreeMap&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;) -&gt; Result&lt;()&gt;</td></tr>
+<tr class="c-table__row memitem:aa14d2a06a3a8eb46da8fbf4613fc6f44" id="r_aa14d2a06a3a8eb46da8fbf4613fc6f44"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#aa14d2a06a3a8eb46da8fbf4613fc6f44">analyse_evidence</a> (pipeline:&amp;Arc&lt; Pipeline &gt;, evidence:&amp;BTreeMap&lt; String, String &gt;, available:&amp;[String],) -&gt; Result&lt; BTreeMap&lt; String, String &gt; &gt;</td></tr>
+<tr class="c-table__row memdesc:aa14d2a06a3a8eb46da8fbf4613fc6f44"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Process one evidence record and return the input plus the detected properties as an ordered map ready to serialize. <code><a class="el" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5" title="The properties the data file carries.">available</a></code> holds the properties the data file carries.  <br /></td></tr>
+<tr class="c-table__row memitem:ab9386b1eccda85c64718e788670e142f" id="r_ab9386b1eccda85c64718e788670e142f"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ab9386b1eccda85c64718e788670e142f">write_record</a> (output:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> std::fs::File, record:&amp;BTreeMap&lt; String, String &gt;) -&gt; Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:ab9386b1eccda85c64718e788670e142f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Serialize one record as a YAML document and append it to <code>output</code>, preceded by the <code>---</code> document separator so the file is a valid multi-document stream.  <br /></td></tr>
-<tr class="c-table__row memitem:aa529a93fc7bfebdb2e62acc4b20d6a6f" id="r_aa529a93fc7bfebdb2e62acc4b20d6a6f"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#aa529a93fc7bfebdb2e62acc4b20d6a6f">default_evidence_file</a> () -&gt; Option&lt; PathBuf &gt;</td></tr>
-<tr class="c-table__row memdesc:aa529a93fc7bfebdb2e62acc4b20d6a6f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Locate the bundled evidence file, walking up the tree from the crate so it resolves whether the example runs from an IDE, its crate directory or CI.  <br /></td></tr>
+<tr class="c-table__row memitem:aa529a93fc7bfebdb2e62acc4b20d6a6f" id="r_aa529a93fc7bfebdb2e62acc4b20d6a6f"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#aa529a93fc7bfebdb2e62acc4b20d6a6f">default_evidence_file</a> () -&gt; Option&lt; <a class="el" href="ipi-web-getting-started-onprem_8rs.html#a36282740ed407fcac2ef7800fa2fbaf2">PathBuf</a> &gt;</td></tr>
+<tr class="c-table__row memdesc:aa529a93fc7bfebdb2e62acc4b20d6a6f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Locate the evidence file, walking up the tree from the crate so it resolves whether the example runs from an IDE, its crate directory or CI, and downloading it when it is missing.  <br /></td></tr>
 <tr class="c-table__row memitem:a685047298dbf9911e9f06a366e9b1bb4" id="r_a685047298dbf9911e9f06a366e9b1bb4"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a685047298dbf9911e9f06a366e9b1bb4">main</a> () -&gt; Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a685047298dbf9911e9f06a366e9b1bb4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Resolve the data, evidence and output files, then run the example.  <br /></td></tr>
 <tr class="c-table__row memitem:a19499d1af805265d1f66dd6aab1f2303" id="r_a19499d1af805265d1f66dd6aab1f2303"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a19499d1af805265d1f66dd6aab1f2303">runs_against_the_lite_data_file</a> ()</td></tr>
@@ -95,7 +95,10 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="c-table__row memitem:abbc2a31cbfc626f6d4e05b23a541efaa" id="r_abbc2a31cbfc626f6d4e05b23a541efaa"><td class="c-table__cell">use&#160;std::io::Write&#160;as&#160;</td><td class="c-table__cell"><a class="el" href="#abbc2a31cbfc626f6d4e05b23a541efaa">_</a></td></tr>
 <tr class="c-table__row memitem:afa6df8f8739a9a5270dce6d4415e3d07" id="r_afa6df8f8739a9a5270dce6d4415e3d07"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#afa6df8f8739a9a5270dce6d4415e3d07">EVIDENCE_RELATIVE_PATH</a></td></tr>
-<tr class="c-table__row memdesc:afa6df8f8739a9a5270dce6d4415e3d07"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The relative path to the bundled evidence file within the data in the <code>cxx</code> submodule, used when no path is supplied.  <br /></td></tr>
+<tr class="c-table__row memdesc:afa6df8f8739a9a5270dce6d4415e3d07"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The relative path to the evidence file in the data repository inside the <code>cxx</code> submodule, used when no path is supplied.  <br /></td></tr>
+<tr class="c-table__row memitem:a65560ade98913e76a1868a9845e47e52" id="r_a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a></td></tr>
+<tr class="c-table__row memdesc:a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Where to ask about a copy of the Enterprise data file.  <br /></td></tr>
+<tr class="c-table__row memitem:a59c09f4d2e77fa42c030902215658830" id="r_a59c09f4d2e77fa42c030902215658830"><td class="c-table__cell">const&#160;&amp;&#160;</td><td class="c-table__cell"><a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a></td></tr>
 <tr class="c-table__row memitem:ab533a800544facf05fd1c8e50f92099a" id="r_ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">pub&#160;</td><td class="c-table__cell"><a class="el" href="#ab533a800544facf05fd1c8e50f92099a">data_file</a></td></tr>
 <tr class="c-table__row memdesc:ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The path to the on-premise Hash data file the engine loads.  <br /></td></tr>
 <tr class="c-table__row memitem:ad6bffea55ace1dfffd05353879a20738" id="r_ad6bffea55ace1dfffd05353879a20738"><td class="c-table__cell">pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#ad6bffea55ace1dfffd05353879a20738">evidence_file</a></td></tr>
@@ -107,8 +110,8 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:ab60c545115f42f88c00b55f384f5ffc0" id="r_ab60c545115f42f88c00b55f384f5ffc0"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#ab60c545115f42f88c00b55f384f5ffc0">tests</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
-<a id="a196c4c901b473a4b9473347a6f798559" name="a196c4c901b473a4b9473347a6f798559"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a196c4c901b473a4b9473347a6f798559">&#9670;&#160;</a></span>analyse_evidence()</h2>
+<a id="aa14d2a06a3a8eb46da8fbf4613fc6f44" name="aa14d2a06a3a8eb46da8fbf4613fc6f44"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aa14d2a06a3a8eb46da8fbf4613fc6f44">&#9670;&#160;</a></span>analyse_evidence()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -123,14 +126,19 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">evidence:&amp;BTreeMap&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; Result&lt; BTreeMap&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt; &gt;</td>
+          <td class="c-table__cell">evidence:&amp;BTreeMap&lt; String, String &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">available:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String]&#160;) -&gt; Result&lt; BTreeMap&lt; String, String &gt; &gt;</td>
         </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>Process one evidence record and return the input plus the detected properties as an ordered map ready to serialize. </p>
+<p>Process one evidence record and return the input plus the detected properties as an ordered map ready to serialize. <code><a class="el" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5" title="The properties the data file carries.">available</a></code> holds the properties the data file carries. </p>
 
 </div>
 </div>
@@ -146,14 +154,14 @@ Variables</h2></td></tr>
               <td class="c-table__cell">fn default_evidence_file </td>
           <td>(</td>
           <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Option&lt; PathBuf &gt;</td>
+          <td> -&gt; Option&lt; <a class="el" href="ipi-web-getting-started-onprem_8rs.html#a36282740ed407fcac2ef7800fa2fbaf2">PathBuf</a> &gt;</td>
         </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>Locate the bundled evidence file, walking up the tree from the crate so it resolves whether the example runs from an IDE, its crate directory or CI. </p>
+<p>Locate the evidence file, walking up the tree from the crate so it resolves whether the example runs from an IDE, its crate directory or CI, and downloading it when it is missing. </p>
 
 </div>
 </div>
@@ -192,7 +200,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">fn evidence_records </td>
           <td>(</td>
           <td class="c-table__cell">yaml:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span></td><td>)</td>
-          <td> -&gt; impl Iterator&lt; Item=Result&lt; BTreeMap&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt; &gt; &gt;+'<a class="el" href="dd-cloud-getting-started_8rs.html#a0f751db03e526b165039876c46a8930e">_</a></td>
+          <td> -&gt; impl Iterator&lt; Item=Result&lt; BTreeMap&lt; String, String &gt; &gt; &gt;+'<a class="el" href="dd-cloud-getting-started_8rs.html#a0f751db03e526b165039876c46a8930e">_</a></td>
         </tr>
           </table>
         </div>
@@ -200,7 +208,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Iterate the records in a multi-document YAML evidence stream. </p>
-<p>Each document is a map of evidence key to (string) value. The native evidence values in the bundled file are all scalars, so a <code>BTreeMap&lt;<a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>&gt;</code> captures them while keeping a stable key order for reproducible output. A <code>serde_norway::Deserializer</code> over the whole stream yields one sub-deserializer per <code>---</code>-separated document, so the records are read straight from the parser without any manual splitting on the document marker. </p>
+<p>Each document is a map of evidence key to (string) value. The native evidence values in the bundled file are all scalars, so a <code>BTreeMap&lt;String, String&gt;</code> captures them while keeping a stable key order for reproducible output. A <code>serde_norway::Deserializer</code> over the whole stream yields one sub-deserializer per <code>---</code>-separated document, so the records are read straight from the parser without any manual splitting on the document marker. </p>
 
 </div>
 </div>
@@ -224,7 +232,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Resolve the data, evidence and output files, then run the example. </p>
-<p>The data and evidence files use the usual fallbacks; the output file defaults to a file next to the evidence file. With the data or evidence file missing the example prints a clear message and exits successfully. </p>
+<p>The data and evidence files use the usual fallbacks; the output file defaults to a file next to the evidence file. With the data or evidence file missing the example fails, after the resolver has printed the command that gets the file. </p>
 
 </div>
 </div>
@@ -248,7 +256,8 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Run the on-premise offline-processing example. </p>
-<p>Builds an on-premise pipeline, streams evidence records from the YAML file, runs device detection on each, and writes the input evidence together with the detected properties to a YAML output file. </p>
+<p>Builds an on-premise pipeline, streams evidence records from the YAML file, runs device detection on each, and writes the input evidence together with the detected properties to a YAML output file. The Enterprise properties the data file does not carry are written as needing the Enterprise data file, and the run ends by naming them with where to ask about a copy, then the "Find out
+more" links. </p>
 
 </div>
 </div>
@@ -291,7 +300,7 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">record:&amp;BTreeMap&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; Result&lt;()&gt;</td>
+          <td class="c-table__cell">record:&amp;BTreeMap&lt; String, String &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; Result&lt;()&gt;</td>
         </tr>
           </table>
         </div>
@@ -318,6 +327,26 @@ Variables</h2></td></tr>
         </div>
       </div>
 </div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a65560ade98913e76a1868a9845e47e52" name="a65560ade98913e76a1868a9845e47e52"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a65560ade98913e76a1868a9845e47e52">&#9670;&#160;</a></span>CONTACT_US_URL</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const CONTACT_US_URL</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Where to ask about a copy of the Enterprise data file. </p>
 
 </div>
 </div>
@@ -377,7 +406,7 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>The relative path to the bundled evidence file within the data in the <code>cxx</code> submodule, used when no path is supplied. </p>
+<p>The relative path to the evidence file in the data repository inside the <code>cxx</code> submodule, used when no path is supplied. </p>
 
 </div>
 </div>
@@ -420,6 +449,29 @@ Variables</h2></td></tr>
 
 <p>The path to write the YAML results to. </p>
 
+</div>
+</div>
+<a id="a59c09f4d2e77fa42c030902215658830" name="a59c09f4d2e77fa42c030902215658830"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a59c09f4d2e77fa42c030902215658830">&#9670;&#160;</a></span>str</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const &amp; str</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">     = &amp;[</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Device Detection&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/device-detection?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-device-detection-examples-src-bin-dd-onprem-offline-processing.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Pricing&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-device-detection-examples-src-bin-dd-onprem-offline-processing.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Documentation&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-device-detection-examples-src-bin-dd-onprem-offline-processing.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">]</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab60c545115f42f88c00b55f384f5ffc0" name="ab60c545115f42f88c00b55f384f5ffc0"></a>

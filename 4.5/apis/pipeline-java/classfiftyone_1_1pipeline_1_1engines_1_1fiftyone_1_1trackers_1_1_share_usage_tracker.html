@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
 <div class="textblock"><p>A tracker used by share usage to attempt to avoid repeatedly sending data relating to the same user session. </p>
-<dl class="c-list-definition section see"><dt class="c-list-definition__title">See also</dt><dd class="c-list-definition__desc"><a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/pipeline-elements/usage-sharing-element.md#session-tracking">Specification</a> </dd></dl>
+<p>Evidence that matches an entry is shared again once the interval has passed since it was last shared, so a repeat is shared at most once in each interval. </p><dl class="c-list-definition section see"><dt class="c-list-definition__title">See also</dt><dd class="c-list-definition__desc"><a href="https://github.com/51Degrees/specifications/blob/main/pipeline-specification/pipeline-elements/usage-sharing-element.md#session-tracking">Specification</a> </dd></dl>
 </div><h2 class="g-docs__section-heading">
 Inheritance diagram for fiftyone.pipeline.engines.fiftyone.trackers.ShareUsageTracker:</h2>
 <div class="dyncontent">
@@ -111,6 +111,8 @@ Protected Member Functions</h2></td></tr>
 boolean&#160;</td><td class="c-table__cell"><b>match</b> (<a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a> data, Date value)</td></tr>
 <tr class="c-table__row memitem:aff6d502b54f13115014e07cc5b4672b0" id="r_aff6d502b54f13115014e07cc5b4672b0"><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter.html">EvidenceKeyFilter</a>&#160;</td><td class="c-table__cell"><a class="el" href="#aff6d502b54f13115014e07cc5b4672b0">getFilter</a> ()</td></tr>
 <tr class="c-table__row memdesc:aff6d502b54f13115014e07cc5b4672b0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns the <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter.html">EvidenceKeyFilter</a></code> to use when generating a key from <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a></code> instances.  <br /></td></tr>
+<tr class="c-table__row memitem:a6b47e810116779910f2768d4bd1d6745" id="r_a6b47e810116779910f2768d4bd1d6745"><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1data_1_1_data_key.html">DataKey</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a6b47e810116779910f2768d4bd1d6745">generateKey</a> (<a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a> data)</td></tr>
+<tr class="c-table__row memdesc:a6b47e810116779910f2768d4bd1d6745"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The key is made from the values <code><a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_share_usage_evidence.html#adef517894fe64b243ae176e688a38888">ShareUsageEvidence#find</a></code> finds that the filter includes, which take in the web request's values, as the session tracking hash is of the values that would be shared.  <br /></td></tr>
 <tr class="c-table__row inherit_header pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1trackers_1_1_tracker_base"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Protected Member Functions inherited from <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1trackers_1_1_tracker_base.html">fiftyone.pipeline.engines.trackers.TrackerBase&lt; T &gt;</a></h3></td></tr>
 <tr class="c-table__row memitem:a250be7e97f08deaa7c62fad6dd359a19 pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1trackers_1_1_tracker_base" id="r_a250be7e97f08deaa7c62fad6dd359a19"><td class="c-table__cell">abstract&#160;boolean&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1trackers_1_1_tracker_base.html#a250be7e97f08deaa7c62fad6dd359a19">match</a> (<a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a> data, T value)</td></tr>
 <tr class="c-table__row memdesc:a250be7e97f08deaa7c62fad6dd359a19 pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1trackers_1_1_tracker_base"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Update the tracker value with relevant details.  <br /></td></tr>
@@ -148,7 +150,7 @@ boolean&#160;</td><td class="c-table__cell"><b>match</b> (<a class="el" href="in
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">configuration</td><td>the cache configuration to use when building the internal cache used by this tracker </td></tr>
-    <tr><td class="paramname">intervalMillis</td><td>interval between matched in millis </td></tr>
+    <tr><td class="paramname">intervalMillis</td><td>how long after evidence is shared a repeat of it is not shared, in milliseconds </td></tr>
     <tr><td class="paramname">filter</td><td>the <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter.html">EvidenceKeyFilter</a></code> that defines the evidence values to use when creating a key from an <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a></code> </td></tr>
   </table>
   </dd>
@@ -157,6 +159,40 @@ boolean&#160;</td><td class="c-table__cell"><b>match</b> (<a class="el" href="in
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a6b47e810116779910f2768d4bd1d6745" name="a6b47e810116779910f2768d4bd1d6745"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6b47e810116779910f2768d4bd1d6745">&#9670;&#160;</a></span>generateKey()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1data_1_1_data_key.html">DataKey</a> fiftyone.pipeline.engines.fiftyone.trackers.ShareUsageTracker.generateKey </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a></td>          <td class="c-table__cell"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The key is made from the values <code><a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_share_usage_evidence.html#adef517894fe64b243ae176e688a38888">ShareUsageEvidence#find</a></code> finds that the filter includes, which take in the web request's values, as the session tracking hash is of the values that would be shared. </p>
+<p>The Evidence alone does not hold them. </p>
+
+<p>Reimplemented from <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1caching_1_1_data_keyed_cache_base.html#aa0399fa1b0c63ac5c2e4cf652ead1f8f">fiftyone.pipeline.engines.caching.DataKeyedCacheBase&lt; V &gt;</a>.</p>
+
+</div>
+</div>
 <a id="aff6d502b54f13115014e07cc5b4672b0" name="aff6d502b54f13115014e07cc5b4672b0"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#aff6d502b54f13115014e07cc5b4672b0">&#9670;&#160;</a></span>getFilter()</h2>
 
@@ -225,7 +261,7 @@ boolean&#160;</td><td class="c-table__cell"><b>match</b> (<a class="el" href="in
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a new meta-data instance to be stored with the <code><a class="el" href="">DataKey</a></code> created from the flow data instance </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a new meta-data instance to be stored with the <code><a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1data_1_1_data_key.html">DataKey</a></code> created from the flow data instance </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1trackers_1_1_tracker_base.html#a907759ac8fbe63ad1d9c573327127924">fiftyone.pipeline.engines.trackers.TrackerBase&lt; T &gt;</a>.</p>
 

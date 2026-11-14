@@ -105,10 +105,8 @@ void&#160;</td><td class="c-table__cell"><b>addPipeline</b> (<a class="el" href=
 <tr class="c-table__row memdesc:a1b8967f4d90ed0edbb69912837556313"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a unmodifiable list of the <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html">Pipeline</a></code>s that this element has been added to.  <br /></td></tr>
 <tr class="c-table__row memitem:ac3ef98a284c9f558eef99720719d2a8e" id="r_ac3ef98a284c9f558eef99720719d2a8e"><td class="c-table__cell"><a id="ac3ef98a284c9f558eef99720719d2a8e" name="ac3ef98a284c9f558eef99720719d2a8e"></a>
 abstract&#160;String&#160;</td><td class="c-table__cell"><b>getElementDataKey</b> ()</td></tr>
-<tr class="c-table__row memitem:a855a151bd4ef483a3f2c4133ed5a6e24" id="r_a855a151bd4ef483a3f2c4133ed5a6e24"><td class="c-table__cell"><a id="a855a151bd4ef483a3f2c4133ed5a6e24" name="a855a151bd4ef483a3f2c4133ed5a6e24"></a>
-abstract&#160;<a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter.html">EvidenceKeyFilter</a>&#160;</td><td class="c-table__cell"><b>getEvidenceKeyFilter</b> ()</td></tr>
-<tr class="c-table__row memitem:ace1900e3a509483b6a55a646f2a15a41" id="r_ace1900e3a509483b6a55a646f2a15a41"><td class="c-table__cell"><a id="ace1900e3a509483b6a55a646f2a15a41" name="ace1900e3a509483b6a55a646f2a15a41"></a>
-abstract&#160;List&lt;&#160;TProperty&#160;&gt;&#160;</td><td class="c-table__cell"><b>getProperties</b> ()</td></tr>
+<tr class="c-table__row memitem:a855a151bd4ef483a3f2c4133ed5a6e24" id="r_a855a151bd4ef483a3f2c4133ed5a6e24"><td class="c-table__cell">abstract&#160;<a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter.html">EvidenceKeyFilter</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a855a151bd4ef483a3f2c4133ed5a6e24">getEvidenceKeyFilter</a> ()</td></tr>
+<tr class="c-table__row memitem:ace1900e3a509483b6a55a646f2a15a41" id="r_ace1900e3a509483b6a55a646f2a15a41"><td class="c-table__cell">abstract&#160;List&lt;&#160;TProperty&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#ace1900e3a509483b6a55a646f2a15a41">getProperties</a> ()</td></tr>
 <tr class="c-table__row memitem:a3fcc1e537b2fb1d7d1cd6b33e5279438" id="r_a3fcc1e537b2fb1d7d1cd6b33e5279438"><td class="c-table__cell"><a id="a3fcc1e537b2fb1d7d1cd6b33e5279438" name="a3fcc1e537b2fb1d7d1cd6b33e5279438"></a>
 TProperty&#160;</td><td class="c-table__cell"><b>getProperty</b> (String name)</td></tr>
 <tr class="c-table__row memitem:aa11cb5eca15e35e82eac011a5d3beb6a" id="r_aa11cb5eca15e35e82eac011a5d3beb6a"><td class="c-table__cell"><a id="aa11cb5eca15e35e82eac011a5d3beb6a" name="aa11cb5eca15e35e82eac011a5d3beb6a"></a>
@@ -140,6 +138,8 @@ void&#160;</td><td class="c-table__cell"><b>close</b> ()  throws Exception </td>
 <tr class="c-table__row memdesc:aa95ae1003864e7b0e1b7e71bfa6536c5 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a property from the properties that this element can populate using its name.  <br /></td></tr>
 <tr class="c-table__row memitem:ab0aa98bdda4981e0892d75ea4f79331a pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element" id="r_ab0aa98bdda4981e0892d75ea4f79331a"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#ab0aa98bdda4981e0892d75ea4f79331a">isConcurrent</a> ()</td></tr>
 <tr class="c-table__row memdesc:ab0aa98bdda4981e0892d75ea4f79331a pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">if true, requires that the <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html" title="The Pipeline groups together FlowElements and is a factory for FlowData which serves as the evidence,...">Pipeline</a> guards against concurrent access to <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a></code> structures  <br /></td></tr>
+<tr class="c-table__row memitem:a5d740f4fcfc20816b33dbf49450350e0 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element" id="r_a5d740f4fcfc20816b33dbf49450350e0"><td class="c-table__cell">default&#160;boolean&#160;</td><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a5d740f4fcfc20816b33dbf49450350e0">hasLoadedProperties</a> ()</td></tr>
+<tr class="c-table__row memdesc:a5d740f4fcfc20816b33dbf49450350e0 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether the element knows all the property metadata and accepted <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence.html" title="Evidence used by a FlowElement when processing.">Evidence</a> it will expose.  <br /></td></tr>
 <tr class="c-table__row memitem:a93a813715876146eca839f3541867cc8 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element" id="r_a93a813715876146eca839f3541867cc8"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a93a813715876146eca839f3541867cc8">isClosed</a> ()</td></tr>
 <tr class="c-table__row memdesc:a93a813715876146eca839f3541867cc8 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Indicates whether the element has been closed using the <code><a class="el" href="">close()</a></code> method, either explicitly or as a result of a 'try with resource'.  <br /></td></tr>
 <tr class="c-table__row memitem:a96dfad7107c88b5643e80847d5820863 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element" id="r_a96dfad7107c88b5643e80847d5820863"><td class="c-table__cell">DataFactory&lt;&#160;TData&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a96dfad7107c88b5643e80847d5820863">getDataFactory</a> ()</td></tr>
@@ -199,6 +199,37 @@ final&#160;Logger&#160;</td><td class="c-table__cell"><b>logger</b></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a855a151bd4ef483a3f2c4133ed5a6e24" name="a855a151bd4ef483a3f2c4133ed5a6e24"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a855a151bd4ef483a3f2c4133ed5a6e24">&#9670;&#160;</a></span>getEvidenceKeyFilter()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">abstract <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence_key_filter.html">EvidenceKeyFilter</a> <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element_base.html">fiftyone.pipeline.core.flowelements.FlowElementBase</a>&lt; TData extends <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_data.html">ElementData</a>, TProperty extends <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_property_meta_data.html">ElementPropertyMetaData</a> &gt;.getEvidenceKeyFilter </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel abstract">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Reimplemented in <a class="el" href="classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1flowelements_1_1_cloud_request_engine_default.html#aedea9fe60fe3fa3d505674f78a182ced">fiftyone.pipeline.cloudrequestengine.flowelements.CloudRequestEngineDefault</a>.</p>
+
+</div>
+</div>
 <a id="a1b8967f4d90ed0edbb69912837556313" name="a1b8967f4d90ed0edbb69912837556313"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1b8967f4d90ed0edbb69912837556313">&#9670;&#160;</a></span>getPipelines()</h2>
 
@@ -220,6 +251,37 @@ final&#160;Logger&#160;</td><td class="c-table__cell"><b>logger</b></td></tr>
 
 <p>Get a unmodifiable list of the <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html">Pipeline</a></code>s that this element has been added to. </p>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">list of <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html">Pipeline</a></code>s </dd></dl>
+
+</div>
+</div>
+<a id="ace1900e3a509483b6a55a646f2a15a41" name="ace1900e3a509483b6a55a646f2a15a41"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ace1900e3a509483b6a55a646f2a15a41">&#9670;&#160;</a></span>getProperties()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">abstract List&lt; TProperty &gt; <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element_base.html">fiftyone.pipeline.core.flowelements.FlowElementBase</a>&lt; TData extends <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_data.html">ElementData</a>, TProperty extends <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_property_meta_data.html">ElementPropertyMetaData</a> &gt;.getProperties </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel abstract">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Reimplemented in <a class="el" href="classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1flowelements_1_1_cloud_aspect_engine_base.html#aca69801d38f8cc7197f18ceff3e1b07e">fiftyone.pipeline.cloudrequestengine.flowelements.CloudAspectEngineBase&lt; TData extends AspectData &gt;</a>.</p>
 
 </div>
 </div>

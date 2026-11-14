@@ -21,8 +21,8 @@
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="classfiftyone_1_1geolocation_1_1data_1_1_cloud_geo_data_default.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="936,-54 795,-54 795,-24 936,-24 936,-54"/>
+<g id="a_Node000008"><a xlink:href="classfiftyone_1_1geolocation_1_1data_1_1_cloud_geo_data_default.html" target="_top" xlink:title="The Location Element Data from the cloud.">
+<polygon fill="white" stroke="#666666" points="936,-54 795,-54 795,-24 936,-24 936,-54"/>
 <text text-anchor="start" x="803" y="-42" font-family="Helvetica,sans-Serif" font-size="10.00">fiftyone.geolocation.data.</text>
 <text text-anchor="middle" x="865.5" y="-31" font-family="Helvetica,sans-Serif" font-size="10.00">CloudGeoDataDefault</text>
 </a>

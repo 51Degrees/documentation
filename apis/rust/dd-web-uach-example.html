@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-web-uach-ex
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><p>Device Detection web example: User-Agent Client Hints (UACH) flow.</p>
-<p>A focused, on-premise web example that drives the UA-CH high-entropy decoder ([<code>UachJsConversionElement</code>]). The browser's <code>getHighEntropyValues()</code> blob, delivered as a query or cookie parameter on the client callback, is decoded into the <code>sec-ch-ua*</code> HTTP headers the Hash engine understands. The page shows the evidence the pipeline received (including any decoded client hints) and refreshes client-side after the high-entropy round trip.</p>
+<p>A focused, on-premise web example of the User-Agent Client Hints flow. The browser's <code>getHighEntropyValues()</code> blob, delivered as a query or cookie parameter on the client callback, reaches the Hash engine as evidence, and the engine turns it into the <code>sec-ch-ua*</code> HTTP headers it matches on. The page shows the evidence the pipeline received (including the blob) and refreshes client-side after the high-entropy round trip.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">pub fn <a class="code hl_function" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f">run</a>(options: <a class="code hl_struct" href="struct_options.html">Options</a>) -&gt; anyhow::Result&lt;()&gt; {</div>
 <div class="c-code__line">    <span class="c-code__comment">// Build the pipeline (and so the share-usage element&#39;s blocking reqwest</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// client) on this plain thread, before the async runtime is entered. The</span></div>
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd-web-uach-ex
 <div class="c-code__line">        );</div>
 <div class="c-code__line">        axum::serve(</div>
 <div class="c-code__line">            listener,</div>
-<div class="c-code__line">            app.into_make_service_with_connect_info::&lt;SocketAddr&gt;(),</div>
+<div class="c-code__line">            app.into_make_service_with_connect_info::&lt;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a563d47276a0c0f08118b289443d2fa13">SocketAddr</a>&gt;(),</div>
 <div class="c-code__line">        )</div>
 <div class="c-code__line">        .await</div>
 <div class="c-code__line">        .context(<span class="c-code__stringliteral">&quot;serving the application&quot;</span>)</div>

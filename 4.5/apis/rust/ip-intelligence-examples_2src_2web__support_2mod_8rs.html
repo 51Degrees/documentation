@@ -72,25 +72,36 @@ Classes</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="c-table__row memitem:a749647531536dd5127e7ef0b82685080" id="r_a749647531536dd5127e7ef0b82685080"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_display_value.html">DisplayValue</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a749647531536dd5127e7ef0b82685080">T</a> (label:&amp;str, property:&amp;AspectPropertyValue&lt; T &gt;, render:impl Fn(&amp;T) -&gt; String,) -&gt; <a class="el" href="struct_display_value.html">DisplayValue</a></td></tr>
-<tr class="c-table__row memdesc:a749647531536dd5127e7ef0b82685080"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Reduce a plain [<code>AspectPropertyValue</code>] to its display value, rendering the value with the supplied closure.  <br /></td></tr>
-<tr class="c-table__row memitem:a8858c644f93e7199bcbcbec160751ef5" id="r_a8858c644f93e7199bcbcbec160751ef5"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a8858c644f93e7199bcbcbec160751ef5">display_weighted</a> (label:&amp;str, property:&amp;AspectPropertyValue&lt; Vec&lt; WeightedValue&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt; &gt; &gt;,) -&gt; <a class="el" href="struct_display_value.html">DisplayValue</a></td></tr>
-<tr class="c-table__row memdesc:a8858c644f93e7199bcbcbec160751ef5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Reduce a weighted [<code>AspectPropertyValue</code>] to its display value, rendering each candidate as <code><a class="el" href="#a9d58c3d628e2a73ead14ac823d810027" title="The resolved value, or the no-value message.">value</a> (weight)</code> ordered high weighting first and joined with commas.  <br /></td></tr>
+<tr class="c-table__row memitem:ad0c2824278fe83f467fdf5cc24646eae" id="r_ad0c2824278fe83f467fdf5cc24646eae"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_display_value.html">DisplayValue</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ad0c2824278fe83f467fdf5cc24646eae">T</a> (property:&amp;str, label:&amp;str, value:&amp;AspectPropertyValue&lt; T &gt;, render:impl Fn(&amp;T) -&gt; String,) -&gt; <a class="el" href="struct_display_value.html">DisplayValue</a></td></tr>
+<tr class="c-table__row memdesc:ad0c2824278fe83f467fdf5cc24646eae"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Reduce a plain [<code>AspectPropertyValue</code>] to its display value, rendering the value with the supplied closure.  <br /></td></tr>
+<tr class="c-table__row memitem:ae6f7419a540241e5be3b14632e1d4b47" id="r_ae6f7419a540241e5be3b14632e1d4b47"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ae6f7419a540241e5be3b14632e1d4b47">display_weighted</a> (property:&amp;str, label:&amp;str, value:&amp;AspectPropertyValue&lt; Vec&lt; WeightedValue&lt; String &gt; &gt; &gt;,) -&gt; <a class="el" href="struct_display_value.html">DisplayValue</a></td></tr>
+<tr class="c-table__row memdesc:ae6f7419a540241e5be3b14632e1d4b47"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Reduce a weighted [<code>AspectPropertyValue</code>] to its display value, rendering each candidate as <code><a class="el" href="#a451961dd347700d7bb5d36beec33eb80" title="The resolved value, or the no-value message.">value</a> (weight)</code> ordered high weighting first and joined with commas.  <br /></td></tr>
 <tr class="c-table__row memitem:a2649a738cd16a426741908cdf1d8317b" id="r_a2649a738cd16a426741908cdf1d8317b"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a2649a738cd16a426741908cdf1d8317b">display_values</a> (ip:&amp;dyn IpIntelligenceData) -&gt; Vec&lt; <a class="el" href="struct_display_value.html">DisplayValue</a> &gt;</td></tr>
 <tr class="c-table__row memdesc:a2649a738cd16a426741908cdf1d8317b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gather the displayed IP-intelligence properties from the result, read through the strongly-typed accessors.  <br /></td></tr>
-<tr class="c-table__row memitem:aa7f5ccddf338286331865e607251505a" id="r_aa7f5ccddf338286331865e607251505a"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#aa7f5ccddf338286331865e607251505a">results_table</a> (values:&amp;[<a class="el" href="struct_display_value.html">DisplayValue</a>]) -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td></tr>
+<tr class="c-table__row memitem:a0bce7d2857efc6cf26996dc0a2ed4c91" id="r_a0bce7d2857efc6cf26996dc0a2ed4c91"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a0bce7d2857efc6cf26996dc0a2ed4c91">mark_enterprise_only</a> (values:&amp;mut[<a class="el" href="struct_display_value.html">DisplayValue</a>], available:&amp;[String])</td></tr>
+<tr class="c-table__row memdesc:a0bce7d2857efc6cf26996dc0a2ed4c91"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Replace the value of each row for a property only the Enterprise data file carries, when the data file in use does not carry it, with a note saying so.  <br /></td></tr>
+<tr class="c-table__row memitem:a6a76df3785c6cc9eb1bf754f860ea93d" id="r_a6a76df3785c6cc9eb1bf754f860ea93d"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a6a76df3785c6cc9eb1bf754f860ea93d">enterprise_message_html</a> (missing:&amp;[&amp;<a class="el" href="#ad52a815b6f792fa6fbe0a8f6229df989">str</a>]) -&gt; String</td></tr>
+<tr class="c-table__row memdesc:a6a76df3785c6cc9eb1bf754f860ea93d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A message naming the Enterprise properties the data file does not carry, with a link to ask about a copy of the Enterprise data file.  <br /></td></tr>
+<tr class="c-table__row memitem:a823d1d7c5ceed1e546532f61fde38810" id="r_a823d1d7c5ceed1e546532f61fde38810"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a823d1d7c5ceed1e546532f61fde38810">find_out_more_html</a> (repositories:&amp;[&amp;<a class="el" href="#ad52a815b6f792fa6fbe0a8f6229df989">str</a>]) -&gt; String</td></tr>
+<tr class="c-table__row memdesc:a823d1d7c5ceed1e546532f61fde38810"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The "Find out more" section that ends every page, set apart by a rule.  <br /></td></tr>
+<tr class="c-table__row memitem:aa7f5ccddf338286331865e607251505a" id="r_aa7f5ccddf338286331865e607251505a"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#aa7f5ccddf338286331865e607251505a">results_table</a> (values:&amp;[<a class="el" href="struct_display_value.html">DisplayValue</a>]) -&gt; String</td></tr>
 <tr class="c-table__row memdesc:aa7f5ccddf338286331865e607251505a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Render the server-side IP-intelligence results as a two-column <code>.c-eg-table</code> (property, value).  <br /></td></tr>
-<tr class="c-table__row memitem:a10b7c1491913f69da6ff0af0057790b3" id="r_a10b7c1491913f69da6ff0af0057790b3"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a10b7c1491913f69da6ff0af0057790b3">coordinates</a> (ip:&amp;dyn IpIntelligenceData) -&gt; Option&lt;(<a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>)&gt;</td></tr>
+<tr class="c-table__row memitem:a10b7c1491913f69da6ff0af0057790b3" id="r_a10b7c1491913f69da6ff0af0057790b3"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a10b7c1491913f69da6ff0af0057790b3">coordinates</a> (ip:&amp;dyn IpIntelligenceData) -&gt; Option&lt;(String, String)&gt;</td></tr>
 <tr class="c-table__row memdesc:a10b7c1491913f69da6ff0af0057790b3"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Extract the latitude and longitude from the result as display strings, if both resolved to a value.  <br /></td></tr>
-<tr class="c-table__row memitem:ab807d38d38f24a69afabee3214b2e38c" id="r_ab807d38d38f24a69afabee3214b2e38c"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#ab807d38d38f24a69afabee3214b2e38c">map_init_script</a> (coordinates:&amp;Option&lt;(<a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>)&gt;) -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td></tr>
+<tr class="c-table__row memitem:ab807d38d38f24a69afabee3214b2e38c" id="r_ab807d38d38f24a69afabee3214b2e38c"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#ab807d38d38f24a69afabee3214b2e38c">map_init_script</a> (coordinates:&amp;Option&lt;(String, String)&gt;) -&gt; String</td></tr>
 <tr class="c-table__row memdesc:ab807d38d38f24a69afabee3214b2e38c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the inline <code>&lt;script&gt;</code> that initializes the Leaflet location map for the supplied coordinates.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="c-table__row memitem:a62cc81dcd08eb08cee21fec7d3e4624e" id="r_a62cc81dcd08eb08cee21fec7d3e4624e"><td class="c-table__cell">pub&#160;</td><td class="c-table__cell"><a class="el" href="#a62cc81dcd08eb08cee21fec7d3e4624e">label</a></td></tr>
-<tr class="c-table__row memdesc:a62cc81dcd08eb08cee21fec7d3e4624e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The human-readable label for the property row.  <br /></td></tr>
-<tr class="c-table__row memitem:a9d58c3d628e2a73ead14ac823d810027" id="r_a9d58c3d628e2a73ead14ac823d810027"><td class="c-table__cell">pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#a9d58c3d628e2a73ead14ac823d810027">value</a></td></tr>
-<tr class="c-table__row memdesc:a9d58c3d628e2a73ead14ac823d810027"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The resolved value, or the no-value message.  <br /></td></tr>
+<tr class="c-table__row memitem:a14d6550b3f17a2c77325636fe51868e0" id="r_a14d6550b3f17a2c77325636fe51868e0"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a14d6550b3f17a2c77325636fe51868e0">ENTERPRISE_CONTACT_URL</a></td></tr>
+<tr class="c-table__row memdesc:a14d6550b3f17a2c77325636fe51868e0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Where to ask about a copy of the Enterprise data file.  <br /></td></tr>
+<tr class="c-table__row memitem:ad52a815b6f792fa6fbe0a8f6229df989" id="r_ad52a815b6f792fa6fbe0a8f6229df989"><td class="c-table__cell">pub&#160;const&#160;&amp;&#160;</td><td class="c-table__cell"><a class="el" href="#ad52a815b6f792fa6fbe0a8f6229df989">str</a></td></tr>
+<tr class="c-table__row memitem:adf5ba300143c3e9bea959172d1f72aea" id="r_adf5ba300143c3e9bea959172d1f72aea"><td class="c-table__cell">pub&#160;</td><td class="c-table__cell"><a class="el" href="#adf5ba300143c3e9bea959172d1f72aea">property</a></td></tr>
+<tr class="c-table__row memdesc:adf5ba300143c3e9bea959172d1f72aea"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The property's name, such as <code><a class="el" href="ipi-onprem-getting-started_8rs.html#a21f5309ccfac36a5fc9f674ce539524e">CountryCode</a></code>.  <br /></td></tr>
+<tr class="c-table__row memitem:aff76208710c0eea5f0fc0aa60f296fcf" id="r_aff76208710c0eea5f0fc0aa60f296fcf"><td class="c-table__cell">pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#aff76208710c0eea5f0fc0aa60f296fcf">label</a></td></tr>
+<tr class="c-table__row memdesc:aff76208710c0eea5f0fc0aa60f296fcf"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The human-readable label for the property row.  <br /></td></tr>
+<tr class="c-table__row memitem:a451961dd347700d7bb5d36beec33eb80" id="r_a451961dd347700d7bb5d36beec33eb80"><td class="c-table__cell">pub&#160;pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#a451961dd347700d7bb5d36beec33eb80">value</a></td></tr>
+<tr class="c-table__row memdesc:a451961dd347700d7bb5d36beec33eb80"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The resolved value, or the no-value message.  <br /></td></tr>
 <tr class="c-table__row memitem:a9f30616894180487ed120498b9a0c451" id="r_a9f30616894180487ed120498b9a0c451"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a9f30616894180487ed120498b9a0c451">MAP_SECTION_ID</a></td></tr>
 <tr class="c-table__row memdesc:a9f30616894180487ed120498b9a0c451"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default DOM ids the shared <code>fodExamples.initLocationMap</code> helper uses.  <br /></td></tr>
 <tr class="c-table__row memitem:a491ba2143ee68a92234491a45e9848ef" id="r_a491ba2143ee68a92234491a45e9848ef"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a491ba2143ee68a92234491a45e9848ef">MAP_CANVAS_ID</a></td></tr>
@@ -111,7 +122,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">pub fn coordinates </td>
           <td>(</td>
           <td class="c-table__cell">ip:&amp;dyn</td>          <td class="c-table__cell"><span class="paramname"><em>IpIntelligenceData</em></span></td><td>)</td>
-          <td> -&gt; Option&lt;(<a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>)&gt;</td>
+          <td> -&gt; Option&lt;(String, String)&gt;</td>
         </tr>
           </table>
         </div>
@@ -143,13 +154,13 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Gather the displayed IP-intelligence properties from the result, read through the strongly-typed accessors. </p>
-<p>The order is network registration first, then the textual location, the coordinates and accuracy, then the network flags and the weighted country-code distributions.</p>
-<p>Plain properties (strings, the [<code>f32</code>] coordinates, the [<code>i32</code>] radii and the [<code><a class="el" href="performance__results_8rs.html#a13eda313804a469af81193c4e2e1ee58" title="Whether any metric has been added.">bool</a></code>] flags) resolve to a single value. The weighted properties at the end (<code><a class="el" href="ipi-onprem-getting-started_8rs.html#a82896aff300e820bf65cd4cbedf43b20">CountryCodesGeographical</a></code>, <code><a class="el" href="ipi-onprem-getting-started_8rs.html#a6642b83e590148db7a239475a947ad29">CountryCodesPopulation</a></code>, <code><a class="el" href="ipi-onprem-getting-started_8rs.html#a7c00cae4aeb6106a3784bc0885e0507c">Mcc</a></code>) resolve to a weighted list, shown as <code><a class="el" href="#a9d58c3d628e2a73ead14ac823d810027" title="The resolved value, or the no-value message.">value</a> (weight)</code> pairs. </p>
+<p>The order is the autonomous system and network registration first, then the textual location, the coordinates and accuracy, then the network flags and the weighted country-code distributions.</p>
+<p>Plain properties (strings, the [<code>f32</code>] coordinates, the [<code>i32</code>] radii and the [<code><a class="el" href="data__paths_8rs.html#ace367d07d2cbc650fd186739e5511adb" title="Run the command, returning whether it succeeded.">bool</a></code>] flags) resolve to a single value. The weighted properties at the end (<code><a class="el" href="ipi-onprem-getting-started_8rs.html#a82896aff300e820bf65cd4cbedf43b20">CountryCodesGeographical</a></code>, <code><a class="el" href="ipi-onprem-getting-started_8rs.html#a6642b83e590148db7a239475a947ad29">CountryCodesPopulation</a></code>, <code><a class="el" href="ipi-onprem-getting-started_8rs.html#a7c00cae4aeb6106a3784bc0885e0507c">Mcc</a></code>) resolve to a weighted list, shown as <code><a class="el" href="#a451961dd347700d7bb5d36beec33eb80" title="The resolved value, or the no-value message.">value</a> (weight)</code> pairs. </p>
 
 </div>
 </div>
-<a id="a8858c644f93e7199bcbcbec160751ef5" name="a8858c644f93e7199bcbcbec160751ef5"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8858c644f93e7199bcbcbec160751ef5">&#9670;&#160;</a></span>display_weighted()</h2>
+<a id="ae6f7419a540241e5be3b14632e1d4b47" name="ae6f7419a540241e5be3b14632e1d4b47"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae6f7419a540241e5be3b14632e1d4b47">&#9670;&#160;</a></span>display_weighted()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -159,21 +170,74 @@ Variables</h2></td></tr>
             <tr class="c-table__row">
               <td class="c-table__cell">fn display_weighted </td>
           <td>(</td>
+          <td class="c-table__cell">property:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
           <td class="c-table__cell">label:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">property:&amp;AspectPropertyValue&lt; Vec&lt; WeightedValue&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt; &gt; &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; <a class="el" href="struct_display_value.html">DisplayValue</a></td>
+          <td class="c-table__cell">value:&amp;AspectPropertyValue&lt; Vec&lt; WeightedValue&lt; String &gt; &gt; &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; <a class="el" href="struct_display_value.html">DisplayValue</a></td>
         </tr>
           </table>
         </div>
       </div>
 </div><div class="c-member__body">
 
-<p>Reduce a weighted [<code>AspectPropertyValue</code>] to its display value, rendering each candidate as <code><a class="el" href="#a9d58c3d628e2a73ead14ac823d810027" title="The resolved value, or the no-value message.">value</a> (weight)</code> ordered high weighting first and joined with commas. </p>
+<p>Reduce a weighted [<code>AspectPropertyValue</code>] to its display value, rendering each candidate as <code><a class="el" href="#a451961dd347700d7bb5d36beec33eb80" title="The resolved value, or the no-value message.">value</a> (weight)</code> ordered high weighting first and joined with commas. </p>
 <p>A no-value carries the engine's explanation.</p>
-<p>This is how the genuinely weighted properties (the country-code distributions and <code><a class="el" href="ipi-onprem-getting-started_8rs.html#a7c00cae4aeb6106a3784bc0885e0507c">Mcc</a></code>) are shown: a single IP can overlap several countries, so the value is a weighted list rather than one definite value. </p>
+<p>This is how a weighted property is shown: a single IP can overlap several countries, so the value is a weighted list rather than one definite value. </p>
+
+</div>
+</div>
+<a id="a6a76df3785c6cc9eb1bf754f860ea93d" name="a6a76df3785c6cc9eb1bf754f860ea93d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6a76df3785c6cc9eb1bf754f860ea93d">&#9670;&#160;</a></span>enterprise_message_html()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub fn enterprise_message_html </td>
+          <td>(</td>
+          <td class="c-table__cell">missing:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[&amp;str]</td><td>)</td>
+          <td> -&gt; String</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>A message naming the Enterprise properties the data file does not carry, with a link to ask about a copy of the Enterprise data file. </p>
+<p>Empty when <code>missing</code> is empty. </p>
+
+</div>
+</div>
+<a id="a823d1d7c5ceed1e546532f61fde38810" name="a823d1d7c5ceed1e546532f61fde38810"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a823d1d7c5ceed1e546532f61fde38810">&#9670;&#160;</a></span>find_out_more_html()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub fn find_out_more_html </td>
+          <td>(</td>
+          <td class="c-table__cell">repositories:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[&amp;str]</td><td>)</td>
+          <td> -&gt; String</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The "Find out more" section that ends every page, set apart by a rule. </p>
+<p>It lists [<code><a class="el" href="dd-cloud-configurator_8rs.html#ad25b7f6d0c89d56f4024e2b559cf89cc" title="The links the example&#39;s output ends with.">FIND_OUT_MORE</a></code>] and then each of <code>repositories</code> as a bare address. </p>
 
 </div>
 </div>
@@ -188,8 +252,8 @@ Variables</h2></td></tr>
             <tr class="c-table__row">
               <td class="c-table__cell">pub fn map_init_script </td>
           <td>(</td>
-          <td class="c-table__cell">coordinates:&amp;Option&lt;(<a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>)&gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td>
+          <td class="c-table__cell">coordinates:&amp;Option&lt;(String, String)&gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; String</td>
         </tr>
           </table>
         </div>
@@ -198,6 +262,34 @@ Variables</h2></td></tr>
 
 <p>Build the inline <code>&lt;script&gt;</code> that initializes the Leaflet location map for the supplied coordinates. </p>
 <p>When no coordinates resolved the map stays hidden and an empty string is returned, so the page renders without a map. </p>
+
+</div>
+</div>
+<a id="a0bce7d2857efc6cf26996dc0a2ed4c91" name="a0bce7d2857efc6cf26996dc0a2ed4c91"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0bce7d2857efc6cf26996dc0a2ed4c91">&#9670;&#160;</a></span>mark_enterprise_only()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub fn mark_enterprise_only </td>
+          <td>(</td>
+          <td class="c-table__cell">values:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>mut</em></span>[DisplayValue], </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">available:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String]&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Replace the value of each row for a property only the Enterprise data file carries, when the data file in use does not carry it, with a note saying so. </p>
+<p><code><a class="el" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5" title="The properties the data file carries.">available</a></code> holds the properties the data file carries. </p>
 
 </div>
 </div>
@@ -213,7 +305,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">pub fn results_table </td>
           <td>(</td>
           <td class="c-table__cell">values:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[DisplayValue]</td><td>)</td>
-          <td> -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td>
+          <td> -&gt; String</td>
         </tr>
           </table>
         </div>
@@ -224,8 +316,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a749647531536dd5127e7ef0b82685080" name="a749647531536dd5127e7ef0b82685080"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a749647531536dd5127e7ef0b82685080">&#9670;&#160;</a></span>T()</h2>
+<a id="ad0c2824278fe83f467fdf5cc24646eae" name="ad0c2824278fe83f467fdf5cc24646eae"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad0c2824278fe83f467fdf5cc24646eae">&#9670;&#160;</a></span>T()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -235,12 +327,17 @@ Variables</h2></td></tr>
             <tr class="c-table__row">
               <td class="c-table__cell">pub struct <a class="el" href="struct_display_value.html">DisplayValue</a> T </td>
           <td>(</td>
+          <td class="c-table__cell">property:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
           <td class="c-table__cell">label:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">property:&amp;AspectPropertyValue&lt; T &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+          <td class="c-table__cell">value:&amp;AspectPropertyValue&lt; T &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
@@ -278,8 +375,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a62cc81dcd08eb08cee21fec7d3e4624e" name="a62cc81dcd08eb08cee21fec7d3e4624e"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a62cc81dcd08eb08cee21fec7d3e4624e">&#9670;&#160;</a></span>label</h2>
+<a id="a14d6550b3f17a2c77325636fe51868e0" name="a14d6550b3f17a2c77325636fe51868e0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a14d6550b3f17a2c77325636fe51868e0">&#9670;&#160;</a></span>ENTERPRISE_CONTACT_URL</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -287,7 +384,27 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">pub label</td>
+              <td class="c-table__cell">pub const ENTERPRISE_CONTACT_URL</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Where to ask about a copy of the Enterprise data file. </p>
+
+</div>
+</div>
+<a id="aff76208710c0eea5f0fc0aa60f296fcf" name="aff76208710c0eea5f0fc0aa60f296fcf"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aff76208710c0eea5f0fc0aa60f296fcf">&#9670;&#160;</a></span>label</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub pub label</td>
             </tr>
           </table>
         </div>
@@ -355,8 +472,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a9d58c3d628e2a73ead14ac823d810027" name="a9d58c3d628e2a73ead14ac823d810027"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9d58c3d628e2a73ead14ac823d810027">&#9670;&#160;</a></span>value</h2>
+<a id="adf5ba300143c3e9bea959172d1f72aea" name="adf5ba300143c3e9bea959172d1f72aea"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adf5ba300143c3e9bea959172d1f72aea">&#9670;&#160;</a></span>property</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -364,7 +481,50 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">pub pub value</td>
+              <td class="c-table__cell">pub property</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The property's name, such as <code><a class="el" href="ipi-onprem-getting-started_8rs.html#a21f5309ccfac36a5fc9f674ce539524e">CountryCode</a></code>. </p>
+
+</div>
+</div>
+<a id="ad52a815b6f792fa6fbe0a8f6229df989" name="ad52a815b6f792fa6fbe0a8f6229df989"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad52a815b6f792fa6fbe0a8f6229df989">&#9670;&#160;</a></span>str</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub const &amp; str</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">     = &amp;[</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;IP Intelligence&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/ip-intelligence?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-web_support-mod.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Pricing&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-web_support-mod.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Documentation&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-web_support-mod.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">]</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a451961dd347700d7bb5d36beec33eb80" name="a451961dd347700d7bb5d36beec33eb80"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a451961dd347700d7bb5d36beec33eb80">&#9670;&#160;</a></span>value</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">pub pub pub value</td>
             </tr>
           </table>
         </div>

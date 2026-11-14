@@ -72,8 +72,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-attribs" class="g-docs__section-heading"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="c-table__row memitem:ac6b97de65f729f8566e7d0ff9d1f7fd9" id="r_ac6b97de65f729f8566e7d0ff9d1f7fd9"><td class="c-table__cell"><a id="ac6b97de65f729f8566e7d0ff9d1f7fd9" name="ac6b97de65f729f8566e7d0ff9d1f7fd9"></a>
-static&#160;final&#160;int&#160;</td><td class="c-table__cell"><b>SHARE_USAGE_MAX_EVIDENCE_LENGTH</b> = 512</td></tr>
-<tr class="c-table__row memdesc:ac6b97de65f729f8566e7d0ff9d1f7fd9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The maximum length of a piece of evidence's value which can be added to the usage data being sent. <br /></td></tr>
+static&#160;final&#160;int&#160;</td><td class="c-table__cell"><b>SHARE_USAGE_MAX_EVIDENCE_LENGTH</b> = 10000</td></tr>
+<tr class="c-table__row memdesc:ac6b97de65f729f8566e7d0ff9d1f7fd9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The maximum length, in characters, of a piece of evidence's value which can be added to the usage data being sent. <br /></td></tr>
 <tr class="c-table__row memitem:a191adf7230679f0f7a678297d639a6d7" id="r_a191adf7230679f0f7a678297d639a6d7"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a191adf7230679f0f7a678297d639a6d7">EVIDENCE_SESSIONID_SUFFIX</a> = &quot;session-id&quot;</td></tr>
 <tr class="c-table__row memdesc:a191adf7230679f0f7a678297d639a6d7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Session id evidence suffix.  <br /></td></tr>
 <tr class="c-table__row memitem:af28ccc810b49e19f04d5f10e5e767b47" id="r_af28ccc810b49e19f04d5f10e5e767b47"><td class="c-table__cell">static&#160;final&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#af28ccc810b49e19f04d5f10e5e767b47">EVIDENCE_SESSIONID</a></td></tr>
@@ -86,6 +86,27 @@ static&#160;final&#160;int&#160;</td><td class="c-table__cell"><b>SHARE_USAGE_MA
 static&#160;final&#160;int&#160;</td><td class="c-table__cell"><b>SHARE_USAGE_DEFAULT_REPEAT_EVIDENCE_MINUTES</b> = 20</td></tr>
 <tr class="c-table__row memitem:a3025220cd0fb6c5f36a470ad4358ea31" id="r_a3025220cd0fb6c5f36a470ad4358ea31"><td class="c-table__cell"><a id="a3025220cd0fb6c5f36a470ad4358ea31" name="a3025220cd0fb6c5f36a470ad4358ea31"></a>
 static&#160;final&#160;double&#160;</td><td class="c-table__cell"><b>SHARE_USAGE_DEFAULT_SHARE_PERCENTAGE</b> = 1.0</td></tr>
+<tr class="c-table__row memitem:a162a79bf6f8b0f2a3f127764070d771f" id="r_a162a79bf6f8b0f2a3f127764070d771f"><td class="c-table__cell"><a id="a162a79bf6f8b0f2a3f127764070d771f" name="a162a79bf6f8b0f2a3f127764070d771f"></a>
+static&#160;final&#160;int&#160;</td><td class="c-table__cell"><b>SHARE_USAGE_FAILURES_TO_ENTER_RECOVERY_DEFAULT</b> = 10</td></tr>
+<tr class="c-table__row memdesc:a162a79bf6f8b0f2a3f127764070d771f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default number of failed sends within the failures window that pauses sending. <br /></td></tr>
+<tr class="c-table__row memitem:a0d99fdf95434481052a67e5475561d94" id="r_a0d99fdf95434481052a67e5475561d94"><td class="c-table__cell"><a id="a0d99fdf95434481052a67e5475561d94" name="a0d99fdf95434481052a67e5475561d94"></a>
+static&#160;final&#160;int&#160;</td><td class="c-table__cell"><b>SHARE_USAGE_FAILURES_TO_ENTER_RECOVERY_MIN</b> = 1</td></tr>
+<tr class="c-table__row memdesc:a0d99fdf95434481052a67e5475561d94"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The fewest failed sends that can be set to pause sending. <br /></td></tr>
+<tr class="c-table__row memitem:a42144885b2c6227e24ab862276ab0a2b" id="r_a42144885b2c6227e24ab862276ab0a2b"><td class="c-table__cell"><a id="a42144885b2c6227e24ab862276ab0a2b" name="a42144885b2c6227e24ab862276ab0a2b"></a>
+static&#160;final&#160;int&#160;</td><td class="c-table__cell"><b>SHARE_USAGE_FAILURES_TO_ENTER_RECOVERY_MAX</b> = 100</td></tr>
+<tr class="c-table__row memdesc:a42144885b2c6227e24ab862276ab0a2b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The most failed sends that can be set to pause sending. <br /></td></tr>
+<tr class="c-table__row memitem:abb74726301a7926aff433485f3812278" id="r_abb74726301a7926aff433485f3812278"><td class="c-table__cell"><a id="abb74726301a7926aff433485f3812278" name="abb74726301a7926aff433485f3812278"></a>
+static&#160;final&#160;int&#160;</td><td class="c-table__cell"><b>SHARE_USAGE_FAILURES_WINDOW_SECONDS_DEFAULT</b> = 100</td></tr>
+<tr class="c-table__row memdesc:abb74726301a7926aff433485f3812278"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default time in seconds over which failed sends are counted. <br /></td></tr>
+<tr class="c-table__row memitem:af755817694792147003fbf70b798b27e" id="r_af755817694792147003fbf70b798b27e"><td class="c-table__cell"><a id="af755817694792147003fbf70b798b27e" name="af755817694792147003fbf70b798b27e"></a>
+static&#160;final&#160;double&#160;</td><td class="c-table__cell"><b>SHARE_USAGE_EXPONENTIAL_BACKOFF_INITIAL_DELAY_SECONDS_DEFAULT</b> = 2.0</td></tr>
+<tr class="c-table__row memdesc:af755817694792147003fbf70b798b27e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default length in seconds of the first pause after failed sends. <br /></td></tr>
+<tr class="c-table__row memitem:ae4f365ecd5cc64e07a3c58a3f07115c0" id="r_ae4f365ecd5cc64e07a3c58a3f07115c0"><td class="c-table__cell"><a id="ae4f365ecd5cc64e07a3c58a3f07115c0" name="ae4f365ecd5cc64e07a3c58a3f07115c0"></a>
+static&#160;final&#160;double&#160;</td><td class="c-table__cell"><b>SHARE_USAGE_EXPONENTIAL_BACKOFF_MAX_DELAY_SECONDS_DEFAULT</b> = 300.0</td></tr>
+<tr class="c-table__row memdesc:ae4f365ecd5cc64e07a3c58a3f07115c0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default longest pause in seconds. <br /></td></tr>
+<tr class="c-table__row memitem:a2d5e7d12a41ba5b35bbe4d5c2619ae4f" id="r_a2d5e7d12a41ba5b35bbe4d5c2619ae4f"><td class="c-table__cell"><a id="a2d5e7d12a41ba5b35bbe4d5c2619ae4f" name="a2d5e7d12a41ba5b35bbe4d5c2619ae4f"></a>
+static&#160;final&#160;double&#160;</td><td class="c-table__cell"><b>SHARE_USAGE_EXPONENTIAL_BACKOFF_MULTIPLIER_DEFAULT</b> = 2.0</td></tr>
+<tr class="c-table__row memdesc:a2d5e7d12a41ba5b35bbe4d5c2619ae4f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default multiplier applied to the pause each time the send tried when a pause ends fails. <br /></td></tr>
 </table>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
 <a id="a18f310c5706090770ea7ab57343308ec" name="a18f310c5706090770ea7ab57343308ec"></a>

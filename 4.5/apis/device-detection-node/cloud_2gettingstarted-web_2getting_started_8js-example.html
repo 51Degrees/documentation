@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <li><a href="https://www.npmjs.com/package/fiftyone.devicedetection.cloud">fiftyone.devicedetection.cloud</a></li>
 </ul>
 <h2>Overview</h2>
-<p>The <code>flowData.evidence.addFromRequestAsync(request)</code> is used to extract required evidence from a Http request, including the values the 51Degrees client script sends as a posted form body, which are only reached by reading the body. The <code><a class="elRef" href="../../pipeline-node/4.5/class_helpers.html#a3155a15799e3249c574e7083755d9dbc">Helpers.setResponseHeaders(response, flowData)</a></code> from fiftyone.pipeline.core package is used to add extra headers to a Http response to request further evidence from the client. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">await flowData.evidence.addFromRequestAsync(request);</div>
+<p>The <code>flowData.evidence.addFromRequestAsync(request)</code> is used to extract required evidence from a Http request, including the values the 51Degrees client script sends as a posted form body, which are only reached by reading the body. The <code>Helpers.setResponseHeaders(response, flowData)</code> from fiftyone.pipeline.core package is used to add extra headers to a Http response to request further evidence from the client. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">await flowData.evidence.addFromRequestAsync(request);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">core.Helpers.setResponseHeaders(response, flowData);</div>
 </div><!-- fragment --><p>The results of detection can be accessed by querying the <code>device</code> property of a <a class="elRef" href="../../pipeline-node/4.5/class_flow_data.html">FlowData</a> object. This can then be used to interrogate the data. </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">var flowData = pipeline.createFlowData();</div>
@@ -253,10 +253,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__keywordflow">if</span> (req.url.startsWith(<span class="c-code__stringliteral">&#39;/json&#39;</span>)) {</div>
 <div class="c-code__line">    flowData.process().then(<span class="c-code__keyword">function</span> () {</div>
-<div class="c-code__line">      res.statusCode = 200;</div>
-<div class="c-code__line">      res.setHeader(<span class="c-code__stringliteral">&#39;Content-Type&#39;</span>, <span class="c-code__stringliteral">&#39;application/json&#39;</span>);</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">      res.end(JSON.stringify(flowData.jsonbundler.json));</div>
+<div class="c-code__line">      <span class="c-code__comment">// Sends the caching headers, and a 304 to a matching If-None-Match.</span></div>
+<div class="c-code__line">      core.Helpers.writeClientSideResponse(req, res, flowData,</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;application/json&#39;</span>, JSON.stringify(flowData.jsonbundler.json));</div>
 <div class="c-code__line">    });</div>
 <div class="c-code__line">  } <span class="c-code__keywordflow">else</span> <span class="c-code__keywordflow">if</span> (req.url.split(<span class="c-code__charliteral">&#39;?&#39;</span>)[0] === coreJsPath) {</div>
 <div class="c-code__line">    <span class="c-code__comment">// Serve the client-side script built by the JavaScriptBuilder as a separate</span></div>
@@ -267,10 +266,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <div class="c-code__line">    <span class="c-code__comment">// &#39;fod-js-enable-cookies&#39;, are evidence like any other and are already in</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// the flow data via addFromRequest.</span></div>
 <div class="c-code__line">    flowData.process().then(<span class="c-code__keyword">function</span> () {</div>
-<div class="c-code__line">      res.statusCode = 200;</div>
-<div class="c-code__line">      res.setHeader(<span class="c-code__stringliteral">&#39;Content-Type&#39;</span>, <span class="c-code__stringliteral">&#39;application/x-javascript&#39;</span>);</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">      res.end(flowData.javascriptbuilder.javascript);</div>
+<div class="c-code__line">      <span class="c-code__comment">// Sends the caching headers, and a 304 to a matching If-None-Match.</span></div>
+<div class="c-code__line">      core.Helpers.writeClientSideResponse(req, res, flowData,</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;application/x-javascript&#39;</span>, flowData.javascriptbuilder.javascript);</div>
 <div class="c-code__line">    });</div>
 <div class="c-code__line">  } <span class="c-code__keywordflow">else</span> {</div>
 <div class="c-code__line">    flowData.process().then(<span class="c-code__keyword">function</span> () {</div>
@@ -351,7 +349,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('cloud_2getting
 <div class="c-code__line">};</div>
 <div class="ttc" id="aclass_data_extension_html"><div class="ttname"><a href="class_data_extension.html">DataExtension</a></div><div class="ttdef"><b>Definition</b> dataExtension.js:23</div></div>
 <div class="ttc" id="aclass_data_extension_html_a208dbc998aec51823620213f54daf71b"><div class="ttname"><a href="class_data_extension.html#a208dbc998aec51823620213f54daf71b">DataExtension::getValueHelper</a></div><div class="ttdeci">static getValueHelper(elementData, propertyName)</div><div class="ttdoc">Format a property value for display.</div><div class="ttdef"><b>Definition</b> dataExtension.js:37</div></div>
-<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.devicedetection.onpremise/examples/onpremise/exampleUtils.js:108</div></div>
+<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.devicedetection.onpremise/examples/onpremise/exampleUtils.js:190</div></div>
 <div class="ttc" id="aclass_options_extension_html"><div class="ttname"><a href="class_options_extension.html">OptionsExtension</a></div><div class="ttdef"><b>Definition</b> optionsExtension.js:27</div></div>
 <div class="ttc" id="aclass_options_extension_html_a091ea0ec3e324fea319f746f4966698f"><div class="ttname"><a href="class_options_extension.html#a091ea0ec3e324fea319f746f4966698f">OptionsExtension::setResourceKey</a></div><div class="ttdeci">static setResourceKey(options, resourceKey)</div><div class="ttdoc">Set resource key.</div><div class="ttdef"><b>Definition</b> optionsExtension.js:120</div></div>
 <div class="ttc" id="aclass_options_extension_html_a8f39f520cce4cdb4a6ba0c5bf0d1fe33"><div class="ttname"><a href="class_options_extension.html#a8f39f520cce4cdb4a6ba0c5bf0d1fe33">OptionsExtension::getResourceKey</a></div><div class="ttdeci">static getResourceKey(options)</div><div class="ttdoc">Get resource Key.</div><div class="ttdef"><b>Definition</b> optionsExtension.js:105</div></div>

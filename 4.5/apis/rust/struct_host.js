@@ -1,0 +1,6 @@
+var struct_host =
+[
+    [ "__pad0__", "struct_host.html#a7cba065590dfdcf6f983bd7e851d1d56", null ],
+    [ "has_pwsh", "struct_host.html#a02b35ad6d0c9e772155626fbcebb29db", null ],
+    [ "in_github_actions", "struct_host.html#a4980127a85f626dbf53e7a66d5653046", null ]
+];

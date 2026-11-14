@@ -1,11 +1,12 @@
 var searchData=
 [
-  ['weightedvalue_0',['WeightedValue',['../../../pipeline-java/4.4/classfiftyone_1_1pipeline_1_1core_1_1data_1_1_weighted_value.html#ab2c9a99b9a235581ba4da9a92f83b4b0',1,'fiftyone::pipeline::core::data::WeightedValue']]],
-  ['wktstring_1',['WktString',['../../../pipeline-java/4.4/classfiftyone_1_1pipeline_1_1core_1_1data_1_1_wkt_string.html#aa56537093697a9140e6e4f2fb9938138',1,'fiftyone::pipeline::core::data::WktString']]],
-  ['writebyte_2',['writeByte',['../../../pipeline-java/4.4/classfiftyone_1_1common_1_1wrappers_1_1data_1_1_binary_writer.html#ac893dfd0a3be362d132bd3736eda2be6',1,'fiftyone::common::wrappers::data::BinaryWriter']]],
-  ['writebytes_3',['writeBytes',['../../../pipeline-java/4.4/classfiftyone_1_1common_1_1wrappers_1_1data_1_1_binary_writer.html#a79fa040e5b084b56dba4762f5b091af7',1,'fiftyone::common::wrappers::data::BinaryWriter']]],
-  ['writeint16_4',['writeInt16',['../../../pipeline-java/4.4/classfiftyone_1_1common_1_1wrappers_1_1data_1_1_binary_writer.html#a1423115b60c1e1bc54bdffda776d485e',1,'fiftyone::common::wrappers::data::BinaryWriter']]],
-  ['writeint32_5',['writeInt32',['../../../pipeline-java/4.4/classfiftyone_1_1common_1_1wrappers_1_1data_1_1_binary_writer.html#ad1c4c4c3833c8ecc672c21d9f1d4adb6',1,'fiftyone::common::wrappers::data::BinaryWriter']]],
-  ['writeint64_6',['writeInt64',['../../../pipeline-java/4.4/classfiftyone_1_1common_1_1wrappers_1_1data_1_1_binary_writer.html#a4ed445f57fdc9d7819dbb32ee4db0e52',1,'fiftyone::common::wrappers::data::BinaryWriter']]],
-  ['writexmldata_7',['writeXmlData',['../../../pipeline-java/4.4/classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_element.html#acf0cd522e5f2e14ff88516bda8d67a54',1,'fiftyone::pipeline::engines::fiftyone::flowelements::ShareUsageElement']]]
+  ['waitwhilepaused_0',['waitWhilePaused',['../../../pipeline-java/4.4/classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_base.html#a360a53c423a7cf56f08c9e35e28a0045',1,'fiftyone::pipeline::engines::fiftyone::flowelements::ShareUsageBase']]],
+  ['weightedvalue_1',['WeightedValue',['../../../pipeline-java/4.4/classfiftyone_1_1pipeline_1_1core_1_1data_1_1_weighted_value.html#ab2c9a99b9a235581ba4da9a92f83b4b0',1,'fiftyone::pipeline::core::data::WeightedValue']]],
+  ['wktstring_2',['WktString',['../../../pipeline-java/4.4/classfiftyone_1_1pipeline_1_1core_1_1data_1_1_wkt_string.html#aa56537093697a9140e6e4f2fb9938138',1,'fiftyone::pipeline::core::data::WktString']]],
+  ['writebyte_3',['writeByte',['../../../pipeline-java/4.4/classfiftyone_1_1common_1_1wrappers_1_1data_1_1_binary_writer.html#ac893dfd0a3be362d132bd3736eda2be6',1,'fiftyone::common::wrappers::data::BinaryWriter']]],
+  ['writebytes_4',['writeBytes',['../../../pipeline-java/4.4/classfiftyone_1_1common_1_1wrappers_1_1data_1_1_binary_writer.html#a79fa040e5b084b56dba4762f5b091af7',1,'fiftyone::common::wrappers::data::BinaryWriter']]],
+  ['writeint16_5',['writeInt16',['../../../pipeline-java/4.4/classfiftyone_1_1common_1_1wrappers_1_1data_1_1_binary_writer.html#a1423115b60c1e1bc54bdffda776d485e',1,'fiftyone::common::wrappers::data::BinaryWriter']]],
+  ['writeint32_6',['writeInt32',['../../../pipeline-java/4.4/classfiftyone_1_1common_1_1wrappers_1_1data_1_1_binary_writer.html#ad1c4c4c3833c8ecc672c21d9f1d4adb6',1,'fiftyone::common::wrappers::data::BinaryWriter']]],
+  ['writeint64_7',['writeInt64',['../../../pipeline-java/4.4/classfiftyone_1_1common_1_1wrappers_1_1data_1_1_binary_writer.html#a4ed445f57fdc9d7819dbb32ee4db0e52',1,'fiftyone::common::wrappers::data::BinaryWriter']]],
+  ['writexmldata_8',['writeXmlData',['../../../pipeline-java/4.4/classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_element.html#acf0cd522e5f2e14ff88516bda8d67a54',1,'fiftyone::pipeline::engines::fiftyone::flowelements::ShareUsageElement']]]
 ];

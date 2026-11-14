@@ -52,6 +52,6 @@ var searchData=
   ['fiftyone_3a_3apipeline_3a_3aweb_3a_3amvc_3a_3acomponents_49',['components',['../../../pipeline-java/4.4/classfiftyone_1_1pipeline_1_1web_1_1mvc_1_1components_1_1_fifty_one_interceptor.html',1,'fiftyone::pipeline::web::mvc']]],
   ['fiftyone_3a_3apipeline_3a_3aweb_3a_3amvc_3a_3aconfiguration_50',['configuration',['../../../pipeline-java/4.4/classfiftyone_1_1pipeline_1_1web_1_1mvc_1_1configuration_1_1_fifty_one_interceptor_config_default.html',1,'fiftyone::pipeline::web::mvc']]],
   ['fiftyone_3a_3apipeline_3a_3aweb_3a_3amvc_3a_3aservices_51',['services',['../../../pipeline-java/4.4/interfacefiftyone_1_1pipeline_1_1web_1_1mvc_1_1services_1_1_web_request_evidence_service.html',1,'fiftyone::pipeline::web::mvc']]],
-  ['fiftyone_3a_3apipeline_3a_3aweb_3a_3aservices_52',['services',['../../../pipeline-java/4.4/interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_u_a_c_h_service_core.html',1,'fiftyone::pipeline::web']]],
+  ['fiftyone_3a_3apipeline_3a_3aweb_3a_3aservices_52',['services',['../../../pipeline-java/4.4/classfiftyone_1_1pipeline_1_1web_1_1services_1_1_web_request_evidence.html',1,'fiftyone::pipeline::web']]],
   ['fiftyone_3a_3apipeline_3a_3aweb_3a_3ashared_53',['shared',['../../../pipeline-java/4.4/classfiftyone_1_1pipeline_1_1web_1_1shared_1_1_constants.html',1,'fiftyone::pipeline::web']]]
 ];

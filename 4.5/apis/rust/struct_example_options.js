@@ -2,6 +2,7 @@ var struct_example_options =
 [
     [ "cloud_request_origin", "struct_example_options.html#ad60b731763d28669b7317ad15954c4ed", null ],
     [ "data_file", "struct_example_options.html#a79ef4af416ee8c3472e3fa41025a685b", null ],
+    [ "data_files", "struct_example_options.html#aeccdd07d5debdfe1aa48eafad32e0166", null ],
     [ "endpoint", "struct_example_options.html#a49d26b03f29446bcc51a4626f8626e35", null ],
     [ "evidence_file", "struct_example_options.html#ab864334532fa3cc159ccd3482ec766b7", null ],
     [ "ips", "struct_example_options.html#a83228972b80e1e38092cd7d41ec1ddde", null ],
@@ -16,6 +17,8 @@ var struct_example_options =
     [ "output_file", "struct_example_options.html#ad34053ab8a8dcc3ff6f642028d8cf0ce", null ],
     [ "passes", "struct_example_options.html#af35bf333d00e0d1e25cd4a40e096a933", null ],
     [ "profile", "struct_example_options.html#a5ec3ea86f1a0e77cd34be04a97eeebfb", null ],
+    [ "profile", "struct_example_options.html#ab770f66d275853c581cf8721cfd89f14", null ],
+    [ "profile", "struct_example_options.html#a2e8dc34cc098188b73c37af8343f3b91", null ],
     [ "profiles", "struct_example_options.html#a3580f82a57e3072c78ae08ffe137a3e0", null ],
     [ "resource_key", "struct_example_options.html#ab291a232fc6e4d369209ae9c4898b174", null ],
     [ "String", "struct_example_options.html#a8ac985865d2bf3b9c0c3e515c130d4b5", null ],

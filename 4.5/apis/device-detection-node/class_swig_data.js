@@ -1,5 +1,6 @@
 var class_swig_data =
 [
     [ "constructor", "class_swig_data.html#a5965a6c962049b04a59a3116a5326fb6", null ],
-    [ "getInternal", "class_swig_data.html#a827a398801cb17ab8ac6dce605d3c966", null ]
+    [ "getInternal", "class_swig_data.html#a827a398801cb17ab8ac6dce605d3c966", null ],
+    [ "getInternalIgnoringCase", "class_swig_data.html#aee8beb38468b7a54c2a12d2ade3b6eb1", null ]
 ];

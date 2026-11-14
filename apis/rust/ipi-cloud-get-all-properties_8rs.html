@@ -76,7 +76,7 @@ Classes</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="c-table__row memitem:aba3f12f75d2aa525a41a3da34beb616b" id="r_aba3f12f75d2aa525a41a3da34beb616b"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_options.html">Options</a>&#160;</td><td class="c-table__cell"><a class="el" href="#aba3f12f75d2aa525a41a3da34beb616b">run</a> (options:Options) -&gt; Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:aba3f12f75d2aa525a41a3da34beb616b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The example logic: build a cloud IP-intelligence pipeline, process one IP address, then enumerate every property the result holds, printing each with its weighted values.  <br /></td></tr>
-<tr class="c-table__row memitem:a58d3dffaf3ddfef4a28ff1550f7c3030" id="r_a58d3dffaf3ddfef4a28ff1550f7c3030"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a58d3dffaf3ddfef4a28ff1550f7c3030">render_value</a> (value:&amp;PropertyValue) -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td></tr>
+<tr class="c-table__row memitem:a58d3dffaf3ddfef4a28ff1550f7c3030" id="r_a58d3dffaf3ddfef4a28ff1550f7c3030"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a58d3dffaf3ddfef4a28ff1550f7c3030">render_value</a> (value:&amp;PropertyValue) -&gt; String</td></tr>
 <tr class="c-table__row memdesc:a58d3dffaf3ddfef4a28ff1550f7c3030"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Render any property value for display.  <br /></td></tr>
 <tr class="c-table__row memitem:a685047298dbf9911e9f06a366e9b1bb4" id="r_a685047298dbf9911e9f06a366e9b1bb4"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a685047298dbf9911e9f06a366e9b1bb4">main</a> () -&gt; Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a685047298dbf9911e9f06a366e9b1bb4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read the resource key and optional endpoint and run the example.  <br /></td></tr>
@@ -87,6 +87,9 @@ Functions</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="c-table__row memitem:ad25b7f6d0c89d56f4024e2b559cf89cc" id="r_ad25b7f6d0c89d56f4024e2b559cf89cc"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#ad25b7f6d0c89d56f4024e2b559cf89cc">FIND_OUT_MORE</a></td></tr>
+<tr class="c-table__row memdesc:ad25b7f6d0c89d56f4024e2b559cf89cc"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The links the example's output ends with.  <br /></td></tr>
+<tr class="c-table__row memitem:a59c09f4d2e77fa42c030902215658830" id="r_a59c09f4d2e77fa42c030902215658830"><td class="c-table__cell">const&#160;&amp;&#160;</td><td class="c-table__cell"><a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a></td></tr>
 <tr class="c-table__row memitem:ace022a29563ed7cbd82d7bfe115d7108" id="r_ace022a29563ed7cbd82d7bfe115d7108"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#ace022a29563ed7cbd82d7bfe115d7108">CLIENT_IP_EVIDENCE_KEY</a></td></tr>
 <tr class="c-table__row memdesc:ace022a29563ed7cbd82d7bfe115d7108"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The evidence key under which the client IP address is supplied to the cloud pipeline.  <br /></td></tr>
 <tr class="c-table__row memitem:a247f2fdf5ab83c37ebf10fefa08214b0" id="r_a247f2fdf5ab83c37ebf10fefa08214b0"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a247f2fdf5ab83c37ebf10fefa08214b0">SAMPLE_IP</a></td></tr>
@@ -136,7 +139,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">fn render_value </td>
           <td>(</td>
           <td class="c-table__cell">value:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>PropertyValue</em></span></td><td>)</td>
-          <td> -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td>
+          <td> -&gt; String</td>
         </tr>
           </table>
         </div>
@@ -144,7 +147,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Render any property value for display. </p>
-<p>IP-intelligence properties are weighted, so in the dynamic bag they appear as a <code>KeyValueList</code> of <code>{<a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a9d58c3d628e2a73ead14ac823d810027" title="The resolved value, or the no-value message.">value</a>, weight}</code> records. This renders each record as <code><a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a9d58c3d628e2a73ead14ac823d810027" title="The resolved value, or the no-value message.">value</a> (weighting w)</code> so the weighting is visible, and falls back to the shared string rendering for any non-weighted property the key might also return. Long results are truncated. </p>
+<p>IP-intelligence properties are weighted, so in the dynamic bag they appear as a <code>KeyValueList</code> of <code>{rawweighting, <a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a451961dd347700d7bb5d36beec33eb80" title="The resolved value, or the no-value message.">value</a>}</code> records. This renders each record as <code><a class="el" href="ip-intelligence-examples_2src_2web__support_2mod_8rs.html#a451961dd347700d7bb5d36beec33eb80" title="The resolved value, or the no-value message.">value</a> (weighting w)</code> so the weighting is visible, and falls back to the shared string rendering for any non-weighted property the key might also return. Long results are truncated. </p>
 
 </div>
 </div>
@@ -261,6 +264,26 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ad25b7f6d0c89d56f4024e2b559cf89cc" name="ad25b7f6d0c89d56f4024e2b559cf89cc"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad25b7f6d0c89d56f4024e2b559cf89cc">&#9670;&#160;</a></span>FIND_OUT_MORE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const FIND_OUT_MORE</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The links the example's output ends with. </p>
+
+</div>
+</div>
 <a id="a1380d75b7750246cda8a8284745434e9" name="a1380d75b7750246cda8a8284745434e9"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1380d75b7750246cda8a8284745434e9">&#9670;&#160;</a></span>MAX_VALUE_LENGTH</h2>
 
@@ -321,6 +344,29 @@ Variables</h2></td></tr>
 <p>A sample IP address to look up. </p>
 <p>Any of the example addresses returns a full spread of weighted properties. </p>
 
+</div>
+</div>
+<a id="a59c09f4d2e77fa42c030902215658830" name="a59c09f4d2e77fa42c030902215658830"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a59c09f4d2e77fa42c030902215658830">&#9670;&#160;</a></span>str</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const &amp; str</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                        = &amp;[</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;IP Intelligence&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/ip-intelligence?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-cloud-get-all-properties.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Pricing&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-cloud-get-all-properties.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Documentation&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-cloud-get-all-properties.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">]</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab60c545115f42f88c00b55f384f5ffc0" name="ab60c545115f42f88c00b55f384f5ffc0"></a>

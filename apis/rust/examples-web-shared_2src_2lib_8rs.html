@@ -73,11 +73,11 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ae5b46eef058b9a06026f87856fe66694"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Serve the vendored stylesheet with a <code>text/css</code> content type.  <br /></td></tr>
 <tr class="c-table__row memitem:aeaf6f87da570c61a3a838a289d421852" id="r_aeaf6f87da570c61a3a838a289d421852"><td class="c-table__cell">pub&#160;async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#aeaf6f87da570c61a3a838a289d421852">serve_js</a> () -&gt; Response</td></tr>
 <tr class="c-table__row memdesc:aeaf6f87da570c61a3a838a289d421852"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Serve the vendored JavaScript helper with a JavaScript content type.  <br /></td></tr>
-<tr class="c-table__row memitem:aa48f37af658faeeb7d67df7316d62fdc" id="r_aa48f37af658faeeb7d67df7316d62fdc"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#aa48f37af658faeeb7d67df7316d62fdc">two_column_table</a> (rows:&amp;str, key_heading:&amp;str, value_heading:&amp;str) -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td></tr>
+<tr class="c-table__row memitem:aa48f37af658faeeb7d67df7316d62fdc" id="r_aa48f37af658faeeb7d67df7316d62fdc"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#aa48f37af658faeeb7d67df7316d62fdc">two_column_table</a> (rows:&amp;str, key_heading:&amp;str, value_heading:&amp;str) -&gt; String</td></tr>
 <tr class="c-table__row memdesc:aa48f37af658faeeb7d67df7316d62fdc"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Wrap pre-rendered <code>&lt;tr&gt;</code> rows in a standard two-column <code>.c-eg-table</code> with the given column headings.  <br /></td></tr>
-<tr class="c-table__row memitem:ac157b8b050eb4db7b0b55058b93dd5be" id="r_ac157b8b050eb4db7b0b55058b93dd5be"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#ac157b8b050eb4db7b0b55058b93dd5be">evidence_table</a> (evidence:&amp;[(<a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>)]) -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td></tr>
+<tr class="c-table__row memitem:ac157b8b050eb4db7b0b55058b93dd5be" id="r_ac157b8b050eb4db7b0b55058b93dd5be"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#ac157b8b050eb4db7b0b55058b93dd5be">evidence_table</a> (evidence:&amp;[(String, String)]) -&gt; String</td></tr>
 <tr class="c-table__row memdesc:ac157b8b050eb4db7b0b55058b93dd5be"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Render the evidence the pipeline received as a two-column <code>.c-eg-table</code>.  <br /></td></tr>
-<tr class="c-table__row memitem:af35314ed6b654f8a52ae069637b98c06" id="r_af35314ed6b654f8a52ae069637b98c06"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#af35314ed6b654f8a52ae069637b98c06">html_escape</a> (input:&amp;str) -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td></tr>
+<tr class="c-table__row memitem:af35314ed6b654f8a52ae069637b98c06" id="r_af35314ed6b654f8a52ae069637b98c06"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#af35314ed6b654f8a52ae069637b98c06">html_escape</a> (input:&amp;str) -&gt; String</td></tr>
 <tr class="c-table__row memdesc:af35314ed6b654f8a52ae069637b98c06"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Escape the five HTML-significant characters so dynamic values cannot break the markup.  <br /></td></tr>
 <tr class="c-table__row memitem:abed5359bb3e97709fbd98c45e09b034e" id="r_abed5359bb3e97709fbd98c45e09b034e"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#abed5359bb3e97709fbd98c45e09b034e">html_escape_covers_the_five_characters</a> ()</td></tr>
 <tr class="c-table__row memitem:af8a8a5dc0ebf604c4b2990c63ceef9af" id="r_af8a8a5dc0ebf604c4b2990c63ceef9af"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#af8a8a5dc0ebf604c4b2990c63ceef9af">two_column_table_uses_the_given_headings</a> ()</td></tr>
@@ -108,7 +108,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">pub fn evidence_table </td>
           <td>(</td>
           <td class="c-table__cell">evidence:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[(String, String)]</td><td>)</td>
-          <td> -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td>
+          <td> -&gt; String</td>
         </tr>
           </table>
         </div>
@@ -153,7 +153,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">pub fn html_escape </td>
           <td>(</td>
           <td class="c-table__cell">input:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span></td><td>)</td>
-          <td> -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td>
+          <td> -&gt; String</td>
         </tr>
           </table>
         </div>
@@ -253,7 +253,7 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">value_heading:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>&#160;) -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td>
+          <td class="c-table__cell">value_heading:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span>&#160;) -&gt; String</td>
         </tr>
           </table>
         </div>

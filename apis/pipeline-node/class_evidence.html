@@ -80,13 +80,15 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a21da8c7fc30786306c85d27f428c6de7" id="r_a21da8c7fc30786306c85d27f428c6de7"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a21da8c7fc30786306c85d27f428c6de7">addObject</a> (evidenceObject)</td></tr>
 <tr class="c-table__row memdesc:a21da8c7fc30786306c85d27f428c6de7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add a piece of evidence to flowData as an object.  <br /></td></tr>
 <tr class="c-table__row memitem:a8c4c08fd2dafd990102cac7f6b08bed4" id="r_a8c4c08fd2dafd990102cac7f6b08bed4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a8c4c08fd2dafd990102cac7f6b08bed4">addFromRequest</a> (request)</td></tr>
-<tr class="c-table__row memdesc:a8c4c08fd2dafd990102cac7f6b08bed4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add evidence to flowData from an HTTP request This helper automatically adds evidence: headers, cookies, protocol, IP, query params and, for a POST with a form body, the form values.  <br /></td></tr>
+<tr class="c-table__row memdesc:a8c4c08fd2dafd990102cac7f6b08bed4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add evidence to flowData from an HTTP request This helper automatically adds evidence: headers, cookies, session values, protocol, IP, query params and, for a POST with a form body, the form values.  <br /></td></tr>
 <tr class="c-table__row memitem:ab244ada40f0ebe779a08031cab527f58" id="r_ab244ada40f0ebe779a08031cab527f58"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab244ada40f0ebe779a08031cab527f58">addFromRequestAsync</a> (request, maxFormBytes=1024 *1024)</td></tr>
 <tr class="c-table__row memdesc:ab244ada40f0ebe779a08031cab527f58"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Add evidence to flowData from an HTTP request, first reading a form body from the request when it is a POST with a form body and nothing has read the body already.  <br /></td></tr>
 <tr class="c-table__row memitem:ad8792837190eba2baa7248c14cca1f6a" id="r_ad8792837190eba2baa7248c14cca1f6a"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ad8792837190eba2baa7248c14cca1f6a">get</a> (key)</td></tr>
-<tr class="c-table__row memdesc:ad8792837190eba2baa7248c14cca1f6a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a piece of evidence.  <br /></td></tr>
+<tr class="c-table__row memdesc:ad8792837190eba2baa7248c14cca1f6a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a piece of evidence by key, in any letter case.  <br /></td></tr>
 <tr class="c-table__row memitem:ab168d68366b21a0b36940f3b65d303b8" id="r_ab168d68366b21a0b36940f3b65d303b8"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#ab168d68366b21a0b36940f3b65d303b8">getAll</a> ()</td></tr>
 <tr class="c-table__row memdesc:ab168d68366b21a0b36940f3b65d303b8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get all evidence.  <br /></td></tr>
+<tr class="c-table__row memitem:aef39a3d8f450e4c33dd910946201625c" id="r_aef39a3d8f450e4c33dd910946201625c"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#aef39a3d8f450e4c33dd910946201625c">getUnaccepted</a> ()</td></tr>
+<tr class="c-table__row memdesc:aef39a3d8f450e4c33dd910946201625c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the evidence no element in the pipeline accepts, which add set aside rather than throwing away.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="aa9c1b2768d7d251044abef3a57a411dc" name="aa9c1b2768d7d251044abef3a57a411dc"></a>
@@ -121,6 +123,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Add a piece of evidence to flowData. </p>
+<p>Keys ignore letter case, so a key that differs from one already added only in its letters replaces that value under the letters it was first added with. A key is kept when an element accepts it or keeps it. server.http-request is always kept, apart from the other evidence, because it is the web request rather than a value to process.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{string}</td><td>key evidence key to add </td></tr>
@@ -158,8 +161,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="c-member__body">
 
-<p>Add evidence to flowData from an HTTP request This helper automatically adds evidence: headers, cookies, protocol, IP, query params and, for a POST with a form body, the form values. </p>
+<p>Add evidence to flowData from an HTTP request This helper automatically adds evidence: headers, cookies, session values, protocol, IP, query params and, for a POST with a form body, the form values. </p>
 <p>Form values are added as query evidence after the query string, so a form value replaces a query string value of the same name. They are read from request.body, which a framework's form parser sets, either as an object or as the body text. A plain <a class="el" href="class_node.html">Node</a> request has no request.body, so use addFromRequestAsync to read the body from the request instead. The 51Degrees client script sends its values in a form body, so without one or the other they never reach the pipeline.</p>
+<p>The web request is also added as server.http-request, whether or not an element accepts it, as a frozen object holding every value read from the request under the key it has as evidence, with the request line as server.request-method, server.request-path and server.request-query. It is there for elements that read the request without accepting evidence, such as the usage sharing element, and so that what the request carried can be used once processing is done, when the request's socket may have closed.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{object}</td><td>request an HTTP request object </td></tr>
@@ -287,6 +291,8 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<p>The web request as server.http-request holds it, being every value addFromRequest read from the request, under its evidence key and before any is filtered out, or undefined when evidence was not added from a request.</p>
+<p>@type {Readonly&lt;object&gt;|undefined}</p>
 
 </div>
 </div>
@@ -317,14 +323,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="c-member__body">
 
-<p>Get a piece of evidence. </p>
+<p>Get a piece of evidence by key, in any letter case. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">{string}</td><td>key evidence key to retreive </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{*} the evidence value </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{*} the evidence value, or undefined where there is none </dd></dl>
 
 </div>
 </div>
@@ -356,7 +362,41 @@ Public Member Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get all evidence. </p>
+<p>server.http-request is left out, because it is the web request rather than a value to process, so get it with get.</p>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{object} all evidence </dd></dl>
+
+</div>
+</div>
+<a id="aef39a3d8f450e4c33dd910946201625c" name="aef39a3d8f450e4c33dd910946201625c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aef39a3d8f450e4c33dd910946201625c">&#9670;&#160;</a></span>getUnaccepted()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">Evidence::getUnaccepted </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Get the evidence no element in the pipeline accepts, which add set aside rather than throwing away. </p>
+<p>The Cloud Request <a class="el" href="class_engine.html" title="An Engine is an extension of a FlowElement which adds options such as restricting to a subset of prop...">Engine</a> sends it along with the accepted evidence, because what the cloud service uses changes over time.</p>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">{object} the evidence set aside, empty where every key was accepted </dd></dl>
 
 </div>
 </div>

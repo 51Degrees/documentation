@@ -67,15 +67,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-onprem-sus
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><p>On-premise IP Intelligence "suspicious" console example.</p>
-<p>Combines the diversity and behavioral properties an Enterprise data file carries to make a basic judgement about whether an IP address is a likely source of suspicious requests. The descriptive block the documentation tooling renders lives at the bottom of the file.</p>
+<p>Combines the diversity and behavioral properties an Enterprise data file carries to make a basic judgement about whether an IP address is a likely source of suspicious requests. With a free data file it shows the free properties and says the judgement needs the Enterprise data file. The descriptive block the documentation tooling renders lives at the bottom of the file.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">pub fn <a class="code hl_function" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f">run</a>(options: &amp;<a class="code hl_struct" href="struct_example_options.html">ExampleOptions</a>, out: &amp;<a class="code hl_variable" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write) -&gt; anyhow::Result&lt;()&gt; {</div>
+<div class="c-code__line">    <span class="c-code__comment">// The data file&#39;s own list of properties says which of the judgement&#39;s</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// properties it carries. The free files carry none of them.</span></div>
+<div class="c-code__line">    let <a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a> = ip_intelligence_examples::data_file_properties(&amp;options.data_file)?;</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__comment">// LowMemory pages the (potentially multi-gigabyte) Enterprise data file from</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// disk rather than loading it entirely into memory. The behavioral</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// properties are requested by name so the engine surfaces them in addition to</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// the typed location and network set.</span></div>
 <div class="c-code__line">    let pipeline: Arc&lt;Pipeline&gt; = IpIntelligencePipelineBuilder::on_premise(&amp;options.data_file)</div>
 <div class="c-code__line">        .performance_profile(PerformanceProfile::LowMemory)</div>
-<div class="c-code__line">        .properties(<a class="code hl_variable" href="ipi-onprem-suspicious_8rs.html#a1890ba08c56ee0fdf82b489df7463d96">SUSPICIOUS_PROPERTIES</a>.iter().copied())</div>
+<div class="c-code__line">        .properties(<a class="code hl_variable" href="ipi-onprem-suspicious_8rs.html#a1890ba08c56ee0fdf82b489df7463d96">SUSPICIOUS_PROPERTIES</a>.iter().chain(<a class="code hl_variable" href="ipi-onprem-suspicious_8rs.html#a4cd105e3e5494a90c5f074f8041a4963">FREE_PROPERTIES</a>).copied())</div>
 <div class="c-code__line">        <span class="c-code__comment">// Automatic updates and the file-system watcher are left off so the</span></div>
 <div class="c-code__line">        <span class="c-code__comment">// example is self-contained and does not reach out to the network.</span></div>
 <div class="c-code__line">        .auto_update(<span class="c-code__keyword">false</span>)</div>
@@ -91,9 +95,21 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-onprem-sus
 <div class="c-code__line">    )?;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keywordflow">for</span> <a class="code hl_variable" href="ipi-cloud-metadata_8rs.html#a2471e68871ec580a162997ded52956ad">ip</a> in &amp;options.ips {</div>
-<div class="c-code__line">        <a class="code hl_function" href="ipi-onprem-suspicious_8rs.html#a57732fbeeeb5564350d473ab596e01a3">assess_ip</a>(&amp;pipeline, <a class="code hl_variable" href="ipi-cloud-metadata_8rs.html#a2471e68871ec580a162997ded52956ad">ip</a>, out)?;</div>
+<div class="c-code__line">        <a class="code hl_function" href="ipi-onprem-suspicious_8rs.html#af2dc442a56306865d4801d8b7833e23b">assess_ip</a>(&amp;pipeline, <a class="code hl_variable" href="ipi-cloud-metadata_8rs.html#a2471e68871ec580a162997ded52956ad">ip</a>, &amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>, out)?;</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">    writeln!(out)?;</div>
+<div class="c-code__line">    ip_intelligence_examples::write_data_file_warnings(&amp;options.data_file, out)?;</div>
+<div class="c-code__line">    let missing = examples_shared::missing_properties(<a class="code hl_variable" href="ipi-onprem-suspicious_8rs.html#a1890ba08c56ee0fdf82b489df7463d96">SUSPICIOUS_PROPERTIES</a>, &amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>);</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(message) = examples_shared::enterprise_data_file_message(&amp;missing, <a class="code hl_variable" href="dd-onprem-getting-started_8rs.html#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a>) {</div>
+<div class="c-code__line">        writeln!(out)?;</div>
+<div class="c-code__line">        writeln!(out, <span class="c-code__stringliteral">&quot;{message}&quot;</span>)?;</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">    examples_shared::write_find_out_more(</div>
+<div class="c-code__line">        out,</div>
+<div class="c-code__line">        <a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ad25b7f6d0c89d56f4024e2b559cf89cc">FIND_OUT_MORE</a>,</div>
+<div class="c-code__line">        examples_shared::ON_PREMISE_REPOSITORIES,</div>
+<div class="c-code__line">    )?;</div>
 <div class="c-code__line">    Ok(())</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --> </div></div><!-- primary -->

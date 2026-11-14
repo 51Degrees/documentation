@@ -67,9 +67,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
-<div class="textblock"><p>This filter is used by the <code><a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_element.html">ShareUsageElement</a></code>. </p>
-<p>It will include anything that is: 1) An HTTP header that is not blocked by the constructor parameter. 2) A cookie that starts with <code><a class="el" href="">Constants#FIFTYONE_COOKIE_PREFIX</a></code> or is the session cookie (if configured in the constructor). 3) An query string parameters that have been configured to be shared using the constructor parameter. 4) Not a header, cookie or query string parameter.</p>
-<p>As this filter is generally inclusive, it will often cause far more evidence to be passed into a pipeline than the engine-specific filters, which tend to be based on a white list </p>
+<div class="textblock"><p>This filter is used by the <code><a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_share_usage_element.html">ShareUsageElement</a></code> to decide which of the values <code><a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_share_usage_evidence.html#adef517894fe64b243ae176e688a38888">ShareUsageEvidence#find</a></code> finds are shared. </p>
+<p>It is not the element's accepted <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence.html" title="Evidence used by a FlowElement when processing.">Evidence</a>, which is empty. It will include anything that is: 1) An HTTP header that is not blocked by the constructor parameter, other than Cookie. 2) A cookie that starts with <code><a class="el" href="">Constants#FIFTYONE_COOKIE_PREFIX</a></code> or is the session cookie (if configured in the constructor). 3) A session value that starts with <code><a class="el" href="">Constants#FIFTYONE_COOKIE_PREFIX</a></code>. 4) A query string parameter that starts with <code><a class="el" href="">Constants#FIFTYONE_COOKIE_PREFIX</a></code> or has been configured to be shared using the constructor parameter. 5) Not a header, cookie, session value or query string parameter. When all <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence.html" title="Evidence used by a FlowElement when processing.">Evidence</a> is shared, everything is included. When all query string parameters are shared, every query string parameter is included. The prefix of a key is everything before its first '.', and the field everything after it. An email address, the salt for hashed email identifiers, the query string, the path and the Cookie header are never included, whatever the configuration. </p>
 </div><h2 class="g-docs__section-heading">
 Inheritance diagram for fiftyone.pipeline.engines.fiftyone.data.EvidenceKeyFilterShareUsage:</h2>
 <div class="dyncontent">
@@ -85,6 +84,8 @@ Collaboration diagram for fiftyone.pipeline.engines.fiftyone.data.EvidenceKeyFil
 Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a7481c71fcd090b391b6e60f039577849" id="r_a7481c71fcd090b391b6e60f039577849"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7481c71fcd090b391b6e60f039577849">EvidenceKeyFilterShareUsage</a> (List&lt; String &gt; blockedHttpHeaders, List&lt; String &gt; includedQueryStringParams, boolean includeSession, String sessionCookieName)</td></tr>
 <tr class="c-table__row memdesc:a7481c71fcd090b391b6e60f039577849"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor.  <br /></td></tr>
+<tr class="c-table__row memitem:a7a4d350ba51737b2743576db25d1fadb" id="r_a7a4d350ba51737b2743576db25d1fadb"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a7a4d350ba51737b2743576db25d1fadb">EvidenceKeyFilterShareUsage</a> (List&lt; String &gt; blockedHttpHeaders, List&lt; String &gt; includedQueryStringParams, boolean includeSession, String sessionCookieName, boolean shareAllEvidence, boolean shareAllQueryStringParameters)</td></tr>
+<tr class="c-table__row memdesc:a7a4d350ba51737b2743576db25d1fadb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor.  <br /></td></tr>
 <tr class="c-table__row memitem:a34d5e8dcf98921cf780cf1ca5e301efd" id="r_a34d5e8dcf98921cf780cf1ca5e301efd"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="#a34d5e8dcf98921cf780cf1ca5e301efd">include</a> (String key)</td></tr>
 <tr class="c-table__row memdesc:a34d5e8dcf98921cf780cf1ca5e301efd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Check if the specified evidence key is included by this filter.  <br /></td></tr>
 <tr class="c-table__row memitem:aec53a47b454fb0410012495c11bc875f" id="r_aec53a47b454fb0410012495c11bc875f"><td class="c-table__cell">Integer&#160;</td><td class="c-table__cell"><a class="el" href="#aec53a47b454fb0410012495c11bc875f">order</a> (String key)</td></tr>
@@ -92,7 +93,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="a7481c71fcd090b391b6e60f039577849" name="a7481c71fcd090b391b6e60f039577849"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7481c71fcd090b391b6e60f039577849">&#9670;&#160;</a></span>EvidenceKeyFilterShareUsage()</h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7481c71fcd090b391b6e60f039577849">&#9670;&#160;</a></span>EvidenceKeyFilterShareUsage() <span class="c-member__count">[1/2]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -131,6 +132,64 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">includedQueryStringParams</td><td>a list of the names of query string parameters that share usage should send to 51Degrees </td></tr>
     <tr><td class="paramname">includeSession</td><td>if true then the session cookie will be included in the filter </td></tr>
     <tr><td class="paramname">sessionCookieName</td><td>the name of the cookie that contains the session id </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7a4d350ba51737b2743576db25d1fadb" name="a7a4d350ba51737b2743576db25d1fadb"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7a4d350ba51737b2743576db25d1fadb">&#9670;&#160;</a></span>EvidenceKeyFilterShareUsage() <span class="c-member__count">[2/2]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone.pipeline.engines.fiftyone.data.EvidenceKeyFilterShareUsage.EvidenceKeyFilterShareUsage </td>
+          <td>(</td>
+          <td class="c-table__cell">List&lt; String &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>blockedHttpHeaders</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">List&lt; String &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>includedQueryStringParams</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">boolean</td>          <td class="c-table__cell"><span class="paramname"><em>includeSession</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>sessionCookieName</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">boolean</td>          <td class="c-table__cell"><span class="paramname"><em>shareAllEvidence</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">boolean</td>          <td class="c-table__cell"><span class="paramname"><em>shareAllQueryStringParameters</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">blockedHttpHeaders</td><td>a list of the names of the HTTP headers that share usage should not send to 51Degrees </td></tr>
+    <tr><td class="paramname">includedQueryStringParams</td><td>a list of the names of query string parameters that share usage should send to 51Degrees </td></tr>
+    <tr><td class="paramname">includeSession</td><td>if true then the session cookie will be included in the filter </td></tr>
+    <tr><td class="paramname">sessionCookieName</td><td>the name of the cookie that contains the session id </td></tr>
+    <tr><td class="paramname">shareAllEvidence</td><td>if true then all <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence.html" title="Evidence used by a FlowElement when processing.">Evidence</a> is included, apart from the keys that are never shared </td></tr>
+    <tr><td class="paramname">shareAllQueryStringParameters</td><td>if true then all query string parameters are included </td></tr>
   </table>
   </dd>
 </dl>

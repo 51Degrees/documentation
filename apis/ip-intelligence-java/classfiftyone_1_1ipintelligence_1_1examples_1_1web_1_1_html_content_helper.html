@@ -112,7 +112,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Build the contact-us message banner shown at the bottom of the web example pages. </p>
-<p>Cloud examples are free by design, so the cloud variant is shown unconditionally. On-premise examples only show the banner when running against the free Lite tier data file, so the <code class="JavaDocCode">show</code> flag should be wired to <code class="JavaDocCode">engine.getDataSourceTier().equals("Lite")</code>.</p>
+<p>Cloud examples are free by design, so the cloud variant is shown unconditionally. On-premise examples only show the banner when running against a free data file, so the <code class="JavaDocCode">show</code> flag should be wired to <code class="JavaDocCode">DataFileHelper.isFreeDataFile(engine)</code>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">variant</td><td>which message wording to use </td></tr>

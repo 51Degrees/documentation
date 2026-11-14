@@ -1,19 +1,21 @@
 <map id="fiftyone.pipeline.core.data.DataBase" name="fiftyone.pipeline.core.data.DataBase">
-<area shape="rect" id="Node000001" title="This implementation of Data stores data values as key/value pairs in a Map where the key is a string ..." alt="" coords="280,133,476,173"/>
-<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1core_1_1data_1_1_element_data_base.html" title="Base implementation of ElementData." alt="" coords="553,101,749,141"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="490,138,553,130,554,135,490,143"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="524,165,779,205"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="490,164,524,168,524,173,490,169"/>
-<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_data.html" title="Represents a collection of property values." alt="" coords="5,141,232,166"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="246,151,280,151,280,156,246,156"/>
+<area shape="rect" id="Node000001" title="This implementation of Data stores data values as key/value pairs in a Map where the key is a string ..." alt="" coords="280,165,476,205"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1core_1_1data_1_1_element_data_base.html" title="Base implementation of ElementData." alt="" coords="553,133,749,173"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="490,170,553,162,554,167,490,175"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="524,197,779,237"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="490,196,524,200,524,205,490,201"/>
+<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_data.html" title="Represents a collection of property values." alt="" coords="5,173,232,198"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="246,183,280,183,280,188,246,188"/>
 <area shape="rect" id="Node000004" href="$classfiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_data_base.html" title="Abstract base class for AspectData which overrides the." alt="" coords="885,5,1103,45"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="713,94,826,55,884,41,885,46,827,60,714,99"/>
-<area shape="rect" id="Node000007" href="$classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_set_headers_data.html" title="Data containing the result of SetHeadersElement." alt="" coords="858,69,1130,109"/>
-<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="763,108,857,99,858,105,763,114"/>
-<area shape="rect" id="Node000008" href="$classfiftyone_1_1pipeline_1_1javascriptbuilder_1_1flowelements_1_1_java_script_builder_data_internal.html" title="[class]" alt="" coords="827,133,1161,173"/>
-<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="764,129,826,135,826,140,763,134"/>
-<area shape="rect" id="Node000009" href="$classfiftyone_1_1pipeline_1_1jsonbuilder_1_1flowelements_1_1_json_builder_data_internal.html" title="[class]" alt="" coords="845,197,1143,237"/>
-<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="760,143,780,151,804,167,828,183,863,195,861,200,826,188,801,172,777,156,758,148"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="692,124,754,88,826,55,884,38,885,44,828,60,756,92,695,128"/>
+<area shape="rect" id="Node000007" href="$classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_sequence_data.html" title="Data containing the result of SequenceElement." alt="" coords="858,69,1130,109"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="762,130,886,107,887,112,763,135"/>
+<area shape="rect" id="Node000008" href="$classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_set_headers_data.html" title="Data containing the result of SetHeadersElement." alt="" coords="858,133,1130,173"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="763,151,858,151,858,156,763,156"/>
+<area shape="rect" id="Node000009" href="$classfiftyone_1_1pipeline_1_1javascriptbuilder_1_1flowelements_1_1_java_script_builder_data_internal.html" title="[class]" alt="" coords="827,197,1161,237"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="763,171,887,195,886,200,762,177"/>
+<area shape="rect" id="Node000010" href="$classfiftyone_1_1pipeline_1_1jsonbuilder_1_1flowelements_1_1_json_builder_data_internal.html" title="[class]" alt="" coords="845,261,1143,301"/>
+<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="764,174,780,183,797,199,805,216,813,233,828,247,851,259,849,264,825,252,808,236,800,219,792,203,777,187,761,178"/>
 <area shape="rect" id="Node000005" href="$classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1flowelements_1_1_cloud_request_data_internal.html" title=" " alt="" coords="1209,5,1564,45"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1117,23,1209,23,1209,28,1117,28"/>
 <area shape="rect" id="Node000006" href="$classfiftyone_1_1pipeline_1_1cloudrequestengine_1_1data_1_1_cloud_request_data.html" title=" " alt="" coords="1612,5,1908,45"/>

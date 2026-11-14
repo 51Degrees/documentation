@@ -74,12 +74,12 @@ Filesystem Watcher </li>
 Daily auto-update </li>
 </ol>
 <h2>License Key</h2>
-<p>In order to test this example you will need a 51Degrees Enterprise license which can be purchased from our <a href="https://51degrees.com/pricing/annual?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-updatedatafile.java&amp;utm_term=updatedatafile">pricing page</a>. </p><h1>Data Files</h1>
+<p>Updating the data file needs a 51Degrees licence key for the Enterprise data file. Without one, the example shows the free Lite data file and says where to ask for a key. Contact us for a key at <a href="https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-updatedatafile.java&amp;utm_term=updatedatafile">https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-updatedatafile.java&amp;utm_term=updatedatafile</a> </p><h1>Data Files</h1>
 <p>You can find out more about data files, licenses etc. at our <a href="https://51degrees.com/resources/faqs?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-updatedatafile.java&amp;utm_term=updatedatafile">FAQ page</a> </p><h2>Enterprise Data File</h2>
 <p>Enterprise (fully-featured) data files are typically released by 51Degrees five days a week (Mon-Fri) and on-premise deployments can fetch and download those files automatically. Equally, customers may choose to download the files themselves and move them into place to be detected by the 51Degrees filesystem watcher. </p><h3>Manual Download</h3>
 <p>If you prefer to download files yourself, you may do so here: </p><div class="c-code__block c-code__block--outline"><div class="c-code__line">https:<span class="c-code__comment">//distributor.51degrees.com/api/v2/download?LicenseKeys=&lt;your_license_key&gt;&amp;Type=27&amp;Download=True&amp;Product=22</span></div>
 </div><!-- fragment --> <h2>Lite Data File</h2>
-<p>Lite data files (free-to-use, limited capabilities, no license key required) are created roughly once a month and cannot be updated using auto-update, they may be downloaded with the scripts in the <a href="https://github.com/51Degrees/data">data repository</a> on GitHub, which is the cxx/data folder of the source. </p><h1>Update on Start-Up</h1>
+<p>Lite data files (free-to-use, a small number of Properties, no license key required) are created roughly once a month and cannot be updated using auto-update, they may be downloaded with the scripts in the <a href="https://github.com/51Degrees/data">data repository</a> on GitHub, which is the cxx/data folder of the source. </p><h1>Update on Start-Up</h1>
 <p>You can configure the pipeline builder to download an Enterprise data file on start-up. </p><h2>Pre-Requisites</h2>
 <ul>
 <li>a license key</li>
@@ -183,6 +183,7 @@ Daily auto-update </li>
 <div class="c-code__line"><span class="c-code__keyword">import</span> org.slf4j.LoggerFactory;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> java.io.File;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> java.io.PrintWriter;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> java.nio.file.*;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> java.text.SimpleDateFormat;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> java.util.Objects;</div>
@@ -191,6 +192,7 @@ Daily auto-update </li>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.common.testhelpers.LogbackHelper.configureLogback;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.devicedetection.examples.shared.DataFileHelper.getDatafileMetaData;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.devicedetection.shared.testhelpers.FileUtils.ENTERPRISE_HASH_DATA_FILE_NAME;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.devicedetection.shared.testhelpers.FileUtils.LITE_HASH_DATA_FILE_PATH;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.pipeline.util.FileFinder.getFilePath;</div>
 <div class="c-code__line"></div>
 <div class="c-code__line"></div>
@@ -201,6 +203,8 @@ Daily auto-update </li>
 <div class="c-code__line">            System.getProperty(<span class="c-code__stringliteral">&quot;user.dir&quot;</span>) + File.separator +  ENTERPRISE_HASH_DATA_FILE_NAME;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> Logger logger = LoggerFactory.getLogger(UpdateDataFile.class);</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> String CONTACT_US = <span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-updatedatafile.java&amp;utm_term=licence-key&quot;</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> UpdateCompletionListener completionListener = <span class="c-code__keyword">new</span> UpdateCompletionListener();</div>
 <div class="c-code__line">    <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> SimpleDateFormat simpleDateFormat = <span class="c-code__keyword">new</span> SimpleDateFormat(<span class="c-code__stringliteral">&quot;yyyy-MM-dd hh:mm:ss Z&quot;</span>);</div>
@@ -220,12 +224,8 @@ Daily auto-update </li>
 <div class="c-code__line">            licenseKey = KeyUtils.getNamedKey(UPDATE_EXAMPLE_LICENSE_KEY_NAME);</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">        <span class="c-code__keywordflow">if</span> (Objects.isNull(licenseKey) || KeyUtils.isInvalidKey(licenseKey)) {</div>
-<div class="c-code__line">            logger.error(<span class="c-code__stringliteral">&quot;In order to test this example you will need a 51Degrees Enterprise &quot;</span> +</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;license which can be obtained on a trial basis or purchased from our\n&quot;</span> +</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;pricing page https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-updatedatafile.java&amp;utm_term=license-key-required. You must supply the license &quot;</span> +</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;key as an argument to this program, or as an environment or system variable &quot;</span> +</div>
-<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;named &#39;{}&#39;&quot;</span>, UPDATE_EXAMPLE_LICENSE_KEY_NAME);</div>
-<div class="c-code__line">            <span class="c-code__keywordflow">throw</span> <span class="c-code__keyword">new</span> IllegalArgumentException(<span class="c-code__stringliteral">&quot;No license key available&quot;</span>);</div>
+<div class="c-code__line">            explainLicenseKey(dataFilename, <span class="c-code__keyword">new</span> PrintWriter(System.out, <span class="c-code__keyword">true</span>));</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">return</span>;</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">        <span class="c-code__comment">// work out where the downloaded file will be put, directory must exist</span></div>
@@ -303,7 +303,7 @@ Daily auto-update </li>
 <div class="c-code__line">                    <span class="c-code__comment">// to notify when update complete</span></div>
 <div class="c-code__line">                    .setDataUpdateService(dataUpdateService)</div>
 <div class="c-code__line">                    <span class="c-code__comment">// For automatic updates to work you will need to provide a license key.</span></div>
-<div class="c-code__line">                    <span class="c-code__comment">// A license key can be obtained with a subscription from https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-updatedatafile.java&amp;utm_term=run</span></div>
+<div class="c-code__line">                    <span class="c-code__comment">// Contact us for a licence key at https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-updatedatafile.java&amp;utm_term=run</span></div>
 <div class="c-code__line">                    .setDataUpdateLicenseKey(licenseKey)</div>
 <div class="c-code__line">                    <span class="c-code__comment">// Enable update on startup, the auto update system</span></div>
 <div class="c-code__line">                    <span class="c-code__comment">// will be used to check for an update before the</span></div>
@@ -356,6 +356,32 @@ Daily auto-update </li>
 <div class="c-code__line">                logger.info(<span class="c-code__stringliteral">&quot;Finished Example&quot;</span>);</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">    <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> explainLicenseKey(String dataFilename, PrintWriter output) <span class="c-code__keywordflow">throws</span> Exception {</div>
+<div class="c-code__line">        File dataFile = <span class="c-code__keyword">null</span>;</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">try</span> {</div>
+<div class="c-code__line">            dataFile = Objects.isNull(dataFilename) ?</div>
+<div class="c-code__line">                    DataFileHelper.findDataFile(LITE_HASH_DATA_FILE_PATH) :</div>
+<div class="c-code__line">                    <span class="c-code__keyword">new</span> File(dataFilename);</div>
+<div class="c-code__line">        } <span class="c-code__keywordflow">catch</span> (IllegalArgumentException e) {</div>
+<div class="c-code__line">            logger.warn(e.getMessage());</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> (Objects.nonNull(dataFile) &amp;&amp; dataFile.exists()) {</div>
+<div class="c-code__line">            DataFileHelper.DatafileInfo metadata =</div>
+<div class="c-code__line">                    getDatafileMetaData(dataFile.getAbsolutePath());</div>
+<div class="c-code__line">            output.println(<span class="c-code__stringliteral">&quot;The data file in use is the &#39;&quot;</span> + metadata.getTier() +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;&#39; file published on &quot;</span> + simpleDateFormat.format(</div>
+<div class="c-code__line">                            metadata.getFileInfo().getDataPublishedDateTime()) +</div>
+<div class="c-code__line">                    <span class="c-code__stringliteral">&quot;, at &#39;&quot;</span> + metadata.getFileInfo().getDataFilePath() + <span class="c-code__stringliteral">&quot;&#39;.&quot;</span>);</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        output.println();</div>
+<div class="c-code__line">        output.println(<span class="c-code__stringliteral">&quot;Updating the data file downloads the Enterprise data &quot;</span> +</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;file, which needs a licence key. Give the key as the first &quot;</span> +</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;command line argument, or in the environment variable or &quot;</span> +</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;system property &#39;&quot;</span> + UPDATE_EXAMPLE_LICENSE_KEY_NAME + <span class="c-code__stringliteral">&quot;&#39;. &quot;</span> +</div>
+<div class="c-code__line">                <span class="c-code__stringliteral">&quot;Contact us for a key and a copy at &quot;</span> + CONTACT_US);</div>
+<div class="c-code__line">        output.flush();</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> logFileInfo(DataFileHelper.DatafileInfo metadata) {</div>

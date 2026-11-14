@@ -73,19 +73,22 @@ Directory dependency graph for ip-intelligence:</h2>
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="dir_801962d5f365d548ee2d3f1573178e29_dep.svg" width="451" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
-<div class="textblock"><p><img src="https://51degrees.com/img/logo.png?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-java&amp;utm_content=readme.md&amp;utm_term=51degrees-ip-intelligence-engines-examples" alt="51Degrees" title="Data rewards the curious" class="inline"/> <b>Java IP Intelligence</b></p>
-<p><a href="https://51degrees.com/ip-intelligence-java/index.html?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-java&amp;utm_content=readme.md&amp;utm_term=51degrees-ip-intelligence-engines-examples" title="developer documentation">Developer Documentation</a></p>
+<div class="textblock"><p><img src="https://raw.githubusercontent.com/51Degrees/51degrees-java/main/.github/images/logo-160.png" alt="51Degrees" title="Data rewards the curious" class="inline"/> <b>Java IP Intelligence</b></p>
+<p><a href="https://51degrees.com/documentation/_ip_intelligence__quickstart.html?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-java&amp;utm_content=readme.md&amp;utm_term=51degrees-ip-intelligence-engines-examples" title="developer documentation">Developer Documentation</a></p>
 <h1>Introduction</h1>
 <p>These examples are not distributed as maven jars and need to be built by you.</p>
 <h1>Required Files</h1>
 <p>The data files for on-premise IP intelligence are kept in <code>cxx/data/ip-intelligence</code>, a folder of the <a href="https://github.com/51Degrees/data">data</a> repository, which is a submodule of cxx.</p>
-<p><b>IMPORTANT</b>: The enterprise IP Intelligence data file must be placed in the <code>cxx/data/ip-intelligence</code> directory of this repository. The expected filename is <code>51Degrees-EnterpriseIpiV41.ipi</code>.</p>
-<p>Two free data files are also usable for many of the examples, the ASN file (<code>51Degrees-IPIV4AsnIpiV41.ipi</code>) and the Lite file (<code>51Degrees-LiteV41.ipi</code>). Run <code>cxx/data/get-data-files.sh ip-intelligence</code> from the root of this repository to download them, or <code>cxx\data\get-data-files.ps1 ip-intelligence</code> in PowerShell on Windows. An example that needs one of them and cannot find it runs the script for that file, and logs the command it runs. When the enterprise file is absent, the tests for examples that work with any data file fall back to the ASN file and then the Lite file. The OfflineProcessing and PerformanceBenchmark examples need the RegisteredName property, which the ASN file does not contain, so their tests fall back to the Lite file only. Tests for examples needing enterprise-only properties (Metrics, Compare and Suspicious) are skipped instead.</p>
+<p>The examples use the free data files by default, so they run from a fresh clone with no settings. The examples that show location and network properties use the Lite file (<code>51Degrees-LiteV41.ipi</code>), which has the registration properties, and the performance and update examples use the much smaller ASN file (<code>51Degrees-IPIV4AsnIpiV41.ipi</code>). An example that cannot find its file runs the data repository's script to download it, and logs the command it runs. To download both first, run <code>cxx/data/get-data-files.sh ip-intelligence</code> from the root of this repository, or <code>cxx\data\get-data-files.ps1 ip-intelligence</code> in PowerShell on Windows.</p>
+<p>Each example shows the properties that only the Enterprise data file has as needing it, and gives a link to ask for a copy. The Compare, Metrics and Suspicious examples need those properties, so with a free data file they say which they need and stop. <a href="https://51degrees.com/contact-us?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=51degrees-java&amp;utm_content=readme.md&amp;utm_term=enterprise-data-file">Contact us</a> for a copy of the Enterprise data file. To use it, place it in <code>cxx/data/ip-intelligence</code> and pass its path as the first argument, or set the <code>_51DEGREES_IPI_PATH</code> environment variable or system property to its path.</p>
+<p>The Enterprise data file is over 6 GB, and the MaxPerformance profile loads all of it into memory, so the examples built for it, or that may be given it, use the LowMemory profile, which reads the file from disk as it is needed. Those are the Compare, Metrics, OfflineProcessing, Suspicious and UpdateDataFile examples. The Metrics and Compare examples take a profile as their fourth argument, and <code>MaxPerformance</code> there makes them faster on a machine with memory to hold the whole file.</p>
+<p>The <code>ExamplesWithoutSettingsTest</code> tests run each console example as a fresh clone does. The other tests use the Enterprise data file, <code>51Degrees-EnterpriseIpiV41.ipi</code>, when it is in <code>cxx/data/ip-intelligence</code>. When it is absent, the tests for examples that work with any data file fall back to the ASN file and then the Lite file. The OfflineProcessing and PerformanceBenchmark tests fall back to the Lite file only, and the tests of the Metrics, Compare and Suspicious examples with the Enterprise data file are skipped.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">51degrees-java/</div>
 <div class="c-code__line">├── cxx/</div>
 <div class="c-code__line">│   └── data/</div>
 <div class="c-code__line">│       └── ip-intelligence/</div>
-<div class="c-code__line">│           └── 51Degrees-EnterpriseIpiV41.ipi</div>
+<div class="c-code__line">│           ├── 51Degrees-LiteV41.ipi</div>
+<div class="c-code__line">│           └── 51Degrees-IPIV4AsnIpiV41.ipi</div>
 <div class="c-code__line">└── examples/</div>
 <div class="c-code__line">    └── ip-intelligence/</div>
 <div class="c-code__line">        ├── console/</div>
@@ -93,9 +96,9 @@ Directory dependency graph for ip-intelligence:</h2>
 <div class="c-code__line">        └── shared/</div>
 </div><!-- fragment --><p>The examples locate the data file in the following order:</p>
 <ol type="1">
-<li>The <code>51DEGREES_IPI_PATH</code> environment variable or system property, which can be set to an explicit path to the data file.</li>
-<li>A search of the project folder hierarchy for the expected file name.</li>
-<li>The expected location <code>cxx/data/ip-intelligence/51Degrees-EnterpriseIpiV41.ipi</code> (the configuration files for the getting started examples fall back to the free Lite file <code>cxx/data/ip-intelligence/51Degrees-LiteV41.ipi</code>).</li>
+<li>The <code>_51DEGREES_IPI_PATH</code> environment variable or system property, which can be set to an explicit path to the data file. It is used in place of any file named without a full path.</li>
+<li>The path given as the first argument, or the free file the example uses by default, searched for below the folder the example is run from and then below <code>cxx/data</code>, so that the examples find it whether they are run from the root of this repository or from this folder.</li>
+<li>A free file that is still missing is downloaded by the data repository's script.</li>
 </ol>
 <p>This project contains sub-modules - <b>console</b>, giving examples that are intended to be run from the command line/console and <b>web</b>, illustrating use of 51Degrees Web/Servlet integration. There is also a <b>shared</b> sub-module containing various helpers for the examples.</p>
 <p>Among other things, the examples illustrate:</p><ul>
@@ -122,7 +125,7 @@ Directory dependency graph for ip-intelligence:</h2>
 <tr class="c-table__row">
 <td class="c-table__cell">MetadataCloud  </td><td class="c-table__cell">How to access the meta-data that relates to the properties available from the cloud IP intelligence service.  </td></tr>
 </table>
-<p>Cloud examples need a resource key. The key is read from the <code>51DEGREES_RESOURCE_KEY</code> environment variable or system property first. The legacy <code>TestResourceKey</code> name is still supported and is checked second.</p>
+<p>Cloud examples need a resource key. The key is read from the <code>_51DEGREES_RESOURCE_KEY</code> environment variable or system property first. The legacy <code>TestResourceKey</code> name is still supported and is checked second.</p>
 <p>The cloud property tiers changed in May 2026. The examples and this documentation now reflect what is free and what needs a paid subscription.</p>
 <ul>
 <li>Free tier IP properties are Country, LocationConfidence, Ip and IpV6.</li>

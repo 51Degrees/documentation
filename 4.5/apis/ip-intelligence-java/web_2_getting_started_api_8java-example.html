@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('web_2_getting_
 <div class="c-code__line"><span class="c-code__keyword">import</span> java.util.zip.GZIPOutputStream;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.common.testhelpers.LogbackHelper.configureLogback;</div>
-<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.DataFileHelper.ENTERPRISE_DATA_FILE_REL_PATH;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.ipintelligence.examples.shared.DataFileHelper.LITE_DATA_FILE_REL_PATH;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.pipeline.util.FileFinder.getFilePath;</div>
 <div class="c-code__line"></div>
 <div class="c-code__line"><span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>GettingStartedApi <span class="c-code__keyword">extends</span> HttpServlet {</div>
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('web_2_getting_
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> main(String[] args) <span class="c-code__keywordflow">throws</span> Exception {</div>
 <div class="c-code__line">        configureLogback(getFilePath(<span class="c-code__stringliteral">&quot;logback.xml&quot;</span>));</div>
-<div class="c-code__line">        String dataFile = args.length &gt; 0 ? args[0] : ENTERPRISE_DATA_FILE_REL_PATH;</div>
+<div class="c-code__line">        String dataFile = args.length &gt; 0 ? args[0] : LITE_DATA_FILE_REL_PATH;</div>
 <div class="c-code__line">        String dataFileLocation = DataFileHelper.getDataFileLocation(dataFile);</div>
 <div class="c-code__line">        logger.info(<span class="c-code__stringliteral">&quot;Running GettingStartedApi server using data file &#39;{}&#39;&quot;</span>, dataFileLocation);</div>
 <div class="c-code__line"> </div>

@@ -27,6 +27,7 @@ var annotated =
               [ "DetectionImplScientiaMobile", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_detection_impl_scientia_mobile.html", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_detection_impl_scientia_mobile" ],
               [ "Reporting", "interfacefiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_reporting.html", "interfacefiftyone_1_1devicedetection_1_1examples_1_1console_1_1comparison_1_1_reporting" ]
             ] ],
+            [ "ExamplesWithoutSettingsTest", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_examples_without_settings_test.html", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_examples_without_settings_test" ],
             [ "GettingStartedCloud", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_getting_started_cloud.html", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_getting_started_cloud" ],
             [ "GettingStartedCloudTest", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_getting_started_cloud_test.html", null ],
             [ "GettingStartedOnPrem", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_getting_started_on_prem.html", "classfiftyone_1_1devicedetection_1_1examples_1_1console_1_1_getting_started_on_prem" ],
@@ -55,6 +56,7 @@ var annotated =
             [ "DataFileHelper", "classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_data_file_helper.html", "classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_data_file_helper" ],
             [ "EvidenceHelper", "classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_evidence_helper.html", "classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_evidence_helper" ],
             [ "KeyHelper", "classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_key_helper.html", "classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_key_helper" ],
+            [ "KeyHelperTest", "classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_key_helper_test.html", "classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_key_helper_test" ],
             [ "PropertyHelper", "classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_property_helper.html", "classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_property_helper" ],
             [ "PropertyHelperTest", "classfiftyone_1_1devicedetection_1_1examples_1_1shared_1_1_property_helper_test.html", null ]
           ] ],

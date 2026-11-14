@@ -40,7 +40,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="interfacefiftyone_1_1geolocation_1_1data_1_1_cloud_geo_data.html" target="_top" xlink:title=" ">
+<g id="a_Node000006"><a xlink:href="interfacefiftyone_1_1geolocation_1_1data_1_1_cloud_geo_data.html" target="_top" xlink:title="The Location Element Data from the cloud.">
 <polygon fill="white" stroke="#666666" points="724,-30 583,-30 583,0 724,0 724,-30"/>
 <text text-anchor="start" x="591" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">fiftyone.geolocation.data.</text>
 <text text-anchor="middle" x="653.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">CloudGeoData</text>
@@ -97,8 +97,8 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="classfiftyone_1_1geolocation_1_1data_1_1_cloud_geo_data_default.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="913,-54 772,-54 772,-24 913,-24 913,-54"/>
+<g id="a_Node000005"><a xlink:href="classfiftyone_1_1geolocation_1_1data_1_1_cloud_geo_data_default.html" target="_top" xlink:title="The Location Element Data from the cloud.">
+<polygon fill="white" stroke="#666666" points="913,-54 772,-54 772,-24 913,-24 913,-54"/>
 <text text-anchor="start" x="780" y="-42" font-family="Helvetica,sans-Serif" font-size="10.00">fiftyone.geolocation.data.</text>
 <text text-anchor="middle" x="842.5" y="-31" font-family="Helvetica,sans-Serif" font-size="10.00">CloudGeoDataDefault</text>
 </a>

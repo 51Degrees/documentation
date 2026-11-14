@@ -117,15 +117,21 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_matc
 <div class="c-code__line"><span class="c-code__keyword">import</span> java.util.Objects;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.common.testhelpers.LogbackHelper.configureLogback;</div>
+<div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.devicedetection.shared.testhelpers.FileUtils.LITE_HASH_DATA_FILE_PATH;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> fiftyone.pipeline.util.FileFinder.getFilePath;</div>
 <div class="c-code__line"><span class="c-code__keyword">import</span> <span class="c-code__keyword">static</span> java.util.stream.Collectors.groupingBy;</div>
 <div class="c-code__line"></div>
 <div class="c-code__line"><span class="c-code__keyword">public</span> <span class="c-code__keyword">class </span>MatchMetrics {</div>
 <div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> Logger logger = LoggerFactory.getLogger(MatchMetrics.class);</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> String CONTACT_US = <span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-matchmetrics.java&amp;utm_term=enterprise-data-file&quot;</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> main(String[] args) <span class="c-code__keywordflow">throws</span> Exception {</div>
 <div class="c-code__line">        configureLogback(getFilePath(<span class="c-code__stringliteral">&quot;logback.xml&quot;</span>));</div>
-<div class="c-code__line">        String dataFilename = args.length &gt; 0 ? args[0] : <span class="c-code__keyword">null</span>;</div>
+<div class="c-code__line">        <span class="c-code__comment">// Use the supplied data file, or the free Lite file, which is</span></div>
+<div class="c-code__line">        <span class="c-code__comment">// downloaded if it is missing</span></div>
+<div class="c-code__line">        String dataFilename = DataFileHelper.getDataFileLocation(</div>
+<div class="c-code__line">                args.length &gt; 0 ? args[0] : LITE_HASH_DATA_FILE_PATH);</div>
 <div class="c-code__line">        run(dataFilename, EvidenceHelper.setUpEvidence(), <span class="c-code__keyword">false</span>, System.out);</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"></div>
@@ -160,8 +166,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_matc
 <div class="c-code__line">                <span class="c-code__comment">// Uncomment BrowserName to include Browser component profile ID</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// in the device ID value.</span></div>
 <div class="c-code__line">                <span class="c-code__comment">//.setProperty(&quot;BrowserName&quot;)</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// If using the full on-premise data file this property will be</span></div>
-<div class="c-code__line">                <span class="c-code__comment">// present in the data file. See https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-matchmetrics.java&amp;utm_term=run</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// Only the Enterprise data file has this property, and the</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// free Lite data file leaves it out. Contact us for a copy at</span></div>
+<div class="c-code__line">                <span class="c-code__comment">// https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-matchmetrics.java&amp;utm_term=run</span></div>
 <div class="c-code__line">                .setProperty(<span class="c-code__stringliteral">&quot;HardwareName&quot;</span>)</div>
 <div class="c-code__line">                <span class="c-code__comment">// Only use the predictive graph to better handle variances</span></div>
 <div class="c-code__line">                <span class="c-code__comment">// between the training data and the target User-Agent string.</span></div>
@@ -268,6 +275,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('console_2_matc
 <div class="c-code__line">                    });</div>
 <div class="c-code__line">                });</div>
 <div class="c-code__line">                writer.println();</div>
+<div class="c-code__line">            }</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (DataFileHelper.isLiteDataFile(</div>
+<div class="c-code__line">                    <a class="code hl_namespaceRef" href="../../pipeline-java/4.4/classpipeline_1_1developerexamples_1_1usagesharing_1_1_main.html">pipeline</a>.getElement(DeviceDetectionHashEngine.class))) {</div>
+<div class="c-code__line">                DataFileHelper.writeEnterpriseOffer(writer, CONTACT_US);</div>
 <div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">        logger.info(<span class="c-code__stringliteral">&quot;Finished Match Metrics Example&quot;</span>);</div>

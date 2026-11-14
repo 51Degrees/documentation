@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-web-gettin
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><p>IP Intelligence web example: on-premise Getting Started (server side).</p>
-<p>It builds an on-premise IP-intelligence pipeline from a local <code>.ipi</code> data file (with usage sharing, as a web deployment should), wraps it in a [<code>WebPipeline</code>] so the two client-side endpoints are mounted, and serves an HTML page showing the weighted IP Intelligence for the connecting client's IP address, with a form to look up any other address. Because the bundled data file is a free tier, the page shows the standard data-file warnings as a <code>c-eg-alert</code> and a contact-us banner describing a paid Enterprise file.</p>
+<p>It builds an on-premise IP-intelligence pipeline from a local <code>.ipi</code> data file (with usage sharing, as a web deployment should), wraps it in a [<code>WebPipeline</code>] so the two client-side endpoints are mounted, and serves an HTML page showing the weighted IP Intelligence for the connecting client's IP address, with a form to look up any other address. Because the default data file is a free tier, the page shows the standard data-file warnings as a <code>c-eg-alert</code>, says which properties need the Enterprise data file with a link to ask about a copy, and shows a contact-us banner describing a paid Enterprise file and a "Find out more" section.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">pub fn <a class="code hl_function" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f">run</a>(options: <a class="code hl_struct" href="struct_options.html">Options</a>) -&gt; anyhow::Result&lt;()&gt; {</div>
 <div class="c-code__line">    <span class="c-code__comment">// Build the pipeline (and so the share-usage element&#39;s blocking reqwest</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// client) on this plain thread, before the async runtime is entered. The</span></div>
@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-web-gettin
 <div class="c-code__line">    <span class="c-code__comment">// constructed, and tokio forbids dropping a runtime from inside another</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// runtime&#39;s async context, so doing this work outside block_on avoids that</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// panic.</span></div>
-<div class="c-code__line">    let (app, warnings) = <a class="code hl_function" href="dd-web-client-only-cloud_8rs.html#a42853b52e8b4e16212d2713d4ce1d36b">build_app</a>(&amp;options.data_file, <span class="c-code__keyword">true</span>)?;</div>
-<div class="c-code__line">    <a class="code hl_function" href="dd-web-getting-started-onprem_8rs.html#a0ecdaa6c332af4e687f3bc109baa11a8">store_warnings</a>(warnings);</div>
+<div class="c-code__line">    let (app, notes) = <a class="code hl_function" href="dd-web-client-only-cloud_8rs.html#a42853b52e8b4e16212d2713d4ce1d36b">build_app</a>(&amp;options.data_file, <span class="c-code__keyword">true</span>)?;</div>
+<div class="c-code__line">    <a class="code hl_function" href="ipi-web-getting-started-onprem_8rs.html#a2ee65b728d5cc1fc7c19257db1c5219e">store_notes</a>(notes);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    let <a class="code hl_function" href="dd-web-getting-started-cloud_8rs.html#aa008b6165ad78b271beb1714f68596a1">runtime</a> = tokio::runtime::Builder::new_multi_thread()</div>
 <div class="c-code__line">        .enable_all()</div>
@@ -88,12 +88,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-web-gettin
 <div class="c-code__line">            .with_context(|| format!(<span class="c-code__stringliteral">&quot;binding {}&quot;</span>, options.address))?;</div>
 <div class="c-code__line">        let bound = listener.local_addr().context(<span class="c-code__stringliteral">&quot;reading the bound address&quot;</span>)?;</div>
 <div class="c-code__line">        println!(<span class="c-code__stringliteral">&quot;IP Intelligence on-premise web example listening on http://{bound}&quot;</span>);</div>
-<div class="c-code__line">        <span class="c-code__keywordflow">for</span> warning in <a class="code hl_function" href="dd-web-getting-started-onprem_8rs.html#aaeb48676d44082d1d0c8695645c607f7">current_warnings</a>() {</div>
+<div class="c-code__line">        let notes = <a class="code hl_function" href="ipi-web-getting-started-onprem_8rs.html#a9448e9ae37d87512a212a60d61aa3db3">current_notes</a>();</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">for</span> warning in &amp;notes.warnings {</div>
 <div class="c-code__line">            println!(<span class="c-code__stringliteral">&quot;WARNING: {warning}&quot;</span>);</div>
+<div class="c-code__line">        }</div>
+<div class="c-code__line">        let missing = examples_shared::missing_properties(<a class="code hl_variable" href="device-detection-examples_2src_2lib_8rs.html#a27ce90c59887a6542ed37f82eeb71fc3">ENTERPRISE_PROPERTIES</a>, &amp;notes.available);</div>
+<div class="c-code__line">        <span class="c-code__keywordflow">if</span> let <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(message) =</div>
+<div class="c-code__line">            examples_shared::enterprise_data_file_message(&amp;missing, <a class="code hl_variable" href="dd-onprem-getting-started_8rs.html#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a>)</div>
+<div class="c-code__line">        {</div>
+<div class="c-code__line">            println!(<span class="c-code__stringliteral">&quot;{message}&quot;</span>);</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">        axum::serve(</div>
 <div class="c-code__line">            listener,</div>
-<div class="c-code__line">            app.into_make_service_with_connect_info::&lt;SocketAddr&gt;(),</div>
+<div class="c-code__line">            app.into_make_service_with_connect_info::&lt;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a563d47276a0c0f08118b289443d2fa13">SocketAddr</a>&gt;(),</div>
 <div class="c-code__line">        )</div>
 <div class="c-code__line">        .await</div>
 <div class="c-code__line">        .context(<span class="c-code__stringliteral">&quot;serving the application&quot;</span>)</div>

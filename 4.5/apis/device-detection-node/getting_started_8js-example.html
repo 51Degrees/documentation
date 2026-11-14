@@ -170,8 +170,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('getting_starte
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> {</div>
 <div class="c-code__line">  DATA_FILE_AGE_WARNING,</div>
-<div class="c-code__line">  DATA_FILE_PATH_ENV_VAR,</div>
-<div class="c-code__line">  LEGACY_DATA_FILE_PATH_ENV_VAR,</div>
+<div class="c-code__line">  DATA_FILE_PATH_VARIABLE,</div>
 <div class="c-code__line">  <a id="_a0" name="_a0"></a><a class="code hl_class" href="class_example_utils.html">ExampleUtils</a></div>
 <div class="c-code__line">} = require(path.join(__dirname, <span class="c-code__stringliteral">&#39;/../exampleUtils&#39;</span>));</div>
 <div class="c-code__line"> </div>
@@ -179,9 +178,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('getting_starte
 <div class="c-code__line">let pipeline;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> setPipeline = (options) =&gt; {</div>
-<div class="c-code__line">  <span class="c-code__comment">// An explicit data file path supplied in the &#39;51DEGREES_DD_PATH&#39;</span></div>
-<div class="c-code__line">  <span class="c-code__comment">// environment variable (or the older &#39;_51DEGREES_DD_PATH&#39;) takes</span></div>
-<div class="c-code__line">  <span class="c-code__comment">// precedence over the value in the configuration file.</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// An explicit data file path supplied in the &#39;_51DEGREES_DD_PATH&#39;</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// environment variable takes precedence over the value in the</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// configuration file.</span></div>
 <div class="c-code__line">  <span class="c-code__keyword">const</span> envDataFilePath = <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.<a id="a1" name="a1"></a>getDataFilePathFromEnv();</div>
 <div class="c-code__line">  <span class="c-code__keywordflow">if</span> (envDataFilePath) {</div>
 <div class="c-code__line">    optionsExtension.setDataFilePath(options, envDataFilePath);</div>
@@ -189,8 +188,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('getting_starte
 <div class="c-code__line">  <span class="c-code__keyword">const</span> dataFilePath = optionsExtension.getDataFilePath(options);</div>
 <div class="c-code__line">  <span class="c-code__keywordflow">if</span> (!dataFilePath) {</div>
 <div class="c-code__line">    <span class="c-code__keywordflow">throw</span> <span class="c-code__stringliteral">&#39;A data file must be specified in the 51d.json file or the &#39;</span> +</div>
-<div class="c-code__line">      `<span class="c-code__stringliteral">&#39;${DATA_FILE_PATH_ENV_VAR}&#39;</span> environment variable (the older ` +</div>
-<div class="c-code__line">      `<span class="c-code__stringliteral">&#39;${LEGACY_DATA_FILE_PATH_ENV_VAR}&#39;</span> is also read).`;</div>
+<div class="c-code__line">      `<span class="c-code__stringliteral">&#39;${DATA_FILE_PATH_VARIABLE}&#39;</span> environment variable.`;</div>
 <div class="c-code__line">  }</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__keywordflow">if</span> (!fs.existsSync(dataFilePath)) {</div>
@@ -259,10 +257,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('getting_starte
 <div class="c-code__line">  <span class="c-code__comment">// Handle report from client side separately</span></div>
 <div class="c-code__line">  <span class="c-code__keywordflow">if</span> (req.url.startsWith(<span class="c-code__stringliteral">&#39;/json&#39;</span>)) {</div>
 <div class="c-code__line">    flowData.process().then(<span class="c-code__keyword">function</span> () {</div>
-<div class="c-code__line">      res.statusCode = 200;</div>
-<div class="c-code__line">      res.setHeader(<span class="c-code__stringliteral">&#39;Content-Type&#39;</span>, <span class="c-code__stringliteral">&#39;application/json&#39;</span>);</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">      res.end(JSON.stringify(flowData.jsonbundler.json));</div>
+<div class="c-code__line">      <span class="c-code__comment">// Sends the caching headers, and a 304 to a matching If-None-Match.</span></div>
+<div class="c-code__line">      core.Helpers.writeClientSideResponse(req, res, flowData,</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;application/json&#39;</span>, JSON.stringify(flowData.jsonbundler.json));</div>
 <div class="c-code__line">    });</div>
 <div class="c-code__line">  } <span class="c-code__keywordflow">else</span> <span class="c-code__keywordflow">if</span> (req.url.split(<span class="c-code__charliteral">&#39;?&#39;</span>)[0] === coreJsPath) {</div>
 <div class="c-code__line">    <span class="c-code__comment">// Serve the client-side script built by the JavaScriptBuilder as a separate</span></div>
@@ -273,10 +270,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('getting_starte
 <div class="c-code__line">    <span class="c-code__comment">// evidence like any other and are already in the flow data via</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// addFromRequest.</span></div>
 <div class="c-code__line">    flowData.process().then(<span class="c-code__keyword">function</span> () {</div>
-<div class="c-code__line">      res.statusCode = 200;</div>
-<div class="c-code__line">      res.setHeader(<span class="c-code__stringliteral">&#39;Content-Type&#39;</span>, <span class="c-code__stringliteral">&#39;application/x-javascript&#39;</span>);</div>
-<div class="c-code__line"> </div>
-<div class="c-code__line">      res.end(flowData.javascriptbuilder.javascript);</div>
+<div class="c-code__line">      <span class="c-code__comment">// Sends the caching headers, and a 304 to a matching If-None-Match.</span></div>
+<div class="c-code__line">      core.Helpers.writeClientSideResponse(req, res, flowData,</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&#39;application/x-javascript&#39;</span>, flowData.javascriptbuilder.javascript);</div>
 <div class="c-code__line">    });</div>
 <div class="c-code__line">  } <span class="c-code__keywordflow">else</span> {</div>
 <div class="c-code__line">    flowData.process().then(<span class="c-code__keyword">function</span> () {</div>
@@ -292,9 +288,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('getting_starte
 <div class="c-code__line"> </div>
 <div class="c-code__line">      <span class="c-code__comment">// Obtain all used evidence</span></div>
 <div class="c-code__line">      <span class="c-code__keyword">const</span> allEvidence = flowData.evidence.getAll();</div>
-<div class="c-code__line">      <span class="c-code__keyword">const</span> evidences =</div>
-<div class="c-code__line">        pipeline.getElement(<span class="c-code__stringliteral">&#39;device&#39;</span>).evidenceKeyFilter.filterEvidence(</div>
-<div class="c-code__line">          allEvidence);</div>
+<div class="c-code__line">      <span class="c-code__keyword">const</span> device = pipeline.getElement(<span class="c-code__stringliteral">&#39;device&#39;</span>);</div>
+<div class="c-code__line">      <span class="c-code__keyword">const</span> evidences = device.evidenceKeyFilter.filterEvidence(allEvidence);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">      <span class="c-code__comment">// Compile a response</span></div>
 <div class="c-code__line">      res.end(compiledFunction(</div>
@@ -306,17 +301,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('getting_starte
 <div class="c-code__line">          allEvidence,</div>
 <div class="c-code__line">          dataSourceTier: <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.<a id="a3" name="a3"></a>getDataTier(pipeline),</div>
 <div class="c-code__line">          coreJsPath,</div>
-<div class="c-code__line">          hardwareVendor: dataExtension.getValueHelper(flowData.device, <span class="c-code__stringliteral">&#39;hardwarevendor&#39;</span>),</div>
-<div class="c-code__line">          hardwareName: dataExtension.getValueHelper(flowData.device, <span class="c-code__stringliteral">&#39;hardwarename&#39;</span>),</div>
-<div class="c-code__line">          deviceType: dataExtension.getValueHelper(flowData.device, <span class="c-code__stringliteral">&#39;devicetype&#39;</span>),</div>
-<div class="c-code__line">          platformVendor: dataExtension.getValueHelper(flowData.device, <span class="c-code__stringliteral">&#39;platformvendor&#39;</span>),</div>
-<div class="c-code__line">          platformName: dataExtension.getValueHelper(flowData.device, <span class="c-code__stringliteral">&#39;platformname&#39;</span>),</div>
-<div class="c-code__line">          platformVersion: dataExtension.getValueHelper(flowData.device, <span class="c-code__stringliteral">&#39;platformversion&#39;</span>),</div>
-<div class="c-code__line">          browserVendor: dataExtension.getValueHelper(flowData.device, <span class="c-code__stringliteral">&#39;browservendor&#39;</span>),</div>
-<div class="c-code__line">          browserName: dataExtension.getValueHelper(flowData.device, <span class="c-code__stringliteral">&#39;browsername&#39;</span>),</div>
-<div class="c-code__line">          browserVersion: dataExtension.getValueHelper(flowData.device, <span class="c-code__stringliteral">&#39;browserversion&#39;</span>),</div>
-<div class="c-code__line">          screenWidth: dataExtension.getValueHelper(flowData.device, <span class="c-code__stringliteral">&#39;screenpixelswidth&#39;</span>),</div>
-<div class="c-code__line">          screenHeight: dataExtension.getValueHelper(flowData.device, <span class="c-code__stringliteral">&#39;screenpixelsheight&#39;</span>),</div>
+<div class="c-code__line">          hardwareVendor: <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.<a id="a4" name="a4"></a>getEnterpriseValue(device, flowData.device, <span class="c-code__stringliteral">&#39;hardwarevendor&#39;</span>),</div>
+<div class="c-code__line">          hardwareName: <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.getEnterpriseValue(device, flowData.device, <span class="c-code__stringliteral">&#39;hardwarename&#39;</span>),</div>
+<div class="c-code__line">          deviceType: <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.getEnterpriseValue(device, flowData.device, <span class="c-code__stringliteral">&#39;devicetype&#39;</span>),</div>
+<div class="c-code__line">          platformVendor: <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.getEnterpriseValue(device, flowData.device, <span class="c-code__stringliteral">&#39;platformvendor&#39;</span>),</div>
+<div class="c-code__line">          platformName: <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.getEnterpriseValue(device, flowData.device, <span class="c-code__stringliteral">&#39;platformname&#39;</span>),</div>
+<div class="c-code__line">          platformVersion: <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.getEnterpriseValue(device, flowData.device, <span class="c-code__stringliteral">&#39;platformversion&#39;</span>),</div>
+<div class="c-code__line">          browserVendor: <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.getEnterpriseValue(device, flowData.device, <span class="c-code__stringliteral">&#39;browservendor&#39;</span>),</div>
+<div class="c-code__line">          browserName: <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.getEnterpriseValue(device, flowData.device, <span class="c-code__stringliteral">&#39;browsername&#39;</span>),</div>
+<div class="c-code__line">          browserVersion: <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.getEnterpriseValue(device, flowData.device, <span class="c-code__stringliteral">&#39;browserversion&#39;</span>),</div>
+<div class="c-code__line">          screenWidth: <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.getEnterpriseValue(device, flowData.device, <span class="c-code__stringliteral">&#39;screenpixelswidth&#39;</span>),</div>
+<div class="c-code__line">          screenHeight: <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.getEnterpriseValue(device, flowData.device, <span class="c-code__stringliteral">&#39;screenpixelsheight&#39;</span>),</div>
 <div class="c-code__line">          <span class="c-code__comment">// The device id combines the profile ids of the hardware, platform,</span></div>
 <div class="c-code__line">          <span class="c-code__comment">// browser and crawler components that were matched.</span></div>
 <div class="c-code__line">          deviceId: dataExtension.getValueHelper(flowData.device, <span class="c-code__stringliteral">&#39;deviceid&#39;</span>)</div>
@@ -345,7 +340,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('getting_starte
 <div class="c-code__line">  server,</div>
 <div class="c-code__line">  setPipeline</div>
 <div class="c-code__line">};</div>
-<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.devicedetection.onpremise/examples/onpremise/exampleUtils.js:108</div></div>
+<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.devicedetection.onpremise/examples/onpremise/exampleUtils.js:190</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->
 <!-- start footer part -->

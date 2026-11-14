@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-onprem-upd
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <div class="textblock"><p>On-premise IP Intelligence data-file update console example.</p>
-<p>Demonstrates the data-file update mechanisms the on-premise engine exposes: a programmatic reload from disk, the file-system-watcher and automatic-update switches, and how the engine reports its data-file state. The descriptive block the documentation tooling renders lives at the bottom of the file.</p>
+<p>Demonstrates the data-file update mechanisms the on-premise engine exposes: a programmatic reload from disk, the file-system-watcher and automatic-update switches, and how the engine reports its data-file state. Automatic updates and the location properties need the Enterprise data file, and the run says so. The descriptive block the documentation tooling renders lives at the bottom of the file.</p>
 <div class="c-code__block c-code__block--outline"><div class="c-code__line">pub fn <a class="code hl_function" href="dd-cloud-configurator_8rs.html#ac7e55d94d4b0d30224a9605be73e557f">run</a>(options: &amp;<a class="code hl_struct" href="struct_example_options.html">ExampleOptions</a>, out: &amp;<a class="code hl_variable" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write) -&gt; anyhow::Result&lt;()&gt; {</div>
 <div class="c-code__line">    <span class="c-code__comment">// Build the concrete on-premise engine. The update mechanisms live on the</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// OnPremiseAspectEngine trait, so a concrete handle (kept in an Arc) is held</span></div>
@@ -76,8 +76,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-onprem-upd
 <div class="c-code__line">        IpIntelligenceOnPremiseEngine::builder(&amp;options.data_file)</div>
 <div class="c-code__line">            .performance_profile(PerformanceProfile::LowMemory)</div>
 <div class="c-code__line">            <span class="c-code__comment">// Request the autonomous-system properties the ASN data file</span></div>
-<div class="c-code__line">            <span class="c-code__comment">// carries, so the before/after lookups have a value to show.</span></div>
-<div class="c-code__line">            .properties([<span class="c-code__stringliteral">&quot;Asn&quot;</span>, <span class="c-code__stringliteral">&quot;AsnName&quot;</span>])</div>
+<div class="c-code__line">            <span class="c-code__comment">// carries, so the before/after lookups have a value to show, and</span></div>
+<div class="c-code__line">            <span class="c-code__comment">// location properties only the Enterprise data file carries.</span></div>
+<div class="c-code__line">            .properties(<a class="code hl_variable" href="ipi-onprem-compare_8rs.html#ac8726dbd9b190080d254c629c41a3c1c">REQUESTED_PROPERTIES</a>.iter().copied())</div>
 <div class="c-code__line">            <span class="c-code__comment">// Automatic daily updates would be enabled here in a deployment</span></div>
 <div class="c-code__line">            <span class="c-code__comment">// that has a download URL. See the note below about the Distributor.</span></div>
 <div class="c-code__line">            .auto_update(<span class="c-code__keyword">false</span>)</div>
@@ -101,9 +102,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-onprem-upd
 <div class="c-code__line"> </div>
 <div class="c-code__line">    writeln!(out, <span class="c-code__stringliteral">&quot;Result before reload: {}&quot;</span>, <a class="code hl_function" href="ipi-onprem-update-data-file_8rs.html#af99b9f541d91bdb227c6fd49d0a8bd73">lookup_asn</a>(&amp;pipeline)?)?;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">    <span class="c-code__comment">// 1. Programmatic update: reopen the data file from disk and atomically swap</span></div>
-<div class="c-code__line">    <span class="c-code__comment">//    it in. A concurrent lookup keeps using the previous data set until the</span></div>
-<div class="c-code__line">    <span class="c-code__comment">//    swap completes, so this is safe to call on a live engine. In a real</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// 1. Programmatic update: reload the data set from the data file on disk</span></div>
+<div class="c-code__line">    <span class="c-code__comment">//    in place. A concurrent lookup keeps reading the data set it started</span></div>
+<div class="c-code__line">    <span class="c-code__comment">//    with, so this is safe to call on a live engine. In a real</span></div>
 <div class="c-code__line">    <span class="c-code__comment">//    deployment this would run after a newer file had been downloaded into</span></div>
 <div class="c-code__line">    <span class="c-code__comment">//    place.</span></div>
 <div class="c-code__line">    writeln!(out)?;</div>
@@ -116,6 +117,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-onprem-upd
 <div class="c-code__line">    <span class="c-code__comment">// 2. The engine still resolves after the swap.</span></div>
 <div class="c-code__line">    writeln!(out, <span class="c-code__stringliteral">&quot;Result after reload:  {}&quot;</span>, <a class="code hl_function" href="ipi-onprem-update-data-file_8rs.html#af99b9f541d91bdb227c6fd49d0a8bd73">lookup_asn</a>(&amp;pipeline)?)?;</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment">// The location properties, which the engine&#39;s data file may not carry. The</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// data file&#39;s own list of properties says which it does. This engine names</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// its properties, so it lists those names whether or not the file carries</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// them, and the list comes from an engine that names none.</span></div>
+<div class="c-code__line">    let <a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a> = ip_intelligence_examples::data_file_properties(&amp;options.data_file)?;</div>
+<div class="c-code__line">    <a class="code hl_function" href="ipi-onprem-update-data-file_8rs.html#a1b8e21db3c8410cbd02164a1d56bb556">report_enterprise</a>(&amp;pipeline, &amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>, out)?;</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">    writeln!(out)?;</div>
 <div class="c-code__line">    writeln!(</div>
 <div class="c-code__line">        out,</div>
@@ -125,7 +133,29 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi-onprem-upd
 <div class="c-code__line"><span class="c-code__stringliteral">         it on disk (optionally with the file-system watcher enabled) or by \</span></div>
 <div class="c-code__line"><span class="c-code__stringliteral">         calling refresh() programmatically as shown above.&quot;</span></div>
 <div class="c-code__line">    )?;</div>
+<div class="c-code__line">    writeln!(</div>
+<div class="c-code__line">        out,</div>
+<div class="c-code__line">        <span class="c-code__stringliteral">&quot;Automatic updates need a licence key for the Enterprise data file, and \</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">         this run has none, so it reloads the file already on disk. Contact us \</span></div>
+<div class="c-code__line"><span class="c-code__stringliteral">         about the Enterprise data file and a licence key at {CONTACT_US_URL}&quot;</span></div>
+<div class="c-code__line">    )?;</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">    <span class="c-code__comment">// The tier and publish date are in the data-file state above, so only the</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// warnings are added here.</span></div>
+<div class="c-code__line">    writeln!(out)?;</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">for</span> warning in examples_shared::check_data_file(engine.as_ref()) {</div>
+<div class="c-code__line">        writeln!(out, <span class="c-code__stringliteral">&quot;WARNING: {warning}&quot;</span>)?;</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">    let missing = examples_shared::missing_properties(<a class="code hl_variable" href="ipi-onprem-update-data-file_8rs.html#aeafb28e379d2e420d28defeb00134560">ENTERPRISE_REQUESTED</a>, &amp;<a class="code hl_variable" href="ipi-web-getting-started-onprem_8rs.html#a911cbb6a095bcf777a3bfd243ad938e5">available</a>);</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">if</span> let <a class="code hl_function" href="data__file__check_8rs.html#af237e159d58cb9c57a1bd88cfd455988">Some</a>(message) = examples_shared::enterprise_data_file_message(&amp;missing, <a class="code hl_variable" href="dd-onprem-getting-started_8rs.html#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a>) {</div>
+<div class="c-code__line">        writeln!(out)?;</div>
+<div class="c-code__line">        writeln!(out, <span class="c-code__stringliteral">&quot;{message}&quot;</span>)?;</div>
+<div class="c-code__line">    }</div>
+<div class="c-code__line">    examples_shared::write_find_out_more(</div>
+<div class="c-code__line">        out,</div>
+<div class="c-code__line">        <a class="code hl_variable" href="dd-cloud-configurator_8rs.html#ad25b7f6d0c89d56f4024e2b559cf89cc">FIND_OUT_MORE</a>,</div>
+<div class="c-code__line">        examples_shared::ON_PREMISE_REPOSITORIES,</div>
+<div class="c-code__line">    )?;</div>
 <div class="c-code__line">    Ok(())</div>
 <div class="c-code__line">}</div>
 </div><!-- fragment --> </div></div><!-- primary -->

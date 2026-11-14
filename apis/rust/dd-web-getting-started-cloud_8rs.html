@@ -80,7 +80,7 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:aebb369dc2458f1fd42fa324af7e14337"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the cloud web application router, ready to serve.  <br /></td></tr>
 <tr class="c-table__row memitem:a8d644587b49a1bca9eba622abbfaef16" id="r_a8d644587b49a1bca9eba622abbfaef16"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a8d644587b49a1bca9eba622abbfaef16">run</a> (options:Options) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a8d644587b49a1bca9eba622abbfaef16"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Serve the example page over TCP until interrupted.  <br /></td></tr>
-<tr class="c-table__row memitem:ab11b8dbcc6bd4a67b449a99b8ff3c6fe" id="r_ab11b8dbcc6bd4a67b449a99b8ff3c6fe"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#ab11b8dbcc6bd4a67b449a99b8ff3c6fe">home</a> (result:FiftyOneResult) -&gt; Html&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td></tr>
+<tr class="c-table__row memitem:ab11b8dbcc6bd4a67b449a99b8ff3c6fe" id="r_ab11b8dbcc6bd4a67b449a99b8ff3c6fe"><td class="c-table__cell">async&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#ab11b8dbcc6bd4a67b449a99b8ff3c6fe">home</a> (result:FiftyOneResult) -&gt; Html&lt; String &gt;</td></tr>
 <tr class="c-table__row memdesc:ab11b8dbcc6bd4a67b449a99b8ff3c6fe"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The home-page handler.  <br /></td></tr>
 <tr class="c-table__row memitem:a10397c317f477c2d5f6629f1d23f9b28" id="r_a10397c317f477c2d5f6629f1d23f9b28"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a10397c317f477c2d5f6629f1d23f9b28">main</a> () -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memitem:ac41c2ef03b13f579e9c5619061a4e90d" id="r_ac41c2ef03b13f579e9c5619061a4e90d"><td class="c-table__cell">struct&#160;<a class="el" href="struct_captured.html">Captured</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ac41c2ef03b13f579e9c5619061a4e90d">dispatch</a> (app:&amp;Router, uri:&amp;str) -&gt; <a class="el" href="struct_captured.html">Captured</a></td></tr>
@@ -88,6 +88,8 @@ Functions</h2></td></tr>
 <tr class="c-table__row memitem:aa008b6165ad78b271beb1714f68596a1" id="r_aa008b6165ad78b271beb1714f68596a1"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#aa008b6165ad78b271beb1714f68596a1">runtime</a> () -&gt; tokio::runtime::Runtime</td></tr>
 <tr class="c-table__row memdesc:aa008b6165ad78b271beb1714f68596a1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A multi-thread runtime to drive one test's async work.  <br /></td></tr>
 <tr class="c-table__row memitem:afcbd66bcc8262004448d7ce17a112dbf" id="r_afcbd66bcc8262004448d7ce17a112dbf"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#afcbd66bcc8262004448d7ce17a112dbf">server_starts_and_serves_page_and_client_script</a> ()</td></tr>
+<tr class="c-table__row memitem:ae498a430b8422ff417b75b356e424976" id="r_ae498a430b8422ff417b75b356e424976"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ae498a430b8422ff417b75b356e424976">builds_with_usage_sharing_on</a> ()</td></tr>
+<tr class="c-table__row memdesc:ae498a430b8422ff417b75b356e424976"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Usage sharing is on when the binary serves the page.  <br /></td></tr>
 <tr class="c-table__row memitem:a2dda1103814e1d2bc6271bdc55c68ff2" id="r_a2dda1103814e1d2bc6271bdc55c68ff2"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a2dda1103814e1d2bc6271bdc55c68ff2">static_assets_are_served</a> ()</td></tr>
 <tr class="c-table__row memitem:aefc135798fa0d05a0b60d93d56d09df4" id="r_aefc135798fa0d05a0b60d93d56d09df4"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#aefc135798fa0d05a0b60d93d56d09df4">accept_ch_is_emitted_for_a_client_hints_browser</a> ()</td></tr>
 </table><table class="c-table c-table--directory">
@@ -97,7 +99,7 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:a4c3d53cc817ab7f6a8e320b5f0e602a4" id="r_a4c3d53cc817ab7f6a8e320b5f0e602a4"><td class="c-table__cell">pub&#160;</td><td class="c-table__cell"><a class="el" href="#a4c3d53cc817ab7f6a8e320b5f0e602a4">resource_key</a></td></tr>
 <tr class="c-table__row memdesc:a4c3d53cc817ab7f6a8e320b5f0e602a4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The 51Degrees cloud resource key (from <a href="https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-device-detection-examples-src-bin-dd-web-getting-started-cloud.rs&amp;utm_term=resource_key">https://configure.51degrees.com?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-device-detection-examples-src-bin-dd-web-getting-started-cloud.rs&amp;utm_term=resource_key</a>).  <br /></td></tr>
 <tr class="c-table__row memitem:ae83ce8e91df378a7e5b2f394db2631ad" id="r_ae83ce8e91df378a7e5b2f394db2631ad"><td class="c-table__cell">pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#ae83ce8e91df378a7e5b2f394db2631ad">endpoint</a></td></tr>
-<tr class="c-table__row memdesc:ae83ce8e91df378a7e5b2f394db2631ad"><td class="c-table__cell">&#160;</td><td class="c-table__cell">An optional override for the cloud endpoint, read from <code>51DEGREES_CLOUD_ENDPOINT</code>.  <br /></td></tr>
+<tr class="c-table__row memdesc:ae83ce8e91df378a7e5b2f394db2631ad"><td class="c-table__cell">&#160;</td><td class="c-table__cell">An optional override for the cloud endpoint, read from <code>_51DEGREES_CLOUD_ENDPOINT</code>.  <br /></td></tr>
 <tr class="c-table__row memitem:a07d0fcf68ad8673792627a318c6c26dd" id="r_a07d0fcf68ad8673792627a318c6c26dd"><td class="c-table__cell">pub&#160;pub&#160;pub&#160;</td><td class="c-table__cell"><a class="el" href="#a07d0fcf68ad8673792627a318c6c26dd">address</a></td></tr>
 <tr class="c-table__row memdesc:a07d0fcf68ad8673792627a318c6c26dd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The socket address the server binds to.  <br /></td></tr>
 <tr class="c-table__row memitem:ab60c545115f42f88c00b55f384f5ffc0" id="r_ab60c545115f42f88c00b55f384f5ffc0"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#ab60c545115f42f88c00b55f384f5ffc0">tests</a></td></tr>
@@ -143,7 +145,7 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">endpoint:Option&lt;&amp;<a class="el" href="device-detection-examples_2src_2web__support_2mod_8rs.html#a59c09f4d2e77fa42c030902215658830">str</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+          <td class="c-table__cell">endpoint:Option&lt;&amp;<a class="el" href="dd-cloud-configurator_8rs.html#af99483e1224efe9ddfe4c99d7caa54ac">str</a> &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
         </tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
@@ -163,7 +165,31 @@ Variables</h2></td></tr>
 <p>Build the cloud web application router, ready to serve. </p>
 <p>The router carries the [<code>FiftyOneState</code>] through its middleware, so the two client-side endpoints and the home page all share one built pipeline. It is returned (rather than served) so the integration test can drive it in process with <code>tower::ServiceExt::oneshot</code> while [<code><a class="el" href="#a8d644587b49a1bca9eba622abbfaef16" title="Serve the example page over TCP until interrupted.">run</a></code>] serves it over TCP.</p>
 <p>The cloud request engine resolves its discovery (the accepted evidence keys and the accessible properties) when it builds. Passing <code>Some(state)</code> supplies that discovery up front so the build does no cloud call, which the integration test uses to assemble the app offline. Passing <code>None</code> lets the builder fetch the discovery from the cloud, which is the live path the binary takes.</p>
-<p><code>share_usage</code> is true when the binary serves the page. The tests pass false, so a test run sends nothing to 51Degrees. </p>
+<p><code>share_usage</code> is true when the binary serves the page. The tests that process requests pass false, so a test run sends nothing to 51Degrees, and the one that passes true processes no request. </p>
+
+</div>
+</div>
+<a id="ae498a430b8422ff417b75b356e424976" name="ae498a430b8422ff417b75b356e424976"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae498a430b8422ff417b75b356e424976">&#9670;&#160;</a></span>builds_with_usage_sharing_on()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn builds_with_usage_sharing_on </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Usage sharing is on when the binary serves the page. </p>
+<p>Building sends nothing, because no request is processed. </p>
 
 </div>
 </div>
@@ -207,7 +233,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">async fn home </td>
           <td>(</td>
           <td class="c-table__cell">result:FiftyOneResult</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; Html&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>
+          <td> -&gt; Html&lt; String &gt;</td>
         </tr>
           </table>
         </div>
@@ -402,7 +428,7 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>An optional override for the cloud endpoint, read from <code>51DEGREES_CLOUD_ENDPOINT</code>. </p>
+<p>An optional override for the cloud endpoint, read from <code>_51DEGREES_CLOUD_ENDPOINT</code>. </p>
 <p><code>None</code> leaves the choice to the cloud request engine, which reads the same variable and defaults to the public cloud. </p>
 
 </div>

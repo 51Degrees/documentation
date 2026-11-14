@@ -75,21 +75,34 @@ Classes</h2></td></tr>
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="c-table__row memitem:a6f46caea8ef2116e6868901462d62778" id="r_a6f46caea8ef2116e6868901462d62778"><td class="c-table__cell">pub&#160;struct&#160;<a class="el" href="struct_example_options.html">ExampleOptions</a>&#160;</td><td class="c-table__cell"><a class="el" href="#a6f46caea8ef2116e6868901462d62778">from_env</a> () -&gt; Option&lt; Self &gt;</td></tr>
-<tr class="c-table__row memdesc:a6f46caea8ef2116e6868901462d62778"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default options, using the best-available loadable data-file tier.  <br /></td></tr>
+<tr class="c-table__row memdesc:a6f46caea8ef2116e6868901462d62778"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Default options, reading the Enterprise file when its share is reachable and otherwise the free ASN file, which is far smaller to download than the Lite file and serves to show an update as well.  <br /></td></tr>
 <tr class="c-table__row memitem:a8ec87ce59a7730398990e6de32fb8cb4" id="r_a8ec87ce59a7730398990e6de32fb8cb4"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a8ec87ce59a7730398990e6de32fb8cb4">for_tier</a> (<a class="el" href="data__paths_8rs.html#a29e87adf1760ab44a6a8d86c736658f8">tier:examples_shared::IpiTier</a>) -&gt; Option&lt; Self &gt;</td></tr>
 <tr class="c-table__row memdesc:a8ec87ce59a7730398990e6de32fb8cb4"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="struct_options.html" title="Options that drive [run].">Options</a> pinned to a specific data-file tier.  <br /></td></tr>
 <tr class="c-table__row memitem:a72a494311da1d889b016fd2f0e734e7e" id="r_a72a494311da1d889b016fd2f0e734e7e"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a72a494311da1d889b016fd2f0e734e7e">run</a> (options:&amp;ExampleOptions, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a72a494311da1d889b016fd2f0e734e7e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run the update-data-file example, writing all output to <code>out</code>.  <br /></td></tr>
 <tr class="c-table__row memitem:a6b49f7dbe4ae021a01c751fb479a556b" id="r_a6b49f7dbe4ae021a01c751fb479a556b"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a6b49f7dbe4ae021a01c751fb479a556b">report_data_file_state</a> (engine:&amp;IpIntelligenceOnPremiseEngine, out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a6b49f7dbe4ae021a01c751fb479a556b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Report what the engine knows about its data file: path, publish date and any configured remote update URL.  <br /></td></tr>
-<tr class="c-table__row memitem:af99b9f541d91bdb227c6fd49d0a8bd73" id="r_af99b9f541d91bdb227c6fd49d0a8bd73"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#af99b9f541d91bdb227c6fd49d0a8bd73">lookup_asn</a> (pipeline:&amp;Arc&lt; Pipeline &gt;) -&gt; anyhow::Result&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td></tr>
+<tr class="c-table__row memitem:af99b9f541d91bdb227c6fd49d0a8bd73" id="r_af99b9f541d91bdb227c6fd49d0a8bd73"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#af99b9f541d91bdb227c6fd49d0a8bd73">lookup_asn</a> (pipeline:&amp;Arc&lt; Pipeline &gt;) -&gt; anyhow::Result&lt; String &gt;</td></tr>
 <tr class="c-table__row memdesc:af99b9f541d91bdb227c6fd49d0a8bd73"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Look the Cloudflare IPv4 up and render its autonomous system, used to show the engine works before and after a reload.  <br /></td></tr>
+<tr class="c-table__row memitem:a1b8e21db3c8410cbd02164a1d56bb556" id="r_a1b8e21db3c8410cbd02164a1d56bb556"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a1b8e21db3c8410cbd02164a1d56bb556">report_enterprise</a> (pipeline:&amp;Arc&lt; Pipeline &gt;, available:&amp;[String], out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn Write,) -&gt; anyhow::Result&lt;()&gt;</td></tr>
+<tr class="c-table__row memdesc:a1b8e21db3c8410cbd02164a1d56bb556"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Look the Cloudflare IPv4 up and print each location property, or that it needs the Enterprise data file when the data file does not carry it.  <br /></td></tr>
 <tr class="c-table__row memitem:a10397c317f477c2d5f6629f1d23f9b28" id="r_a10397c317f477c2d5f6629f1d23f9b28"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a10397c317f477c2d5f6629f1d23f9b28">main</a> () -&gt; anyhow::Result&lt;()&gt;</td></tr>
 <tr class="c-table__row memdesc:a10397c317f477c2d5f6629f1d23f9b28"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Read the data file, then run the example, writing to standard output.  <br /></td></tr>
 <tr class="c-table__row memitem:adfc180faf043354120472c91e8f293b6" id="r_adfc180faf043354120472c91e8f293b6"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#adfc180faf043354120472c91e8f293b6">update_data_file_reloads_and_keeps_working</a> ()</td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="c-table__row memitem:a65560ade98913e76a1868a9845e47e52" id="r_a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a65560ade98913e76a1868a9845e47e52">CONTACT_US_URL</a></td></tr>
+<tr class="c-table__row memdesc:a65560ade98913e76a1868a9845e47e52"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Where to ask about a copy of the Enterprise data file.  <br /></td></tr>
+<tr class="c-table__row memitem:a59c09f4d2e77fa42c030902215658830" id="r_a59c09f4d2e77fa42c030902215658830"><td class="c-table__cell">const&#160;&amp;&#160;</td><td class="c-table__cell"><a class="el" href="#a59c09f4d2e77fa42c030902215658830">str</a></td></tr>
+<tr class="c-table__row memitem:ac8726dbd9b190080d254c629c41a3c1c" id="r_ac8726dbd9b190080d254c629c41a3c1c"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#ac8726dbd9b190080d254c629c41a3c1c">REQUESTED_PROPERTIES</a></td></tr>
+<tr class="c-table__row memdesc:ac8726dbd9b190080d254c629c41a3c1c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The properties the engine is asked for.  <br /></td></tr>
+<tr class="c-table__row memitem:a9823967acc55858ce6dd8fde953f1ebd" id="r_a9823967acc55858ce6dd8fde953f1ebd"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a9823967acc55858ce6dd8fde953f1ebd">AsnName</a></td></tr>
+<tr class="c-table__row memitem:ad2022a0016694abdaef60b9ea57958a0" id="r_ad2022a0016694abdaef60b9ea57958a0"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#ad2022a0016694abdaef60b9ea57958a0">RegisteredName</a></td></tr>
+<tr class="c-table__row memitem:a8f181820fc3e33d399e569676f8b5eec" id="r_a8f181820fc3e33d399e569676f8b5eec"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a8f181820fc3e33d399e569676f8b5eec">Country</a></td></tr>
+<tr class="c-table__row memitem:af57d597f5f001128affae4180f5658d7" id="r_af57d597f5f001128affae4180f5658d7"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#af57d597f5f001128affae4180f5658d7">Town</a></td></tr>
+<tr class="c-table__row memitem:aeafb28e379d2e420d28defeb00134560" id="r_aeafb28e379d2e420d28defeb00134560"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#aeafb28e379d2e420d28defeb00134560">ENTERPRISE_REQUESTED</a></td></tr>
+<tr class="c-table__row memdesc:aeafb28e379d2e420d28defeb00134560"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The requested properties only the Enterprise data file carries.  <br /></td></tr>
 <tr class="c-table__row memitem:ab533a800544facf05fd1c8e50f92099a" id="r_ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">pub&#160;</td><td class="c-table__cell"><a class="el" href="#ab533a800544facf05fd1c8e50f92099a">data_file</a></td></tr>
 <tr class="c-table__row memdesc:ab533a800544facf05fd1c8e50f92099a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The full path to the <code>.ipi</code> data file to open.  <br /></td></tr>
 <tr class="c-table__row memitem:ab60c545115f42f88c00b55f384f5ffc0" id="r_ab60c545115f42f88c00b55f384f5ffc0"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#ab60c545115f42f88c00b55f384f5ffc0">tests</a></td></tr>
@@ -138,7 +151,7 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>Default options, using the best-available loadable data-file tier. </p>
+<p>Default options, reading the Enterprise file when its share is reachable and otherwise the free ASN file, which is far smaller to download than the Lite file and serves to show an update as well. </p>
 
 </div>
 </div>
@@ -154,7 +167,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">fn lookup_asn </td>
           <td>(</td>
           <td class="c-table__cell">pipeline:&amp;Arc&lt; Pipeline &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; anyhow::Result&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>
+          <td> -&gt; anyhow::Result&lt; String &gt;</td>
         </tr>
           </table>
         </div>
@@ -215,6 +228,38 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a1b8e21db3c8410cbd02164a1d56bb556" name="a1b8e21db3c8410cbd02164a1d56bb556"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1b8e21db3c8410cbd02164a1d56bb556">&#9670;&#160;</a></span>report_enterprise()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fn report_enterprise </td>
+          <td>(</td>
+          <td class="c-table__cell">pipeline:&amp;Arc&lt; Pipeline &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">available:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>[String], </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">out:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> dyn</td>          <td class="c-table__cell"><span class="paramname"><em>Write</em></span>&#160;) -&gt; anyhow::Result&lt;()&gt;</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Look the Cloudflare IPv4 up and print each location property, or that it needs the Enterprise data file when the data file does not carry it. </p>
+
+</div>
+</div>
 <a id="a72a494311da1d889b016fd2f0e734e7e" name="a72a494311da1d889b016fd2f0e734e7e"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a72a494311da1d889b016fd2f0e734e7e">&#9670;&#160;</a></span>run()</h2>
 
@@ -265,6 +310,62 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="g-docs__section-heading">Variable Documentation</h2>
+<a id="a9823967acc55858ce6dd8fde953f1ebd" name="a9823967acc55858ce6dd8fde953f1ebd"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9823967acc55858ce6dd8fde953f1ebd">&#9670;&#160;</a></span>AsnName</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const AsnName</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a65560ade98913e76a1868a9845e47e52" name="a65560ade98913e76a1868a9845e47e52"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a65560ade98913e76a1868a9845e47e52">&#9670;&#160;</a></span>CONTACT_US_URL</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const CONTACT_US_URL</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Where to ask about a copy of the Enterprise data file. </p>
+
+</div>
+</div>
+<a id="a8f181820fc3e33d399e569676f8b5eec" name="a8f181820fc3e33d399e569676f8b5eec"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a8f181820fc3e33d399e569676f8b5eec">&#9670;&#160;</a></span>Country</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const Country</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
 <a id="ab533a800544facf05fd1c8e50f92099a" name="ab533a800544facf05fd1c8e50f92099a"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab533a800544facf05fd1c8e50f92099a">&#9670;&#160;</a></span>data_file</h2>
 
@@ -285,6 +386,88 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="aeafb28e379d2e420d28defeb00134560" name="aeafb28e379d2e420d28defeb00134560"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#aeafb28e379d2e420d28defeb00134560">&#9670;&#160;</a></span>ENTERPRISE_REQUESTED</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const ENTERPRISE_REQUESTED</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The requested properties only the Enterprise data file carries. </p>
+
+</div>
+</div>
+<a id="ad2022a0016694abdaef60b9ea57958a0" name="ad2022a0016694abdaef60b9ea57958a0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad2022a0016694abdaef60b9ea57958a0">&#9670;&#160;</a></span>RegisteredName</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const RegisteredName</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="ac8726dbd9b190080d254c629c41a3c1c" name="ac8726dbd9b190080d254c629c41a3c1c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac8726dbd9b190080d254c629c41a3c1c">&#9670;&#160;</a></span>REQUESTED_PROPERTIES</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const REQUESTED_PROPERTIES</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The properties the engine is asked for. </p>
+<p>Asn and AsnName are in the free ASN file and RegisteredName in the free Lite file, so either free file opens. </p>
+
+</div>
+</div>
+<a id="a59c09f4d2e77fa42c030902215658830" name="a59c09f4d2e77fa42c030902215658830"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a59c09f4d2e77fa42c030902215658830">&#9670;&#160;</a></span>str</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const &amp; str</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">     = &amp;[</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;IP Intelligence&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/ip-intelligence?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-update-data-file.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Pricing&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-update-data-file.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">    (<span class="c-code__stringliteral">&quot;Documentation&quot;</span>, <span class="c-code__stringliteral">&quot;https://51degrees.com/documentation/index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-rust&amp;utm_content=examples-ip-intelligence-examples-src-bin-ipi-onprem-update-data-file.rs&amp;utm_term=find-out-more&quot;</span>),</div>
+<div class="c-code__line">]</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ab60c545115f42f88c00b55f384f5ffc0" name="ab60c545115f42f88c00b55f384f5ffc0"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab60c545115f42f88c00b55f384f5ffc0">&#9670;&#160;</a></span>tests</h2>
 
@@ -303,6 +486,24 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">{</div>
 <div class="c-code__line">    use super::*</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="af57d597f5f001128affae4180f5658d7" name="af57d597f5f001128affae4180f5658d7"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af57d597f5f001128affae4180f5658d7">&#9670;&#160;</a></span>Town</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const Town</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
 </div>
 </div>
 </div><!-- primary -->

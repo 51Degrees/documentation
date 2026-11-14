@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
-<div class="textblock"><p>Checks the order in which the on-premise web example picks its data file, being 51DEGREES_DD_PATH first, then TestDataFile, then the Lite file. </p>
+<div class="textblock"><p>Checks the order in which the on-premise web example picks its data file, being _51DEGREES_DD_PATH first, then TestDataFile, then the Lite file. </p>
 <p>System properties stand in for the environment variables, because the lookup reads either and a test cannot set an environment variable. </p>
 </div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-methods" class="g-docs__section-heading"><a id="pub-methods" name="pub-methods"></a>
@@ -82,6 +82,10 @@ void&#160;</td><td class="c-table__cell"><b>usesLiteWhenNothingIsSet</b> ()  thr
 void&#160;</td><td class="c-table__cell"><b>usesTestDataFileWhenOnlyThatIsSet</b> ()  throws Exception </td></tr>
 <tr class="c-table__row memitem:afe9d86bf64afa7571850c246f27cdab4" id="r_afe9d86bf64afa7571850c246f27cdab4"><td class="c-table__cell"><a id="afe9d86bf64afa7571850c246f27cdab4" name="afe9d86bf64afa7571850c246f27cdab4"></a>
 void&#160;</td><td class="c-table__cell"><b>prefersDdPathOverTestDataFile</b> ()  throws Exception </td></tr>
+<tr class="c-table__row memitem:af5e550d7235a33d6266236425d7a57db" id="r_af5e550d7235a33d6266236425d7a57db"><td class="c-table__cell"><a id="af5e550d7235a33d6266236425d7a57db" name="af5e550d7235a33d6266236425d7a57db"></a>
+void&#160;</td><td class="c-table__cell"><b>usesOldDdPathWhenNewIsNotSet</b> ()  throws Exception </td></tr>
+<tr class="c-table__row memitem:adb86d320b0150973fdeb47e5bc9b3017" id="r_adb86d320b0150973fdeb47e5bc9b3017"><td class="c-table__cell"><a id="adb86d320b0150973fdeb47e5bc9b3017" name="adb86d320b0150973fdeb47e5bc9b3017"></a>
+void&#160;</td><td class="c-table__cell"><b>prefersDdPathOverOldDdPath</b> ()  throws Exception </td></tr>
 </table>
 </div><!-- primary -->
 </div><!-- inner -->

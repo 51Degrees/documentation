@@ -160,6 +160,8 @@ Static Public Attributes</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-methods" class="g-docs__section-heading"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a1a047ff90edd39ccf52d52d44ccceee9" id="r_a1a047ff90edd39ccf52d52d44ccceee9"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="#a1a047ff90edd39ccf52d52d44ccceee9">isLicenseKeyRequired</a> (<a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1configuration_1_1_data_file_configuration.html">DataFileConfiguration</a> dataFileConfig)</td></tr>
+<tr class="c-table__row memdesc:a1a047ff90edd39ccf52d52d44ccceee9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The Distributor serves nothing without a license key, so a key is required while the data update URL is the Distributor's.  <br /></td></tr>
 <tr class="c-table__row memitem:ad8d4c4c3e13aa951dc3f5c115268e285" id="r_ad8d4c4c3e13aa951dc3f5c115268e285"><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_engine_data_file.html">AspectEngineDataFile</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ad8d4c4c3e13aa951dc3f5c115268e285">newAspectEngineDataFile</a> ()</td></tr>
 <tr class="c-table__row memdesc:ad8d4c4c3e13aa951dc3f5c115268e285"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Create a new empty data file instance to be populated with the details of the data file to be used.  <br /></td></tr>
 <tr class="c-table__row memitem:a04bede5138c31e6f524ab3e12737c120" id="r_a04bede5138c31e6f524ab3e12737c120"><td class="c-table__cell">abstract&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a04bede5138c31e6f524ab3e12737c120">getDefaultDataDownloadType</a> ()</td></tr>
@@ -172,6 +174,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="c-table__row inherit_header pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_on_premise_aspect_engine_builder_base"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Protected Member Functions inherited from <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_on_premise_aspect_engine_builder_base.html">fiftyone.pipeline.engines.flowelements.OnPremiseAspectEngineBuilderBase&lt; TBuilder, TEngine &gt;</a></h3></td></tr>
 <tr class="c-table__row memitem:a45ba653d77cb265ff4638d2902b3fd59 pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_on_premise_aspect_engine_builder_base" id="r_a45ba653d77cb265ff4638d2902b3fd59"><td class="c-table__cell">
 void&#160;</td><td class="c-table__cell"><b>preCreateEngine</b> ()</td></tr>
+<tr class="c-table__row memitem:a1f26bad7660f9be33d10f1f3dedf67c3 pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_on_premise_aspect_engine_builder_base" id="r_a1f26bad7660f9be33d10f1f3dedf67c3"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_on_premise_aspect_engine_builder_base.html#a1f26bad7660f9be33d10f1f3dedf67c3">isLicenseKeyRequired</a> (<a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1configuration_1_1_data_file_configuration.html">DataFileConfiguration</a> dataFileConfig)</td></tr>
+<tr class="c-table__row memdesc:a1f26bad7660f9be33d10f1f3dedf67c3 pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_on_premise_aspect_engine_builder_base"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether the data update URL in the configuration serves nothing without a license key.  <br /></td></tr>
 <tr class="c-table__row memitem:a3eca66c10420ffaa81a31ed9b6593f09 pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_on_premise_aspect_engine_builder_base" id="r_a3eca66c10420ffaa81a31ed9b6593f09"><td class="c-table__cell">
 void&#160;</td><td class="c-table__cell"><b>configureEngine</b> (TEngine engine)  throws Exception </td></tr>
 <tr class="c-table__row memitem:abc215009d7e7b390dbf399359e312da0 pro_methods_classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_on_premise_aspect_engine_builder_base" id="r_abc215009d7e7b390dbf399359e312da0"><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_engine_data_file.html">AspectEngineDataFile</a>&#160;</td><td class="c-table__cell"><a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_on_premise_aspect_engine_builder_base.html#abc215009d7e7b390dbf399359e312da0">newAspectEngineDataFile</a> ()</td></tr>
@@ -283,6 +287,44 @@ Logger&#160;</td><td class="c-table__cell"><b>logger</b></td></tr>
 
 <p>The default value to use for the 'Type' parameter when sending a request to the Distributor. </p>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">default data download type; </dd></dl>
+
+</div>
+</div>
+<a id="a1a047ff90edd39ccf52d52d44ccceee9" name="a1a047ff90edd39ccf52d52d44ccceee9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1a047ff90edd39ccf52d52d44ccceee9">&#9670;&#160;</a></span>isLicenseKeyRequired()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">boolean <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_fifty_one_on_premise_aspect_engine_builder_base.html">fiftyone.pipeline.engines.fiftyone.flowelements.FiftyOneOnPremiseAspectEngineBuilderBase</a>&lt; TBuilder extends <a class="el" href="#a9187ab7ebb8d128f83766abbca431eff">FiftyOneOnPremiseAspectEngineBuilderBase</a>&lt; TBuilder, TEngine, TEngine extends <a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1flowelements_1_1_fifty_one_aspect_engine.html">FiftyOneAspectEngine</a> &gt;.isLicenseKeyRequired </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1configuration_1_1_data_file_configuration.html">DataFileConfiguration</a></td>          <td class="c-table__cell"><span class="paramname"><em>dataFileConfig</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The Distributor serves nothing without a license key, so a key is required while the data update URL is the Distributor's. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataFileConfig</td><td>the data file configuration to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if the data update URL is the Distributor's </dd></dl>
 
 </div>
 </div>

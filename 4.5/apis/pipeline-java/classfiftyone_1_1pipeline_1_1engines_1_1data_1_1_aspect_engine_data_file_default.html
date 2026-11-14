@@ -93,6 +93,10 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a4e55b26eee6831a2269152429a1d5d51"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the complete file path to the location of the temporary copy of the data file that is currently being used by the <a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_aspect_engine.html" title="AspectEngines are a subset of FlowElements.">AspectEngine</a>.  <br /></td></tr>
 <tr class="c-table__row memitem:aabe6795f7bf58b055e868b894c202689" id="r_aabe6795f7bf58b055e868b894c202689"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#aabe6795f7bf58b055e868b894c202689">setTempDataFilePath</a> (String path)</td></tr>
 <tr class="c-table__row memdesc:aabe6795f7bf58b055e868b894c202689"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the complete file path to the location of the temporary copy of the data file that is currently being used by the <a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1flowelements_1_1_aspect_engine.html" title="AspectEngines are a subset of FlowElements.">AspectEngine</a>.  <br /></td></tr>
+<tr class="c-table__row memitem:a946171b3c4bcac82ecad28f48ba60aef" id="r_a946171b3c4bcac82ecad28f48ba60aef"><td class="c-table__cell">String&#160;</td><td class="c-table__cell"><a class="el" href="#a946171b3c4bcac82ecad28f48ba60aef">getEngineTypeName</a> ()</td></tr>
+<tr class="c-table__row memdesc:a946171b3c4bcac82ecad28f48ba60aef"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The type name of the engine this data file is for, which the update service logs until the engine is set.  <br /></td></tr>
+<tr class="c-table__row memitem:a3673159224840dde96ea6d92bf4ba7ee" id="r_a3673159224840dde96ea6d92bf4ba7ee"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a3673159224840dde96ea6d92bf4ba7ee">setEngineTypeName</a> (String engineTypeName)</td></tr>
+<tr class="c-table__row memdesc:a3673159224840dde96ea6d92bf4ba7ee"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Set the type name of the engine this data file is for.  <br /></td></tr>
 <tr class="c-table__row memitem:ae6d3f3cd8ea3ffa337a626d72907fcc9" id="r_ae6d3f3cd8ea3ffa337a626d72907fcc9"><td class="c-table__cell">String&#160;</td><td class="c-table__cell"><a class="el" href="#ae6d3f3cd8ea3ffa337a626d72907fcc9">getTempDataDirPath</a> ()</td></tr>
 <tr class="c-table__row memdesc:ae6d3f3cd8ea3ffa337a626d72907fcc9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the path to use when working with temporary files associated with this data file.  <br /></td></tr>
 <tr class="c-table__row memitem:afd25e53f8c4501c64ac3aa43d24bbf62" id="r_afd25e53f8c4501c64ac3aa43d24bbf62"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#afd25e53f8c4501c64ac3aa43d24bbf62">setTempDataDirPath</a> (String path)</td></tr>
@@ -262,6 +266,30 @@ void&#160;</td><td class="c-table__cell"><b>close</b> ()  throws IOException </t
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">engine the data file is used by </dd></dl>
 
 <p>Implements <a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_engine_data_file.html#aecdf5f15ce886c220490a619bacf5af8">fiftyone.pipeline.engines.data.AspectEngineDataFile</a>.</p>
+
+</div>
+</div>
+<a id="a946171b3c4bcac82ecad28f48ba60aef" name="a946171b3c4bcac82ecad28f48ba60aef"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a946171b3c4bcac82ecad28f48ba60aef">&#9670;&#160;</a></span>getEngineTypeName()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">String fiftyone.pipeline.engines.data.AspectEngineDataFileDefault.getEngineTypeName </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The type name of the engine this data file is for, which the update service logs until the engine is set. </p>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the engine type name, or null if it is not known </dd></dl>
 
 </div>
 </div>
@@ -542,6 +570,35 @@ void&#160;</td><td class="c-table__cell"><b>close</b> ()  throws IOException </t
 </dl>
 
 <p>Implements <a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_engine_data_file.html#a54d000c56419f6fa6a741672e69692bc">fiftyone.pipeline.engines.data.AspectEngineDataFile</a>.</p>
+
+</div>
+</div>
+<a id="a3673159224840dde96ea6d92bf4ba7ee" name="a3673159224840dde96ea6d92bf4ba7ee"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3673159224840dde96ea6d92bf4ba7ee">&#9670;&#160;</a></span>setEngineTypeName()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyone.pipeline.engines.data.AspectEngineDataFileDefault.setEngineTypeName </td>
+          <td>(</td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>engineTypeName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Set the type name of the engine this data file is for. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">engineTypeName</td><td>the engine type name </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

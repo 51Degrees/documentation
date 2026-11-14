@@ -6,5 +6,6 @@ var class_evidence =
     [ "addObject", "class_evidence.html#a21da8c7fc30786306c85d27f428c6de7", null ],
     [ "constructor", "class_evidence.html#a01d351183e3dff6e48003e3f00d1703a", null ],
     [ "get", "class_evidence.html#ad8792837190eba2baa7248c14cca1f6a", null ],
-    [ "getAll", "class_evidence.html#ab168d68366b21a0b36940f3b65d303b8", null ]
+    [ "getAll", "class_evidence.html#ab168d68366b21a0b36940f3b65d303b8", null ],
+    [ "getUnaccepted", "class_evidence.html#aef39a3d8f450e4c33dd910946201625c", null ]
 ];

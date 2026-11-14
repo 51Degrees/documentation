@@ -128,6 +128,8 @@ void&#160;</td><td class="c-table__cell"><b>close</b> ()  throws Exception </td>
 <tr class="c-table__row memdesc:aa95ae1003864e7b0e1b7e71bfa6536c5 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a property from the properties that this element can populate using its name.  <br /></td></tr>
 <tr class="c-table__row memitem:ab0aa98bdda4981e0892d75ea4f79331a pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element" id="r_ab0aa98bdda4981e0892d75ea4f79331a"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#ab0aa98bdda4981e0892d75ea4f79331a">isConcurrent</a> ()</td></tr>
 <tr class="c-table__row memdesc:ab0aa98bdda4981e0892d75ea4f79331a pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">if true, requires that the <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html" title="The Pipeline groups together FlowElements and is a factory for FlowData which serves as the evidence,...">Pipeline</a> guards against concurrent access to <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a></code> structures  <br /></td></tr>
+<tr class="c-table__row memitem:a5d740f4fcfc20816b33dbf49450350e0 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element" id="r_a5d740f4fcfc20816b33dbf49450350e0"><td class="c-table__cell">default&#160;boolean&#160;</td><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a5d740f4fcfc20816b33dbf49450350e0">hasLoadedProperties</a> ()</td></tr>
+<tr class="c-table__row memdesc:a5d740f4fcfc20816b33dbf49450350e0 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether the element knows all the property metadata and accepted <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence.html" title="Evidence used by a FlowElement when processing.">Evidence</a> it will expose.  <br /></td></tr>
 <tr class="c-table__row memitem:a93a813715876146eca839f3541867cc8 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element" id="r_a93a813715876146eca839f3541867cc8"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a93a813715876146eca839f3541867cc8">isClosed</a> ()</td></tr>
 <tr class="c-table__row memdesc:a93a813715876146eca839f3541867cc8 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Indicates whether the element has been closed using the <code><a class="el" href="">close()</a></code> method, either explicitly or as a result of a 'try with resource'.  <br /></td></tr>
 <tr class="c-table__row memitem:a96dfad7107c88b5643e80847d5820863 pub_methods_interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element" id="r_a96dfad7107c88b5643e80847d5820863"><td class="c-table__cell">DataFactory&lt;&#160;TData&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html#a96dfad7107c88b5643e80847d5820863">getDataFactory</a> ()</td></tr>
@@ -141,6 +143,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a304c907416aa1dcc6cb240511e6a97bf"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor.  <br /></td></tr>
 <tr class="c-table__row memitem:a780365d8c6b54b0fc77e9952d4efd27d" id="r_a780365d8c6b54b0fc77e9952d4efd27d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a780365d8c6b54b0fc77e9952d4efd27d">ShareUsageBase</a> (Logger logger, double sharePercentage, int minimumEntriesPerMessage, int maximumQueueSize, int addTimeout, int takeTimeout, int repeatEvidenceIntervalMinutes, boolean trackSession, String shareUsageUrl, List&lt; String &gt; blockedHttpHeaders, List&lt; String &gt; includedQueryStringParameters, List&lt; Map.Entry&lt; String, String &gt; &gt; ignoreDataEvidenceFilter, String sessionCookieName, <a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1trackers_1_1_tracker.html">Tracker</a> tracker)</td></tr>
 <tr class="c-table__row memdesc:a780365d8c6b54b0fc77e9952d4efd27d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor.  <br /></td></tr>
+<tr class="c-table__row memitem:a57931a14ca406f0b8d82ff45c94b365d" id="r_a57931a14ca406f0b8d82ff45c94b365d"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="#a57931a14ca406f0b8d82ff45c94b365d">ShareUsageBase</a> (Logger logger, double sharePercentage, int minimumEntriesPerMessage, int maximumQueueSize, int addTimeout, int takeTimeout, int repeatEvidenceIntervalMinutes, boolean trackSession, String shareUsageUrl, List&lt; String &gt; blockedHttpHeaders, List&lt; String &gt; includedQueryStringParameters, List&lt; Map.Entry&lt; String, String &gt; &gt; ignoreDataEvidenceFilter, String sessionCookieName, <a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1trackers_1_1_tracker.html">Tracker</a> tracker, int failuresToEnterRecovery, int failuresWindowSeconds, double initialRecoveryDelaySeconds, double maxRecoveryDelaySeconds, double recoveryMultiplier, boolean shareAllEvidence, boolean shareAllQueryStringParameters)</td></tr>
+<tr class="c-table__row memdesc:a57931a14ca406f0b8d82ff45c94b365d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Constructor.  <br /></td></tr>
 <tr class="c-table__row memitem:a317ad22bb1a0cda42633dc57df16a185" id="r_a317ad22bb1a0cda42633dc57df16a185"><td class="c-table__cell">List&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a317ad22bb1a0cda42633dc57df16a185">getFlowElements</a> ()</td></tr>
 <tr class="c-table__row memdesc:a317ad22bb1a0cda42633dc57df16a185"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Return a list of <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html">FlowElement</a></code> in the pipeline.  <br /></td></tr>
 <tr class="c-table__row memitem:a82c20a3b794d3b7a161afbfb71bffee2" id="r_a82c20a3b794d3b7a161afbfb71bffee2"><td class="c-table__cell">String&#160;</td><td class="c-table__cell"><a class="el" href="#a82c20a3b794d3b7a161afbfb71bffee2">getHostAddress</a> ()</td></tr>
@@ -159,6 +163,10 @@ void&#160;</td><td class="c-table__cell"><b>cancel</b> ()</td></tr>
 <tr class="c-table__row memitem:a3b7c240ac28a68d230257ac58daa3029" id="r_a3b7c240ac28a68d230257ac58daa3029"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a3b7c240ac28a68d230257ac58daa3029">trySendData</a> ()</td></tr>
 <tr class="c-table__row memdesc:a3b7c240ac28a68d230257ac58daa3029"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Attempt to send the data to the remote service.  <br /></td></tr>
 <tr class="c-table__row memitem:a9a6e62166e21d7255137def4376dc195" id="r_a9a6e62166e21d7255137def4376dc195"><td class="c-table__cell">abstract&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a9a6e62166e21d7255137def4376dc195">sendUsageData</a> ()  throws <a class="el" href="classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1exceptions_1_1_http_exception.html">HttpException</a></td></tr>
+<tr class="c-table__row memitem:a360a53c423a7cf56f08c9e35e28a0045" id="r_a360a53c423a7cf56f08c9e35e28a0045"><td class="c-table__cell">boolean&#160;</td><td class="c-table__cell"><a class="el" href="#a360a53c423a7cf56f08c9e35e28a0045">waitWhilePaused</a> ()</td></tr>
+<tr class="c-table__row memdesc:a360a53c423a7cf56f08c9e35e28a0045"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Waits until sending may start again after failed sends.  <br /></td></tr>
+<tr class="c-table__row memitem:a84fbb915233ebc53ae11aa35623ba347" id="r_a84fbb915233ebc53ae11aa35623ba347"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#a84fbb915233ebc53ae11aa35623ba347">recordSendResult</a> (boolean accepted)</td></tr>
+<tr class="c-table__row memdesc:a84fbb915233ebc53ae11aa35623ba347"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Records whether the remote service accepted a message, so that repeated failures pause sending and a success ends the pause.  <br /></td></tr>
 <tr class="c-table__row inherit_header pro_methods_classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element_base"><td class="c-table__cell c-table__cell--parent" colspan="2"><h3 class="c-table__heading">Protected Member Functions inherited from <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element_base.html">fiftyone.pipeline.core.flowelements.FlowElementBase&lt; TData extends ElementData, TProperty extends ElementPropertyMetaData &gt;</a></h3></td></tr>
 <tr class="c-table__row memitem:ac9d93d1b3df21fa8247b4234558498e7 pro_methods_classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element_base" id="r_ac9d93d1b3df21fa8247b4234558498e7"><td class="c-table__cell">
 void&#160;</td><td class="c-table__cell"><b>close</b> (boolean closing)</td></tr>
@@ -207,7 +215,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="a5537004e2f3d5dffcd05f05d559b0280" name="a5537004e2f3d5dffcd05f05d559b0280"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5537004e2f3d5dffcd05f05d559b0280">&#9670;&#160;</a></span>ShareUsageBase() <span class="c-member__count">[1/3]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5537004e2f3d5dffcd05f05d559b0280">&#9670;&#160;</a></span>ShareUsageBase() <span class="c-member__count">[1/4]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -309,7 +317,7 @@ Static Protected Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a304c907416aa1dcc6cb240511e6a97bf" name="a304c907416aa1dcc6cb240511e6a97bf"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a304c907416aa1dcc6cb240511e6a97bf">&#9670;&#160;</a></span>ShareUsageBase() <span class="c-member__count">[2/3]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a304c907416aa1dcc6cb240511e6a97bf">&#9670;&#160;</a></span>ShareUsageBase() <span class="c-member__count">[2/4]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -417,7 +425,7 @@ Static Protected Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a780365d8c6b54b0fc77e9952d4efd27d" name="a780365d8c6b54b0fc77e9952d4efd27d"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a780365d8c6b54b0fc77e9952d4efd27d">&#9670;&#160;</a></span>ShareUsageBase() <span class="c-member__count">[3/3]</span></h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a780365d8c6b54b0fc77e9952d4efd27d">&#9670;&#160;</a></span>ShareUsageBase() <span class="c-member__count">[3/4]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -524,6 +532,162 @@ Static Protected Attributes</h2></td></tr>
     <tr><td class="paramname">ignoreDataEvidenceFilter</td><td>the filter used to determine if an item of evidence should be ignored or not </td></tr>
     <tr><td class="paramname">sessionCookieName</td><td>the name of the cookie that contains the session id </td></tr>
     <tr><td class="paramname">tracker</td><td>the <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1trackers_1_1_tracker.html">Tracker</a></code> to use to determine if a given <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a></code> instance should be shared or not </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a57931a14ca406f0b8d82ff45c94b365d" name="a57931a14ca406f0b8d82ff45c94b365d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a57931a14ca406f0b8d82ff45c94b365d">&#9670;&#160;</a></span>ShareUsageBase() <span class="c-member__count">[4/4]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">fiftyone.pipeline.engines.fiftyone.flowelements.ShareUsageBase.ShareUsageBase </td>
+          <td>(</td>
+          <td class="c-table__cell">Logger</td>          <td class="c-table__cell"><span class="paramname"><em>logger</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">double</td>          <td class="c-table__cell"><span class="paramname"><em>sharePercentage</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>minimumEntriesPerMessage</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>maximumQueueSize</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>addTimeout</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>takeTimeout</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>repeatEvidenceIntervalMinutes</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">boolean</td>          <td class="c-table__cell"><span class="paramname"><em>trackSession</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>shareUsageUrl</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">List&lt; String &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>blockedHttpHeaders</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">List&lt; String &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>includedQueryStringParameters</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">List&lt; Map.Entry&lt; String, String &gt; &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>ignoreDataEvidenceFilter</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>sessionCookieName</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1trackers_1_1_tracker.html">Tracker</a></td>          <td class="c-table__cell"><span class="paramname"><em>tracker</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>failuresToEnterRecovery</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">int</td>          <td class="c-table__cell"><span class="paramname"><em>failuresWindowSeconds</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">double</td>          <td class="c-table__cell"><span class="paramname"><em>initialRecoveryDelaySeconds</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">double</td>          <td class="c-table__cell"><span class="paramname"><em>maxRecoveryDelaySeconds</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">double</td>          <td class="c-table__cell"><span class="paramname"><em>recoveryMultiplier</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">boolean</td>          <td class="c-table__cell"><span class="paramname"><em>shareAllEvidence</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">boolean</td>          <td class="c-table__cell"><span class="paramname"><em>shareAllQueryStringParameters</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td>the logger to use </td></tr>
+    <tr><td class="paramname">sharePercentage</td><td>the approximate proportion of requests to share. 1 = 100%, 0.5 = 50%, etc. </td></tr>
+    <tr><td class="paramname">minimumEntriesPerMessage</td><td>the minimum number of request entries per message sent to 51Degrees </td></tr>
+    <tr><td class="paramname">maximumQueueSize</td><td>the maximum number of items to hold in the queue at one time. This must be larger than minimum entries </td></tr>
+    <tr><td class="paramname">addTimeout</td><td>the timeout in milliseconds to allow when attempting to add an item to the queue. If this timeout is exceeded then the item is not shared </td></tr>
+    <tr><td class="paramname">takeTimeout</td><td>the timeout in milliseconds to allow when attempting to take an item to the queue </td></tr>
+    <tr><td class="paramname">repeatEvidenceIntervalMinutes</td><td>the interval (in minutes) which is used to decide if repeat evidence is old enough to consider a new session </td></tr>
+    <tr><td class="paramname">trackSession</td><td>set if the tracker should consider sessions in share usage </td></tr>
+    <tr><td class="paramname">shareUsageUrl</td><td>the URL to send data to </td></tr>
+    <tr><td class="paramname">blockedHttpHeaders</td><td>a list of the names of the HTTP headers that share usage should not send to 51Degrees </td></tr>
+    <tr><td class="paramname">includedQueryStringParameters</td><td>a list of the names of query string parameters that share usage should send to 51Degrees </td></tr>
+    <tr><td class="paramname">ignoreDataEvidenceFilter</td><td>the filter used to determine if an item of evidence should be ignored or not </td></tr>
+    <tr><td class="paramname">sessionCookieName</td><td>the name of the cookie that contains the session id </td></tr>
+    <tr><td class="paramname">tracker</td><td>the <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1engines_1_1trackers_1_1_tracker.html">Tracker</a></code> to use to determine if a given <code><a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_flow_data.html">FlowData</a></code> instance should be shared or not </td></tr>
+    <tr><td class="paramname">failuresToEnterRecovery</td><td>the number of failed sends within the failures window that pauses sending </td></tr>
+    <tr><td class="paramname">failuresWindowSeconds</td><td>the time in seconds over which failed sends are counted </td></tr>
+    <tr><td class="paramname">initialRecoveryDelaySeconds</td><td>the length in seconds of the first pause </td></tr>
+    <tr><td class="paramname">maxRecoveryDelaySeconds</td><td>the longest a pause can be, in seconds </td></tr>
+    <tr><td class="paramname">recoveryMultiplier</td><td>what the pause is multiplied by each time the send tried when a pause ends fails </td></tr>
+    <tr><td class="paramname">shareAllEvidence</td><td>if true then all <a class="el" href="interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_evidence.html" title="Evidence used by a FlowElement when processing.">Evidence</a> is shared, apart from the keys that are never shared </td></tr>
+    <tr><td class="paramname">shareAllQueryStringParameters</td><td>if true then all query string parameters are shared </td></tr>
   </table>
   </dd>
 </dl>
@@ -845,6 +1009,43 @@ Static Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a84fbb915233ebc53ae11aa35623ba347" name="a84fbb915233ebc53ae11aa35623ba347"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a84fbb915233ebc53ae11aa35623ba347">&#9670;&#160;</a></span>recordSendResult()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyone.pipeline.engines.fiftyone.flowelements.ShareUsageBase.recordSendResult </td>
+          <td>(</td>
+          <td class="c-table__cell">boolean</td>          <td class="c-table__cell"><span class="paramname"><em>accepted</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Records whether the remote service accepted a message, so that repeated failures pause sending and a success ends the pause. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">accepted</td><td>true if the message was accepted </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a9a6e62166e21d7255137def4376dc195" name="a9a6e62166e21d7255137def4376dc195"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9a6e62166e21d7255137def4376dc195">&#9670;&#160;</a></span>sendUsageData()</h2>
 
@@ -967,6 +1168,38 @@ Static Protected Attributes</h2></td></tr>
 <p>Cleanup any unmanaged resources that the element is using. </p>
 
 <p>Reimplemented from <a class="el" href="classfiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element_base.html#af809db5ffd4e5dfdb5a2f051c8697770">fiftyone.pipeline.core.flowelements.FlowElementBase&lt; TData extends ElementData, TProperty extends ElementPropertyMetaData &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a360a53c423a7cf56f08c9e35e28a0045" name="a360a53c423a7cf56f08c9e35e28a0045"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a360a53c423a7cf56f08c9e35e28a0045">&#9670;&#160;</a></span>waitWhilePaused()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">boolean fiftyone.pipeline.engines.fiftyone.flowelements.ShareUsageBase.waitWhilePaused </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Waits until sending may start again after failed sends. </p>
+<p>A consumer calls this before each message it sends. </p><dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">false if the element started closing while sending was paused, in which case nothing more should be sent </dd></dl>
 
 </div>
 </div>

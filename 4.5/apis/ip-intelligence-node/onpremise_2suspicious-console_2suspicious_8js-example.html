@@ -116,12 +116,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2sus
 <div class="c-code__line"><span class="c-code__keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="class_example_utils.html">ExampleUtils</a> = require(path.join(__dirname, <span class="c-code__stringliteral">&#39;/../exampleUtils&#39;</span>)).ExampleUtils;</div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> exampleConstants = require51(<span class="c-code__stringliteral">&#39;fiftyone.ipintelligence.shared&#39;</span>).exampleConstants;</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line"><span class="c-code__comment">// This example requires the enterprise data file as the diversity</span></div>
-<div class="c-code__line"><span class="c-code__comment">// properties used are not available in the lite file. To obtain an</span></div>
-<div class="c-code__line"><span class="c-code__comment">// enterprise data file for testing, please contact us:</span></div>
-<div class="c-code__line"><span class="c-code__comment">// https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.ipintelligence.onpremise-examples-onpremise-suspicious-console-suspicious.js&amp;utm_term=enterprise_v_4_1_ipi</span></div>
-<div class="c-code__line"><span class="c-code__keyword">const</span> ENTERPRISE_V_4_1_IPI = <span class="c-code__stringliteral">&#39;51Degrees-EnterpriseIpiV41.ipi&#39;</span>;</div>
+<div class="c-code__line"><span class="c-code__comment">// This example needs the diversity properties, which only the Enterprise</span></div>
+<div class="c-code__line"><span class="c-code__comment">// data file has. By default it uses the free Lite data file, which is</span></div>
+<div class="c-code__line"><span class="c-code__comment">// downloaded if it is missing, and there it says what it needs and where</span></div>
+<div class="c-code__line"><span class="c-code__comment">// to ask for a copy of the Enterprise data file.</span></div>
 <div class="c-code__line"><span class="c-code__keyword">const</span> LITE_V_4_1_IPI = <span class="c-code__stringliteral">&#39;51Degrees-LiteV41.ipi&#39;</span>;</div>
+<div class="c-code__line"> </div>
+<div class="c-code__line"><span class="c-code__comment">// Where to ask for a copy of the Enterprise data file, tagged with this</span></div>
+<div class="c-code__line"><span class="c-code__comment">// example.</span></div>
+<div class="c-code__line"><span class="c-code__keyword">const</span> CONTACT_US = <span class="c-code__stringliteral">&#39;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.ipintelligence.onpremise-examples-onpremise-suspicious-console-suspicious.js&amp;utm_term=enterprise-data-file&#39;</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Most IP intelligence values are lists of weighted values. This helper</span></div>
 <div class="c-code__line"><span class="c-code__comment">// returns the single value with the highest weight, or the supplied</span></div>
@@ -203,12 +206,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2sus
 <div class="c-code__line">  <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__concepts__configuration__builders__index.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.ipintelligence.onpremise-examples-onpremise-suspicious-console-suspicious.js&amp;utm_term=run</span></div>
 <div class="c-code__line">  <span class="c-code__keyword">const</span> pipeline = <span class="c-code__keyword">new</span> <a class="code hl_class" href="class_ip_intelligence_on_premise_pipeline_builder.html">IpIntelligenceOnPremisePipelineBuilder</a>({</div>
 <div class="c-code__line">    dataFile,</div>
-<div class="c-code__line">    <span class="c-code__comment">// We use the max performance profile for optimal detection speed</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// in this example. See the documentation for more detail on this</span></div>
-<div class="c-code__line">    <span class="c-code__comment">// and other configuration options:</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// This example needs the Enterprise data file, which is about 6 GB, so</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// it uses the low memory profile, which reads the file as it goes. Max</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// performance would hold all of the file in memory. See the</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// documentation for more detail on this and other configuration</span></div>
+<div class="c-code__line">    <span class="c-code__comment">// options:</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__features__automatic_datafile_updates.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.ipintelligence.onpremise-examples-onpremise-suspicious-console-suspicious.js&amp;utm_term=run</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// https://51degrees.com/documentation/_pipeline_api__features__usage_sharing.html?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.ipintelligence.onpremise-examples-onpremise-suspicious-console-suspicious.js&amp;utm_term=run</span></div>
-<div class="c-code__line">    performanceProfile: <span class="c-code__stringliteral">&#39;MaxPerformance&#39;</span>,</div>
+<div class="c-code__line">    performanceProfile: <span class="c-code__stringliteral">&#39;LowMemory&#39;</span>,</div>
 <div class="c-code__line">    <span class="c-code__comment">// inhibit sharing usage for this example, usually this should be</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// set &#39;true&#39;</span></div>
 <div class="c-code__line">    shareUsage: <span class="c-code__keyword">false</span>,</div>
@@ -218,33 +223,32 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2sus
 <div class="c-code__line">    fileSystemWatcher: <span class="c-code__keyword">false</span></div>
 <div class="c-code__line">  }).build();</div>
 <div class="c-code__line"> </div>
+<div class="c-code__line">  <span class="c-code__comment">// Telling whether an address is suspicious needs properties only the</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// Enterprise data file has, so with a free data file the example says so</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// and stops.</span></div>
+<div class="c-code__line">  <span class="c-code__keywordflow">if</span> (<a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.<a id="a3" name="a3"></a>lacksEnterpriseProperties(pipeline.getElement(<span class="c-code__stringliteral">&#39;ip&#39;</span>),</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&#39;Telling whether an IP address is suspicious&#39;</span>,</div>
+<div class="c-code__line">    [<span class="c-code__stringliteral">&#39;IsCellular&#39;</span>, <span class="c-code__stringliteral">&#39;HardwareDiversity&#39;</span>, <span class="c-code__stringliteral">&#39;BrowserDiversity&#39;</span>,</div>
+<div class="c-code__line">      <span class="c-code__stringliteral">&#39;LocationConfidence&#39;</span>, <span class="c-code__stringliteral">&#39;IsHosted&#39;</span>, <span class="c-code__stringliteral">&#39;HumanProbability&#39;</span>],</div>
+<div class="c-code__line">    output, CONTACT_US)) {</div>
+<div class="c-code__line">    <span class="c-code__keywordflow">return</span>;</div>
+<div class="c-code__line">  }</div>
+<div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__comment">// carry out some sample lookups</span></div>
 <div class="c-code__line">  <span class="c-code__keywordflow">for</span> (<span class="c-code__keyword">const</span> values of exampleConstants.defaultEvidenceValues) {</div>
 <div class="c-code__line">    await analyse(values, pipeline, output);</div>
 <div class="c-code__line">  }</div>
 <div class="c-code__line"> </div>
-<div class="c-code__line">  <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.<a id="a3" name="a3"></a>checkDataFile(pipeline, dataFile);</div>
+<div class="c-code__line">  <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.<a id="a4" name="a4"></a>checkDataFile(pipeline, dataFile);</div>
 <div class="c-code__line">};</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line"><span class="c-code__comment">// Don&#39;t run the example if under TEST</span></div>
 <div class="c-code__line"><span class="c-code__keywordflow">if</span> (process.env.JEST_WORKER_ID === undefined) {</div>
 <div class="c-code__line">  <span class="c-code__keyword">const</span> args = process.argv.slice(2);</div>
 <div class="c-code__line">  <span class="c-code__comment">// Use the supplied path for the data file, the path in the</span></div>
-<div class="c-code__line">  <span class="c-code__comment">// 51DEGREES_IPI_PATH environment variable, or find the enterprise</span></div>
-<div class="c-code__line">  <span class="c-code__comment">// file in the project space, falling back to the lite file that is</span></div>
-<div class="c-code__line">  <span class="c-code__comment">// included in the repository.</span></div>
-<div class="c-code__line">  let dataFile = args.length &gt; 0 ? args[0] : <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.<a id="a4" name="a4"></a>findDataFile(ENTERPRISE_V_4_1_IPI);</div>
-<div class="c-code__line">  <span class="c-code__keywordflow">if</span> (dataFile === undefined) {</div>
-<div class="c-code__line">    dataFile = <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.findDataFile(LITE_V_4_1_IPI);</div>
-<div class="c-code__line">    <span class="c-code__keywordflow">if</span> (dataFile !== undefined) {</div>
-<div class="c-code__line">      console.warn(<span class="c-code__stringliteral">&#39;Failed to find an enterprise IP intelligence data &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;file. Using the lite file instead. Note that the lite file &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;does not contain the diversity properties used by this &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;example, so all the results will use the default values. &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;To obtain an enterprise data file for testing, please &#39;</span> +</div>
-<div class="c-code__line">        <span class="c-code__stringliteral">&#39;contact us: https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-node&amp;utm_content=fiftyone.ipintelligence.onpremise-examples-onpremise-suspicious-console-suspicious.js&amp;utm_term=lite-file-fallback&#39;</span>);</div>
-<div class="c-code__line">    }</div>
-<div class="c-code__line">  }</div>
+<div class="c-code__line">  <span class="c-code__comment">// _51DEGREES_IPI_PATH environment variable, or find the lite file,</span></div>
+<div class="c-code__line">  <span class="c-code__comment">// which is downloaded if it is missing.</span></div>
+<div class="c-code__line">  <span class="c-code__keyword">const</span> dataFile = args.length &gt; 0 ? args[0] : <a class="code hl_class" href="class_example_utils.html">ExampleUtils</a>.<a id="a5" name="a5"></a>findDataFile(LITE_V_4_1_IPI);</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">  <span class="c-code__keywordflow">if</span> (dataFile !== undefined) {</div>
 <div class="c-code__line">    run(dataFile, process.stdout);</div>
@@ -260,7 +264,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('onpremise_2sus
 <div class="c-code__line">module.exports = {</div>
 <div class="c-code__line">  run</div>
 <div class="c-code__line">};</div>
-<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.ipintelligence.onpremise/examples/onpremise/exampleUtils.js:116</div></div>
+<div class="ttc" id="aclass_example_utils_html"><div class="ttname"><a href="class_example_utils.html">ExampleUtils</a></div><div class="ttdef"><b>Definition</b> fiftyone.ipintelligence.onpremise/examples/onpremise/exampleUtils.js:203</div></div>
 <div class="ttc" id="aclass_ip_intelligence_on_premise_pipeline_builder_html"><div class="ttname"><a href="class_ip_intelligence_on_premise_pipeline_builder.html">IpIntelligenceOnPremisePipelineBuilder</a></div><div class="ttdef"><b>Definition</b> ipIntelligenceOnPremisePipelineBuilder.js:35</div></div>
 </div><!-- fragment --> </div><!-- primary -->
 </div><!-- inner -->

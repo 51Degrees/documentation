@@ -143,9 +143,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_metadata_on_p
 <div class="c-code__line"><span class="c-code__comment">    cxx/data, and is downloaded if it is missing, or you may specify another file as a command line</span></div>
 <div class="c-code__line"><span class="c-code__comment">    parameter.</span></div>
 <div class="c-code__line"><span class="c-code__comment"></span> </div>
-<div class="c-code__line"><span class="c-code__comment">    Note that the Lite data file is only used for illustration, and has limited accuracy and</span></div>
-<div class="c-code__line"><span class="c-code__comment">    capabilities. Find out about the Enterprise data file here: https://51degrees.com/pricing?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-metadataonprem.java&amp;utm_term=lite_v_4_1_hash */</span></div>
+<div class="c-code__line"><span class="c-code__comment">    Note that the Lite data file is only used for illustration, and has a small number of</span></div>
+<div class="c-code__line"><span class="c-code__comment">    Properties. Contact us for a copy of the Enterprise data file: https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-metadataonprem.java&amp;utm_term=lite_v_4_1_hash */</span></div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> String LITE_V_4_1_HASH = <span class="c-code__stringliteral">&quot;device-detection/51Degrees-LiteV4.1.hash&quot;</span>;</div>
+<div class="c-code__line"></div>
+<div class="c-code__line">    <span class="c-code__keyword">private</span> <span class="c-code__keyword">static</span> <span class="c-code__keyword">final</span> String CONTACT_US = <span class="c-code__stringliteral">&quot;https://51degrees.com/contact-us?utm_source=code&amp;utm_medium=example&amp;utm_campaign=51degrees-java&amp;utm_content=console-src-main-java-fiftyone-devicedetection-examples-console-metadataonprem.java&amp;utm_term=enterprise-data-file&quot;</span>;</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">    <span class="c-code__keyword">public</span> <span class="c-code__keyword">static</span> <span class="c-code__keywordtype">void</span> main(String[] args) <span class="c-code__keywordflow">throws</span> Exception {</div>
 <div class="c-code__line">        configureLogback(getFilePath(<span class="c-code__stringliteral">&quot;logback.xml&quot;</span>));</div>
@@ -200,6 +202,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_metadata_on_p
 <div class="c-code__line">            writer.flush();</div>
 <div class="c-code__line"> </div>
 <div class="c-code__line">            DataFileHelper.logDataFileInfo(ddEngine);</div>
+<div class="c-code__line">            <span class="c-code__keywordflow">if</span> (DataFileHelper.isLiteDataFile(ddEngine)) {</div>
+<div class="c-code__line">                DataFileHelper.writeEnterpriseOffer(writer, CONTACT_US);</div>
+<div class="c-code__line">            }</div>
 <div class="c-code__line">        }</div>
 <div class="c-code__line">    }</div>
 <div class="c-code__line"> </div>

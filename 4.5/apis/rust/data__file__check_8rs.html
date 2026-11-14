@@ -71,11 +71,11 @@ Classes</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="c-table__row memitem:a6e8d97e9254d0da081561e4ed90d7bbd" id="r_a6e8d97e9254d0da081561e4ed90d7bbd"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a6e8d97e9254d0da081561e4ed90d7bbd">check_data_file</a> (engine:&amp;dyn OnPremiseAspectEngine) -&gt; Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td></tr>
-<tr class="c-table__row memdesc:a6e8d97e9254d0da081561e4ed90d7bbd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Inspect <code>engine</code>'s data file and return the warnings an example should print.  <br /></td></tr>
-<tr class="c-table__row memitem:a7f9c787813ddfce8ecc934751f7ad991" id="r_a7f9c787813ddfce8ecc934751f7ad991"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a7f9c787813ddfce8ecc934751f7ad991">is_limited_data_tier</a> (tier:&amp;str) -&gt; <a class="el" href="performance__results_8rs.html#a13eda313804a469af81193c4e2e1ee58">bool</a></td></tr>
-<tr class="c-table__row memdesc:a7f9c787813ddfce8ecc934751f7ad991"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether <code>tier</code> names a free, limited-accuracy data file that the examples should flag.  <br /></td></tr>
-<tr class="c-table__row memitem:a557f7eebad39b6d76ed9809cfdcdbc0b" id="r_a557f7eebad39b6d76ed9809cfdcdbc0b"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a557f7eebad39b6d76ed9809cfdcdbc0b">data_file_info</a> (engine:&amp;dyn OnPremiseAspectEngine) -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td></tr>
+<tr class="c-table__row memitem:af237e159d58cb9c57a1bd88cfd455988" id="r_af237e159d58cb9c57a1bd88cfd455988"><td class="c-table__cell">if&#160;let&#160;</td><td class="c-table__cell"><a class="el" href="#af237e159d58cb9c57a1bd88cfd455988">Some</a> (published)</td></tr>
+<tr class="c-table__row memitem:ac72e33fd31a9eb5240f9959e604e23af" id="r_ac72e33fd31a9eb5240f9959e604e23af"><td class="c-table__cell">if&#160;</td><td class="c-table__cell"><a class="el" href="#ac72e33fd31a9eb5240f9959e604e23af">is_limited_data_tier</a> (tier)</td></tr>
+<tr class="c-table__row memitem:a6e0f6b14f28f6b8069e550b9352fbf27" id="r_a6e0f6b14f28f6b8069e550b9352fbf27"><td class="c-table__cell"><a class="el" href="ipi-web-getting-started-onprem_8rs.html#a93dfcdf1ed27d9cfa54fec802d7f6b24">warnings</a>&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a6e0f6b14f28f6b8069e550b9352fbf27">is_limited_data_tier</a> (tier:&amp;str) -&gt; <a class="el" href="data__paths_8rs.html#ace367d07d2cbc650fd186739e5511adb">bool</a></td></tr>
+<tr class="c-table__row memdesc:a6e0f6b14f28f6b8069e550b9352fbf27"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Whether <code>tier</code> names a free, limited-accuracy data file that the examples should flag.  <br /></td></tr>
+<tr class="c-table__row memitem:a557f7eebad39b6d76ed9809cfdcdbc0b" id="r_a557f7eebad39b6d76ed9809cfdcdbc0b"><td class="c-table__cell">pub&#160;fn&#160;</td><td class="c-table__cell"><a class="el" href="#a557f7eebad39b6d76ed9809cfdcdbc0b">data_file_info</a> (engine:&amp;dyn OnPremiseAspectEngine) -&gt; String</td></tr>
 <tr class="c-table__row memdesc:a557f7eebad39b6d76ed9809cfdcdbc0b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A short, single-line summary of the data file <code>engine</code> is using, suitable for an informational log line before any warnings.  <br /></td></tr>
 <tr class="c-table__row memitem:aa98650e90cea22a7e07389eabf98140d" id="r_aa98650e90cea22a7e07389eabf98140d"><td class="c-table__cell">struct&#160;<a class="el" href="struct_fake_on_premise_engine.html">FakeOnPremiseEngine</a>&#160;</td><td class="c-table__cell"><a class="el" href="#aa98650e90cea22a7e07389eabf98140d">new</a> (tier:&amp;str, published:Option&lt; DateTime&lt; Utc &gt; &gt;) -&gt; Self</td></tr>
 </table><table class="c-table c-table--directory">
@@ -83,6 +83,8 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="c-table__row memitem:a74f65f2a4cc4b0dacb585eee9e457931" id="r_a74f65f2a4cc4b0dacb585eee9e457931"><td class="c-table__cell">pub&#160;const&#160;</td><td class="c-table__cell"><a class="el" href="#a74f65f2a4cc4b0dacb585eee9e457931">DATA_FILE_AGE_WARNING_DAYS</a></td></tr>
 <tr class="c-table__row memdesc:a74f65f2a4cc4b0dacb585eee9e457931"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A data file older than this many days triggers the age warning.  <br /></td></tr>
+<tr class="c-table__row memitem:a9eeccb18d4c7b2ed56916f35c60f887b" id="r_a9eeccb18d4c7b2ed56916f35c60f887b"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a9eeccb18d4c7b2ed56916f35c60f887b">PRICING_URL_AGE</a></td></tr>
+<tr class="c-table__row memdesc:a9eeccb18d4c7b2ed56916f35c60f887b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The pricing page, as the out-of-date warning links it.  <br /></td></tr>
 <tr class="c-table__row memitem:ab60c545115f42f88c00b55f384f5ffc0" id="r_ab60c545115f42f88c00b55f384f5ffc0"><td class="c-table__cell">mod&#160;</td><td class="c-table__cell"><a class="el" href="#ab60c545115f42f88c00b55f384f5ffc0">tests</a></td></tr>
 <tr class="c-table__row memitem:a771e7ccddf1cc03f5c733a1f87a5d216" id="r_a771e7ccddf1cc03f5c733a1f87a5d216"><td class="c-table__cell">tier&#160;</td><td class="c-table__cell"><a class="el" href="#a771e7ccddf1cc03f5c733a1f87a5d216">__pad0__</a></td></tr>
 <tr class="c-table__row memitem:a1b2243f346e6096286a113175b5d7484" id="r_a1b2243f346e6096286a113175b5d7484"><td class="c-table__cell">tier&#160;</td><td class="c-table__cell"><a class="el" href="#a1b2243f346e6096286a113175b5d7484">filter</a></td></tr>
@@ -91,35 +93,6 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:a717dc9216470109184ca689ee8e95147" id="r_a717dc9216470109184ca689ee8e95147"><td class="c-table__cell">aspect_properties&#160;</td><td class="c-table__cell"><a class="el" href="#a717dc9216470109184ca689ee8e95147">files</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
-<a id="a6e8d97e9254d0da081561e4ed90d7bbd" name="a6e8d97e9254d0da081561e4ed90d7bbd"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6e8d97e9254d0da081561e4ed90d7bbd">&#9670;&#160;</a></span>check_data_file()</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">pub fn check_data_file </td>
-          <td>(</td>
-          <td class="c-table__cell">engine:&amp;dyn</td>          <td class="c-table__cell"><span class="paramname"><em>OnPremiseAspectEngine</em></span></td><td>)</td>
-          <td> -&gt; Vec&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-
-<p>Inspect <code>engine</code>'s data file and return the warnings an example should print. </p>
-<p>The returned vector is empty when nothing is wrong. It contains a warning when:</p>
-<ul>
-<li>the data file's publish date is more than [<code><a class="el" href="#a74f65f2a4cc4b0dacb585eee9e457931" title="A data file older than this many days triggers the age warning.">DATA_FILE_AGE_WARNING_DAYS</a></code>] days in the past (a newer file may be needed to detect the latest devices or networks), or</li>
-<li>the engine's data-source tier is <code>"Lite"</code> (illustration-only data with limited accuracy).</li>
-</ul>
-<p>When the publish date is unknown (the engine reports none) the age check is skipped rather than guessed. The messages are returned for the caller to print instead of writing to a logger, so the helper stays logging-framework agnostic. </p>
-
-</div>
-</div>
 <a id="a557f7eebad39b6d76ed9809cfdcdbc0b" name="a557f7eebad39b6d76ed9809cfdcdbc0b"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a557f7eebad39b6d76ed9809cfdcdbc0b">&#9670;&#160;</a></span>data_file_info()</h2>
 
@@ -132,7 +105,7 @@ Variables</h2></td></tr>
               <td class="c-table__cell">pub fn data_file_info </td>
           <td>(</td>
           <td class="c-table__cell">engine:&amp;dyn</td>          <td class="c-table__cell"><span class="paramname"><em>OnPremiseAspectEngine</em></span></td><td>)</td>
-          <td> -&gt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a></td>
+          <td> -&gt; String</td>
         </tr>
           </table>
         </div>
@@ -144,8 +117,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a7f9c787813ddfce8ecc934751f7ad991" name="a7f9c787813ddfce8ecc934751f7ad991"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a7f9c787813ddfce8ecc934751f7ad991">&#9670;&#160;</a></span>is_limited_data_tier()</h2>
+<a id="ac72e33fd31a9eb5240f9959e604e23af" name="ac72e33fd31a9eb5240f9959e604e23af"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac72e33fd31a9eb5240f9959e604e23af">&#9670;&#160;</a></span>is_limited_data_tier() <span class="c-member__count">[1/2]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -153,10 +126,31 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">fn is_limited_data_tier </td>
+              <td class="c-table__cell">if is_limited_data_tier </td>
+          <td>(</td>
+          <td class="c-table__cell">tier</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a6e0f6b14f28f6b8069e550b9352fbf27" name="a6e0f6b14f28f6b8069e550b9352fbf27"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6e0f6b14f28f6b8069e550b9352fbf27">&#9670;&#160;</a></span>is_limited_data_tier() <span class="c-member__count">[2/2]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="ipi-web-getting-started-onprem_8rs.html#a93dfcdf1ed27d9cfa54fec802d7f6b24">warnings</a> fn is_limited_data_tier </td>
           <td>(</td>
           <td class="c-table__cell">tier:&amp;</td>          <td class="c-table__cell"><span class="paramname"><em>str</em></span></td><td>)</td>
-          <td> -&gt; <a class="el" href="performance__results_8rs.html#a13eda313804a469af81193c4e2e1ee58">bool</a></td>
+          <td> -&gt; <a class="el" href="data__paths_8rs.html#ace367d07d2cbc650fd186739e5511adb">bool</a></td>
         </tr>
           </table>
         </div>
@@ -164,7 +158,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Whether <code>tier</code> names a free, limited-accuracy data file that the examples should flag. </p>
-<p>This covers the Device Detection <code>Lite</code> tier and the IP Intelligence free <code><a class="el" href="data__paths_8rs.html#a9cb77e8bd3a4974627c90936971d10cd" title="Force the ASN file ([IPI_ASN_RELATIVE_PATH]).">Asn</a></code> file (whose data-set name carries <code><a class="el" href="data__paths_8rs.html#a9cb77e8bd3a4974627c90936971d10cd" title="Force the ASN file ([IPI_ASN_RELATIVE_PATH]).">Asn</a></code>, for example <code>IPIV4Asn</code>). Both are illustration-only, in contrast to the paid Enterprise and TAC files. </p>
+<p>This covers the Device Detection <code><a class="el" href="data__paths_8rs.html#a90bea49b07745b6fbd53950bb0270cd1" title="Force the Lite file ([IPI_LITE_RELATIVE_PATH]), free from the data repository and much larger than th...">Lite</a></code> tier and the two free IP Intelligence files, whose data-set names carry <code><a class="el" href="data__paths_8rs.html#a9cb77e8bd3a4974627c90936971d10cd" title="Force the ASN file ([IPI_ASN_RELATIVE_PATH]).">Asn</a></code> or <code><a class="el" href="data__paths_8rs.html#a90bea49b07745b6fbd53950bb0270cd1" title="Force the Lite file ([IPI_LITE_RELATIVE_PATH]), free from the data repository and much larger than th...">Lite</a></code>, for example <code>IPIV4Asn</code> and <code>IPIV4Lite</code>. All are illustration-only, in contrast to the paid Enterprise and TAC files. </p>
 
 </div>
 </div>
@@ -185,6 +179,27 @@ Variables</h2></td></tr>
           <td class="c-table__cell"></td>
           <td></td>
           <td class="c-table__cell">published:Option&lt; DateTime&lt; Utc &gt; &gt;</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; Self</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+</div>
+</div>
+<a id="af237e159d58cb9c57a1bd88cfd455988" name="af237e159d58cb9c57a1bd88cfd455988"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af237e159d58cb9c57a1bd88cfd455988">&#9670;&#160;</a></span>Some()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">if let Some </td>
+          <td>(</td>
+          <td class="c-table__cell">published</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
         </tr>
           </table>
         </div>
@@ -284,6 +299,26 @@ Variables</h2></td></tr>
         </div>
       </div>
 </div><div class="c-member__body">
+
+</div>
+</div>
+<a id="a9eeccb18d4c7b2ed56916f35c60f887b" name="a9eeccb18d4c7b2ed56916f35c60f887b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9eeccb18d4c7b2ed56916f35c60f887b">&#9670;&#160;</a></span>PRICING_URL_AGE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">const PRICING_URL_AGE</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The pricing page, as the out-of-date warning links it. </p>
 
 </div>
 </div>

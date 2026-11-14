@@ -67,6 +67,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classfiftyone_
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a570baf3bb479bd175d4aab58d1f8aef8" id="r_a570baf3bb479bd175d4aab58d1f8aef8"><td class="c-table__cell">static&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a570baf3bb479bd175d4aab58d1f8aef8">requireTestResourceKey</a> (String asksFor, String... products)</td></tr>
+<tr class="c-table__row memdesc:a570baf3bb479bd175d4aab58d1f8aef8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The resource key for a test that calls the live cloud service, from <code><a class="el" href="#a1c31ac8568618c133839348cda9f3aa5">SHARED_RESOURCE_KEY_NAMES</a></code> and then <code><a class="el" href="">TEST_RESOURCE_KEY</a></code>.  <br /></td></tr>
+<tr class="c-table__row memitem:a2c9dca3c06b51430b9d37b49f731a35a" id="r_a2c9dca3c06b51430b9d37b49f731a35a"><td class="c-table__cell">static&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a2c9dca3c06b51430b9d37b49f731a35a">requireResourceKey</a> (List&lt; String &gt; exampleNames, String asksFor, String... products)</td></tr>
+<tr class="c-table__row memdesc:a2c9dca3c06b51430b9d37b49f731a35a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The resource key for a test that calls the live cloud service, from <code><a class="el" href="#a1c31ac8568618c133839348cda9f3aa5">SHARED_RESOURCE_KEY_NAMES</a></code> and then the given names.  <br /></td></tr>
+<tr class="c-table__row memitem:a46656c49f7d7b447795886cfab616e10" id="r_a46656c49f7d7b447795886cfab616e10"><td class="c-table__cell">static&#160;String&#160;</td><td class="c-table__cell"><a class="el" href="#a46656c49f7d7b447795886cfab616e10">answeredWithout</a> (String thing, String reason, String... products)</td></tr>
+<tr class="c-table__row memdesc:a46656c49f7d7b447795886cfab616e10"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The message for a value the cloud answered without.  <br /></td></tr>
 <tr class="c-table__row memitem:ac1ac35c267e3f5747b7ccab60d84c4dd" id="r_ac1ac35c267e3f5747b7ccab60d84c4dd"><td class="c-table__cell"><a id="ac1ac35c267e3f5747b7ccab60d84c4dd" name="ac1ac35c267e3f5747b7ccab60d84c4dd"></a>
 static&#160;String&#160;</td><td class="c-table__cell"><b>getOrSetTestResourceKey</b> ()</td></tr>
 <tr class="c-table__row memdesc:ac1ac35c267e3f5747b7ccab60d84c4dd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Obtain a resource key either from environment variable or from a property. <br /></td></tr>
@@ -87,8 +93,59 @@ static&#160;String&#160;</td><td class="c-table__cell"><b>getOrSetSuperResourceK
 Static Public Attributes</h2></td></tr>
 <tr class="c-table__row memitem:a32f66691611fcac8cae7eaec9dbc6bb4" id="r_a32f66691611fcac8cae7eaec9dbc6bb4"><td class="c-table__cell"><a id="a32f66691611fcac8cae7eaec9dbc6bb4" name="a32f66691611fcac8cae7eaec9dbc6bb4"></a>
 static&#160;final&#160;String&#160;</td><td class="c-table__cell"><b>TEST_RESOURCE_KEY</b> = &quot;TestResourceKey&quot;</td></tr>
+<tr class="c-table__row memitem:a1c31ac8568618c133839348cda9f3aa5" id="r_a1c31ac8568618c133839348cda9f3aa5"><td class="c-table__cell">static&#160;final&#160;List&lt;&#160;String&#160;&gt;&#160;</td><td class="c-table__cell"><a class="el" href="#a1c31ac8568618c133839348cda9f3aa5">SHARED_RESOURCE_KEY_NAMES</a></td></tr>
+<tr class="c-table__row memdesc:a1c31ac8568618c133839348cda9f3aa5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The names every cloud test reads a resource key from first, before the names its own example reads.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="a46656c49f7d7b447795886cfab616e10" name="a46656c49f7d7b447795886cfab616e10"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a46656c49f7d7b447795886cfab616e10">&#9670;&#160;</a></span>answeredWithout()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">String fiftyone.devicedetection.examples.shared.KeyHelper.answeredWithout </td>
+          <td>(</td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>thing</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>reason</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">String...</td>          <td class="c-table__cell"><span class="paramname"><em>products</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The message for a value the cloud answered without. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">thing</td><td>the property or element that has no value </td></tr>
+    <tr><td class="paramname">reason</td><td>the reason the cloud gave, or null </td></tr>
+    <tr><td class="paramname">products</td><td>the products a key needs for the value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the message </dd></dl>
+
+</div>
+</div>
 <a id="a05b0b0569dd73d0b6fc2057a4c7af0c1" name="a05b0b0569dd73d0b6fc2057a4c7af0c1"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a05b0b0569dd73d0b6fc2057a4c7af0c1">&#9670;&#160;</a></span>getOrSetResourceKey()</h2>
 
@@ -132,6 +189,131 @@ static&#160;final&#160;String&#160;</td><td class="c-table__cell"><b>TEST_RESOUR
 
 <p>Obtain a resource key from the passed argument, from environment variable or from a property. </p>
 <p>Store as System Property TEST_RESOURCE_KEY </p>
+
+</div>
+</div>
+<a id="a2c9dca3c06b51430b9d37b49f731a35a" name="a2c9dca3c06b51430b9d37b49f731a35a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a2c9dca3c06b51430b9d37b49f731a35a">&#9670;&#160;</a></span>requireResourceKey()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">String fiftyone.devicedetection.examples.shared.KeyHelper.requireResourceKey </td>
+          <td>(</td>
+          <td class="c-table__cell">List&lt; String &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>exampleNames</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>asksFor</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">String...</td>          <td class="c-table__cell"><span class="paramname"><em>products</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The resource key for a test that calls the live cloud service, from <code><a class="el" href="#a1c31ac8568618c133839348cda9f3aa5">SHARED_RESOURCE_KEY_NAMES</a></code> and then the given names. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">exampleNames</td><td>the names the example reads, in the order it reads them </td></tr>
+    <tr><td class="paramname">asksFor</td><td>what the test asks the service for </td></tr>
+    <tr><td class="paramname">products</td><td>the products the key has to carry </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the resource key </dd></dl>
+
+</div>
+</div>
+<a id="a570baf3bb479bd175d4aab58d1f8aef8" name="a570baf3bb479bd175d4aab58d1f8aef8"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a570baf3bb479bd175d4aab58d1f8aef8">&#9670;&#160;</a></span>requireTestResourceKey()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">String fiftyone.devicedetection.examples.shared.KeyHelper.requireTestResourceKey </td>
+          <td>(</td>
+          <td class="c-table__cell">String</td>          <td class="c-table__cell"><span class="paramname"><em>asksFor</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">String...</td>          <td class="c-table__cell"><span class="paramname"><em>products</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>The resource key for a test that calls the live cloud service, from <code><a class="el" href="#a1c31ac8568618c133839348cda9f3aa5">SHARED_RESOURCE_KEY_NAMES</a></code> and then <code><a class="el" href="">TEST_RESOURCE_KEY</a></code>. </p>
+<p>Fails the test when there is none, because a cloud test that passes without a key has called nothing. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">asksFor</td><td>what the test asks the service for </td></tr>
+    <tr><td class="paramname">products</td><td>the products the key has to carry </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the resource key </dd></dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="g-docs__section-heading">Member Data Documentation</h2>
+<a id="a1c31ac8568618c133839348cda9f3aa5" name="a1c31ac8568618c133839348cda9f3aa5"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a1c31ac8568618c133839348cda9f3aa5">&#9670;&#160;</a></span>SHARED_RESOURCE_KEY_NAMES</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">final List&lt;String&gt; fiftyone.devicedetection.examples.shared.KeyHelper.SHARED_RESOURCE_KEY_NAMES</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+<b>Initial value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">                                               =</div>
+<div class="c-code__line">Collections.unmodifiableList(Arrays.asList(</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;_51DEGREES_RESOURCE_KEY&quot;</span>,</div>
+<div class="c-code__line">    <span class="c-code__stringliteral">&quot;_51DEGREES_RESOURCE_KEY_BESPOKE&quot;</span>))</div>
+</div><!-- fragment -->
+<p>The names every cloud test reads a resource key from first, before the names its own example reads. </p>
 
 </div>
 </div>

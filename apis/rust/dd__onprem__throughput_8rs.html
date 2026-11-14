@@ -71,9 +71,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd__onprem__th
 Functions</h2></td></tr>
 <tr class="c-table__row memitem:a22d7c8693c7ac6179e3837c098a64906" id="r_a22d7c8693c7ac6179e3837c098a64906"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a22d7c8693c7ac6179e3837c098a64906">build_pipeline</a> (data_file:&amp;Path) -&gt; Arc&lt; Pipeline &gt;</td></tr>
 <tr class="c-table__row memdesc:a22d7c8693c7ac6179e3837c098a64906"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build the on-premise pipeline the benchmark detects through.  <br /></td></tr>
-<tr class="c-table__row memitem:a4704952568a9d7be91520da38fcf9deb" id="r_a4704952568a9d7be91520da38fcf9deb"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a4704952568a9d7be91520da38fcf9deb">load_records</a> (path:&amp;Path, max:usize) -&gt; Vec&lt; BTreeMap&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt; &gt;</td></tr>
+<tr class="c-table__row memitem:a4704952568a9d7be91520da38fcf9deb" id="r_a4704952568a9d7be91520da38fcf9deb"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#a4704952568a9d7be91520da38fcf9deb">load_records</a> (path:&amp;Path, max:usize) -&gt; Vec&lt; BTreeMap&lt; String, String &gt; &gt;</td></tr>
 <tr class="c-table__row memdesc:a4704952568a9d7be91520da38fcf9deb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Load up to <code>max</code> evidence records from the multi-document YAML evidence file.  <br /></td></tr>
-<tr class="c-table__row memitem:ab2560e42cf1884c9d873f26d5fbf6193" id="r_ab2560e42cf1884c9d873f26d5fbf6193"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ab2560e42cf1884c9d873f26d5fbf6193">detect_all</a> (pipeline:&amp;Arc&lt; Pipeline &gt;, records:&amp;[BTreeMap&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt;]) -&gt; <a class="el" href="dd-onprem-performance_8rs.html#ab798c2e151673618ca772d4f0ee287fe">u64</a></td></tr>
+<tr class="c-table__row memitem:ab2560e42cf1884c9d873f26d5fbf6193" id="r_ab2560e42cf1884c9d873f26d5fbf6193"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#ab2560e42cf1884c9d873f26d5fbf6193">detect_all</a> (pipeline:&amp;Arc&lt; Pipeline &gt;, records:&amp;[BTreeMap&lt; String, String &gt;]) -&gt; <a class="el" href="dd-onprem-performance_8rs.html#ab798c2e151673618ca772d4f0ee287fe">u64</a></td></tr>
 <tr class="c-table__row memdesc:ab2560e42cf1884c9d873f26d5fbf6193"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Run one detection per record, reading <code>IsMobile</code> so the optimizer cannot elide the work being measured, and return how many detections succeeded.  <br /></td></tr>
 <tr class="c-table__row memitem:adb711a522e9c15257443f02c847121ec" id="r_adb711a522e9c15257443f02c847121ec"><td class="c-table__cell">fn&#160;</td><td class="c-table__cell"><a class="el" href="#adb711a522e9c15257443f02c847121ec">dd_onprem_throughput</a> (c:&amp;<a class="el" href="star__sign_8rs.html#a4dfb142d47a422e580aa3795ccce5db6">mut</a> Criterion)</td></tr>
 <tr class="c-table__row memdesc:adb711a522e9c15257443f02c847121ec"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Register the Device Detection throughput benchmark, or skip cleanly when the data file or evidence file is not present in this checkout.  <br /></td></tr>
@@ -83,7 +83,7 @@ Functions</h2></td></tr>
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="c-table__row memitem:afa6df8f8739a9a5270dce6d4415e3d07" id="r_afa6df8f8739a9a5270dce6d4415e3d07"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#afa6df8f8739a9a5270dce6d4415e3d07">EVIDENCE_RELATIVE_PATH</a></td></tr>
-<tr class="c-table__row memdesc:afa6df8f8739a9a5270dce6d4415e3d07"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The relative path to the bundled evidence file inside the data in the <code>cxx</code> submodule.  <br /></td></tr>
+<tr class="c-table__row memdesc:afa6df8f8739a9a5270dce6d4415e3d07"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The relative path to the evidence file in the data repository inside the <code>cxx</code> submodule.  <br /></td></tr>
 <tr class="c-table__row memitem:a2c6fd3bf84f646bc8cb0d6de411ecf36" id="r_a2c6fd3bf84f646bc8cb0d6de411ecf36"><td class="c-table__cell">const&#160;</td><td class="c-table__cell"><a class="el" href="#a2c6fd3bf84f646bc8cb0d6de411ecf36">RECORD_COUNT</a></td></tr>
 <tr class="c-table__row memdesc:a2c6fd3bf84f646bc8cb0d6de411ecf36"><td class="c-table__cell">&#160;</td><td class="c-table__cell">How many evidence records to load and replay per benchmark iteration.  <br /></td></tr>
 </table>
@@ -225,7 +225,7 @@ Variables</h2></td></tr>
         <tr class="c-table__row">
           <td class="c-table__cell"></td>
           <td></td>
-          <td class="c-table__cell">max:usize</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; Vec&lt; BTreeMap&lt; <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a>, <a class="el" href="ipi-onprem-compare_8rs.html#adef5df9d43aaca3d214c1dbd6716c357">String</a> &gt; &gt;</td>
+          <td class="c-table__cell">max:usize</td>          <td class="c-table__cell"><span class="paramname"><em></em></span>&#160;) -&gt; Vec&lt; BTreeMap&lt; String, String &gt; &gt;</td>
         </tr>
           </table>
         </div>
@@ -254,8 +254,8 @@ Variables</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 
-<p>The relative path to the bundled evidence file inside the data in the <code>cxx</code> submodule. </p>
-<p><code>examples_shared::find_file</code> walks up the tree to locate it, so it resolves from a bench run, an IDE or CI alike. </p>
+<p>The relative path to the evidence file in the data repository inside the <code>cxx</code> submodule. </p>
+<p><code>examples_shared::find_data_file</code> walks up the tree to locate it, so it resolves from a bench run, an IDE or CI alike, and downloads it when it is missing. </p>
 
 </div>
 </div>

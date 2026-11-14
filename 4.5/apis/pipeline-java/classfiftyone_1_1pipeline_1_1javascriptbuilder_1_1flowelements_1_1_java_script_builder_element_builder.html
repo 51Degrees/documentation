@@ -341,11 +341,17 @@ String&#160;</td><td class="c-table__cell"><b>objName</b> = Constants.DEFAULT_OB
 <p>The protocol that the client JavaScript will use when querying for updates. </p>
 <p>By default, the protocol from the request will be used. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">protocol</td><td>The protocol to use (http / https) </td></tr>
+    <tr><td class="paramname">protocol</td><td>The protocol to use, http or https in any case of its ASCII letters </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">this builder </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">PipelineConfigurationException</td><td>if the protocol is neither http nor https </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
