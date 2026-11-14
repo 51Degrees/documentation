@@ -194,3 +194,10 @@ The [feature matrix](@ref ProductSummaries_FeatureMatrix) shows which languages 
 # The cloud
 
 The 51Degrees cloud gives a derived property by running this same element in its own @Pipeline, so a cloud answer and an answer from your own servers come from the same script. Choose the property for your Resource Key like any other. Where a property a script reads was not available, the cloud gives the property as `null` with the reason alongside it, for example `humanconfidencenullreason`.
+
+# Example
+
+@startsnippets
+@grabexample{pipeline-dotnet,_derived_property_2_program_8cs,.NET}
+@grabbedexample
+@endsnippets
