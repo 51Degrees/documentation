@@ -12,6 +12,12 @@ Note that some @aspectengines (for example, the 51Degrees On-premise @devicedete
 may have internal caches for various reasons, these are separate to the @Pipeline 
 **results cache** and may or may not be configurable depending on the implementation of the @aspectengine.
 
+The On-premise @devicedetection and @ipintelligence engines take no **results cache**, and refuse one
+when it is configured. Each result reads its values from memory that the engine's C code owns, and keeping
+a result for longer than its @flowdata would mean coordinating that memory's lifetime and its use across
+threads. If you need a cache, keep your own using the cache classes the @Pipeline provides, and store the
+values you read rather than the result.
+
 In the .NET API, @aspectengines can be configured to flag whether an instance of
 @Aspectdata has originated from the cache or from processing of the engine. For example, 
 if `CacheHitOrMiss` is set to true, then `CacheHit` is true on @aspectdata that came
