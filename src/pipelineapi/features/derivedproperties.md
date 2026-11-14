@@ -77,10 +77,13 @@ In a configuration file, `Scripts` names the scripts the package carries and `Sc
 
 In PHP the builder name is the class's full name, written in JSON as `"BuilderName": "fiftyone\\pipeline\\derivedproperty\\DerivedPropertyElement"`, the way other PHP elements are named on @ref PipelineApi_Concepts_Configuration_Builders_BuildFromConfiguration.
 
+In Go, register `derivedproperty.NewFromConfiguration` with a `core.BuilderRegistry` under `derivedproperty.BuilderName`, then build the @Pipeline with the registry's `BuildFromConfiguration`.
+
 # Using it
 
 @startsnippets
 @showsnippet{dotnet,C#}
+@showsnippet{go,Go}
 @showsnippet{php,PHP}
 @showsnippet{rust,Rust}
 @defaultsnippet{Select a language.}
@@ -115,6 +118,61 @@ using (var flowData = pipeline.CreateFlowData())
     Console.WriteLine(confidence.HasValue ?
         confidence.Value :
         confidence.NoValueMessage);
+}
+```
+@endsnippet
+@startsnippet{go}
+Add the pipeline module with `go get github.com/51Degrees/51degrees-go/pipeline/v4`. The element is its `elements/derivedproperty` package, in [pipeline/elements/derivedproperty](https://github.com/51Degrees/51degrees-go/tree/main/pipeline/elements/derivedproperty). The Go on-premise engines do not run in a @Pipeline yet and Go has no @DeviceDetection cloud engine, so a script that reads device properties, such as `HumanConfidence`, needs them from an element of your own. `IsGdpr` runs with the @IpIntelligence cloud engine, as below.
+
+```{go}
+import (
+	"fmt"
+	"log"
+
+	"github.com/51Degrees/51degrees-go/ip-intelligence/v4/ipi_cloud"
+	"github.com/51Degrees/51degrees-go/pipeline/v4/cloud/requestengine"
+	"github.com/51Degrees/51degrees-go/pipeline/v4/core"
+	"github.com/51Degrees/51degrees-go/pipeline/v4/elements/derivedproperty"
+	"github.com/51Degrees/51degrees-go/pipeline/v4/engines"
+)
+
+derived, err := derivedproperty.NewBuilder().
+	// A script the package carries.
+	AddBuiltInScript(derivedproperty.IsGdpr).
+	// A file, or every file a wildcard matches.
+	AddScriptFile("derived/*.yaml").
+	// The text of a script held by your own code, YAML or JSON.
+	AddScript("MyProperty", scriptText).
+	Build()
+if err != nil {
+	// Lists every fault in every script.
+	log.Fatal(err)
+}
+
+requestEngine, err := requestengine.NewBuilder().
+	SetResourceKey(resourceKey).
+	Build()
+
+// Add the element after the engines that supply what its scripts read.
+pipeline, err := core.NewPipelineBuilder().
+	AddFlowElement(requestEngine).
+	AddFlowElement(ipi_cloud.New(nil)).
+	AddFlowElement(derived).
+	Build()
+defer pipeline.Close()
+
+fd := pipeline.CreateFlowData()
+fd.AddEvidence("query.client-ip", clientIP)
+err = fd.Process()
+
+data, err := core.Get[*derivedproperty.Data](fd)
+isGdpr, err := derivedproperty.GetAs[engines.AspectPropertyValue[bool]](
+	data, "IsGdpr")
+if value, err := isGdpr.Value(); err == nil {
+	fmt.Println(value)
+} else {
+	// Names every property that could not be read, and why.
+	fmt.Println(isGdpr.NoValueMessage())
 }
 ```
 @endsnippet
