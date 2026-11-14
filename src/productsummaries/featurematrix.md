@@ -44,7 +44,7 @@
 | [Lazy loading](@ref PipelineApi_Features_LazyLoading) | <center>@tick</center> | <center>@tick</center> |  |  |  | <center>@tick</center> |  |
 | [Parallel execution](@ref PipelineApi_Features_ParallelExecution) | <center>@tick</center> | <center>@tick</center> | <center>@tick</center> |  |  | <center>@tick</center> | <center>@tick</center> |
 | [Result caching](@ref PipelineApi_Features_ResultCaching) | <center>@tick†</center> | <center>@tick†</center> | <center>@tick†</center> | <center>@tick*</center> | <center>@tick†</center> | <center>@tick†</center> | <center>@tick†</center> |
-| [Derived properties](@ref PipelineApi_Features_DerivedProperties) | <center>@tick</center> |  |  | <center>@tick</center> |  |  | <center>@tick</center> |
+| [Derived properties](@ref PipelineApi_Features_DerivedProperties) | <center>@tick</center> |  |  | <center>@tick</center> |  | <center>@tick</center> | <center>@tick</center> |
 | [Agent signature](@ref PipelineApi_Features_AgentSignature) | <center>@tick</center> |  |  |  |  |  | <center>@tick</center> |
 
 *Session cache only.<BR>
