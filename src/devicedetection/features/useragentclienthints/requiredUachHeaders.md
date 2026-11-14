@@ -42,9 +42,7 @@ Some pseudo-headers are not required to detect the component but can provide mor
 
 In some cases, there are multiple pseudo-headers for a component. These are processed in order from providing most detail to least. In addition, a pseudo-header within the length limit below will take precedence over the User-Agent, even in cases where the User-Agent provides more detail.
 
-Pseudo-headers are built in working memory of a fixed size, so a pseudo-header longer than the limit is ignored. A single header such as User-Agent has the same limit and is ignored in the same way, including when it is passed directly rather than as evidence. No error is reported and detection moves on to the next header, which can mean the result rests on less detailed evidence. If no other header is usable the results hold no match. The limit is 500 bytes by default and counts one separator between each value of a pseudo-header.
-
-To raise the limit, set a larger value before creating the engine, which uses more memory for each set of results. The setting is `maxMatchedUserAgentLength` in C and Node.js, `setMaxMatchedUserAgentLength` in C++, and `max_matched_useragent_length` in Python and PHP. The .NET and Java pipeline builders do not offer this setting.
+A pseudo-header longer than 500 bytes, counting one separator between each value, is ignored with no error, and detection moves on to the next header. Every single header such as User-Agent has the same limit. See [Header length limit](@ref DeviceDetection_Hash_HeaderLengthLimit) for why the limit is 500 bytes, how to tell a header was ignored, and the setting in each language.
 
 ## Key
 - x = This value is required in order to determine the component.
