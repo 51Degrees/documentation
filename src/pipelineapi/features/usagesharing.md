@@ -61,15 +61,43 @@ control what is shared and how it is collected:
 
 ## Evidence shared
 
-The **usage sharing** element will not be interested in all @evidence in the @flowdata. 
-These are the rules for whether or not a particular piece of evidence is shared:
+The **usage sharing** element accepts no @evidence of its own, so it never changes what the @Pipeline accepts. It shares what it finds in two places instead:
 
-- Any evidence named 'header.&lt;name&gt;', if &lt;name&gt; is **not** on a configured blocklist.
-- Any evidence named 'query.&lt;name&gt;', if &lt;name&gt; **is** on a configured allowlist.
-- Any evidence named 'cookie.&lt;name&gt;' is ignored, unless &lt;name&gt; starts with '51D_'.
-- Any other evidence is shared if it is not on a configured blocklist.
+- every @evidence value in the @flowdata, and
+- the web request, which a @webintegration hands to the @Pipeline as `server.http-request`. From it the element reads every header other than `Cookie`, every cookie, query string and form parameter and session value, the client IP address, the protocol, and the method and path of the request line. This is how a header that no other element reads is still shared.
 
-The various blocklists and allowlists can be configured using the **share usage** @elementbuilder.
+A key found in both places is shared once, with the value from the @evidence. Keys are compared without regard to letter case.
+
+These are never shared, whatever the configuration, even when all @evidence is shared:
+
+- `id.email`, a raw email address, and `id.salt`, the salt used to make hashed email identifiers, under any prefix.
+- `server.request-query`, the whole query string, and `server.request-path`, the path of the request.
+- `header.cookie`, the `Cookie` header, which carries every cookie. The cookies whose names start `51D_` are shared as their own `cookie.` values instead.
+- The `server.http-request` value itself. Only the values read from it are shared.
+
+Unless all @evidence is shared, these rules decide the rest:
+
+- 'header.&lt;name&gt;' is shared unless &lt;name&gt; is on the configured block list.
+- 'cookie.&lt;name&gt;' and 'session.&lt;name&gt;' are shared only when &lt;name&gt; starts with '51D_'.
+- 'query.&lt;name&gt;' is shared when &lt;name&gt; starts with '51D_' or is on the configured allow list.
+- Any other @evidence is shared.
+
+The Resource Key and License Key, held as `fiftyone.resource-key` and `fiftyone.license-key`, are always shared, because usage is counted against them.
+
+The block list and the allow list can be configured using the **share usage** @elementbuilder, along with options to share all query string parameters or all @evidence.
+
+## Handing over the web request
+
+Each @webintegration adds `server.http-request` on every request, so a website that uses one has nothing to do. An application that adds @evidence itself, and adds a value only when the @Pipeline's @evidencekeyfilter accepts its key, leaves out every header that no element reads, because the **usage sharing** element accepts none. Such an application adds the request as well.
+
+| Language | Web integration | Adding @evidence yourself |
+|----------|-----------------|---------------------------|
+| .NET | `IWebRequestEvidenceService.AddEvidenceFromRequest` in ASP.NET Core, and the ASP.NET module, add the request. | Add an `IReadOnlyDictionary<string, object>` holding each value of the request under its @evidence key, with the key `Constants.EVIDENCE_HTTPREQUEST_KEY`. |
+| Java | The servlet filter adds the request. | Add a `Map` holding each value of the request under its @evidence key, with `flowData.addEvidence(ShareUsageEvidence.HTTP_REQUEST_KEY, request)`. |
+| Node.js | `evidence.addFromRequest` adds the request. | Nothing to do. `evidence.add` keeps a value that the **usage sharing** element would share. |
+| Python | `webevidence` adds the request. | Nothing to do. The **usage sharing** element finds every value given to the @flowdata. |
+| Go | `web.Middleware` adds the request. | Add `core.NewWebRequest(r).WithClientIP(ip)` with the key `core.EvidenceHTTPRequest`, where `r` is the `*http.Request`. |
+| Rust | `build_evidence` in `fiftyone_pipeline_web` adds the request. | Give the request with `EvidenceBuilder::http_request`, as a second @evidence holding each value under its @evidence key. |
 
 ### Evidence detail
 
