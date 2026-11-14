@@ -26,6 +26,8 @@ The table below explains the options, from fastest performance and highest memor
 |Balanced (Default)|Some collections are loaded into memory at startup and the rest are read through caches of a fixed size. Frequently used items stay in memory, so disk reads are relatively uncommon for a typical web server workload.|Use for general workloads without extreme memory or performance requirements.|
 |LowMemory|Data always streamed from disk on-demand. | Recommended when the lowest possible memory usage is more important than performance. |
 
+The default is `Balanced`, except for the engine PHP builds when it starts. That engine is built from the php.ini file and always uses `MaxPerformance`, and any other profile set in the php.ini file is refused. PHP usually serves requests from worker processes copied from the process that built the engine. With a profile that reads from the data file, those workers would share one open data file and its read position, and corrupt each other's reads.
+
 The precise values associated with each template can be seen in the source code on [GitHub](https://github.com/51Degrees/51degrees-cxx/blob/67503df045efb32e84eb59fe7e320772dd6475db/src/hash/hash.c#L177).
 
 We measured throughput, startup time, and memory for Device Detection on seven machines, with the data file held in memory and with `Balanced`. The results are in the [hardware benchmarks](@ref ProductSummaries_Benchmarks_Hardware).

@@ -166,6 +166,8 @@ Download new data files from the [51Degrees Distributor](@ref Services_Distribut
 - **LowMemory** - Slowest but minimal memory usage
 - **Balanced** - Default middle ground
 
+In PHP, the engine built when PHP starts always uses `MaxPerformance`, so there is no profile to choose. See [Performance options](@ref DeviceDetection_Features_PerformanceOptions) for the reason.
+
 **Deployment Options**
 
 - **In-Process** - Fastest option, detection in your application

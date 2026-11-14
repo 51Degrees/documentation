@@ -32,4 +32,6 @@ The algorithm is implemented in C for use in applications including edge computi
 - **Simple** - high-level language APIs make deployment simple for developers of all experience levels.
 - **Automatic Update** - data can be updated automatically without requiring a process restart.
 
+`Balanced` is the default profile, except for the engine PHP builds when it starts. That engine is built from the php.ini file and always holds all the data in memory with `MaxPerformance`, because PHP usually serves requests from worker processes copied from the process that built the engine, and with a profile that reads from the data file those workers would corrupt each other's reads. An engine that PHP code builds later, from a settings array, may use any profile and defaults to `Balanced`.
+
 See the [C code](https://github.com/51Degrees/51degrees-cxx/tree/main/src/ipi/graph) to find out more about the implementation.
