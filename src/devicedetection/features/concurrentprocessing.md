@@ -2,21 +2,62 @@
 
 # Introduction
 
-With a @PerformanceProfile that loads collections completely into memory, available hardware limits concurrent requests. When collections are read partly or entirely from a file, configure concurrency for the number of threads that will access the @Pipeline.
+An on-premise device detection engine can be shared by many threads. The Concurrency setting tells the engine how many of those threads will use it at the same time. Concurrency matters only when the @PerformanceProfile reads part of the data from the data file while the engine runs. When every collection is held in memory, available hardware limits concurrent requests and Concurrency has no effect.
 
 See the
 [Specification](https://github.com/51Degrees/specifications/blob/main/pipeline-specification/advanced-features/parallel-processing.md#)
 for more technical details.
 
+# What Concurrency controls
+
+For each collection that is read from the data file, Concurrency sets two things.
+
+1. **How many operations can read from the data file at the same time.** The engine keeps a pool of file handles, one for each concurrent operation. Set Concurrency to at least the number of threads that use the engine at once.
+2. **How each cache is split into parts.** Each part of a cache has its own lock, so threads that need different parts do not block each other.
+
+How these apply depends on the performance profile.
+
+| Profile | Effect of Concurrency |
+|---|---|
+| `LowMemory` | Every collection is read from the data file without a cache, so only the number of file handles applies. |
+| `Balanced` and `BalancedTemp` | Some collections are held in memory and the rest are read from the data file through caches, so both the file handles and the cache parts apply. |
+| `HighPerformance` and `MaxPerformance` | Every collection is held in memory while the engine runs, so Concurrency has no effect. |
+
+Choosing a performance profile replaces Concurrency with the profile's own value, so set the profile first and Concurrency after it.
+
+# Limits in the current release
+
+In the current release, each cache is split into as many parts as the value of Concurrency, and each part must hold at least that many entries. So a Concurrency above the square root of the capacity of a profile's smallest cache, rounded down, stops the engine from building. The error says the data file is not in the correct format (`CORRUPT_DATA`), although the file is fine.
+
+The smallest cache in `Balanced` and `BalancedTemp` holds 500 values, so in the current release those profiles build only with a Concurrency of 22 or less. `LowMemory` has no caches, so it builds with any Concurrency.
+
+# Default value
+
+The table gives the default in the current release of each language.
+
+| Language | Default Concurrency |
+|---|---|
+| C | 10, from `FIFTYONE_DEGREES_CACHE_CONCURRENCY`, in every profile except `MaxPerformance` (1 when compiled with `FIFTYONE_DEGREES_NO_THREADING`). |
+| C++ | 10, because `ConfigHash` starts from the C profiles. |
+| .NET | 10, because the native default is kept unless `SetConcurrency` is called. |
+| Java | 10 with `DeviceDetectionPipelineBuilder`. `DeviceDetectionHashEngineBuilder` starts at the number of processors, and `setPerformanceProfile` puts Concurrency back to 10. |
+| Node.js | The number of processors, from `os.cpus().length`. |
+| Python | The number of processors, from `multiprocessing.cpu_count()`. |
+| PHP | Not used, because the PHP extension always holds the data in memory. |
+| Rust | 10. |
+
+Where the default is the number of processors, a machine with more than 22 processors cannot build the `Balanced` profile in the current release unless Concurrency is set to 22 or less.
+
+# Choose a value
+
+1. Count the threads that will use the engine at the same time. For a web server, that number is the most requests the server processes at once.
+2. With `LowMemory`, set Concurrency to that number.
+3. With `Balanced`, set Concurrency to that number, up to the 22 that the current release accepts. For more threads than that, use `MaxPerformance`, which holds the data in memory and needs no file handles, or `LowMemory` where memory use matters more than speed.
+4. With `HighPerformance` or `MaxPerformance`, leave Concurrency unset.
+
 # Configure concurrency
 
-For @PerformanceProfiles such as `LowMemory` and `Balanced`, the concurrency is limited by the number
-of file handles available in the file pool. In most implementations, the default value for this is
-the number of cores available on the machine. If more threads than this will be used, the expected
-concurrency must be configured when creating the engine, so that
-the file pool is created with the correct size to handle the expected number of concurrent accesses.
-
-The snippet below shows how to set this when creating the engine:
+The snippets below set the performance profile and then the concurrency when creating the engine.
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{java,Java}
@@ -38,27 +79,15 @@ var pipeline =  new DeviceDetectionPipelineBuilder(loggerFactory)
     .SetConcurrency(threadCount)
     .Build();
 ```
-Or in config file:
-```{json}
-"PipelineOptions": {
-    "Elements": [
-        {
-            "BuilderName": "DeviceDetectionHashEngineBuilder",
-            "BuildParameters": {
-                "DataFile": "51Degrees-LiteV4.1.hash",
-                "PerformanceProfile": "LowMemory",
-                "Concurrency": 30
-            }
-        }
-    ...
-    ]
-}
-```
+In the current release, a configuration file applies `PerformanceProfile`
+after `Concurrency`, and the profile puts Concurrency back to its own value
+of 10. So set Concurrency in code whenever the configuration also names a
+performance profile.
 @endsnippet
 @startsnippet{java}
 In code:
 ```{java}
-DeviceDetectionOnPremisePipelineBuilder builder = new DeviceDetectionPipelineBuilder()
+Pipeline pipeline = new DeviceDetectionPipelineBuilder()
     .useOnPremise(dataFileLocation, false)
     // Set performance profile
     .setPerformanceProfile(PerformanceProfiles.LowMemory)
@@ -66,22 +95,10 @@ DeviceDetectionOnPremisePipelineBuilder builder = new DeviceDetectionPipelineBui
     .setConcurrency(threadCount)
     .build();
 ```
-Or in config file:
-```{xml}
-<PipelineOptions>
-    <Elements>
-        <Element>
-            <BuildParameters>
-                <DataFile>51Degrees-LiteV4.1.hash</DataFile>
-                <PerformanceProfile>LowMemory</PerformanceProfile>
-                <Concurrency>30</Concurrency>
-            </BuildParameters>
-            <BuilderName>DeviceDetectionHashEngine</BuilderName>
-        </Element>
-        ...
-    </Elements>
-</PipelineOptions>
-```
+In the current release, a configuration file applies `PerformanceProfile`
+after `Concurrency`, and the profile puts Concurrency back to its own value
+of 10. So set Concurrency in code whenever the configuration also names a
+performance profile.
 @endsnippet
 @startsnippet{node}
 In code:
@@ -97,7 +114,7 @@ Or in config file:
 "PipelineOptions": {
     "Elements": [
         {
-            "elementName": "deviceDetectionOnPremise",
+            "elementName": "fiftyone.devicedetection.onpremise/deviceDetectionOnPremise",
             "elementParameters": {
                 "performanceProfile": "LowMemory",
                 "dataFilePath": "51Degrees-LiteV4.1.hash",
@@ -110,13 +127,10 @@ Or in config file:
 ```
 @endsnippet
 @startsnippet{php}
-For PHP, set the concurrency option in the php.ini file.
-```
-extension=/usr/lib/php/20170718/FiftyOneDegreesHashEngine.so
-FiftyOneDegreesHashEngine.data_file=/path to your file/51Degrees-LiteV4.1.hash
-FiftyOneDegreesHashEngine.performance_profile=LowMemory
-FiftyOneDegreesHashEngine.concurrency=30
-```
+The PHP extension always holds the whole data file in memory, using the
+`MaxPerformance` profile, so Concurrency has no effect in PHP. Setting
+`FiftyOneDegreesHashEngine.performance_profile` in the php.ini file to any
+other profile raises an exception.
 @endsnippet
 @startsnippet{python}
 In code:
@@ -159,7 +173,7 @@ config.components.concurrency = threadCount;
 
 StatusCode status = HashInitManagerFromFile(
     &manager,
-    &dataSetConfig,
+    &config,
     &properties,
     dataFileLocation,
     exception);
@@ -194,8 +208,7 @@ use fiftyone_device_detection::{DeviceDetectionPipelineBuilder, PerformanceProfi
 let pipeline = DeviceDetectionPipelineBuilder::on_premise(data_file)
     // Set the performance profile
     .performance_profile(PerformanceProfile::LowMemory)
-    // Set the expected concurrency (the number of threads that will share the
-    // pipeline); this sizes the data set's file-handle pool.
+    // Set the number of threads that will use the pipeline at once
     .concurrency(thread_count)
     .build()?;
 ```
