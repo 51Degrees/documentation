@@ -74,17 +74,22 @@ These are never shared, whatever the configuration, even when all @evidence is s
 - `server.request-query`, the whole query string, and `server.request-path`, the path of the request.
 - `header.cookie`, the `Cookie` header, which carries every cookie. The cookies whose names start `51D_` are shared as their own `cookie.` values instead.
 - The `server.http-request` value itself. Only the values read from it are shared.
+- A cookie whose name does not start `51D_`. A cookie a site sets for itself, such as its session cookie, is never shared.
 
 Unless all @evidence is shared, these rules decide the rest:
 
 - 'header.&lt;name&gt;' is shared unless &lt;name&gt; is on the configured block list.
-- 'cookie.&lt;name&gt;' and 'session.&lt;name&gt;' are shared only when &lt;name&gt; starts with '51D_'.
-- 'query.&lt;name&gt;' is shared when &lt;name&gt; starts with '51D_' or is on the configured allow list.
+- 'session.&lt;name&gt;' is shared only when &lt;name&gt; starts with '51D_'.
+- 'query.&lt;name&gt;' is shared, for every query string and form parameter. When sharing all query string parameters is turned off, it is shared only when &lt;name&gt; starts with '51D_' or is on the configured allow list.
 - Any other @evidence is shared.
 
 The Resource Key and License Key, held as `fiftyone.resource-key` and `fiftyone.license-key`, are always shared, because usage is counted against them.
 
-The block list and the allow list can be configured using the **share usage** @elementbuilder, along with options to share all query string parameters or all @evidence.
+The block list and the allow list can be configured using the **share usage** @elementbuilder, along with options to share all query string parameters, which is on by default, or all @evidence. Sharing all @evidence still leaves out what is never shared, so it shares no cookie other than the '51D_' ones.
+
+## What else each record carries
+
+Each record also names the @flowelements in the @Pipeline, the language and its version, the platform, the server's IP address, and every 51Degrees package in use with its version, so that 51Degrees can see how far each release has spread.
 
 ## Handing over the web request
 
