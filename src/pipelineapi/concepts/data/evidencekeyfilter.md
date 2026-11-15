@@ -41,17 +41,17 @@ The filter aggregator includes an evidence key if any child filter includes it. 
 The share usage filter is a specific implementation for 51Degrees @usagesharing.
 It will include anything that meets the following criteria:
 
-1. Any HTTP header.
+1. Any HTTP header other than `Cookie`.
 2. Any cookie with a name that starts with '51D_'.
-3. A user session cookie, in .NET and Java. It is used only to tell user sessions apart when session tracking is turned on, and it is never sent to 51Degrees.
-4. Any session value with a name that starts with '51D_'.
+3. Any session value with a name that starts with '51D_'.
+4. Any query string or form parameter.
 5. Any evidence that is not a header, cookie, session value or query string parameter.
 
-In .NET, evidence named `id.email`, `id.salt`, `request-query` or `request-path` is never shared, whatever its prefix and however the filter is configured.
+Some evidence is never shared, whatever the configuration. That includes `id.email`, `id.salt`, `request-query` and `request-path` under any prefix, and every cookie whose name does not start with '51D_'. The @ref PipelineApi_Features_UsageSharing page lists it all.
 
 Configuration options allow this to be tuned to meet your requirements:
 
-1. A blacklist of HTTP header names to exclude from sharing can be supplied.
-2. In .NET and Java, session tracking can be turned on and the name of the session cookie
-  can be changed. (The default is the ASP.NET session cookie in .NET and `JSESSIONID` in Java.)
-3. A whitelist of query string parameters to share can be supplied.
+1. A block list of HTTP header names to exclude from sharing can be supplied.
+2. Sharing every query string and form parameter can be turned off. Only those whose names start with '51D_' are then shared, along with any on an allow list that can be supplied.
+3. Session tracking can be turned on, so that a repeat of the same evidence from a new user session is shared again. It compares the session cookie, which is not sent to 51Degrees unless its name starts with '51D_'. By default .NET uses the ASP.NET session cookie and Java uses `JSESSIONID`. Node.js, Python, Go and Rust have no default, so give the cookie's name when turning session tracking on.
+4. All evidence can be shared, apart from the evidence that is never shared.
