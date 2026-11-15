@@ -124,7 +124,7 @@ using (var flowData = pipeline.CreateFlowData())
 ```
 @endsnippet
 @startsnippet{go}
-Add the pipeline module with `go get github.com/51Degrees/51degrees-go/pipeline/v4`. The element is its `elements/derivedproperty` package, in [pipeline/elements/derivedproperty](https://github.com/51Degrees/51degrees-go/tree/main/pipeline/elements/derivedproperty). The Go on-premise engines do not run in a @Pipeline yet and Go has no @DeviceDetection cloud engine, so a script that reads device properties, such as `HumanConfidence`, needs them from an element of your own. `IsGdpr` runs with the @IpIntelligence cloud engine, as below.
+Add the pipeline module with `go get github.com/51Degrees/51degrees-go/pipeline/v4`. The element is its `elements/derivedproperty` package, in [pipeline/elements/derivedproperty](https://github.com/51Degrees/51degrees-go/tree/main/pipeline/elements/derivedproperty). The Go on-premise engines do not run in a @Pipeline yet and Go has no @DeviceDetection cloud engine, so a script that reads device properties, such as `HumanConfidence`, needs them from an element of your own. `IsGdpr` runs with the @IpIntelligence cloud engine, as below. The [derived property example](https://github.com/51Degrees/51degrees-go/blob/main/examples/pipeline/7_derived_property/main.go) shows a script held in the code, a script read from a file, the same Pipeline built from a configuration file, and a property with no value.
 
 ```{go}
 import (
