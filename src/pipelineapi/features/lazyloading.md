@@ -29,7 +29,7 @@ Lazy loading has two main configuration options.
 
 As it is not known at the point of fetching an @aspectproperty's value whether or not it has been
 populated, a timeout option is available. This is the time to wait for the value before throwing an
-exception.
+exception. Where the timeout is given as a number, it is in milliseconds.
 
 
 ## Cancellation
