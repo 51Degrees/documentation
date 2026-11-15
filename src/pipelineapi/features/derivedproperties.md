@@ -81,12 +81,15 @@ In PHP the builder name is the class's full name, written in JSON as `"BuilderNa
 
 In Go, register `derivedproperty.NewFromConfiguration` with a `core.BuilderRegistry` under `derivedproperty.BuilderName`, then build the @Pipeline with the registry's `BuildFromConfiguration`.
 
+In Python, name the element with `"elementPath": "fiftyone_pipeline_derivedproperty"` and `"elementName": "DerivedPropertyElement"`, and give `scripts` and `script_files` in `elementParameters`.
+
 # Using it
 
 @startsnippets
 @showsnippet{dotnet,C#}
 @showsnippet{go,Go}
 @showsnippet{php,PHP}
+@showsnippet{python,Python}
 @showsnippet{rust,Rust}
 @defaultsnippet{Select a language.}
 @startsnippet{dotnet}
@@ -210,6 +213,39 @@ $humanConfidence = $flowData->derived->humanconfidence;
 echo $humanConfidence->hasValue ?
     $humanConfidence->value :
     $humanConfidence->noValueMessage;
+```
+@endsnippet
+@startsnippet{python}
+The `fiftyone_pipeline_derivedproperty` package is not on PyPI yet, so use it from a clone of the [51degrees-python](https://github.com/51Degrees/51degrees-python) repository, cloned with its submodules because the scripts the package carries come from the `derived-properties` submodule. The source and its readme are in [pipeline/fiftyone_pipeline_derivedproperty](https://github.com/51Degrees/51degrees-python/tree/main/pipeline/fiftyone_pipeline_derivedproperty).
+
+```{python}
+from fiftyone_pipeline_core.pipelinebuilder import PipelineBuilder
+from fiftyone_pipeline_derivedproperty import DerivedPropertyElementBuilder
+
+derived = (DerivedPropertyElementBuilder()
+           # A script the package carries.
+           .add_built_in_script("IsGdpr")
+           # A file, or every file a wildcard in the file name matches.
+           .add_script_file("derived/*.yaml")
+           # The text of a script held by your own code, YAML or JSON.
+           .add_script("MyProperty", script_text)
+           .build())
+
+# Add the element after the engines that supply what its scripts read.
+pipeline = (PipelineBuilder()
+            .add(ip_intelligence_engine)
+            .add(derived)
+            .build())
+
+flowdata = pipeline.create_flowdata()
+flowdata.evidence.add_from_dict(evidence)
+flowdata.process()
+is_gdpr = flowdata.derived.IsGdpr
+if is_gdpr.has_value():
+    print(is_gdpr.value())
+else:
+    # Names every property that could not be read, and why.
+    print(is_gdpr.no_value_message())
 ```
 @endsnippet
 @startsnippet{rust}
