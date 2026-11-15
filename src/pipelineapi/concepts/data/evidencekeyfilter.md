@@ -53,5 +53,5 @@ Configuration options allow this to be tuned to meet your requirements:
 
 1. A block list of HTTP header names to exclude from sharing can be supplied.
 2. Sharing every query string and form parameter can be turned off. Only those whose names start with '51D_' are then shared, along with any on an allow list that can be supplied.
-3. Session tracking can be turned on, so that a repeat of the same evidence from a new user session is shared again. It compares the session cookie, which is never sent to 51Degrees. By default .NET uses the ASP.NET session cookie and Java uses `JSESSIONID`. Node.js, Python, Go and Rust have no default, so give the cookie's name when turning session tracking on.
+3. Session tracking can be turned on, so that a repeat of the same evidence from a new user session is shared again. It compares the session cookie, which is not sent to 51Degrees unless its name starts with '51D_'. By default .NET uses the ASP.NET session cookie and Java uses `JSESSIONID`. Node.js, Python, Go and Rust have no default, so give the cookie's name when turning session tracking on.
 4. All evidence can be shared, apart from the evidence that is never shared.
