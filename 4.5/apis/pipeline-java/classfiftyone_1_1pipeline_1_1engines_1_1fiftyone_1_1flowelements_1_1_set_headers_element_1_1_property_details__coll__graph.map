@@ -1,5 +1,5 @@
 <map id="fiftyone.pipeline.engines.fiftyone.flowelements.SetHeadersElement.PropertyDetails" name="fiftyone.pipeline.engines.fiftyone.flowelements.SetHeadersElement.PropertyDetails">
-<area shape="rect" id="Node000001" title="Internal class to hold a list of property metadata and its response header to set." alt="" coords="5,116,336,156"/>
-<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_property_meta_data.html" title="Defines details of a property that can be returned by a FlowElement." alt="" coords="73,5,269,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,59,173,116,168,116,168,59"/>
+<area shape="rect" id="Node000001" title="Internal class to hold a list of property metadata and its response header to set." alt="" coords="5,123,336,168"/>
+<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_property_meta_data.html" title="Defines details of a property that can be returned by a FlowElement." alt="" coords="73,5,268,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,64,173,124,168,121,169,68"/>
 </map>

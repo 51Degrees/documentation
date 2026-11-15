@@ -1,19 +1,19 @@
 <map id="FiftyoneDegrees::Common::EntityMetaData&lt; K &gt;" name="FiftyoneDegrees::Common::EntityMetaData&lt; K &gt;">
-<area shape="rect" id="Node000001" title="Base class for any entity meta data." alt="" coords="5,101,200,141"/>
-<area shape="rect" id="Node000002" href="$class_fiftyone_degrees_1_1_common_1_1_entity_meta_data.html" title=" " alt="" coords="457,5,651,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,94,223,72,344,47,456,31,457,37,345,52,225,77,162,99"/>
-<area shape="rect" id="Node000004" href="$class_fiftyone_degrees_1_1_common_1_1_entity_meta_data.html" title=" " alt="" coords="447,69,661,109"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="213,111,446,94,447,100,214,116"/>
-<area shape="rect" id="Node000006" href="$class_fiftyone_degrees_1_1_common_1_1_entity_meta_data.html" title=" " alt="" coords="455,133,653,173"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="214,138,224,139,344,147,455,150,455,156,344,152,224,144,213,143"/>
-<area shape="rect" id="Node000008" href="$class_fiftyone_degrees_1_1_common_1_1_entity_meta_data.html" title=" " alt="" coords="411,197,697,237"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="151,146,186,163,225,177,318,198,411,209,410,214,317,203,223,183,184,168,148,151"/>
-<area shape="rect" id="Node000003" href="$class_fiftyone_degrees_1_1_common_1_1_component_meta_data.html" title="EntityMetaData relating to a component populated by an engine implementation." alt="" coords="747,5,941,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="665,23,746,23,746,28,665,28"/>
-<area shape="rect" id="Node000005" href="$class_fiftyone_degrees_1_1_common_1_1_profile_meta_data.html" title="Meta data relating to a profile populated by an engine implementation." alt="" coords="747,69,941,109"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="675,87,746,87,746,92,675,92"/>
-<area shape="rect" id="Node000007" href="$class_fiftyone_degrees_1_1_common_1_1_property_meta_data.html" title="Meta data relating to a property populated by an engine implementation." alt="" coords="747,133,941,173"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="667,151,746,151,746,156,667,156"/>
-<area shape="rect" id="Node000009" href="$class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html" title="Meta data relating to a value populated by an engine implementation." alt="" coords="747,197,941,237"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="711,215,746,215,746,220,711,220"/>
+<area shape="rect" id="Node000001" title="Base class for any entity meta data." alt="" coords="5,113,200,158"/>
+<area shape="rect" id="Node000002" href="$class_fiftyone_degrees_1_1_common_1_1_entity_meta_data.html" title=" " alt="" coords="455,5,650,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,104,223,78,342,50,457,35,452,38,343,56,224,84,162,108"/>
+<area shape="rect" id="Node000004" href="$class_fiftyone_degrees_1_1_common_1_1_entity_meta_data.html" title=" " alt="" coords="445,75,660,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="215,123,446,104,443,108,216,129"/>
+<area shape="rect" id="Node000006" href="$class_fiftyone_degrees_1_1_common_1_1_entity_meta_data.html" title=" " alt="" coords="453,144,652,189"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="214,152,224,153,343,161,455,166,450,167,342,166,223,158,215,157"/>
+<area shape="rect" id="Node000008" href="$class_fiftyone_degrees_1_1_common_1_1_entity_meta_data.html" title=" " alt="" coords="410,213,695,258"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="155,163,189,179,224,193,317,214,412,229,406,229,316,219,223,198,187,184,154,168"/>
+<area shape="rect" id="Node000003" href="$class_fiftyone_degrees_1_1_common_1_1_component_meta_data.html" title="EntityMetaData relating to a component populated by an engine implementation." alt="" coords="744,5,939,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="665,25,746,27,741,28,665,30"/>
+<area shape="rect" id="Node000005" href="$class_fiftyone_degrees_1_1_common_1_1_profile_meta_data.html" title="Meta data relating to a profile populated by an engine implementation." alt="" coords="744,75,939,119"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="675,94,747,97,741,97,675,100"/>
+<area shape="rect" id="Node000007" href="$class_fiftyone_degrees_1_1_common_1_1_property_meta_data.html" title="Meta data relating to a property populated by an engine implementation." alt="" coords="744,144,939,189"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="667,164,747,166,741,167,667,169"/>
+<area shape="rect" id="Node000009" href="$class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html" title="Meta data relating to a value populated by an engine implementation." alt="" coords="744,213,939,258"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="711,233,747,236,741,236,711,238"/>
 </map>

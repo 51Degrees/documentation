@@ -1,11 +1,11 @@
 <map id="fiftyone.caching.CacheBuilder" name="fiftyone.caching.CacheBuilder">
-<area shape="rect" id="Node000001" title="Builder interface used to build caches." alt="" coords="5,45,220,70"/>
-<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1caching_1_1_loading_cache_builder.html" title="Provides a method to build caches that implement LoadingCache." alt="" coords="273,5,453,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,40,273,34,273,39,226,46"/>
-<area shape="rect" id="Node000004" href="$interfacefiftyone_1_1caching_1_1_put_cache_builder.html" title=" " alt="" coords="268,69,459,109"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="226,69,268,75,267,80,225,74"/>
-<area shape="rect" id="Node000003" href="$classfiftyone_1_1caching_1_1_lru_loading_cache_1_1_builder.html" title="Implementation of CacheBuilder for LruLoadingCache caches." alt="" coords="512,5,712,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="467,23,512,23,512,28,467,28"/>
-<area shape="rect" id="Node000005" href="$classfiftyone_1_1caching_1_1_lru_put_cache_1_1_builder.html" title="Implementation of CacheBuilder for LruPutCache caches." alt="" coords="507,69,717,109"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="472,87,506,87,506,92,472,92"/>
+<area shape="rect" id="Node000001" title="Builder interface used to build caches." alt="" coords="5,48,220,76"/>
+<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1caching_1_1_loading_cache_builder.html" title="Provides a method to build caches that implement LoadingCache." alt="" coords="273,5,452,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,43,275,39,270,41,232,48"/>
+<area shape="rect" id="Node000004" href="$interfacefiftyone_1_1caching_1_1_put_cache_builder.html" title=" " alt="" coords="268,75,457,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="232,76,270,84,265,84,232,82"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1caching_1_1_lru_loading_cache_1_1_builder.html" title="Implementation of CacheBuilder for LruLoadingCache caches." alt="" coords="510,5,709,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="467,25,512,27,507,28,468,30"/>
+<area shape="rect" id="Node000005" href="$classfiftyone_1_1caching_1_1_lru_put_cache_1_1_builder.html" title="Implementation of CacheBuilder for LruPutCache caches." alt="" coords="505,75,714,119"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="473,94,507,97,502,97,473,100"/>
 </map>

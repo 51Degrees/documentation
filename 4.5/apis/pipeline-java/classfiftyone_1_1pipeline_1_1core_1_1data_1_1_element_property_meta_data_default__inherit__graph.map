@@ -1,9 +1,9 @@
 <map id="fiftyone.pipeline.core.data.ElementPropertyMetaDataDefault" name="fiftyone.pipeline.core.data.ElementPropertyMetaDataDefault">
-<area shape="rect" id="Node000001" title="Default implementation of the ElementPropertyMetaData interface." alt="" coords="27,93,270,133"/>
-<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_property_meta_data_default.html" title="Basic implementation of the AspectPropertyMetaData interface." alt="" coords="32,181,265,221"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="151,147,151,181,146,181,146,147"/>
-<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_property_meta_data.html" title="Defines details of a property that can be returned by a FlowElement." alt="" coords="51,5,247,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,59,151,93,146,93,146,59"/>
-<area shape="rect" id="Node000004" href="$classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_fifty_one_aspect_property_meta_data_default.html" title=" " alt="" coords="5,269,292,309"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="151,235,151,269,146,269,146,235"/>
+<area shape="rect" id="Node000001" title="Default implementation of the ElementPropertyMetaData interface." alt="" coords="27,98,270,143"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1pipeline_1_1engines_1_1data_1_1_aspect_property_meta_data_default.html" title="Basic implementation of the AspectPropertyMetaData interface." alt="" coords="32,191,265,235"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,156,151,191,146,190,147,161"/>
+<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_property_meta_data.html" title="Defines details of a property that can be returned by a FlowElement." alt="" coords="51,5,246,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,63,151,98,146,97,148,68"/>
+<area shape="rect" id="Node000004" href="$classfiftyone_1_1pipeline_1_1engines_1_1fiftyone_1_1data_1_1_fifty_one_aspect_property_meta_data_default.html" title=" " alt="" coords="5,283,292,328"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="150,249,151,284,146,282,147,253"/>
 </map>

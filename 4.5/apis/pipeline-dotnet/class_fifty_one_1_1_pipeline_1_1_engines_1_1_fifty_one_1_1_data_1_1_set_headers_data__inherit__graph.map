@@ -1,15 +1,15 @@
 <map id="FiftyOne.Pipeline.Engines.FiftyOne.Data.SetHeadersData" name="FiftyOne.Pipeline.Engines.FiftyOne.Data.SetHeadersData">
-<area shape="rect" id="Node000001" title="Element data instance for SetHeadersElement See the Specification." alt="" coords="785,37,1007,77"/>
-<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_element_data_base.html" title="This class stores property values that have been determined by a specific FlowElement based on the su..." alt="" coords="522,5,727,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="741,36,786,42,785,47,741,42"/>
-<area shape="rect" id="Node000003" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_data_base.html" title="This class stores data values as key/value pairs where the key is a string and the value can be any t..." alt="" coords="259,5,464,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="478,23,522,23,522,28,478,28"/>
-<area shape="rect" id="Node000004" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_data.html" title="Represents property values." alt="" coords="5,37,211,77"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="224,40,258,36,259,41,225,45"/>
-<area shape="rect" id="Node000005" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_data.html" title="Represents property values that have been determined by a specific FlowElement based on the supplied ..." alt="" coords="259,69,464,109"/>
-<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="225,69,259,74,258,79,224,75"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="457,63,541,43,542,48,458,69"/>
-<area shape="rect" id="Node000006" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_i_set_headers_data.html" title="The IElementData interface for SetHeadersElement." alt="" coords="512,69,737,109"/>
-<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="478,87,512,87,512,92,478,92"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="751,72,785,68,785,73,751,77"/>
+<area shape="rect" id="Node000001" title="Element data instance for SetHeadersElement See the Specification." alt="" coords="782,40,1003,85"/>
+<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_element_data_base.html" title="This class stores property values that have been determined by a specific FlowElement based on the su..." alt="" coords="520,5,724,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="740,40,784,48,779,48,740,45"/>
+<area shape="rect" id="Node000003" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_data_base.html" title="This class stores data values as key/value pairs where the key is a string and the value can be any t..." alt="" coords="258,5,462,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="477,25,522,27,517,28,478,30"/>
+<area shape="rect" id="Node000004" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_data.html" title="Represents property values." alt="" coords="5,40,210,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="225,44,260,41,255,42,226,49"/>
+<area shape="rect" id="Node000005" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_data_1_1_i_element_data.html" title="Represents property values that have been determined by a specific FlowElement based on the supplied ..." alt="" coords="258,75,462,119"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="225,76,260,83,255,83,225,81"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="462,67,532,51,538,50,463,73"/>
+<area shape="rect" id="Node000006" href="$interface_fifty_one_1_1_pipeline_1_1_engines_1_1_fifty_one_1_1_data_1_1_i_set_headers_data.html" title="The IElementData interface for SetHeadersElement." alt="" coords="510,75,734,119"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="477,94,512,97,507,97,477,100"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="750,78,779,77,785,76,750,83"/>
 </map>

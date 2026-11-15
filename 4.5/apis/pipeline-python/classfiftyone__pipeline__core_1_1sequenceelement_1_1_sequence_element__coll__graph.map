@@ -1,7 +1,7 @@
 <map id="fiftyone_pipeline_core.sequenceelement.SequenceElement" name="fiftyone_pipeline_core.sequenceelement.SequenceElement">
-<area shape="rect" id="Node000001" title="The SequenceElement stores session data regarding requests for client side JavaScript from the JavaSc..." alt="" coords="5,167,295,207"/>
-<area shape="rect" id="Node000002" href="$classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ..." alt="" coords="23,79,277,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,133,153,166,147,166,147,133"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="119,5,181,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="153,44,153,79,147,79,147,44"/>
+<area shape="rect" id="Node000001" title="The SequenceElement stores session data regarding requests for client side JavaScript from the JavaSc..." alt="" coords="5,174,294,218"/>
+<area shape="rect" id="Node000002" href="$classfiftyone__pipeline__core_1_1flowelement_1_1_flow_element.html" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ..." alt="" coords="23,81,276,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,139,152,175,147,172,148,143"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="119,5,180,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="151,46,152,81,147,80,148,51"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="fiftyone_pipeline_core.flowelement.FlowElement" name="fiftyone_pipeline_core.flowelement.FlowElement">
-<area shape="rect" id="Node000001" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ..." alt="" coords="5,79,260,119"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="101,5,164,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,44,135,79,130,79,130,44"/>
+<area shape="rect" id="Node000001" title="A FlowElement is placed inside a Pipeline It receives Evidence via a FlowData object It uses this to ..." alt="" coords="5,81,259,126"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="101,5,163,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,47,134,81,130,79,130,51"/>
 </map>

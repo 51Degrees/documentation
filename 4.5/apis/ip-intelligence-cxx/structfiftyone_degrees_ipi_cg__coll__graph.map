@@ -1,20 +1,20 @@
 <map id="fiftyoneDegreesIpiCg" name="fiftyoneDegreesIpiCg">
-<area shape="rect" id="Node000001" title="The information and a working collection to retrieve entries from the component graph." alt="" coords="1031,122,1189,147"/>
-<area shape="rect" id="Node000002" href="$structfiftyone_degrees_ipi_cg_info.html" title="Fixed width record in the collection where the record relates to a component and IP version." alt="" coords="688,65,871,90"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="885,89,976,104,1053,119,1051,125,976,109,884,94"/>
-<area shape="rect" id="Node000003" href="$structfiftyone_degrees_collection_header.html" title="Collection header structure which defines the size and location of the collection data." alt="" coords="16,53,207,93"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="220,68,241,68,451,65,660,68,688,69,688,74,660,73,451,71,241,73,220,74"/>
-<area shape="rect" id="Node000004" href="$structfiftyone_degrees_ipi_cg_member_node.html" title="Data structure used for the values collection." alt="" coords="341,101,588,126"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="221,88,242,91,341,101,341,106,241,96,220,93"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="601,97,660,91,688,87,688,93,660,96,602,103"/>
-<area shape="rect" id="Node000005" href="$structfiftyone_degrees_ipi_cg_member.html" title="DATA STRUCTURES." alt="" coords="5,175,217,201"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="231,180,317,167,381,146,436,124,438,129,383,151,318,172,231,185"/>
-<area shape="rect" id="Node000006" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="684,231,875,257"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="855,226,975,192,1033,169,1083,145,1085,150,1036,173,977,197,856,231"/>
-<area shape="poly" id="edge7_Node000006_Node000006" title=" " alt="" coords="751,217,760,208,779,205,796,207,806,213,808,223,803,232,799,230,803,222,801,217,794,212,779,210,762,213,755,220"/>
-<area shape="rect" id="Node000007" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="1000,285,1220,310"/>
-<area shape="poly" id="edge10_Node000007_Node000006" title=" " alt="" coords="883,256,976,271,1041,282,1040,287,976,276,882,261"/>
-<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="986,308,942,305,898,299,845,281,801,259,804,254,847,276,899,293,942,300,986,302"/>
-<area shape="rect" id="Node000008" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="701,338,857,363"/>
-<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="871,342,976,329,1066,308,1067,313,976,335,871,348"/>
+<area shape="rect" id="Node000001" title="The information and a working collection to retrieve entries from the component graph." alt="" coords="1024,134,1182,162"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_ipi_cg_info.html" title="Fixed width record in the collection where the record relates to a component and IP version." alt="" coords="684,73,866,100"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="881,98,970,113,1049,133,1044,134,969,118,882,104"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_collection_header.html" title="Collection header structure which defines the size and location of the collection data." alt="" coords="16,60,206,105"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="220,77,241,76,448,72,656,76,686,79,680,80,656,81,448,78,241,81,223,81"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_ipi_cg_member_node.html" title="Data structure used for the values collection." alt="" coords="340,107,585,135"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="220,98,241,101,341,112,337,115,240,106,222,103"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="600,107,656,101,686,99,681,101,656,106,601,112"/>
+<area shape="rect" id="Node000005" href="$structfiftyone_degrees_ipi_cg_member.html" title="DATA STRUCTURES." alt="" coords="5,191,217,219"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="231,198,315,183,381,159,438,134,433,137,383,164,316,188,233,203"/>
+<area shape="rect" id="Node000006" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="680,251,869,279"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="856,245,968,211,1026,185,1074,163,1079,161,1029,190,970,216,858,250"/>
+<area shape="poly" id="edge7_Node000006_Node000006" title=" " alt="" coords="749,233,758,227,775,225,791,227,801,233,804,242,799,253,796,249,799,242,797,236,789,232,775,230,760,232,751,238"/>
+<area shape="rect" id="Node000007" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="993,307,1213,335"/>
+<area shape="poly" id="edge10_Node000007_Node000006" title=" " alt="" coords="885,278,970,292,1036,307,1030,307,969,297,885,283"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="975,329,935,329,893,322,841,304,799,282,800,277,843,299,894,317,936,324,981,329"/>
+<area shape="rect" id="Node000008" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="697,363,852,391"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="867,369,969,356,1055,336,1060,335,970,361,868,374"/>
 </map>

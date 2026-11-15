@@ -1,7 +1,7 @@
 <map id="fiftyoneDegreesResultIpi" name="fiftyoneDegreesResultIpi">
-<area shape="rect" id="Node000001" title="Singular IP address result returned by an IP address lookup method." alt="" coords="123,101,305,127"/>
-<area shape="rect" id="Node000002" href="$structfiftyone_degrees_ipi_cg_result.html" title="The evaluation result from graph collection." alt="" coords="5,5,204,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,38,202,99,199,103,127,42"/>
-<area shape="rect" id="Node000003" href="$structfiftyone_degrees_ip_address.html" title="The structure to hold a IP Address in byte array format." alt="" coords="229,5,418,31"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="305,43,266,79,233,103,230,99,263,75,301,39"/>
+<area shape="rect" id="Node000001" title="Singular IP address result returned by an IP address lookup method." alt="" coords="122,106,303,134"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_ipi_cg_result.html" title="The evaluation result from graph collection." alt="" coords="5,5,204,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,41,201,105,195,106,128,46"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_ip_address.html" title="The structure to hold a IP Address in byte array format." alt="" coords="228,5,416,33"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="303,44,265,84,234,108,231,103,261,80,298,46"/>
 </map>

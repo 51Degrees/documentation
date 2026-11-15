@@ -1,11 +1,11 @@
 <map id="fiftyoneDegreesCollectionMemory" name="fiftyoneDegreesCollectionMemory">
-<area shape="rect" id="Node000001" title="Type of collection where the collection is held in continuous memory." alt="" coords="5,119,196,159"/>
-<area shape="rect" id="Node000002" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="59,14,249,39"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,50,110,73,103,96,102,119,97,118,98,95,105,71,124,47"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="264,17,276,26,268,35,250,39,249,34,266,30,271,27,261,22"/>
-<area shape="rect" id="Node000003" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="220,126,440,151"/>
-<area shape="poly" id="edge5_Node000003_Node000002" title=" " alt="" coords="170,49,188,72,210,92,244,111,280,123,278,129,242,116,207,97,184,76,166,53"/>
-<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="317,115,303,93,284,74,251,55,214,42,216,37,253,50,288,70,307,90,321,112"/>
-<area shape="rect" id="Node000004" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="397,14,553,39"/>
-<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="450,50,347,128,344,124,447,46"/>
+<area shape="rect" id="Node000001" title="Type of collection where the collection is held in continuous memory." alt="" coords="5,126,195,170"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_collection.html" title="All the shared methods and fields required by file, memory and cached collections." alt="" coords="68,15,257,43"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,50,110,78,103,102,101,126,96,124,97,101,105,75,127,54"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="273,19,284,29,276,38,259,42,257,37,274,33,279,29,272,24"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_collection_item.html" title="Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish..." alt="" coords="218,134,438,162"/>
+<area shape="poly" id="edge5_Node000003_Node000002" title=" " alt="" coords="175,54,190,79,209,100,239,118,273,134,268,133,237,123,206,104,186,82,173,59"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="314,119,300,99,282,79,251,59,219,46,219,41,254,55,286,75,305,96,319,121"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="405,15,560,43"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="456,52,346,136,344,131,451,53"/>
 </map>

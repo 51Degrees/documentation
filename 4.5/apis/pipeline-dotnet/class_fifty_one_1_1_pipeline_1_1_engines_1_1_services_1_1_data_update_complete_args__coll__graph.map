@@ -1,7 +1,7 @@
 <map id="FiftyOne.Pipeline.Engines.Services.DataUpdateCompleteArgs" name="FiftyOne.Pipeline.Engines.Services.DataUpdateCompleteArgs">
-<area shape="rect" id="Node000001" title="Event arguments used when an &#39;UpdteComplete&#39; event is fired by an IDataUpdateService." alt="" coords="5,167,256,207"/>
-<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_data_update_event_args.html" title="Event arguments used when events are fired by an IDataUpdateService." alt="" coords="18,79,243,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,133,133,166,128,166,128,133"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="87,5,175,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="133,44,133,79,128,79,128,44"/>
+<area shape="rect" id="Node000001" title="Event arguments used when an &#39;UpdteComplete&#39; event is fired by an IDataUpdateService." alt="" coords="5,174,256,218"/>
+<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_pipeline_1_1_engines_1_1_services_1_1_data_update_event_args.html" title="Event arguments used when events are fired by an IDataUpdateService." alt="" coords="18,81,243,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,139,133,175,128,172,129,143"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="87,5,174,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="132,46,133,81,128,80,129,51"/>
 </map>

@@ -1,9 +1,9 @@
 <map id="allocation" name="allocation">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,159,92,184"/>
-<area shape="rect" id="Node000002" href="$structfiftyone_degrees_tree_node.html" title="Node structure defining a single node in the tree." alt="" coords="33,24,219,49"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,59,79,75,64,93,53,128,51,159,46,158,48,127,60,91,75,71,93,55"/>
-<area shape="poly" id="edge4_Node000002_Node000002" title=" " alt="" coords="190,20,228,23,241,28,246,37,239,46,223,52,176,52,176,47,222,46,236,42,241,37,237,32,227,28,189,26"/>
-<area shape="rect" id="Node000003" href="$structfiftyone_degrees_tree_root.html" title="Tree root structure defining the beginning of the tree." alt="" coords="116,159,299,184"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="120,63,115,99,117,117,124,133,137,147,155,156,152,161,134,151,120,136,112,118,110,99,115,62"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="198,146,189,120,176,93,157,70,138,52,142,48,161,67,180,91,194,118,203,144"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,170,91,198"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_tree_node.html" title="Node structure defining a single node in the tree." alt="" coords="31,26,217,54"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,66,76,82,63,100,52,137,50,171,45,169,47,136,58,98,72,78,93,62"/>
+<area shape="poly" id="edge4_Node000002_Node000002" title=" " alt="" coords="192,22,227,26,239,31,243,40,237,50,222,56,178,57,177,52,221,51,234,46,238,40,235,35,226,31,193,27"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_tree_root.html" title="Tree root structure defining the beginning of the tree." alt="" coords="115,170,296,198"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="117,67,113,108,115,127,123,145,135,158,153,170,147,170,132,162,118,148,110,129,107,108,113,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="196,155,187,129,174,100,156,76,138,57,139,52,160,73,178,98,192,127,201,157"/>
 </map>

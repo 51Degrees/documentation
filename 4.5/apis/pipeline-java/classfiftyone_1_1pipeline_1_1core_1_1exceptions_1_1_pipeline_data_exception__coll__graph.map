@@ -1,5 +1,5 @@
 <map id="fiftyone.pipeline.core.exceptions.PipelineDataException" name="fiftyone.pipeline.core.exceptions.PipelineDataException">
-<area shape="rect" id="Node000001" title="Exception that can be thrown when the available data does not match that which is expected." alt="" coords="5,79,244,119"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="54,5,195,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,44,127,79,122,79,122,44"/>
+<area shape="rect" id="Node000001" title="Exception that can be thrown when the available data does not match that which is expected." alt="" coords="5,81,243,126"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="54,5,194,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,47,126,81,122,79,122,51"/>
 </map>

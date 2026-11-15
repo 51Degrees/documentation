@@ -1,7 +1,7 @@
 <map id="fiftyone.pipeline.core.data.Evidence" name="fiftyone.pipeline.core.data.Evidence">
-<area shape="rect" id="Node000001" title="Evidence used by a FlowElement when processing." alt="" coords="35,79,231,119"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,167,260,207"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="135,133,135,166,130,166,130,133"/>
-<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_data.html" title="Represents a collection of property values." alt="" coords="19,5,246,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,44,135,79,130,79,130,44"/>
+<area shape="rect" id="Node000001" title="Evidence used by a FlowElement when processing." alt="" coords="35,81,230,126"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,174,260,218"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="134,139,135,175,130,172,131,143"/>
+<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_data.html" title="Represents a collection of property values." alt="" coords="19,5,246,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,46,135,81,130,80,131,51"/>
 </map>

@@ -1,9 +1,9 @@
 <map id="fiftyone.ipintelligence.shared.flowelements.OnPremiseIPIntelligenceEngineBuilderBase&lt; TBuilder extends OnPremiseIPIntelligenceEngineBuilderBase&lt; TBuilder, TEngine, TEngine extends FiftyOneAspectEngine&lt;? extends AspectData, ? extends AspectPropertyMetaData &gt;" name="fiftyone.ipintelligence.shared.flowelements.OnPremiseIPIntelligenceEngineBuilderBase&lt; TBuilder extends OnPremiseIPIntelligenceEngineBuilderBase&lt; TBuilder, TEngine, TEngine extends FiftyOneAspectEngine&lt;? extends AspectData, ? extends AspectPropertyMetaData &gt;">
-<area shape="rect" id="Node000001" title="Base builder class for 51Degrees on&#45;premise IP Intelligence engines." alt="" coords="299,37,653,136"/>
-<area shape="rect" id="Node000003" href="$classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_on_premise_engine_builder.html" title="Builder for the IPIntelligenceOnPremiseEngine." alt="" coords="923,5,1303,75"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="667,64,677,63,922,46,922,52,678,68,667,69"/>
-<area shape="rect" id="Node000004" href="$classfiftyone_1_1ipintelligence_1_1shared_1_1flowelements_1_1_on_premise_i_p_intelligence_engine_builder_base.html" title=" " alt="" coords="959,99,1266,168"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="667,129,678,131,822,140,959,139,959,144,822,145,677,136,667,135"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,67,249,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="263,84,298,84,298,89,263,89"/>
+<area shape="rect" id="Node000001" title="Base builder class for 51Degrees on&#45;premise IP Intelligence engines." alt="" coords="298,40,651,153"/>
+<area shape="rect" id="Node000003" href="$classfiftyone_1_1ipintelligence_1_1engine_1_1onpremise_1_1flowelements_1_1_i_p_intelligence_on_premise_engine_builder.html" title="Builder for the IPIntelligenceOnPremiseEngine." alt="" coords="919,5,1299,84"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="667,62,675,61,798,51,922,47,916,48,799,56,676,66,667,67"/>
+<area shape="rect" id="Node000004" href="$classfiftyone_1_1ipintelligence_1_1shared_1_1flowelements_1_1_on_premise_i_p_intelligence_engine_builder_base.html" title=" " alt="" coords="956,108,1262,187"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="667,129,676,130,819,141,958,148,953,148,819,146,675,136,667,135"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,74,249,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="264,94,300,96,295,97,265,99"/>
 </map>

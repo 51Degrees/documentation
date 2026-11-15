@@ -1,11 +1,11 @@
 <map id="FiftyOne.Pipeline.JavaScriptBuilder.FlowElement.JavaScriptBuilderElement" name="FiftyOne.Pipeline.JavaScriptBuilder.FlowElement.JavaScriptBuilderElement">
-<area shape="rect" id="Node000001" title="JavaScript Builder Element generates a JavaScript include to be run on the client device." alt="" coords="5,372,276,427"/>
-<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g.html" title="Abstract base class for Flow Elements." alt="" coords="39,269,243,324"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,338,143,372,138,372,138,338"/>
-<area shape="rect" id="Node000003" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element-2-g.html" title="Generic interface that extends IFlowElement with the ability to return a ITypedKey&lt;T&gt; that will allow..." alt="" coords="39,167,242,221"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="143,235,143,269,138,269,138,235"/>
-<area shape="rect" id="Node000004" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title="IFlowElement is the basic building block of a pipeline." alt="" coords="40,79,241,119"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="143,132,143,167,138,167,138,132"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="91,5,190,31"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="143,44,143,79,138,79,138,44"/>
+<area shape="rect" id="Node000001" title="JavaScript Builder Element generates a JavaScript include to be run on the client device." alt="" coords="5,393,276,455"/>
+<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g.html" title="Abstract base class for Flow Elements." alt="" coords="39,283,242,345"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,358,143,394,138,391,139,363"/>
+<area shape="rect" id="Node000003" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element-2-g.html" title="Generic interface that extends IFlowElement with the ability to return a ITypedKey&lt;T&gt; that will allow..." alt="" coords="39,174,242,235"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="141,248,143,284,138,282,140,253"/>
+<area shape="rect" id="Node000004" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title="IFlowElement is the basic building block of a pipeline." alt="" coords="40,81,241,126"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="141,139,143,174,138,173,140,144"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="92,5,189,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="141,46,143,81,138,80,140,51"/>
 </map>

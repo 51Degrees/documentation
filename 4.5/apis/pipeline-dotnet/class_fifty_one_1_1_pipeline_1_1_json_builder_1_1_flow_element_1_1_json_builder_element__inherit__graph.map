@@ -1,14 +1,14 @@
 <map id="FiftyOne.Pipeline.JsonBuilder.FlowElement.JsonBuilderElement" name="FiftyOne.Pipeline.JsonBuilder.FlowElement.JsonBuilderElement">
-<area shape="rect" id="Node000001" title="The JsonBuilderElement takes accessible properties and adds the property key:values to the Json objec..." alt="" coords="943,49,1181,89"/>
-<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g.html" title="Abstract base class for Flow Elements." alt="" coords="671,5,875,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="889,44,943,51,942,56,889,50"/>
-<area shape="rect" id="Node000003" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element-2-g.html" title="Generic interface that extends IFlowElement with the ability to return a ITypedKey&lt;T&gt; that will allow..." alt="" coords="401,41,604,96"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="617,51,671,44,671,49,618,56"/>
-<area shape="rect" id="Node000006" href="$interface_fifty_one_1_1_pipeline_1_1_json_builder_1_1_flow_element_1_1_i_json_builder_element.html" title="The Interface for the JsonBuilderElement See the Specification." alt="" coords="652,85,895,125"/>
-<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="618,81,652,86,651,91,617,87"/>
-<area shape="rect" id="Node000004" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title="IFlowElement is the basic building block of a pipeline." alt="" coords="152,49,353,89"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="367,66,401,66,401,71,367,71"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="5,56,104,81"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="118,66,152,66,152,71,118,71"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="908,85,942,81,943,86,908,91"/>
+<area shape="rect" id="Node000001" title="The JsonBuilderElement takes accessible properties and adds the property key:values to the Json objec..." alt="" coords="939,52,1176,97"/>
+<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_flow_element_base-2-g.html" title="Abstract base class for Flow Elements." alt="" coords="668,5,872,67"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="887,49,941,59,936,59,887,55"/>
+<area shape="rect" id="Node000003" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element-2-g.html" title="Generic interface that extends IFlowElement with the ability to return a ITypedKey&lt;T&gt; that will allow..." alt="" coords="399,44,601,106"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="616,56,665,51,671,50,617,61"/>
+<area shape="rect" id="Node000006" href="$interface_fifty_one_1_1_pipeline_1_1_json_builder_1_1_flow_element_1_1_i_json_builder_element.html" title="The Interface for the JsonBuilderElement See the Specification." alt="" coords="649,91,891,136"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="617,89,652,96,646,96,617,94"/>
+<area shape="rect" id="Node000004" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_flow_elements_1_1_i_flow_element.html" title="IFlowElement is the basic building block of a pipeline." alt="" coords="151,52,351,97"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="366,72,401,75,396,75,367,77"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,61,103,89"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="118,72,153,74,148,76,119,77"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="906,93,935,91,941,91,906,98"/>
 </map>

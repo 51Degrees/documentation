@@ -1,9 +1,9 @@
 <map id="performanceSettings" name="performanceSettings">
-<area shape="rect" id="Node000001" title="Choices the command line can make." alt="" coords="135,412,293,437"/>
-<area shape="rect" id="Node000002" href="$structfiftyone_degrees_config_ipi.html" title="IP Intelligence specific configuration structure." alt="" coords="123,316,305,341"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,355,217,412,211,412,211,355"/>
-<area shape="rect" id="Node000003" href="$structfiftyone_degrees_config_base.html" title="Base configuration structure containing common configuration options, and options that apply to struc..." alt="" coords="5,13,204,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="116,50,212,315,207,317,111,52"/>
-<area shape="rect" id="Node000004" href="$structfiftyone_degrees_collection_config.html" title="Collection configuration structure which defines how the collection should be created by the create m..." alt="" coords="228,5,419,45"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="314,59,221,316,216,315,309,57"/>
+<area shape="rect" id="Node000001" title="Choices the command line can make." alt="" coords="133,447,291,475"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_config_ipi.html" title="IP Intelligence specific configuration structure." alt="" coords="121,346,303,374"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,388,214,448,210,445,210,391"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_config_base.html" title="Base configuration structure containing common configuration options, and options that apply to struc..." alt="" coords="5,14,203,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="115,55,210,346,205,346,111,58"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_collection_config.html" title="Collection configuration structure which defines how the collection should be created by the create m..." alt="" coords="227,5,416,50"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="312,65,219,347,214,345,307,66"/>
 </map>

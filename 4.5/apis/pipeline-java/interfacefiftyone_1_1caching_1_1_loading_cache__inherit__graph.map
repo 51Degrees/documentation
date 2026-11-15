@@ -1,9 +1,9 @@
 <map id="fiftyone.caching.LoadingCache&lt; K, V &gt;" name="fiftyone.caching.LoadingCache&lt; K, V &gt;">
-<area shape="rect" id="Node000001" title="Extension of general cache contract to provide for getting a value with a particular value loaded." alt="" coords="15,167,195,207"/>
-<area shape="rect" id="Node000004" href="$classfiftyone_1_1caching_1_1_lru_loading_cache.html" title="Uses the LruCacheBase to implement the LoadingCache interface." alt="" coords="5,255,205,295"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="108,221,108,254,103,254,103,221"/>
-<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1caching_1_1_cache.html" title="Base cache interface which declares only the get method and the types of key and value stored in the ..." alt="" coords="21,79,190,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,133,108,166,103,166,103,133"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="62,5,149,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="108,44,108,79,103,79,103,44"/>
+<area shape="rect" id="Node000001" title="Extension of general cache contract to provide for getting a value with a particular value loaded." alt="" coords="15,174,195,218"/>
+<area shape="rect" id="Node000004" href="$classfiftyone_1_1caching_1_1_lru_loading_cache.html" title="Uses the LruCacheBase to implement the LoadingCache interface." alt="" coords="5,266,205,311"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="107,232,107,267,103,265,103,236"/>
+<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1caching_1_1_cache.html" title="Base cache interface which declares only the get method and the types of key and value stored in the ..." alt="" coords="21,81,189,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,139,108,174,102,173,104,144"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="62,5,148,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="106,46,108,81,102,80,104,51"/>
 </map>

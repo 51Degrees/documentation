@@ -1,5 +1,5 @@
 <map id="fiftyone.ipintelligence.examples.web.RealClientIpFilter" name="fiftyone.ipintelligence.examples.web.RealClientIpFilter">
-<area shape="rect" id="Node000001" title="Servlet filter that overrides HttpServletRequest#getRemoteAddr() to return the real client IP when ru..." alt="" coords="5,79,272,119"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="111,5,166,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,44,141,79,136,79,136,44"/>
+<area shape="rect" id="Node000001" title="Servlet filter that overrides HttpServletRequest#getRemoteAddr() to return the real client IP when ru..." alt="" coords="5,81,271,126"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="111,5,165,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,47,140,81,136,79,136,51"/>
 </map>

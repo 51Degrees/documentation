@@ -1,10 +1,10 @@
 <map id="fiftyoneDegreesResultHashArray" name="fiftyoneDegreesResultHashArray">
-<area shape="rect" id="Node000001" title="Array of items of type fiftyoneDegreesResultHash used to easily access and track the size of the arra..." alt="" coords="28,212,227,252"/>
-<area shape="rect" id="Node000002" href="$structfiftyone_degrees_result_hash.html" title="Singular User&#45;Agent result returned by a Hash process method." alt="" coords="28,116,227,141"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,155,130,212,125,212,125,155"/>
-<area shape="rect" id="Node000003" href="$structfiftyone_degrees_result_user_agent.html" title="Singular User&#45;Agent result returned by a device detection process method." alt="" coords="5,5,201,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="114,58,127,115,122,117,108,60"/>
-<area shape="rect" id="Node000004" href="$structfiftyone_degrees_graph_trace_node.html" title="Trace node structure used to trace the route taken when evaluating a graph." alt="" coords="226,13,458,38"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="307,46,153,118,151,113,305,41"/>
-<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="473,17,485,25,477,33,459,37,458,31,474,28,479,26,470,21"/>
+<area shape="rect" id="Node000001" title="Array of items of type fiftyoneDegreesResultHash used to easily access and track the size of the arra..." alt="" coords="74,224,273,268"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_result_hash.html" title="Singular User&#45;Agent result returned by a Hash process method." alt="" coords="74,123,273,151"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,165,176,224,171,222,172,168"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_result_user_agent.html" title="Singular User&#45;Agent result returned by a device detection process method." alt="" coords="5,5,201,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="126,61,168,122,163,123,125,66"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_graph_trace_node.html" title="Trace node structure used to trace the route taken when evaluating a graph." alt="" coords="225,14,456,42"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="305,52,196,125,193,120,309,49"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="472,18,483,28,475,36,457,40,456,35,472,31,477,28,471,24"/>
 </map>

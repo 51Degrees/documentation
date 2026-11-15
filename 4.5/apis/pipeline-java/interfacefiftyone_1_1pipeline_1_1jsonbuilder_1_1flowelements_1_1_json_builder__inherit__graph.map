@@ -1,15 +1,15 @@
 <map id="fiftyone.pipeline.jsonbuilder.flowelements.JsonBuilder" name="fiftyone.pipeline.jsonbuilder.flowelements.JsonBuilder">
-<area shape="rect" id="Node000001" title="The JsonBuilderElement takes accessible properties and adds the property key:values to the Json objec..." alt="" coords="984,55,1283,95"/>
-<area shape="rect" id="Node000007" href="$classfiftyone_1_1pipeline_1_1jsonbuilder_1_1flowelements_1_1_json_builder_element.html" title="The JsonBuilderElement takes accessible properties and adds the property key:values to the Json objec..." alt="" coords="1332,55,1631,95"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1297,73,1332,73,1332,78,1297,78"/>
-<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html" title="A component that processes a FlowData (by examining its evidence, or by examining data processed by o..." alt="" coords="597,48,935,103"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="948,73,984,73,984,78,948,78"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="321,5,437,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="452,26,597,48,597,53,451,31"/>
-<area shape="rect" id="Node000004" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_data.html" title="Represents property values that have be determined by a specific FlowElement based on the supplied ev..." alt="" coords="281,55,477,95"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="491,73,597,73,597,78,491,78"/>
-<area shape="rect" id="Node000005" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_data.html" title="Represents a collection of property values." alt="" coords="5,63,232,88"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="245,73,281,73,281,78,245,78"/>
-<area shape="rect" id="Node000006" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_property_meta_data.html" title="Defines details of a property that can be returned by a FlowElement." alt="" coords="281,119,477,159"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="491,118,600,100,601,105,491,124"/>
+<area shape="rect" id="Node000001" title="The JsonBuilderElement takes accessible properties and adds the property key:values to the Json objec..." alt="" coords="981,57,1278,102"/>
+<area shape="rect" id="Node000007" href="$classfiftyone_1_1pipeline_1_1jsonbuilder_1_1flowelements_1_1_json_builder_element.html" title="The JsonBuilderElement takes accessible properties and adds the property key:values to the Json objec..." alt="" coords="1328,57,1625,102"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1294,77,1330,79,1325,79,1294,82"/>
+<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_flow_element.html" title="A component that processes a FlowData (by examining its evidence, or by examining data processed by o..." alt="" coords="595,48,932,110"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="947,77,983,79,978,79,948,82"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="321,5,436,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="452,27,572,46,598,52,592,52,571,51,452,33"/>
+<area shape="rect" id="Node000004" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_data.html" title="Represents property values that have be determined by a specific FlowElement based on the supplied ev..." alt="" coords="281,57,476,102"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="492,77,597,79,592,79,492,82"/>
+<area shape="rect" id="Node000005" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_data.html" title="Represents a collection of property values." alt="" coords="5,65,232,93"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="247,77,283,79,278,80,248,82"/>
+<area shape="rect" id="Node000006" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_property_meta_data.html" title="Defines details of a property that can be returned by a FlowElement." alt="" coords="281,126,476,171"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="492,126,592,110,597,109,492,131"/>
 </map>

@@ -1,10 +1,10 @@
 <map id="memoryState" name="memoryState">
-<area shape="rect" id="Node000001" title="Shared test state." alt="" coords="5,116,116,141"/>
-<area shape="rect" id="Node000002" href="$structfiftyone_degrees_resource_manager.html" title="Manager structure used to provide access to a shared and changing resource." alt="" coords="6,13,249,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,47,74,58,64,70,59,94,61,116,55,116,53,93,60,68,71,54,84,43"/>
-<area shape="rect" id="Node000003" href="$structfiftyone_degrees_resource_handle.html" title="Handle for a shared resource." alt="" coords="140,116,371,141"/>
-<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="135,51,143,72,156,90,175,104,197,113,195,118,172,108,152,94,138,74,130,53"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="245,104,236,87,224,71,198,53,169,40,171,36,201,48,228,67,241,84,250,102"/>
-<area shape="rect" id="Node000004" href="$structfiftyone_degrees_interlock_double_width.html" title="Double width (64 or 128 depending on the architecture) compare and exchange." alt="" coords="273,5,456,45"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="345,58,312,94,278,118,275,114,308,90,341,55"/>
+<area shape="rect" id="Node000001" title="Shared test state." alt="" coords="5,123,116,151"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_resource_manager.html" title="Manager structure used to provide access to a shared and changing resource." alt="" coords="6,14,248,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,53,65,75,59,99,60,123,55,122,54,99,60,73,86,48"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_resource_handle.html" title="Handle for a shared resource." alt="" coords="140,123,370,151"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="133,54,143,78,156,97,174,110,196,123,191,122,171,115,153,101,138,80,131,59"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="245,107,236,92,224,76,199,58,172,45,173,39,202,53,228,72,241,89,249,109"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_interlock_double_width.html" title="Double width (64 or 128 depending on the architecture) compare and exchange." alt="" coords="272,5,454,50"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="343,62,310,101,279,125,276,120,307,97,338,64"/>
 </map>

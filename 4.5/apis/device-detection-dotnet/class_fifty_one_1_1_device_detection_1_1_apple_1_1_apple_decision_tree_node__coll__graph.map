@@ -1,7 +1,7 @@
 <map id="FiftyOne.DeviceDetection.Apple.AppleDecisionTreeNode" name="FiftyOne.DeviceDetection.Apple.AppleDecisionTreeNode">
-<area shape="rect" id="Node000001" title="A node in the decision tree that matches an evidence value against a single expected value." alt="" coords="21,181,239,221"/>
-<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_device_detection_1_1_apple_1_1_apple_decision_tree_node_base.html" title="Base class for nodes in the decision tree used by AppleDecisionTree." alt="" coords="5,93,255,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,147,133,181,127,181,127,147"/>
-<area shape="rect" id="Node000003" href="$interface_fifty_one_1_1_device_detection_1_1_apple_1_1_i_apple_decision_tree_node.html" title=" " alt="" coords="19,5,241,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="133,59,133,93,127,93,127,59"/>
+<area shape="rect" id="Node000001" title="A node in the decision tree that matches an evidence value against a single expected value." alt="" coords="21,191,238,235"/>
+<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_device_detection_1_1_apple_1_1_apple_decision_tree_node_base.html" title="Base class for nodes in the decision tree used by AppleDecisionTree." alt="" coords="5,98,254,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,156,132,192,127,189,128,160"/>
+<area shape="rect" id="Node000003" href="$interface_fifty_one_1_1_device_detection_1_1_apple_1_1_i_apple_decision_tree_node.html" title=" " alt="" coords="19,5,240,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="131,63,132,99,127,97,128,68"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="FiftyOne.Pipeline.Core.FailHandling.Recovery.ExponentialBackoffRecoveryStrategy" name="FiftyOne.Pipeline.Core.FailHandling.Recovery.ExponentialBackoffRecoveryStrategy">
-<area shape="rect" id="Node000001" title="Implements exponential backoff where delay doubles after each consecutive failure." alt="" coords="5,93,277,148"/>
-<area shape="rect" id="Node000002" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_i_recovery_strategy.html" title="Controls when to suspend requests due to recent query failures." alt="" coords="8,5,275,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,59,144,93,139,93,139,59"/>
+<area shape="rect" id="Node000001" title="Implements exponential backoff where delay doubles after each consecutive failure." alt="" coords="5,98,277,160"/>
+<area shape="rect" id="Node000002" href="$interface_fifty_one_1_1_pipeline_1_1_core_1_1_fail_handling_1_1_recovery_1_1_i_recovery_strategy.html" title="Controls when to suspend requests due to recent query failures." alt="" coords="8,5,274,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,63,143,99,139,97,139,68"/>
 </map>

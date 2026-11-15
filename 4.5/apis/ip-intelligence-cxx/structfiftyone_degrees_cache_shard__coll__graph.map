@@ -1,21 +1,21 @@
 <map id="fiftyoneDegreesCacheShard" name="fiftyoneDegreesCacheShard">
-<area shape="rect" id="Node000001" title="Cache shard structure used to enable concurrent access to the cache." alt="" coords="5,255,208,280"/>
-<area shape="rect" id="Node000002" href="$structfiftyone_degrees_cache.html" title="Cache structure to store the root of the red black tree and a list of allocated cache nodes." alt="" coords="33,504,199,529"/>
-<area shape="poly" id="edge2_Node000002_Node000001" title=" " alt="" coords="83,291,54,319,27,354,18,373,12,393,11,413,17,432,32,455,52,474,93,502,90,506,48,478,28,458,12,434,6,413,7,392,13,371,23,351,50,315,79,287"/>
-<area shape="rect" id="Node000003" href="$structfiftyone_degrees_cache_node.html" title="Cache node structure used for storing data in the cache along with its key." alt="" coords="133,399,331,425"/>
-<area shape="poly" id="edge9_Node000003_Node000001" title=" " alt="" coords="102,294,99,330,102,349,110,365,130,384,156,397,154,402,127,389,106,368,97,350,94,330,97,293"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,493,83,466,72,434,69,389,75,345,87,307,99,279,103,281,92,309,81,346,74,389,77,433,88,464,103,491"/>
-<area shape="poly" id="edge13_Node000001_Node000003" title=" " alt="" coords="205,392,182,368,172,351,167,336,161,322,151,306,124,282,127,278,155,302,166,319,172,334,177,349,186,365,208,389"/>
-<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="210,436,131,506,127,502,206,432"/>
-<area shape="poly" id="edge10_Node000003_Node000003" title=" " alt="" coords="346,403,358,412,350,420,332,424,331,419,348,416,353,412,343,407"/>
-<area shape="rect" id="Node000004" href="$structfiftyone_degrees_tree_node.html" title="Node structure defining a single node in the tree." alt="" coords="101,24,288,49"/>
-<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="213,60,228,91,238,136,244,183,247,273,242,349,236,399,231,398,237,349,241,273,239,183,233,137,223,93,209,62"/>
-<area shape="poly" id="edge7_Node000004_Node000004" title=" " alt="" coords="258,20,296,23,309,28,315,37,308,46,292,52,245,52,245,47,291,46,305,42,309,37,306,32,295,28,258,26"/>
-<area shape="rect" id="Node000005" href="$structfiftyone_degrees_tree_root.html" title="Tree root structure defining the beginning of the tree." alt="" coords="22,159,205,184"/>
-<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="151,58,129,73,112,93,106,110,106,127,112,158,107,159,100,127,101,109,107,91,125,69,148,53"/>
-<area shape="poly" id="edge12_Node000001_Node000005" title=" " alt="" coords="114,198,110,255,105,254,109,198"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="147,149,163,133,175,112,183,89,191,49,196,50,188,90,180,114,167,136,150,153"/>
-<area shape="rect" id="Node000006" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="366,255,522,280"/>
-<area shape="poly" id="edge11_Node000002_Node000006" title=" " alt="" coords="457,292,467,323,473,361,471,400,466,418,455,435,439,450,414,462,349,483,272,499,199,509,198,504,271,494,347,478,412,457,436,445,451,432,461,416,466,399,468,361,462,324,452,294"/>
-<area shape="poly" id="edge8_Node000003_Node000006" title=" " alt="" coords="417,290,251,401,248,397,414,286"/>
+<area shape="rect" id="Node000001" title="Cache shard structure used to enable concurrent access to the cache." alt="" coords="8,271,210,299"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_cache.html" title="Cache structure to store the root of the red black tree and a list of allocated cache nodes." alt="" coords="36,537,200,564"/>
+<area shape="poly" id="edge2_Node000002_Node000001" title=" " alt="" coords="79,311,70,324,40,360,17,391,11,407,8,423,10,442,18,462,32,485,52,505,94,535,89,537,48,509,28,489,13,465,5,443,3,423,6,405,13,389,36,357,66,321,82,307"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_cache_node.html" title="Cache node structure used for storing data in the cache along with its key." alt="" coords="135,426,333,454"/>
+<area shape="poly" id="edge9_Node000003_Node000001" title=" " alt="" coords="102,311,101,353,104,373,112,391,133,410,160,425,155,426,129,415,108,394,99,375,95,353,100,316"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,523,86,497,75,464,69,424,71,392,90,322,103,297,101,302,95,324,76,393,74,424,80,463,91,494,105,524"/>
+<area shape="poly" id="edge13_Node000001_Node000003" title=" " alt="" coords="203,416,182,394,172,375,167,358,162,342,152,324,129,302,129,297,156,321,167,340,172,356,177,373,187,391,208,416"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="212,464,134,538,131,534,207,465"/>
+<area shape="poly" id="edge10_Node000003_Node000003" title=" " alt="" coords="349,430,360,440,352,449,334,453,333,448,350,444,355,440,348,435"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_tree_node.html" title="Node structure defining a single node in the tree." alt="" coords="102,26,287,54"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="211,65,227,98,238,146,244,196,248,292,244,373,238,427,233,425,239,373,242,292,239,196,232,147,222,100,211,70"/>
+<area shape="poly" id="edge7_Node000004_Node000004" title=" " alt="" coords="261,22,297,26,309,31,314,40,307,50,292,56,249,57,246,52,291,51,304,46,308,40,305,35,296,31,264,27"/>
+<area shape="rect" id="Node000005" href="$structfiftyone_degrees_tree_root.html" title="Tree root structure defining the beginning of the tree." alt="" coords="22,170,204,198"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="147,64,128,80,112,100,106,118,105,136,111,170,106,170,100,137,101,117,107,98,124,76,149,59"/>
+<area shape="poly" id="edge12_Node000001_Node000005" title=" " alt="" coords="112,210,112,271,107,270,111,216"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="149,159,163,145,175,122,183,97,193,57,194,52,189,98,180,124,167,148,153,162"/>
+<area shape="rect" id="Node000006" href="$structfiftyone_degrees_data.html" title="Data structure used for reusing memory which may have been allocated in a previous operation." alt="" coords="335,271,491,299"/>
+<area shape="poly" id="edge11_Node000002_Node000006" title=" " alt="" coords="431,309,451,344,466,384,470,426,465,447,455,465,438,480,414,493,349,514,274,531,201,542,200,537,273,526,348,509,412,488,435,476,451,462,460,445,465,426,461,386,446,346,430,314"/>
+<area shape="poly" id="edge8_Node000003_Node000006" title=" " alt="" coords="388,308,251,428,248,424,384,310"/>
 </map>

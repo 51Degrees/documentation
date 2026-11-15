@@ -1,27 +1,27 @@
 <map id="FlowElement" name="FlowElement">
-<area shape="rect" id="Node000001" title="A FlowElement is placed inside a pipeline It receives Evidence via a FlowData object It uses this to ..." alt="" coords="5,203,112,228"/>
-<area shape="rect" id="Node000002" href="$class_async.html" title=" " alt="" coords="223,5,284,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,189,78,155,97,115,124,74,158,40,190,24,222,17,223,22,192,29,162,44,128,78,102,117,83,157,70,191"/>
-<area shape="rect" id="Node000003" href="$class_engine.html" title="An Engine is an extension of a FlowElement which adds options such as restricting to a subset of prop..." alt="" coords="220,55,287,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="71,189,106,138,130,112,159,89,189,75,219,68,220,73,190,80,161,94,134,115,110,141,76,192"/>
-<area shape="rect" id="Node000007" href="$class_j_s_o_n_bundler_element.html" title="The JSONBundler aggregates all properties from FlowElements into a JSON object It is used for retriev..." alt="" coords="174,104,333,129"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="82,191,117,164,159,138,189,127,191,132,161,143,120,168,86,195"/>
-<area shape="rect" id="Node000008" href="$class_java_script_builder_element.html" title="The JavaScriptBuilder aggregates JavaScript properties from FlowElements in the pipeline." alt="" coords="160,153,347,179"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="122,197,201,176,203,181,123,202"/>
-<area shape="rect" id="Node000009" href="$class_never_run.html" title=" " alt="" coords="210,203,297,228"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="126,213,210,213,210,218,126,218"/>
-<area shape="rect" id="Node000010" href="$class_sequence_element.html" title="The SequenceElement stores session data regarding requests for client side JavaScript from the JavaSc..." alt="" coords="184,252,323,277"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="123,229,203,249,201,254,122,234"/>
-<area shape="rect" id="Node000011" href="$class_set_headers_element.html" title="Set response headers element class." alt="" coords="178,301,329,327"/>
-<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="86,235,120,262,161,286,194,299,192,304,159,291,117,266,82,239"/>
-<area shape="rect" id="Node000012" href="$class_stop.html" title=" " alt="" coords="228,351,279,376"/>
-<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="76,239,111,288,134,314,161,336,195,351,228,358,227,363,193,356,159,340,131,318,107,292,72,242"/>
-<area shape="rect" id="Node000013" href="$class_sync.html" title=" " alt="" coords="227,400,280,425"/>
-<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="70,240,83,274,102,313,128,353,162,386,194,402,227,409,226,414,192,407,158,391,124,356,97,316,78,276,65,242"/>
-<area shape="rect" id="Node000004" href="$class_cloud_engine.html" title="This is a template for all 51Degrees cloud engines." alt="" coords="421,5,524,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="300,54,420,27,422,32,301,60"/>
-<area shape="rect" id="Node000005" href="$class_cloud_request_engine.html" title=" " alt="" coords="395,55,551,80"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="301,65,395,65,395,70,301,70"/>
-<area shape="rect" id="Node000006" href="$class_share_usage.html" title="The ShareUsage element sends usage data to 51Degrees in zipped batches." alt="" coords="423,104,523,129"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="301,75,423,103,422,108,300,80"/>
+<area shape="rect" id="Node000001" title="A FlowElement is placed inside a pipeline It receives Evidence via a FlowData object It uses this to ..." alt="" coords="5,213,112,241"/>
+<area shape="rect" id="Node000002" href="$class_async.html" title=" " alt="" coords="223,5,283,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,198,78,162,98,121,124,79,158,44,189,27,224,20,220,24,191,32,161,48,128,83,102,123,83,164,71,199"/>
+<area shape="rect" id="Node000003" href="$class_engine.html" title="An Engine is an extension of a FlowElement which adds options such as restricting to a subset of prop..." alt="" coords="220,57,286,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="72,198,107,146,131,119,158,96,188,81,222,74,218,77,190,86,161,100,134,123,111,149,77,201"/>
+<area shape="rect" id="Node000007" href="$class_j_s_o_n_bundler_element.html" title="The JSONBundler aggregates all properties from FlowElements into a JSON object It is used for retriev..." alt="" coords="174,109,332,137"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="83,201,118,173,158,147,192,136,188,139,161,152,121,177,88,205"/>
+<area shape="rect" id="Node000008" href="$class_java_script_builder_element.html" title="The JavaScriptBuilder aggregates JavaScript properties from FlowElements in the pipeline." alt="" coords="160,161,346,189"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="125,207,200,188,197,191,128,211"/>
+<area shape="rect" id="Node000009" href="$class_never_run.html" title=" " alt="" coords="210,213,296,241"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="127,225,212,225,208,229,128,230"/>
+<area shape="rect" id="Node000010" href="$class_sequence_element.html" title="The SequenceElement stores session data regarding requests for client side JavaScript from the JavaSc..." alt="" coords="184,265,322,293"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="126,243,201,263,196,266,127,248"/>
+<area shape="rect" id="Node000011" href="$class_set_headers_element.html" title="Set response headers element class." alt="" coords="178,317,328,345"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="85,249,121,277,161,302,193,316,187,317,158,307,118,281,86,254"/>
+<area shape="rect" id="Node000012" href="$class_stop.html" title=" " alt="" coords="228,369,278,397"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="75,252,111,305,134,332,161,354,195,370,230,380,224,381,193,375,158,359,131,336,107,309,74,258"/>
+<area shape="rect" id="Node000013" href="$class_sync.html" title=" " alt="" coords="227,421,279,449"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="68,253,83,290,102,331,128,372,161,406,193,423,229,433,223,433,192,428,158,411,124,375,98,334,78,292,68,259"/>
+<area shape="rect" id="Node000004" href="$class_cloud_engine.html" title="This is a template for all 51Degrees cloud engines." alt="" coords="420,5,523,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="300,58,422,30,418,33,302,62"/>
+<area shape="rect" id="Node000005" href="$class_cloud_request_engine.html" title=" " alt="" coords="394,57,549,85"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="300,69,396,70,391,73,302,74"/>
+<area shape="rect" id="Node000006" href="$class_share_usage.html" title="The ShareUsage element sends usage data to 51Degrees in zipped batches." alt="" coords="422,109,521,137"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="301,80,424,110,419,113,301,85"/>
 </map>

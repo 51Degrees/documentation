@@ -1,7 +1,7 @@
 <map id="fiftyone.pipeline.engines.fiftyone.configuration.FiftyOneDataFileConfiguration" name="fiftyone.pipeline.engines.fiftyone.configuration.FiftyOneDataFileConfiguration">
-<area shape="rect" id="Node000001" title="Data file configuration class for 51Degrees data files." alt="" coords="5,181,333,221"/>
-<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1engines_1_1configuration_1_1_data_file_configuration_default.html" title="This class contains the automatic update configuration parameters that can be supplied to an engine f..." alt="" coords="32,93,307,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,147,172,181,167,181,167,147"/>
-<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1pipeline_1_1engines_1_1configuration_1_1_data_file_configuration.html" title="Interface representing the configuration parameters controlling the automatic update checks for a spe..." alt="" coords="32,5,307,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="172,59,172,93,167,93,167,59"/>
+<area shape="rect" id="Node000001" title="Data file configuration class for 51Degrees data files." alt="" coords="5,191,333,235"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1engines_1_1configuration_1_1_data_file_configuration_default.html" title="This class contains the automatic update configuration parameters that can be supplied to an engine f..." alt="" coords="32,98,306,143"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,156,171,192,167,189,167,160"/>
+<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1pipeline_1_1engines_1_1configuration_1_1_data_file_configuration.html" title="Interface representing the configuration parameters controlling the automatic update checks for a spe..." alt="" coords="32,5,306,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="170,63,172,99,166,97,168,68"/>
 </map>

@@ -1,14 +1,14 @@
 <map id="fiftyone.pipeline.web.mvc.services.ClientsidePropertyService.Default" name="fiftyone.pipeline.web.mvc.services.ClientsidePropertyService.Default">
-<area shape="rect" id="Node000001" title=" " alt="" coords="856,39,1108,79"/>
-<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1web_1_1services_1_1_clientside_property_service_core_1_1_default.html" title="Default implementation of the ClientsidePropertyServiceCore interface." alt="" coords="535,69,807,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="820,72,855,68,856,74,821,77"/>
-<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_clientside_property_service_core.html" title="Class that provides functionality for the &#39;Client side overrides&#39; feature." alt="" coords="188,12,408,52"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="422,48,541,67,540,72,421,54"/>
-<area shape="rect" id="Node000006" href="$interfacefiftyone_1_1pipeline_1_1web_1_1mvc_1_1services_1_1_clientside_property_service.html" title="Spring framework service for the ClientsidePropertyServiceCore." alt="" coords="545,5,797,45"/>
-<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="422,27,544,25,544,30,422,32"/>
-<area shape="rect" id="Node000004" href="$interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html" title="The Pipeline groups together FlowElements and is a factory for FlowData which serves as the evidence,..." alt="" coords="171,81,425,121"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="439,99,511,97,534,96,534,102,511,103,440,104"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="5,89,121,114"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="135,99,170,99,170,104,135,104"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="811,38,856,43,856,48,810,43"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="853,41,1104,86"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1pipeline_1_1web_1_1services_1_1_clientside_property_service_core_1_1_default.html" title="Default implementation of the ClientsidePropertyServiceCore interface." alt="" coords="532,75,804,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="819,78,850,77,855,77,819,83"/>
+<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1pipeline_1_1web_1_1services_1_1_clientside_property_service_core.html" title="Class that provides functionality for the &#39;Client side overrides&#39; feature." alt="" coords="188,11,407,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="422,52,537,74,532,74,422,57"/>
+<area shape="rect" id="Node000006" href="$interfacefiftyone_1_1pipeline_1_1web_1_1mvc_1_1services_1_1_clientside_property_service.html" title="Spring framework service for the ClientsidePropertyServiceCore." alt="" coords="542,5,794,50"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="422,29,544,29,539,30,423,34"/>
+<area shape="rect" id="Node000004" href="$interfacefiftyone_1_1pipeline_1_1core_1_1flowelements_1_1_pipeline.html" title="The Pipeline groups together FlowElements and is a factory for FlowData which serves as the evidence,..." alt="" coords="170,84,424,129"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="439,103,508,102,535,104,529,104,508,107,440,109"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,92,121,120"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="136,104,172,106,167,107,136,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="809,41,855,49,850,49,809,47"/>
 </map>

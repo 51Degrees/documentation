@@ -1,8 +1,8 @@
 <map id="fiftyoneDegreesResourceHandle" name="fiftyoneDegreesResourceHandle">
-<area shape="rect" id="Node000001" title="Handle for a shared resource." alt="" coords="11,116,242,141"/>
-<area shape="rect" id="Node000003" href="$structfiftyone_degrees_resource_manager.html" title="Manager structure used to provide access to a shared and changing resource." alt="" coords="5,212,248,237"/>
-<area shape="poly" id="edge3_Node000003_Node000001" title=" " alt="" coords="96,152,85,167,82,177,85,187,94,200,107,210,103,214,90,203,80,189,77,177,80,164,92,149"/>
-<area shape="rect" id="Node000002" href="$structfiftyone_degrees_interlock_double_width.html" title="Double width (64 or 128 depending on the architecture) compare and exchange." alt="" coords="35,5,218,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,59,129,116,124,116,124,59"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="132,198,135,188,135,166,129,142,134,141,140,165,140,188,138,199"/>
+<area shape="rect" id="Node000001" title="Handle for a shared resource." alt="" coords="11,123,241,151"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_resource_manager.html" title="Manager structure used to provide access to a shared and changing resource." alt="" coords="5,224,247,251"/>
+<area shape="poly" id="edge3_Node000003_Node000001" title=" " alt="" coords="94,159,86,176,83,187,86,199,94,211,107,223,101,223,90,215,81,201,77,187,81,174,91,163"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_interlock_double_width.html" title="Double width (64 or 128 depending on the architecture) compare and exchange." alt="" coords="35,5,217,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,63,129,123,123,122,125,68"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="133,207,134,199,134,175,130,154,132,149,139,174,139,200,137,210"/>
 </map>

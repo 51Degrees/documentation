@@ -1,19 +1,19 @@
 <map id="fiftyone.caching.LruPutCache&lt; K, V &gt;" name="fiftyone.caching.LruPutCache&lt; K, V &gt;">
-<area shape="rect" id="Node000001" title="Uses the LruCacheBase to implement the PutCache interface." alt="" coords="727,39,937,79"/>
-<area shape="rect" id="Node000002" href="$classfiftyone_1_1caching_1_1_lru_cache_base.html" title="This is a Least Recently Used (LRU) cache with multiple linked lists in place of the usual single lin..." alt="" coords="487,69,676,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="689,73,726,69,727,74,690,79"/>
-<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1caching_1_1_cache.html" title="Base cache interface which declares only the get method and the types of key and value stored in the ..." alt="" coords="166,13,335,53"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="349,47,487,71,486,76,348,52"/>
-<area shape="rect" id="Node000007" href="$interfacefiftyone_1_1caching_1_1_put_cache.html" title="A cache that supports a thread safe put method for inserting to cache." alt="" coords="486,5,677,45"/>
-<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="349,28,485,25,486,30,349,34"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="5,62,92,87"/>
-<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="106,74,487,84,487,89,106,79"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="105,61,165,48,166,53,106,66"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="141,187,360,227"/>
-<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="320,180,460,129,523,107,525,112,462,135,322,185"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="485,219,677,259"/>
-<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="311,229,347,242,384,251,435,255,485,252,485,258,435,260,384,256,345,247,309,234"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="471,231,360,220,361,215,472,225"/>
-<area shape="poly" id="edge8_Node000006_Node000006" title=" " alt="" coords="558,203,566,195,581,192,594,194,603,200,606,209,605,219,600,218,601,210,599,204,592,199,581,197,569,200,562,206"/>
-<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="691,37,727,42,726,47,690,42"/>
+<area shape="rect" id="Node000001" title="Uses the LruCacheBase to implement the PutCache interface." alt="" coords="724,41,933,86"/>
+<area shape="rect" id="Node000002" href="$classfiftyone_1_1caching_1_1_lru_cache_base.html" title="This is a Least Recently Used (LRU) cache with multiple linked lists in place of the usual single lin..." alt="" coords="485,75,673,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="688,80,726,77,721,78,689,85"/>
+<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1caching_1_1_cache.html" title="Base cache interface which declares only the get method and the types of key and value stored in the ..." alt="" coords="165,13,333,58"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="349,51,487,79,482,80,349,57"/>
+<area shape="rect" id="Node000007" href="$interfacefiftyone_1_1caching_1_1_put_cache.html" title="A cache that supports a thread safe put method for inserting to cache." alt="" coords="484,5,674,50"/>
+<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="348,31,486,29,482,31,349,36"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,66,91,94"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="106,79,485,91,484,96,106,84"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="104,65,166,52,163,56,107,69"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="140,197,358,242"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="325,189,514,120,519,119,327,194"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="483,233,675,278"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="309,246,345,260,383,270,433,275,480,275,485,274,433,280,382,275,344,265,308,251"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="466,244,359,234,359,229,471,243"/>
+<area shape="poly" id="edge8_Node000006_Node000006" title=" " alt="" coords="558,215,565,209,579,207,592,209,600,215,604,223,603,235,599,231,599,224,596,218,590,214,579,212,568,214,560,220"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="689,41,726,48,721,49,689,46"/>
 </map>

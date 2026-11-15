@@ -1,7 +1,7 @@
 <map id="fiftyone.pipeline.jsonbuilder.data.JsonBuilderData" name="fiftyone.pipeline.jsonbuilder.data.JsonBuilderData">
-<area shape="rect" id="Node000001" title="Data containing the result of a JsonBuilderElements processing." alt="" coords="5,167,244,207"/>
-<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_data.html" title="Represents property values that have be determined by a specific FlowElement based on the supplied ev..." alt="" coords="27,79,223,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,133,127,166,122,166,122,133"/>
-<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_data.html" title="Represents a collection of property values." alt="" coords="11,5,238,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="127,44,127,79,122,79,122,44"/>
+<area shape="rect" id="Node000001" title="Data containing the result of a JsonBuilderElements processing." alt="" coords="5,174,244,218"/>
+<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_element_data.html" title="Represents property values that have be determined by a specific FlowElement based on the supplied ev..." alt="" coords="27,81,222,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,139,127,175,122,172,123,143"/>
+<area shape="rect" id="Node000003" href="$interfacefiftyone_1_1pipeline_1_1core_1_1data_1_1_data.html" title="Represents a collection of property values." alt="" coords="11,5,238,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="126,46,127,81,122,80,123,51"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="fiftyone.pipeline.core.data.FlowData" name="fiftyone.pipeline.core.data.FlowData">
-<area shape="rect" id="Node000001" title="A closeable structure to contain the inputs and outputs of Pipeline processing." alt="" coords="35,79,231,119"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,167,260,207"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="135,133,135,166,130,166,130,133"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="75,5,191,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,44,135,79,130,79,130,44"/>
+<area shape="rect" id="Node000001" title="A closeable structure to contain the inputs and outputs of Pipeline processing." alt="" coords="35,81,230,126"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,174,260,218"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="134,139,135,175,130,172,131,143"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="75,5,190,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,46,135,81,130,80,131,51"/>
 </map>

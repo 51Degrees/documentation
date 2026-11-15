@@ -1,7 +1,7 @@
 <map id="fiftyone.caching.PutCache&lt; K, V &gt;" name="fiftyone.caching.PutCache&lt; K, V &gt;">
-<area shape="rect" id="Node000001" title="A cache that supports a thread safe put method for inserting to cache." alt="" coords="5,167,196,207"/>
-<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1caching_1_1_cache.html" title="Base cache interface which declares only the get method and the types of key and value stored in the ..." alt="" coords="16,79,185,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,133,103,166,98,166,98,133"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="57,5,144,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="103,44,103,79,98,79,98,44"/>
+<area shape="rect" id="Node000001" title="A cache that supports a thread safe put method for inserting to cache." alt="" coords="5,174,195,218"/>
+<area shape="rect" id="Node000002" href="$interfacefiftyone_1_1caching_1_1_cache.html" title="Base cache interface which declares only the get method and the types of key and value stored in the ..." alt="" coords="16,81,184,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,139,102,174,98,173,98,143"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="57,5,143,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="101,46,103,81,97,80,99,51"/>
 </map>

@@ -1,13 +1,13 @@
 <map id="FiftyOne.DeviceDetection.Example.Tests.Web.OnPremise.GettingStartedSeleniumTest" name="FiftyOne.DeviceDetection.Example.Tests.Web.OnPremise.GettingStartedSeleniumTest">
-<area shape="rect" id="Node000001" title=" " alt="" coords="627,84,901,139"/>
-<area shape="rect" id="Node000004" href="$class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_on_premise_1_1_getting_started_chrome_test.html" title=" " alt="" coords="949,5,1224,60"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="889,78,973,58,974,63,890,83"/>
-<area shape="rect" id="Node000005" href="$class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_on_premise_1_1_getting_started_edge_test.html" title=" " alt="" coords="949,84,1224,139"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="915,109,949,109,949,114,915,114"/>
-<area shape="rect" id="Node000006" href="$class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_on_premise_1_1_getting_started_firefox_test.html" title=" " alt="" coords="949,163,1224,217"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="890,139,974,160,973,165,889,145"/>
-<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_getting_started_selenium_test_base.html" title=" " alt="" coords="332,84,579,139"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="593,109,627,109,627,114,593,114"/>
-<area shape="rect" id="Node000003" href="$class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_selenium_tests_base.html" title=" " alt="" coords="5,91,284,131"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="298,109,332,109,332,114,298,114"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="625,91,899,152"/>
+<area shape="rect" id="Node000004" href="$class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_on_premise_1_1_getting_started_chrome_test.html" title=" " alt="" coords="947,5,1222,67"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="895,84,963,68,968,67,896,89"/>
+<area shape="rect" id="Node000005" href="$class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_on_premise_1_1_getting_started_edge_test.html" title=" " alt="" coords="947,91,1222,152"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="915,119,950,121,944,122,915,124"/>
+<area shape="rect" id="Node000006" href="$class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_on_premise_1_1_getting_started_firefox_test.html" title=" " alt="" coords="947,176,1222,238"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="896,154,968,176,963,175,895,159"/>
+<area shape="rect" id="Node000002" href="$class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_getting_started_selenium_test_base.html" title=" " alt="" coords="331,91,577,152"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="592,119,627,121,622,122,593,124"/>
+<area shape="rect" id="Node000003" href="$class_fifty_one_1_1_device_detection_1_1_example_1_1_tests_1_1_web_1_1_selenium_tests_base.html" title=" " alt="" coords="5,99,283,144"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="298,119,333,121,327,122,299,124"/>
 </map>

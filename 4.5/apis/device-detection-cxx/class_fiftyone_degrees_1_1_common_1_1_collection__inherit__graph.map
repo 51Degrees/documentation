@@ -1,29 +1,29 @@
 <map id="FiftyoneDegrees::Common::Collection&lt; K, V &gt;" name="FiftyoneDegrees::Common::Collection&lt; K, V &gt;">
-<area shape="rect" id="Node000001" title="A group of items accessible by index or key." alt="" coords="5,182,200,222"/>
-<area shape="rect" id="Node000002" href="$class_fiftyone_degrees_1_1_common_1_1_collection.html" title=" " alt="" coords="471,5,693,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,171,178,145,223,121,285,97,349,77,470,48,471,53,351,82,287,102,225,126,181,149,142,176"/>
-<area shape="rect" id="Node000004" href="$class_fiftyone_degrees_1_1_common_1_1_collection.html" title=" " alt="" coords="485,104,679,159"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="213,181,224,179,484,142,485,147,224,185,214,186"/>
-<area shape="rect" id="Node000006" href="$class_fiftyone_degrees_1_1_common_1_1_collection.html" title=" " alt="" coords="485,204,679,259"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="214,206,485,223,484,228,214,211"/>
-<area shape="rect" id="Node000010" href="$class_fiftyone_degrees_1_1_common_1_1_collection.html" title=" " alt="" coords="463,296,701,351"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="146,228,183,249,225,267,284,285,346,298,463,314,462,319,345,303,283,290,223,273,181,254,143,232"/>
-<area shape="rect" id="Node000003" href="$class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_component_meta_data_collection_hash.html" title="A collection of component meta data contained in a Hash engine." alt="" coords="751,7,1059,47"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="707,28,751,27,751,33,707,33"/>
-<area shape="rect" id="Node000005" href="$class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_profile_meta_data_collection_hash.html" title="A collection of all profile meta data contained in a Hash engine." alt="" coords="767,71,1042,111"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="692,115,767,106,767,111,693,120"/>
-<area shape="rect" id="Node000007" href="$class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_property_meta_data_collection_for_component_hash.html" title="A collection of property meta data relating to a component contained in a Hash engine." alt="" coords="767,136,1042,191"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="692,206,774,188,775,193,693,211"/>
-<area shape="rect" id="Node000008" href="$class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_property_meta_data_collection_for_property_hash.html" title=" " alt="" coords="767,215,1042,269"/>
-<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="693,232,767,235,767,240,693,238"/>
-<area shape="rect" id="Node000009" href="$class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_property_meta_data_collection_hash.html" title="A collection of all property meta data contained in a Hash engine." alt="" coords="761,294,1049,334"/>
-<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="686,260,751,278,807,291,806,297,750,283,685,265"/>
-<area shape="rect" id="Node000011" href="$class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_value_meta_data_collection_base_hash.html" title="A collection of all value meta data contained in a Hash engine." alt="" coords="754,358,1055,398"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="716,343,787,355,786,361,715,349"/>
-<area shape="rect" id="Node000012" href="$class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_value_meta_data_collection_for_profile_hash.html" title="A collection of value meta data relating to a profile contained in a Hash engine." alt="" coords="1115,294,1445,334"/>
-<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="1036,353,1162,331,1163,337,1037,358"/>
-<area shape="rect" id="Node000013" href="$class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_value_meta_data_collection_for_property_hash.html" title="A collection of value meta data relating to a property contained in a Hash engine." alt="" coords="1108,358,1452,398"/>
-<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="1069,375,1108,375,1108,381,1069,381"/>
-<area shape="rect" id="Node000014" href="$class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_value_meta_data_collection_hash.html" title="A collection of all value meta data contained in a Hash engine." alt="" coords="1145,422,1415,462"/>
-<area shape="poly" id="edge13_Node000011_Node000014" title=" " alt="" coords="1037,398,1163,419,1162,425,1036,403"/>
+<area shape="rect" id="Node000001" title="A group of items accessible by index or key." alt="" coords="5,199,200,244"/>
+<area shape="rect" id="Node000002" href="$class_fiftyone_degrees_1_1_common_1_1_collection.html" title=" " alt="" coords="470,5,691,67"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,187,178,158,222,132,284,106,348,85,471,54,467,58,350,90,286,111,225,137,181,163,143,191"/>
+<area shape="rect" id="Node000004" href="$class_fiftyone_degrees_1_1_common_1_1_collection.html" title=" " alt="" coords="483,113,678,175"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="213,198,223,196,484,156,481,160,224,201,216,203"/>
+<area shape="rect" id="Node000006" href="$class_fiftyone_degrees_1_1_common_1_1_collection.html" title=" " alt="" coords="483,221,678,283"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="214,226,484,244,481,248,215,231"/>
+<area shape="rect" id="Node000010" href="$class_fiftyone_degrees_1_1_common_1_1_collection.html" title=" " alt="" coords="462,328,699,390"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="146,250,184,274,225,293,284,312,345,327,464,348,459,350,344,333,282,318,223,298,181,278,146,256"/>
+<area shape="rect" id="Node000003" href="$class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_component_meta_data_collection_hash.html" title="A collection of component meta data contained in a Hash engine." alt="" coords="748,8,1056,53"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="706,32,750,33,745,34,707,37"/>
+<area shape="rect" id="Node000005" href="$class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_profile_meta_data_collection_hash.html" title="A collection of all profile meta data contained in a Hash engine." alt="" coords="765,78,1039,122"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="692,126,768,118,763,120,694,131"/>
+<area shape="rect" id="Node000007" href="$class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_property_meta_data_collection_for_component_hash.html" title="A collection of property meta data relating to a component contained in a Hash engine." alt="" coords="765,147,1039,208"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="692,224,769,208,764,210,693,229"/>
+<area shape="rect" id="Node000008" href="$class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_property_meta_data_collection_for_property_hash.html" title=" " alt="" coords="765,232,1039,294"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="692,253,767,258,762,259,693,259"/>
+<area shape="rect" id="Node000009" href="$class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_property_meta_data_collection_hash.html" title="A collection of all property meta data contained in a Hash engine." alt="" coords="758,318,1046,362"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="689,285,749,303,797,317,792,317,748,308,689,291"/>
+<area shape="rect" id="Node000011" href="$class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_value_meta_data_collection_base_hash.html" title="A collection of all value meta data contained in a Hash engine." alt="" coords="752,387,1052,432"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="714,377,759,387,754,387,714,383"/>
+<area shape="rect" id="Node000012" href="$class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_value_meta_data_collection_for_profile_hash.html" title="A collection of value meta data relating to a profile contained in a Hash engine." alt="" coords="1112,318,1441,362"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="1041,381,1150,363,1155,363,1042,386"/>
+<area shape="rect" id="Node000013" href="$class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_value_meta_data_collection_for_property_hash.html" title="A collection of value meta data relating to a property contained in a Hash engine." alt="" coords="1105,387,1448,432"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="1067,407,1107,409,1102,410,1068,412"/>
+<area shape="rect" id="Node000014" href="$class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_value_meta_data_collection_hash.html" title="A collection of all value meta data contained in a Hash engine." alt="" coords="1142,456,1411,501"/>
+<area shape="poly" id="edge13_Node000011_Node000014" title=" " alt="" coords="1042,433,1155,456,1150,456,1041,438"/>
 </map>
