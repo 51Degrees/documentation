@@ -87,7 +87,7 @@ The Resource Key and License Key, held as `fiftyone.resource-key` and `fiftyone.
 
 The block list and the allow list can be configured using the **share usage** @elementbuilder, along with options to share all query string parameters, which is on by default, or all @evidence. Sharing all @evidence still leaves out what is never shared, so it shares no cookie other than the '51D_' ones.
 
-Go and Rust follow these rules. In .NET, Java, Node.js and Python, sharing all query string parameters is still off by default, so only the query string and form parameters whose names start '51D_' and those on the allow list are shared, and sharing all @evidence also shares every cookie, though never the `Cookie` header itself.
+.NET, Go, Node.js and Rust follow these rules. In Java and Python, sharing all query string parameters is still off by default, so only the query string and form parameters whose names start '51D_' and those on the allow list are shared, and sharing all @evidence also shares every cookie, though never the `Cookie` header itself.
 
 ## What else each record carries
 

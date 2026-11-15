@@ -49,7 +49,7 @@ It will include anything that meets the following criteria:
 
 Some evidence is never shared, whatever the configuration. That includes `id.email`, `id.salt`, `request-query` and `request-path` under any prefix, and every cookie whose name does not start with '51D_'. The @ref PipelineApi_Features_UsageSharing page lists it all.
 
-Go and Rust work this way. In .NET, Java, Node.js and Python, a query string or form parameter is shared only when its name starts with '51D_' or it is on the allow list, unless sharing all query string parameters is turned on, and sharing all evidence also shares every cookie other than the `Cookie` header.
+.NET, Go, Node.js and Rust work this way. In Java and Python, a query string or form parameter is shared only when its name starts with '51D_' or it is on the allow list, unless sharing all query string parameters is turned on, and sharing all evidence also shares every cookie other than the `Cookie` header.
 
 Configuration options allow this to be tuned to meet your requirements:
 
