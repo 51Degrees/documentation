@@ -40,6 +40,35 @@ A separate graph is used to detect the hardware device. After matching a few nod
 
 Many Android User-Agents will consistently place the substrings associated with the device at this position. A long list of hash values, perhaps tens of thousands, could then be evaluated to either identify the device or narrow down the options. Perhaps just the first 5 characters `SPH-D` will be used to reduce the possible devices. This is very efficient as it considerably narrows the possible devices with a single hash value calculation and lookup. This process of hashing the most relevant substrings will continue until a complete device including hardware, operating system, and browser has been identified using the graphs for each.
 
+# Header length limit {#DeviceDetection_Hash_HeaderLengthLimit}
+
+Detection reads each header up to a limit of 500 bytes. The limit applies to every header, such as User-Agent, and to every [pseudo-header](@ref UACH_Http_Headers_Pseudoheaders) built from User-Agent Client Hints, where it counts one separator between each value. It counts bytes, not characters, so a header holding characters outside ASCII reaches it sooner.
+
+The limit stays at 500 bytes because no data file reads past the first 500 bytes of a header. The working memory for each set of results is sized from the limit when the results are created, so a larger limit would use more memory in every set of results and change no result.
+
+A header longer than the limit is ignored, with no error, and detection carries on with the rest of the @evidence. To have a longer User-Agent used, cut it to its first 500 bytes before passing it in. That gives the same result as reading the whole header would, because nothing after the first 500 bytes is read.
+
+## How to tell a header was ignored
+
+With the default settings, a result whose only @evidence was ignored has the DeviceId `0-0-0-0`, because each @component that matched nothing gives `0` when unmatched results are not allowed, which is the default. Two cases differ.
+
+1. With unmatched results allowed (see @ref DeviceDetection_Features_FalsePositiveControl), each @component gives its default @profile, so the DeviceId shows those @profile ids rather than zeros.
+2. When other @evidence still matches, for example client hint headers under 500 bytes, the DeviceId is not all zeros, although the long header was still ignored.
+
+## The setting in each language
+
+The limit is a setting of the device detection configuration. There is nothing to gain from a larger value, for the reason above.
+
+| Language | Setting |
+|----------|---------|
+| C | `config.b.maxMatchedUserAgentLength` on the `fiftyoneDegreesConfigHash` used to create the data set |
+| C++ | `setMaxMatchedUserAgentLength` on the `ConfigHash` used to create the engine |
+| Node.js | the `maxMatchedUserAgentLength` option of the on-premise engine and of the pipeline builder |
+| Python | the `max_matched_useragent_length` parameter of the on-premise engine and of the pipeline builder |
+| PHP | `FiftyOneDegreesHashEngine.max_matched_useragent_length` in the PHP configuration |
+| .NET, Java, Go and Rust | not offered, so the limit is always 500 bytes |
+| NGINX and Varnish | not offered, so the limit is always 500 bytes |
+
 # Data set production {#DeviceDetection_Hash_DataSetProduction}
 
 Producing the optimized data set is computationally intensive because it requires evaluating training data. However the resulting data set is small and fast for 51Degrees users. As only the relevant characters are evaluated and some tolerance for substrings drifting within the User-Agent can be allowed for, the predictive features of **Hash** are better than character based trie solutions.

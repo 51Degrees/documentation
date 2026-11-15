@@ -44,11 +44,18 @@ A License Key may be required when downloading certain types of data files. The
 @dataupdateservice uses the License Key, in combination with a [URL formatter](@ref PipelineApi_Features_AutomaticDatafileUpdates_UrlFormatter),
 to ensure the @datafile is only made available to licensed users.
 
+A License Key is needed only to download, which is what polling for updates and updating on start-up do.
+An application with no License Key, such as one using a free Lite @datafile, turns automatic updates off,
+and its file watcher still runs.
+
 ## File watcher
 
 The location of the @datafile in the file system can be monitored by enabling the file system watcher. If
 the @datafile changes, then the @dataupdateservice will be called to refresh the @onpremiseengine using that file.
 This can be useful when distributing @datafiles to a local cluster.
+
+The file watcher runs on its own setting, whether automatic updates are on or off. Watching a file downloads
+nothing, so the file watcher needs no License Key.
 
 ## Polling interval
 
