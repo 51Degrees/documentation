@@ -87,9 +87,11 @@ The Resource Key and License Key, held as `fiftyone.resource-key` and `fiftyone.
 
 The block list and the allow list can be configured using the **share usage** @elementbuilder, along with options to share all query string parameters, which is on by default, or all @evidence. Sharing all @evidence still leaves out what is never shared, so it shares no cookie other than the '51D_' ones.
 
+Go and Rust follow these rules. In .NET, Java, Node.js and Python, sharing all query string parameters is still off by default, so only the query string and form parameters whose names start '51D_' and those on the allow list are shared, and sharing all @evidence also shares every cookie, though never the `Cookie` header itself.
+
 ## What else each record carries
 
-Each record also names the @flowelements in the @Pipeline, the language and its version, the platform, the server's IP address, and every 51Degrees package in use with its version, so that 51Degrees can see how far each release has spread.
+Each record also names the @flowelements in the @Pipeline, the version of the @Pipeline, the language and its version, the platform and the server's IP address. Naming every 51Degrees package in use with its version, so that 51Degrees can see how far each release has spread, is not in any package yet.
 
 ## Handing over the web request
 
