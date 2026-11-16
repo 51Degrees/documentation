@@ -31,7 +31,7 @@ We have examples that demonstrate UA-CH detection in various scenarios:
 - [On-premise web page](@ref DeviceDetection_Examples_GettingStarted_Web_OnPremise) 
 - [Cloud console](@ref DeviceDetection_Examples_GettingStarted_Console_Cloud) 
 - [Cloud web page](@ref DeviceDetection_Examples_GettingStarted_Web_Cloud)
-- [configure.51degrees.com](https://configure.51degrees.com/) includes an example for implementing a full client-side solution
+- [51degrees.com/configure](https://51degrees.com/configure/) includes an example for implementing a full client-side solution
 
 **Note:** Console examples work in any situation. Web examples require a browser that supports UA-CH (Chrome, Edge, or other Chromium-based browsers).
 

@@ -15,12 +15,12 @@ Our plugin uses device and location data to help you adapt your website and anal
 1.  Visit the new `51Degrees` Settings menu.
 
 2.  To start using this plugin, you will need to create a `Resource Key`. This enables access to the data you need via the 51Degrees Cloud service. You can 
-    create a `Resource Key` for free, at [configure.51degrees.com](https://configure.51degrees.com/), selecting the properties you want.
+    create a `Resource Key` for free, at [51degrees.com/configure](https://51degrees.com/configure/), selecting the properties you want.
 
 
 ## Integration with Google Analytics
 
-1.  The plugin works with Google Analytics 4 (GA4). Your Resource Key must have your site's domain added to it, or the connection is refused. If your key does not, create a new key with the domain at [configure.51degrees.com](https://configure.51degrees.com/). Then go to the `Google Analytics` tab and click `Connect Google Analytics`. Authorize the 51Degrees plugin on the Google consent screen. You are returned to the tab, which confirms the connection.
+1.  The plugin works with Google Analytics 4 (GA4). Your Resource Key must have your site's domain added to it, or the connection is refused. If your key does not, create a new key with the domain at [51degrees.com/configure](https://51degrees.com/configure/). Then go to the `Google Analytics` tab and click `Connect Google Analytics`. Authorize the 51Degrees plugin on the Google consent screen. You are returned to the tab, which confirms the connection.
 
 2.  Once connected, select the GA4 property that receives the Custom Dimensions from the `Analytics Account/Property` dropdown.
 
@@ -45,7 +45,7 @@ The `Robots.txt` tab lets you host a virtual `/robots.txt` file and, optionally,
 
 5.  **Custom Top Entries** and **Custom Bottom Entries** let you prepend or append your own lines around the generated 51Degrees section.
 
-Crawler detection needs the `IsCrawler` and `CrawlerUsage` properties, and file generation from the cloud needs the `robotstxt.plaintext` property. Create a key with these at <a href="https://configure.51degrees.com/">configure.51degrees.com</a> if your key does not already include them.
+Crawler detection needs the `IsCrawler` and `CrawlerUsage` properties, and file generation from the cloud needs the `robotstxt.plaintext` property. Create a key with these at <a href="https://51degrees.com/configure/">51degrees.com/configure</a> if your key does not already include them.
 
 
 ## Suspicious activity detection
@@ -54,7 +54,7 @@ The `Suspicious` tab detects and blocks visitors who make too many requests in a
 
 When your Resource Key is working, detection runs in advanced mode and counts requests by each visitor's 51Did, which can tell apart visitors who share a network. If the key is missing or invalid, it falls back to basic mode, where visitors with the same IP address and User-Agent are grouped and blocked together.
 
-Advanced mode relies on a probabilistic identifier from your Resource Key, which is `IdProbLic` if present, otherwise `IdProbGlobal` (see @ref Identifiers_51Did). These are generated with `id.usage=non-marketing`, so they do not require a License Key or a specific product, but they do need to be present on the key. If your existing key does not include either property, create a new Resource Key that adds it at <a href="https://configure.51degrees.com/">configure.51degrees.com</a>. Without these properties the plugin falls back to a hash of the visitor's IP address and User-Agent, which groups visitors who share both the IP address and the User-Agent.
+Advanced mode relies on a probabilistic identifier from your Resource Key, which is `IdProbLic` if present, otherwise `IdProbGlobal` (see @ref Identifiers_51Did). These are generated with `id.usage=non-marketing`, so they do not require a License Key or a specific product, but they do need to be present on the key. If your existing key does not include either property, create a new Resource Key that adds it at <a href="https://51degrees.com/configure/">51degrees.com/configure</a>. Without these properties the plugin falls back to a hash of the visitor's IP address and User-Agent, which groups visitors who share both the IP address and the User-Agent.
 
 
 ## Preference Management Platform (PMP)

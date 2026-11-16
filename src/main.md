@@ -70,7 +70,7 @@ Generate signed, probabilistic device-bound identifiers (51Did). Use the Prefere
 
 Run device detection directly in the browser without server-side code.
 
-- [configure.51degrees.com](https://configure.51degrees.com/) - Create a Resource Key and get the JavaScript snippet for it
+- [51degrees.com/configure](https://51degrees.com/configure/) - Create a Resource Key and get the JavaScript snippet for it
 - [Resource Key guide](@ref Services_Configurator) - Creating a Resource Key step by step
 - [Cloud API Reference](https://cloud.51degrees.com/api-docs/index.html) - Complete HTTP API documentation
 

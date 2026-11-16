@@ -19,7 +19,7 @@ IP Intelligence provides geolocation, ISP, connection type, and network informat
 - **Latency** - Network round-trip time for each request
 - **Data processing** - Occurs on 51Degrees infrastructure
 
-**Licensing:** Requires a [Resource Key](https://configure.51degrees.com), which is free to create. The free plan includes the country and `LocationConfidence`, and paid plans add more IP Intelligence properties. See [pricing](https://51degrees.com/pricing).
+**Licensing:** Requires a [Resource Key](https://51degrees.com/configure), which is free to create. The free plan includes the country and `LocationConfidence`, and paid plans add more IP Intelligence properties. See [pricing](https://51degrees.com/pricing).
 
 ### On-premise deployment
 **Best for:** High-performance, data-sensitive, or offline environments

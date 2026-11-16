@@ -56,7 +56,7 @@ your Resource Key: `%https://cloud.51degrees.com/api/v4/<resource_key>.json` (de
 If you see any null reasons like `priceband is a paid feature. You need a licence key to retrieve data. Visit https://51degrees.com/pricing for details` then you do not have the required subscription to access the property. You can check the 51Degrees [Property Dictionary](https://51degrees.com/developers/property-dictionary) to see what subscription is required.
 
 # View properties authorized for an existing key {#Seeing_existing_key_authorized_properties}
-Some of the error messages above will list the properties for which the used key is authorized, but you can also see the properties for a key you already have by constructing and visiting the URL https://configure.51degrees.com/YOUR_RESOURCE_KEY. This will show Step 1 with the properties for this specific key already selected.
+Some of the error messages above will list the properties for which the used key is authorized, but you can also see the properties for a key you already have by constructing and visiting the URL https://51degrees.com/configure/YOUR_RESOURCE_KEY. This will show Step 1 with the properties for this specific key already selected.
 
 Continuing to steps 2 or 3 creates a new Resource Key. It does not change the existing key's properties.
 

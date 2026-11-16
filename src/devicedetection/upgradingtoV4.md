@@ -12,7 +12,7 @@ The steps to upgrade will vary depending on whether you are using our Cloud or O
 <BR>
 
 ## V3 Cloud users {#V3_Cloud}
-Create a new Resource Key at [configure.51degrees.com](https://configure.51degrees.com/). You can follow our 
+Create a new Resource Key at [51degrees.com/configure](https://51degrees.com/configure/). You can follow our 
 @configuratorexplanation. This Resource Key should contain all the properties you wish to collect data for – 
 you can find a list of all the available properties on our [property dictionary](https://51degrees.com/developers/property-dictionary). 
 Some advanced properties may require the purchase of a License Key. Sign up to one of our [pricing plans](https://51degrees.com/pricing) 
@@ -291,7 +291,7 @@ var pipeline = new DeviceDetectionPipelineBuilder()
 
 The supplied settings will be dependent on your old implementation:
 
-- If using the 51Degrees Cloud Service, you'll first need to create a Resource Key at [configure.51degrees.com](https://configure.51degrees.com) (this will only take a few minutes and does not require any payment). Next, change the first line to `.UseCloud` and pass in the Resource Key you created.
+- If using the 51Degrees Cloud Service, you'll first need to create a Resource Key at [51degrees.com/configure](https://51degrees.com/configure) (this will only take a few minutes and does not require any payment). Next, change the first line to `.UseCloud` and pass in the Resource Key you created.
 - If using `MemoryFactory` rather than `StreamFactory`, change the performance profile to `MaxPerformance`.
 - If using a custom caching configuration, you will need to create the device detection engine first using a `DeviceDetectionHashEngineBuilder`. The `SetCache` method can then be used to supply your custom configuration. Finally, the generic `PipelineBuilder` can be used to create a pipeline with the device detection engine added to it.
 - If you have auto updates disabled then remove the `SetDataUpdateLicenseKey` line and instead use `SetAutoUpdate(false)` and `SetDataUpdateOnStartUp(false)`.
@@ -449,7 +449,7 @@ This file should follow the usual structure of a pipeline configuration file. Fo
 - **IMPORTANT:** `C:\\Absolute\\Path\\To\\Data\\File\\51Degrees-EnterpriseV4.1.hash` is an absolute path to the data file. **Please amend this entry accordingly to your configuration.**
 - Use the performance profile setting to control the trade-off between performance and memory. `LowMemory` is recommended if you're not sure. `MaxPerformance` uses the most memory but gives the best performance.
 - If you have auto updates disabled then remove the `DataUpdateLicenseKey` line and instead use `"AutoUpdate": false` and `"DataUpdateOnStartup": false`
-- If using the 51Degrees Cloud Service, you'll first need to create a Resource Key at [configure.51degrees.com](https://configure.51degrees.com) (this will only take a few minutes and does not require any payment). See the next snippet below for an example of how to supply this Resource Key to the Pipeline.
+- If using the 51Degrees Cloud Service, you'll first need to create a Resource Key at [51degrees.com/configure](https://51degrees.com/configure) (this will only take a few minutes and does not require any payment). See the next snippet below for an example of how to supply this Resource Key to the Pipeline.
 
 ```{json}
 {
@@ -593,7 +593,7 @@ Add a PipelineOptions section to your appsettings.json file and configure approp
 
 - Use the performance profile setting to control the trade-off between performance and memory. `LowMemory` is recommended if you're not sure. `MaxPerformance` uses the most memory but gives the best performance.
 - If you have auto updates disabled then remove the `DataUpdateLicenseKey` line and instead use `"AutoUpdate": false` and `"DataUpdateOnStartup": false`
-- If using the 51Degrees Cloud Service, you'll first need to create a Resource Key at [configure.51degrees.com](https://configure.51degrees.com) (this will only take a few minutes and does not require any payment). See the next snippet below for an example of how to supply this Resource Key to the Pipeline.
+- If using the 51Degrees Cloud Service, you'll first need to create a Resource Key at [51degrees.com/configure](https://51degrees.com/configure) (this will only take a few minutes and does not require any payment). See the next snippet below for an example of how to supply this Resource Key to the Pipeline.
 
 ```{json}
 "PipelineOptions": {
@@ -700,7 +700,7 @@ Pipeline pipeline = new DeviceDetectionPipelineBuilder()
 
 Settings will be dependent on your old implementation:
 
-- If using the 51Degrees Cloud Service, you'll first need to create a Resource Key at [configure.51degrees.com](https://configure.51degrees.com) (this will only take a few minutes and does not require any payment). Next, change the first line to `.useCloud` and pass in the Resource Key you created.
+- If using the 51Degrees Cloud Service, you'll first need to create a Resource Key at [51degrees.com/configure](https://51degrees.com/configure) (this will only take a few minutes and does not require any payment). Next, change the first line to `.useCloud` and pass in the Resource Key you created.
 - If using `MemoryFactory` rather than `StreamFactory` then change the performance profile to `MaxPerformance`.
 - If using a custom caching configuration, you will need to create the device detection engine first using a `DeviceDetectionCloudEngineBuilder` (cache is not available on hash engine). The `setCache` method can then be used to supply your custom configuration. Finally, the generic `PipelineBuilder` can be used to create a pipeline with the device detection engine added to it.
 - If you have auto updates disabled then remove the `setDataUpdateLicenseKey` line and instead use `setAutoUpdate(false)` and `setDataUpdateOnStartup(false)`.
@@ -850,7 +850,7 @@ const pipeline = new DeviceDetectionCloudPipelineBuilder({
 
 Settings will be dependent on your old implementation:
 
-- If using the 51Degrees Cloud Service, you'll first need to create a Resource Key at [configure.51degrees.com](https://configure.51degrees.com) (this will only take a few minutes and does not require any payment). Next, remove the dataFile line from the configuration and add the Resource Key you created.
+- If using the 51Degrees Cloud Service, you'll first need to create a Resource Key at [51degrees.com/configure](https://51degrees.com/configure) (this will only take a few minutes and does not require any payment). Next, remove the dataFile line from the configuration and add the Resource Key you created.
 - If you want to trade some performance for system memory then change the performance profile to `MaxPerformance`, `Balanced` or `LowMemory`
 - If you want the data file to be updated automatically then remove `autoUpdate: false` and add your License Key to the configuration. (Not available for free users)
 
@@ -939,7 +939,7 @@ pipeline = DeviceDetectionPipelineBuilder(
 
 Settings will be dependent on your old implementation:
 
-- If using the 51Degrees Cloud Service, you'll first need to create a Resource Key at [configure.51degrees.com](https://configure.51degrees.com) (this will only take a few minutes and does not require any payment). Next, remove the dataFile line from the configuration and add the Resource Key you created.
+- If using the 51Degrees Cloud Service, you'll first need to create a Resource Key at [51degrees.com/configure](https://51degrees.com/configure) (this will only take a few minutes and does not require any payment). Next, remove the dataFile line from the configuration and add the Resource Key you created.
 - If you want to trade some performance for system memory then change the performance profile to `MaxPerformance`, `Balanced` or `LowMemory`
 - If you want the data file to be updated automatically then remove `auto_update: false` and add your License Key to the configuration. (Not available for free users)
 
@@ -991,7 +991,7 @@ With the V3 API, a provider could be created with something like this:
 $provider = FiftyOneDegreesPatternV3::provider_get();
 ```
 
-If using the 51Degrees cloud service, you'll first need to create a Resource Key at [configure.51degrees.com](https://configure.51degrees.com) (this will only take a few minutes and does not require any payment). Next, create a device detection pipeline using the Resource Key you created:
+If using the 51Degrees cloud service, you'll first need to create a Resource Key at [51degrees.com/configure](https://51degrees.com/configure) (this will only take a few minutes and does not require any payment). Next, create a device detection pipeline using the Resource Key you created:
 
 ```{php}
 $deviceDetectionPipeline = new deviceDetectionPipelineBuilder(array(
