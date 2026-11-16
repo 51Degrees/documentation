@@ -40,10 +40,10 @@ By default, `Difference` and `Drift` are set to 0 (i.e., no deviation from the e
 
 # Match metadata
 
-Regardless of the settings used, the result will return additional metadata that can be queried to find out details about the match.
+Whatever the `Difference` and `Drift` settings, the result will return additional metadata that can be queried to find out details about the match.
 
 `Difference` - Contains the difference value between the supplied evidence and the returned match.  
-`UserAgents` - Contains a list of the matching substrings from the User-Agent.  
+`UserAgents` - Contains a list of the matching substrings from the User-Agent. The list is filled in only when the Update Matched User Agent setting is on, which it is by default.  
 `Drift` - Contains the drift value between the supplied evidence and the returned match.  
 `MatchedNodes` - The number of 'nodes' in the @hash tree where a match was found. If this is zero then no match was found.  
 `Method` - The method used to find a match. 'EXACT' indicates an exact match. 'NONE' indicates no match. Any other value is the name of the technique used to find the result that best matches the supplied evidence.
