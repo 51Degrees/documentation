@@ -1,7 +1,5 @@
 @page DeviceDetection_OtherIntegrations_Index Other integrations
 
-@subpage DeviceDetection_OtherIntegrations_Prebid
-
 @subpage DeviceDetection_OtherIntegrations_Nginx
 
 @subpage DeviceDetection_OtherIntegrations_Varnish
@@ -9,5 +7,3 @@
 @subpage DeviceDetection_OtherIntegrations_Wordpress
 
 @subpage DeviceDetection_OtherIntegrations_UAParser
-
-@subpage DeviceDetection_OtherIntegrations_OpenRTBMappings
