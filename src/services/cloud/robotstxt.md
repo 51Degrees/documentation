@@ -52,7 +52,7 @@ TDL: https://m4ow.uk/socw/3.txt
 Allow: /
 ```
 
-The Movement for an Open Web publishes a free [Search Only Contract](https://m4ow.uk/socw/3.txt). It allows search indexing and personal, non-commercial use. Any other use, AI training included, needs a deal with the site. Without one, the crawler's operator owes the site a fee for each article, image, video, or other item the crawler accesses, at the amount the site sets in its own terms. The [guide to the contract](https://m4ow.uk/socw/) gives the wording to add to your terms, the fee included.
+The Movement for an Open Web publishes a free [Search Only Contract](https://m4ow.uk/socw/3.txt). It allows search indexing and personal, non-commercial use. Any other use, AI training included, needs a deal with the site. Without one, the crawler's operator owes the site a fee for each article, image, video, or other item the crawler accesses, at the amount the site sets in its own terms. [Version 3 of the contract](https://m4ow.uk/socw/3.txt) forms part of your website's terms and conditions, so publish the fee in those terms (clause 4.3).
 
 Link to a version that never changes once published, as in the example, so everyone can see which terms applied on the day. To give more than one address, separate them with commas. Crawlers that do not recognize the TDL line skip it.
 
