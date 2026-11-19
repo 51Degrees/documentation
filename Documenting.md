@@ -25,13 +25,15 @@ in brackets like `{java}`. There must also be no space after the backticks. For 
 Each markdown file must have certain definitions inside for them to be handled correctly by DoxyGen.
 
 ### @page
-Each page must be declared with a ``@page`` tag giving it a unique identifier, and a page name which need not be unique. For example, the `Pipeline` page is defined with
+Each page must be declared with a ``@page`` tag giving it a unique identifier, and a page name. For example, the `Pipeline` page is defined with
 
 ``` md
 @page Concepts-Core-Pipeline Pipeline
 ```
 
 where the unique id is its location inside the documentation structure (this is just convention and does not affect the output), and the name of the page is a more friendly name.
+
+The page name is also the page's title in search results, as the name followed by ` | 51Degrees`, and the start of its description. So give each page a name no other page uses, and keep it to 58 characters or fewer so the title stays within 70.
 
 ### @subpage
 Each subpage must be declared in its parent page using the ``@subpage`` tag and the unique identifier of the

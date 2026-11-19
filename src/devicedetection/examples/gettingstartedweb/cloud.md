@@ -1,4 +1,4 @@
-@page DeviceDetection_Examples_GettingStarted_Web_Cloud Getting started with cloud detection in a web application
+@page DeviceDetection_Examples_GettingStarted_Web_Cloud Getting started with cloud detection in a web app
 
 # Introduction
 

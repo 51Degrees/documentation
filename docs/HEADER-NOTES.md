@@ -35,15 +35,31 @@ substitutions:
 - When `PROJECT_BRIEF` is set (the common case for API repos):
   `<meta name="description"
     content="$title - $projectbrief - 51Degrees documentation."/>`
-- When only `PROJECT_NAME` is set:
+- When only `PROJECT_NAME` is set (this repository's own pages):
   `<meta name="description"
-    content="$title - $projectname documentation."/>`
+    content="$title - 51Degrees documentation."/>`
+  The project name is left out because this repository's name, "51Degrees
+  API Documentation", already ends in "Documentation", and naming it gave
+  every page "documentation documentation".
 - When neither is set: nothing is emitted (better than misleading
   boilerplate).
 
 `$title` is Doxygen's per-page title substitution (the same value
 already interpolated into `<title>` below), so each page gets its own
 description rather than a project-wide blurb.
+
+## Why the title is the page name then " | 51Degrees"
+
+Every page's `<title>` is `$title | 51Degrees`, the form the rest of
+51degrees.com uses. The project name used to go in front
+(`51Degrees API Documentation: ` is 29 characters), which took long page
+names past 70 characters, the length above which Semrush reports a title
+as too long. The project name still shows in the masthead tagline.
+
+So a page name of up to 58 characters keeps the title within 70, and two
+pages with the same name get the same title and description. Doxygen
+names some API reference pages itself, such as "Member List" and
+"Main Page", so those names repeat and the template cannot change them.
 
 ## Why the stylesheets come before the scripts and the inline `<style>` block
 

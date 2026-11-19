@@ -1,4 +1,4 @@
-@page DeviceDetection_Examples_GettingStarted_Console_OnPremise Getting started with on-premise detection in a console application
+@page DeviceDetection_Examples_GettingStarted_Console_OnPremise Getting started with on-premise detection in a console app
 
 # Introduction
 
