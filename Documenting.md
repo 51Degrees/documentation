@@ -35,7 +35,7 @@ where the unique id is its location inside the documentation structure (this is 
 
 The page name is also the page's title in search results, as the name followed by ` | 51Degrees`, and the start of its description. So give each page a name no other page uses, and keep it to 58 characters or fewer so the title stays within 70.
 
-API reference pages, which each API's own repository builds with this repository's header, are titled with the API's name instead of ` | 51Degrees`, for example `Member List | 51Degrees Pipeline .NET`. See `docs/HEADER-NOTES.md`.
+API reference pages, which each API's Doxyfile builds with this repository's header, are titled with the API's name instead of ` | 51Degrees`, for example `Member List | 51Degrees Pipeline .NET`. See `docs/HEADER-NOTES.md`.
 
 ### @subpage
 Each subpage must be declared in its parent page using the ``@subpage`` tag and the unique identifier of the
