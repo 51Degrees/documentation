@@ -48,18 +48,30 @@ substitutions:
 already interpolated into `<title>` below), so each page gets its own
 description rather than a project-wide blurb.
 
-## Why the title is the page name then " | 51Degrees"
+## Why the title is the page name then " | 51Degrees" or the API's name
 
-Every page's `<title>` is `$title | 51Degrees`, the form the rest of
-51degrees.com uses. The project name used to go in front
-(`51Degrees API Documentation: ` is 29 characters), which took long page
-names past 70 characters, the length above which Semrush reports a title
-as too long. The project name still shows in the masthead tagline.
+The `<title>` takes one of two forms, chosen by `PROJECT_BRIEF`:
 
-So a page name of up to 58 characters keeps the title within 70, and two
-pages with the same name get the same title and description. Doxygen
-names some API reference pages itself, such as "Member List" and
-"Main Page", so those names repeat and the template cannot change them.
+- This repository's own pages, which leave `PROJECT_BRIEF` empty, are
+  `$title | 51Degrees`, the form the rest of 51degrees.com uses, for
+  example "Pipeline | 51Degrees".
+- API reference pages, built by every API's Doxyfile with this header,
+  are `$title | $projectname`, for example
+  "Member List | 51Degrees Pipeline .NET". Every API's Doxyfile sets
+  `PROJECT_BRIEF`, so the brief is how the template tells the two apart.
+
+The project name used to go in front (`51Degrees API Documentation: ` is
+29 characters), which took long page names past 70 characters, the length
+above which Semrush reports a title as too long. On this repository's
+pages the project name now shows only in the masthead tagline, so a page
+name of up to 58 characters keeps the title within 70, and two pages with
+the same name get the same title and description.
+
+API reference pages keep their API's name because Doxygen names many of
+them itself, such as "Member List", "Main Page" and
+"__init__.py File Reference". With " | 51Degrees" those names repeat
+across every API, giving hundreds of pages the same title. With the API's
+name they repeat only within one API.
 
 ## Why the stylesheets come before the scripts and the inline `<style>` block
 
