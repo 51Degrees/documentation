@@ -13,7 +13,7 @@ Our services include:
 
 - **Device Detection** - Detect 250+ device properties from HTTP headers and other signals to tailor every user experience.
 - **IP Intelligence** - Retrieve geolocation, ISP, and network data from IP addresses.
-- **Human Confidence** - Rate every visit High, Medium, or Low by how likely it is that a person is viewing the page, and Unknown where the 51Degrees script has not run.
+- **Human Confidence** - Rate every visit High, Medium, or Low by how likely it is that a person is viewing the page, and Unknown where there is insufficient evidence to give a rating.
 - **Reverse Geocoding** - Transform latitude and longitude into real-world addresses, cities, and regions.
 - **Identifiers** - Generate 51Dids, identifiers that name the terms they were created under, and capture user marketing preferences (PMP) to feed downstream systems.
 - **In-process deployment** - Run detection in your application process.

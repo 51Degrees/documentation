@@ -2,7 +2,7 @@
 
 # Introduction
 
-Human Confidence tells you how likely it is that a person is looking at the page. The value for each visit is High, Medium, or Low, or Unknown where it could not be measured, which is usually because the 51Degrees script never ran in the browser.
+Human Confidence tells you how likely it is that a person is looking at the page. The value for each visit is High, Medium, or Low, or Unknown where there is insufficient evidence to give a rating.
 
 It comes from the 51Degrees cloud as the property `derived.HumanConfidence`, on the Pro plan, our cloud service, and on the Bespoke plan for your own servers.
 
@@ -19,7 +19,7 @@ To try it, follow the [Quick Start](@ref HumanConfidence_Quickstart).
 | High | High confidence that a person is reading the page. | Let the request through. |
 | Medium | Mixed signals. Could be a person, could be a script. | Serve the page, or challenge with a CAPTCHA or a sign-in first. |
 | Low | Almost certainly no person is reading it. | Refuse the request, or serve a version of the page made for machines. |
-| Unknown | Not measured, usually because the script didn't run. | Treat it as Medium. |
+| Unknown | There is insufficient evidence to give a rating. | Treat it as Medium. |
 
 ---
 
