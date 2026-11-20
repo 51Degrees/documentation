@@ -13,7 +13,7 @@ Comparing two browsers means comparing the match keys carried inside their ident
 
 Derived from three inputs:
 
-- The **Device ID** - a `Hardware-Platform-Browser-IsCrawler` tuple where each component is the profile ID assigned by Device Detection. See the [property dictionary](https://51degrees.com/developers/property-dictionary?item=Metrics%7CAll) for the `DeviceId` property and @ref DeviceDetection_Overview for how it is produced.
+- The **Device ID** - a `Hardware-Platform-Browser-IsCrawler` tuple where each component is the profile ID assigned by Device Detection. See the [property dictionary](https://51degrees.com/developers/property-dictionary?item=Device%7CDevice%20Metrics) for the `DeviceId` property and @ref DeviceDetection_Overview for how it is produced.
 - The **client IP** of the request.
 - The **usage purpose** declared per request (see *Usage flags* below).
 

@@ -65,6 +65,6 @@ Human Confidence comes from the 51Degrees cloud service. It isn't in the on-prem
 - @ref HumanConfidence_Overview
 - @ref Services_Cloud_ResourceKeys
 - @ref PipelineApi_Features_ClientSideEvidence, for how the 51Degrees script works in the browser
-- [Human Confidence in the property dictionary](https://51degrees.com/developers/property-dictionary?item=Derived%7CHuman%20Detection)
+- [Human Confidence in the property dictionary](https://51degrees.com/developers/property-dictionary?item=Humans%20and%20bots%7CHuman%20Detection)
 
 Human Confidence needs the Pro plan, which you can [buy online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp), or the Bespoke plan for your own servers. Ask us about Bespoke through the [contact page](https://51degrees.com/contact-us).

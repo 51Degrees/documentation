@@ -32,7 +32,7 @@ This works even in edge cases such as:
 - User-Agents modified by apps (e.g. Facebook)
 - Limited or missing header information
 
-The JavaScript involved comes from the [`JavascriptHardwareProfile`](https://51degrees.com/developers/property-dictionary?item=Device%7CJavascript) property and is tailored per device group.
+The JavaScript involved comes from the [`JavascriptHardwareProfile`](https://51degrees.com/developers/property-dictionary?item=Device%7CDevice) property and is tailored per device group.
 
 ![iPhone Example](images/51D-detection-example-1.svg)
 
