@@ -24,7 +24,7 @@ Leave the domain list empty. The server calls the cloud with the same key, and a
 
 Only the Resource Key goes in the holding page, never the License Key.
 
-To check the key, open `https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.json` in a browser. You should see this. Unknown is right at this point, because the script hasn't run yet.
+To check the key, open `https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.json` in a browser. You should see this. Unknown is right at this point, because there is insufficient evidence to give a rating.
 
 ```json
 "derived": {
@@ -478,7 +478,7 @@ if __name__ == '__main__':
 | High | High confidence that a person is reading the page. | Show the page. | Answer the call. |
 | Medium | It could be a person or a script. | Challenge with a CAPTCHA, a sign-in, or a notice, [like ours](https://51degrees.com/suspicious). | Refuse with `403` until the visitor passes the challenge. |
 | Low | Almost certainly no person is reading it. | Send the visitor to a page that says how to license your content or data, [like ours](https://51degrees.com/ai-notice), and log the visit. | Refuse with `403` and log the call. |
-| Unknown | Not measured, for example because the script could not run. | Treat it as Medium. | Refuse with `403`. |
+| Unknown | There is insufficient evidence to give a rating. | Treat it as Medium. | Refuse with `403`. |
 
 A Low visit is almost always software, so you can serve it something made for software rather than a page made for people. The examples refuse it, and these are the other treatments websites use, alone or together:
 

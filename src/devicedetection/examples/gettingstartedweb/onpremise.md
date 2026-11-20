@@ -1,4 +1,4 @@
-@page DeviceDetection_Examples_GettingStarted_Web_OnPremise Getting started with on-premise detection in a web application
+@page DeviceDetection_Examples_GettingStarted_Web_OnPremise Getting started with on-premise detection in a web app
 
 # Introduction
 

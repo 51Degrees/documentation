@@ -1,3 +1,3 @@
-@page DeviceDetection_Examples_NativeKeyLookup_Index Native key lookup
+@page DeviceDetection_Examples_NativeKeyLookup_Index Native key lookup examples
 
 @subpage DeviceDetection_Examples_NativeKeyLookup_Cloud
