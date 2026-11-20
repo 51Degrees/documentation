@@ -10,7 +10,8 @@ You can split that out yourself by sending Human Confidence and the crawler prop
 
 | Property | What it tells you | Example values | Custom dimension name |
 | -------- | ----------------- | -------------- | --------------------- |
-| HumanConfidence | How likely it is that a person is looking at the page. | High, Medium, Low, Unknown | `derived_humanconfidence` |
+| HumanConfidenceSource | How Human Confidence was worked out: from the request alone, or after the browser answered the tests. | Passive, Active | `derived_humanconfidencesource` |
+| HumanConfidence | How likely it is that a person is looking at the page, sent only when the source is Passive. | High, Medium, Low, Unknown | `derived_humanconfidence` |
 | IsCrawler | Whether the request says it's an automated process. | true, false | `device_iscrawler` |
 | CrawlerName | Which crawler. | OpenAI GPTBot, NotCrawler | `device_crawlername` |
 | CrawlerUsage | What the crawler uses your content for. | Train, Input, Index, Search, N/A | `device_crawlerusage` |
@@ -35,7 +36,10 @@ What your tool calls a custom dimension varies. Matomo calls it a custom dimensi
     if (fodSent) return;
     fodSent = true;
     var values = {
-      derived_humanconfidence: data.derived.humanconfidence,
+      derived_humanconfidencesource: data.derived.humanconfidencesource,
+      // An Active value is sealed for your server, so it isn't sent.
+      derived_humanconfidence: data.derived.humanconfidencesource === 'Active'
+        ? undefined : data.derived.humanconfidence,
       device_iscrawler: String(data.device.iscrawler),
       device_crawlername: data.device.crawlername,
       // A list for most crawlers, sent as one comma-separated value.
@@ -49,9 +53,11 @@ What your tool calls a custom dimension varies. Matomo calls it a custom dimensi
 
 4. Hand `values` to whatever call your tool uses for custom dimensions or event properties. For GA4 that's one `gtag` event, and @ref Integrations_GoogleAnalytics walks through it.
 
+When the browser answers the tests, `HumanConfidence` is a sealed value that only your server can redeem for the level. The browser can't read it, so the page sends Active as the source and no level. To report their level, send it from your server once it has redeemed the value. Most tools have a server-side API for this, such as the GA4 Measurement Protocol. @ref Services_Cloud_HumanConfidence shows how the server redeems it.
+
 # What to look at
 
-Put Human Confidence next to the reports you already read.
+Put Human Confidence next to the reports you already read. The level in these reports is the passive one, and visits that answered the tests show as Active.
 
 - Filter conversions to High to get a conversion rate for the visits most likely to be people, and compare it with your overall rate.
 - Chart Medium and Low by month and by page, alongside High.

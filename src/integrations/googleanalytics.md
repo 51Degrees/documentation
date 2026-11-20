@@ -23,7 +23,8 @@ Pick the ones you want. Each is sent as an event parameter named after the eleme
 | `device_platformname` | PlatformName | The name of the operating system | Essentials |
 | `device_isartificialintelligence` | IsArtificialIntelligence | True when the crawler works for an AI purpose, going by its CrawlerUsage | Essentials |
 | `device_priceband` | PriceBand | The device's recommended retail price when it was released, as a range in US dollars | Pro |
-| `derived_humanconfidence` | HumanConfidence | How confident 51Degrees is that a person is viewing the page, High, Medium, Low or Unknown | Pro |
+| `derived_humanconfidencesource` | HumanConfidenceSource | How Human Confidence was worked out, Passive from the request alone or Active after the browser answered the tests | Pro |
+| `derived_humanconfidence` | HumanConfidence | How confident 51Degrees is that a person is viewing the page, High, Medium, Low or Unknown. Sent only when the source is Passive | Pro |
 | `ip_countrycode` | CountryCode | The 2-character ISO 3166-1 code of the country the IP address is in | Pro |
 | `ip_state` | State | The top-level subdivision, such as a US state or a UK country | Pro |
 | `ip_region` | Region | The subdivision one level below State | Pro |
@@ -63,7 +64,11 @@ Add the 51Degrees script below your Google tag (gtag.js), with your Resource Key
      'hardwarevendor', 'hardwarename', 'releaseage', 'browsername',
      'platformname', 'isartificialintelligence', 'priceband']
       .forEach(function (property) { add('device', property); });
-    add('derived', 'humanconfidence');
+    add('derived', 'humanconfidencesource');
+    // An Active value is sealed for your server, so it isn't sent.
+    if (data.derived && data.derived.humanconfidencesource !== 'Active') {
+      add('derived', 'humanconfidence');
+    }
     ['countrycode', 'state', 'region']
       .forEach(function (property) { add('ip', property); });
     gtag('event', 'fod', params);
@@ -88,7 +93,7 @@ Add any of the custom dimensions as a secondary dimension on a report, or build 
 - Conversion rate by price band or by device age, to see whether people on newer or more expensive devices behave differently.
 - Engagement by country and region, from the visitor's IP address.
 - Crawlers by name and usage, page by page, to see which ones read what.
-- A conversion rate filtered to Human Confidence High covers the visits most likely to be people. Break Medium and Low down by page to see which pages they visit and how that changes month to month. There are more ideas in @ref HumanConfidence_Analytics.
+- A conversion rate filtered to Human Confidence High covers the visits most likely to be people. The level here is the passive one. Visits that answered the tests show as Active, and their level is sealed for your server, which can send it with the GA4 Measurement Protocol once it has redeemed it. Break Medium and Low down by page to see which pages they visit and how that changes month to month. There are more ideas in @ref HumanConfidence_Analytics.
 
 # WordPress
 
