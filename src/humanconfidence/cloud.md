@@ -508,7 +508,7 @@ Start one of the servers with your key and try the following. The addresses are 
 - [Bots and humans](https://51degrees.com/bots-and-humans)
 - [How likely is your traffic to be from real humans?](https://51degrees.com/blog/how-to-detect-bot-traffic-and-charge-ai), our post on what each answer means
 - [Robots.txt generator](https://51degrees.com/robots-txt)
-- [Human Confidence in the property dictionary](https://51degrees.com/developers/property-dictionary?item=Derived%7CHuman%20Detection)
+- [Human Confidence in the property dictionary](https://51degrees.com/developers/property-dictionary?item=Humans%20and%20bots%7CHuman%20Detection)
 - @ref Services_Cloud_ResourceKeys
 - @ref HumanConfidence_Analytics
 
