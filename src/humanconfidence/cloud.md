@@ -498,9 +498,9 @@ Search engine crawlers get the holding page too, like any session the gate has n
 
 Start one of the servers with your key and try the following. The addresses are the same whichever server you run.
 
-1. Run `curl -i http://localhost:3000/products/1`. You get the holding page. curl runs no JavaScript, so it never gets further.
-2. Run `curl -i http://localhost:3000/api/prices/1`. The response is `403 Forbidden`. Nothing has checked the session yet.
-3. Open http://localhost:3000/products/1 in your browser. After a moment the browser shows the challenge page. When you test on your own computer, expect Medium. On a public server, the same browser normally gets High and the product page.
+1. Run `curl -i %http://localhost:3000/products/1`. You get the holding page. curl runs no JavaScript, so it never gets further.
+2. Run `curl -i %http://localhost:3000/api/prices/1`. The response is `403 Forbidden`. Nothing has checked the session yet.
+3. Open %http://localhost:3000/products/1 in your browser. After a moment the browser shows the challenge page. When you test on your own computer, expect Medium. On a public server, the same browser normally gets High and the product page.
 4. Open the same address in a headless browser, for example with Playwright. The browser reaches `/automated-access`, and the server logs a line that starts `Low:`.
 
 # Find out more

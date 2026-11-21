@@ -94,7 +94,7 @@ curl http://localhost:8080/api/v4/accessibleproperties
 curl "http://localhost:8080/api/v4/json?user-agent=Mozilla/5.0%20(iPhone)&client-ip=2.125.160.216"
 ```
 
-Interactive API documentation is served at `http://localhost:8080/api-docs`.
+Interactive API documentation is served at `%http://localhost:8080/api-docs`.
 
 # Telemetry
 
