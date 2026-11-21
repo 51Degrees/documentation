@@ -2,7 +2,7 @@
 
 # Introduction
 
-A `robots.txt` file is a plain text file hosted at the root of a website (for example `https://example.com/robots.txt`) that tells web crawlers which parts of the site they are or are not allowed to access. It follows the [Robots Exclusion Protocol](https://www.rfc-editor.org/rfc/rfc9309.html), where each block declares one or more `User-Agent` lines followed by `Allow:` and/or `Disallow:` directives that the named crawlers should respect.
+A `robots.txt` file is a plain text file hosted at the root of a website (for example `%https://example.com/robots.txt`) that tells web crawlers which parts of the site they are or are not allowed to access. It follows the [Robots Exclusion Protocol](https://www.rfc-editor.org/rfc/rfc9309.html), where each block declares one or more `User-Agent` lines followed by `Allow:` and/or `Disallow:` directives that the named crawlers should respect.
 
 Maintaining a `robots.txt` file by crawler usage can be difficult. The crawler list changes, operators use multiple product tokens, and one crawler can serve more than one purpose.
 
@@ -69,9 +69,9 @@ the wildcard catch-all block at the bottom of the generated `robots.txt` is augm
 
 The `tdl` value can be:
 
-- A single absolute URI, e.g. `https://example.com/terms.txt`.
-- Multiple URIs, separated by `,` or `|`, e.g. `https://a.example/terms,https://b.example/terms`.
-- A short macro id that the engine resolves to a current URL via an `ITdlSourceResolver`. The default resolver ships with one known macro, **`MOW-SOCW`**, which substitutes the address of the latest version of the Movement for an Open Web [Search Only Contract](https://m4ow.uk/socw/), such as `https://m4ow.uk/socw/3.txt`.
+- A single absolute URI, e.g. `%https://example.com/terms.txt`.
+- Multiple URIs, separated by `,` or `|`, e.g. `%https://a.example/terms,%https://b.example/terms`.
+- A short macro id that the engine resolves to a current URL via an `ITdlSourceResolver`. The default resolver ships with one known macro, **`MOW-SOCW`**, which substitutes the address of the latest version of the Movement for an Open Web [Search Only Contract](https://m4ow.uk/socw/3.txt), such as `https://m4ow.uk/socw/3.txt`.
 
 Entries that are neither absolute URIs nor known macro ids are silently dropped, per the IETF-Robots TDL specification. If everything supplied is dropped, the engine falls back to the standard `Allow: /` wildcard block.
 
@@ -100,7 +100,7 @@ https://cloud.51degrees.com/api/v4/json?resource=<RESOURCE_KEY>&values=robotstxt
 In the example above:
 
 - `robotstxt.search=allow` and `robotstxt.analytics=allow` allow every crawler whose `CrawlerUsage` includes `Search` or `Analytics`. Every other known crawler gets its own `Disallow:` block. Keep `search` in the allow set unless you intend to block search engines, because a request allowing only `analytics` blocks Googlebot.
-- `robotstxt.tdl=https://m4ow.uk/socw/3.txt,https://custom.url/tdl` adds two TDL entries to the wildcard `Allow:` block, version 3 of the Movement for an Open Web [Search Only Contract](https://m4ow.uk/socw/) and a custom absolute URL of your own license agreement, in the order supplied.
+- `robotstxt.tdl=%https://m4ow.uk/socw/3.txt,%https://custom.url/tdl` adds two TDL entries to the wildcard `Allow:` block, version 3 of the Movement for an Open Web [Search Only Contract](https://m4ow.uk/socw/3.txt) and a custom absolute URL of your own license agreement, in the order supplied.
 
 Send at least one `robotstxt.<usage>` parameter. A request without one returns no `robotstxt` element.
 

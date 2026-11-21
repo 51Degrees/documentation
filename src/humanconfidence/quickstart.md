@@ -41,7 +41,7 @@ Human Confidence comes from the 51Degrees cloud service. It isn't in the on-prem
 ## Quick start
 
 1. [Create a Resource Key from this link](https://configure.51degrees.com/AQRVdgJ-fPDE5gU130g). It opens with the properties Human Confidence needs already ticked. Add the License Key from your plan and create the key.
-2. Open `https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.json` in a browser to check the key. You should see this. Unknown is expected until the script has run in a page.
+2. Open `https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.json` in a browser to check the key. You should see this. Unknown is expected at this point, because there is insufficient evidence to give a rating.
    ```json
    "derived": {
      "humanconfidence": "Unknown"
@@ -65,6 +65,6 @@ Human Confidence comes from the 51Degrees cloud service. It isn't in the on-prem
 - @ref HumanConfidence_Overview
 - @ref Services_Cloud_ResourceKeys
 - @ref PipelineApi_Features_ClientSideEvidence, for how the 51Degrees script works in the browser
-- [Human Confidence in the property dictionary](https://51degrees.com/developers/property-dictionary?item=Derived%7CHuman%20Detection)
+- [Human Confidence in the property dictionary](https://51degrees.com/developers/property-dictionary?item=Humans%20and%20bots%7CHuman%20Detection)
 
 Human Confidence needs the Pro plan, which you can [buy online](https://51degrees.com/referrer?url=https%3A%2F%2F51degrees-eu.chargifypay.com%2Fsubscribe%2Fsby5q4mtwdrd%2Fpro-monthly&conversion=SignUp), or the Bespoke plan for your own servers. Ask us about Bespoke through the [contact page](https://51degrees.com/contact-us).

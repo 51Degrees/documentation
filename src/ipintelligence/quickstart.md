@@ -65,6 +65,9 @@ Select your language below for detailed setup instructions:
 @showsnippet{java,Java}
 @showsnippet{go,Go}
 @showsnippet{rust,Rust}
+@showsnippet{node,Node.js}
+@showsnippet{python,Python}
+@showsnippet{php,PHP}
 @defaultsnippet{Select a language.}
 @startsnippet{c}
 C does not have a @Pipeline implementation or the ability to use the cloud-based version of 
@@ -166,5 +169,54 @@ For web applications, you can integrate IP Intelligence into your HTTP handlers:
 
 For web applications, integrate IP Intelligence into your axum handlers:
 * [On-premise Web Example](@ref IpIntelligence_Examples_GettingStarted_Web_OnPremise) - Local processing.
+@endsnippet
+@startsnippet{node}
+### Console applications
+
+1. Install the [fiftyone.ipintelligence](https://www.npmjs.com/package/fiftyone.ipintelligence) package from npm, for example with `npm install fiftyone.ipintelligence`.
+2. Choose your deployment option:
+   * [On-premise Example](https://github.com/51Degrees/51degrees-node/blob/main/ip-intelligence/fiftyone.ipintelligence.onpremise/examples/onpremise/gettingstarted-console/gettingStarted.js) - Local processing with a data file.
+   * [Cloud Example](https://github.com/51Degrees/51degrees-node/blob/main/ip-intelligence/fiftyone.ipintelligence.cloud/examples/cloud/gettingstarted-console/gettingStarted.js) - The 51Degrees cloud service, no local data file.
+   * [Combined Example](https://github.com/51Degrees/51degrees-node/blob/main/ip-intelligence/fiftyone.ipintelligence.onpremise/examples/onpremise/mixed/gettingstarted-console/gettingStarted.js) - Mix IP Intelligence with Device Detection.
+
+### Web integration
+
+For web applications, add the @Pipeline to your HTTP server:
+* [On-premise Web Example](https://github.com/51Degrees/51degrees-node/blob/main/ip-intelligence/fiftyone.ipintelligence.onpremise/examples/onpremise/gettingstarted-web/gettingStarted.js) - Local processing.
+* [Cloud Web Example](https://github.com/51Degrees/51degrees-node/blob/main/ip-intelligence/fiftyone.ipintelligence.cloud/examples/cloud/gettingstarted-web/gettingStarted.js) - The 51Degrees cloud service.
+
+@endsnippet
+@startsnippet{python}
+### Console applications
+
+1. Install the [fiftyone_ipintelligence](https://pypi.org/project/fiftyone-ipintelligence/) package from PyPI, for example with `pip install fiftyone_ipintelligence`. Building the on-premise engine's native extension from source needs a C++17 compiler.
+2. Choose your deployment option:
+   * [On-premise Example](https://github.com/51Degrees/51degrees-python/blob/main/ip-intelligence/fiftyone_ipintelligence_examples/src/fiftyone_ipintelligence_examples/onpremise/gettingstarted_console.py) - Local processing with a data file.
+   * [Cloud Example](https://github.com/51Degrees/51degrees-python/blob/main/ip-intelligence/fiftyone_ipintelligence_examples/src/fiftyone_ipintelligence_examples/cloud/gettingstarted_console.py) - The 51Degrees cloud service, no local data file.
+   * [Combined Example](https://github.com/51Degrees/51degrees-python/blob/main/ip-intelligence/fiftyone_ipintelligence_examples/src/fiftyone_ipintelligence_examples/onpremise/mixed_console.py) - Mix IP Intelligence with Device Detection.
+
+### Web integration (Flask)
+
+* [On-premise Web Example](https://github.com/51Degrees/51degrees-python/blob/main/ip-intelligence/fiftyone_ipintelligence_examples/src/fiftyone_ipintelligence_examples/onpremise/gettingstarted_web/app.py) - Local processing.
+* [Cloud Web Example](https://github.com/51Degrees/51degrees-python/blob/main/ip-intelligence/fiftyone_ipintelligence_examples/src/fiftyone_ipintelligence_examples/cloud/gettingstarted_web/app.py) - The 51Degrees cloud service.
+
+@endsnippet
+@startsnippet{php}
+### Console applications
+
+The `51degrees/fiftyone.ipintelligence` package is not on Packagist yet, so use it from a clone of the [51degrees-php](https://github.com/51Degrees/51degrees-php) repository through a Composer path repository.
+
+1. Clone the repository with its submodules, using `git clone --recurse-submodules https://github.com/51Degrees/51degrees-php.git`.
+2. For on-premise, build the `FiftyOneDegreesIpIntelligenceEngine` extension and enable it, as [OnPremise.md](https://github.com/51Degrees/51degrees-php/blob/main/ip-intelligence/OnPremise.md) describes. The IP Intelligence and Device Detection extensions can be loaded together in one PHP.
+3. Choose your deployment option:
+   * [On-premise Example](https://github.com/51Degrees/51degrees-php/blob/main/ip-intelligence/examples/onpremise/gettingstarted-console.php) - Local processing with a data file.
+   * [Cloud Example](https://github.com/51Degrees/51degrees-php/blob/main/ip-intelligence/examples/cloud/gettingstarted-console.php) - The 51Degrees cloud service, no local data file.
+   * [Combined Example](https://github.com/51Degrees/51degrees-php/blob/main/ip-intelligence/examples/onpremise/mixed/gettingstarted-console.php) - Mix IP Intelligence with Device Detection, which needs both extensions.
+
+### Web integration
+
+* [On-premise Web Example](https://github.com/51Degrees/51degrees-php/blob/main/ip-intelligence/examples/onpremise/web/index.php) - Local processing.
+* [Cloud Web Example](https://github.com/51Degrees/51degrees-php/blob/main/ip-intelligence/examples/cloud/web/index.php) - The 51Degrees cloud service.
+
 @endsnippet
 @endsnippets

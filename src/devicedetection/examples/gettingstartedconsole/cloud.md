@@ -1,4 +1,4 @@
-@page DeviceDetection_Examples_GettingStarted_Console_Cloud Getting started with cloud detection in a console application
+@page DeviceDetection_Examples_GettingStarted_Console_Cloud Getting started with cloud detection in a console app
 
 # Introduction
 
