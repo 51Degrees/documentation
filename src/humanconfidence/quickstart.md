@@ -41,22 +41,30 @@ Human Confidence comes from the 51Degrees cloud service. It isn't in the on-prem
 ## Quick start
 
 1. [Create a Resource Key from this link](https://configure.51degrees.com/AQRVdgJ-fPDE5gU130g). It opens with the properties Human Confidence needs already ticked. Add the License Key from your plan and create the key.
-2. Open `https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.json` in a browser to check the key. You should see this. Unknown is expected at this point, because there is insufficient evidence to give a rating.
+2. Open `https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.json` in a browser to check the key. You should see High, Medium, or Low. The value comes from the request alone at this point, because no browser tests have run. Where your key has `HumanConfidenceSource`, it shows Passive.
    ```json
    "derived": {
-     "humanconfidence": "Unknown"
+     "humanconfidence": "Medium",
+     "humanconfidencesource": "Passive"
    }
    ```
-3. Add the script to a page, with your Resource Key in place of `YOUR_RESOURCE_KEY`, and read the value once the script has finished.
+3. Add the script to a page, with your Resource Key in place of `YOUR_RESOURCE_KEY`, and read the values once the script has finished.
    ```html
    <script src="https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.js"></script>
    <script>
      fod.complete(function (data) {
-       console.log(data.derived.humanconfidence);
+       if (data.derived.humanconfidencesource === 'Active') {
+         // A sealed result. Only your server can get the value for it.
+         console.log('Active');
+       } else {
+         console.log('Passive: ' + data.derived.humanconfidence);
+       }
      });
    </script>
    ```
-4. Load the page in your browser and look at the console, which shows High, Medium, or Low.
+4. Load the page in your browser and look at the console. It shows Active when your browser answered the tests. The value is then sealed, and your server gets it from the cloud, as @ref Services_Cloud_HumanConfidence shows. It shows Passive and a value when the tests didn't run.
+
+`fod.complete` fires a little later than it would without Human Confidence, because the script runs the browser tests and sends their answers back first. @ref HumanConfidence_Overview explains when the results arrive, and what your page's Content Security Policy must allow.
 
 ---
 

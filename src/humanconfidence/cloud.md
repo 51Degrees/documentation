@@ -24,11 +24,12 @@ Leave the domain list empty. The server calls the cloud with the same key, and a
 
 Only the Resource Key goes in the holding page, never the License Key.
 
-To check the key, open `https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.json` in a browser. You should see this. Unknown is right at this point, because there is insufficient evidence to give a rating.
+To check the key, open `https://cloud.51degrees.com/api/v4/YOUR_RESOURCE_KEY.json` in a browser. You should see High, Medium, or Low. The value comes from the request alone at this point, because no browser tests have run, so `humanconfidencesource` is Passive where your key has it.
 
 ```json
 "derived": {
-  "humanconfidence": "Unknown"
+  "humanconfidence": "Medium",
+  "humanconfidencesource": "Passive"
 }
 ```
 
@@ -76,6 +77,8 @@ Save this as `holding.html` next to your server code. The server code in step 3 
 
 - `fod-js-enable-cookies=true` asks the 51Degrees script to keep its values in cookies with names that start `51D_`. Without the parameter, the script keeps the values in session storage, which your server cannot read. See @ref PipelineApi_Features_ClientSideEvidence for more.
 - Clients that don't run JavaScript, such as curl, stay on the holding page.
+- With Human Confidence on the key, the 51Degrees script also runs the browser tests and sends their answers back before `fod.complete` fires. That takes longer than the script on its own, which is why the holding page never waits more than three seconds. See *When the results arrive* on @ref HumanConfidence_Overview.
+- If the page sets a Content Security Policy, it must allow the browser tests. See *What your page's Content Security Policy must allow* on @ref HumanConfidence_Overview.
 
 # Step 3. Ask the cloud from your server and decide
 
@@ -89,7 +92,7 @@ Things to check when you adapt the code:
 - The server sets `client-ip` last. A visitor's own `Client-IP` header can't then replace the address. If your site sits behind a load balancer or a CDN, make sure the address is the visitor's and not the load balancer's. Each example has a comment where this matters.
 - Node.js writes IPv4 addresses in the form `::ffff:203.0.113.7`. The Node.js code removes the `::ffff:` part before sending the address.
 
-If the cloud can't be reached, takes longer than 2 seconds to answer a request, or returns an error status, the server lets the visitor through for that page and tries again on the next request. A check that also reads the evidence key list makes two requests, each with its own 2 second limit. If the cloud does respond but with Unknown, the visitor gets your challenge (step 4). The example price API only answers sessions that are High, so it refuses calls until a check has worked.
+If the cloud can't be reached, takes longer than 2 seconds to answer a request, or returns an error status, the server lets the visitor through for that page and tries again on the next request. A check that also reads the evidence key list makes two requests, each with its own 2 second limit. If the cloud responds with no Human Confidence value, the examples treat it as Unknown and the visitor gets your challenge (step 4). The example price API only answers sessions that are High, so it refuses calls until a check has worked.
 
 @startsnippets
 @showsnippet{node,Node.js}
@@ -478,7 +481,7 @@ if __name__ == '__main__':
 | High | High confidence that a person is reading the page. | Show the page. | Answer the call. |
 | Medium | It could be a person or a script. | Challenge with a CAPTCHA, a sign-in, or a notice, [like ours](https://51degrees.com/suspicious). | Refuse with `403` until the visitor passes the challenge. |
 | Low | Almost certainly no person is reading it. | Send the visitor to a page that says how to license your content or data, [like ours](https://51degrees.com/ai-notice), and log the visit. | Refuse with `403` and log the call. |
-| Unknown | There is insufficient evidence to give a rating. | Treat it as Medium. | Refuse with `403`. |
+| Unknown | The examples' name for no value, for example when the key doesn't carry Human Confidence. The cloud itself gives High, Medium, or Low. | Treat it as Medium. | Refuse with `403`. |
 
 A Low visit is almost always software, so you can serve it something made for software rather than a page made for people. The examples refuse it, and these are the other treatments websites use, alone or together:
 
@@ -493,6 +496,18 @@ Whatever Low gets, send Medium somewhere a person can prove themselves, and let 
 The examples send Medium and Unknown to `/challenge` and Low to `/automated-access`, and the example price API refuses every session that is not High. Replace those two pages with your own. When a visitor passes your challenge, set the cached value to High so they can carry on.
 
 Search engine crawlers get the holding page too, like any session the gate has not checked. If your product pages must appear in search results, let genuine search engine crawlers skip the gate. [Google](https://developers.google.com/crawling/docs/crawlers-fetchers/verify-google-requests) and [Bing](https://www.bing.com/webmasters/help/how-to-verify-bingbot-3905dc26) explain how to check that a crawler really is theirs.
+
+# When the value is Active
+
+The value your server reads in step 3 is Passive, because the server's own call carries the request and the `51D_` values, not the browser test answers. That's all the gate needs.
+
+When a page reads Human Confidence itself after the browser tests have run, `humanconfidencesource` is Active and `humanconfidence` is a sealed result rather than a value. The browser can carry it, but it can't read or change it. To get the value, your server posts it to `https://cloud.51degrees.com/api/v4/hc/redeem` with its License Key:
+
+- `sealedResult`, the sealed result, exactly as the page sent it
+- `transaction`, where your server gave the page one for this page view
+- `license`, your License Key, which never goes in a page
+
+The answer holds `humanConfidence` and `status`. `status` is `success` when the sealed result redeemed, and `humanConfidence` is then the value. For `expired`, `replayed`, `unreadable`, or `unconfirmed`, `humanConfidence` is Medium, because the value can't be worked out from a sealed result that didn't redeem. `unconfirmed` comes with HTTP 503 and can be retried. A sealed result redeems once, within 10 seconds.
 
 # Test it
 

@@ -76,6 +76,19 @@ So a request from a browser page that still owes any of those results creates no
 
 The same rule applies to verifying the creator context, described under *Validation*, where a verification that carries none of what the page collected is answered with an error naming the values to send rather than a verdict.
 
+### When the request also asks for Human Confidence
+
+A request that asks for `HumanConfidence` as well as a 51Did gets its 51Did later. The cloud waits for the answers to the browser tests, so that the 51Did can carry the Human Confidence Value (see *Human Confidence in a 51Did* under *Validation*).
+
+- The first response hands out the browser tests as one more snippet, `browserderived.BrowserTestsJavaScript`. It carries no 51Did. The reason property beside each identifier says the browser test answers haven't come back yet.
+- Every other property is in that first response as usual. Only the 51Did waits.
+- The client script runs the tests and sends their answers with its next request. That response carries the 51Did.
+- Where the tests can't run in the browser, the client script still sends its next request. That response carries a 51Did whose Value is Absent.
+- Where the cloud hands out no tests, the 51Did comes on the first response, exactly as before, and its Value is Absent.
+- A request that doesn't ask for `HumanConfidence` gets its 51Did exactly as before.
+
+The same applies to a server calling on a visitor's behalf. It gets no 51Did until a later call carries the browser test answers. So a server that asks for `HumanConfidence` has to pass the page's JavaScript to the browser and the answers back to the cloud, or it never gets a 51Did. If your server needs a 51Did on every call and can't pass the JavaScript on, leave `HumanConfidence` out of its request.
+
 ## Setting the usage policy
 
 The cloud accepts two ways to decide a request's `id.usage` value. The *Direct* path can set any of the three values described under *Usage flags*, whereas the *Derived from consent* path only ever produces `standard` or `personalized` (or no value), never `non-marketing`.
@@ -240,16 +253,18 @@ The check is made in two steps, so that the verdict never exists in the browser 
 
 ![Two-step creator context verification](images/51did-two-step-verification.svg)
 
-- **Step one.** The page calls `verify-context` (or `verify-full`) from the visitor's browser with the 51Did and the page's Resource Key (see @ref Services_Cloud_ResourceKeys), and receives `{ "result": "..." }`, an opaque sealed value and nothing else. The call must come from the browser presenting the identifier, because the service compares the identifier against the connection making the call, so use a `fetch` that reads the JSON response rather than a script tag or a pixel. The page may also pass a `challenge`, a single-use value your server issued for this transaction, which is folded into the result.
+- **Step one.** The page calls `verify-context` (or `verify-full`) from the visitor's browser with the 51Did and the page's Resource Key (see @ref Services_Cloud_ResourceKeys), and receives `{ "sealedResult": "...", "result": "..." }`, the same opaque sealed result under both names and nothing else. The call must come from the browser presenting the identifier, because the service compares the identifier against the connection making the call, so use a `fetch` that reads the JSON response rather than a script tag or a pixel. The page may also pass a `transaction`, a single-use value your server issued for this page, which is bound into the sealed result.
 - The page passes the 51Did and the sealed result to your server as part of its normal request, for example with the form post or the purchase the identifier is being trusted for.
-- **Step two.** Your server calls `redeem` with the 51Did it holds, the sealed result, a License Key of the account whose Resource Key made the verification (required wherever the account holds License Keys, and never placed in a page) and, where a `challenge` was given at step one, the same value again, and receives the verdict.
+- **Step two.** Your server calls `redeem` with the 51Did it holds, the sealed result as `sealedResult`, a License Key of the account whose Resource Key made the verification (required wherever the account holds License Keys, and never placed in a page) and, where a `transaction` was given at step one, the same value again. It receives the unsealed result: the verdict, and `status`, which says what happened to the sealed result.
 
 The endpoints on the V4 cloud, all of which take the identifier as the `51did` parameter on the query string, in a form, or as the route `51did/<value>`:
 
-- `GET`/`POST` `/api/v4/id/verify` returns `{ "valid": <bool> }`, the signature result only, readable at once.
-- `GET`/`POST` `/api/v4/id/verify-context` returns `{ "result": "..." }`, a sealed context result.
-- `GET`/`POST` `/api/v4/id/verify-full` returns `{ "result": "..." }`, a sealed result carrying the signature result as well as the context result, so one call and one redemption give both.
-- `GET`/`POST` `/api/v4/id/redeem` takes `51did`, `result`, `license` and optionally `challenge`, and returns `{ "signature": "verified" | "invalid", "context": "...", "factors": { ... }, "verifiedAt": "...", "secondsSinceVerified": <int> }`.
+- `GET`/`POST` `/api/v4/id/verify` returns `{ "valid": <bool> }`, the signature result only, readable at once. With a License Key valid for Human Confidence it also returns `humanConfidence` for a 51Did whose signature verifies.
+- `GET`/`POST` `/api/v4/id/verify-context` returns `{ "sealedResult": "...", "result": "..." }`, a sealed context result under both names.
+- `GET`/`POST` `/api/v4/id/verify-full` returns `{ "sealedResult": "...", "result": "..." }`, a sealed result carrying the signature result as well as the context result, so one call and one redemption give both.
+- `GET`/`POST` `/api/v4/id/redeem` takes `51did`, `sealedResult`, `license` and optionally `transaction`, and returns `{ "signature": "verified" | "invalid", "context": "...", "factors": { ... }, "humanConfidence": "...", "status": "...", "verifiedAt": "...", "secondsSinceVerified": <int> }`.
+
+`result` and `challenge` are the earlier names for `sealedResult` and `transaction`. They're obsolete, and they still work. The verify endpoints go on returning `result` beside `sealedResult`, with the same value, and `redeem` goes on accepting `result` and `challenge`. Where a call sends both names, the new one is used. A call that uses an obsolete name gets an added `obsolete` array in its answer, with a message naming the replacement. Nothing else in the answer changes. Send the new names in new code. A 51Did package from version 4.6 sends both, so it works with a cloud release that reads either name.
 
 All four take a Resource Key, which is a page's credential, or a License Key on its own, which is a server's credential and is never placed in a page, and every call is metered. A call with neither, or with a License Key that is not valid, returns `401`. Every call is one use, so checking the creator context from a browser costs two uses, one for the verification and one for the redemption, whereas checking the signature alone with `verify` costs one. The self-hosted container does not count uses per call.
 
@@ -278,12 +293,15 @@ Read together with the signature:
 
 **The redemption itself.** A sealed result redeems once, within ten seconds of the verification, and each verification produces a fresh one. The window follows TLS 1.3, which for clients on the Internet calls for windows on the order of ten seconds to account for errors in clocks and variations in measurements ([RFC 9846 section 8.3](https://www.rfc-editor.org/rfc/rfc9846#section-8.3)), and QUIC requires the TLS 1.3 replay protections ([RFC 9001 section 9.2](https://www.rfc-editor.org/rfc/rfc9001#section-9.2)), so the trade-off between clock error, network variation, and replay exposure has already been argued. The window is a constant of the service that cannot be widened by configuration. Every clock involved is a server clock, so the visitor's browser clock plays no part. In the genuine flow the two steps happen moments apart within one page transaction, so a page that verifies just before it sends the result to your server is well inside the window. `verifiedAt` and `secondsSinceVerified` describe the verification you have just made and let your server apply a stricter rule of its own without any clock work. They say nothing about the identifier's age, which comes from the identifier itself.
 
+`status` says what happened to the sealed result. It's `success` when the sealed result redeemed and the answer holds the verdict. Every other `status` means there's no verdict, and `context` holds the same word as `status`, as it did before `status` was added. A cloud release from before `status` was added gives the word in `context` only.
+
 | Response | Meaning | What to do |
 | --- | --- | --- |
-| `context` of `expired`, with `verifiedAt` and `secondsSinceVerified` | Genuine but older than ten seconds | Treat as unverified, and if this recurs in a genuine flow redeem sooner after the page verifies |
-| `context` of `replayed` | Already redeemed on this service instance | Treat as unverified, because something presented the same result twice |
-| `context` of `unreadable` | Not a result sealed for this 51Did, License Key and challenge, or altered | Treat as unverified. The service does not say which was wrong |
-| `unconfirmed` (HTTP 503) | The instance could not confirm first use | Retry, as it is neither a replay nor a forgery |
+| `status` of `success` | The sealed result redeemed | Read `signature`, `context` and `factors` |
+| `status` and `context` of `expired`, with `verifiedAt` and `secondsSinceVerified` | Genuine but older than ten seconds | Treat as unverified, and if this recurs in a genuine flow redeem sooner after the page verifies |
+| `status` and `context` of `replayed` | Already redeemed on this service instance | Treat as unverified, because something presented the same sealed result twice |
+| `status` and `context` of `unreadable` | Not a sealed result made for this 51Did, License Key and transaction, or altered | Treat as unverified. The service does not say which was wrong |
+| `status` and `context` of `unconfirmed` (HTTP 503) | The instance could not confirm first use | Retry, as it is neither a replay nor a forgery |
 | HTTP 400 naming the values to send, such as `51D_ProfileIds` | A page verified before sending what its scripts collected | Send the values the client script collected and verify again |
 | HTTP 400 naming a payload status | The 51Did is not a shape the scheme produces | Treat as unverified, and check what produced the value you sent |
 
@@ -308,6 +326,39 @@ Local public-key verification (option 2 above) covers the signature only. The cr
 
 A long-lived identifier that still verifies from its creation context is a strong sign of a stable browser and connection, and its age cannot be faked, because the creation time is covered by the signature. This makes context verification well suited to a render-time check. Place the 51Did from a bid request into the creative, verify it from the rendering browser, send the 51Did and the sealed result to your own endpoint, and redeem them there. A `context` of `mismatch` on an identifier made minutes earlier suggests the paid impression rendered somewhere other than the browser the bid described.
 
+
+### Human Confidence in a 51Did
+
+A 51Did can carry a Human Confidence Value, so anyone you pass the 51Did to can check whether it was made for a person. The Value is the Human Confidence the browser tests worked out on the request that made the 51Did. See @ref HumanConfidence_Overview.
+
+| Value | Meaning |
+|-------|---------|
+| `High` | The browser tests worked out High on the request that made the 51Did. |
+| `Medium` | The browser tests worked out Medium on the request that made the 51Did. |
+| `Low` | The browser tests worked out Low on the request that made the 51Did. |
+| `Absent` | No Value was worked out for the 51Did. |
+
+Absent means not worked out. It says nothing either way about whether a person was using the browser. A 51Did reads as Absent when:
+
+- It was made before the cloud added the Value to 51Dids
+- The request that made it didn't ask for `HumanConfidence`
+- The browser tests couldn't run
+- Human Confidence was worked out from the request alone, with a `HumanConfidenceSource` of `Passive`
+- The service that answers can't read the Value
+
+**Who can read it.** Only the cloud reads the Value, and it returns it only to a call that presents a License Key valid for Human Confidence. Any such License Key reads it, whoever holds it, so a company further down the chain reads the Value of a 51Did it was given with its own License Key. The browser, and anyone else holding the 51Did, can't read the Value from the identifier, and the 51Did's published layout doesn't change for it. The Value can be read as many times as you like, for as long as the signature verifies. Judge its age from the 51Did's date.
+
+**Where it's returned.** The 51Did endpoints return the Value as `humanConfidence`, holding `High`, `Medium`, `Low` or `Absent`. No endpoint is added.
+
+| Endpoint | Where `humanConfidence` is |
+|----------|----------------------------|
+| `/api/v4/id/verify` | Beside `valid`, for a 51Did whose signature verifies |
+| `/api/v4/id/verify-context` and `/api/v4/id/verify-full` | Inside the sealed result, so `redeem` returns it. Where the answer is given openly, beside the verdict |
+| `/api/v4/id/redeem` | Beside `signature` and `context` when `status` is `success`, whatever `context` says |
+
+A call that presents a Resource Key alone, or a License Key that isn't valid for Human Confidence, gets no `humanConfidence`. It gets `humanConfidenceNullReason` in its place, saying why, as the cloud does for any other paid property. Every other field of the answer is the same either way. Reading the Value adds no call, so each call is still one use.
+
+A cloud release from before the Value was added returns neither `humanConfidence` nor `humanConfidenceNullReason`. Treat that as Absent. The 51Did packages from version 4.6 report it as no Value, with a message saying the cloud didn't return one.
 
 ### Fetching the public keys
 
