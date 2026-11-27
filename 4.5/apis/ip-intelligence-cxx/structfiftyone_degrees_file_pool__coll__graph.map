@@ -1,11 +1,9 @@
 <map id="fiftyoneDegreesFilePool" name="fiftyoneDegreesFilePool">
-<area shape="rect" id="Node000001" title="Stack of handles used to read data from a single source file." alt="" coords="5,207,181,234"/>
-<area shape="rect" id="Node000002" href="$structfiftyone_degrees_pool.html" title="Pool of resources stored as items in a stack." alt="" coords="153,106,305,134"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,143,113,208,110,204,197,142"/>
-<area shape="poly" id="edge5_Node000002_Node000002" title=" " alt="" coords="321,111,332,120,324,128,306,131,305,126,321,123,327,120,320,116"/>
-<area shape="rect" id="Node000003" href="$structfiftyone_degrees_pool_item.html" title="Pool item node in the stack of items." alt="" coords="204,207,387,234"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="222,146,222,166,227,181,239,194,255,207,250,206,235,198,223,184,217,166,219,151"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="283,191,264,159,244,137,246,132,268,156,288,193"/>
-<area shape="rect" id="Node000004" href="$unionfiftyone_degrees_pool_head.html" title="The head of the stack used for pop and push operations." alt="" coords="136,5,322,33"/>
-<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="231,46,231,106,227,104,227,51"/>
+<area shape="rect" id="Node000001" title="Stack of handles used to read data from a single source file." alt="" coords="5,106,181,134"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_pool.html" title="Pool of resources stored as items in a stack." alt="" coords="153,5,305,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,43,113,108,110,103,197,41"/>
+<area shape="poly" id="edge4_Node000002_Node000002" title=" " alt="" coords="321,10,332,19,324,27,306,31,305,26,321,23,327,19,320,15"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_pool_item.html" title="Pool item node in the stack of items." alt="" coords="204,106,387,134"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="222,46,222,65,227,81,239,94,255,106,250,105,235,98,223,83,217,66,219,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="283,91,264,59,244,36,246,31,268,55,288,92"/>
 </map>

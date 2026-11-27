@@ -187,6 +187,10 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:ga39d75ce5d298c3f30745861a41635d63"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the date the data file in use was published, from its header.  <br /></td></tr>
 <tr class="c-table__row memitem:ga3e6756028a7b7c81e5b847356959efd7" id="r_ga3e6756028a7b7c81e5b847356959efd7"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ga3e6756028a7b7c81e5b847356959efd7">fiftyoneDegreesHashGetNextUpdate</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, <a class="el" href="structfiftyone_degrees_date.html">fiftyoneDegreesDate</a> *date)</td></tr>
 <tr class="c-table__row memdesc:ga3e6756028a7b7c81e5b847356959efd7"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the date 51Degrees expect to publish the next data file, from the header of the data file in use.  <br /></td></tr>
+<tr class="c-table__row memitem:gab428f928e38ca998a6c479cc0fdfd191" id="r_gab428f928e38ca998a6c479cc0fdfd191"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#gab428f928e38ca998a6c479cc0fdfd191">fiftyoneDegreesHashGetPublishedFromFile</a> (const char *fileName, <a class="el" href="structfiftyone_degrees_date.html">fiftyoneDegreesDate</a> *date)</td></tr>
+<tr class="c-table__row memdesc:gab428f928e38ca998a6c479cc0fdfd191"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the date a Hash data file was published from its header, reading the header alone rather than loading the file, so that an update can tell whether a new file is newer before loading it.  <br /></td></tr>
+<tr class="c-table__row memitem:gaa3701501129cc85de4c912786349cb43" id="r_gaa3701501129cc85de4c912786349cb43"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#gaa3701501129cc85de4c912786349cb43">fiftyoneDegreesHashGetProductFromFile</a> (const char *fileName, char *buffer, size_t length, size_t *needed)</td></tr>
+<tr class="c-table__row memdesc:gaa3701501129cc85de4c912786349cb43"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the product name of a Hash data file from its header, reading the header and the name alone rather than loading the file, so that an update at start-up can ask the Distributor for the product of the file it has.  <br /></td></tr>
 <tr class="c-table__row memitem:gaaaa53287cc51ebbe063b814fb009e520" id="r_gaaaa53287cc51ebbe063b814fb009e520"><td class="c-table__cell">uint32_t&#160;</td><td class="c-table__cell"><a class="el" href="#gaaaa53287cc51ebbe063b814fb009e520">fiftyoneDegreesHashIterateProfilesForPropertyAndValue</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, const char *propertyName, const char *valueName, void *state, <a class="el" href="group___fifty_one_degrees_profile.html#ga3b3b294644686c4352c12e115aa4f962">fiftyoneDegreesProfileIterateMethod</a> callback, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:gaaaa53287cc51ebbe063b814fb009e520"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Iterates over the profiles in the data set calling the callback method for any profiles that contain the property and value provided.  <br /></td></tr>
 <tr class="c-table__row memitem:ga1e658bcdbe4f50312b0d484729e4177e" id="r_ga1e658bcdbe4f50312b0d484729e4177e"><td class="c-table__cell">uint32_t&#160;</td><td class="c-table__cell"><a class="el" href="#ga1e658bcdbe4f50312b0d484729e4177e">fiftyoneDegreesHashGetProfileIdsForPropertyAndValue</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, const char *propertyName, const char *valueName, uint32_t *profileIds, uint32_t length, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
@@ -228,6 +232,24 @@ Metadata</h2></td></tr>
 <tr class="c-table__row memdesc:gaf771592e5b396ac0cd82b970840eb1ef"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets a text of the property, as <a class="el" href="group___fifty_one_degrees_property.html#ga3cc611e1217df93d8e3be61560aa3f77" title="Gets a text of the property as the metadata gives it.">fiftyoneDegreesPropertyGetText</a> gives it.  <br /></td></tr>
 <tr class="c-table__row memitem:ga930fbfd9424d1611750ab98a6cff1b10" id="r_ga930fbfd9424d1611750ab98a6cff1b10"><td class="c-table__cell">char&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga930fbfd9424d1611750ab98a6cff1b10">fiftyoneDegreesHashGetPropertyMapText</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet, uint32_t propertyIndex, uint32_t mapIndex, char *buffer, size_t bufferLength, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:ga930fbfd9424d1611750ab98a6cff1b10"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the name of one of the maps the property is in, as <a class="el" href="group___fifty_one_degrees_property.html#gacd5cb650b8257455cc94aad0be16777f" title="Gets the name of one of the maps the property is in, which the metadata gives as the data files the p...">fiftyoneDegreesPropertyGetMapText</a> gives it.  <br /></td></tr>
+<tr class="c-table__row memitem:gaed4ecd8d1a665f35e293e7c5f4ac7bba" id="r_gaed4ecd8d1a665f35e293e7c5f4ac7bba"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#gaed4ecd8d1a665f35e293e7c5f4ac7bba">fiftyoneDegreesHashGetValue</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet, uint32_t valueIndex, uint32_t *propertyIndex, void *state, <a class="el" href="group___fifty_one_degrees_value.html#ga4729f6d628b2229a08718a6a573290c4">fiftyoneDegreesValueTextMethod</a> method, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:gaed4ecd8d1a665f35e293e7c5f4ac7bba"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the index of the property the value belongs to and each of the value's texts, from one read of the value.  <br /></td></tr>
+<tr class="c-table__row memitem:gaa2944a0d0caff832a65a7d70c3b3e86b" id="r_gaa2944a0d0caff832a65a7d70c3b3e86b"><td class="c-table__cell">long&#160;</td><td class="c-table__cell"><a class="el" href="#gaa2944a0d0caff832a65a7d70c3b3e86b">fiftyoneDegreesHashGetValueIndex</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet, uint32_t propertyIndex, const char *valueName, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:gaa2944a0d0caff832a65a7d70c3b3e86b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the index of the property's value with the name provided, which must match exactly.  <br /></td></tr>
+<tr class="c-table__row memitem:gae9266836616666eaf233c9b919eb969c" id="r_gae9266836616666eaf233c9b919eb969c"><td class="c-table__cell">char&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#gae9266836616666eaf233c9b919eb969c">fiftyoneDegreesHashGetValueText</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet, uint32_t valueIndex, <a class="el" href="group___fifty_one_degrees_value.html#gae092bd731963c2033c5f1a7623ad4be4">fiftyoneDegreesValueText</a> text, char *buffer, size_t bufferLength, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:gae9266836616666eaf233c9b919eb969c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets a text of the value, as <a class="el" href="group___fifty_one_degrees_value.html#ga4e1141dc82438ed47c018436c8718d9f" title="Gets a text of the value as the metadata gives it.">fiftyoneDegreesValueGetMetaDataText</a> gives it.  <br /></td></tr>
+<tr class="c-table__row memitem:gae2dfe93c204908086fe81cf7252a34a4" id="r_gae2dfe93c204908086fe81cf7252a34a4"><td class="c-table__cell">uint32_t&#160;</td><td class="c-table__cell"><a class="el" href="#gae2dfe93c204908086fe81cf7252a34a4">fiftyoneDegreesHashGetComponentCount</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet)</td></tr>
+<tr class="c-table__row memdesc:gae2dfe93c204908086fe81cf7252a34a4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the number of components the data file defines.  <br /></td></tr>
+<tr class="c-table__row memitem:ga349a7807e73788eff5a83eafdff3e978" id="r_ga349a7807e73788eff5a83eafdff3e978"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ga349a7807e73788eff5a83eafdff3e978">fiftyoneDegreesHashGetComponent</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet, uint32_t componentIndex, uint8_t *componentId, uint32_t *defaultProfileId, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:ga349a7807e73788eff5a83eafdff3e978"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the id of the component and the profile id of its default profile.  <br /></td></tr>
+<tr class="c-table__row memitem:ga9aa92e94a389551963be481445a5de5f" id="r_ga9aa92e94a389551963be481445a5de5f"><td class="c-table__cell">char&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga9aa92e94a389551963be481445a5de5f">fiftyoneDegreesHashGetComponentName</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet, uint32_t componentIndex, char *buffer, size_t bufferLength, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:ga9aa92e94a389551963be481445a5de5f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the name of the component, such as "HardwarePlatform".  <br /></td></tr>
+<tr class="c-table__row memitem:ga7928bcb913ea026f5888f79ec744e25c" id="r_ga7928bcb913ea026f5888f79ec744e25c"><td class="c-table__cell">uint32_t&#160;</td><td class="c-table__cell"><a class="el" href="#ga7928bcb913ea026f5888f79ec744e25c">fiftyoneDegreesHashGetProfileCount</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet)</td></tr>
+<tr class="c-table__row memdesc:ga7928bcb913ea026f5888f79ec744e25c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the number of profiles the data file holds.  <br /></td></tr>
+<tr class="c-table__row memitem:ga15a2b639232814e754c4959ce9ccd030" id="r_ga15a2b639232814e754c4959ce9ccd030"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ga15a2b639232814e754c4959ce9ccd030">fiftyoneDegreesHashGetProfile</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet, uint32_t profileIndex, uint32_t *profileId, uint8_t *componentId, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:ga15a2b639232814e754c4959ce9ccd030"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the id of the profile at the index among the data file's profiles, which are in order of profile id, and the id of the component it belongs to.  <br /></td></tr>
+<tr class="c-table__row memitem:gab5c8c06cb059d5c08aa3f8ff06b0d564" id="r_gab5c8c06cb059d5c08aa3f8ff06b0d564"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#gab5c8c06cb059d5c08aa3f8ff06b0d564">fiftyoneDegreesHashGetProfileById</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet, uint32_t profileId, uint8_t *componentId, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:gab5c8c06cb059d5c08aa3f8ff06b0d564"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the id of the component the profile with the id provided belongs to.  <br /></td></tr>
 </table>
 <a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="g-docs__section-heading">Macro Definition Documentation</h2>
 <a id="ga179f2ed3472c93c1829c42ce87381391" name="ga179f2ed3472c93c1829c42ce87381391"></a>
@@ -320,7 +342,7 @@ Metadata</h2></td></tr>
 <div class="c-code__line"><span class="c-code__keywordtype">size_t</span> evidenceBytes;  \</div>
 <div class="c-code__line"><span class="c-code__keywordtype">int</span> evidencePrefixes;  \</div>
 <div class="c-code__line"><span class="c-code__keywordtype">bool</span> profileIdsOverridden;</div>
-<div class="ttc" id="astructevidence_html"><div class="ttname"><a href="structevidence.html">evidence</a></div><div class="ttdef"><b>Definition</b> GettingStarted.c:67</div></div>
+<div class="ttc" id="astructevidence_html"><div class="ttname"><a href="structevidence.html">evidence</a></div><div class="ttdef"><b>Definition</b> GettingStarted.c:75</div></div>
 <div class="ttc" id="astructfiftyone_degrees_collection_item_html"><div class="ttname"><a href="structfiftyone_degrees_collection_item.html">fiftyoneDegreesCollectionItem</a></div><div class="ttdoc">Used to store a handle to the underlying item that could be used to release the item when it&#39;s finish...</div><div class="ttdef"><b>Definition</b> collection.h:317</div></div>
 <div class="ttc" id="astructfiftyone_degrees_evidence_key_value_pair_array_html"><div class="ttname"><a href="structfiftyone_degrees_evidence_key_value_pair_array.html">fiftyoneDegreesEvidenceKeyValuePairArray</a></div><div class="ttdoc">Array of evidence key value pairs and a pointer to the next array if present or NULL of not present.</div><div class="ttdef"><b>Definition</b> evidence.h:195</div></div>
 <div class="ttc" id="astructfiftyone_degrees_list_html"><div class="ttname"><a href="structfiftyone_degrees_list.html">fiftyoneDegreesList</a></div><div class="ttdoc">List structure which contains a list of collection items.</div><div class="ttdef"><b>Definition</b> list.h:116</div></div>
@@ -448,6 +470,142 @@ Metadata</h2></td></tr>
 
 </div>
 </div>
+<a id="ga349a7807e73788eff5a83eafdff3e978" name="ga349a7807e73788eff5a83eafdff3e978"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga349a7807e73788eff5a83eafdff3e978">&#9670;&#160;</a></span>fiftyoneDegreesHashGetComponent()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool fiftyoneDegreesHashGetComponent </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>componentIndex</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint8_t *</td>          <td class="c-table__cell"><span class="paramname"><em>componentId</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t *</td>          <td class="c-table__cell"><span class="paramname"><em>defaultProfileId</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the id of the component and the profile id of its default profile. </p>
+<p>Either output pointer can be NULL, and the default profile is read only when <code>defaultProfileId</code> is not. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>the data set to read </td></tr>
+    <tr><td class="paramname">componentIndex</td><td>index of the component, less than <a class="el" href="#gae2dfe93c204908086fe81cf7252a34a4" title="Gets the number of components the data file defines.">fiftyoneDegreesHashGetComponentCount</a> </td></tr>
+    <tr><td class="paramname">componentId</td><td>set to the id of the component </td></tr>
+    <tr><td class="paramname">defaultProfileId</td><td>set to the profile id of the component's default profile </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true when the component was read, otherwise false. False with no exception set means the index is not less than the number of components, or the profiles collection gave nothing for the default profile, and the metadata then has no such component. </dd></dl>
+
+</div>
+</div>
+<a id="gae2dfe93c204908086fe81cf7252a34a4" name="gae2dfe93c204908086fe81cf7252a34a4"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gae2dfe93c204908086fe81cf7252a34a4">&#9670;&#160;</a></span>fiftyoneDegreesHashGetComponentCount()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">uint32_t fiftyoneDegreesHashGetComponentCount </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the number of components the data file defines. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>the data set to read </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the number of components </dd></dl>
+
+</div>
+</div>
+<a id="ga9aa92e94a389551963be481445a5de5f" name="ga9aa92e94a389551963be481445a5de5f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga9aa92e94a389551963be481445a5de5f">&#9670;&#160;</a></span>fiftyoneDegreesHashGetComponentName()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">char * fiftyoneDegreesHashGetComponentName </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>componentIndex</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">char *</td>          <td class="c-table__cell"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">size_t</td>          <td class="c-table__cell"><span class="paramname"><em>bufferLength</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the name of the component, such as "HardwarePlatform". </p>
+<p>A name the strings collection gives nothing for is an empty text. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>the data set to read </td></tr>
+    <tr><td class="paramname">componentIndex</td><td>index of the component </td></tr>
+    <tr><td class="paramname">buffer</td><td>memory the name is written into when it fits </td></tr>
+    <tr><td class="paramname">bufferLength</td><td>the bytes <code>buffer</code> holds </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the null terminated name, or NULL when the index is not less than the number of components or the name cannot be read or written </dd></dl>
+
+</div>
+</div>
 <a id="ga0e7aa1436ee51832107162ee39412311" name="ga0e7aa1436ee51832107162ee39412311"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga0e7aa1436ee51832107162ee39412311">&#9670;&#160;</a></span>fiftyoneDegreesHashGetDeviceIdFromResult()</h2>
 
@@ -487,7 +645,7 @@ Metadata</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get the device id string from the single result provided. </p>
-<p>This contains profile ids for all components, concatenated with the separator character '-'. The result is read as it is, so call <a class="el" href="group___fifty_one_degrees_results.html#ga177732d595216d311871951cf3a2856d" title="Walks every pending component in component order, stopping at the first walk that fails.">fiftyoneDegreesResultsEvaluateAll</a> on the results it is from first. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>This contains profile ids for all components, concatenated with the separator character '-'. The result is read as it is, so call <a class="el" href="group___fifty_one_degrees_results.html#gaf2512a71b0bacf633b225da0657f00eb" title="Walks every pending component in component order, stopping at the first walk that fails.">fiftyoneDegreesResultsEvaluateAll</a> on the results it is from first. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dataSet</td><td>pointer to the data set used to get the result </td></tr>
     <tr><td class="paramname">result</td><td>pointer to the result to get the device id of </td></tr>
@@ -675,6 +833,183 @@ Metadata</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if the header holds a valid date, otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="gaa3701501129cc85de4c912786349cb43" name="gaa3701501129cc85de4c912786349cb43"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaa3701501129cc85de4c912786349cb43">&#9670;&#160;</a></span>fiftyoneDegreesHashGetProductFromFile()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a> fiftyoneDegreesHashGetProductFromFile </td>
+          <td>(</td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>fileName</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">char *</td>          <td class="c-table__cell"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">size_t</td>          <td class="c-table__cell"><span class="paramname"><em>length</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">size_t *</td>          <td class="c-table__cell"><span class="paramname"><em>needed</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the product name of a Hash data file from its header, reading the header and the name alone rather than loading the file, so that an update at start-up can ask the Distributor for the product of the file it has. </p>
+<p>The product name is "V4" followed by the tier the header names, for example V4TAC, or the tier alone when it already starts with "V4" in any case. Nothing is allocated. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>path to the data file </td></tr>
+    <tr><td class="paramname">buffer</td><td>to write the product name and a terminating null to, or NULL when length is zero. It is set to an empty string when the name is not written and length is not zero. </td></tr>
+    <tr><td class="paramname">length</td><td>of the buffer in bytes </td></tr>
+    <tr><td class="paramname">needed</td><td>set, when not NULL, to the bytes the product name and its terminating null need when the status is <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> or <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea183d8dfede419787e396b50992c6a025" title="Insufficient capacity of the array to hold all the items.">FIFTYONE_DEGREES_STATUS_INSUFFICIENT_CAPACITY</a>, otherwise to zero </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"><a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> when the product name is written, <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea183d8dfede419787e396b50992c6a025" title="Insufficient capacity of the array to hold all the items.">FIFTYONE_DEGREES_STATUS_INSUFFICIENT_CAPACITY</a> when it does not fit in the buffer, <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea1798eb3c010d297160b18a46b3f4e11c" title="A key pointer was not set.">FIFTYONE_DEGREES_STATUS_NULL_POINTER</a> when the buffer is NULL and length is not zero, the status of opening the file when it cannot be opened, <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea0fa041cc59ce178a3659feda1f2a8a9a" title="Data structure not readable.">FIFTYONE_DEGREES_STATUS_CORRUPT_DATA</a> when the file ends before the name does or the tier is empty, and <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ead607ae7f077b721d6e95ef015df6ef7f" title="Data not the required version.">FIFTYONE_DEGREES_STATUS_INCORRECT_VERSION</a> when the file is not a Hash data file of the version this library reads </dd></dl>
+
+</div>
+</div>
+<a id="ga15a2b639232814e754c4959ce9ccd030" name="ga15a2b639232814e754c4959ce9ccd030"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga15a2b639232814e754c4959ce9ccd030">&#9670;&#160;</a></span>fiftyoneDegreesHashGetProfile()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool fiftyoneDegreesHashGetProfile </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>profileIndex</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t *</td>          <td class="c-table__cell"><span class="paramname"><em>profileId</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint8_t *</td>          <td class="c-table__cell"><span class="paramname"><em>componentId</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the id of the profile at the index among the data file's profiles, which are in order of profile id, and the id of the component it belongs to. </p>
+<p>Either output pointer can be NULL. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>the data set to read </td></tr>
+    <tr><td class="paramname">profileIndex</td><td>index of the profile, less than <a class="el" href="#ga7928bcb913ea026f5888f79ec744e25c" title="Gets the number of profiles the data file holds.">fiftyoneDegreesHashGetProfileCount</a> </td></tr>
+    <tr><td class="paramname">profileId</td><td>set to the id of the profile </td></tr>
+    <tr><td class="paramname">componentId</td><td>set to the id of the profile's component </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true when the profile was read, otherwise false. False with no exception set means the profiles collection gave nothing for the profile. </dd></dl>
+
+</div>
+</div>
+<a id="gab5c8c06cb059d5c08aa3f8ff06b0d564" name="gab5c8c06cb059d5c08aa3f8ff06b0d564"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gab5c8c06cb059d5c08aa3f8ff06b0d564">&#9670;&#160;</a></span>fiftyoneDegreesHashGetProfileById()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool fiftyoneDegreesHashGetProfileById </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>profileId</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint8_t *</td>          <td class="c-table__cell"><span class="paramname"><em>componentId</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the id of the component the profile with the id provided belongs to. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>the data set to read </td></tr>
+    <tr><td class="paramname">profileId</td><td>id of the profile </td></tr>
+    <tr><td class="paramname">componentId</td><td>set to the id of the profile's component, or NULL </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true when the data file holds the profile and it was read, otherwise false. False with no exception set means the data file holds no profile with that id. </dd></dl>
+
+</div>
+</div>
+<a id="ga7928bcb913ea026f5888f79ec744e25c" name="ga7928bcb913ea026f5888f79ec744e25c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga7928bcb913ea026f5888f79ec744e25c">&#9670;&#160;</a></span>fiftyoneDegreesHashGetProfileCount()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">uint32_t fiftyoneDegreesHashGetProfileCount </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the number of profiles the data file holds. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>the data set to read </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the number of profiles </dd></dl>
 
 </div>
 </div>
@@ -1124,6 +1459,206 @@ Metadata</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if the header holds a valid date, otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="gab428f928e38ca998a6c479cc0fdfd191" name="gab428f928e38ca998a6c479cc0fdfd191"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gab428f928e38ca998a6c479cc0fdfd191">&#9670;&#160;</a></span>fiftyoneDegreesHashGetPublishedFromFile()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a> fiftyoneDegreesHashGetPublishedFromFile </td>
+          <td>(</td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>fileName</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_date.html">fiftyoneDegreesDate</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>date</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the date a Hash data file was published from its header, reading the header alone rather than loading the file, so that an update can tell whether a new file is newer before loading it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>path to the data file </td></tr>
+    <tr><td class="paramname">date</td><td>pointer to the date to set, to the published date in the header when the file is a Hash data file of the version this library reads and the date is valid (see <a class="el" href="group___fifty_one_degrees_date.html#gab1ac30b20e7d2a105082984b6d5686c8" title="Determines whether the date is a day of the Gregorian calendar, meaning a year above zero,...">fiftyoneDegreesDateIsValid</a>), otherwise to a year, month and day of zero </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"><a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> when the date is set from the header, the status of opening the file when it cannot be opened, <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea0fa041cc59ce178a3659feda1f2a8a9a" title="Data structure not readable.">FIFTYONE_DEGREES_STATUS_CORRUPT_DATA</a> when the file is shorter than the header or the date is not valid, <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ead607ae7f077b721d6e95ef015df6ef7f" title="Data not the required version.">FIFTYONE_DEGREES_STATUS_INCORRECT_VERSION</a> when the file is not of the version this library reads, and <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea2b6f3b7240d065b609d401eae69dd007" title="Lack of memory.">FIFTYONE_DEGREES_STATUS_INSUFFICIENT_MEMORY</a> when the header cannot be allocated </dd></dl>
+
+</div>
+</div>
+<a id="gaed4ecd8d1a665f35e293e7c5f4ac7bba" name="gaed4ecd8d1a665f35e293e7c5f4ac7bba"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaed4ecd8d1a665f35e293e7c5f4ac7bba">&#9670;&#160;</a></span>fiftyoneDegreesHashGetValue()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool fiftyoneDegreesHashGetValue </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>valueIndex</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t *</td>          <td class="c-table__cell"><span class="paramname"><em>propertyIndex</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">void *</td>          <td class="c-table__cell"><span class="paramname"><em>state</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_value.html#ga4729f6d628b2229a08718a6a573290c4">fiftyoneDegreesValueTextMethod</a></td>          <td class="c-table__cell"><span class="paramname"><em>method</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the index of the property the value belongs to and each of the value's texts, from one read of the value. </p>
+<p>The method is called with the name, the description and then the URL, each as <a class="el" href="#gae9266836616666eaf233c9b919eb969c" title="Gets a text of the value, as fiftyoneDegreesValueGetMetaDataText gives it.">fiftyoneDegreesHashGetValueText</a> gives it. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>the data set to read </td></tr>
+    <tr><td class="paramname">valueIndex</td><td>index of the value in the values collection </td></tr>
+    <tr><td class="paramname">propertyIndex</td><td>set to the index of the value's property, or NULL </td></tr>
+    <tr><td class="paramname">state</td><td>pointer passed to the method </td></tr>
+    <tr><td class="paramname">method</td><td>called with each text of the value, or NULL when only the property index is wanted </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true when the value was read and each text given, otherwise false. False with no exception set means the values collection gave nothing at the index. </dd></dl>
+
+</div>
+</div>
+<a id="gaa2944a0d0caff832a65a7d70c3b3e86b" name="gaa2944a0d0caff832a65a7d70c3b3e86b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaa2944a0d0caff832a65a7d70c3b3e86b">&#9670;&#160;</a></span>fiftyoneDegreesHashGetValueIndex()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">long fiftyoneDegreesHashGetValueIndex </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>propertyIndex</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>valueName</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the index of the property's value with the name provided, which must match exactly. </p>
+<p>The search is a binary search, which reads few of the property's values and relies on the data file holding them in the byte order of their names. Where a data file does not keep that order, the search can miss a value. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>the data set to read </td></tr>
+    <tr><td class="paramname">propertyIndex</td><td>index of the property </td></tr>
+    <tr><td class="paramname">valueName</td><td>name of the value to find </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the index of the value in the values collection, or -1 when the search finds no value of that name or a value cannot be read </dd></dl>
+
+</div>
+</div>
+<a id="gae9266836616666eaf233c9b919eb969c" name="gae9266836616666eaf233c9b919eb969c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gae9266836616666eaf233c9b919eb969c">&#9670;&#160;</a></span>fiftyoneDegreesHashGetValueText()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">char * fiftyoneDegreesHashGetValueText </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>valueIndex</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_value.html#gae092bd731963c2033c5f1a7623ad4be4">fiftyoneDegreesValueText</a></td>          <td class="c-table__cell"><span class="paramname"><em>text</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">char *</td>          <td class="c-table__cell"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">size_t</td>          <td class="c-table__cell"><span class="paramname"><em>bufferLength</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets a text of the value, as <a class="el" href="group___fifty_one_degrees_value.html#ga4e1141dc82438ed47c018436c8718d9f" title="Gets a text of the value as the metadata gives it.">fiftyoneDegreesValueGetMetaDataText</a> gives it. </p>
+<p>Every Hash value is stored as a string. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>the data set to read </td></tr>
+    <tr><td class="paramname">valueIndex</td><td>index of the value in the values collection </td></tr>
+    <tr><td class="paramname">text</td><td>which text of the value to get </td></tr>
+    <tr><td class="paramname">buffer</td><td>memory the text is written into when it fits </td></tr>
+    <tr><td class="paramname">bufferLength</td><td>the bytes <code>buffer</code> holds </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the null terminated text, or NULL when the value or the text cannot be read or written </dd></dl>
 
 </div>
 </div>
@@ -1817,7 +2352,7 @@ Metadata</h2></td></tr>
 
 <p>Processes the evidence value pairs in the evidence collection and populates the result in the results structure. </p>
 <p>The result shape is a deterministic function of the data set, not of how many evidence pairs are supplied. One result item is produced per available component (results-&gt;count == componentsAvailableCount when every available component resolves from the evidence, as it does for a User-Agent). Adding a redundant, lower-precedence pair that resolves to the same value (for example both 'query.user-agent' and 'header.user-agent') therefore does not change the number or layout of result items. This is the single detection entry point; ResultsHashFromUserAgent is a thin wrapper over it.</p>
-<p>Each available component with evidence for one of its headers takes a result, in component order. When the caller named the properties the data set was created with, the graph of each of those components is walked here, so no read walks a graph and the results keep no copy of the evidence. Otherwise no graph is walked here. The evidence is copied into the results, and a component's graph is walked the first time one of its properties is read. A device id in the evidence sets every profile here, and profile overrides and default profiles are applied as they are once every graph has been walked, so the answers do not depend on what is read first. The evidence can be freed once this returns. Code that reads the result items directly, such as their match metrics, calls <a class="el" href="group___fifty_one_degrees_results.html#ga177732d595216d311871951cf3a2856d" title="Walks every pending component in component order, stopping at the first walk that fails.">fiftyoneDegreesResultsEvaluateAll</a> first.</p>
+<p>Each available component with evidence for one of its headers takes a result, in component order. When the caller named the properties the data set was created with, the graph of each of those components is walked here, so no read walks a graph and the results keep no copy of the evidence. Otherwise no graph is walked here. The evidence is copied into the results, and a component's graph is walked the first time one of its properties is read. A device id in the evidence sets every profile here, and profile overrides and default profiles are applied as they are once every graph has been walked, so the answers do not depend on what is read first. The evidence can be freed once this returns. Code that reads the result items directly, such as their match metrics, calls <a class="el" href="group___fifty_one_degrees_results.html#gaf2512a71b0bacf633b225da0657f00eb" title="Walks every pending component in component order, stopping at the first walk that fails.">fiftyoneDegreesResultsEvaluateAll</a> first.</p>
 <p>The 'query' and 'cookie' evidence key prefixes are used to get values which dynamically override values returned from device detection. 'query' prefixes are also used in preference to 'header' for HTTP header values that are provided by the application rather than the calling device. 'query.51D_deviceId' special evidence key has the highest priority and allows to retrieve the designated device by its 'deviceId'. 'deviceId' value is obtained as a property in the device detection results and may be stored and used later to retrieve the same device. In case provided 'query.51D_deviceId' value is invalid or does not match any device the other provided evidence will be considered. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">results</td><td>preallocated results structure to populate containing a pointer to an initialised resource manager </td></tr>
@@ -2491,7 +3026,7 @@ Metadata</h2></td></tr>
 
 <p>Default detection configuration. </p>
 <p>This configures the data set to not create a temp file, make no allowance for drift and difference and record the matched User-Agent substrings. In this configuration, both the performance and predictive graphs are enabled, as performance is not as big of a concern in this configuration, so falling back to the more predictive graph if nothing is found on the first pass can be afforded. </p>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_getting_started_8cpp-example.html#_a31">Hash/GettingStarted.cpp</a>, <a class="el" href="_hash_2_match_metrics_8cpp-example.html#_a19">Hash/MatchMetrics.cpp</a>, <a class="el" href="_hash_2_meta_data_8cpp-example.html#_a16">Hash/MetaData.cpp</a>, <a class="el" href="_hash_2_reload_from_file_8cpp-example.html#_a16">Hash/ReloadFromFile.cpp</a>, and <a class="el" href="_hash_2_strongly_typed_8cpp-example.html#_a28">Hash/StronglyTyped.cpp</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_hash_2_getting_started_8cpp-example.html#_a31">Hash/GettingStarted.cpp</a>, <a class="el" href="_hash_2_match_metrics_8cpp-example.html#_a20">Hash/MatchMetrics.cpp</a>, <a class="el" href="_hash_2_meta_data_8cpp-example.html#_a17">Hash/MetaData.cpp</a>, <a class="el" href="_hash_2_reload_from_file_8cpp-example.html#_a17">Hash/ReloadFromFile.cpp</a>, and <a class="el" href="_hash_2_strongly_typed_8cpp-example.html#_a28">Hash/StronglyTyped.cpp</a>.</dd>
 </dl>
 
 </div>

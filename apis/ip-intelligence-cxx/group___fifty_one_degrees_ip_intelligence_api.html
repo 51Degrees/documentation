@@ -199,6 +199,10 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:gac950e8424297324d7e59d4e1983f344e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the date the data file in use was published, from its header.  <br /></td></tr>
 <tr class="c-table__row memitem:ga2e0efbae31a106c38d909f5787dcee0a" id="r_ga2e0efbae31a106c38d909f5787dcee0a"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ga2e0efbae31a106c38d909f5787dcee0a">fiftyoneDegreesIpiGetNextUpdate</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, <a class="el" href="structfiftyone_degrees_date.html">fiftyoneDegreesDate</a> *date)</td></tr>
 <tr class="c-table__row memdesc:ga2e0efbae31a106c38d909f5787dcee0a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the date 51Degrees expect to publish the next data file, from the header of the data file in use.  <br /></td></tr>
+<tr class="c-table__row memitem:ga2838f5d77a7edf6089fe16fa602d433f" id="r_ga2838f5d77a7edf6089fe16fa602d433f"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga2838f5d77a7edf6089fe16fa602d433f">fiftyoneDegreesIpiGetPublishedFromFile</a> (const char *fileName, <a class="el" href="structfiftyone_degrees_date.html">fiftyoneDegreesDate</a> *date)</td></tr>
+<tr class="c-table__row memdesc:ga2838f5d77a7edf6089fe16fa602d433f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the date an IP Intelligence data file was published from its header, reading the header alone rather than loading the file, so that an update can tell whether a new file is newer before loading it.  <br /></td></tr>
+<tr class="c-table__row memitem:ga11518883ae71d30392d82cd0cfe5bb49" id="r_ga11518883ae71d30392d82cd0cfe5bb49"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga11518883ae71d30392d82cd0cfe5bb49">fiftyoneDegreesIpiGetProductFromFile</a> (const char *fileName, char *buffer, size_t length, size_t *needed)</td></tr>
+<tr class="c-table__row memdesc:ga11518883ae71d30392d82cd0cfe5bb49"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the product name of an IP Intelligence data file from its header, reading the header and the name alone rather than loading the file, so that an update at start-up can ask the Distributor for the product of the file it has.  <br /></td></tr>
 <tr class="c-table__row memitem:ga6eaba25d10b9ea7f30cf39d8982d33a4" id="r_ga6eaba25d10b9ea7f30cf39d8982d33a4"><td class="c-table__cell">size_t&#160;</td><td class="c-table__cell"><a class="el" href="#ga6eaba25d10b9ea7f30cf39d8982d33a4">fiftyoneDegreesIpiSizeManagerFromFile</a> (<a class="el" href="structfiftyone_degrees_config_ipi.html">fiftyoneDegreesConfigIpi</a> *config, <a class="el" href="structfiftyone_degrees_properties_required.html">fiftyoneDegreesPropertiesRequired</a> *properties, const char *fileName, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:ga6eaba25d10b9ea7f30cf39d8982d33a4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the total size in bytes which will be allocated when intialising a IP Intelligence resource and associated manager with the same parameters.  <br /></td></tr>
 <tr class="c-table__row memitem:ga8312256ca5f061d83d5454ba6e61df1d" id="r_ga8312256ca5f061d83d5454ba6e61df1d"><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga8312256ca5f061d83d5454ba6e61df1d">fiftyoneDegreesIpiInitManagerFromFile</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, <a class="el" href="structfiftyone_degrees_config_ipi.html">fiftyoneDegreesConfigIpi</a> *config, <a class="el" href="structfiftyone_degrees_properties_required.html">fiftyoneDegreesPropertiesRequired</a> *properties, const char *fileName, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
@@ -283,6 +287,24 @@ Metadata</h2></td></tr>
 <tr class="c-table__row memdesc:gad82d7aba593e8d05e6f5c3e849a13141"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets a text of the property, as <a class="el" href="group___fifty_one_degrees_property.html#ga3cc611e1217df93d8e3be61560aa3f77" title="Gets a text of the property as the metadata gives it.">fiftyoneDegreesPropertyGetText</a> gives it.  <br /></td></tr>
 <tr class="c-table__row memitem:ga08cf68015065d527c95439309cb3c17b" id="r_ga08cf68015065d527c95439309cb3c17b"><td class="c-table__cell">char&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga08cf68015065d527c95439309cb3c17b">fiftyoneDegreesIpiGetPropertyMapText</a> (<a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *dataSet, uint32_t propertyIndex, uint32_t mapIndex, char *buffer, size_t bufferLength, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:ga08cf68015065d527c95439309cb3c17b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the name of one of the maps the property is in, as <a class="el" href="group___fifty_one_degrees_property.html#gacd5cb650b8257455cc94aad0be16777f" title="Gets the name of one of the maps the property is in, which the metadata gives as the data files the p...">fiftyoneDegreesPropertyGetMapText</a> gives it.  <br /></td></tr>
+<tr class="c-table__row memitem:ga3d09fa72731522bceaaef9f09c6b541f" id="r_ga3d09fa72731522bceaaef9f09c6b541f"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ga3d09fa72731522bceaaef9f09c6b541f">fiftyoneDegreesIpiGetValue</a> (<a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *dataSet, uint32_t valueIndex, uint32_t *propertyIndex, void *state, <a class="el" href="group___fifty_one_degrees_value.html#ga4729f6d628b2229a08718a6a573290c4">fiftyoneDegreesValueTextMethod</a> method, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:ga3d09fa72731522bceaaef9f09c6b541f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the index of the property the value belongs to and each of the value's texts, from one read of the value.  <br /></td></tr>
+<tr class="c-table__row memitem:gaac4c4f42142dc4c4b4389714556432f8" id="r_gaac4c4f42142dc4c4b4389714556432f8"><td class="c-table__cell">long&#160;</td><td class="c-table__cell"><a class="el" href="#gaac4c4f42142dc4c4b4389714556432f8">fiftyoneDegreesIpiGetValueIndex</a> (<a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *dataSet, uint32_t propertyIndex, const char *valueName, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:gaac4c4f42142dc4c4b4389714556432f8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the index of the property's value with the name provided.  <br /></td></tr>
+<tr class="c-table__row memitem:ga95026343dc4032ad767ba96cbd500b1f" id="r_ga95026343dc4032ad767ba96cbd500b1f"><td class="c-table__cell">char&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga95026343dc4032ad767ba96cbd500b1f">fiftyoneDegreesIpiGetValueText</a> (<a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *dataSet, uint32_t valueIndex, <a class="el" href="group___fifty_one_degrees_value.html#gae092bd731963c2033c5f1a7623ad4be4">fiftyoneDegreesValueText</a> text, char *buffer, size_t bufferLength, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:ga95026343dc4032ad767ba96cbd500b1f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets a text of the value as the metadata gives it.  <br /></td></tr>
+<tr class="c-table__row memitem:ga99a3a71482857809d6c5ecdfe4104bda" id="r_ga99a3a71482857809d6c5ecdfe4104bda"><td class="c-table__cell">uint32_t&#160;</td><td class="c-table__cell"><a class="el" href="#ga99a3a71482857809d6c5ecdfe4104bda">fiftyoneDegreesIpiGetComponentCount</a> (<a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *dataSet)</td></tr>
+<tr class="c-table__row memdesc:ga99a3a71482857809d6c5ecdfe4104bda"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the number of components the data file defines.  <br /></td></tr>
+<tr class="c-table__row memitem:ga5cbc8b67904a34be95db39ab54edd666" id="r_ga5cbc8b67904a34be95db39ab54edd666"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ga5cbc8b67904a34be95db39ab54edd666">fiftyoneDegreesIpiGetComponent</a> (<a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *dataSet, uint32_t componentIndex, uint8_t *componentId, uint32_t *defaultProfileOffset)</td></tr>
+<tr class="c-table__row memdesc:ga5cbc8b67904a34be95db39ab54edd666"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the id of the component and the offset of its default profile.  <br /></td></tr>
+<tr class="c-table__row memitem:ga6dfd68d4f077fcddd5350d9b24e93752" id="r_ga6dfd68d4f077fcddd5350d9b24e93752"><td class="c-table__cell">char&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga6dfd68d4f077fcddd5350d9b24e93752">fiftyoneDegreesIpiGetComponentName</a> (<a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *dataSet, uint32_t componentIndex, char *buffer, size_t bufferLength, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:ga6dfd68d4f077fcddd5350d9b24e93752"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the name of the component, such as "Location".  <br /></td></tr>
+<tr class="c-table__row memitem:gae8dcbef47d9cff83ecfe9f4e28384913" id="r_gae8dcbef47d9cff83ecfe9f4e28384913"><td class="c-table__cell">uint32_t&#160;</td><td class="c-table__cell"><a class="el" href="#gae8dcbef47d9cff83ecfe9f4e28384913">fiftyoneDegreesIpiGetProfileCount</a> (<a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *dataSet)</td></tr>
+<tr class="c-table__row memdesc:gae8dcbef47d9cff83ecfe9f4e28384913"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the number of profiles the data file holds.  <br /></td></tr>
+<tr class="c-table__row memitem:gadca125695f8efeb4e91512050b271e4a" id="r_gadca125695f8efeb4e91512050b271e4a"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#gadca125695f8efeb4e91512050b271e4a">fiftyoneDegreesIpiGetProfile</a> (<a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *dataSet, uint32_t profileIndex, uint32_t *profileOffset, uint8_t *componentId, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:gadca125695f8efeb4e91512050b271e4a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the offset of the profile at the index among the data file's profiles, which the metadata gives as the profile's key, and the id of the component it belongs to, as <a class="el" href="#ga32ea328152de7ba83f16fcc8afaa1ffb" title="Gets the id of the component the profile at the offset provided belongs to.">fiftyoneDegreesIpiGetProfileByOffset</a> gives it.  <br /></td></tr>
+<tr class="c-table__row memitem:ga32ea328152de7ba83f16fcc8afaa1ffb" id="r_ga32ea328152de7ba83f16fcc8afaa1ffb"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ga32ea328152de7ba83f16fcc8afaa1ffb">fiftyoneDegreesIpiGetProfileByOffset</a> (<a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *dataSet, uint32_t profileOffset, uint8_t *componentId, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
+<tr class="c-table__row memdesc:ga32ea328152de7ba83f16fcc8afaa1ffb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the id of the component the profile at the offset provided belongs to.  <br /></td></tr>
 </table>
 <a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="g-docs__section-heading">Macro Definition Documentation</h2>
 <a id="ga4d3d4e2b40003263e914c227577c688f" name="ga4d3d4e2b40003263e914c227577c688f"></a>
@@ -432,7 +454,7 @@ Metadata</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Backward compatibility typedef for IpiList. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated</a></b></dt><dd>Use <a class="el" href="structfiftyone_degrees_weighted_item_list.html" title="A resizable list of weighted items.">fiftyoneDegreesWeightedItemList</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated</a></b></dt><dd>Use <a class="el" href="structfiftyone_degrees_weighted_item_list.html" title="A resizable list of weighted items.">fiftyoneDegreesWeightedItemList</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -453,7 +475,7 @@ Metadata</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Backward compatibility typedef for ProfilePercentage. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated</a></b></dt><dd>Use <a class="el" href="structfiftyone_degrees_weighted_item.html" title="A weighted collection item.">fiftyoneDegreesWeightedItem</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated</a></b></dt><dd>Use <a class="el" href="structfiftyone_degrees_weighted_item.html" title="A weighted collection item.">fiftyoneDegreesWeightedItem</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -565,6 +587,136 @@ Metadata</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ga5cbc8b67904a34be95db39ab54edd666" name="ga5cbc8b67904a34be95db39ab54edd666"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga5cbc8b67904a34be95db39ab54edd666">&#9670;&#160;</a></span>fiftyoneDegreesIpiGetComponent()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool fiftyoneDegreesIpiGetComponent </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>componentIndex</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint8_t *</td>          <td class="c-table__cell"><span class="paramname"><em>componentId</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t *</td>          <td class="c-table__cell"><span class="paramname"><em>defaultProfileOffset</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the id of the component and the offset of its default profile. </p>
+<p>An IP Intelligence data file holds no profile ids, so the metadata gives the offset as the default profile's key, and UINT32_MAX for a component with no default profile. Either output pointer can be NULL. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>the data set to read </td></tr>
+    <tr><td class="paramname">componentIndex</td><td>index of the component, less than <a class="el" href="#ga99a3a71482857809d6c5ecdfe4104bda" title="Gets the number of components the data file defines.">fiftyoneDegreesIpiGetComponentCount</a> </td></tr>
+    <tr><td class="paramname">componentId</td><td>set to the id of the component </td></tr>
+    <tr><td class="paramname">defaultProfileOffset</td><td>set to the offset of the component's default profile, which <a class="el" href="#ga32ea328152de7ba83f16fcc8afaa1ffb" title="Gets the id of the component the profile at the offset provided belongs to.">fiftyoneDegreesIpiGetProfileByOffset</a> takes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true when the index is less than the number of components, otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="ga99a3a71482857809d6c5ecdfe4104bda" name="ga99a3a71482857809d6c5ecdfe4104bda"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga99a3a71482857809d6c5ecdfe4104bda">&#9670;&#160;</a></span>fiftyoneDegreesIpiGetComponentCount()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">uint32_t fiftyoneDegreesIpiGetComponentCount </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the number of components the data file defines. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>the data set to read </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the number of components </dd></dl>
+
+</div>
+</div>
+<a id="ga6dfd68d4f077fcddd5350d9b24e93752" name="ga6dfd68d4f077fcddd5350d9b24e93752"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga6dfd68d4f077fcddd5350d9b24e93752">&#9670;&#160;</a></span>fiftyoneDegreesIpiGetComponentName()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">char * fiftyoneDegreesIpiGetComponentName </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>componentIndex</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">char *</td>          <td class="c-table__cell"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">size_t</td>          <td class="c-table__cell"><span class="paramname"><em>bufferLength</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the name of the component, such as "Location". </p>
+<p>A name the strings collection gives nothing for is an empty text. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>the data set to read </td></tr>
+    <tr><td class="paramname">componentIndex</td><td>index of the component </td></tr>
+    <tr><td class="paramname">buffer</td><td>memory the name is written into when it fits </td></tr>
+    <tr><td class="paramname">bufferLength</td><td>the bytes <code>buffer</code> holds </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the null terminated name, or NULL when the index is not less than the number of components or the name cannot be read or written </dd></dl>
 
 </div>
 </div>
@@ -813,6 +965,183 @@ Metadata</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if the header holds a valid date, otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="ga11518883ae71d30392d82cd0cfe5bb49" name="ga11518883ae71d30392d82cd0cfe5bb49"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga11518883ae71d30392d82cd0cfe5bb49">&#9670;&#160;</a></span>fiftyoneDegreesIpiGetProductFromFile()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a> fiftyoneDegreesIpiGetProductFromFile </td>
+          <td>(</td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>fileName</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">char *</td>          <td class="c-table__cell"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">size_t</td>          <td class="c-table__cell"><span class="paramname"><em>length</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">size_t *</td>          <td class="c-table__cell"><span class="paramname"><em>needed</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the product name of an IP Intelligence data file from its header, reading the header and the name alone rather than loading the file, so that an update at start-up can ask the Distributor for the product of the file it has. </p>
+<p>The product name is "IPIV4" followed by the tier the header names, or the tier alone when it already starts with "IPIV4" in any case, as IPIV4Enterprise does. Nothing is allocated. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>path to the data file </td></tr>
+    <tr><td class="paramname">buffer</td><td>to write the product name and a terminating null to, or NULL when length is zero. It is set to an empty string when the name is not written and length is not zero. </td></tr>
+    <tr><td class="paramname">length</td><td>of the buffer in bytes </td></tr>
+    <tr><td class="paramname">needed</td><td>set, when not NULL, to the bytes the product name and its terminating null need when the status is <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> or <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea183d8dfede419787e396b50992c6a025" title="Insufficient capacity of the array to hold all the items.">FIFTYONE_DEGREES_STATUS_INSUFFICIENT_CAPACITY</a>, otherwise to zero </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"><a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> when the product name is written, <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea183d8dfede419787e396b50992c6a025" title="Insufficient capacity of the array to hold all the items.">FIFTYONE_DEGREES_STATUS_INSUFFICIENT_CAPACITY</a> when it does not fit in the buffer, <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea1798eb3c010d297160b18a46b3f4e11c" title="A key pointer was not set.">FIFTYONE_DEGREES_STATUS_NULL_POINTER</a> when the buffer is NULL and length is not zero, the status of opening the file when it cannot be opened, <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea0fa041cc59ce178a3659feda1f2a8a9a" title="Data structure not readable.">FIFTYONE_DEGREES_STATUS_CORRUPT_DATA</a> when the file ends before the name does or the tier is empty, and <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ead607ae7f077b721d6e95ef015df6ef7f" title="Data not the required version.">FIFTYONE_DEGREES_STATUS_INCORRECT_VERSION</a> when the file is not an IP Intelligence data file of the version this library reads </dd></dl>
+
+</div>
+</div>
+<a id="gadca125695f8efeb4e91512050b271e4a" name="gadca125695f8efeb4e91512050b271e4a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gadca125695f8efeb4e91512050b271e4a">&#9670;&#160;</a></span>fiftyoneDegreesIpiGetProfile()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool fiftyoneDegreesIpiGetProfile </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>profileIndex</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t *</td>          <td class="c-table__cell"><span class="paramname"><em>profileOffset</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint8_t *</td>          <td class="c-table__cell"><span class="paramname"><em>componentId</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the offset of the profile at the index among the data file's profiles, which the metadata gives as the profile's key, and the id of the component it belongs to, as <a class="el" href="#ga32ea328152de7ba83f16fcc8afaa1ffb" title="Gets the id of the component the profile at the offset provided belongs to.">fiftyoneDegreesIpiGetProfileByOffset</a> gives it. </p>
+<p>Either output pointer can be NULL. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>the data set to read </td></tr>
+    <tr><td class="paramname">profileIndex</td><td>index of the profile, less than <a class="el" href="#gae8dcbef47d9cff83ecfe9f4e28384913" title="Gets the number of profiles the data file holds.">fiftyoneDegreesIpiGetProfileCount</a> </td></tr>
+    <tr><td class="paramname">profileOffset</td><td>set to the offset of the profile </td></tr>
+    <tr><td class="paramname">componentId</td><td>set to the id of the profile's component </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true when the profile was read, otherwise false. False with no exception set means the offset is UINT32_MAX or the profiles collection gave nothing at it. </dd></dl>
+
+</div>
+</div>
+<a id="ga32ea328152de7ba83f16fcc8afaa1ffb" name="ga32ea328152de7ba83f16fcc8afaa1ffb"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga32ea328152de7ba83f16fcc8afaa1ffb">&#9670;&#160;</a></span>fiftyoneDegreesIpiGetProfileByOffset()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool fiftyoneDegreesIpiGetProfileByOffset </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>profileOffset</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint8_t *</td>          <td class="c-table__cell"><span class="paramname"><em>componentId</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the id of the component the profile at the offset provided belongs to. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>the data set to read </td></tr>
+    <tr><td class="paramname">profileOffset</td><td>offset of the profile in the profiles collection </td></tr>
+    <tr><td class="paramname">componentId</td><td>set to the id of the profile's component, or NULL </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true when the profile was read, otherwise false. False with no exception set means the offset is UINT32_MAX, which a component with no default profile gives, or the profiles collection gave nothing at it. </dd></dl>
+
+</div>
+</div>
+<a id="gae8dcbef47d9cff83ecfe9f4e28384913" name="gae8dcbef47d9cff83ecfe9f4e28384913"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gae8dcbef47d9cff83ecfe9f4e28384913">&#9670;&#160;</a></span>fiftyoneDegreesIpiGetProfileCount()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">uint32_t fiftyoneDegreesIpiGetProfileCount </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the number of profiles the data file holds. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>the data set to read </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the number of profiles </dd></dl>
 
 </div>
 </div>
@@ -1203,6 +1532,206 @@ Metadata</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true if the header holds a valid date, otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="ga2838f5d77a7edf6089fe16fa602d433f" name="ga2838f5d77a7edf6089fe16fa602d433f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga2838f5d77a7edf6089fe16fa602d433f">&#9670;&#160;</a></span>fiftyoneDegreesIpiGetPublishedFromFile()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_status.html#ga887881c8b6ec9f0c8510913831ebd19e">fiftyoneDegreesStatusCode</a> fiftyoneDegreesIpiGetPublishedFromFile </td>
+          <td>(</td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>fileName</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_date.html">fiftyoneDegreesDate</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>date</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the date an IP Intelligence data file was published from its header, reading the header alone rather than loading the file, so that an update can tell whether a new file is newer before loading it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>path to the data file </td></tr>
+    <tr><td class="paramname">date</td><td>pointer to the date to set, to the published date in the header when the file is an IP Intelligence data file of the version this library reads and the date is valid (see <a class="el" href="group___fifty_one_degrees_date.html#gab1ac30b20e7d2a105082984b6d5686c8" title="Determines whether the date is a day of the Gregorian calendar, meaning a year above zero,...">fiftyoneDegreesDateIsValid</a>), otherwise to a year, month and day of zero </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc"><a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea7c080613fa211ed9bb9f3a58f4a433d4" title="All okay.">FIFTYONE_DEGREES_STATUS_SUCCESS</a> when the date is set from the header, the status of opening the file when it cannot be opened, <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea0fa041cc59ce178a3659feda1f2a8a9a" title="Data structure not readable.">FIFTYONE_DEGREES_STATUS_CORRUPT_DATA</a> when the file is shorter than the header or the date is not valid, <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ead607ae7f077b721d6e95ef015df6ef7f" title="Data not the required version.">FIFTYONE_DEGREES_STATUS_INCORRECT_VERSION</a> when the file is not of the version this library reads, and <a class="el" href="group___fifty_one_degrees_status.html#gga887881c8b6ec9f0c8510913831ebd19ea2b6f3b7240d065b609d401eae69dd007" title="Lack of memory.">FIFTYONE_DEGREES_STATUS_INSUFFICIENT_MEMORY</a> when the header cannot be allocated </dd></dl>
+
+</div>
+</div>
+<a id="ga3d09fa72731522bceaaef9f09c6b541f" name="ga3d09fa72731522bceaaef9f09c6b541f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga3d09fa72731522bceaaef9f09c6b541f">&#9670;&#160;</a></span>fiftyoneDegreesIpiGetValue()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool fiftyoneDegreesIpiGetValue </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>valueIndex</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t *</td>          <td class="c-table__cell"><span class="paramname"><em>propertyIndex</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">void *</td>          <td class="c-table__cell"><span class="paramname"><em>state</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_value.html#ga4729f6d628b2229a08718a6a573290c4">fiftyoneDegreesValueTextMethod</a></td>          <td class="c-table__cell"><span class="paramname"><em>method</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the index of the property the value belongs to and each of the value's texts, from one read of the value. </p>
+<p>The method is called with the name, the description and then the URL, each as <a class="el" href="#ga95026343dc4032ad767ba96cbd500b1f" title="Gets a text of the value as the metadata gives it.">fiftyoneDegreesIpiGetValueText</a> gives it. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>the data set to read </td></tr>
+    <tr><td class="paramname">valueIndex</td><td>index of the value in the values collection </td></tr>
+    <tr><td class="paramname">propertyIndex</td><td>set to the index of the value's property, or NULL </td></tr>
+    <tr><td class="paramname">state</td><td>pointer passed to the method </td></tr>
+    <tr><td class="paramname">method</td><td>called with each text of the value, or NULL when only the property index is wanted </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">true when the value was read and each text given, otherwise false. False with no exception set means the values collection gave nothing at the index. </dd></dl>
+
+</div>
+</div>
+<a id="gaac4c4f42142dc4c4b4389714556432f8" name="gaac4c4f42142dc4c4b4389714556432f8"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaac4c4f42142dc4c4b4389714556432f8">&#9670;&#160;</a></span>fiftyoneDegreesIpiGetValueIndex()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">long fiftyoneDegreesIpiGetValueIndex </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>propertyIndex</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>valueName</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets the index of the property's value with the name provided. </p>
+<p>Each value is compared with the name as the type the property is stored as, so a number is found when the name has fewer decimal places than the value stored. The search is a binary search, which reads few of the property's values and relies on the data file holding them in the order of their names. Where a data file does not keep that order, or a property holds several values with the same name, as a weighted property can, the search can miss a value or give another value with the same name. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>the data set to read </td></tr>
+    <tr><td class="paramname">propertyIndex</td><td>index of the property </td></tr>
+    <tr><td class="paramname">valueName</td><td>name of the value to find </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the index of the value in the values collection, or -1 when the search finds no value of that name or a value cannot be read </dd></dl>
+
+</div>
+</div>
+<a id="ga95026343dc4032ad767ba96cbd500b1f" name="ga95026343dc4032ad767ba96cbd500b1f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga95026343dc4032ad767ba96cbd500b1f">&#9670;&#160;</a></span>fiftyoneDegreesIpiGetValueText()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">char * fiftyoneDegreesIpiGetValueText </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>valueIndex</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_value.html#gae092bd731963c2033c5f1a7623ad4be4">fiftyoneDegreesValueText</a></td>          <td class="c-table__cell"><span class="paramname"><em>text</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">char *</td>          <td class="c-table__cell"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">size_t</td>          <td class="c-table__cell"><span class="paramname"><em>bufferLength</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>exception</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Gets a text of the value as the metadata gives it. </p>
+<p>The name and URL are as <a class="el" href="group___fifty_one_degrees_value.html#ga4e1141dc82438ed47c018436c8718d9f" title="Gets a text of the value as the metadata gives it.">fiftyoneDegreesValueGetMetaDataText</a> gives them, the name written as the type the value's property is stored as with a number written to #FIFTYONE_DEGREES_WKT_DECIMAL_PLACES places. The description is always empty. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>the data set to read </td></tr>
+    <tr><td class="paramname">valueIndex</td><td>index of the value in the values collection </td></tr>
+    <tr><td class="paramname">text</td><td>which text of the value to get </td></tr>
+    <tr><td class="paramname">buffer</td><td>memory the text is written into when it fits </td></tr>
+    <tr><td class="paramname">bufferLength</td><td>the bytes <code>buffer</code> holds </td></tr>
+    <tr><td class="paramname">exception</td><td>pointer to an exception data structure to be used if an exception occurs. See <a class="el" href="exceptions_8h_source.html">exceptions.h</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the null terminated text, or NULL when the value or the text cannot be read or written </dd></dl>
 
 </div>
 </div>

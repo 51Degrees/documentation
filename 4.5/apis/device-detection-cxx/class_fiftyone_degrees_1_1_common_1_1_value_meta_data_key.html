@@ -83,10 +83,10 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:ad63bc883c8b441e6d4c45794561a5bf5" id="r_ad63bc883c8b441e6d4c45794561a5bf5"><td class="c-table__cell">const&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#ad63bc883c8b441e6d4c45794561a5bf5">getValueName</a> () const</td></tr>
 <tr class="c-table__row memdesc:ad63bc883c8b441e6d4c45794561a5bf5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the name of the value which is being keyed.  <br /></td></tr>
 <tr id="pub-methods-2" class="c-table__row"><td class="c-table__cell" colspan="2"><h3 class="c-table__heading">Operators</h3></td></tr>
-<tr class="c-table__row memitem:a5d854430990535d168bba3d3624c7763" id="r_a5d854430990535d168bba3d3624c7763"><td class="c-table__cell">const&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#a5d854430990535d168bba3d3624c7763">operator&lt;</a> (<a class="el" href="#ae22b64d76a83f18c6036da9f1b35846f">ValueMetaDataKey</a> other) const</td></tr>
-<tr class="c-table__row memdesc:a5d854430990535d168bba3d3624c7763"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Override the less than operator so the unique key can be used to order lists.  <br /></td></tr>
-<tr class="c-table__row memitem:a36f7d057e5f8f4c193a6e17007eca255" id="r_a36f7d057e5f8f4c193a6e17007eca255"><td class="c-table__cell">const&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#a36f7d057e5f8f4c193a6e17007eca255">operator==</a> (<a class="el" href="#ae22b64d76a83f18c6036da9f1b35846f">ValueMetaDataKey</a> other) const</td></tr>
-<tr class="c-table__row memdesc:a36f7d057e5f8f4c193a6e17007eca255"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Override the equality operator so the unique key can be found in a generic collection.  <br /></td></tr>
+<tr class="c-table__row memitem:abb8366d578b6d69492a89fd51609e4d6" id="r_abb8366d578b6d69492a89fd51609e4d6"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#abb8366d578b6d69492a89fd51609e4d6">operator&lt;</a> (<a class="el" href="#ae22b64d76a83f18c6036da9f1b35846f">ValueMetaDataKey</a> other) const</td></tr>
+<tr class="c-table__row memdesc:abb8366d578b6d69492a89fd51609e4d6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Override the less than operator so the unique key can be used to order lists.  <br /></td></tr>
+<tr class="c-table__row memitem:ac913e990c6f30bce904786b88dcb1e27" id="r_ac913e990c6f30bce904786b88dcb1e27"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ac913e990c6f30bce904786b88dcb1e27">operator==</a> (<a class="el" href="#ae22b64d76a83f18c6036da9f1b35846f">ValueMetaDataKey</a> other) const</td></tr>
+<tr class="c-table__row memdesc:ac913e990c6f30bce904786b88dcb1e27"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Override the equality operator so the unique key can be found in a generic collection.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="ae22b64d76a83f18c6036da9f1b35846f" name="ae22b64d76a83f18c6036da9f1b35846f"></a>
@@ -236,8 +236,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5d854430990535d168bba3d3624c7763" name="a5d854430990535d168bba3d3624c7763"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a5d854430990535d168bba3d3624c7763">&#9670;&#160;</a></span>operator&lt;()</h2>
+<a id="abb8366d578b6d69492a89fd51609e4d6" name="abb8366d578b6d69492a89fd51609e4d6"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#abb8366d578b6d69492a89fd51609e4d6">&#9670;&#160;</a></span>operator&lt;()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -245,7 +245,7 @@ Public Member Functions</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">const bool FiftyoneDegrees::Common::ValueMetaDataKey::operator&lt; </td>
+              <td class="c-table__cell">bool FiftyoneDegrees::Common::ValueMetaDataKey::operator&lt; </td>
           <td>(</td>
           <td class="c-table__cell"><a class="el" href="#ae22b64d76a83f18c6036da9f1b35846f">ValueMetaDataKey</a></td>          <td class="c-table__cell"><span class="paramname"><em>other</em></span></td><td>)</td>
           <td> const</td>
@@ -266,8 +266,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a36f7d057e5f8f4c193a6e17007eca255" name="a36f7d057e5f8f4c193a6e17007eca255"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a36f7d057e5f8f4c193a6e17007eca255">&#9670;&#160;</a></span>operator==()</h2>
+<a id="ac913e990c6f30bce904786b88dcb1e27" name="ac913e990c6f30bce904786b88dcb1e27"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ac913e990c6f30bce904786b88dcb1e27">&#9670;&#160;</a></span>operator==()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -275,7 +275,7 @@ Public Member Functions</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">const bool FiftyoneDegrees::Common::ValueMetaDataKey::operator== </td>
+              <td class="c-table__cell">bool FiftyoneDegrees::Common::ValueMetaDataKey::operator== </td>
           <td>(</td>
           <td class="c-table__cell"><a class="el" href="#ae22b64d76a83f18c6036da9f1b35846f">ValueMetaDataKey</a></td>          <td class="c-table__cell"><span class="paramname"><em>other</em></span></td><td>)</td>
           <td> const</td>

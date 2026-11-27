@@ -81,12 +81,18 @@ Collaboration diagram for FiftyoneDegrees::DeviceDetection::Hash::ValueMetaDataB
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a3590d4cffbd85dfad119c6510dde6d4a" id="r_a3590d4cffbd85dfad119c6510dde6d4a"><td class="c-table__cell">static&#160;<a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html">ValueMetaData</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#a3590d4cffbd85dfad119c6510dde6d4a">build</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet, uint32_t valueIndex)</td></tr>
+<tr class="c-table__row memdesc:a3590d4cffbd85dfad119c6510dde6d4a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html" title="Meta data relating to a value populated by an engine implementation.">ValueMetaData</a> from the value at the index provided.  <br /></td></tr>
+<tr class="c-table__row memitem:a544f95a6394e8ae9c6c947038fa8dbab" id="r_a544f95a6394e8ae9c6c947038fa8dbab"><td class="c-table__cell">static&#160;<a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html">ValueMetaData</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#a544f95a6394e8ae9c6c947038fa8dbab">build</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet, uint32_t valueIndex, const std::string &amp;propertyName)</td></tr>
+<tr class="c-table__row memdesc:a544f95a6394e8ae9c6c947038fa8dbab"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html" title="Meta data relating to a value populated by an engine implementation.">ValueMetaData</a> from the value at the index provided, which is a value of the property named, so the property's name is not read again.  <br /></td></tr>
+<tr class="c-table__row memitem:ae87c4934c07776ae35eb8b42d0255166" id="r_ae87c4934c07776ae35eb8b42d0255166"><td class="c-table__cell">static&#160;<a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html">ValueMetaData</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ae87c4934c07776ae35eb8b42d0255166">build</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet, uint32_t valueIndex, const std::vector&lt; std::string &gt; &amp;propertyNames)</td></tr>
+<tr class="c-table__row memdesc:ae87c4934c07776ae35eb8b42d0255166"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html" title="Meta data relating to a value populated by an engine implementation.">ValueMetaData</a> from the value at the index provided, taking its property's name from the names given rather than reading it again.  <br /></td></tr>
 <tr class="c-table__row memitem:a9db6779a55b6dd8914d3c1ee439bc3e5" id="r_a9db6779a55b6dd8914d3c1ee439bc3e5"><td class="c-table__cell">static&#160;<a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html">ValueMetaData</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#a9db6779a55b6dd8914d3c1ee439bc3e5">build</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet, const <a class="el" href="structfiftyone_degrees_value.html">fiftyoneDegreesValue</a> *value)</td></tr>
 <tr class="c-table__row memdesc:a9db6779a55b6dd8914d3c1ee439bc3e5"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html" title="Meta data relating to a value populated by an engine implementation.">ValueMetaData</a> from the underlying value provided.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="a9db6779a55b6dd8914d3c1ee439bc3e5" name="a9db6779a55b6dd8914d3c1ee439bc3e5"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9db6779a55b6dd8914d3c1ee439bc3e5">&#9670;&#160;</a></span>build()</h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a9db6779a55b6dd8914d3c1ee439bc3e5">&#9670;&#160;</a></span>build() <span class="c-member__count">[1/4]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -117,13 +123,156 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html" title="Meta data relating to a value populated by an engine implementation.">ValueMetaData</a> from the underlying value provided. </p>
-<p>The instance returned does not hold a reference to the data set or value, and contains a copy of all meta data. </p><dl class="params"><dt>Parameters</dt><dd>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated</a></b></dt><dd>Use build(dataSet, valueIndex), which reads the value once in C. Kept for one release, as a public name. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dataSet</td><td>pointer to the data set containing the component </td></tr>
+    <tr><td class="paramname">dataSet</td><td>pointer to the data set containing the value </td></tr>
     <tr><td class="paramname">value</td><td>pointer to the underlying value to create the meta data from </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the new instance, or nullptr when the data set gives no property for the value </dd></dl>
+
+</div>
+</div>
+<a id="a3590d4cffbd85dfad119c6510dde6d4a" name="a3590d4cffbd85dfad119c6510dde6d4a"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3590d4cffbd85dfad119c6510dde6d4a">&#9670;&#160;</a></span>build() <span class="c-member__count">[2/4]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html">ValueMetaData</a> * FiftyoneDegrees::DeviceDetection::Hash::ValueMetaDataBuilderHash::build </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>valueIndex</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html" title="Meta data relating to a value populated by an engine implementation.">ValueMetaData</a> from the value at the index provided. </p>
+<p>The instance returned does not hold a reference to the data set or value, and contains a copy of all meta data. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>pointer to the data set containing the value </td></tr>
+    <tr><td class="paramname">valueIndex</td><td>index of the value in the values collection </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the new instance, or nullptr when the data set gives no value at the index or no property for the value </dd></dl>
+
+</div>
+</div>
+<a id="a544f95a6394e8ae9c6c947038fa8dbab" name="a544f95a6394e8ae9c6c947038fa8dbab"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a544f95a6394e8ae9c6c947038fa8dbab">&#9670;&#160;</a></span>build() <span class="c-member__count">[3/4]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html">ValueMetaData</a> * FiftyoneDegrees::DeviceDetection::Hash::ValueMetaDataBuilderHash::build </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>valueIndex</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const std::string &amp;</td>          <td class="c-table__cell"><span class="paramname"><em>propertyName</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html" title="Meta data relating to a value populated by an engine implementation.">ValueMetaData</a> from the value at the index provided, which is a value of the property named, so the property's name is not read again. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>pointer to the data set containing the value </td></tr>
+    <tr><td class="paramname">valueIndex</td><td>index of the value in the values collection </td></tr>
+    <tr><td class="paramname">propertyName</td><td>name of the value's property </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the new instance, or nullptr when the data set gives no value at the index </dd></dl>
+
+</div>
+</div>
+<a id="ae87c4934c07776ae35eb8b42d0255166" name="ae87c4934c07776ae35eb8b42d0255166"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae87c4934c07776ae35eb8b42d0255166">&#9670;&#160;</a></span>build() <span class="c-member__count">[4/4]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html">ValueMetaData</a> * FiftyoneDegrees::DeviceDetection::Hash::ValueMetaDataBuilderHash::build </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>valueIndex</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const std::vector&lt; std::string &gt; &amp;</td>          <td class="c-table__cell"><span class="paramname"><em>propertyNames</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html" title="Meta data relating to a value populated by an engine implementation.">ValueMetaData</a> from the value at the index provided, taking its property's name from the names given rather than reading it again. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>pointer to the data set containing the value </td></tr>
+    <tr><td class="paramname">valueIndex</td><td>index of the value in the values collection </td></tr>
+    <tr><td class="paramname">propertyNames</td><td>the name of each property, by the property's index </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the new instance, or nullptr when the data set gives no value at the index </dd></dl>
 
 </div>
 </div>

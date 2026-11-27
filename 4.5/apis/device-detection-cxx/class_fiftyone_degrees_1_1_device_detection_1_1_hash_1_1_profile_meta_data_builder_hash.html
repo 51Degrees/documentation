@@ -79,6 +79,10 @@ Collaboration diagram for FiftyoneDegrees::DeviceDetection::Hash::ProfileMetaDat
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a65ba3858684add81e6fcbb9af091b79e" id="r_a65ba3858684add81e6fcbb9af091b79e"><td class="c-table__cell">static&#160;<a class="el" href="class_fiftyone_degrees_1_1_common_1_1_profile_meta_data.html">ProfileMetaData</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#a65ba3858684add81e6fcbb9af091b79e">buildByIndex</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet, uint32_t profileIndex)</td></tr>
+<tr class="c-table__row memdesc:a65ba3858684add81e6fcbb9af091b79e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_profile_meta_data.html" title="Meta data relating to a profile populated by an engine implementation.">ProfileMetaData</a> from the profile at the index provided among the data file's profiles, which are in order of profile id.  <br /></td></tr>
+<tr class="c-table__row memitem:ae7a669ecbb2cd8544152d16274dd4d92" id="r_ae7a669ecbb2cd8544152d16274dd4d92"><td class="c-table__cell">static&#160;<a class="el" href="class_fiftyone_degrees_1_1_common_1_1_profile_meta_data.html">ProfileMetaData</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ae7a669ecbb2cd8544152d16274dd4d92">buildById</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet, uint32_t profileId)</td></tr>
+<tr class="c-table__row memdesc:ae7a669ecbb2cd8544152d16274dd4d92"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_profile_meta_data.html" title="Meta data relating to a profile populated by an engine implementation.">ProfileMetaData</a> from the profile with the id provided.  <br /></td></tr>
 <tr class="c-table__row memitem:abbd7042b6a9ada0c57609fd7b498bcc9" id="r_abbd7042b6a9ada0c57609fd7b498bcc9"><td class="c-table__cell">static&#160;<a class="el" href="class_fiftyone_degrees_1_1_common_1_1_profile_meta_data.html">ProfileMetaData</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#abbd7042b6a9ada0c57609fd7b498bcc9">build</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet, <a class="el" href="structfiftyone_degrees_profile.html">fiftyoneDegreesProfile</a> *profile)</td></tr>
 <tr class="c-table__row memdesc:abbd7042b6a9ada0c57609fd7b498bcc9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_profile_meta_data.html" title="Meta data relating to a profile populated by an engine implementation.">ProfileMetaData</a> from the underlying profile provided.  <br /></td></tr>
 </table>
@@ -115,13 +119,101 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_profile_meta_data.html" title="Meta data relating to a profile populated by an engine implementation.">ProfileMetaData</a> from the underlying profile provided. </p>
-<p>The instance returned does not hold a reference to the data set or profile, and contains a copy of all the meta data. </p><dl class="params"><dt>Parameters</dt><dd>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated</a></b></dt><dd>Use buildByIndex or buildById, which read the profile in C. Kept for one release, as a public name. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dataSet</td><td>pointer to the data set containing the component </td></tr>
+    <tr><td class="paramname">dataSet</td><td>pointer to the data set containing the profile </td></tr>
     <tr><td class="paramname">profile</td><td>pointer to the underlying profile to create the meta data from </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the new instance </dd></dl>
+
+</div>
+</div>
+<a id="ae7a669ecbb2cd8544152d16274dd4d92" name="ae7a669ecbb2cd8544152d16274dd4d92"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ae7a669ecbb2cd8544152d16274dd4d92">&#9670;&#160;</a></span>buildById()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_profile_meta_data.html">ProfileMetaData</a> * FiftyoneDegrees::DeviceDetection::Hash::ProfileMetaDataBuilderHash::buildById </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>profileId</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_profile_meta_data.html" title="Meta data relating to a profile populated by an engine implementation.">ProfileMetaData</a> from the profile with the id provided. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>pointer to the data set containing the profile </td></tr>
+    <tr><td class="paramname">profileId</td><td>id of the profile </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the new instance, or nullptr when the data set has no profile with the id </dd></dl>
+
+</div>
+</div>
+<a id="a65ba3858684add81e6fcbb9af091b79e" name="a65ba3858684add81e6fcbb9af091b79e"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a65ba3858684add81e6fcbb9af091b79e">&#9670;&#160;</a></span>buildByIndex()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_profile_meta_data.html">ProfileMetaData</a> * FiftyoneDegrees::DeviceDetection::Hash::ProfileMetaDataBuilderHash::buildByIndex </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>profileIndex</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_profile_meta_data.html" title="Meta data relating to a profile populated by an engine implementation.">ProfileMetaData</a> from the profile at the index provided among the data file's profiles, which are in order of profile id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>pointer to the data set containing the profile </td></tr>
+    <tr><td class="paramname">profileIndex</td><td>index of the profile </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the new instance, or nullptr when the data set gives no profile at the index </dd></dl>
 
 </div>
 </div>

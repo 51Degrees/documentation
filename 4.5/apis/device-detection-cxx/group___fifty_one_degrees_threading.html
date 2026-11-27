@@ -76,8 +76,6 @@ Collaboration diagram for Threading:</h2>
 Structs</h2></td></tr>
 <tr class="c-table__row memitem:fiftyoneDegreesSignal" id="r_fiftyoneDegreesSignal"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_signal.html">fiftyoneDegreesSignal</a></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A signal used to limit the number of items that can be created by the pool.  <a href="structfiftyone_degrees_signal.html#details">More...</a><br /></td></tr>
-<tr class="c-table__row memitem:fiftyoneDegreesInterlockDoubleWidth" id="r_fiftyoneDegreesInterlockDoubleWidth"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_interlock_double_width.html">fiftyoneDegreesInterlockDoubleWidth</a></td></tr>
-<tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Double width (64 or 128 depending on the architecture) compare and exchange.  <a href="structfiftyone_degrees_interlock_double_width.html#details">More...</a><br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-define-members" class="g-docs__section-heading"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
@@ -87,6 +85,13 @@ Macros</h2></td></tr>
 <tr class="c-table__row memitem:ga73811e87d8e1da7f10bc3943591333ec" id="r_ga73811e87d8e1da7f10bc3943591333ec"><td class="c-table__cell"><a id="ga73811e87d8e1da7f10bc3943591333ec" name="ga73811e87d8e1da7f10bc3943591333ec"></a>
 #define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_THREAD</b>&#160;&#160;&#160;pthread_t</td></tr>
 <tr class="c-table__row memdesc:ga73811e87d8e1da7f10bc3943591333ec"><td class="c-table__cell">&#160;</td><td class="c-table__cell">A thread created with the <a class="el" href="#ga2a981a4247ef8f912fadcc9e52c0f26d" title="Creates a new thread with the following parameters:">FIFTYONE_DEGREES_THREAD_CREATE</a> macro. <br /></td></tr>
+<tr class="c-table__row memitem:ga0249a89a7dea7e0e88010d896ca1ca20" id="r_ga0249a89a7dea7e0e88010d896ca1ca20"><td class="c-table__cell"><a id="ga0249a89a7dea7e0e88010d896ca1ca20" name="ga0249a89a7dea7e0e88010d896ca1ca20"></a>
+#define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_THREAD_ID</b>&#160;&#160;&#160;pthread_t</td></tr>
+<tr class="c-table__row memdesc:ga0249a89a7dea7e0e88010d896ca1ca20"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The identity of a thread, as <a class="el" href="#ga01cd5dcce538e0772c2855b08215c8f1" title="Gets the identity of the calling thread.">FIFTYONE_DEGREES_THREAD_ID_CURRENT</a> gives it. <br /></td></tr>
+<tr class="c-table__row memitem:ga01cd5dcce538e0772c2855b08215c8f1" id="r_ga01cd5dcce538e0772c2855b08215c8f1"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#ga01cd5dcce538e0772c2855b08215c8f1">FIFTYONE_DEGREES_THREAD_ID_CURRENT</a>()</td></tr>
+<tr class="c-table__row memdesc:ga01cd5dcce538e0772c2855b08215c8f1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets the identity of the calling thread.  <br /></td></tr>
+<tr class="c-table__row memitem:gaae39b2a48af053fb5525d8a40dbe7e69" id="r_gaae39b2a48af053fb5525d8a40dbe7e69"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#gaae39b2a48af053fb5525d8a40dbe7e69">FIFTYONE_DEGREES_THREAD_ID_EQUAL</a>(a,  b)</td></tr>
+<tr class="c-table__row memdesc:gaae39b2a48af053fb5525d8a40dbe7e69"><td class="c-table__cell">&#160;</td><td class="c-table__cell">True when two thread identities are the same thread.  <br /></td></tr>
 <tr class="c-table__row memitem:ga8ab68a965f05a27935ad2601dc8031bd" id="r_ga8ab68a965f05a27935ad2601dc8031bd"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#ga8ab68a965f05a27935ad2601dc8031bd">FIFTYONE_DEGREES_SIGNAL_CREATE</a>(s)</td></tr>
 <tr class="c-table__row memdesc:ga8ab68a965f05a27935ad2601dc8031bd"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Creates a new signal that can be used to wait for other operations to complete before continuing.  <br /></td></tr>
 <tr class="c-table__row memitem:gae9a6e889c40d78bf3e2a19270e6f153d" id="r_gae9a6e889c40d78bf3e2a19270e6f153d"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#gae9a6e889c40d78bf3e2a19270e6f153d">FIFTYONE_DEGREES_SIGNAL_CLOSE</a>(s)</td></tr>
@@ -124,9 +129,6 @@ Macros</h2></td></tr>
 <tr class="c-table__row memdesc:ga0fd32568d82c25a7f382fc9af633310f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">64 bit compare and swap.  <br /></td></tr>
 <tr class="c-table__row memitem:ga6b4d52d8739dd587f1f29fa780bdf5c8" id="r_ga6b4d52d8739dd587f1f29fa780bdf5c8"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#ga6b4d52d8739dd587f1f29fa780bdf5c8">FIFTYONE_DEGREES_INTERLOCK_EXCHANGE_PTR</a>(d,  e,  c)</td></tr>
 <tr class="c-table__row memdesc:ga6b4d52d8739dd587f1f29fa780bdf5c8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Replaces the destination pointer with the exchange pointer, only if the destination pointer matched the comparand.  <br /></td></tr>
-<tr class="c-table__row memitem:gaddbdc47b58fd18dddff5e5c79e49990d" id="r_gaddbdc47b58fd18dddff5e5c79e49990d"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#gaddbdc47b58fd18dddff5e5c79e49990d">FIFTYONE_DEGREES_INTERLOCK_EXCHANGE_DW</a>(d,  e,  c)</td></tr>
-<tr class="c-table__row memitem:ga7163b975904b715320fb0d96c7272553" id="r_ga7163b975904b715320fb0d96c7272553"><td class="c-table__cell"><a id="ga7163b975904b715320fb0d96c7272553" name="ga7163b975904b715320fb0d96c7272553"></a>
-#define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_IS_LOCK_FREE</b>&#160;&#160;&#160;__atomic_is_lock_free(sizeof(<a class="el" href="structfiftyone_degrees_interlock_double_width.html">fiftyoneDegreesInterlockDoubleWidth</a>), NULL)</td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-typedef-members" class="g-docs__section-heading"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -260,7 +262,7 @@ Functions</h2></td></tr>
       </div>
 </div><div class="c-member__body">
 <b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a class="code hl_define" href="#ga0c3b5a1ee9d321d5f494ff1ed71c771a">FIFTYONE_DEGREES_INTERLOCK_EXCHANGE</a>(d,e,c)</div>
-<div class="ttc" id="agroup___fifty_one_degrees_threading_html_ga0c3b5a1ee9d321d5f494ff1ed71c771a"><div class="ttname"><a href="#ga0c3b5a1ee9d321d5f494ff1ed71c771a">FIFTYONE_DEGREES_INTERLOCK_EXCHANGE</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_INTERLOCK_EXCHANGE(d, e, c)</div><div class="ttdoc">Replaces the destination value with the exchange value, only if the destination value matched the com...</div><div class="ttdef"><b>Definition</b> threading.h:355</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_threading_html_ga0c3b5a1ee9d321d5f494ff1ed71c771a"><div class="ttname"><a href="#ga0c3b5a1ee9d321d5f494ff1ed71c771a">FIFTYONE_DEGREES_INTERLOCK_EXCHANGE</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_INTERLOCK_EXCHANGE(d, e, c)</div><div class="ttdoc">Replaces the destination value with the exchange value, only if the destination value matched the com...</div><div class="ttdef"><b>Definition</b> threading.h:378</div></div>
 </div><!-- fragment -->
 <p>64 bit compare and swap. </p>
 <p>Replaces the destination value with the exchange value, only if the destination value matched the comparand. Returns the value of d before the swap. </p><dl class="params"><dt>Parameters</dt><dd>
@@ -272,44 +274,6 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-</div>
-</div>
-<a id="gaddbdc47b58fd18dddff5e5c79e49990d" name="gaddbdc47b58fd18dddff5e5c79e49990d"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaddbdc47b58fd18dddff5e5c79e49990d">&#9670;&#160;</a></span>FIFTYONE_DEGREES_INTERLOCK_EXCHANGE_DW</h2>
-
-<div class="c-member__main">
-<div class="c-member__head">
-      <div class="c-member__split">
-        <div class="g-table g-table--overflow">
-          <table class="c-table c-table--article">
-            <tr class="c-table__row">
-              <td class="c-table__cell">#define FIFTYONE_DEGREES_INTERLOCK_EXCHANGE_DW</td>
-          <td>(</td>
-          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>d</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>e</em></span>, </td>
-        </tr>
-        <tr class="c-table__row">
-          <td class="c-table__cell"></td>
-          <td></td>
-          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>c</em></span>&#160;)</td>
-        </tr>
-          </table>
-        </div>
-      </div>
-</div><div class="c-member__body">
-<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">(__atomic_compare_exchange( \</div>
-<div class="c-code__line">    (<a class="code hl_struct" href="structfiftyone_degrees_interlock_double_width.html">fiftyoneDegreesInterlockDoubleWidth</a>*)&amp;d, \</div>
-<div class="c-code__line">    (<a class="code hl_struct" href="structfiftyone_degrees_interlock_double_width.html">fiftyoneDegreesInterlockDoubleWidth</a>*)&amp;c, \</div>
-<div class="c-code__line">    (<a class="code hl_struct" href="structfiftyone_degrees_interlock_double_width.html">fiftyoneDegreesInterlockDoubleWidth</a>*)&amp;e, \</div>
-<div class="c-code__line">    <span class="c-code__keyword">false</span>, \</div>
-<div class="c-code__line">    __ATOMIC_SEQ_CST, \</div>
-<div class="c-code__line">    __ATOMIC_SEQ_CST))</div>
-<div class="ttc" id="astructfiftyone_degrees_interlock_double_width_html"><div class="ttname"><a href="structfiftyone_degrees_interlock_double_width.html">fiftyoneDegreesInterlockDoubleWidth</a></div><div class="ttdoc">Double width (64 or 128 depending on the architecture) compare and exchange.</div><div class="ttdef"><b>Definition</b> threading.h:444</div></div>
-</div><!-- fragment -->
 </div>
 </div>
 <a id="ga6b4d52d8739dd587f1f29fa780bdf5c8" name="ga6b4d52d8739dd587f1f29fa780bdf5c8"></a>
@@ -724,6 +688,58 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">new thread </dd></dl>
+
+</div>
+</div>
+<a id="ga01cd5dcce538e0772c2855b08215c8f1" name="ga01cd5dcce538e0772c2855b08215c8f1"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga01cd5dcce538e0772c2855b08215c8f1">&#9670;&#160;</a></span>FIFTYONE_DEGREES_THREAD_ID_CURRENT</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define FIFTYONE_DEGREES_THREAD_ID_CURRENT</td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">pthread_self()</div>
+</div><!-- fragment -->
+<p>Gets the identity of the calling thread. </p>
+
+</div>
+</div>
+<a id="gaae39b2a48af053fb5525d8a40dbe7e69" name="gaae39b2a48af053fb5525d8a40dbe7e69"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaae39b2a48af053fb5525d8a40dbe7e69">&#9670;&#160;</a></span>FIFTYONE_DEGREES_THREAD_ID_EQUAL</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define FIFTYONE_DEGREES_THREAD_ID_EQUAL</td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">(pthread_equal((a), (b)) != 0)</div>
+</div><!-- fragment -->
+<p>True when two thread identities are the same thread. </p>
 
 </div>
 </div>

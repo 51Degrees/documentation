@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ipi__weighted_
 </div><div class="textblock"><h2 class="g-docs__section-heading">
 Include dependency graph for ipi_weighted_results.c:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="ipi__weighted__results_8c__incl.svg" width="6075" height="1400"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="ipi__weighted__results_8c__incl.svg" width="6067" height="1400"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-nested-classes" class="g-docs__section-heading"><a id="nested-classes" name="nested-classes"></a>
@@ -105,8 +105,8 @@ Typedefs</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="c-table__row memitem:a54c1cf9aff3b4f9360a682efd75d682f" id="r_a54c1cf9aff3b4f9360a682efd75d682f"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a54c1cf9aff3b4f9360a682efd75d682f">PropValuesInit</a> (<a class="el" href="struct_prop_values.html">PropValues</a> *const values, const uint32_t count)</td></tr>
-<tr class="c-table__row memdesc:a54c1cf9aff3b4f9360a682efd75d682f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initializes a <a class="el" href="struct_prop_values.html" title="Structure for a collection of property value chunks.">PropValues</a> structure.  <br /></td></tr>
+<tr class="c-table__row memitem:a3024a0b6e01f0e83af77433dc8d591ba" id="r_a3024a0b6e01f0e83af77433dc8d591ba"><td class="c-table__cell">static&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#a3024a0b6e01f0e83af77433dc8d591ba">PropValuesInit</a> (<a class="el" href="struct_prop_values.html">PropValues</a> *const values, const uint32_t count)</td></tr>
+<tr class="c-table__row memdesc:a3024a0b6e01f0e83af77433dc8d591ba"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initializes a <a class="el" href="struct_prop_values.html" title="Structure for a collection of property value chunks.">PropValues</a> structure.  <br /></td></tr>
 <tr class="c-table__row memitem:a3db80770ecccf4c67699b68455fba9ec" id="r_a3db80770ecccf4c67699b68455fba9ec"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a3db80770ecccf4c67699b68455fba9ec">PropValuesRelease</a> (<a class="el" href="struct_prop_values.html">PropValues</a> *const values)</td></tr>
 <tr class="c-table__row memdesc:a3db80770ecccf4c67699b68455fba9ec"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Releases resources used by a <a class="el" href="struct_prop_values.html" title="Structure for a collection of property value chunks.">PropValues</a> structure.  <br /></td></tr>
 <tr class="c-table__row memitem:a1d1a3e7bf30dd42fc3694cfc20559398" id="r_a1d1a3e7bf30dd42fc3694cfc20559398"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a1d1a3e7bf30dd42fc3694cfc20559398">InitInt</a> (WeightedValueHeader *const header, void *const converterState)</td></tr>
@@ -151,8 +151,10 @@ Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a94228fe691b273919db7f590114f1715"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initializes a property values chunk with values from results.  <br /></td></tr>
 <tr class="c-table__row memitem:a443f3c37a75d841935c1f547553782d4" id="r_a443f3c37a75d841935c1f547553782d4"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#a443f3c37a75d841935c1f547553782d4">PropValuesPopulate</a> (const <a class="el" href="struct_prop_values.html">PropValues</a> *const values, ResultsIpi *const results, const <a class="el" href="struct_prop_values_item_conversion_defaults.html">PropValuesItemConversionDefaults</a> *const defaults, <a class="el" href="structfiftyone_degrees_data.html">fiftyoneDegreesData</a> *const tempData, <a class="el" href="group___fifty_one_degrees_synonyms.html#ga445536368cf748f73d502fd471b19e98">Exception</a> *const exception)</td></tr>
 <tr class="c-table__row memdesc:a443f3c37a75d841935c1f547553782d4"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Populates all chunks in a <a class="el" href="struct_prop_values.html" title="Structure for a collection of property value chunks.">PropValues</a> structure.  <br /></td></tr>
-<tr class="c-table__row memitem:ab571655cf2ff8dec8c32d822f56c5128" id="r_ab571655cf2ff8dec8c32d822f56c5128"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#ab571655cf2ff8dec8c32d822f56c5128">PropValuesMoveItems</a> (const <a class="el" href="struct_prop_values.html">PropValues</a> *const values, WeightedValuesCollection *const result)</td></tr>
-<tr class="c-table__row memdesc:ab571655cf2ff8dec8c32d822f56c5128"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Moves items from <a class="el" href="struct_prop_values.html" title="Structure for a collection of property value chunks.">PropValues</a> to a WeightedValuesCollection.  <br /></td></tr>
+<tr class="c-table__row memitem:ab3e9adffda9b3c68056c4a73ba757a34" id="r_ab3e9adffda9b3c68056c4a73ba757a34"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#ab3e9adffda9b3c68056c4a73ba757a34">PropValuesFreeItems</a> (const <a class="el" href="struct_prop_values.html">PropValues</a> *const values)</td></tr>
+<tr class="c-table__row memdesc:ab3e9adffda9b3c68056c4a73ba757a34"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Frees what each value still held in the chunks owns.  <br /></td></tr>
+<tr class="c-table__row memitem:a6429b43318615eb3170957af3e3057c1" id="r_a6429b43318615eb3170957af3e3057c1"><td class="c-table__cell">static&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#a6429b43318615eb3170957af3e3057c1">PropValuesMoveItems</a> (const <a class="el" href="struct_prop_values.html">PropValues</a> *const values, WeightedValuesCollection *const result)</td></tr>
+<tr class="c-table__row memdesc:a6429b43318615eb3170957af3e3057c1"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Moves items from <a class="el" href="struct_prop_values.html" title="Structure for a collection of property value chunks.">PropValues</a> to a WeightedValuesCollection.  <br /></td></tr>
 <tr class="c-table__row memitem:a7bc30e2b31493de38149475d872eac42" id="r_a7bc30e2b31493de38149475d872eac42"><td class="c-table__cell">WeightedValuesCollection&#160;</td><td class="c-table__cell"><a class="el" href="#a7bc30e2b31493de38149475d872eac42">fiftyoneDegreesResultsIpiGetValuesCollection</a> (ResultsIpi *const results, const int *const requiredPropertyIndexes, const uint32_t requiredPropertyIndexesLength, <a class="el" href="structfiftyone_degrees_data.html">fiftyoneDegreesData</a> *const tempData, <a class="el" href="group___fifty_one_degrees_synonyms.html#ga445536368cf748f73d502fd471b19e98">Exception</a> *const exception)</td></tr>
 <tr class="c-table__row memdesc:a7bc30e2b31493de38149475d872eac42"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Gets a collection of weighted values from IP Intelligence results.  <br /></td></tr>
 <tr class="c-table__row memitem:aad02504b1818813a30510567c3f2e98e" id="r_aad02504b1818813a30510567c3f2e98e"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#aad02504b1818813a30510567c3f2e98e">fiftyoneDegreesWeightedValuesCollectionRelease</a> (WeightedValuesCollection *const collection)</td></tr>
@@ -334,7 +336,7 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_ip_intelligence_2_getting_started_8c-example.html#a32">IpIntelligence/GettingStarted.c</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_ip_intelligence_2_getting_started_8c-example.html#a33">IpIntelligence/GettingStarted.c</a>.</dd>
 </dl>
 
 </div>
@@ -690,7 +692,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Populates a property values chunk with values. </p>
-<p>Allocates memory for the chunk data and initializes all values in the chunk.</p>
+<p>Allocates memory for the chunk data and initializes all values in the chunk. When the allocation fails, the chunk is left with no values and the exception is set to insufficient memory.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">context</td><td>Pointer to the chunk context </td></tr>
@@ -962,8 +964,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a54c1cf9aff3b4f9360a682efd75d682f" name="a54c1cf9aff3b4f9360a682efd75d682f"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a54c1cf9aff3b4f9360a682efd75d682f">&#9670;&#160;</a></span>PropValuesInit()</h2>
+<a id="ab3e9adffda9b3c68056c4a73ba757a34" name="ab3e9adffda9b3c68056c4a73ba757a34"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab3e9adffda9b3c68056c4a73ba757a34">&#9670;&#160;</a></span>PropValuesFreeItems()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -974,7 +976,45 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">void PropValuesInit </td>
+              <td class="c-table__cell">void PropValuesFreeItems </td>
+          <td>(</td>
+          <td class="c-table__cell">const <a class="el" href="struct_prop_values.html">PropValues</a> *const</td>          <td class="c-table__cell"><span class="paramname"><em>values</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Frees what each value still held in the chunks owns. </p>
+<p>Used when the values cannot be moved to the collection, which would otherwise free them. The chunks' own data is freed by PropValuesRelease.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td>Pointer to the <a class="el" href="struct_prop_values.html" title="Structure for a collection of property value chunks.">PropValues</a> structure containing the values </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3024a0b6e01f0e83af77433dc8d591ba" name="a3024a0b6e01f0e83af77433dc8d591ba"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a3024a0b6e01f0e83af77433dc8d591ba">&#9670;&#160;</a></span>PropValuesInit()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">bool PropValuesInit </td>
           <td>(</td>
           <td class="c-table__cell"><a class="el" href="struct_prop_values.html">PropValues</a> *const</td>          <td class="c-table__cell"><span class="paramname"><em>values</em></span>, </td>
         </tr>
@@ -994,7 +1034,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Initializes a <a class="el" href="struct_prop_values.html" title="Structure for a collection of property value chunks.">PropValues</a> structure. </p>
-<p>Allocates memory for the specified number of property value chunks.</p>
+<p>Allocates memory for the specified number of property value chunks. When the allocation fails, the structure is left with no chunks.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">values</td><td>Pointer to the <a class="el" href="struct_prop_values.html" title="Structure for a collection of property value chunks.">PropValues</a> structure to initialize </td></tr>
@@ -1002,11 +1042,12 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">false if the memory could not be allocated </dd></dl>
 
 </div>
 </div>
-<a id="ab571655cf2ff8dec8c32d822f56c5128" name="ab571655cf2ff8dec8c32d822f56c5128"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab571655cf2ff8dec8c32d822f56c5128">&#9670;&#160;</a></span>PropValuesMoveItems()</h2>
+<a id="a6429b43318615eb3170957af3e3057c1" name="a6429b43318615eb3170957af3e3057c1"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a6429b43318615eb3170957af3e3057c1">&#9670;&#160;</a></span>PropValuesMoveItems()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -1017,7 +1058,7 @@ Variables</h2></td></tr>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">void PropValuesMoveItems </td>
+              <td class="c-table__cell">bool PropValuesMoveItems </td>
           <td>(</td>
           <td class="c-table__cell">const <a class="el" href="struct_prop_values.html">PropValues</a> *const</td>          <td class="c-table__cell"><span class="paramname"><em>values</em></span>, </td>
         </tr>
@@ -1037,7 +1078,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Moves items from <a class="el" href="struct_prop_values.html" title="Structure for a collection of property value chunks.">PropValues</a> to a WeightedValuesCollection. </p>
-<p>Allocates memory in the result collection and copies all values from the <a class="el" href="struct_prop_values.html" title="Structure for a collection of property value chunks.">PropValues</a> structure to the collection. This function also builds the table of contents for the collection.</p>
+<p>Allocates memory in the result collection and copies all values from the <a class="el" href="struct_prop_values.html" title="Structure for a collection of property value chunks.">PropValues</a> structure to the collection. This function also builds the table of contents for the collection. If either allocation fails, the values are freed and the collection is left empty.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">values</td><td>Pointer to the <a class="el" href="struct_prop_values.html" title="Structure for a collection of property value chunks.">PropValues</a> structure containing the values </td></tr>
@@ -1045,6 +1086,7 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">false if the memory could not be allocated </dd></dl>
 
 </div>
 </div>
@@ -1316,7 +1358,7 @@ Variables</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Saves a double value from a stored binary value. </p>
-<p>Converts the stored binary value to a double and saves it in the weighted value.</p>
+<p>Converts the stored binary value to a double and saves it in the weighted value. A value stored as an azimuth or a declination is rounded to #fiftyoneDegreesDefaultWktDecimalPlaces places, as its text is.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">header</td><td>Pointer to the weighted value header </td></tr>
@@ -1528,8 +1570,8 @@ Variables</h2></td></tr>
 <div class="c-code__line">    NULL,</div>
 <div class="c-code__line">    <span class="c-code__keyword">sizeof</span>(WeightedBool),</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="aipi__weighted__results_8c_html_a19b17d7e853f957cbd63a54f6333185b"><div class="ttname"><a href="#a19b17d7e853f957cbd63a54f6333185b">InitBool</a></div><div class="ttdeci">static void InitBool(WeightedValueHeader *const header, void *const converterState)</div><div class="ttdoc">Initializes a boolean weighted value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:204</div></div>
-<div class="ttc" id="aipi__weighted__results_8c_html_ae89af1d878e10ff2d5842400afe63378"><div class="ttname"><a href="#ae89af1d878e10ff2d5842400afe63378">SaveBool</a></div><div class="ttdeci">static void SaveBool(WeightedValueHeader *const header, const StoredBinaryValue *const storedBinaryValue, const PropertyValueType propertyValueType, void *const converterState, Exception *const exception)</div><div class="ttdoc">Saves a boolean value from a stored binary value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:220</div></div>
+<div class="ttc" id="aipi__weighted__results_8c_html_a19b17d7e853f957cbd63a54f6333185b"><div class="ttname"><a href="#a19b17d7e853f957cbd63a54f6333185b">InitBool</a></div><div class="ttdeci">static void InitBool(WeightedValueHeader *const header, void *const converterState)</div><div class="ttdoc">Initializes a boolean weighted value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:212</div></div>
+<div class="ttc" id="aipi__weighted__results_8c_html_ae89af1d878e10ff2d5842400afe63378"><div class="ttname"><a href="#ae89af1d878e10ff2d5842400afe63378">SaveBool</a></div><div class="ttdeci">static void SaveBool(WeightedValueHeader *const header, const StoredBinaryValue *const storedBinaryValue, const PropertyValueType propertyValueType, void *const converterState, Exception *const exception)</div><div class="ttdoc">Saves a boolean value from a stored binary value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:228</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1564,8 +1606,8 @@ Variables</h2></td></tr>
 <div class="c-code__line">    NULL,</div>
 <div class="c-code__line">    <span class="c-code__keyword">sizeof</span>(WeightedByte),</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="aipi__weighted__results_8c_html_a0708dbc31c3633b0784ed3ee1cbf0341"><div class="ttname"><a href="#a0708dbc31c3633b0784ed3ee1cbf0341">SaveByte</a></div><div class="ttdeci">static void SaveByte(WeightedValueHeader *const header, const StoredBinaryValue *const storedBinaryValue, const PropertyValueType propertyValueType, void *const converterState, Exception *const exception)</div><div class="ttdoc">Saves a byte value from a stored binary value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:296</div></div>
-<div class="ttc" id="aipi__weighted__results_8c_html_adacb0d9873827b8d9b0a7ca78b8dfb66"><div class="ttname"><a href="#adacb0d9873827b8d9b0a7ca78b8dfb66">InitByte</a></div><div class="ttdeci">static void InitByte(WeightedValueHeader *const header, void *const converterState)</div><div class="ttdoc">Initializes a byte weighted value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:280</div></div>
+<div class="ttc" id="aipi__weighted__results_8c_html_a0708dbc31c3633b0784ed3ee1cbf0341"><div class="ttname"><a href="#a0708dbc31c3633b0784ed3ee1cbf0341">SaveByte</a></div><div class="ttdeci">static void SaveByte(WeightedValueHeader *const header, const StoredBinaryValue *const storedBinaryValue, const PropertyValueType propertyValueType, void *const converterState, Exception *const exception)</div><div class="ttdoc">Saves a byte value from a stored binary value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:306</div></div>
+<div class="ttc" id="aipi__weighted__results_8c_html_adacb0d9873827b8d9b0a7ca78b8dfb66"><div class="ttname"><a href="#adacb0d9873827b8d9b0a7ca78b8dfb66">InitByte</a></div><div class="ttdeci">static void InitByte(WeightedValueHeader *const header, void *const converterState)</div><div class="ttdoc">Initializes a byte weighted value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:290</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1600,8 +1642,8 @@ Variables</h2></td></tr>
 <div class="c-code__line">    NULL,</div>
 <div class="c-code__line">    <span class="c-code__keyword">sizeof</span>(WeightedDouble),</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="aipi__weighted__results_8c_html_a3dd5a4ffe594aef4910dfc3b3afe6e88"><div class="ttname"><a href="#a3dd5a4ffe594aef4910dfc3b3afe6e88">InitDouble</a></div><div class="ttdeci">static void InitDouble(WeightedValueHeader *const header, void *const converterState)</div><div class="ttdoc">Initializes a double weighted value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:242</div></div>
-<div class="ttc" id="aipi__weighted__results_8c_html_ade09b7480a75c33856a8d1a0de2832b9"><div class="ttname"><a href="#ade09b7480a75c33856a8d1a0de2832b9">SaveDouble</a></div><div class="ttdeci">static void SaveDouble(WeightedValueHeader *const header, const StoredBinaryValue *const storedBinaryValue, const PropertyValueType propertyValueType, void *const converterState, Exception *const exception)</div><div class="ttdoc">Saves a double value from a stored binary value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:258</div></div>
+<div class="ttc" id="aipi__weighted__results_8c_html_a3dd5a4ffe594aef4910dfc3b3afe6e88"><div class="ttname"><a href="#a3dd5a4ffe594aef4910dfc3b3afe6e88">InitDouble</a></div><div class="ttdeci">static void InitDouble(WeightedValueHeader *const header, void *const converterState)</div><div class="ttdoc">Initializes a double weighted value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:248</div></div>
+<div class="ttc" id="aipi__weighted__results_8c_html_ade09b7480a75c33856a8d1a0de2832b9"><div class="ttname"><a href="#ade09b7480a75c33856a8d1a0de2832b9">SaveDouble</a></div><div class="ttdeci">static void SaveDouble(WeightedValueHeader *const header, const StoredBinaryValue *const storedBinaryValue, const PropertyValueType propertyValueType, void *const converterState, Exception *const exception)</div><div class="ttdoc">Saves a double value from a stored binary value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:266</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1636,8 +1678,8 @@ Variables</h2></td></tr>
 <div class="c-code__line">    NULL,</div>
 <div class="c-code__line">    <span class="c-code__keyword">sizeof</span>(WeightedInt),</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="aipi__weighted__results_8c_html_a1d1a3e7bf30dd42fc3694cfc20559398"><div class="ttname"><a href="#a1d1a3e7bf30dd42fc3694cfc20559398">InitInt</a></div><div class="ttdeci">static void InitInt(WeightedValueHeader *const header, void *const converterState)</div><div class="ttdoc">Initializes an integer weighted value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:166</div></div>
-<div class="ttc" id="aipi__weighted__results_8c_html_aa605c42223e2264b60be89fc43fa7d53"><div class="ttname"><a href="#aa605c42223e2264b60be89fc43fa7d53">SaveInt</a></div><div class="ttdeci">static void SaveInt(WeightedValueHeader *const header, const StoredBinaryValue *const storedBinaryValue, const PropertyValueType propertyValueType, void *const converterState, Exception *const exception)</div><div class="ttdoc">Saves an integer value from a stored binary value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:182</div></div>
+<div class="ttc" id="aipi__weighted__results_8c_html_a1d1a3e7bf30dd42fc3694cfc20559398"><div class="ttname"><a href="#a1d1a3e7bf30dd42fc3694cfc20559398">InitInt</a></div><div class="ttdeci">static void InitInt(WeightedValueHeader *const header, void *const converterState)</div><div class="ttdoc">Initializes an integer weighted value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:176</div></div>
+<div class="ttc" id="aipi__weighted__results_8c_html_aa605c42223e2264b60be89fc43fa7d53"><div class="ttname"><a href="#aa605c42223e2264b60be89fc43fa7d53">SaveInt</a></div><div class="ttdeci">static void SaveInt(WeightedValueHeader *const header, const StoredBinaryValue *const storedBinaryValue, const PropertyValueType propertyValueType, void *const converterState, Exception *const exception)</div><div class="ttdoc">Saves an integer value from a stored binary value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:192</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1672,9 +1714,9 @@ Variables</h2></td></tr>
 <div class="c-code__line">    <a class="code hl_function" href="#a68700d06107c94772c74f71b28861f7a">FreeString</a>,</div>
 <div class="c-code__line">    <span class="c-code__keyword">sizeof</span>(WeightedString),</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="aipi__weighted__results_8c_html_a0b0fd90868d2aace6edd1c6da47024cd"><div class="ttname"><a href="#a0b0fd90868d2aace6edd1c6da47024cd">InitString</a></div><div class="ttdeci">static void InitString(WeightedValueHeader *const header, void *const converterState)</div><div class="ttdoc">Initializes a string weighted value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:318</div></div>
-<div class="ttc" id="aipi__weighted__results_8c_html_a68700d06107c94772c74f71b28861f7a"><div class="ttname"><a href="#a68700d06107c94772c74f71b28861f7a">FreeString</a></div><div class="ttdeci">static void FreeString(WeightedValueHeader *const header)</div><div class="ttdoc">Frees resources used by a string weighted value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:451</div></div>
-<div class="ttc" id="aipi__weighted__results_8c_html_a6c9986e1d454d6754ad6c81a923c283c"><div class="ttname"><a href="#a6c9986e1d454d6754ad6c81a923c283c">SaveString</a></div><div class="ttdeci">static void SaveString(WeightedValueHeader *const header, const StoredBinaryValue *const storedBinaryValue, const PropertyValueType propertyValueType, void *const converterState, Exception *const exception)</div><div class="ttdoc">Saves a string value from a stored binary value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:385</div></div>
+<div class="ttc" id="aipi__weighted__results_8c_html_a0b0fd90868d2aace6edd1c6da47024cd"><div class="ttname"><a href="#a0b0fd90868d2aace6edd1c6da47024cd">InitString</a></div><div class="ttdeci">static void InitString(WeightedValueHeader *const header, void *const converterState)</div><div class="ttdoc">Initializes a string weighted value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:326</div></div>
+<div class="ttc" id="aipi__weighted__results_8c_html_a68700d06107c94772c74f71b28861f7a"><div class="ttname"><a href="#a68700d06107c94772c74f71b28861f7a">FreeString</a></div><div class="ttdeci">static void FreeString(WeightedValueHeader *const header)</div><div class="ttdoc">Frees resources used by a string weighted value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:465</div></div>
+<div class="ttc" id="aipi__weighted__results_8c_html_a6c9986e1d454d6754ad6c81a923c283c"><div class="ttname"><a href="#a6c9986e1d454d6754ad6c81a923c283c">SaveString</a></div><div class="ttdeci">static void SaveString(WeightedValueHeader *const header, const StoredBinaryValue *const storedBinaryValue, const PropertyValueType propertyValueType, void *const converterState, Exception *const exception)</div><div class="ttdoc">Saves a string value from a stored binary value.</div><div class="ttdef"><b>Definition</b> ipi_weighted_results.c:391</div></div>
 </div><!-- fragment -->
 </div>
 </div>

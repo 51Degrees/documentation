@@ -1,10 +1,8 @@
 <map id="RetainedHandle" name="RetainedHandle">
-<area shape="rect" id="Node000001" title="A handle and what keeps its memory allocated." alt="" coords="5,246,131,274"/>
-<area shape="rect" id="Node000002" href="$structfiftyone_degrees_resource_handle.html" title="Handle for a shared resource." alt="" coords="82,123,312,151"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,159,118,177,103,193,91,212,75,247,70,244,86,210,99,190,114,173,144,156"/>
-<area shape="rect" id="Node000004" href="$structfiftyone_degrees_resource_manager.html" title="Manager structure used to provide access to a shared and changing resource." alt="" coords="155,246,397,274"/>
-<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="190,164,188,194,190,208,196,221,208,234,225,246,220,245,204,238,191,223,185,209,183,194,187,168"/>
-<area shape="rect" id="Node000003" href="$structfiftyone_degrees_interlock_double_width.html" title="Double width (64 or 128 depending on the architecture) compare and exchange." alt="" coords="107,5,288,50"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="199,63,200,123,195,122,196,68"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="268,229,259,203,245,176,220,154,221,148,249,173,264,201,273,232"/>
+<area shape="rect" id="Node000001" title="A handle and what keeps its memory allocated." alt="" coords="5,128,131,156"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_resource_handle.html" title="Handle for a shared resource." alt="" coords="82,5,312,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,41,118,59,103,76,91,94,75,129,70,126,86,92,99,72,114,55,144,38"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_resource_manager.html" title="Manager structure used to provide access to a shared and changing resource." alt="" coords="155,128,397,156"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="190,46,188,77,190,90,196,103,208,116,225,128,220,127,204,120,191,106,185,92,183,77,187,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="268,112,259,86,245,59,220,36,221,31,249,55,264,84,273,114"/>
 </map>

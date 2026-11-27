@@ -4,7 +4,7 @@
 <area shape="rect" id="Node000004" href="$group___fifty_one_degrees_collection.html" title="Group of related items such as strings." alt="" coords="164,109,250,137"/>
 <area shape="rect" id="Node000005" href="$group___fifty_one_degrees_collection_key.html" title="Group of related items such as keys." alt="" coords="152,161,262,189"/>
 <area shape="rect" id="Node000006" href="$group___fifty_one_degrees_collection_key_types.html" title="Group of related items such as collection key type constants." alt="" coords="134,213,281,241"/>
-<area shape="rect" id="Node000001" title="Common 51Degrees methods, types and macros." alt="" coords="5,864,86,892"/>
+<area shape="rect" id="Node000001" title="Common 51Degrees methods, types and macros." alt="" coords="5,889,86,917"/>
 <area shape="rect" id="Node000007" href="$group___fifty_one_degrees_component.html" title="Component of a data set." alt="" coords="159,265,256,293"/>
 <area shape="rect" id="Node000008" href="$group___fifty_one_degrees_config.html" title="Configuration for building data sets." alt="" coords="176,317,238,345"/>
 <area shape="rect" id="Node000009" href="$group___fifty_one_degrees_data.html" title="Structure containing memory allocated to store a variable." alt="" coords="181,369,234,397"/>
@@ -30,8 +30,9 @@
 <area shape="rect" id="Node000031" href="$group___fifty_one_degrees_text_file.html" title="Contains helper methods for accessing and using text files." alt="" coords="172,1409,243,1437"/>
 <area shape="rect" id="Node000032" href="$group___fifty_one_degrees_threading.html" title="Defines multi threading macros if the FIFTYONE_DEGREES_NO_THREADING compiler directive is not explici..." alt="" coords="164,1461,250,1489"/>
 <area shape="rect" id="Node000033" href="$group___fifty_one_degrees_tree.html" title="Implementation of the classic red black binary tree." alt="" coords="183,1513,232,1541"/>
-<area shape="rect" id="Node000034" href="$group___fifty_one_degrees_value.html" title="Value of a data set relating to a property." alt="" coords="175,1565,240,1593"/>
-<area shape="rect" id="Node000035" href="$group___fifty_one_degrees_weighted_item.html" title="A weighted collection item with an associated weight value." alt="" coords="146,1617,269,1645"/>
-<area shape="rect" id="Node000015" href="$group__fiftyone_degrees_float.html" title="IEEE Single Precision Floating Point standard implementation and methods to convert to native float t..." alt="" coords="180,1669,234,1697"/>
-<area shape="rect" id="Node000018" href="$group__fiftyone_degrees_ip.html" title="Types and methods to parse IP address strings." alt="" coords="188,1721,227,1749"/>
+<area shape="rect" id="Node000034" href="$group___fifty_one_degrees_unaligned.html" title="Read and write numbers that can start at any byte." alt="" coords="164,1565,251,1593"/>
+<area shape="rect" id="Node000035" href="$group___fifty_one_degrees_value.html" title="Value of a data set relating to a property." alt="" coords="175,1617,240,1645"/>
+<area shape="rect" id="Node000036" href="$group___fifty_one_degrees_weighted_item.html" title="A weighted collection item with an associated weight value." alt="" coords="146,1669,269,1697"/>
+<area shape="rect" id="Node000015" href="$group__fiftyone_degrees_float.html" title="IEEE Single Precision Floating Point standard implementation and methods to convert to native float t..." alt="" coords="180,1721,234,1749"/>
+<area shape="rect" id="Node000018" href="$group__fiftyone_degrees_ip.html" title="Types and methods to parse IP address strings." alt="" coords="188,1773,227,1801"/>
 </map>

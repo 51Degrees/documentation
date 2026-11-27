@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <div class="c-code__line">    <span class="c-code__comment">// Throw the exception</span></div>
 <div class="c-code__line">    <a class="code hl_define" href="#ga6d849f1105ae95f45d943b42b978ebf0">FIFTYONE_DEGREES_EXCEPTION_THROW</a>;</div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="agroup___fifty_one_degrees_exceptions_html_ga33c5c7c00624b2fbca7fabd5cffd4009"><div class="ttname"><a href="#ga33c5c7c00624b2fbca7fabd5cffd4009">FIFTYONE_DEGREES_EXCEPTION_FAILED</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_EXCEPTION_FAILED</div><div class="ttdoc">Macro to test if the exception has been set and is failed.</div><div class="ttdef"><b>Definition</b> exceptions.h:208</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_exceptions_html_ga33c5c7c00624b2fbca7fabd5cffd4009"><div class="ttname"><a href="#ga33c5c7c00624b2fbca7fabd5cffd4009">FIFTYONE_DEGREES_EXCEPTION_FAILED</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_EXCEPTION_FAILED</div><div class="ttdoc">Macro to test if the exception has been set and is failed.</div><div class="ttdef"><b>Definition</b> exceptions.h:210</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_exceptions_html_ga6d849f1105ae95f45d943b42b978ebf0"><div class="ttname"><a href="#ga6d849f1105ae95f45d943b42b978ebf0">FIFTYONE_DEGREES_EXCEPTION_THROW</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_EXCEPTION_THROW</div><div class="ttdoc">Macro to print to standard error a message if an exception is set.</div><div class="ttdef"><b>Definition</b> exceptions.h:176</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_exceptions_html_ga8e539b343e9acdf79ea6696b26955530"><div class="ttname"><a href="#ga8e539b343e9acdf79ea6696b26955530">FIFTYONE_DEGREES_EXCEPTION_SET</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_EXCEPTION_SET(s)</div><div class="ttdoc">Macro used to set an exception to a status code.</div><div class="ttdef"><b>Definition</b> exceptions.h:126</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_exceptions_html_gae78f9f100e8f25f01c57fd36e7a6aa18"><div class="ttname"><a href="#gae78f9f100e8f25f01c57fd36e7a6aa18">FIFTYONE_DEGREES_EXCEPTION_CREATE</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_EXCEPTION_CREATE</div><div class="ttdoc">Macro used to create an exception.</div><div class="ttdef"><b>Definition</b> exceptions.h:200</div></div>
@@ -124,9 +124,8 @@ Macros</h2></td></tr>
 <tr class="c-table__row memdesc:ga6d849f1105ae95f45d943b42b978ebf0"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Macro to print to standard error a message if an exception is set. <br /></td></tr>
 <tr class="c-table__row memitem:gae78f9f100e8f25f01c57fd36e7a6aa18" id="r_gae78f9f100e8f25f01c57fd36e7a6aa18"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#gae78f9f100e8f25f01c57fd36e7a6aa18">FIFTYONE_DEGREES_EXCEPTION_CREATE</a></td></tr>
 <tr class="c-table__row memdesc:gae78f9f100e8f25f01c57fd36e7a6aa18"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Macro used to create an exception.  <br /></td></tr>
-<tr class="c-table__row memitem:ga33c5c7c00624b2fbca7fabd5cffd4009" id="r_ga33c5c7c00624b2fbca7fabd5cffd4009"><td class="c-table__cell"><a id="ga33c5c7c00624b2fbca7fabd5cffd4009" name="ga33c5c7c00624b2fbca7fabd5cffd4009"></a>
-#define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_EXCEPTION_FAILED</b>&#160;&#160;&#160;(<a class="el" href="#ga840c1eb91356648b93534dd99495c7dd">FIFTYONE_DEGREES_EXCEPTION_OKAY</a> == false)</td></tr>
-<tr class="c-table__row memdesc:ga33c5c7c00624b2fbca7fabd5cffd4009"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Macro to test if the exception has been set and is failed. <br /></td></tr>
+<tr class="c-table__row memitem:ga33c5c7c00624b2fbca7fabd5cffd4009" id="r_ga33c5c7c00624b2fbca7fabd5cffd4009"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#ga33c5c7c00624b2fbca7fabd5cffd4009">FIFTYONE_DEGREES_EXCEPTION_FAILED</a>&#160;&#160;&#160;(<a class="el" href="#ga840c1eb91356648b93534dd99495c7dd">FIFTYONE_DEGREES_EXCEPTION_OKAY</a> == false)</td></tr>
+<tr class="c-table__row memdesc:ga33c5c7c00624b2fbca7fabd5cffd4009"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Macro to test if the exception has been set and is failed.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -210,6 +209,27 @@ Functions</h2></td></tr>
 <div class="ttc" id="astructfiftyone_degrees_exception_html"><div class="ttname"><a href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a></div><div class="ttdoc">Structure used to represent a 51Degrees exception and passed into methods that might generate excepti...</div><div class="ttdef"><b>Definition</b> exceptions.h:115</div></div>
 </div><!-- fragment -->
 <p>Macro used to create an exception. </p>
+
+</div>
+</div>
+<a id="ga33c5c7c00624b2fbca7fabd5cffd4009" name="ga33c5c7c00624b2fbca7fabd5cffd4009"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga33c5c7c00624b2fbca7fabd5cffd4009">&#9670;&#160;</a></span>FIFTYONE_DEGREES_EXCEPTION_FAILED</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define FIFTYONE_DEGREES_EXCEPTION_FAILED&#160;&#160;&#160;(<a class="el" href="#ga840c1eb91356648b93534dd99495c7dd">FIFTYONE_DEGREES_EXCEPTION_OKAY</a> == false)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Macro to test if the exception has been set and is failed. </p>
+<p>Where exceptions are disabled nothing can fail, so it is plain false. </p>
 
 </div>
 </div>

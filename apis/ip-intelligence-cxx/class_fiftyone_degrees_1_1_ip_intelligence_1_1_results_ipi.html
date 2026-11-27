@@ -765,7 +765,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get a vector with all weighted double representations of the values associated with the required property name. </p>
-<p>If the name is not valid an empty vector is returned. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the name is not valid an empty vector is returned. A value stored as an azimuth or a declination is rounded to the decimal places of its text, which is 3 by default. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">propertyName</td><td>pointer to a string containing the property name </td></tr>
   </table>
@@ -795,7 +795,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get a vector with all weighted double representations of the values associated with the required property name. </p>
-<p>If the name is not valid an empty vector is returned. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the name is not valid an empty vector is returned. A value stored as an azimuth or a declination is rounded to the decimal places of its text, which is 3 by default. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">propertyName</td><td>pointer to a string containing the property name </td></tr>
   </table>
@@ -825,7 +825,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get a vector with all weighted double representations of the values associated with the required property name. </p>
-<p>If the name is not valid an empty vector is returned. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the name is not valid an empty vector is returned. A value stored as an azimuth or a declination is rounded to the decimal places of its text, which is 3 by default. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">propertyName</td><td>pointer to a string containing the property name </td></tr>
   </table>
@@ -855,7 +855,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Get a vector with all weighted double representations of the values associated with the required property index. </p>
-<p>If the index is not valid an empty vector is returned. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the index is not valid an empty vector is returned. A value stored as an azimuth or a declination is rounded to the decimal places of its text, which is 3 by default. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">requiredPropertyIndex</td><td>index of the property in the names the engine was created with, or when it named none, in the properties of the first data file it loaded </td></tr>
   </table>
@@ -1228,7 +1228,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a vector of weighted string values for the property </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a vector of weighted string values for the property, each written from the type it is stored as, so that a geometry gives its WKT </dd></dl>
 
 </div>
 </div>
@@ -1263,7 +1263,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a vector of weighted string values for the property </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a vector of weighted string values for the property, each written from the type it is stored as, so that a geometry gives its WKT </dd></dl>
 
 </div>
 </div>
@@ -1298,7 +1298,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a vector of weighted string values for the property </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a vector of weighted string values for the property, each written from the type it is stored as, so that a geometry gives its WKT </dd></dl>
 
 </div>
 </div>
@@ -1333,7 +1333,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a vector of weighted string values for the property </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">a vector of weighted string values for the property, each written from the type it is stored as, so that a geometry gives its WKT </dd></dl>
 
 </div>
 </div>

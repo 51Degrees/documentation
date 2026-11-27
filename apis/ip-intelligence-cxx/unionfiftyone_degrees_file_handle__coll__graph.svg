@@ -21,8 +21,8 @@
 <g id="Node000002" class="node">
 <title>Node2</title>
 <g id="a_Node000002"><a xlink:href="structfiftyone_degrees_pool_item.html" target="_top" xlink:title="Pool item node in the stack of items.">
-<polygon fill="white" stroke="#666666" points="191.88,-96.25 55.12,-96.25 55.12,-75.5 191.88,-75.5 191.88,-96.25"/>
-<text xml:space="preserve" text-anchor="middle" x="123.5" y="-82.75" font-family="Helvetica,sans-Serif" font-size="10.00">fiftyoneDegreesPoolItem</text>
+<polygon fill="white" stroke="#666666" points="233.88,-96.25 97.12,-96.25 97.12,-75.5 233.88,-75.5 233.88,-96.25"/>
+<text xml:space="preserve" text-anchor="middle" x="165.5" y="-82.75" font-family="Helvetica,sans-Serif" font-size="10.00">fiftyoneDegreesPoolItem</text>
 </a>
 </g>
 </g>
@@ -30,11 +30,11 @@
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node2&#45;&gt;Node1</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M102.69,-67.51C99.56,-64.37 96.53,-60.98 94,-57.5 85.68,-46.07 79.36,-30.91 75.79,-21.15"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="100.13,-69.91 109.85,-74.12 104.87,-64.77 100.13,-69.91"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M141.21,-68.64C136.12,-65.07 130.82,-61.23 126,-57.5 110.48,-45.49 93.46,-30.47 82.88,-20.9"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="139.13,-71.46 149.36,-74.24 143.1,-65.69 139.13,-71.46"/>
 </a>
 </g>
-<text xml:space="preserve" text-anchor="start" x="97" y="-45" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey">item</text>
+<text xml:space="preserve" text-anchor="start" x="129" y="-45" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey">item</text>
 </g>
 <!-- Node3 -->
 <g id="Node000003" class="node">
@@ -49,50 +49,31 @@
 <g id="edge3_Node000003_Node000002" class="edge">
 <title>Node2&#45;&gt;Node3</title>
 <g id="a_edge3_Node000003_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M128.78,-64.32C131.98,-55.44 136.9,-45.55 144.25,-38.75 152.82,-30.82 163.85,-25.16 174.84,-21.12"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="125.52,-63.04 125.96,-73.63 132.21,-65.08 125.52,-63.04"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M158.92,-64.28C157.45,-55.79 157.51,-46.21 162.25,-38.75 167.28,-30.83 175.28,-25.16 183.76,-21.11"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="155.47,-64.92 161.32,-73.76 162.26,-63.21 155.47,-64.92"/>
 </a>
 </g>
-<text xml:space="preserve" text-anchor="start" x="147.25" y="-45" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey">stack</text>
+<text xml:space="preserve" text-anchor="start" x="165.25" y="-45" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey">stack</text>
 </g>
 <!-- Node3&#45;&gt;Node2 -->
 <g id="edge2_Node000002_Node000003" class="edge">
 <title>Node3&#45;&gt;Node2</title>
 <g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M207,-30.3C199.87,-39.35 190.52,-49.85 180.5,-57.5 171.16,-64.63 159.67,-70.58 149.46,-75.09"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="209.68,-32.56 212.89,-22.46 204.09,-28.35 209.68,-32.56"/>
+<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M213.05,-31.76C209.4,-40.2 204.5,-49.8 198.5,-57.5 193.29,-64.2 186.17,-70.36 179.88,-75.13"/>
+<polygon fill="#9a32cd" stroke="#9a32cd" points="216.22,-33.24 216.66,-22.65 209.72,-30.65 216.22,-33.24"/>
 </a>
 </g>
-<text xml:space="preserve" text-anchor="start" x="202.74" y="-45" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey">pool</text>
+<text xml:space="preserve" text-anchor="start" x="212.41" y="-45" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey">pool</text>
 </g>
 <!-- Node3&#45;&gt;Node3 -->
-<g id="edge5_Node000003_Node000003" class="edge">
+<g id="edge4_Node000003_Node000003" class="edge">
 <title>Node3&#45;&gt;Node3</title>
-<g id="a_edge5_Node000003_Node000003"><a xlink:title=" ">
+<g id="a_edge4_Node000003_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M289.08,-15.25C293.17,-14.09 295.62,-12.46 295.62,-10.38 295.62,-6.76 288.29,-4.53 277.82,-3.69"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="288.63,-11.78 279.32,-16.82 289.74,-18.69 288.63,-11.78"/>
 </a>
 </g>
 <text xml:space="preserve" text-anchor="start" x="298.62" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey">resourceFree</text>
-</g>
-<!-- Node4 -->
-<g id="Node000004" class="node">
-<title>Node4</title>
-<g id="a_Node000004"><a xlink:href="unionfiftyone_degrees_pool_head.html" target="_top" xlink:title="The head of the stack used for pop and push operations.">
-<polygon fill="white" stroke="#666666" points="349.38,-96.25 209.62,-96.25 209.62,-75.5 349.38,-75.5 349.38,-96.25"/>
-<text xml:space="preserve" text-anchor="middle" x="279.5" y="-82.75" font-family="Helvetica,sans-Serif" font-size="10.00">fiftyoneDegreesPoolHead</text>
-</a>
-</g>
-</g>
-<!-- Node4&#45;&gt;Node3 -->
-<g id="edge4_Node000003_Node000004" class="edge">
-<title>Node4&#45;&gt;Node3</title>
-<g id="a_edge4_Node000003_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M264.58,-66.29C253.08,-51.96 237.63,-32.71 228.4,-21.22"/>
-<polygon fill="#9a32cd" stroke="#9a32cd" points="261.85,-68.48 270.84,-74.09 267.31,-64.1 261.85,-68.48"/>
-</a>
-</g>
-<text xml:space="preserve" text-anchor="start" x="260.02" y="-45" font-family="Helvetica,sans-Serif" font-size="10.00" fill="grey">head</text>
 </g>
 </g>
 </svg>

@@ -98,9 +98,9 @@ Data Fields</h2></td></tr>
 <tr class="c-table__row memitem:ae50813163ac756a8e29624c9df77c087" id="r_ae50813163ac756a8e29624c9df77c087"><td class="c-table__cell"><a id="ae50813163ac756a8e29624c9df77c087" name="ae50813163ac756a8e29624c9df77c087"></a>
 <a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_engine_ipi.html">EngineIpi</a>&#160;*&#160;</td><td class="c-table__cell"><b>engine</b></td></tr>
 <tr class="c-table__row memdesc:ae50813163ac756a8e29624c9df77c087"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Pointer to the engine. <br /></td></tr>
-<tr class="c-table__row memitem:a8c5c43e6e1a36fb795a4e72cac6a5220" id="r_a8c5c43e6e1a36fb795a4e72cac6a5220"><td class="c-table__cell"><a id="a8c5c43e6e1a36fb795a4e72cac6a5220" name="a8c5c43e6e1a36fb795a4e72cac6a5220"></a>
-volatile&#160;long&#160;</td><td class="c-table__cell"><b>threadsFinished</b></td></tr>
-<tr class="c-table__row memdesc:a8c5c43e6e1a36fb795a4e72cac6a5220"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Number of threads that have finished their processing. <br /></td></tr>
+<tr class="c-table__row memitem:a788effb409b4d49e98e7fb9c45606037" id="r_a788effb409b4d49e98e7fb9c45606037"><td class="c-table__cell"><a id="a788effb409b4d49e98e7fb9c45606037" name="a788effb409b4d49e98e7fb9c45606037"></a>
+std::atomic&lt;&#160;long&#160;&gt;&#160;</td><td class="c-table__cell"><b>threadsFinished</b> {0}</td></tr>
+<tr class="c-table__row memdesc:a788effb409b4d49e98e7fb9c45606037"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Number of threads that have finished their processing, counted atomically as the threads finish at the same time. <br /></td></tr>
 <tr class="c-table__row memitem:a706581fe50e44adaf2cfcdba6eb1bd74" id="r_a706581fe50e44adaf2cfcdba6eb1bd74"><td class="c-table__cell"><a id="a706581fe50e44adaf2cfcdba6eb1bd74" name="a706581fe50e44adaf2cfcdba6eb1bd74"></a>
 string&#160;</td><td class="c-table__cell"><b>ipAddressFilePath</b></td></tr>
 <tr class="c-table__row memdesc:a706581fe50e44adaf2cfcdba6eb1bd74"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Path to the IP Addresses to process. <br /></td></tr>
@@ -136,7 +136,7 @@ thread&#160;</td><td class="c-table__cell"><b>threads</b> [THREAD_COUNT]</td></t
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">engine</td><td>pointer to the engine the threads should use </td></tr>
-    <tr><td class="paramname">ipAddressFilePath</td><td>path to the IP Addresses CSV </td></tr>
+    <tr><td class="paramname">ipAddressFilePath</td><td>path to the YAML evidence file </td></tr>
   </table>
   </dd>
 </dl>

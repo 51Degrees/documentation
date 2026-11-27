@@ -599,7 +599,7 @@ Functions</h2></td></tr>
 
 <p>Reload the data set being used by the resource manager using a data file loaded into contiguous memory. </p>
 <p>When initialising the data, the configuration that manager was first created with is used.</p>
-<p>If the data passed in is successfully initialised, the current data set is replaced The old data will remain in memory until the last reference to it is released. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the data passed in is successfully initialised, the current data set is replaced The old data will remain in memory until the last reference to it is released. The new data set keeps the master file name of the one it replaces, so a later reload from the original file reads that file. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">manager</td><td>pointer to the resource manager to reload the data set for </td></tr>
     <tr><td class="paramname">source</td><td>pointer to the memory location where the new data file is stored </td></tr>

@@ -89,10 +89,10 @@ Public Member Functions</h2></td></tr>
 <tr class="c-table__row memitem:a5643454cee886c92281fe09c92cfd98a" id="r_a5643454cee886c92281fe09c92cfd98a"><td class="c-table__cell">K&#160;</td><td class="c-table__cell"><a class="el" href="#a5643454cee886c92281fe09c92cfd98a">getKey</a> () const</td></tr>
 <tr class="c-table__row memdesc:a5643454cee886c92281fe09c92cfd98a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get the unique key for this entity instance.  <br /></td></tr>
 <tr id="pub-methods-2" class="c-table__row"><td class="c-table__cell" colspan="2"><h3 class="c-table__heading">Operators</h3></td></tr>
-<tr class="c-table__row memitem:a54020a4fc0de0938d831b45a204139c6" id="r_a54020a4fc0de0938d831b45a204139c6"><td class="c-table__cell">const&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#a54020a4fc0de0938d831b45a204139c6">operator==</a> (const <a class="el" href="#aaf4b900fde2a65f07132922e6a7561a3">EntityMetaData</a>&lt; K &gt; other) const</td></tr>
-<tr class="c-table__row memdesc:a54020a4fc0de0938d831b45a204139c6"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns true is the two entities share the same unique key.  <br /></td></tr>
-<tr class="c-table__row memitem:a0f9d071c2b444a12afa55b071fa8f237" id="r_a0f9d071c2b444a12afa55b071fa8f237"><td class="c-table__cell">const&#160;bool&#160;</td><td class="c-table__cell"><a class="el" href="#a0f9d071c2b444a12afa55b071fa8f237">operator!=</a> (const <a class="el" href="#aaf4b900fde2a65f07132922e6a7561a3">EntityMetaData</a>&lt; K &gt; other) const</td></tr>
-<tr class="c-table__row memdesc:a0f9d071c2b444a12afa55b071fa8f237"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns true is the two entities do not share the same unique key.  <br /></td></tr>
+<tr class="c-table__row memitem:af48bdcd6a5dd23c87799ad77d8cf457b" id="r_af48bdcd6a5dd23c87799ad77d8cf457b"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#af48bdcd6a5dd23c87799ad77d8cf457b">operator==</a> (const <a class="el" href="#aaf4b900fde2a65f07132922e6a7561a3">EntityMetaData</a>&lt; K &gt; other) const</td></tr>
+<tr class="c-table__row memdesc:af48bdcd6a5dd23c87799ad77d8cf457b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns true is the two entities share the same unique key.  <br /></td></tr>
+<tr class="c-table__row memitem:ad6917e6c3ccb1f4657de672a515ba2d9" id="r_ad6917e6c3ccb1f4657de672a515ba2d9"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ad6917e6c3ccb1f4657de672a515ba2d9">operator!=</a> (const <a class="el" href="#aaf4b900fde2a65f07132922e6a7561a3">EntityMetaData</a>&lt; K &gt; other) const</td></tr>
+<tr class="c-table__row memdesc:ad6917e6c3ccb1f4657de672a515ba2d9"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Returns true is the two entities do not share the same unique key.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="g-docs__section-heading">Constructor &amp; Destructor Documentation</h2>
 <a id="aaf4b900fde2a65f07132922e6a7561a3" name="aaf4b900fde2a65f07132922e6a7561a3"></a>
@@ -169,8 +169,8 @@ template&lt;class K&gt; </div>
 
 </div>
 </div>
-<a id="a0f9d071c2b444a12afa55b071fa8f237" name="a0f9d071c2b444a12afa55b071fa8f237"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a0f9d071c2b444a12afa55b071fa8f237">&#9670;&#160;</a></span>operator!=()</h2>
+<a id="ad6917e6c3ccb1f4657de672a515ba2d9" name="ad6917e6c3ccb1f4657de672a515ba2d9"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ad6917e6c3ccb1f4657de672a515ba2d9">&#9670;&#160;</a></span>operator!=()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -183,7 +183,7 @@ template&lt;class K&gt; </div>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">const bool <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_entity_meta_data.html">FiftyoneDegrees::Common::EntityMetaData</a>&lt; K &gt;::operator!= </td>
+              <td class="c-table__cell">bool <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_entity_meta_data.html">FiftyoneDegrees::Common::EntityMetaData</a>&lt; K &gt;::operator!= </td>
           <td>(</td>
           <td class="c-table__cell">const <a class="el" href="#aaf4b900fde2a65f07132922e6a7561a3">EntityMetaData</a>&lt; K &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>other</em></span></td><td>)</td>
           <td> const</td>
@@ -209,8 +209,8 @@ template&lt;class K&gt; </div>
 
 </div>
 </div>
-<a id="a54020a4fc0de0938d831b45a204139c6" name="a54020a4fc0de0938d831b45a204139c6"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a54020a4fc0de0938d831b45a204139c6">&#9670;&#160;</a></span>operator==()</h2>
+<a id="af48bdcd6a5dd23c87799ad77d8cf457b" name="af48bdcd6a5dd23c87799ad77d8cf457b"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af48bdcd6a5dd23c87799ad77d8cf457b">&#9670;&#160;</a></span>operator==()</h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -223,7 +223,7 @@ template&lt;class K&gt; </div>
         <div class="g-table g-table--overflow">
           <table class="c-table c-table--article">
             <tr class="c-table__row">
-              <td class="c-table__cell">const bool <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_entity_meta_data.html">FiftyoneDegrees::Common::EntityMetaData</a>&lt; K &gt;::operator== </td>
+              <td class="c-table__cell">bool <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_entity_meta_data.html">FiftyoneDegrees::Common::EntityMetaData</a>&lt; K &gt;::operator== </td>
           <td>(</td>
           <td class="c-table__cell">const <a class="el" href="#aaf4b900fde2a65f07132922e6a7561a3">EntityMetaData</a>&lt; K &gt;</td>          <td class="c-table__cell"><span class="paramname"><em>other</em></span></td><td>)</td>
           <td> const</td>

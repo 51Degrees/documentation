@@ -1,11 +1,9 @@
 <map id="fiftyoneDegreesFileHandle" name="fiftyoneDegreesFileHandle">
 <area shape="rect" id="Node000001" title="File handle node in the stack of handles." alt="" coords="5,106,199,134"/>
-<area shape="rect" id="Node000002" href="$structfiftyone_degrees_pool_item.html" title="Pool item node in the stack of items." alt="" coords="79,5,261,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,42,133,59,119,83,108,107,104,104,114,81,128,55,140,45"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_pool_item.html" title="Pool item node in the stack of items." alt="" coords="135,5,317,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,41,175,59,117,108,114,104,172,55,191,43"/>
 <area shape="rect" id="Node000003" href="$structfiftyone_degrees_pool.html" title="Pool of resources stored as items in a stack." alt="" coords="223,106,376,134"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="178,45,188,65,200,80,218,93,241,106,236,105,216,98,196,84,183,67,176,50"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="279,93,244,59,204,36,205,31,248,55,284,94"/>
-<area shape="poly" id="edge5_Node000003_Node000003" title=" " alt="" coords="392,111,402,120,394,128,376,131,375,126,392,123,397,120,390,116"/>
-<area shape="rect" id="Node000004" href="$unionfiftyone_degrees_pool_head.html" title="The head of the stack used for pop and push operations." alt="" coords="285,5,471,33"/>
-<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="361,44,311,108,308,103,356,46"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="219,46,219,65,224,81,236,94,253,106,248,105,233,98,219,83,214,66,216,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="287,90,268,59,244,36,246,31,272,55,292,92"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="392,111,402,120,394,128,376,131,375,126,392,123,397,120,390,116"/>
 </map>

@@ -1,13 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <link rel="canonical" href="https://51degrees.com/documentation/apis/ip-intelligence-cxx/structfiftyone_degrees_interlock_double_width.html">
+  <link rel="canonical" href="https://51degrees.com/documentation/apis/device-detection-cxx/unionfiftyone__degrees__pool__head__t.html">
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="fiftyoneDegreesInterlockDoubleWidth Struct Reference - IP intelligence services for 51Degrees Pipeline - 51Degrees documentation."/>
-<title>51Degrees IP Intelligence C/C++: fiftyoneDegreesInterlockDoubleWidth Struct Reference</title>
+<meta name="description" content="fiftyone_degrees_pool_head_t Union Reference - A device detection library that is used natively or by 51Degrees products - 51Degrees documentation."/>
+<title>51Degrees Device Detection C/C++: fiftyone_degrees_pool_head_t Union Reference</title>
 <!-- Stylesheets ahead of scripts and inline CLS reservations; see HEADER-NOTES.md. -->
 <link href="tabs.min.css" rel="stylesheet" type="text/css"/>
 <link href="docs-main.min.css" rel="stylesheet" type="text/css" />
@@ -26,12 +26,12 @@
 <div id="titlearea" class="g-header g-header--docs">
   <div class="c-brand" role="banner">
   <a id="projectlogo" href="https://51degrees.com/" class="c-brand__link"><img class="c-brand__image" alt="51Degrees" src="https://51degrees.com/img/logo.png" width="360" height="67" style="width:172px;height:auto;"/></a>
-  <span class="c-tagline">51Degrees IP Intelligence C/C++
+  <span class="c-tagline">51Degrees Device Detection C/C++
    &#160;<span id="projectnumber">4.5</span>
   </span>
   </div>
   <div id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectbrief">IP intelligence services for 51Degrees Pipeline</div>
+   <div id="projectbrief">A device detection library that is used natively or by 51Degrees products</div>
   </div>
   <div id="main-nav"></div>
   <section class="g-search" hidden="hidden">
@@ -57,37 +57,35 @@
   </nav>
 </div>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded',() => { initNavTree('structfiftyone_degrees_interlock_double_width.html','',''); });
+document.addEventListener('DOMContentLoaded',() => { initNavTree('unionfiftyone__degrees__pool__head__t.html','',''); });
 </script>
 <div id="doc-content" class="g-docs__content">
 <div class="g-docs__header">
-<h1 class="g-docs__page-title">fiftyoneDegreesInterlockDoubleWidth Struct Reference<div class="c-breadcrumb"><ul class="c-breadcrumb"><li class="c-breadcrumb__item"><a class="el c-breadcrumb__link" href="group___fifty_one_degrees_common.html">Common</a></li><li class="c-breadcrumb__item"><a class="el c-breadcrumb__link" href="group___fifty_one_degrees_threading.html">Threading</a></li></ul></div></h1></div><!--header-->
+<h1 class="g-docs__page-title">fiftyone_degrees_pool_head_t Union Reference<div class="c-breadcrumb"><ul class="c-breadcrumb"><li class="c-breadcrumb__item"><a class="el c-breadcrumb__link" href="group___fifty_one_degrees_common.html">Common</a></li><li class="c-breadcrumb__item"><a class="el c-breadcrumb__link" href="group___fifty_one_degrees_pool.html">Pool</a></li></ul></div></h1></div><!--header-->
 <div class="g-docs__inner">
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
-<div class="textblock"><p>Double width (64 or 128 depending on the architecture) compare and exchange. </p>
-<p>Replaces the destination value with the exchange value, only if the destination value matched the comparand. Returns true if the value was exchanged.</p>
-<p>Windows: Either InterlockedCompareExchange128 or InterlockedCompareExchange64 is used, depending on whether the source is compiled in 32 or 64 bit. InterlockedCompareExchange128 will use the cmpxchg16b instruction on modern Intel and AMD CPUs.</p>
-<p>see: <a href="https://docs.microsoft.com/en-us/cpp/intrinsics/interlockedcompareexchange128?view=msvc-160">https://docs.microsoft.com/en-us/cpp/intrinsics/interlockedcompareexchange128?view=msvc-160</a></p>
-<p>Linux: __atomic_compare_exchange is used regardless of architecture. The size of <a class="el" href="structfiftyone_degrees_interlock_double_width.html" title="Double width (64 or 128 depending on the architecture) compare and exchange.">fiftyoneDegreesInterlockDoubleWidth</a> dictates whether __atomic_compare_exchange_8 or __atomic_compare_exchange_16 will be called. The underlying implementation will depend on the hardware - either the compiler intrinsic will be used, or a library function if that is not available.</p>
-<p>__atomic_compare_exchange_16 will use the cmpxchg16b on modern Intel and AMD CPUs. However, most ARM chips will not support this, so the fallback library function may not offer the same performance. Falling back to a library function may mean that the operation is not lock free. To check, see the FIFTYONE_DEGREES_IS_LOCK_FREE macro.</p>
-<p>see: <a href="https://gcc.gnu.org/onlinedocs/libstdc++/manual/ext_concurrency_impl.html">https://gcc.gnu.org/onlinedocs/libstdc++/manual/ext_concurrency_impl.html</a></p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">d</td><td>the destination to swap </td></tr>
-    <tr><td class="paramname">e</td><td>the exchange value </td></tr>
-    <tr><td class="paramname">c</td><td>the comparand </td></tr>
-  </table>
-  </dd>
-</dl>
+<div class="textblock"><p>The head of the stack used for pop and push operations. </p>
+<p>The ABA value counts every change to the head, so that a thread that read the head before other threads changed it finds it changed. It is 32 bits, as a 16 bit count comes back to the same value after 65536 changes, which threads using a pool at once can make while another thread is paused. A 32 bit count comes back after 4294967296 changes. A thread paused between reading the head and its compare exchange for that many changes could put an item in use back at the head, which needs a pause of over an hour at a million changes a second. </p>
 </div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="c-table__row memitem:aae3d852b51fac1517cf412f164979cbf" id="r_aae3d852b51fac1517cf412f164979cbf"><td class="c-table__cell"><a id="aae3d852b51fac1517cf412f164979cbf" name="aae3d852b51fac1517cf412f164979cbf"></a>
-int64_t&#160;</td><td class="c-table__cell"><b>value</b></td></tr>
+<tr class="c-table__row memitem:a358066273dbe074e2b54ca48eee8f1c2" id="r_a358066273dbe074e2b54ca48eee8f1c2"><td class="c-table__cell"><a id="a358066273dbe074e2b54ca48eee8f1c2" name="a358066273dbe074e2b54ca48eee8f1c2"></a>
+volatile&#160;int64_t&#160;</td><td class="c-table__cell"><b>exchange</b></td></tr>
+<tr class="c-table__row memdesc:a358066273dbe074e2b54ca48eee8f1c2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Number used in the compare exchange operation. <br /></td></tr>
+<tr class="c-table__row memitem:"><td class="memItemLeft anon"><a id="af324806b7d4eaeccacad5a1ade1791bf" name="af324806b7d4eaeccacad5a1ade1791bf"></a>
+struct {&#160;</td><td class="c-table__cell"></td></tr>
+<tr class="c-table__row memitem:abebcb6332be30d84346fa4f7f2532a40" id="r_abebcb6332be30d84346fa4f7f2532a40"><td class="memItemLeft anon">
+&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<b>index</b>&#160;</td><td class="c-table__cell"></td></tr>
+<tr class="c-table__row memdesc:abebcb6332be30d84346fa4f7f2532a40"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Index of the item in the linked list. <br /></td></tr>
+<tr class="c-table__row memitem:a51ca2359c00e4df7b6efa1b8334b9122" id="r_a51ca2359c00e4df7b6efa1b8334b9122"><td class="memItemLeft anon">
+&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<b>aba</b>&#160;</td><td class="c-table__cell"></td></tr>
+<tr class="c-table__row memdesc:a51ca2359c00e4df7b6efa1b8334b9122"><td class="c-table__cell">&#160;</td><td class="c-table__cell">ABA value used to ensure proper operation. <br /></td></tr>
+<tr class="c-table__row memitem:af324806b7d4eaeccacad5a1ade1791bf" id="r_af324806b7d4eaeccacad5a1ade1791bf"><td class="memItemLeft anonEnd">}&#160;</td><td class="c-table__cell"><b>values</b></td></tr>
+<tr class="c-table__row memdesc:af324806b7d4eaeccacad5a1ade1791bf"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_synonyms.html#ga7b83811fdc944fc1097ec83a8aef7d16" title="Synonym for fiftyoneDegreesValue type.">Value</a> index with its ABA value. <br /></td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li><a class="el" href="threading_8h_source.html">threading.h</a></li>
+<hr/>The documentation for this union was generated from the following file:<ul>
+<li><a class="el" href="pool_8h_source.html">pool.h</a></li>
 </ul>
 </div><!-- primary -->
 </div><!-- inner -->

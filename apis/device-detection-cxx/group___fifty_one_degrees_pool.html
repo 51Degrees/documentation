@@ -113,10 +113,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <div class="c-code__line">}</div>
 <div class="ttc" id="agroup___fifty_one_degrees_exceptions_html_gae78f9f100e8f25f01c57fd36e7a6aa18"><div class="ttname"><a href="group___fifty_one_degrees_exceptions.html#gae78f9f100e8f25f01c57fd36e7a6aa18">FIFTYONE_DEGREES_EXCEPTION_CREATE</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_EXCEPTION_CREATE</div><div class="ttdoc">Macro used to create an exception.</div><div class="ttdef"><b>Definition</b> exceptions.h:200</div></div>
 <div class="ttc" id="agroup___fifty_one_degrees_pool_html_ga1df931d9a29f200def2fb15a199f14c6"><div class="ttname"><a href="#ga1df931d9a29f200def2fb15a199f14c6">fiftyoneDegreesPoolFree</a></div><div class="ttdeci">void fiftyoneDegreesPoolFree(fiftyoneDegreesPool *pool)</div><div class="ttdoc">Releases the items used by the pool freeing the resources used by each item by calling the resourceFr...</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_pool_html_ga60a64a27f6b37e18d1e6c69e1c27d804"><div class="ttname"><a href="#ga60a64a27f6b37e18d1e6c69e1c27d804">fiftyoneDegreesPoolResourceFree</a></div><div class="ttdeci">void(* fiftyoneDegreesPoolResourceFree)(fiftyoneDegreesPool *pool, void *resource)</div><div class="ttdoc">Frees a resource previously created with fiftyoneDegreesPoolResourceCreate.</div><div class="ttdef"><b>Definition</b> pool.h:178</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_pool_html_ga9f77753d6988363a7da07403d0019248"><div class="ttname"><a href="#ga9f77753d6988363a7da07403d0019248">fiftyoneDegreesPoolResourceCreate</a></div><div class="ttdeci">void *(* fiftyoneDegreesPoolResourceCreate)(fiftyoneDegreesPool *pool, void *state, fiftyoneDegreesException *exception)</div><div class="ttdoc">Used to create a new resource for use in the pool.</div><div class="ttdef"><b>Definition</b> pool.h:159</div></div>
-<div class="ttc" id="astructfiftyone_degrees_pool_html"><div class="ttname"><a href="structfiftyone_degrees_pool.html">fiftyoneDegreesPool</a></div><div class="ttdoc">Pool of resources stored as items in a stack.</div><div class="ttdef"><b>Definition</b> pool.h:205</div></div>
-<div class="ttc" id="astructfiftyone_degrees_pool_item_html"><div class="ttname"><a href="structfiftyone_degrees_pool_item.html">fiftyoneDegreesPoolItem</a></div><div class="ttdoc">Pool item node in the stack of items.</div><div class="ttdef"><b>Definition</b> pool.h:185</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_pool_html_ga60a64a27f6b37e18d1e6c69e1c27d804"><div class="ttname"><a href="#ga60a64a27f6b37e18d1e6c69e1c27d804">fiftyoneDegreesPoolResourceFree</a></div><div class="ttdeci">void(* fiftyoneDegreesPoolResourceFree)(fiftyoneDegreesPool *pool, void *resource)</div><div class="ttdoc">Frees a resource previously created with fiftyoneDegreesPoolResourceCreate.</div><div class="ttdef"><b>Definition</b> pool.h:174</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_pool_html_ga9f77753d6988363a7da07403d0019248"><div class="ttname"><a href="#ga9f77753d6988363a7da07403d0019248">fiftyoneDegreesPoolResourceCreate</a></div><div class="ttdeci">void *(* fiftyoneDegreesPoolResourceCreate)(fiftyoneDegreesPool *pool, void *state, fiftyoneDegreesException *exception)</div><div class="ttdoc">Used to create a new resource for use in the pool.</div><div class="ttdef"><b>Definition</b> pool.h:155</div></div>
+<div class="ttc" id="astructfiftyone_degrees_pool_html"><div class="ttname"><a href="structfiftyone_degrees_pool.html">fiftyoneDegreesPool</a></div><div class="ttdoc">Pool of resources stored as items in a stack.</div><div class="ttdef"><b>Definition</b> pool.h:214</div></div>
+<div class="ttc" id="astructfiftyone_degrees_pool_item_html"><div class="ttname"><a href="structfiftyone_degrees_pool_item.html">fiftyoneDegreesPoolItem</a></div><div class="ttdoc">Pool item node in the stack of items.</div><div class="ttdef"><b>Definition</b> pool.h:181</div></div>
 </div><!-- fragment --><h2>Design</h2>
 <p>To improve performance in multi-threaded operation a non locking stack is used where a Compare and Swap (CAS) atomic operation is used to pop and push handles on and off the stack. The design was adapted from the following article (<a href="http://nullprogram.com/blog/2014/09/02/">http://nullprogram.com/blog/2014/09/02/</a>) which explains some of the challenges involved including the ABA problem (<a href="https://en.wikipedia.org/wiki/ABA_problem">https://en.wikipedia.org/wiki/ABA_problem</a>). It is for this reason the head structure is implemented as a union between the values and the exchange integer. Pointers are not used as the address space for the stack is continuous and always very small compared to the total addressable memory space.</p>
 <p>A thread that finds every item in use takes the pool's lock, counts itself as waiting and sleeps on a condition variable. A release that sees a waiting thread wakes one. The lock is only used when the pool is empty, so gets and releases with items to spare stay lock free. </p>
@@ -130,8 +130,8 @@ Collaboration diagram for Pool:</h2>
 Structs</h2></td></tr>
 <tr class="c-table__row memitem:fiftyoneDegreesPoolItem" id="r_fiftyoneDegreesPoolItem"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_pool_item.html">fiftyoneDegreesPoolItem</a></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_synonyms.html#ga4e7a287a472c4eb55ae45f6f300b68b7" title="Synonym for fiftyoneDegreesPool type.">Pool</a> item node in the stack of items.  <a href="structfiftyone_degrees_pool_item.html#details">More...</a><br /></td></tr>
-<tr class="c-table__row memitem:fiftyoneDegreesPoolHead" id="r_fiftyoneDegreesPoolHead"><td class="c-table__cell">union &#160;</td><td class="c-table__cell"><a class="el" href="unionfiftyone_degrees_pool_head.html">fiftyoneDegreesPoolHead</a></td></tr>
-<tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The head of the stack used for pop and push operations.  <a href="unionfiftyone_degrees_pool_head.html#details">More...</a><br /></td></tr>
+<tr class="c-table__row memitem:fiftyone_5Fdegrees_5Fpool_5Fhead_5Ft" id="r_fiftyone_5Fdegrees_5Fpool_5Fhead_5Ft"><td class="c-table__cell">union &#160;</td><td class="c-table__cell"><a class="el" href="unionfiftyone__degrees__pool__head__t.html">fiftyone_degrees_pool_head_t</a></td></tr>
+<tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The head of the stack used for pop and push operations.  <a href="unionfiftyone__degrees__pool__head__t.html#details">More...</a><br /></td></tr>
 <tr class="c-table__row memitem:fiftyoneDegreesPool" id="r_fiftyoneDegreesPool"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_pool.html">fiftyoneDegreesPool</a></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_synonyms.html#ga4e7a287a472c4eb55ae45f6f300b68b7" title="Synonym for fiftyoneDegreesPool type.">Pool</a> of resources stored as items in a stack.  <a href="structfiftyone_degrees_pool.html#details">More...</a><br /></td></tr>
 </table><table class="c-table c-table--directory">
@@ -146,6 +146,8 @@ Typedefs</h2></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="c-table__row memitem:ga17416e623bf79809c905b1ed78df7211" id="r_ga17416e623bf79809c905b1ed78df7211"><td class="c-table__cell">union&#160;<a class="el" href="unionfiftyone__degrees__pool__head__t.html">fiftyone_degrees_pool_head_t</a>&#160;</td><td class="c-table__cell"><a class="el" href="#ga17416e623bf79809c905b1ed78df7211">__attribute__</a> ((aligned(8))) fiftyoneDegreesPoolHead</td></tr>
+<tr class="c-table__row memdesc:ga17416e623bf79809c905b1ed78df7211"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The head of the stack used for pop and push operations.  <br /></td></tr>
 <tr class="c-table__row memitem:gaf7975fb88fdc96dd44855ed81e0b88b2" id="r_gaf7975fb88fdc96dd44855ed81e0b88b2"><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_pool.html">fiftyoneDegreesPool</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#gaf7975fb88fdc96dd44855ed81e0b88b2">fiftyoneDegreesPoolInit</a> (<a class="el" href="structfiftyone_degrees_pool.html">fiftyoneDegreesPool</a> *pool, uint16_t concurrency, void *state, <a class="el" href="#ga9f77753d6988363a7da07403d0019248">fiftyoneDegreesPoolResourceCreate</a> resourceCreate, <a class="el" href="#ga60a64a27f6b37e18d1e6c69e1c27d804">fiftyoneDegreesPoolResourceFree</a> resourceFree, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:gaf7975fb88fdc96dd44855ed81e0b88b2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Initialises a pool data structure to support the number of concurrent requests that can be made to the pool for resources that can be reused.  <br /></td></tr>
 <tr class="c-table__row memitem:ga21dee665228895f421a88e83c7c6830a" id="r_ga21dee665228895f421a88e83c7c6830a"><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_pool_item.html">fiftyoneDegreesPoolItem</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ga21dee665228895f421a88e83c7c6830a">fiftyoneDegreesPoolItemGet</a> (<a class="el" href="structfiftyone_degrees_pool.html">fiftyoneDegreesPool</a> *pool, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
@@ -242,6 +244,30 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
+<a id="ga17416e623bf79809c905b1ed78df7211" name="ga17416e623bf79809c905b1ed78df7211"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga17416e623bf79809c905b1ed78df7211">&#9670;&#160;</a></span>__attribute__()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">union <a class="el" href="unionfiftyone__degrees__pool__head__t.html">fiftyone_degrees_pool_head_t</a> __attribute__ </td>
+          <td>(</td>
+          <td class="c-table__cell">(aligned(8))</td>          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The head of the stack used for pop and push operations. </p>
+<p>The ABA value counts every change to the head, so that a thread that read the head before other threads changed it finds it changed. It is 32 bits, as a 16 bit count comes back to the same value after 65536 changes, which threads using a pool at once can make while another thread is paused. A 32 bit count comes back after 4294967296 changes. A thread paused between reading the head and its compare exchange for that many changes could put an item in use back at the head, which needs a pause of over an hour at a million changes a second. </p>
+
+</div>
+</div>
 <a id="ga1df931d9a29f200def2fb15a199f14c6" name="ga1df931d9a29f200def2fb15a199f14c6"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga1df931d9a29f200def2fb15a199f14c6">&#9670;&#160;</a></span>fiftyoneDegreesPoolFree()</h2>
 

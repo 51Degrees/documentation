@@ -66,18 +66,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structfiftyone
 <div class="g-docs__primary" id="primary">
 <a name="details" id="details"></a><h2 id="header-details" class="g-docs__section-heading">Detailed Description</h2>
 <div class="textblock"><p>Handle for a shared resource. </p>
-<p>The first data structure counter tracks use of the resource and free resources that are not longer active. Counter must be the first member to ensure correct memory aligned for interlocked operations. </p>
+<p>The counter tracks the use of the resource, so that a resource which is no longer active is freed when its last user releases it. </p>
 </div><h2 class="g-docs__section-heading">
 Collaboration diagram for fiftyoneDegreesResourceHandle:</h2>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="structfiftyone_degrees_resource_handle__coll__graph.svg" width="252" height="258"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="structfiftyone_degrees_resource_handle__coll__graph.svg" width="252" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="c-table__row memitem:a17aebeefb1ef3e8af4c869e76ffaaf4f" id="r_a17aebeefb1ef3e8af4c869e76ffaaf4f"><td class="c-table__cell"><a id="a17aebeefb1ef3e8af4c869e76ffaaf4f" name="a17aebeefb1ef3e8af4c869e76ffaaf4f"></a>
-volatile&#160;<a class="el" href="structfiftyone_degrees_interlock_double_width.html">fiftyoneDegreesInterlockDoubleWidth</a>&#160;</td><td class="c-table__cell"><b>counter</b></td></tr>
-<tr class="c-table__row memdesc:a17aebeefb1ef3e8af4c869e76ffaaf4f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Counter for this handle. <br /></td></tr>
+<tr class="c-table__row memitem:afbc1eb77ac7356f9e7de251058da43dc" id="r_afbc1eb77ac7356f9e7de251058da43dc"><td class="c-table__cell"><a id="afbc1eb77ac7356f9e7de251058da43dc" name="afbc1eb77ac7356f9e7de251058da43dc"></a>
+volatile&#160;long&#160;</td><td class="c-table__cell"><b>counter</b></td></tr>
+<tr class="c-table__row memdesc:afbc1eb77ac7356f9e7de251058da43dc"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The number of users of the handle, with <a class="el" href="group___fifty_one_degrees_resource.html#ga2403d9855048e9a61db11a7511ba9048" title="The bit of a handle&#39;s counter that is set while the handle is the manager&#39;s active handle.">FIFTYONE_DEGREES_RESOURCE_ACTIVE</a> set while the handle is active. <br /></td></tr>
 <tr class="c-table__row memitem:a45c27969a9d9fe3192e6a8141fdf06aa" id="r_a45c27969a9d9fe3192e6a8141fdf06aa"><td class="c-table__cell"><a id="a45c27969a9d9fe3192e6a8141fdf06aa" name="a45c27969a9d9fe3192e6a8141fdf06aa"></a>
 const&#160;void&#160;*&#160;</td><td class="c-table__cell"><b>resource</b></td></tr>
 <tr class="c-table__row memdesc:a45c27969a9d9fe3192e6a8141fdf06aa"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Pointer to the resource being managed. <br /></td></tr>

@@ -116,9 +116,8 @@ Macros</h2></td></tr>
 <tr class="c-table__row memitem:gafe8b176a1f05a93ae0a5a9e1365e3abe" id="r_gafe8b176a1f05a93ae0a5a9e1365e3abe"><td class="c-table__cell"><a id="gafe8b176a1f05a93ae0a5a9e1365e3abe" name="gafe8b176a1f05a93ae0a5a9e1365e3abe"></a>
 #define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_PROPERTIES_SEPARATORS</b>&#160;&#160;&#160;&quot;|, &quot;</td></tr>
 <tr class="c-table__row memdesc:gafe8b176a1f05a93ae0a5a9e1365e3abe"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Characters which separate the names in a required properties string. <br /></td></tr>
-<tr class="c-table__row memitem:ga03b30c0e9db9adac3b925156d2cca8c2" id="r_ga03b30c0e9db9adac3b925156d2cca8c2"><td class="c-table__cell"><a id="ga03b30c0e9db9adac3b925156d2cca8c2" name="ga03b30c0e9db9adac3b925156d2cca8c2"></a>
-#define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_PROPERTIES_INLINE</b>&#160;&#160;&#160;static inline</td></tr>
-<tr class="c-table__row memdesc:ga03b30c0e9db9adac3b925156d2cca8c2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The functions below are inline, so they add no name to the library. <br /></td></tr>
+<tr class="c-table__row memitem:ga03b30c0e9db9adac3b925156d2cca8c2" id="r_ga03b30c0e9db9adac3b925156d2cca8c2"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#ga03b30c0e9db9adac3b925156d2cca8c2">FIFTYONE_DEGREES_PROPERTIES_INLINE</a>&#160;&#160;&#160;static inline</td></tr>
+<tr class="c-table__row memdesc:ga03b30c0e9db9adac3b925156d2cca8c2"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The functions below are inline, so they add no name to the library.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-typedef-members" class="g-docs__section-heading"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -168,6 +167,28 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:gafe718e9dd0c8b93c755337a6f17b2b60" id="r_gafe718e9dd0c8b93c755337a6f17b2b60"><td class="c-table__cell">EXTERNAL_VAR&#160;<a class="el" href="structfiftyone_degrees_properties_required.html">fiftyoneDegreesPropertiesRequired</a>&#160;</td><td class="c-table__cell"><a class="el" href="#gafe718e9dd0c8b93c755337a6f17b2b60">fiftyoneDegreesPropertiesDefault</a></td></tr>
 <tr class="c-table__row memdesc:gafe718e9dd0c8b93c755337a6f17b2b60"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The default properties required to make all possible properties available.  <br /></td></tr>
 </table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="g-docs__section-heading">Macro Definition Documentation</h2>
+<a id="ga03b30c0e9db9adac3b925156d2cca8c2" name="ga03b30c0e9db9adac3b925156d2cca8c2"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga03b30c0e9db9adac3b925156d2cca8c2">&#9670;&#160;</a></span>FIFTYONE_DEGREES_PROPERTIES_INLINE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define FIFTYONE_DEGREES_PROPERTIES_INLINE&#160;&#160;&#160;static inline</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The functions below are inline, so they add no name to the library. </p>
+<p>Both Device Detection and IP Intelligence call each of them, so neither product has one it doesn't use when its sources and these headers are pasted into one file. A function only one product calls belongs in properties.c. </p>
+
+</div>
+</div>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="g-docs__section-heading">Typedef Documentation</h2>
 <a id="ga4fa1e4432a72eafbbb3e19eec1f1e6dd" name="ga4fa1e4432a72eafbbb3e19eec1f1e6dd"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga4fa1e4432a72eafbbb3e19eec1f1e6dd">&#9670;&#160;</a></span>fiftyoneDegreesEvidencePropertiesGetMethod</h2>

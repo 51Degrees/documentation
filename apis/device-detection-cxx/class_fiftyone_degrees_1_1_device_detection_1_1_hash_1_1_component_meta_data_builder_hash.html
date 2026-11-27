@@ -81,12 +81,14 @@ Collaboration diagram for FiftyoneDegrees::DeviceDetection::Hash::ComponentMetaD
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:af85c8a66b05c912141dfa8ee69b27b95" id="r_af85c8a66b05c912141dfa8ee69b27b95"><td class="c-table__cell">static&#160;<a class="el" href="class_fiftyone_degrees_1_1_common_1_1_component_meta_data.html">ComponentMetaData</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#af85c8a66b05c912141dfa8ee69b27b95">build</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet, uint32_t componentIndex)</td></tr>
+<tr class="c-table__row memdesc:af85c8a66b05c912141dfa8ee69b27b95"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_component_meta_data.html" title="EntityMetaData relating to a component populated by an engine implementation.">ComponentMetaData</a> from the component at the index provided.  <br /></td></tr>
 <tr class="c-table__row memitem:adfc42daf4fd422ee7007845ce4ea2737" id="r_adfc42daf4fd422ee7007845ce4ea2737"><td class="c-table__cell">static&#160;<a class="el" href="class_fiftyone_degrees_1_1_common_1_1_component_meta_data.html">ComponentMetaData</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#adfc42daf4fd422ee7007845ce4ea2737">build</a> (<a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *dataSet, <a class="el" href="structfiftyone_degrees_component.html">fiftyoneDegreesComponent</a> *component)</td></tr>
 <tr class="c-table__row memdesc:adfc42daf4fd422ee7007845ce4ea2737"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_component_meta_data.html" title="EntityMetaData relating to a component populated by an engine implementation.">ComponentMetaData</a> from the underlying component provided.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
 <a id="adfc42daf4fd422ee7007845ce4ea2737" name="adfc42daf4fd422ee7007845ce4ea2737"></a>
-<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adfc42daf4fd422ee7007845ce4ea2737">&#9670;&#160;</a></span>build()</h2>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#adfc42daf4fd422ee7007845ce4ea2737">&#9670;&#160;</a></span>build() <span class="c-member__count">[1/2]</span></h2>
 
 <div class="c-member__main">
 <div class="c-member__head">
@@ -117,13 +119,58 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_component_meta_data.html" title="EntityMetaData relating to a component populated by an engine implementation.">ComponentMetaData</a> from the underlying component provided. </p>
-<p>The instance returned does not hold a reference to the data set or component, and contains a copy of all the meta data. </p><dl class="params"><dt>Parameters</dt><dd>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated</a></b></dt><dd>Use build(dataSet, componentIndex), which reads the component in C. Kept for one release, as a public name. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dataSet</td><td>pointer to the data set containing the component </td></tr>
     <tr><td class="paramname">component</td><td>pointer to the underlying component to create the meta data from </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the new instance, or nullptr when the data set gives no default profile for the component </dd></dl>
+
+</div>
+</div>
+<a id="af85c8a66b05c912141dfa8ee69b27b95" name="af85c8a66b05c912141dfa8ee69b27b95"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#af85c8a66b05c912141dfa8ee69b27b95">&#9670;&#160;</a></span>build() <span class="c-member__count">[2/2]</span></h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_component_meta_data.html">ComponentMetaData</a> * FiftyoneDegrees::DeviceDetection::Hash::ComponentMetaDataBuilderHash::build </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_hash.html">fiftyoneDegreesDataSetHash</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>componentIndex</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_common_1_1_component_meta_data.html" title="EntityMetaData relating to a component populated by an engine implementation.">ComponentMetaData</a> from the component at the index provided. </p>
+<p>The instance returned does not hold a reference to the data set or component, and contains a copy of all the meta data. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>pointer to the data set containing the component </td></tr>
+    <tr><td class="paramname">componentIndex</td><td>index of the component in the data set's list of components </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the new instance, or nullptr when the index is not less than the number of components or the data set gives no default profile for the component </dd></dl>
 
 </div>
 </div>

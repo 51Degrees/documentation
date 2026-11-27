@@ -73,7 +73,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structfiftyone
 <li>an unused slot, where nodeOffset is zero or negative,</li>
 <li>or the terminator of a collision bucket.</li>
 </ul>
-<p>A substring which hashes to zero therefore cannot be matched in a hash table node. The ordered list and single record layouts do not use markers, so a hash code of zero is a genuine value in those. </p>
+<p>A substring which hashes to zero therefore cannot be matched in a hash table node. The ordered list and single record layouts do not use markers, so a hash code of zero is a genuine value in those.</p>
+<p>The records follow a packed node, so they are packed too, and their members can be read at any address. </p>
 </div><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-attribs" class="g-docs__section-heading"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>

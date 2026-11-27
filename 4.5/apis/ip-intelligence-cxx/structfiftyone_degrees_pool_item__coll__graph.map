@@ -1,9 +1,7 @@
 <map id="fiftyoneDegreesPoolItem" name="fiftyoneDegreesPoolItem">
 <area shape="rect" id="Node000001" title="Pool item node in the stack of items." alt="" coords="5,5,188,33"/>
-<area shape="rect" id="Node000002" href="$structfiftyone_degrees_pool.html" title="Pool of resources stored as items in a stack." alt="" coords="94,106,246,134"/>
-<area shape="poly" id="edge2_Node000002_Node000001" title=" " alt="" coords="89,46,89,65,94,81,106,94,124,106,118,105,103,98,90,83,84,66,86,50"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,91,138,59,115,36,116,31,143,55,163,92"/>
-<area shape="poly" id="edge4_Node000002_Node000002" title=" " alt="" coords="262,111,273,120,265,128,247,131,246,126,262,123,267,120,260,116"/>
-<area shape="rect" id="Node000003" href="$unionfiftyone_degrees_pool_head.html" title="The head of the stack used for pop and push operations." alt="" coords="211,5,398,33"/>
-<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="277,42,189,108,187,103,272,43"/>
+<area shape="rect" id="Node000002" href="$structfiftyone_degrees_pool.html" title="Pool of resources stored as items in a stack." alt="" coords="20,106,173,134"/>
+<area shape="poly" id="edge2_Node000002_Node000001" title=" " alt="" coords="66,42,59,58,55,70,59,81,67,93,78,105,73,105,63,97,54,83,50,70,54,56,63,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,89,102,82,102,57,99,36,101,31,107,57,107,82,105,92"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="189,111,199,120,191,128,173,131,173,126,189,123,194,120,187,116"/>
 </map>

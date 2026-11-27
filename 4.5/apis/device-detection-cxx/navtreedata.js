@@ -27,6 +27,7 @@ var NAVTREE =
   [ "51Degrees Device Detection C/C++", "index.html", [
     [ "General Docs", "/documentation/4.5/index.html", null ],
     [ "51Degrees Device Detection API", "md__r_e_a_d_m_e.html", null ],
+    [ "Deprecated List", "deprecated.html", null ],
     [ "C++ Namespaces", "namespaces.html", "namespaces" ],
     [ "Examples", "examples.html", "examples" ]
   ] ]
@@ -39,8 +40,8 @@ var NAVTREEHIDESYNC = true;
 var NAVTREEINDEX =
 [
 "/documentation/4.5/index.html",
-"class_fiftyone_degrees_1_1_common_1_1_value_meta_data_key.html",
-"namespace_fiftyone_degrees_1_1_common.html"
+"class_fiftyone_degrees_1_1_common_1_1_value_meta_data.html#afe33b5dc5745311c0887e177f47c85a3",
+"class_fiftyone_degrees_1_1_examples_1_1_hash_1_1_reload_from_memory.html#a71174dfd335ace20d665862b7dabf5ea"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

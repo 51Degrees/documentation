@@ -1,20 +1,18 @@
 <map id="memoryThreadState" name="memoryThreadState">
-<area shape="rect" id="Node000001" title="Individual thread state where all members are exclusively accessed by a single test thread." alt="" coords="223,341,378,369"/>
-<area shape="rect" id="Node000002" href="$structmemory_state.html" title="Shared test state." alt="" coords="34,232,144,260"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,265,277,339,272,342,127,270"/>
-<area shape="rect" id="Node000003" href="$structfiftyone_degrees_resource_manager.html" title="Manager structure used to provide access to a shared and changing resource." alt="" coords="5,114,247,142"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="101,157,93,176,88,205,89,232,84,231,83,205,88,174,103,152"/>
-<area shape="rect" id="Node000004" href="$structfiftyone_degrees_resource_handle.html" title="Handle for a shared resource." alt="" coords="168,232,398,260"/>
-<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="142,153,162,176,184,198,213,216,245,231,240,232,211,220,181,202,158,180,142,158"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="275,217,266,196,252,177,225,158,196,145,195,140,228,153,256,173,271,194,280,218"/>
-<area shape="rect" id="Node000005" href="$structfiftyone_degrees_interlock_double_width.html" title="Double width (64 or 128 depending on the architecture) compare and exchange." alt="" coords="271,106,453,151"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="352,164,335,201,303,234,299,230,331,198,349,167"/>
-<area shape="rect" id="Node000006" href="$structfiftyone_degrees_result_ipi_array.html" title="Array of items of type fiftyoneDegreesResultIpi used to easily access and track the size of the array..." alt="" coords="449,224,630,268"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="480,275,331,343,329,338,475,275"/>
-<area shape="rect" id="Node000007" href="$structfiftyone_degrees_result_ipi.html" title="Singular IP address result returned by an IP address lookup method." alt="" coords="477,114,658,142"/>
-<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="563,155,547,225,542,222,559,159"/>
-<area shape="rect" id="Node000008" href="$structfiftyone_degrees_ipi_cg_result.html" title="The evaluation result from graph collection." alt="" coords="359,5,557,33"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="483,41,556,114,551,114,481,46"/>
-<area shape="rect" id="Node000009" href="$structfiftyone_degrees_ip_address.html" title="The structure to hold a IP Address in byte array format." alt="" coords="581,5,770,33"/>
-<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="654,42,582,116,579,112,649,45"/>
+<area shape="rect" id="Node000001" title="Individual thread state where all members are exclusively accessed by a single test thread." alt="" coords="195,324,350,352"/>
+<area shape="rect" id="Node000002" href="$structmemory_state.html" title="Shared test state." alt="" coords="5,215,116,243"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,248,248,322,244,325,99,253"/>
+<area shape="rect" id="Node000003" href="$structfiftyone_degrees_resource_manager.html" title="Manager structure used to provide access to a shared and changing resource." alt="" coords="37,106,278,134"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="78,144,65,159,59,172,57,187,60,215,54,215,51,187,54,171,60,156,81,139"/>
+<area shape="rect" id="Node000004" href="$structfiftyone_degrees_resource_handle.html" title="Handle for a shared resource." alt="" coords="140,215,370,243"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="151,146,152,166,157,181,175,200,200,214,194,215,172,204,152,184,146,167,149,151"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="246,200,237,180,224,159,209,147,193,137,193,132,212,142,228,156,242,177,251,201"/>
+<area shape="rect" id="Node000005" href="$structfiftyone_degrees_result_ipi_array.html" title="Array of items of type fiftyoneDegreesResultIpi used to easily access and track the size of the array..." alt="" coords="394,207,575,251"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="431,258,300,326,298,321,425,259"/>
+<area shape="rect" id="Node000006" href="$structfiftyone_degrees_result_ipi.html" title="Singular IP address result returned by an IP address lookup method." alt="" coords="394,106,575,134"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="486,147,487,207,482,205,483,151"/>
+<area shape="rect" id="Node000007" href="$structfiftyone_degrees_ipi_cg_result.html" title="The evaluation result from graph collection." alt="" coords="276,5,474,33"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="397,42,436,80,468,105,462,105,433,84,396,47"/>
+<area shape="rect" id="Node000008" href="$structfiftyone_degrees_ip_address.html" title="The structure to hold a IP Address in byte array format." alt="" coords="498,5,687,33"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="570,42,501,108,497,103,565,45"/>
 </map>

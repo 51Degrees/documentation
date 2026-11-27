@@ -98,9 +98,9 @@ Data Fields</h2></td></tr>
 <tr class="c-table__row memitem:a2c071b1b43ca26ac7c25c53d549ef087" id="r_a2c071b1b43ca26ac7c25c53d549ef087"><td class="c-table__cell"><a id="a2c071b1b43ca26ac7c25c53d549ef087" name="a2c071b1b43ca26ac7c25c53d549ef087"></a>
 <a class="el" href="class_fiftyone_degrees_1_1_device_detection_1_1_hash_1_1_engine_hash.html">EngineHash</a>&#160;*&#160;</td><td class="c-table__cell"><b>engine</b></td></tr>
 <tr class="c-table__row memdesc:a2c071b1b43ca26ac7c25c53d549ef087"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Pointer to the engine. <br /></td></tr>
-<tr class="c-table__row memitem:a2f2081c1fb850df7e43d1cb1b8505b6d" id="r_a2f2081c1fb850df7e43d1cb1b8505b6d"><td class="c-table__cell"><a id="a2f2081c1fb850df7e43d1cb1b8505b6d" name="a2f2081c1fb850df7e43d1cb1b8505b6d"></a>
-volatile&#160;long&#160;</td><td class="c-table__cell"><b>threadsFinished</b></td></tr>
-<tr class="c-table__row memdesc:a2f2081c1fb850df7e43d1cb1b8505b6d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Number of threads that have finished their processing. <br /></td></tr>
+<tr class="c-table__row memitem:a5fa74a9b1a16b8fbc956fbd885a34c7d" id="r_a5fa74a9b1a16b8fbc956fbd885a34c7d"><td class="c-table__cell"><a id="a5fa74a9b1a16b8fbc956fbd885a34c7d" name="a5fa74a9b1a16b8fbc956fbd885a34c7d"></a>
+std::atomic&lt;&#160;long&#160;&gt;&#160;</td><td class="c-table__cell"><b>threadsFinished</b> {0}</td></tr>
+<tr class="c-table__row memdesc:a5fa74a9b1a16b8fbc956fbd885a34c7d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Number of threads that have finished their processing, counted atomically as the threads finish at the same time. <br /></td></tr>
 <tr class="c-table__row memitem:a3a8c2386640af7180d8d84e387df627f" id="r_a3a8c2386640af7180d8d84e387df627f"><td class="c-table__cell"><a id="a3a8c2386640af7180d8d84e387df627f" name="a3a8c2386640af7180d8d84e387df627f"></a>
 string&#160;</td><td class="c-table__cell"><b>userAgentFilePath</b></td></tr>
 <tr class="c-table__row memdesc:a3a8c2386640af7180d8d84e387df627f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Path to the User-Agents to process. <br /></td></tr>
@@ -136,7 +136,7 @@ thread&#160;</td><td class="c-table__cell"><b>threads</b> [THREAD_COUNT]</td></t
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">engine</td><td>pointer to the engine the threads should use </td></tr>
-    <tr><td class="paramname">userAgentFilePath</td><td>path to the User-Agents CSV </td></tr>
+    <tr><td class="paramname">userAgentFilePath</td><td>path to the YAML evidence file </td></tr>
   </table>
   </dd>
 </dl>

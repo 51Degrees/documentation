@@ -80,7 +80,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <h2>Release</h2>
 <p>Once a resource handle is finished with, it must be released back to the resource manager using the <a class="el" href="#gafeb970573bbca087638f51dbc6b3e04e" title="Decrements the usage counter.">fiftyoneDegreesResourceHandleDecUse</a> method. This releases the handle so it is available to other threads.</p>
 <h2>Free</h2>
-<p>A resource manager is freed, along with its resource, using the <a class="el" href="#gaafa0bcda0487c58d01d1232d074aa3cc" title="Frees any data associated with the manager and releases the manager.">fiftyoneDegreesResourceManagerFree</a> method. This prevents any new handles from being acquired, and frees the resource being managed. If the resource has active handles, then a free method does not block. Instead it prevents new handles from being acquired and sets the manager to free the resource once the last handle has been released.</p>
+<p>A resource manager is freed, along with its resource, using the <a class="el" href="#gaafa0bcda0487c58d01d1232d074aa3cc" title="Frees any data associated with the manager and releases the manager.">fiftyoneDegreesResourceManagerFree</a> method. This frees the resource being managed. If the resource has active handles, then a free method does not block. Instead the resource is freed when the last handle is released.</p>
+<p>No handle may be taken from the manager, and the resource may not be replaced, once the free has started. Handles taken before then can be released at any time, during or after the free, on any thread. A release reads only the handle, so the memory of the manager structure itself can be freed once <a class="el" href="#gaafa0bcda0487c58d01d1232d074aa3cc" title="Frees any data associated with the manager and releases the manager.">fiftyoneDegreesResourceManagerFree</a> has returned.</p>
 <h2>Replace</h2>
 <p>A resource can be replaced using the <a class="el" href="#ga46f0b82b957ae929d64f6dc2593ab6eb" title="Replaces the resource with the new resource.">fiftyoneDegreesResourceReplace</a> method. This swaps the resource being managed so that any new requests for a handle return the new resource. The existing resource is freed once the last active handle to it has been released.</p>
 <h2>Usage Example</h2>
@@ -119,13 +120,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group___fifty_
 <div class="c-code__line">    <span class="c-code__comment">// This is the point where the call to free the manager will actually</span></div>
 <div class="c-code__line">    <span class="c-code__comment">// be carried out now that nothing is referencing the resource</span></div>
 <div class="c-code__line">}</div>
-<div class="ttc" id="agroup___fifty_one_degrees_resource_html_ga946b4270a600f59ab8dc9def8b77aeba"><div class="ttname"><a href="#ga946b4270a600f59ab8dc9def8b77aeba">fiftyoneDegreesResourceManagerInit</a></div><div class="ttdeci">void fiftyoneDegreesResourceManagerInit(fiftyoneDegreesResourceManager *manager, void *resource, fiftyoneDegreesResourceHandle **resourceHandle, void(*freeResource)(void *))</div><div class="ttdoc">Initialise a preallocated resource manager structure with a resource for it to manage access to.</div><div class="ttdef"><b>Definition</b> resource.c:204</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_resource_html_gaaa6a8fc5162663f3fb795998d593a70e"><div class="ttname"><a href="#gaaa6a8fc5162663f3fb795998d593a70e">fiftyoneDegreesResourceHandleIncUse</a></div><div class="ttdeci">fiftyoneDegreesResourceHandle * fiftyoneDegreesResourceHandleIncUse(fiftyoneDegreesResourceManager *manager)</div><div class="ttdoc">Increments the usage counter for the resource and returns a handle that can be used to reference it.</div><div class="ttdef"><b>Definition</b> resource.c:322</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_resource_html_gaafa0bcda0487c58d01d1232d074aa3cc"><div class="ttname"><a href="#gaafa0bcda0487c58d01d1232d074aa3cc">fiftyoneDegreesResourceManagerFree</a></div><div class="ttdeci">void fiftyoneDegreesResourceManagerFree(fiftyoneDegreesResourceManager *manager)</div><div class="ttdoc">Frees any data associated with the manager and releases the manager.</div><div class="ttdef"><b>Definition</b> resource.c:216</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_resource_html_gafeb970573bbca087638f51dbc6b3e04e"><div class="ttname"><a href="#gafeb970573bbca087638f51dbc6b3e04e">fiftyoneDegreesResourceHandleDecUse</a></div><div class="ttdeci">void fiftyoneDegreesResourceHandleDecUse(fiftyoneDegreesResourceHandle *handle)</div><div class="ttdoc">Decrements the usage counter.</div><div class="ttdef"><b>Definition</b> resource.c:247</div></div>
-<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gae0ecd1fc988dbb64ff0232a001e090bf"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gae0ecd1fc988dbb64ff0232a001e090bf">Free</a></div><div class="ttdeci">#define Free</div><div class="ttdoc">Synonym for fiftyoneDegreesFree function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:268</div></div>
-<div class="ttc" id="astructfiftyone_degrees_resource_handle_html"><div class="ttname"><a href="structfiftyone_degrees_resource_handle.html">fiftyoneDegreesResourceHandle</a></div><div class="ttdoc">Handle for a shared resource.</div><div class="ttdef"><b>Definition</b> resource.h:161</div></div>
-<div class="ttc" id="astructfiftyone_degrees_resource_manager_html"><div class="ttname"><a href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a></div><div class="ttdoc">Manager structure used to provide access to a shared and changing resource.</div><div class="ttdef"><b>Definition</b> resource.h:177</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_resource_html_ga946b4270a600f59ab8dc9def8b77aeba"><div class="ttname"><a href="#ga946b4270a600f59ab8dc9def8b77aeba">fiftyoneDegreesResourceManagerInit</a></div><div class="ttdeci">void fiftyoneDegreesResourceManagerInit(fiftyoneDegreesResourceManager *manager, void *resource, fiftyoneDegreesResourceHandle **resourceHandle, void(*freeResource)(void *))</div><div class="ttdoc">Initialise a preallocated resource manager structure with a resource for it to manage access to.</div><div class="ttdef"><b>Definition</b> resource.c:156</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_resource_html_gaaa6a8fc5162663f3fb795998d593a70e"><div class="ttname"><a href="#gaaa6a8fc5162663f3fb795998d593a70e">fiftyoneDegreesResourceHandleIncUse</a></div><div class="ttdeci">fiftyoneDegreesResourceHandle * fiftyoneDegreesResourceHandleIncUse(fiftyoneDegreesResourceManager *manager)</div><div class="ttdoc">Increments the usage counter for the resource and returns a handle that can be used to reference it.</div><div class="ttdef"><b>Definition</b> resource.c:217</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_resource_html_gaafa0bcda0487c58d01d1232d074aa3cc"><div class="ttname"><a href="#gaafa0bcda0487c58d01d1232d074aa3cc">fiftyoneDegreesResourceManagerFree</a></div><div class="ttdeci">void fiftyoneDegreesResourceManagerFree(fiftyoneDegreesResourceManager *manager)</div><div class="ttdoc">Frees any data associated with the manager and releases the manager.</div><div class="ttdef"><b>Definition</b> resource.c:168</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_resource_html_gafeb970573bbca087638f51dbc6b3e04e"><div class="ttname"><a href="#gafeb970573bbca087638f51dbc6b3e04e">fiftyoneDegreesResourceHandleDecUse</a></div><div class="ttdeci">void fiftyoneDegreesResourceHandleDecUse(fiftyoneDegreesResourceHandle *handle)</div><div class="ttdoc">Decrements the usage counter.</div><div class="ttdef"><b>Definition</b> resource.c:197</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_synonyms_html_gae0ecd1fc988dbb64ff0232a001e090bf"><div class="ttname"><a href="group___fifty_one_degrees_synonyms.html#gae0ecd1fc988dbb64ff0232a001e090bf">Free</a></div><div class="ttdeci">#define Free</div><div class="ttdoc">Synonym for fiftyoneDegreesFree function.</div><div class="ttdef"><b>Definition</b> common/fiftyone.h:272</div></div>
+<div class="ttc" id="astructfiftyone_degrees_resource_handle_html"><div class="ttname"><a href="structfiftyone_degrees_resource_handle.html">fiftyoneDegreesResourceHandle</a></div><div class="ttdoc">Handle for a shared resource.</div><div class="ttdef"><b>Definition</b> resource.h:180</div></div>
+<div class="ttc" id="astructfiftyone_degrees_resource_manager_html"><div class="ttname"><a href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a></div><div class="ttdoc">Manager structure used to provide access to a shared and changing resource.</div><div class="ttdef"><b>Definition</b> resource.h:197</div></div>
 </div><!-- fragment --> </div><h2 class="g-docs__section-heading">
 Collaboration diagram for Resource Manager:</h2>
 <div class="dyncontent">
@@ -138,6 +139,13 @@ Structs</h2></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Handle for a shared resource.  <a href="structfiftyone_degrees_resource_handle.html#details">More...</a><br /></td></tr>
 <tr class="c-table__row memitem:fiftyoneDegreesResourceManager" id="r_fiftyoneDegreesResourceManager"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Manager structure used to provide access to a shared and changing resource.  <a href="structfiftyone_degrees_resource_manager.html#details">More...</a><br /></td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-define-members" class="g-docs__section-heading"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="c-table__row memitem:ga2403d9855048e9a61db11a7511ba9048" id="r_ga2403d9855048e9a61db11a7511ba9048"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#ga2403d9855048e9a61db11a7511ba9048">FIFTYONE_DEGREES_RESOURCE_ACTIVE</a>&#160;&#160;&#160;0x40000000L</td></tr>
+<tr class="c-table__row memdesc:ga2403d9855048e9a61db11a7511ba9048"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The bit of a handle's counter that is set while the handle is the manager's active handle.  <br /></td></tr>
+<tr class="c-table__row memitem:ga1f79f11fcf31e47cb5d4fd6538f8a933" id="r_ga1f79f11fcf31e47cb5d4fd6538f8a933"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#ga1f79f11fcf31e47cb5d4fd6538f8a933">FIFTYONE_DEGREES_RESOURCE_IN_USE_MAX</a>&#160;&#160;&#160;(<a class="el" href="#ga2403d9855048e9a61db11a7511ba9048">FIFTYONE_DEGREES_RESOURCE_ACTIVE</a> - 1)</td></tr>
+<tr class="c-table__row memdesc:ga1f79f11fcf31e47cb5d4fd6538f8a933"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The most users a handle can have at once.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -154,6 +162,49 @@ Functions</h2></td></tr>
 <tr class="c-table__row memitem:ga46f0b82b957ae929d64f6dc2593ab6eb" id="r_ga46f0b82b957ae929d64f6dc2593ab6eb"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ga46f0b82b957ae929d64f6dc2593ab6eb">fiftyoneDegreesResourceReplace</a> (<a class="el" href="structfiftyone_degrees_resource_manager.html">fiftyoneDegreesResourceManager</a> *manager, void *newResource, <a class="el" href="structfiftyone_degrees_resource_handle.html">fiftyoneDegreesResourceHandle</a> **newResourceHandle)</td></tr>
 <tr class="c-table__row memdesc:ga46f0b82b957ae929d64f6dc2593ab6eb"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Replaces the resource with the new resource.  <br /></td></tr>
 </table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="g-docs__section-heading">Macro Definition Documentation</h2>
+<a id="ga2403d9855048e9a61db11a7511ba9048" name="ga2403d9855048e9a61db11a7511ba9048"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga2403d9855048e9a61db11a7511ba9048">&#9670;&#160;</a></span>FIFTYONE_DEGREES_RESOURCE_ACTIVE</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define FIFTYONE_DEGREES_RESOURCE_ACTIVE&#160;&#160;&#160;0x40000000L</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The bit of a handle's counter that is set while the handle is the manager's active handle. </p>
+<p>It counts as a use held by the manager, so the counter only reaches zero at the last release of a handle that has been replaced. Only a handle with the bit set is given to a new user. </p>
+
+</div>
+</div>
+<a id="ga1f79f11fcf31e47cb5d4fd6538f8a933" name="ga1f79f11fcf31e47cb5d4fd6538f8a933"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga1f79f11fcf31e47cb5d4fd6538f8a933">&#9670;&#160;</a></span>FIFTYONE_DEGREES_RESOURCE_IN_USE_MAX</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define FIFTYONE_DEGREES_RESOURCE_IN_USE_MAX&#160;&#160;&#160;(<a class="el" href="#ga2403d9855048e9a61db11a7511ba9048">FIFTYONE_DEGREES_RESOURCE_ACTIVE</a> - 1)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>The most users a handle can have at once. </p>
+<p>The count is held in the bits below <a class="el" href="#ga2403d9855048e9a61db11a7511ba9048" title="The bit of a handle&#39;s counter that is set while the handle is the manager&#39;s active handle.">FIFTYONE_DEGREES_RESOURCE_ACTIVE</a>, so a thread that would go past it waits until another releases the handle. </p>
+
+</div>
+</div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
 <a id="gafeb970573bbca087638f51dbc6b3e04e" name="gafeb970573bbca087638f51dbc6b3e04e"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#gafeb970573bbca087638f51dbc6b3e04e">&#9670;&#160;</a></span>fiftyoneDegreesResourceHandleDecUse()</h2>
@@ -175,7 +226,7 @@ Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Decrements the usage counter. </p>
-<p>If the count reaches zero then resource will become eligible to be freed either when the manager replaces it or when the manager is freed. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the handle has been replaced, or the manager freed, and this was the last use, the resource is freed. A release reads only the handle, not the manager, so it is safe during or after <a class="el" href="#gaafa0bcda0487c58d01d1232d074aa3cc" title="Frees any data associated with the manager and releases the manager.">fiftyoneDegreesResourceManagerFree</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">handle</td><td>to the resource which should be released by the manager </td></tr>
   </table>
@@ -204,7 +255,7 @@ Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Return the current usage counter. </p>
-<p>WARNING: This call is not thread-safe and is suitable for using in testing only. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>WARNING: Other threads can change the count as soon as it is read, so this call is suitable for using in testing only. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">handle</td><td>to the resource which should be released by the manager </td></tr>
   </table>
@@ -263,7 +314,7 @@ Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Frees any data associated with the manager and releases the manager. </p>
-<p>All memory is released after this operation.</p>
+<p>The resource, and the memory of a handle still in use, are freed when the last use is released. It must not run at the same time as <a class="el" href="#gaaa6a8fc5162663f3fb795998d593a70e" title="Increments the usage counter for the resource and returns a handle that can be used to reference it.">fiftyoneDegreesResourceHandleIncUse</a> or <a class="el" href="#ga46f0b82b957ae929d64f6dc2593ab6eb" title="Replaces the resource with the new resource.">fiftyoneDegreesResourceReplace</a> for the same manager, and neither may be called after it.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">manager</td><td>the resource manager to be freed </td></tr>

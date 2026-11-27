@@ -72,6 +72,11 @@ Inheritance diagram for FiftyoneDegrees::Common::EntityMetaDataBuilder:</h2>
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_fiftyone_degrees_1_1_common_1_1_entity_meta_data_builder__inherit__graph.svg" width="484" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-nested-classes" class="g-docs__section-heading"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="c-table__row memitem:ValueTexts" id="r_ValueTexts"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="struct_fiftyone_degrees_1_1_common_1_1_entity_meta_data_builder_1_1_value_texts.html">ValueTexts</a></td></tr>
+<tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">The texts of a value that addValueText copies.  <a href="struct_fiftyone_degrees_1_1_common_1_1_entity_meta_data_builder_1_1_value_texts.html#details">More...</a><br /></td></tr>
+</table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pro-static-methods" class="g-docs__section-heading"><a id="pro-static-methods" name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
 <tr id="pro-static-methods-0" class="c-table__row"><td class="c-table__cell" colspan="2"><h3 class="c-table__heading">Static Helpers</h3></td></tr>
@@ -79,8 +84,58 @@ Static Protected Member Functions</h2></td></tr>
 <tr class="c-table__row memdesc:a390c56d0ea257cd787fb6a329432a03e"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a copy of a string from the strings collection at the offset provided.  <br /></td></tr>
 <tr class="c-table__row memitem:a341acab03e758435387c1b0c7d94f930" id="r_a341acab03e758435387c1b0c7d94f930"><td class="c-table__cell">static&#160;string&#160;</td><td class="c-table__cell"><a class="el" href="#a341acab03e758435387c1b0c7d94f930">takeText</a> (char *text, const char *buffer, <a class="el" href="structfiftyone_degrees_exception.html">fiftyoneDegreesException</a> *exception)</td></tr>
 <tr class="c-table__row memdesc:a341acab03e758435387c1b0c7d94f930"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Get a copy of the text a C function wrote into the buffer provided or into memory it allocated, freeing that memory.  <br /></td></tr>
+<tr class="c-table__row memitem:afe0addbfa61dc08fd5999f55790bc632" id="r_afe0addbfa61dc08fd5999f55790bc632"><td class="c-table__cell">static&#160;void&#160;</td><td class="c-table__cell"><a class="el" href="#afe0addbfa61dc08fd5999f55790bc632">addValueText</a> (void *state, <a class="el" href="group___fifty_one_degrees_value.html#gae092bd731963c2033c5f1a7623ad4be4">fiftyoneDegreesValueText</a> text, const char *value)</td></tr>
+<tr class="c-table__row memdesc:afe0addbfa61dc08fd5999f55790bc632"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Copies a text of a value into the <a class="el" href="struct_fiftyone_degrees_1_1_common_1_1_entity_meta_data_builder_1_1_value_texts.html" title="The texts of a value that addValueText copies.">ValueTexts</a> that <code>state</code> points to.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Member Function Documentation</h2>
+<a id="afe0addbfa61dc08fd5999f55790bc632" name="afe0addbfa61dc08fd5999f55790bc632"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#afe0addbfa61dc08fd5999f55790bc632">&#9670;&#160;</a></span>addValueText()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void FiftyoneDegrees::Common::EntityMetaDataBuilder::addValueText </td>
+          <td>(</td>
+          <td class="c-table__cell">void *</td>          <td class="c-table__cell"><span class="paramname"><em>state</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"><a class="el" href="group___fifty_one_degrees_value.html#gae092bd731963c2033c5f1a7623ad4be4">fiftyoneDegreesValueText</a></td>          <td class="c-table__cell"><span class="paramname"><em>text</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">const char *</td>          <td class="c-table__cell"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Copies a text of a value into the <a class="el" href="struct_fiftyone_degrees_1_1_common_1_1_entity_meta_data_builder_1_1_value_texts.html" title="The texts of a value that addValueText copies.">ValueTexts</a> that <code>state</code> points to. </p>
+<p>A failure to copy is recorded rather than thrown through the C layer that calls this. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>pointer to the <a class="el" href="struct_fiftyone_degrees_1_1_common_1_1_entity_meta_data_builder_1_1_value_texts.html" title="The texts of a value that addValueText copies.">ValueTexts</a> </td></tr>
+    <tr><td class="paramname">text</td><td>which text of the value <code>value</code> is </td></tr>
+    <tr><td class="paramname">value</td><td>the text to copy </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a390c56d0ea257cd787fb6a329432a03e" name="a390c56d0ea257cd787fb6a329432a03e"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#a390c56d0ea257cd787fb6a329432a03e">&#9670;&#160;</a></span>getString()</h2>
 
@@ -120,7 +175,8 @@ Static Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">string copy of the string at the offset provided </dd></dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">string copy of the string at the offset provided</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated</a></b></dt><dd>The builders read their texts with the C functions. Kept for one release, as a name derived classes can call. </dd></dl>
 
 </div>
 </div>

@@ -81,6 +81,10 @@ Collaboration diagram for FiftyoneDegrees::IpIntelligence::ProfileMetaDataBuilde
 <table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-pub-static-methods" class="g-docs__section-heading"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="c-table__row memitem:a75751e60a0c4408281492aabab9e3a9f" id="r_a75751e60a0c4408281492aabab9e3a9f"><td class="c-table__cell">static&#160;<a class="el" href="class_fiftyone_degrees_1_1_common_1_1_profile_meta_data.html">ProfileMetaData</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#a75751e60a0c4408281492aabab9e3a9f">buildByIndex</a> (<a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *dataSet, uint32_t profileIndex)</td></tr>
+<tr class="c-table__row memdesc:a75751e60a0c4408281492aabab9e3a9f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_profile_meta_data.html" title="Meta data relating to a profile populated by an engine implementation.">ProfileMetaData</a> from the profile at the index provided among the data file's profiles.  <br /></td></tr>
+<tr class="c-table__row memitem:ab31867d0147acd99a505a3fd25c31cff" id="r_ab31867d0147acd99a505a3fd25c31cff"><td class="c-table__cell">static&#160;<a class="el" href="class_fiftyone_degrees_1_1_common_1_1_profile_meta_data.html">ProfileMetaData</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#ab31867d0147acd99a505a3fd25c31cff">buildByOffset</a> (<a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *dataSet, uint32_t profileOffset)</td></tr>
+<tr class="c-table__row memdesc:ab31867d0147acd99a505a3fd25c31cff"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_profile_meta_data.html" title="Meta data relating to a profile populated by an engine implementation.">ProfileMetaData</a> from the profile at the offset provided, which is its key.  <br /></td></tr>
 <tr class="c-table__row memitem:a9d083b417417543bc81be788393b100a" id="r_a9d083b417417543bc81be788393b100a"><td class="c-table__cell">static&#160;<a class="el" href="class_fiftyone_degrees_1_1_common_1_1_profile_meta_data.html">ProfileMetaData</a>&#160;*&#160;</td><td class="c-table__cell"><a class="el" href="#a9d083b417417543bc81be788393b100a">build</a> (<a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *dataSet, const <a class="el" href="structfiftyone_degrees_profile.html">fiftyoneDegreesProfile</a> *profile, const uint32_t profileOffset)</td></tr>
 <tr class="c-table__row memdesc:a9d083b417417543bc81be788393b100a"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_profile_meta_data.html" title="Meta data relating to a profile populated by an engine implementation.">ProfileMetaData</a> from the underlying profile provided.  <br /></td></tr>
 </table>
@@ -122,14 +126,102 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="c-member__body">
 
 <p>Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_profile_meta_data.html" title="Meta data relating to a profile populated by an engine implementation.">ProfileMetaData</a> from the underlying profile provided. </p>
-<p>The instance returned does not hold a reference to the data set or profile, and contains a copy of all the meta data. </p><dl class="params"><dt>Parameters</dt><dd>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000005">Deprecated</a></b></dt><dd>Use buildByIndex or buildByOffset, which read the profile in C. Kept for one release, as a public name. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dataSet</td><td>pointer to the data set containing the component </td></tr>
+    <tr><td class="paramname">dataSet</td><td>pointer to the data set containing the profile </td></tr>
     <tr><td class="paramname">profile</td><td>pointer to the underlying profile to create the meta data from </td></tr>
-    <tr><td class="paramname">profileOffset</td><td>the offset of the profile in the profiles collection. This acts as the unique key </td></tr>
+    <tr><td class="paramname">profileOffset</td><td>offset of the profile in the profiles collection, which is its key </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the new instance </dd></dl>
+
+</div>
+</div>
+<a id="a75751e60a0c4408281492aabab9e3a9f" name="a75751e60a0c4408281492aabab9e3a9f"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#a75751e60a0c4408281492aabab9e3a9f">&#9670;&#160;</a></span>buildByIndex()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_profile_meta_data.html">ProfileMetaData</a> * ProfileMetaDataBuilderIpi::buildByIndex </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>profileIndex</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_profile_meta_data.html" title="Meta data relating to a profile populated by an engine implementation.">ProfileMetaData</a> from the profile at the index provided among the data file's profiles. </p>
+<p>The profile's offset in the profiles collection is its key, as an IP Intelligence data file holds no profile ids. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>pointer to the data set containing the profile </td></tr>
+    <tr><td class="paramname">profileIndex</td><td>index of the profile </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the new instance, or nullptr when the data set gives no profile at the index </dd></dl>
+
+</div>
+</div>
+<a id="ab31867d0147acd99a505a3fd25c31cff" name="ab31867d0147acd99a505a3fd25c31cff"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ab31867d0147acd99a505a3fd25c31cff">&#9670;&#160;</a></span>buildByOffset()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell"><a class="el" href="class_fiftyone_degrees_1_1_common_1_1_profile_meta_data.html">ProfileMetaData</a> * ProfileMetaDataBuilderIpi::buildByOffset </td>
+          <td>(</td>
+          <td class="c-table__cell"><a class="el" href="structfiftyone_degrees_data_set_ipi.html">fiftyoneDegreesDataSetIpi</a> *</td>          <td class="c-table__cell"><span class="paramname"><em>dataSet</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell">uint32_t</td>          <td class="c-table__cell"><span class="paramname"><em>profileOffset</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="c-member__body">
+
+<p>Build a new instance of <a class="el" href="class_fiftyone_degrees_1_1_ip_intelligence_1_1_profile_meta_data.html" title="Meta data relating to a profile populated by an engine implementation.">ProfileMetaData</a> from the profile at the offset provided, which is its key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataSet</td><td>pointer to the data set containing the profile </td></tr>
+    <tr><td class="paramname">profileOffset</td><td>offset of the profile in the profiles collection </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="c-list-definition section return"><dt class="c-list-definition__title">Returns</dt><dd class="c-list-definition__desc">the new instance, or nullptr when the offset is UINT32_MAX or the data set gives no profile at it </dd></dl>
 
 </div>
 </div>

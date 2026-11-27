@@ -77,6 +77,33 @@ Structs</h2></td></tr>
 <tr class="c-table__row memitem:fiftyoneDegreesMemoryReader" id="r_fiftyoneDegreesMemoryReader"><td class="c-table__cell">struct &#160;</td><td class="c-table__cell"><a class="el" href="structfiftyone_degrees_memory_reader.html">fiftyoneDegreesMemoryReader</a></td></tr>
 <tr class="c-table__row memdesc:"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Used to read data from memory in a similar manner to a file handle.  <a href="structfiftyone_degrees_memory_reader.html#details">More...</a><br /></td></tr>
 </table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-define-members" class="g-docs__section-heading"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="c-table__row memitem:ga26da70a16d526377f2c7e33a1a2f82df" id="r_ga26da70a16d526377f2c7e33a1a2f82df"><td class="c-table__cell"><a id="ga26da70a16d526377f2c7e33a1a2f82df" name="ga26da70a16d526377f2c7e33a1a2f82df"></a>
+#define&#160;</td><td class="c-table__cell"><b>FIFTYONE_DEGREES_CALL_CONV</b></td></tr>
+<tr class="c-table__row memitem:ga324438f865ea2ca8e4f54ec68e885c0d" id="r_ga324438f865ea2ca8e4f54ec68e885c0d"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#ga324438f865ea2ca8e4f54ec68e885c0d">FIFTYONE_DEGREES_ALLOCATOR_READ</a>(p,  t)</td></tr>
+<tr class="c-table__row memdesc:ga324438f865ea2ca8e4f54ec68e885c0d"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Reads one of the pointers above in a single atomic access with acquire order, as the memory tracker changes them while other threads call through them.  <br /></td></tr>
+<tr class="c-table__row memitem:ga5427982d796fc7be6e0b2f5920987a71" id="r_ga5427982d796fc7be6e0b2f5920987a71"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#ga5427982d796fc7be6e0b2f5920987a71">FIFTYONE_DEGREES_MALLOC_CALL</a>(s)</td></tr>
+<tr class="c-table__row memitem:ga9a8b31115626e76e21952d9980c32af0" id="r_ga9a8b31115626e76e21952d9980c32af0"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#ga9a8b31115626e76e21952d9980c32af0">FIFTYONE_DEGREES_MALLOC_ALIGNED_CALL</a>(a,  s)</td></tr>
+<tr class="c-table__row memitem:gadbdfaf814ce5271c5bc710aa0c4cbd35" id="r_gadbdfaf814ce5271c5bc710aa0c4cbd35"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#gadbdfaf814ce5271c5bc710aa0c4cbd35">FIFTYONE_DEGREES_FREE_CALL</a>(p)</td></tr>
+<tr class="c-table__row memitem:ga6068f0a95bd1dd61ac0c9cb3d843f7d7" id="r_ga6068f0a95bd1dd61ac0c9cb3d843f7d7"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#ga6068f0a95bd1dd61ac0c9cb3d843f7d7">FIFTYONE_DEGREES_FREE_ALIGNED_CALL</a>(p)</td></tr>
+<tr class="c-table__row memitem:gab86db474c49b46a6bdbb845ea81a57d5" id="r_gab86db474c49b46a6bdbb845ea81a57d5"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#gab86db474c49b46a6bdbb845ea81a57d5">fiftyoneDegreesMalloc</a>(s)</td></tr>
+<tr class="c-table__row memitem:ga5fcef8ea3f47923eb98eb1ab48423bcb" id="r_ga5fcef8ea3f47923eb98eb1ab48423bcb"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#ga5fcef8ea3f47923eb98eb1ab48423bcb">fiftyoneDegreesMallocAligned</a>(a,  s)</td></tr>
+<tr class="c-table__row memitem:ga4346e2ea0b9eecfdf562a23775356681" id="r_ga4346e2ea0b9eecfdf562a23775356681"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#ga4346e2ea0b9eecfdf562a23775356681">fiftyoneDegreesFree</a>(p)</td></tr>
+<tr class="c-table__row memitem:gaba3505c55b510f7f54002bc408ee8de7" id="r_gaba3505c55b510f7f54002bc408ee8de7"><td class="c-table__cell">#define&#160;</td><td class="c-table__cell"><a class="el" href="#gaba3505c55b510f7f54002bc408ee8de7">fiftyoneDegreesFreeAligned</a>(p)</td></tr>
+</table><table class="c-table c-table--directory">
+<tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-typedef-members" class="g-docs__section-heading"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="c-table__row memitem:gab45b0f2d98ca52ecee945e42dcc1f9c8" id="r_gab45b0f2d98ca52ecee945e42dcc1f9c8"><td class="c-table__cell"><a id="gab45b0f2d98ca52ecee945e42dcc1f9c8" name="gab45b0f2d98ca52ecee945e42dcc1f9c8"></a>
+typedef&#160;void&#160;*(*&#160;</td><td class="c-table__cell"><b>fiftyoneDegreesMallocFunction</b>) (size_t __size)</td></tr>
+<tr class="c-table__row memdesc:gab45b0f2d98ca52ecee945e42dcc1f9c8"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Type of <a class="el" href="#ga9013d602c35456c538604f331526b3e3" title="Pointer to the method used to allocate memory.">fiftyoneDegreesMalloc</a>. <br /></td></tr>
+<tr class="c-table__row memitem:gac32e8c79c036f1917946a89d074d1927" id="r_gac32e8c79c036f1917946a89d074d1927"><td class="c-table__cell"><a id="gac32e8c79c036f1917946a89d074d1927" name="gac32e8c79c036f1917946a89d074d1927"></a>
+typedef&#160;void&#160;*(*&#160;</td><td class="c-table__cell"><b>fiftyoneDegreesMallocAlignedFunction</b>) (int alignment, size_t __size)</td></tr>
+<tr class="c-table__row memdesc:gac32e8c79c036f1917946a89d074d1927"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Type of <a class="el" href="#ga0c94072191ad207d6c277dd09d44d670" title="Pointer to the method used to allocate aligned memory.">fiftyoneDegreesMallocAligned</a>. <br /></td></tr>
+<tr class="c-table__row memitem:ga504f10fdff8834416e1d896c82afa714" id="r_ga504f10fdff8834416e1d896c82afa714"><td class="c-table__cell"><a id="ga504f10fdff8834416e1d896c82afa714" name="ga504f10fdff8834416e1d896c82afa714"></a>
+typedef&#160;void(*&#160;</td><td class="c-table__cell"><b>fiftyoneDegreesFreeFunction</b>) (void *__ptr)</td></tr>
+<tr class="c-table__row memdesc:ga504f10fdff8834416e1d896c82afa714"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Type of <a class="el" href="#ga1e07612a123c659d41da182cce14d4fe" title="Pointer to the method used to free memory.">fiftyoneDegreesFree</a> and <a class="el" href="#gada776c3bcb772212c2186bea03d63fbf" title="Pointer to the method used to free memory.">fiftyoneDegreesFreeAligned</a>. <br /></td></tr>
+</table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-func-members" class="g-docs__section-heading"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="c-table__row memitem:ga68232c6e5ecabcadaa256c7518902561" id="r_ga68232c6e5ecabcadaa256c7518902561"><td class="c-table__cell">bool&#160;</td><td class="c-table__cell"><a class="el" href="#ga68232c6e5ecabcadaa256c7518902561">fiftyoneDegreesMemoryAdvance</a> (<a class="el" href="structfiftyone_degrees_memory_reader.html">fiftyoneDegreesMemoryReader</a> *reader, size_t advanceBy)</td></tr>
@@ -108,6 +135,10 @@ void&#160;</td><td class="c-table__cell"><b>fiftyoneDegreesSetUpMemoryTracking</
 <tr class="c-table__row memdesc:gabb9e2c906250afcc74e5320c7f44f55b"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Setup memory tracking by resetting memory tracking and setting all Malloc/Free function pointers to pointer to TrackingMalloc/Free functions. <br /></td></tr>
 <tr class="c-table__row memitem:ga61283c2b02c5f98d1eb0a558a143301f" id="r_ga61283c2b02c5f98d1eb0a558a143301f"><td class="c-table__cell">size_t&#160;</td><td class="c-table__cell"><a class="el" href="#ga61283c2b02c5f98d1eb0a558a143301f">fiftyoneDegreesUnsetMemoryTracking</a> ()</td></tr>
 <tr class="c-table__row memdesc:ga61283c2b02c5f98d1eb0a558a143301f"><td class="c-table__cell">&#160;</td><td class="c-table__cell">This function works in collaboration with fiftyoneDegreesSetUpMemoryTracking.  <br /></td></tr>
+<tr class="c-table__row memitem:gaee7e80de4c8f906fc7caf351cf5b957c" id="r_gaee7e80de4c8f906fc7caf351cf5b957c"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#gaee7e80de4c8f906fc7caf351cf5b957c">fiftyoneDegreesMemoryTrackingStartMeasuring</a> ()</td></tr>
+<tr class="c-table__row memdesc:gaee7e80de4c8f906fc7caf351cf5b957c"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Starts measuring the memory the calling thread allocates, as the size functions do.  <br /></td></tr>
+<tr class="c-table__row memitem:ga01cfb014ae1d5848c19fdf6f00478869" id="r_ga01cfb014ae1d5848c19fdf6f00478869"><td class="c-table__cell">void&#160;</td><td class="c-table__cell"><a class="el" href="#ga01cfb014ae1d5848c19fdf6f00478869">fiftyoneDegreesMemoryTrackingStopMeasuring</a> ()</td></tr>
+<tr class="c-table__row memdesc:ga01cfb014ae1d5848c19fdf6f00478869"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Stops the measurement <a class="el" href="#gaee7e80de4c8f906fc7caf351cf5b957c" title="Starts measuring the memory the calling thread allocates, as the size functions do.">fiftyoneDegreesMemoryTrackingStartMeasuring</a> started.  <br /></td></tr>
 </table><table class="c-table c-table--directory">
 <tr class="c-table__row heading"><td class="c-table__cell" colspan="2"><h2 id="header-var-members" class="g-docs__section-heading"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -120,6 +151,238 @@ Variables</h2></td></tr>
 <tr class="c-table__row memitem:gada776c3bcb772212c2186bea03d63fbf" id="r_gada776c3bcb772212c2186bea03d63fbf"><td class="c-table__cell">EXTERNAL_VAR&#160;void(*&#160;</td><td class="c-table__cell"><a class="el" href="#gada776c3bcb772212c2186bea03d63fbf">fiftyoneDegreesFreeAligned</a> )(void *__ptr)</td></tr>
 <tr class="c-table__row memdesc:gada776c3bcb772212c2186bea03d63fbf"><td class="c-table__cell">&#160;</td><td class="c-table__cell">Pointer to the method used to free memory.  <br /></td></tr>
 </table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="g-docs__section-heading">Macro Definition Documentation</h2>
+<a id="ga324438f865ea2ca8e4f54ec68e885c0d" name="ga324438f865ea2ca8e4f54ec68e885c0d"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga324438f865ea2ca8e4f54ec68e885c0d">&#9670;&#160;</a></span>FIFTYONE_DEGREES_ALLOCATOR_READ</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define FIFTYONE_DEGREES_ALLOCATOR_READ</td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>t</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">__atomic_load_n(&amp;(p), __ATOMIC_ACQUIRE)</div>
+</div><!-- fragment -->
+<p>Reads one of the pointers above in a single atomic access with acquire order, as the memory tracker changes them while other threads call through them. </p>
+<p>On x64 this is the same plain load as an ordinary read. Visual Studio reads an aligned pointer sized volatile in one access, with acquire order on x86 and x64. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>the pointer to read </td></tr>
+    <tr><td class="paramname">t</td><td>the type of the pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga6068f0a95bd1dd61ac0c9cb3d843f7d7" name="ga6068f0a95bd1dd61ac0c9cb3d843f7d7"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga6068f0a95bd1dd61ac0c9cb3d843f7d7">&#9670;&#160;</a></span>FIFTYONE_DEGREES_FREE_ALIGNED_CALL</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define FIFTYONE_DEGREES_FREE_ALIGNED_CALL</td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a class="code hl_define" href="#ga324438f865ea2ca8e4f54ec68e885c0d">FIFTYONE_DEGREES_ALLOCATOR_READ</a>( \</div>
+<div class="c-code__line">    fiftyoneDegreesFreeAligned, \</div>
+<div class="c-code__line">    <a class="code hl_typedef" href="#ga504f10fdff8834416e1d896c82afa714">fiftyoneDegreesFreeFunction</a>)(p)</div>
+<div class="ttc" id="agroup___fifty_one_degrees_memory_html_ga324438f865ea2ca8e4f54ec68e885c0d"><div class="ttname"><a href="#ga324438f865ea2ca8e4f54ec68e885c0d">FIFTYONE_DEGREES_ALLOCATOR_READ</a></div><div class="ttdeci">#define FIFTYONE_DEGREES_ALLOCATOR_READ(p, t)</div><div class="ttdoc">Reads one of the pointers above in a single atomic access with acquire order, as the memory tracker c...</div><div class="ttdef"><b>Definition</b> memory.h:258</div></div>
+<div class="ttc" id="agroup___fifty_one_degrees_memory_html_ga504f10fdff8834416e1d896c82afa714"><div class="ttname"><a href="#ga504f10fdff8834416e1d896c82afa714">fiftyoneDegreesFreeFunction</a></div><div class="ttdeci">void(* fiftyoneDegreesFreeFunction)(void *__ptr)</div><div class="ttdoc">Type of fiftyoneDegreesFree and fiftyoneDegreesFreeAligned.</div><div class="ttdef"><b>Definition</b> memory.h:241</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="gadbdfaf814ce5271c5bc710aa0c4cbd35" name="gadbdfaf814ce5271c5bc710aa0c4cbd35"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gadbdfaf814ce5271c5bc710aa0c4cbd35">&#9670;&#160;</a></span>FIFTYONE_DEGREES_FREE_CALL</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define FIFTYONE_DEGREES_FREE_CALL</td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a class="code hl_define" href="#ga324438f865ea2ca8e4f54ec68e885c0d">FIFTYONE_DEGREES_ALLOCATOR_READ</a>( \</div>
+<div class="c-code__line">    fiftyoneDegreesFree, \</div>
+<div class="c-code__line">    <a class="code hl_typedef" href="#ga504f10fdff8834416e1d896c82afa714">fiftyoneDegreesFreeFunction</a>)(p)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga9a8b31115626e76e21952d9980c32af0" name="ga9a8b31115626e76e21952d9980c32af0"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga9a8b31115626e76e21952d9980c32af0">&#9670;&#160;</a></span>FIFTYONE_DEGREES_MALLOC_ALIGNED_CALL</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define FIFTYONE_DEGREES_MALLOC_ALIGNED_CALL</td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>s</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a class="code hl_define" href="#ga324438f865ea2ca8e4f54ec68e885c0d">FIFTYONE_DEGREES_ALLOCATOR_READ</a>( \</div>
+<div class="c-code__line">    fiftyoneDegreesMallocAligned, \</div>
+<div class="c-code__line">    <a class="code hl_typedef" href="#gac32e8c79c036f1917946a89d074d1927">fiftyoneDegreesMallocAlignedFunction</a>)(a, s)</div>
+<div class="ttc" id="agroup___fifty_one_degrees_memory_html_gac32e8c79c036f1917946a89d074d1927"><div class="ttname"><a href="#gac32e8c79c036f1917946a89d074d1927">fiftyoneDegreesMallocAlignedFunction</a></div><div class="ttdeci">void *(* fiftyoneDegreesMallocAlignedFunction)(int alignment, size_t __size)</div><div class="ttdoc">Type of fiftyoneDegreesMallocAligned.</div><div class="ttdef"><b>Definition</b> memory.h:236</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga5427982d796fc7be6e0b2f5920987a71" name="ga5427982d796fc7be6e0b2f5920987a71"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga5427982d796fc7be6e0b2f5920987a71">&#9670;&#160;</a></span>FIFTYONE_DEGREES_MALLOC_CALL</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define FIFTYONE_DEGREES_MALLOC_CALL</td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line"><a class="code hl_define" href="#ga324438f865ea2ca8e4f54ec68e885c0d">FIFTYONE_DEGREES_ALLOCATOR_READ</a>( \</div>
+<div class="c-code__line">    fiftyoneDegreesMalloc, \</div>
+<div class="c-code__line">    <a class="code hl_typedef" href="#gab45b0f2d98ca52ecee945e42dcc1f9c8">fiftyoneDegreesMallocFunction</a>)(s)</div>
+<div class="ttc" id="agroup___fifty_one_degrees_memory_html_gab45b0f2d98ca52ecee945e42dcc1f9c8"><div class="ttname"><a href="#gab45b0f2d98ca52ecee945e42dcc1f9c8">fiftyoneDegreesMallocFunction</a></div><div class="ttdeci">void *(* fiftyoneDegreesMallocFunction)(size_t __size)</div><div class="ttdoc">Type of fiftyoneDegreesMalloc.</div><div class="ttdef"><b>Definition</b> memory.h:232</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga4346e2ea0b9eecfdf562a23775356681" name="ga4346e2ea0b9eecfdf562a23775356681"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga4346e2ea0b9eecfdf562a23775356681">&#9670;&#160;</a></span>fiftyoneDegreesFree</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define fiftyoneDegreesFree</td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">FIFTYONE_DEGREES_FREE_CALL(p)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="gaba3505c55b510f7f54002bc408ee8de7" name="gaba3505c55b510f7f54002bc408ee8de7"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaba3505c55b510f7f54002bc408ee8de7">&#9670;&#160;</a></span>fiftyoneDegreesFreeAligned</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define fiftyoneDegreesFreeAligned</td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">FIFTYONE_DEGREES_FREE_ALIGNED_CALL(p)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="gab86db474c49b46a6bdbb845ea81a57d5" name="gab86db474c49b46a6bdbb845ea81a57d5"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gab86db474c49b46a6bdbb845ea81a57d5">&#9670;&#160;</a></span>fiftyoneDegreesMalloc</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define fiftyoneDegreesMalloc</td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">FIFTYONE_DEGREES_MALLOC_CALL(s)</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga5fcef8ea3f47923eb98eb1ab48423bcb" name="ga5fcef8ea3f47923eb98eb1ab48423bcb"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga5fcef8ea3f47923eb98eb1ab48423bcb">&#9670;&#160;</a></span>fiftyoneDegreesMallocAligned</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">#define fiftyoneDegreesMallocAligned</td>
+          <td>(</td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell"></td>
+          <td></td>
+          <td class="c-table__cell"></td>          <td class="c-table__cell"><span class="paramname"><em>s</em></span>&#160;)</td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+<b>Value:</b><div class="c-code__block c-code__block--outline"><div class="c-code__line">FIFTYONE_DEGREES_MALLOC_ALIGNED_CALL(a, s)</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="g-docs__section-heading">Function Documentation</h2>
 <a id="ga68232c6e5ecabcadaa256c7518902561" name="ga68232c6e5ecabcadaa256c7518902561"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga68232c6e5ecabcadaa256c7518902561">&#9670;&#160;</a></span>fiftyoneDegreesMemoryAdvance()</h2>
@@ -474,6 +737,54 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="gaee7e80de4c8f906fc7caf351cf5b957c" name="gaee7e80de4c8f906fc7caf351cf5b957c"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#gaee7e80de4c8f906fc7caf351cf5b957c">&#9670;&#160;</a></span>fiftyoneDegreesMemoryTrackingStartMeasuring()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyoneDegreesMemoryTrackingStartMeasuring </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Starts measuring the memory the calling thread allocates, as the size functions do. </p>
+<p>Resets the counts and points the allocation and free functions at the tracking ones. Until <a class="el" href="#ga01cfb014ae1d5848c19fdf6f00478869" title="Stops the measurement fiftyoneDegreesMemoryTrackingStartMeasuring started.">fiftyoneDegreesMemoryTrackingStopMeasuring</a> is called, memory that any other thread allocates is neither counted nor recorded, and memory another thread frees is not taken from the count. </p>
+
+</div>
+</div>
+<a id="ga01cfb014ae1d5848c19fdf6f00478869" name="ga01cfb014ae1d5848c19fdf6f00478869"></a>
+<h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga01cfb014ae1d5848c19fdf6f00478869">&#9670;&#160;</a></span>fiftyoneDegreesMemoryTrackingStopMeasuring()</h2>
+
+<div class="c-member__main">
+<div class="c-member__head">
+      <div class="c-member__split">
+        <div class="g-table g-table--overflow">
+          <table class="c-table c-table--article">
+            <tr class="c-table__row">
+              <td class="c-table__cell">void fiftyoneDegreesMemoryTrackingStopMeasuring </td>
+          <td>(</td>
+          <td class="c-table__cell"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+          </table>
+        </div>
+      </div>
+</div><div class="c-member__body">
+
+<p>Stops the measurement <a class="el" href="#gaee7e80de4c8f906fc7caf351cf5b957c" title="Starts measuring the memory the calling thread allocates, as the size functions do.">fiftyoneDegreesMemoryTrackingStartMeasuring</a> started. </p>
+<p>Points the allocation and free functions at the standard ones and resets the counts, so read them first. </p>
+
+</div>
+</div>
 <a id="ga61283c2b02c5f98d1eb0a558a143301f" name="ga61283c2b02c5f98d1eb0a558a143301f"></a>
 <h2 class="c-member__title"><span class="c-member__anchor"><a href="#ga61283c2b02c5f98d1eb0a558a143301f">&#9670;&#160;</a></span>fiftyoneDegreesUnsetMemoryTracking()</h2>
 
@@ -525,7 +836,7 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_ip_intelligence_2_reload_from_memory_8cpp-example.html#a23">IpIntelligence/ReloadFromMemory.cpp</a>.</dd>
+<dl class="c-list-definition examples"><dt class="c-list-definition__title">Examples</dt><dd><a class="el" href="_ip_intelligence_2_reload_from_memory_8cpp-example.html#a25">IpIntelligence/ReloadFromMemory.cpp</a>.</dd>
 </dl>
 
 </div>
